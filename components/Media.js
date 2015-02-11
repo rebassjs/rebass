@@ -2,7 +2,7 @@
 
 var React = require('react/addons');
 
-module.exports = React.createClass({
+module.exports = React.createClass({displayName: "exports",
 
   getDefaultProps: function() {
     return {
@@ -27,10 +27,10 @@ module.exports = React.createClass({
       }
     });
     return (
-      <div className="clearfix mb2">
-        {img}
-        {body}
-      </div>
+      React.createElement("div", {className: "clearfix mb2"}, 
+        img, 
+        body
+      )
     )
   }
 

@@ -3,7 +3,7 @@
 var React = require('react');
 var theme = require('./util/theme');
 
-module.exports = React.createClass({
+module.exports = React.createClass({displayName: "exports",
 
   getDefaultProps: function() {
     return {
@@ -15,9 +15,9 @@ module.exports = React.createClass({
     var themeClass = theme(this.props.theme);
     var badgeClass = 'h5 bold inline-block px1 mr1 rounded ' + themeClass;
     return (
-      <span className={badgeClass}>
-        {this.props.children}
-      </span>
+      React.createElement("span", {className: badgeClass}, 
+        this.props.children
+      )
     )
   }
 

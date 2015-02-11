@@ -3,7 +3,7 @@
 var React = require('react');
 var theme = require('./util/theme');
 
-module.exports = React.createClass({
+module.exports = React.createClass({displayName: "exports",
 
   getInitialState: function() {
     return {
@@ -28,17 +28,17 @@ module.exports = React.createClass({
       display: this.state.visible ? '' : 'none'
     };
     return (
-      <div className={messageClass} style={style}>
-        <div className="flex-auto p2">
-          {this.props.children}
-        </div>
-        <a href="#!"
-          onClick={this.dismiss}
-          className="h3 button white"
-          title="Dismiss">
-            &times;
-        </a>
-      </div>
+      React.createElement("div", {className: messageClass, style: style}, 
+        React.createElement("div", {className: "flex-auto p2"}, 
+          this.props.children
+        ), 
+        React.createElement("a", {href: "#!", 
+          onClick: this.dismiss, 
+          className: "h3 button white", 
+          title: "Dismiss"}, 
+            "×"
+        )
+      )
     )
   }
 

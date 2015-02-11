@@ -1,7 +1,7 @@
 {
-  "name": "react-basscss",
+  "name": "rebass",
   "version": "1.0.0",
-  "description": "Basscss components for React",
+  "description": "React components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {},
@@ -16,20 +16,19 @@
     "lodash": "^3.1.0",
     "node-jsx": "^0.12.4",
     "react": "^0.12.2",
+    "react-tools": "^0.12.2",
     "reactify": "^1.0.0",
+    "through2": "^0.6.3",
+    "vinyl-source-stream": "^1.0.0",
     "vinyl-transform": "^1.0.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "React",
     "Boilerplate",
     "Browserify"
   ],
   "browserify": {
-    "transform": [
-      "reactify",
-      "brfs"
-    ]
+    "transform": [ "brfs" ]
   }
 }

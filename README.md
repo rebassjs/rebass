@@ -1,4 +1,6 @@
-# React Basscss
+# Rebass
+
+React components for Basscss (WIP)
 
 ## Components
 
@@ -7,8 +9,8 @@
 - [x] Message (theme)
 - [ ] Pagination (pages, currentPage)
 
-- [ ] Media Object (right)
-- [ ] Flag Object (right)
+- [x] Media Object (right)
+- [x] Flag Object (right)
 - [ ] Panel (theme, title, footer)
 - [ ] Card (theme, footer)
 
@@ -26,6 +28,9 @@
 - [ ] Tooltip
 - [ ] Popover?
 - [ ] RadioButton
+
+- [ ] Flex Object
+- [ ] Grid
 
 ### Utils
 

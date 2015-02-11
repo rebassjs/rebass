@@ -18,16 +18,16 @@ module.exports = React.createClass({
       var className = child.props.className;
       if (type == 'img' || type == 'picture' || type == 'svg' || className == 'img') {
         img = React.addons.cloneWithProps(child, {
-          className: right ? 'ml1 right' : 'mr1 left'
+          className: right ? 'ml1 flex-last' : 'mr1'
         });
       } else {
         body = React.addons.cloneWithProps(child, {
-          className: 'overflow-hidden'
+          className: 'flex-auto'
         }); 
       }
     });
     return (
-      <div className="clearfix mb2">
+      <div className="flex flex-center mb2">
         {img}
         {body}
       </div>
