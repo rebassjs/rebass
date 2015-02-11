@@ -23,7 +23,7 @@ module.exports = function(name) {
       className = 'white bg-dark-gray';
       break;
     default:
-      className = 'bg-light-gray';
+      className = 'bg-lighter-gray';
       break;
   }
 

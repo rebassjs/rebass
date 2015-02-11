@@ -29,6 +29,6 @@
     "Browserify"
   ],
   "browserify": {
-    "transform": [ "brfs" ]
+    "transform": [ "reactify" ]
   }
 }

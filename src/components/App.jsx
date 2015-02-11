@@ -1,9 +1,9 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var Header = require('./Header');
-var Body = require('./Body');
-var Footer = require('./Footer');
+var Header = require('./Header.jsx');
+var Body = require('./Body.jsx');
+var Footer = require('./Footer.jsx');
 
 module.exports = React.createClass({
 

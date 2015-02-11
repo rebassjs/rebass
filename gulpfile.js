@@ -15,13 +15,13 @@ gulp.task('build', function() {
   build(data);
 });
 
+/*
 gulp.task('util', function() {
   gulp.src('./src/components/util/*')
     .pipe(gulp.dest('./components/util'));
 });
 
 gulp.task('jsx', ['util'], function() {
-
   var reactify = function() {
     return through.obj(function(file, enc, cb) {
       var result = reactTools.transform(file.contents.toString());
@@ -30,12 +30,12 @@ gulp.task('jsx', ['util'], function() {
       cb();
     });
   };
-
   gulp.src('./src/components/*.jsx')
     .pipe(reactify())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('./components'));
 });
+*/
 
 
 gulp.task('js', function() {
@@ -55,7 +55,7 @@ gulp.task('serve', function() {
     .pipe(webserver({}));
 });
 
-gulp.task('default', ['build', 'jsx', 'js', 'serve'], function() {
-  gulp.watch(['./src/**/*'], ['build', 'jsx', 'js']);
+gulp.task('default', ['build', 'js', 'serve'], function() {
+  gulp.watch(['./src/**/*'], ['build', 'js']);
 });
 

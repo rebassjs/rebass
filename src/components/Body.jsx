@@ -1,19 +1,46 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var Badge = require('./Badge');
-var Message = require('./Message');
-var Media = require('./Media');
-var Flag = require('./Flag');
+var Badge = require('./Badge.jsx');
+var Message = require('./Message.jsx');
+var Media = require('./Media.jsx');
+var Flag = require('./Flag.jsx');
+var Panel = require('./Panel.jsx');
 
 module.exports = React.createClass({
+
+  panelFooter: function() {
+      return (
+        <div>
+          <button className="button-blue">Button</button>
+        </div>
+      )
+  },
 
   render: function() {
     var style = {
       minHeight: '100vh'
     };
+    var panelFooter = this.panelFooter();
     return (
       <div style={style}>
+        <div className="mb4">
+          <h2>Panel</h2>
+          <Panel>
+            <h1>Panel Body</h1>
+          </Panel>
+          <Panel header="Panel Title" theme="blue">
+            <h1>Panel Body</h1>
+          </Panel>
+          <Panel header="Panel Title" footer="Panel footer" theme="red">
+            <h1>Panel Body</h1>
+          </Panel>
+          <Panel theme="green">
+            <header>Panel header element</header>
+            <h1>Panel Body</h1>
+            <footer>Footer element</footer>
+          </Panel>
+        </div>
         <div className="mb4">
           <h2>Badge</h2>
           <Badge>Badge</Badge>
