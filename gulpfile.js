@@ -45,7 +45,7 @@ gulp.task('js', function() {
   });
   gulp.src('./src/app.js')
     .pipe(browserified)
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./js'));
 });

@@ -1,6 +1,6 @@
 # Rebass
 
-React components for Basscss (WIP)
+(WIP)
 
 ## Components
 
@@ -13,6 +13,11 @@ React components for Basscss (WIP)
 - [x] Flag Object (right)
 - [ ] Panel (theme, title, footer)
 - [ ] Card (theme, footer)
+
+- [ ] Box
+- [ ] BoxHeader
+- [ ] BoxFooter
+- [ ] BoxBody ??
 
 - [ ] Nav (theme, size)
 - [ ] Menu (theme)
@@ -29,10 +34,26 @@ React components for Basscss (WIP)
 - [ ] Popover?
 - [ ] RadioButton
 
+- [ ] RadioGroup
+- [ ] Range
+- [ ] VerticalRange
+- [ ] Knob (circular range)
+- [ ] DoubleRange
+- [ ] NumberStepper
+
 - [ ] Flex Object
 - [ ] Grid
+
 
 ### Utils
 
 - [ ] Theme
+
+
+### To Do
+
+- [ ] Try declarative, non-child selecting approach
+- [ ] Callbacks for all actions
+- [ ] Remove JSX
+- [ ] Generic footer (for panel, card, modal, etc)
 
