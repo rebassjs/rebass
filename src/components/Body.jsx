@@ -7,6 +7,11 @@ var Media = require('./Media.jsx');
 var Flag = require('./Flag.jsx');
 var Panel = require('./Panel.jsx');
 
+var Box = require('./Box');
+var BoxHeader = require('./BoxHeader');
+//var BoxFooter = require('./BoxFooter');
+var BoxBody = require('./BoxBody');
+
 module.exports = React.createClass({
 
   panelFooter: function() {
@@ -24,6 +29,13 @@ module.exports = React.createClass({
     var panelFooter = this.panelFooter();
     return (
       <div style={style}>
+        <div className="mb4">
+          <h2>Box</h2>
+          <Box theme="blue">
+            <BoxHeader>Header</BoxHeader>
+            <BoxBody>Box</BoxBody>
+          </Box>
+        </div>
         <div className="mb4">
           <h2>Panel</h2>
           <Panel>
