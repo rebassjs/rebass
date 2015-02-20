@@ -7,7 +7,7 @@ var React = require('react');
 require('node-jsx').install();
 
 var template = _.template(fs.readFileSync(path.join(__dirname, './layouts/default.html'), 'utf8'));
-var App = React.createFactory(require('./components/App.jsx'));
+var App = React.createFactory(require('./docs/App.jsx'));
 
 var data = require('./data');
 

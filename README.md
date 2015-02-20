@@ -38,8 +38,13 @@
 - [ ] Range
 - [ ] VerticalRange
 - [ ] Knob (circular range)
+
 - [ ] DoubleRange
 - [ ] NumberStepper
+- [ ] FuzzyInput
+- [ ] FuzzyInputFetch
+- [ ] Textcomplete
+- [ ] Tokenizer
 
 - [ ] Flex Object
 - [ ] Grid
@@ -52,8 +57,8 @@
 
 ### To Do
 
+- [ ] Remove utils (use components instead)
 - [ ] Try declarative, non-child selecting approach
 - [ ] Callbacks for all actions
-- [ ] Remove JSX
 - [ ] Generic footer (for panel, card, modal, etc)
 
