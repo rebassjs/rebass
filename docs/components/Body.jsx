@@ -17,10 +17,8 @@ module.exports = React.createClass({
     var countriesAll = countries.all;
     var countriesArr = [];
     countriesAll.forEach(function(country) {
-      console.log(country.name);
       countriesArr.push(country.name.common);
     });
-    console.log(countriesArr);
     return {
       countries: countriesArr
     }
@@ -78,6 +76,7 @@ module.exports = React.createClass({
         </section>
 
         <section className="py3">
+          <h2>FuzzyInput</h2>
           <label>Country</label>
           <FuzzyInput
             value={this.state.country}

@@ -18,7 +18,12 @@ module.exports = React.createClass({
   getDefaultProps: function() {
     return {
       minScore: 0,
-      maxResults: 32,
+      //maxResults: 32,
+      classes: {
+        input: 'field-light',
+        menu: 'bg-white border rounded',
+        menuItem: 'block button button-nav-light',
+      }
     }
   },
 
@@ -31,7 +36,8 @@ module.exports = React.createClass({
     }
   },
 
-  fuzzyMatch: function(string) {
+
+  findMatches: function(string) {
     var self = this;
     var results = fuzzy.filter(string, this.props.options);
     var matches = [];
@@ -41,13 +47,6 @@ module.exports = React.createClass({
       }
     });
     this.setState({ matches: matches });
-    return matches;
-  },
-
-  // Combine into a single function
-  findMatches: function(string) {
-    this.fuzzyMatch(this.state.value);
-    //this.setState({ matches: matches });
   },
 
   clearMatches: function() {
@@ -102,14 +101,14 @@ module.exports = React.createClass({
     var index = this.state.selectedMatch;
     var $link = $links.item(index);
     var windowYPosition = window.pageYOffset;
-    console.log(e.which);
+    //console.log(e.which);
     switch (e.which) {
       // Return
       case 13:
         if (this.state.matches.length && (index < 1) ) {
           e.preventDefault();
           var value = this.state.matches[0];
-          console.log('return key ', value);
+          //console.log('return key ', value);
           this.completeWord(value);
         }
         break;
@@ -138,69 +137,60 @@ module.exports = React.createClass({
     }
   },
 
+  renderItem: function(val, i) {
+    var self = this;
+    var key = 'match-' + i;
+    var handleClick = function(e) {
+      self.completeWord(e.target.innerText);
+    };
+    var isActive = (self.state.selectedMatch == i);
+    var menuItemClass = this.props.classes.menuItem;
+    if (isActive) {
+      menuItemClass += ' xis-active white bg-blue';
+    }
+    return (
+      <a href="#!"
+        key={key}
+        ref={val}
+        onKeyDown={this.handleKeyDown}
+        className={menuItemClass}
+        onClick={handleClick}>
+        {val}
+      </a>
+    );
+  },
+
   render: function() {
     var self = this;
-    var renderItems = function(val, i) {
-      var key = 'match-' + i;
-      var handleClick = function(e) {
-        self.completeWord(e.target.innerText);
-      };
-      var isActive = (self.state.selectedMatch == i);
-      var linkClass = 'list-group-item ';
-      if (isActive) {
-        linkClass += 'active';
-      }
-      //var linkStyle = {
-      //  display: 'block',
-      //  lineHeight: '2',
-      //  padding: '0 5px',
-      //  backgroundColor: isActive ? 'blue' : '',
-      //  color: isActive ? 'white' : '',
-      //};
-      return (
-        <a href="#!"
-          key={key}
-          ref={val}
-          onKeyDown={this.handleKeyDown}
-          className={linkClass}
-          onClick={handleClick}>
-          {val}
-        </a>
-      );
-    };
-
     var containerStyle = {
       position: 'relative',
       zIndex: 1,
-    };
-    var inputStyle = {
     };
     var menuStyle = {
       display: this.state.matches.length ? '' : 'none',
       position: 'absolute',
       left: 0,
       right: 0,
-      //backgroundColor: 'white',
-      //border: '1px solid #ccc',
-      //borderRadius: '3px'
+      maxHeight: '12rem',
+      overflowY: 'auto',
     };
 
     return (
       <div className="" style={containerStyle}>
         <input
+          type="text"
           {...this.props}
-          className="form-control"
-          style={inputStyle}
+          className={this.props.classes.input}
           ref="input"
           value={this.state.value}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
           />
         <div ref="menu"
-          className="list-group"
+          className={this.props.classes.menu}
           onKeyDown={this.handleKeyDown}
           style={menuStyle}>
-          {this.state.matches.map(renderItems)}
+          {this.state.matches.map(this.renderItem)}
         </div>
       </div>
     )
