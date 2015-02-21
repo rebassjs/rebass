@@ -14,8 +14,11 @@ module.exports = React.createClass({
     var name = _.kebabCase(this.props.heading);
     var sectionLink = '#' + name;
     return (
-      <section id={name} className="py3">
-        <h2>
+      <section ref={name}
+        data-title={this.props.heading}
+        id={name}
+        className="py3">
+        <h2 className="mt0">
           <a href={sectionLink}>
             {this.props.heading}
           </a>

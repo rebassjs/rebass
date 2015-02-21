@@ -1,6 +1,7 @@
 
 var React = require('react');
 var Section = require('./Section.jsx');
+
 var Rebass = require('../..');
 var Button = Rebass.Button;
 var Dropdown = Rebass.Dropdown;
@@ -10,6 +11,9 @@ var Media = Rebass.Media;
 var Flag = Rebass.Flag
 var Panel = Rebass.Panel
 
+//var Modal = Rebass.Modal;
+
+var ModalSection = require('./ModalSection.jsx');
 var FuzzyInputSection = require('./FuzzyInputSection.jsx');
 var HslSlidersSection = require('./HslSlidersSection.jsx');
 
@@ -42,6 +46,8 @@ module.exports = React.createClass({
             <a href="#!" className="button block button-nav-light">Action</a>
           </Dropdown>
         </Section>
+
+        <ModalSection />
 
         <Section heading="Badge">
           <Badge>Badge</Badge>
