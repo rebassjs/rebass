@@ -7,11 +7,11 @@ var React = require('react');
 require('node-jsx').install();
 
 var template = _.template(fs.readFileSync(path.join(__dirname, './layouts/default.html'), 'utf8'));
-var App = React.createFactory(require('./docs/App.jsx'));
+var Index = React.createFactory(require('./components/Index.jsx'));
 
 var data = require('./data');
 
-data.app = React.renderToString(App(data));
+data.app = React.renderToString(Index(data));
 var html = template(data);
 fs.writeFileSync(path.join(__dirname, '../index.html'), html);
 

@@ -1,9 +1,11 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var theme = require('./util/theme');
+var ThemeClassMixin = require('./ThemeClassMixin');
 
 module.exports = React.createClass({
+
+  mixins: [ThemeClassMixin],
 
   getDefaultProps: function() {
     return {
@@ -12,8 +14,8 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var themeClass = theme(this.props.theme);
-    var badgeClass = 'h5 bold inline-block px1 mr1 rounded ' + themeClass;
+    var classes = this.getThemeClasses();
+    var badgeClass = 'h5 bold inline-block px1 mr1 rounded ' + classes.main;
     return (
       <span className={badgeClass}>
         {this.props.children}

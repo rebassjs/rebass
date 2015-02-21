@@ -1,9 +1,11 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var theme = require('./util/theme');
+var ThemeClassMixin = require('./ThemeClassMixin');
 
 module.exports = React.createClass({
+
+  mixins: [ThemeClassMixin],
 
   getInitialState: function() {
     return {
@@ -22,8 +24,8 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var themeClass = theme(this.props.theme);
-    var messageClass = 'bold flex flex-center mb2 rounded ' + themeClass;
+    var classes = this.getThemeClasses();
+    var messageClass = 'bold flex flex-center mb2 rounded ' + classes.main;
     var style = {
       display: this.state.visible ? '' : 'none'
     };

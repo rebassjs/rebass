@@ -3,10 +3,10 @@
 var React = require('react');
 var data = require('./data');
 
-var App = React.createFactory(require('./docs/App.jsx'));
+var Index = React.createFactory(require('./components/Index.jsx'));
 
 React.render(
-  App(data),
+  Index(data),
   document.getElementById('app')
 );
 
