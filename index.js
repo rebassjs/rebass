@@ -5,4 +5,5 @@ module.exports = {
   Media: require('./dist/Media'),
   Message: require('./dist/Message'),
   Panel: require('./dist/Panel'),
+  FuzzyInput: require('./dist/FuzzyInput'),
 };

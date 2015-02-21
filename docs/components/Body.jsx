@@ -7,8 +7,34 @@ var Message = rebass.Message;
 var Media = rebass.Media;
 var Flag = rebass.Flag
 var Panel = rebass.Panel
+var FuzzyInput = rebass.FuzzyInput;
+
+var countries = require('countries-in-the-world');
 
 module.exports = React.createClass({
+
+  getDefaultProps: function() {
+    var countriesAll = countries.all;
+    var countriesArr = [];
+    countriesAll.forEach(function(country) {
+      console.log(country.name);
+      countriesArr.push(country.name.common);
+    });
+    console.log(countriesArr);
+    return {
+      countries: countriesArr
+    }
+  },
+
+  getInitialState: function() {
+    return {
+      country: '',
+    }
+  },
+
+  handleCountryChange: function(country) {
+    this.setState({ country: country });
+  },
 
   render: function() {
     var style = {
@@ -49,6 +75,16 @@ module.exports = React.createClass({
           <Panel header="Panel Header" theme="blue">
             <div>Panel Body</div>
           </Panel>
+        </section>
+
+        <section className="py3">
+          <label>Country</label>
+          <FuzzyInput
+            value={this.state.country}
+            onChange={this.handleCountryChange}
+            options={this.props.countries}
+            />
+          <div>{this.state.country}</div>
         </section>
 
       </div>
