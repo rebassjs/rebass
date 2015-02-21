@@ -1,5 +1,6 @@
 
 module.exports = {
+  Button: require('./dist/Button'),
   Badge: require('./dist/Badge'),
   Flag: require('./dist/Flag'),
   Media: require('./dist/Media'),

@@ -10,6 +10,7 @@
 //   - [ ] tab to complete
 // - [ ] prop for max number of matches to show in menu list
 // - [ ] Overlay for exiting with mouseclick
+// - [ ] Sort by rank
 
 var React = require('react');
 var fuzzy = require('fuzzy');
@@ -42,12 +43,15 @@ module.exports = React.createClass({displayName: "exports",
     var self = this;
     var results = fuzzy.filter(string, this.props.options);
     var matches = [];
-    results.map(function(result) {
-      if (result.score > self.props.minScore) {
-        matches.push(result.string);
-      }
-    });
-    this.setState({ matches: matches });
+    //results.sort(function(a, b) {
+    //  return b.score - a.score;
+    //});
+    //results.map(function(result) {
+    //  if (result.score > self.props.minScore) {
+    //    matches.push(result.string);
+    //  }
+    //});
+    this.setState({ matches: results });
   },
 
   clearMatches: function() {
@@ -108,7 +112,7 @@ module.exports = React.createClass({displayName: "exports",
       case 13:
         if (this.state.matches.length && (index < 1) ) {
           e.preventDefault();
-          var value = this.state.matches[0];
+          var value = this.state.matches[0].string;
           //console.log('return key ', value);
           this.completeWord(value);
         }
@@ -138,7 +142,7 @@ module.exports = React.createClass({displayName: "exports",
     }
   },
 
-  renderItem: function(val, i) {
+  renderItem: function(match, i) {
     var self = this;
     var key = 'match-' + i;
     var handleClick = function(e) {
@@ -147,16 +151,17 @@ module.exports = React.createClass({displayName: "exports",
     var isActive = (self.state.selectedMatch == i);
     var menuItemClass = this.props.classes.menuItem;
     if (isActive) {
-      menuItemClass += ' xis-active white bg-blue';
+      menuItemClass += ' white bg-blue';
     }
+    console.log(match);
     return (
       React.createElement("a", {href: "#!", 
         key: key, 
-        ref: val, 
+        ref: match.string, 
         onKeyDown: this.handleKeyDown, 
         className: menuItemClass, 
         onClick: handleClick}, 
-        val
+        match.string
       )
     );
   },

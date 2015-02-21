@@ -2,6 +2,7 @@
 var React = require('react');
 var Section = require('./Section.jsx');
 var Rebass = require('../..');
+var Button = Rebass.Button;
 var Badge = Rebass.Badge;
 var Message = Rebass.Message;
 var Media = Rebass.Media;
@@ -11,7 +12,6 @@ var Panel = Rebass.Panel
 var FuzzyInputSection = require('./FuzzyInputSection.jsx');
 var HslSlidersSection = require('./HslSlidersSection.jsx');
 
-
 module.exports = React.createClass({
 
   render: function() {
@@ -20,6 +20,14 @@ module.exports = React.createClass({
     };
     return (
       <div style={style}>
+
+        <Section heading="Button">
+          <Button>Button</Button>
+          <Button theme="blue">Button</Button>
+          <Button theme="red">Button</Button>
+          <Button theme="gray">Button</Button>
+          <Button theme="blue-outline">Button</Button>
+        </Section>
 
         <Section heading="Badge">
           <Badge>Badge</Badge>
@@ -51,6 +59,15 @@ module.exports = React.createClass({
             <div>Panel Body</div>
           </Panel>
           <Panel header="Panel Header" theme="blue">
+            <div>Panel Body</div>
+          </Panel>
+          <Panel header="Panel Header" theme="green">
+            <div>Panel Body</div>
+          </Panel>
+          <Panel header="Panel Header" theme="yellow">
+            <div>Panel Body</div>
+          </Panel>
+          <Panel header="Panel Header" theme="red">
             <div>Panel Body</div>
           </Panel>
         </Section>
