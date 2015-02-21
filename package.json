@@ -1,7 +1,7 @@
 {
   "name": "rebass",
   "version": "0.0.1",
-  "description": "",
+  "description": "React components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {},
@@ -31,8 +31,8 @@
   ],
   "scripts": {
     "watchify": "watchify docs/app.js -o docs/js/app.min.js",
-      "uglify": "uglify docs/js/app.js -o docs/js/app.min.js",
-      "watch:uglify": "watch 'npm run uglify' ./docs/js",
+    "uglify": "uglify docs/js/app.js -o docs/js/app.min.js",
+    "watch:uglify": "watch 'npm run uglify' ./docs/js",
     "build:js": "NODE_ENV=production browserify docs/app.js -o docs/js/app.js",
     "build:html": "node docs/build",
     "watch:html": "watch 'npm run build:html' ./docs",
@@ -47,5 +47,14 @@
       "envify",
       "uglifyify"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxnblk/rebass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jxnblk/rebass/issues"
+  },
+  "homepage": "https://github.com/jxnblk/rebass"
 }
