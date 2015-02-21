@@ -50,14 +50,13 @@
 - [ ] Grid
 
 
-### Utils
+### Mixins
 
 - [ ] Theme
 
 
 ### To Do
 
-- [ ] Remove utils (use components instead)
 - [ ] Try declarative, non-child selecting approach
 - [ ] Callbacks for all actions
 - [ ] Generic footer (for panel, card, modal, etc)
