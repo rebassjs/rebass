@@ -35,21 +35,20 @@
     "Basscss"
   ],
   "scripts": {
-    "watchify": "watchify docs/app.js -o docs/js/app.min.js",
-    "uglify": "uglify docs/js/app.js -o docs/js/app.min.js",
+    "watchify": "NODE_ENV=development watchify docs/app.js -o docs/js/app.min.js",
+    "uglify": "NODE_ENV=development uglify docs/js/app.js -o docs/js/app.min.js",
     "watch:uglify": "watch 'npm run uglify' ./docs/js",
-    "build:js": "NODE_ENV=production browserify docs/app.js -o docs/js/app.js",
+    "build:js": "browserify docs/app.js -o docs/js/app.js",
     "build:html": "node docs/build",
     "watch:html": "watch 'npm run build:html' ./docs",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
-    "serve": "http-server -p 8000 ",
+    "serve": "http-server -p 8000 -s",
     "start": "parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:html' 'npm run serve'"
   },
   "browserify": {
     "transform": [
       "reactify",
-      "envify",
       "uglifyify"
     ]
   },

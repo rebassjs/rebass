@@ -3,6 +3,7 @@ var React = require('react');
 var Section = require('./Section.jsx');
 var Rebass = require('../..');
 var Button = Rebass.Button;
+var Dropdown = Rebass.Dropdown;
 var Badge = Rebass.Badge;
 var Message = Rebass.Message;
 var Media = Rebass.Media;
@@ -27,6 +28,19 @@ module.exports = React.createClass({
           <Button theme="red">Button</Button>
           <Button theme="gray">Button</Button>
           <Button theme="blue-outline">Button</Button>
+        </Section>
+
+        <Section heading="Dropdown">
+          <Dropdown label="Dropdown">
+            <a href="#!" className="button block button-nav-light">Action</a>
+            <a href="#!" className="button block button-nav-light">Action</a>
+            <a href="#!" className="button block button-nav-light">Action</a>
+          </Dropdown>
+          <Dropdown label="Another Dropdown" theme="blue">
+            <a href="#!" className="button block button-nav-light">Action</a>
+            <a href="#!" className="button block button-nav-light">Action</a>
+            <a href="#!" className="button block button-nav-light">Action</a>
+          </Dropdown>
         </Section>
 
         <Section heading="Badge">
