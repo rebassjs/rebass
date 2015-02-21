@@ -9,6 +9,7 @@
 //   - [x] esc to cancel autocomplete
 //   - [ ] tab to complete
 // - [ ] prop for max number of matches to show in menu list
+// - [ ] Overlay for exiting with mouseclick
 
 var React = require('react');
 var fuzzy = require('fuzzy');

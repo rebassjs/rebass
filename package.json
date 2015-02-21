@@ -5,10 +5,12 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "fuzzy": "^0.1.0"
+    "fuzzy": "^0.1.0",
+    "react-hsl-sliders": "^1.0.4"
   },
   "devDependencies": {
     "browserify": "^8.0.3",
+    "color": "^0.7.3",
     "countries-in-the-world": "^1.0.4",
     "envify": "^3.2.0",
     "http-server": "^0.7.4",

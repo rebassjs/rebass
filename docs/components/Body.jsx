@@ -1,90 +1,63 @@
-/** @jsx React.DOM */
 
 var React = require('react');
-var rebass = require('../..');
-var Badge = rebass.Badge;
-var Message = rebass.Message;
-var Media = rebass.Media;
-var Flag = rebass.Flag
-var Panel = rebass.Panel
-var FuzzyInput = rebass.FuzzyInput;
+var Section = require('./Section.jsx');
+var Rebass = require('../..');
+var Badge = Rebass.Badge;
+var Message = Rebass.Message;
+var Media = Rebass.Media;
+var Flag = Rebass.Flag
+var Panel = Rebass.Panel
 
-var countries = require('countries-in-the-world');
+var FuzzyInputSection = require('./FuzzyInputSection.jsx');
+var HslSlidersSection = require('./HslSlidersSection.jsx');
+
 
 module.exports = React.createClass({
-
-  getDefaultProps: function() {
-    var countriesAll = countries.all;
-    var countriesArr = [];
-    countriesAll.forEach(function(country) {
-      countriesArr.push(country.name.common);
-    });
-    return {
-      countries: countriesArr
-    }
-  },
-
-  getInitialState: function() {
-    return {
-      country: '',
-    }
-  },
-
-  handleCountryChange: function(country) {
-    this.setState({ country: country });
-  },
 
   render: function() {
     var style = {
       minHeight: '100vh',
     };
     return (
-      <div className="" style={style}>
+      <div style={style}>
 
-        <section className="py3">
+        <Section heading="Badge">
           <Badge>Badge</Badge>
           <Badge theme="red">Badge</Badge>
           <Badge theme="yellow">Badge</Badge>
           <Badge theme="green">Badge</Badge>
           <Badge theme="blue">Badge</Badge>
           <Badge theme="dark-gray">Badge</Badge>
-        </section>
+        </Section>
 
-        <section className="py3">
+        <Section heading="Message">
           <Message>Message</Message>
           <Message theme="red">Message</Message>
           <Message theme="yellow">Message</Message>
           <Message theme="green">Message</Message>
           <Message theme="blue">Message</Message>
           <Message theme="dark-gray">Message</Message>
-        </section>
+        </Section>
 
-        <section className="py3">
+        <Section heading="Media Object">
           <Media>
             <img src="//placehold.it/96" />
             <div>Media Object</div>
           </Media>
-        </section>
+        </Section>
 
-        <section className="py3">
+        <Section heading="Panel">
           <Panel header="Panel Header">
             <div>Panel Body</div>
           </Panel>
           <Panel header="Panel Header" theme="blue">
             <div>Panel Body</div>
           </Panel>
-        </section>
+        </Section>
 
-        <section className="py3">
-          <h2>FuzzyInput</h2>
-          <label>Country</label>
-          <FuzzyInput
-            value={this.state.country}
-            onChange={this.handleCountryChange}
-            options={this.props.countries}
-            />
-          <div>{this.state.country}</div>
-        </section>
+        <FuzzyInputSection />
+
+        <HslSlidersSection />
 
       </div>
     )

@@ -11,7 +11,13 @@ module.exports = React.createClass({
     return (
       <div>
         <Header {...this.props} />
-        <Body {...this.props} />
+        <div className="sm-flex mxn2">
+          <div className="sm-col-8 px2">
+            <Body {...this.props} />
+          </div>
+          <div className="sm-col-4 px2">
+          </div>
+        </div>
         <Footer {...this.props} />
       </div>
     )
