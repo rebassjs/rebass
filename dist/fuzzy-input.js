@@ -22,7 +22,7 @@ module.exports = React.createClass({displayName: "exports",
       minScore: 0,
       //maxResults: 32,
       classes: {
-        input: 'field-light',
+        input: 'block full-width field-light',
         menu: 'bg-white border rounded',
         menuItem: 'block button button-nav-light',
       }
@@ -43,9 +43,6 @@ module.exports = React.createClass({displayName: "exports",
     var self = this;
     var results = fuzzy.filter(string, this.props.options);
     var matches = [];
-    //results.sort(function(a, b) {
-    //  return b.score - a.score;
-    //});
     //results.map(function(result) {
     //  if (result.score > self.props.minScore) {
     //    matches.push(result.string);
@@ -168,25 +165,41 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     var self = this;
-    var containerStyle = {
-      position: 'relative',
-      zIndex: 1,
-    };
-    var menuStyle = {
-      display: this.state.matches.length ? '' : 'none',
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      maxHeight: '12rem',
-      overflowY: 'auto',
+    var styles = {
+      container: {
+        position: 'relative',
+        zIndex: 1,
+      },
+      overlay: {
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        display: this.state.matches.length ? '' : 'none',
+      },
+      input: {
+        position: 'relative',
+      },
+      menu: {
+        display: this.state.matches.length ? '' : 'none',
+        position: 'absolute',
+        left: 0,
+        //right: 0,
+        minWidth: '12rem',
+        maxHeight: '12rem',
+        overflowY: 'auto',
+      },
     };
 
     return (
-      React.createElement("div", {className: "", style: containerStyle}, 
+      React.createElement("div", {className: "", style: styles.container}, 
+        React.createElement("a", {href: "#!", style: styles.overlay, onClick: this.clearMatches}), 
         React.createElement("input", React.__spread({
           type: "text"}, 
           this.props, 
           {className: this.props.classes.input, 
+          style: styles.input, 
           ref: "input", 
           value: this.state.value, 
           onChange: this.handleChange, 
@@ -195,7 +208,7 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement("div", {ref: "menu", 
           className: this.props.classes.menu, 
           onKeyDown: this.handleKeyDown, 
-          style: menuStyle}, 
+          style: styles.menu}, 
           this.state.matches.map(this.renderItem)
         )
       )

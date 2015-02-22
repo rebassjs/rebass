@@ -1,6 +1,6 @@
 
 var React = require('react');
-var Section = require('./Section.jsx');
+var Section = require('./section.jsx');
 
 var Rebass = require('../..');
 var Button = Rebass.Button;
@@ -13,9 +13,9 @@ var Panel = Rebass.Panel
 
 //var Modal = Rebass.Modal;
 
-var ModalSection = require('./ModalSection.jsx');
-var FuzzyInputSection = require('./FuzzyInputSection.jsx');
-var HslSlidersSection = require('./HslSlidersSection.jsx');
+var ModalSection = require('./modal-section.jsx');
+var FuzzyInputSection = require('./fuzzy-input-section.jsx');
+var HslSlidersSection = require('./hsl-sliders-section.jsx');
 
 module.exports = React.createClass({
 
@@ -72,6 +72,13 @@ module.exports = React.createClass({
             <img src="//placehold.it/96" />
             <div>Media Object</div>
           </Media>
+        </Section>
+
+        <Section heading="Flag Object">
+          <Flag>
+            <img src="//placehold.it/96" />
+            <div>Flag Object</div>
+          </Flag>
         </Section>
 
         <Section heading="Panel">

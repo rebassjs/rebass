@@ -54,7 +54,7 @@ module.exports = React.createClass({
 
   render: function() {
     var borderColor = 'border-' + this.props.theme;
-    var panelClass = 'mb2 rounded border ' + borderColor;
+    var panelClass = 'mb2 overflow-hidden rounded border ' + borderColor;
     var children = this.filterChildren(this.props.children);
     return (
       <div className={panelClass}>

@@ -11,23 +11,18 @@
 
 - [x] Media Object (right)
 - [x] Flag Object (right)
-- [ ] Panel (theme, title, footer)
+- [x] Panel (theme, title, footer)
 - [ ] Card (theme, footer)
-
-- [ ] Box
-- [ ] BoxHeader
-- [ ] BoxFooter
-- [ ] BoxBody ??
 
 - [ ] Nav (theme, size)
 - [ ] Menu (theme)
-- [ ] Dropdown (theme, top, right)
+- [x] Dropdown (theme, top, right)
 - [ ] Banner (backgroundImage, size)
 
 - [ ] Group (vertical)
 - [ ] Breadcrumbs (paths)
 - [ ] Header (right?)
-- [ ] Modal (theme, title, footer, size)
+- [x] Modal (theme, title, footer, size)
 
 - [ ] Progress (min, max, value)
 - [ ] Tooltip
@@ -41,7 +36,7 @@
 
 - [ ] DoubleRange
 - [ ] NumberStepper
-- [ ] FuzzyInput
+- [x] FuzzyInput
 - [ ] FuzzyInputFetch
 - [ ] Textcomplete
 - [ ] Tokenizer
@@ -59,5 +54,4 @@
 
 - [ ] Try declarative, non-child selecting approach
 - [ ] Callbacks for all actions
-- [ ] Generic footer (for panel, card, modal, etc)
 

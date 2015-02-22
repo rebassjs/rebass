@@ -33,9 +33,10 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement("div", {className: "flex-auto p2"}, 
           this.props.children
         ), 
-        React.createElement("a", {href: "#!", 
+        React.createElement("button", {
           onClick: this.dismiss, 
-          className: "h3 button white", 
+          className: "h3", 
+          style: this.buttonStyle, 
           title: "Dismiss"}, 
             "×"
         )

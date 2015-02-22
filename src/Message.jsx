@@ -33,12 +33,13 @@ module.exports = React.createClass({
         <div className="flex-auto p2">
           {this.props.children}
         </div>
-        <a href="#!"
+        <button
           onClick={this.dismiss}
-          className="h3 button white"
+          className="h3"
+          style={this.buttonStyle}
           title="Dismiss">
             &times;
-        </a>
+        </button>
       </div>
     )
   }

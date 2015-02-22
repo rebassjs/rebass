@@ -31,7 +31,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <Section heading="Fuzzy Input">
-        <label>Country</label>
+        <label className="h5 bold">Country</label>
         <FuzzyInput
           value={this.state.country}
           onChange={this.handleCountryChange}
