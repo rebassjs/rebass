@@ -30,19 +30,23 @@ npm install --save rebass
 - [x] HslSliders
 - [x] FuzzyInput
 
-- [ ] Pagination
-- [ ] Card
-- [ ] Nav
 - [ ] Menu
 - [ ] Banner
+- [ ] PageHeader
+- [ ] Range
+- [ ] Flex Object
+- [ ] Grid
+- [ ] Pagination
 - [ ] Breadcrumbs
-- [ ] Header
+- [ ] Progress
+- [ ] Navbar Collapse
+- [ ] Collapse Trigger
+- [ ] Tabs (disclosure mechanism)
+- [ ] Card
 - [ ] Modal Trigger
-- [ ] Progress (min, max, value)
 - [ ] Tooltip
 - [ ] Popover?
 - [ ] RadioGroup
-- [ ] Range
 - [ ] VerticalRange
 - [ ] Knob (circular range)
 - [ ] DoubleRange
@@ -50,11 +54,6 @@ npm install --save rebass
 - [ ] FuzzyInputFetch
 - [ ] Textcomplete
 - [ ] Tokenizer
-- [ ] Flex Object
-- [ ] Grid
-- [ ] Navbar Collapse
-- [ ] Collapse Trigger
-- [ ] Tabs (disclosure mechanism)
 
 ---
 
