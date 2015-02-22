@@ -70,9 +70,9 @@ module.exports = {
     height: 0,
     marginLeft: 3,
     verticalAlign: 'middle',
-    borderTop: '6px solid',
-    borderRight: '6px solid transparent',
-    borderLeft: '6px solid transparent',
+    borderTop: '7px solid',
+    borderRight: '5px solid transparent',
+    borderLeft: '5px solid transparent',
   },
 
   buttonStyle: {

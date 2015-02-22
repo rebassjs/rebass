@@ -13,12 +13,6 @@ module.exports = React.createClass({displayName: "exports",
       flush: false,
       top: false,
       right: false,
-      classes: {
-        container: 'inline-block',
-        inner: '',
-        button: '',
-        menu: 'bg-white border rounded ',
-      }
     }
   },
 
@@ -45,8 +39,11 @@ module.exports = React.createClass({displayName: "exports",
       inner: {
         position: 'relative',
         zIndex: this.state.isOpen ? 1 : '',
+        borderRadius: 'inherit',
       },
-      button: {},
+      button: {
+        borderRadius: 'inherit',
+      },
       menu: {
         display: this.state.isOpen ? '' : 'none',
         position: 'absolute',
@@ -65,9 +62,14 @@ module.exports = React.createClass({displayName: "exports",
         //  backgroundColor: 'tomato', opacity: .5
       }
     };
-    var classes = this.props.classes;
-    classes.button = ' button-' + this.props.theme;
-    classes.container += this.props.flush ? '' : ' mr1';
+    var classes = {
+      container: (this.props.className ? this.props.className : '')
+        + ' inline-block rounded '
+        + (this.props.flush ? '' : 'mr1'),
+      inner: '',
+      button: 'button-' + this.props.theme,
+      menu: 'mt1 bg-white border rounded ',
+    };
 
     return (
       React.createElement("div", React.__spread({},  this.props, {className: classes.container}), 
@@ -76,6 +78,7 @@ module.exports = React.createClass({displayName: "exports",
           onClick: this.close}), 
         React.createElement("div", {className: classes.inner, style: styles.inner}, 
           React.createElement("button", {className: classes.button, 
+            style: styles.button, 
             onClick: this.toggle}, 
             this.props.label, " ", React.createElement("span", {style: this.caretStyle})
           ), 

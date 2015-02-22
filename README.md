@@ -1,57 +1,71 @@
 # Rebass
 
-(WIP)
+React UI components for use with Basscss (WIP)
+
+http://jxnbk.com/rebass
+
+## Getting Started
+
+```bash
+npm install --save rebass
+```
 
 ## Components
 
-- [ ] NavItem (inverse)
-- [x] Badge (theme)
-- [x] Message (theme)
-- [ ] Pagination (pages, currentPage)
+- [x] NavItem
+- [x] Badge
+- [x] Message
+- [x] Media Object
+- [x] Flag Object
+- [x] Panel
+- [x] Dropdown
+- [x] Group
+- [x] Modal
+- [x] Button
+- [x] RadioButton
+- [x] Navbar
+- [x] NavSpacer
+- [x] NavItem
+- [x] Icon
+- [x] HslSliders
+- [x] FuzzyInput
 
-- [x] Media Object (right)
-- [x] Flag Object (right)
-- [x] Panel (theme, title, footer)
-- [ ] Card (theme, footer)
-
-- [ ] Nav (theme, size)
-- [ ] Menu (theme)
-- [x] Dropdown (theme, top, right)
-- [ ] Banner (backgroundImage, size)
-
-- [ ] Group (vertical)
-- [ ] Breadcrumbs (paths)
-- [ ] Header (right?)
-- [x] Modal (theme, title, footer, size)
-
+- [ ] Pagination
+- [ ] Card
+- [ ] Nav
+- [ ] Menu
+- [ ] Banner
+- [ ] Breadcrumbs
+- [ ] Header
+- [ ] Modal Trigger
 - [ ] Progress (min, max, value)
 - [ ] Tooltip
 - [ ] Popover?
-- [ ] RadioButton
-
 - [ ] RadioGroup
 - [ ] Range
 - [ ] VerticalRange
 - [ ] Knob (circular range)
-
 - [ ] DoubleRange
 - [ ] NumberStepper
-- [x] FuzzyInput
 - [ ] FuzzyInputFetch
 - [ ] Textcomplete
 - [ ] Tokenizer
-
 - [ ] Flex Object
 - [ ] Grid
+- [ ] Navbar Collapse
+- [ ] Collapse Trigger
+- [ ] Tabs (disclosure mechanism)
 
+---
 
 ### Mixins
 
-- [ ] Theme
-
+- [x] Theme
 
 ### To Do
 
+- [ ] Highlightjs code example blocks
 - [ ] Try declarative, non-child selecting approach
 - [ ] Callbacks for all actions
+- [x] Icon section
 

@@ -14,11 +14,11 @@ module.exports = React.createClass({
             {this.props.name}
           </a>
         </h3>
-        <div className="px1">v{this.props.version}</div>
+        <div className="h5 bold px1">v{this.props.version}</div>
         <a href={this.props.homepage} className="button">Github</a>
         <div className="flex-auto" />
         <p className="h5 px1 m0">
-          Made by
+          <span>Made by </span>
           <a href="//jxnblk.com">Jxnblk</a>
         </p>
       </footer>

@@ -1,11 +1,12 @@
 {
   "name": "rebass",
   "version": "0.0.1",
-  "description": "React components for Basscss",
+  "description": "React UI components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
     "fuzzy": "^0.1.0",
+    "react-geomicons": "^1.0.1",
     "react-hsl-sliders": "^1.0.4"
   },
   "devDependencies": {

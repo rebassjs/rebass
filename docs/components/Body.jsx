@@ -21,6 +21,7 @@ var Panel = Rebass.Panel
 var ModalSection = require('./modal-section.jsx');
 var FuzzyInputSection = require('./fuzzy-input-section.jsx');
 var HslSlidersSection = require('./hsl-sliders-section.jsx');
+var IconSection = require('./icon-section.jsx');
 
 module.exports = React.createClass({
 
@@ -48,10 +49,22 @@ module.exports = React.createClass({
         </Section>
 
         <Section heading="Group">
-          <Group theme="blue-outline">
+          <Group theme="blue-outline" className="mr1">
             <Button>Button</Button>
             <Button theme="blue-outline">Button</Button>
             <Button theme="blue-outline">Button</Button>
+          </Group>
+          <Group className="mr1">
+            <input type="text" className="field-light" placeholder="Search" />
+            <Button>Go</Button>
+          </Group>
+          <Group theme="blue">
+            <Button>Go</Button>
+            <Dropdown label="Dropdown">
+              <a href="#!" className="button block button-nav-light">Action</a>
+              <a href="#!" className="button block button-nav-light">Action</a>
+              <a href="#!" className="button block button-nav-light">Action</a>
+            </Dropdown>
           </Group>
         </Section>
 
@@ -105,6 +118,20 @@ module.exports = React.createClass({
           <Navbar theme="dark-gray" justified={true}>
             <NavItem href="#nav-item">Justified Navbar</NavItem>
             <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </Navbar>
+          <Navbar theme="dark-gray">
+            <NavItem href="#nav-item">Navbar</NavItem>
+            <NavItem href="#nav-item">Groups</NavItem>
+            <Group theme="gray">
+              <Button>Button</Button>
+              <Button>Button</Button>
+            </Group>
+            <NavSpacer />
+            <Group>
+              <input type="text" className="field-dark" placeholder="Search" />
+              <Button theme="blue">Go</Button>
+            </Group>
             <NavItem href="#nav-item">Nav Item</NavItem>
           </Navbar>
         </Section>
@@ -162,6 +189,8 @@ module.exports = React.createClass({
         <FuzzyInputSection />
 
         <HslSlidersSection />
+
+        <IconSection />
 
       </div>
     )

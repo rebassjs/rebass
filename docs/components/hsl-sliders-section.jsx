@@ -2,7 +2,7 @@
 var React = require('react');
 var Color = require('color');
 var Section = require('./Section.jsx');
-var HslSliders = require('react-hsl-sliders');
+var HslSliders = require('../..').HslSliders;
 
 module.exports = React.createClass({
 
