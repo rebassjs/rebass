@@ -1,10 +1,10 @@
 
 var React = require('react/addons');
-var ThemeClassMixin = require('./ThemeClassMixin');
+var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({displayName: "exports",
 
-  mixins: [ThemeClassMixin],
+  mixins: [ThemeMixin],
 
   getDefaultProps: function() {
     return {
@@ -18,7 +18,7 @@ module.exports = React.createClass({displayName: "exports",
       return false;
     }
     var classes = this.getThemeClasses();
-    var headerClass = 'bold p2 ' + classes.main;
+    var headerClass = 'bold p2 ' + classes.main + (classes.border ? ' border-bottom' : '');
     return (
       React.createElement("div", {className: headerClass}, 
         header

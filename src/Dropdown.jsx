@@ -1,7 +1,10 @@
 
 var React = require('react');
+var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({
+
+  mixins: [ThemeMixin],
 
   getDefaultProps: function() {
     return {
@@ -68,12 +71,13 @@ module.exports = React.createClass({
 
     return (
       <div {...this.props} className={classes.container}>
-        <div style={styles.overlay}
+        <a href="#!"
+          style={styles.overlay}
           onClick={this.close} />
         <div className={classes.inner} style={styles.inner}>
           <button className={classes.button}
             onClick={this.toggle}>
-            {this.props.label}
+            {this.props.label} <span style={this.caretStyle} />
           </button>
           <div className={classes.menu} style={styles.menu} onClick={this.close}>
             {this.props.children}

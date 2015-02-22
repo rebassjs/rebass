@@ -1,58 +1,83 @@
 
 var React = require('react');
+var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({
+
+  mixins: [ThemeMixin],
 
   getDefaultProps: function() {
     return {
       isOpen: false,
       flush: false,
+      fullBleed: false,
+      size: 'medium',
       header: '',
-      theme: 'light-gray',
+      theme: 'white',
       onDismiss: function() {}
     }
   },
-
-  //getInitialState: function() {
-  //  return {
-  //    isOpen: this.props.isOpen,
-  //  }
-  //},
-
-  //close: function(e) {
-  //  this.setState({ isOpen: false }, this.props.onDismiss(e));
-  //},
-
 
   render: function() {
 
     var isOpen = this.props.isOpen;
     var header = this.props.header;
+    var classes = this.getThemeClasses();
+    classes.body = this.props.flush ? '' : 'p2';
+    classes.header = 'flex flex-center ' + classes.main + (classes.border ? ' border-bottom' : '');
+    classes.container = 'flex flex-center overflow-auto bg-darken-4 ' + (this.props.fullBleed ? '' : 'p2');
+    var width = 640;
+    if (this.props.size == 'big') { width = 960 }
+    else if (this.props.size == 'small') { width = 320 }
     var styles = {
       container: {
         display: isOpen ? '' : 'none',
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        zIndex: 4,
+      },
+      overlay: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
       },
       modal: {
-        width: 512,
+        position: 'relative',
+        width: this.props.fullBleed ? 'auto' : width,
           //minWidth: '16rem',
         maxWidth: '100%',
         margin: 'auto',
+        overflow: 'hidden',
         boxShadow: '0 4px 4px rgba(0,0,0,.1)',
       },
+      dismissButton: this.buttonStyle,
     };
-    var classes = {
-      body: this.props.flush ? '' : 'p2',
-    };
+    if (this.props.fullBleed) {
+      styles.modal.position = 'absolute';
+      styles.modal.top = 0;
+      styles.modal.right = 0;
+      styles.modal.bottom = 0;
+      styles.modal.left = 0;
+      styles.modal.margin = 0;
+    }
 
     return (
-      <div className="fixed top-0 right-0 bottom-0 left-0 z4 flex flex-center p2 overflow-auto bg-darken-4"
+      <div className={classes.container}
         style={styles.container}>
-        <div className="absolute top-0 right-0 bottom-0 left-0"
+        <a href="#!"
+          style={styles.overlay}
           onClick={this.props.onDismiss}/>
-        <div className="relative dark-gray bg-white rounded" style={styles.modal}>
-          <div className="flex flex-center border-bottom">
+        <div className="bg-white rounded"
+          style={styles.modal}>
+          <div className={classes.header}>
             <div className="bold p2 flex-auto">{header}</div>
-            <button className="h3 button-nav-light dark-gray"
+            <button className="h3"
+              style={styles.dismissButton}
               onClick={this.props.onDismiss}
               title="Dismiss modal overlay">
               &times;

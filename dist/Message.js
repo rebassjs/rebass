@@ -1,10 +1,10 @@
 
 var React = require('react');
-var ThemeClassMixin = require('./ThemeClassMixin');
+var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({displayName: "exports",
 
-  mixins: [ThemeClassMixin],
+  mixins: [ThemeMixin],
 
   getInitialState: function() {
     return {

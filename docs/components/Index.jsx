@@ -33,10 +33,10 @@ module.exports = React.createClass({
       <div>
         <Header {...this.props} />
         <div className="sm-flex mxn2">
-          <div className="sm-col-8 px2">
+          <div className="sm-col-8 md-col-9 px2">
             <Body ref="body" {...this.props} />
           </div>
-          <div className="sm-col-4 px2 py4">
+          <div className="sm-col-4 md-col-3 px2 py4">
             <TOC items={this.state.toc} />
           </div>
         </div>
