@@ -7,11 +7,16 @@ module.exports = React.createClass({displayName: "exports",
     return {
       inverse: false,
       flush: true,
+      compact: false,
+      justified: false,
     }
   },
 
   render: function() {
-    var linkClass = 'button-nav-' + (this.props.inverse ? 'dark' : 'light');
+    var linkClass = 'center button button-nav-'
+      + (this.props.inverse ? 'dark' : 'light')
+      + (this.props.compact ? ' button-narrow' : ' py2')
+      + (this.props.justified ? ' flex-auto' : '');
     linkClass += this.props.flush ? '' : ' mr1';
     return (
       React.createElement("a", React.__spread({},  this.props, {className: linkClass}), 

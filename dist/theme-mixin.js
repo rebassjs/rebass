@@ -44,6 +44,26 @@ module.exports = {
 
   },
 
+  isInverse: function() {
+    switch (this.props.theme) {
+      case 'white':
+      case 'light-gray':
+      case 'lighter-gray':
+      case 'yellow':
+        return false;
+        break;
+      case 'blue':
+      case 'green':
+      case 'red':
+      case 'dark-gray':
+        return true;
+        break;
+      default:
+        return false;
+        break;
+    }
+  },
+
   caretStyle: {
     display: 'inline-block',
     width: 0,

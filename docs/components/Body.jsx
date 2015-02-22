@@ -4,6 +4,11 @@ var Section = require('./section.jsx');
 
 var Rebass = require('../..');
 var Button = Rebass.Button;
+var RadioButton = Rebass.RadioButton;
+var Group = Rebass.Group;
+var NavItem = Rebass.NavItem;
+var Navbar = Rebass.Navbar;
+var NavSpacer = Rebass.NavSpacer;
 var Dropdown = Rebass.Dropdown;
 var Badge = Rebass.Badge;
 var Message = Rebass.Message;
@@ -23,6 +28,9 @@ module.exports = React.createClass({
     var style = {
       minHeight: '100vh',
     };
+    var handleRadioButton = function(val) {
+      console.log(val);
+    };
     return (
       <div style={style}>
 
@@ -32,6 +40,19 @@ module.exports = React.createClass({
           <Button theme="red">Button</Button>
           <Button theme="gray">Button</Button>
           <Button theme="blue-outline">Button</Button>
+        </Section>
+
+        <Section heading="Radio Button">
+          <RadioButton theme="blue-outline" onClick={handleRadioButton}>Radio Button</RadioButton>
+          <RadioButton theme="blue-outline" isActive={true}>Radio Button</RadioButton>
+        </Section>
+
+        <Section heading="Group">
+          <Group theme="blue-outline">
+            <Button>Button</Button>
+            <Button theme="blue-outline">Button</Button>
+            <Button theme="blue-outline">Button</Button>
+          </Group>
         </Section>
 
         <Section heading="Dropdown">
@@ -48,6 +69,45 @@ module.exports = React.createClass({
         </Section>
 
         <ModalSection />
+
+        <Section heading="Nav Item">
+          <div className="mb2 border-bottom">
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </div>
+          <div className="mb2 bg-dark-gray">
+            <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
+            <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
+            <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
+          </div>
+        </Section>
+
+        <Section heading="Navbar">
+          <Navbar>
+            <NavItem href="#nav-item">Default Navbar</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavSpacer />
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </Navbar>
+          <Navbar theme="blue">
+            <NavItem href="#nav-item">Blue Navbar</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavSpacer />
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </Navbar>
+          <Navbar theme="dark-gray" compact={true}>
+            <NavItem href="#nav-item">Compact Navbar</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavSpacer />
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </Navbar>
+          <Navbar theme="dark-gray" justified={true}>
+            <NavItem href="#nav-item">Justified Navbar</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </Navbar>
+        </Section>
 
         <Section heading="Badge">
           <Badge>Badge</Badge>

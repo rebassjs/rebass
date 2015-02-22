@@ -7,12 +7,16 @@ module.exports = React.createClass({
     return {
       theme: 'light-gray',
       flush: false,
+      isActive: false,
+      className: '',
     }
   },
 
   render: function() {
-    var buttonClass = 'button-' + this.props.theme;
+    var buttonClass = this.props.className + ' ';
+    buttonClass += 'button-' + this.props.theme;
     buttonClass += this.props.flush ? '' : ' mr1';
+    buttonClass += this.props.isActive ? ' is-active' : '';
     return (
       <button {...this.props} className={buttonClass}>
         {this.props.children}

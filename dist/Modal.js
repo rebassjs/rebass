@@ -25,7 +25,7 @@ module.exports = React.createClass({displayName: "exports",
     var classes = this.getThemeClasses();
     classes.body = this.props.flush ? '' : 'p2';
     classes.header = 'flex flex-center ' + classes.main + (classes.border ? ' border-bottom' : '');
-    classes.container = 'flex flex-center overflow-auto bg-darken-4 ' + (this.props.fullBleed ? '' : 'p2');
+    classes.container = 'flex flex-center overflow-auto bg-darken-3 ' + (this.props.fullBleed ? '' : 'p2');
     var width = 640;
     if (this.props.size == 'big') { width = 960 }
     else if (this.props.size == 'small') { width = 320 }
