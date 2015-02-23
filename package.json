@@ -17,13 +17,14 @@
     "http-server": "^0.7.4",
     "jsx-loader": "^0.12.2",
     "lodash": "^3.1.0",
+    "lodash.kebabcase": "^3.0.1",
     "node-jsx": "^0.12.4",
     "parallelshell": "^1.0.4",
     "react": "^0.12.2",
     "react-bootstrap": "^0.15.1",
     "react-tools": "^0.12.2",
     "reactify": "^1.0.0",
-    "uglify": "^0.1.1",
+    "uglify-js": "^2.4.16",
     "uglifyify": "^3.0.1",
     "watch": "^0.14.0",
     "watchify": "^2.3.0"
@@ -36,8 +37,8 @@
     "Basscss"
   ],
   "scripts": {
-    "watchify": "NODE_ENV=development watchify docs/app.js -o docs/js/app.min.js",
-    "uglify": "NODE_ENV=development uglify docs/js/app.js -o docs/js/app.min.js",
+    "watchify": "NODE_ENV=production watchify docs/app.js -o docs/js/app.js",
+    "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
     "watch:uglify": "watch 'npm run uglify' ./docs/js",
     "build:js": "browserify docs/app.js -o docs/js/app.js",
     "build:html": "node docs/build",
@@ -45,11 +46,12 @@
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
     "serve": "http-server -p 8000 -s",
-    "start": "parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:html' 'npm run serve'"
+    "start": "parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run serve'"
   },
   "browserify": {
     "transform": [
       "reactify",
+      "envify",
       "uglifyify"
     ]
   },

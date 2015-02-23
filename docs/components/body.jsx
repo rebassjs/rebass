@@ -19,7 +19,8 @@ var Panel = Rebass.Panel
 //var Modal = Rebass.Modal;
 
 var ModalSection = require('./modal-section.jsx');
-var FuzzyInputSection = require('./fuzzy-input-section.jsx');
+
+//  var FuzzyInputSection = require('./fuzzy-input-section.jsx');
 var HslSlidersSection = require('./hsl-sliders-section.jsx');
 var IconSection = require('./icon-section.jsx');
 
@@ -40,7 +41,7 @@ module.exports = React.createClass({
           <Button theme="blue">Button</Button>
           <Button theme="red">Button</Button>
           <Button theme="gray">Button</Button>
-          <Button theme="blue-outline">Button</Button>
+          <Button theme="green">Button</Button>
         </Section>
 
         <Section heading="Radio Button">
@@ -49,10 +50,10 @@ module.exports = React.createClass({
         </Section>
 
         <Section heading="Group">
-          <Group theme="blue-outline" className="mr1">
+          <Group theme="orange" className="mr1">
             <Button>Button</Button>
-            <Button theme="blue-outline">Button</Button>
-            <Button theme="blue-outline">Button</Button>
+            <Button theme="orange">Button</Button>
+            <Button theme="orange">Button</Button>
           </Group>
           <Group className="mr1">
             <input type="text" className="field-light" placeholder="Search" />
@@ -60,7 +61,8 @@ module.exports = React.createClass({
           </Group>
           <Group theme="blue">
             <Button>Go</Button>
-            <Dropdown label="Dropdown">
+            <Dropdown label="Dropdown" right={true}>
+              <NavItem href="#!">Action</NavItem>
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
@@ -74,7 +76,7 @@ module.exports = React.createClass({
             <a href="#!" className="button block button-nav-light">Action</a>
             <a href="#!" className="button block button-nav-light">Action</a>
           </Dropdown>
-          <Dropdown label="Another Dropdown" theme="blue">
+          <Dropdown label="Right" theme="blue" right={true}>
             <a href="#!" className="button block button-nav-light">Action</a>
             <a href="#!" className="button block button-nav-light">Action</a>
             <a href="#!" className="button block button-nav-light">Action</a>
@@ -186,7 +188,8 @@ module.exports = React.createClass({
           </Panel>
         </Section>
 
-        <FuzzyInputSection />
+        {/* <FuzzyInputSection />
+        */}
 
         <HslSlidersSection />
 

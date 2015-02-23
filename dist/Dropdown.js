@@ -1,6 +1,7 @@
 
 var React = require('react');
 var ThemeMixin = require('./theme-mixin');
+var Button = require('./button');
 
 module.exports = React.createClass({displayName: "exports",
 
@@ -67,7 +68,7 @@ module.exports = React.createClass({displayName: "exports",
         + ' inline-block rounded '
         + (this.props.flush ? '' : 'mr1'),
       inner: '',
-      button: 'button-' + this.props.theme,
+      //button: 'button-' + this.props.theme,
       menu: 'mt1 bg-white border rounded ',
     };
 
@@ -77,7 +78,8 @@ module.exports = React.createClass({displayName: "exports",
           style: styles.overlay, 
           onClick: this.close}), 
         React.createElement("div", {className: classes.inner, style: styles.inner}, 
-          React.createElement("button", {className: classes.button, 
+          React.createElement(Button, {theme: this.props.theme, 
+            flush: true, 
             style: styles.button, 
             onClick: this.toggle}, 
             this.props.label, " ", React.createElement("span", {style: this.caretStyle})

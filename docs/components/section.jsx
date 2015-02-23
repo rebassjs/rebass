@@ -1,6 +1,6 @@
 
 var React = require('react');
-var _ = require('lodash');
+var kebabCase = require('lodash.kebabcase');
 
 module.exports = React.createClass({
 
@@ -11,7 +11,7 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var name = _.kebabCase(this.props.heading);
+    var name = kebabCase(this.props.heading);
     var sectionLink = '#' + name;
     return (
       <section ref={name}

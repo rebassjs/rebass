@@ -1,7 +1,10 @@
 
 var React = require('react');
+var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({
+
+  mixins: [ThemeMixin],
 
   getDefaultProps: function() {
     return {
@@ -13,8 +16,8 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var buttonClass = this.props.className + ' ';
-    buttonClass += 'button-' + this.props.theme;
+    var buttonClass = this.props.className + ' button ';
+    buttonClass += this.getThemeClasses().main;
     buttonClass += this.props.flush ? '' : ' mr1';
     buttonClass += this.props.isActive ? ' is-active' : '';
     return (

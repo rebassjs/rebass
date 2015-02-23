@@ -12,15 +12,19 @@ module.exports = {
 
     switch (theme) {
       case 'white':
-        classes.main = 'bg-white';
+        classes.main = 'black bg-white';
         classes.border = true;
         break;
-      case 'light-gray':
-        classes.main = 'bg-light-gray';
+      case 'silver':
+        classes.main = 'black bg-silver';
+        classes.border = true;
+        break;
+      case 'gray':
+        classes.main = 'white bg-gray';
         classes.border = true;
         break;
       case 'yellow':
-        classes.main = 'bg-yellow';
+        classes.main = 'black bg-yellow';
         break;
       case 'blue':
         classes.main = 'white bg-blue';
@@ -31,11 +35,11 @@ module.exports = {
       case 'red':
         classes.main = 'white bg-red';
         break;
-      case 'dark-gray':
-        classes.main = 'white bg-dark-gray';
+      case 'black':
+        classes.main = 'white bg-black';
         break;
       default:
-        classes.main = 'bg-lighter-gray';
+        classes.main = 'black bg-silver';
         classes.border = true;
         break;
     }

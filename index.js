@@ -13,7 +13,7 @@ module.exports = {
   Media: require('./dist/media'),
   Message: require('./dist/message'),
   Panel: require('./dist/panel'),
-  FuzzyInput: require('./dist/fuzzy-input'),
+  //FuzzyInput: require('./dist/fuzzy-input'),
   HslSliders: require('react-hsl-sliders'),
   Icon: require('react-geomicons'),
 };
