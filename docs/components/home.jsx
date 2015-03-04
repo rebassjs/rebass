@@ -34,21 +34,19 @@ module.exports = React.createClass({
       console.log(val);
     };
     return (
-      <div style={style}>
+      <div style={style} className="container px2">
 
         <Section heading="Button">
           <Button>Button</Button>
           <Button theme="gray">Button</Button>
           <Button theme="blue">Button</Button>
           <Button theme="green">Button</Button>
-          <Button theme="orange">Button</Button>
           <Button theme="red">Button</Button>
-          <Button theme="purple">Button</Button>
         </Section>
 
         <Section heading="Radio Button">
-          <RadioButton outline={true} onClick={handleRadioButton}>Radio Button</RadioButton>
-          <RadioButton outline={true} isActive={true}>Radio Button</RadioButton>
+          <RadioButton theme="blue" outline={true} onClick={handleRadioButton}>Radio Button</RadioButton>
+          <RadioButton theme="blue" outline={true} isActive={true}>Radio Button</RadioButton>
         </Section>
 
         <Section heading="Group">

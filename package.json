@@ -5,6 +5,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^1.1.4",
     "fuzzy": "^0.1.0",
     "react-geomicons": "^1.0.1",
     "react-hsl-sliders": "^1.0.4"
@@ -21,9 +22,13 @@
     "node-jsx": "^0.12.4",
     "parallelshell": "^1.0.4",
     "react": "^0.12.2",
+    "react-async": "^2.0.1",
     "react-bootstrap": "^0.15.1",
+    "react-html": "0.0.2",
+    "react-router-component": "^0.24.1",
     "react-tools": "^0.12.2",
     "reactify": "^1.0.0",
+    "static-react": "0.0.1",
     "uglify-js": "^2.4.16",
     "uglifyify": "^3.0.1",
     "watch": "^0.14.0",
@@ -37,7 +42,7 @@
     "Basscss"
   ],
   "scripts": {
-    "watchify": "NODE_ENV=production watchify docs/app.js -o docs/js/app.js",
+    "watchify": "watchify docs/app.js -o docs/js/app.js",
     "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
     "watch:uglify": "watch 'npm run uglify' ./docs/js",
     "build:js": "browserify docs/app.js -o docs/js/app.js",
@@ -46,13 +51,12 @@
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
     "serve": "http-server -p 8000 -s",
-    "start": "parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run serve'"
+    "deploy": "export NODE_ENV=production && npm run jsx && npm run build:html && npm run build:js",
+    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run serve'"
   },
   "browserify": {
     "transform": [
-      "reactify",
-      "envify",
-      "uglifyify"
+      "reactify"
     ]
   },
   "main": "index.js",

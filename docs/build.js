@@ -1,17 +1,13 @@
 // Static site build task
 
-var fs = require('fs');
 var path = require('path');
-var _ = require('lodash');
-var React = require('react');
-require('node-jsx').install();
-
-var template = _.template(fs.readFileSync(path.join(__dirname, './layouts/default.html'), 'utf8'));
-var Index = React.createFactory(require('./components/Index.jsx'));
-
+var staticReact = require('static-react');
+var Root = require('./components/root.jsx');
 var data = require('./data');
 
-data.app = React.renderToString(Index(data));
-var html = template(data);
-fs.writeFileSync(path.join(__dirname, '../index.html'), html);
+staticReact({
+  dir: path.join(__dirname, '..'),
+  Root: Root,
+  props: data
+});
 

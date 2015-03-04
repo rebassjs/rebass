@@ -1,5 +1,6 @@
 
 var React = require('react');
+var classnames = require('classnames');
 var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({
@@ -8,18 +9,27 @@ module.exports = React.createClass({
 
   getDefaultProps: function() {
     return {
-      theme: 'light-gray',
+      theme: 'silver',
       flush: false,
       isActive: false,
       className: '',
+      outline: false,
+      transparent: false,
     }
   },
 
   render: function() {
-    var buttonClass = this.props.className + ' button ';
-    buttonClass += this.getThemeClasses().main;
-    buttonClass += this.props.flush ? '' : ' mr1';
-    buttonClass += this.props.isActive ? ' is-active' : '';
+    var themeClasses = this.getThemeClasses();
+    var activeClass = (this.props.outline || this.props.transparent) ? themeClasses.main : 'is-active';
+    var buttonClass =
+      classnames(
+        this.props.className,
+        (!this.props.isActive && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
+        'button',
+        { mr1: this.props.flush },
+        this.props.isActive ? activeClass : false,
+        { 'button-outline': this.props.outline },
+        { 'button-transparent': this.props.transparent });
     return (
       <button {...this.props} className={buttonClass}>
         {this.props.children}

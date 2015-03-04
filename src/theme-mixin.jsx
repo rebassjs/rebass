@@ -3,7 +3,7 @@
 
 module.exports = {
 
-  getThemeClasses: function() {
+  getThemeClasses: function(options) {
 
     var theme = this.props.theme;
     var classes = {};
