@@ -26,7 +26,7 @@ module.exports = React.createClass({displayName: "exports",
         this.props.className,
         (!this.props.isActive && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
         'button',
-        { mr1: this.props.flush },
+        { mr1: !this.props.flush },
         this.props.isActive ? activeClass : false,
         { 'button-outline': this.props.outline },
         { 'button-transparent': this.props.transparent });

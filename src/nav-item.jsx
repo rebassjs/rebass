@@ -1,5 +1,6 @@
 
 var React = require('react');
+var classnames = require('classnames');
 
 module.exports = React.createClass({
 
@@ -13,11 +14,14 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var linkClass = 'center button button-nav-'
-      + (this.props.inverse ? 'dark' : 'light')
-      + (this.props.compact ? ' button-narrow' : ' py2')
-      + (this.props.justified ? ' flex-auto' : '');
-    linkClass += this.props.flush ? '' : ' mr1';
+    var linkClass = 
+      classnames(
+        'center', 'button', 'button-transparent',
+        { white: this.props.inverse },
+        { 'button-narrow': this.props.compact },
+        { py2: !this.props.compact },
+        { 'flex-auto': this.props.justified },
+        { mr1: !this.props.flush });
     return (
       <a {...this.props} className={linkClass}>
         {this.props.children}

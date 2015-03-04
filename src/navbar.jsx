@@ -1,5 +1,6 @@
 
 var React = require('react/addons');
+var classnames = require('classnames');
 var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({
@@ -9,7 +10,7 @@ module.exports = React.createClass({
   getDefaultProps: function() {
     return {
       inverse: false,
-      theme: 'lighter-gray',
+      theme: 'silver',
       compact: false,
       wrap: true,
       justified: false,
@@ -28,8 +29,12 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var classes = this.getThemeClasses();
-    var navbarClass = 'flex flex-center ' + (this.props.wrap ? 'flex-wrap ' : '') + 'mb2 ' + classes.main;
+    var themeClasses = this.getThemeClasses();
+    var navbarClass =
+      classnames(
+        'flex', 'flex-center', 'mb2',
+        { 'flex-wrap': this.props.wrap },
+        themeClasses.main);
     return (
       <div {...this.props} className={navbarClass}>
         {React.Children.map(this.props.children, this.renderChild)}

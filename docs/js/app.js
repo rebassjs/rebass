@@ -56,7 +56,7 @@ module.exports = React.createClass({displayName: "exports",
         this.props.className,
         (!this.props.isActive && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
         'button',
-        { mr1: this.props.flush },
+        { mr1: !this.props.flush },
         this.props.isActive ? activeClass : false,
         { 'button-outline': this.props.outline },
         { 'button-transparent': this.props.transparent });
@@ -214,6 +214,7 @@ module.exports = React.createClass({displayName: "exports",
 },{"react/addons":"/Users/bjackson/repos/rebass/node_modules/react/addons.js"}],"/Users/bjackson/repos/rebass/dist/group.js":[function(require,module,exports){
 
 var React = require('react/addons');
+var classnames = require('classnames');
 var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({displayName: "exports",
@@ -230,31 +231,25 @@ module.exports = React.createClass({displayName: "exports",
 
   //formatChildren: React.Children.map(children, function(child, i) {
   renderChild: function(child, i) {
-    var borderClass;
-    if (i == 0) {
-      borderClass = 'rounded-left';
-    } else if (i == (this.props.children.length - 1)) {
-      borderClass = 'rounded-right';
-    } else {
-      borderClass = 'not-rounded';
-    }
+    var borderClass =
+      classnames(
+        { 'rounded-left': (i == 0) },
+        { 'rounded-right': (i == this.props.children.length - 1) },
+        { 'not-rounded': (i > 0 && i < this.props.children.length - 1) });
     var props = {
       theme: this.props.theme ? this.props.theme : child.props.theme,
       justified: this.props.justified,
       flush: true,
-      className: child.props.className += ' ' + borderClass + ' x-group-item',
+      className: classnames(child.props.className, borderClass, 'x-group-item'),
       style: child.props.style || {},
     };
     props.style.marginBottom = 0;
-    //if (i > 0) {
-    //  props.style.marginLeft = -1;
-    //}
     var newChild = React.addons.cloneWithProps(child, props);
     return newChild;
   },
 
   render: function() {
-    var groupClass = this.props.className + ' inline-block rounded';
+    var groupClass = classnames(this.props.className, 'inline-block', 'rounded');
     return (
       React.createElement("div", React.__spread({},  this.props, {className: groupClass}), 
         React.Children.map(this.props.children, this.renderChild)
@@ -266,7 +261,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./theme-mixin":"/Users/bjackson/repos/rebass/dist/theme-mixin.js","react/addons":"/Users/bjackson/repos/rebass/node_modules/react/addons.js"}],"/Users/bjackson/repos/rebass/dist/media.js":[function(require,module,exports){
+},{"./theme-mixin":"/Users/bjackson/repos/rebass/dist/theme-mixin.js","classnames":"/Users/bjackson/repos/rebass/node_modules/classnames/index.js","react/addons":"/Users/bjackson/repos/rebass/node_modules/react/addons.js"}],"/Users/bjackson/repos/rebass/dist/media.js":[function(require,module,exports){
 
 var React = require('react/addons');
 
@@ -459,6 +454,7 @@ module.exports = React.createClass({displayName: "exports",
 },{"./theme-mixin":"/Users/bjackson/repos/rebass/dist/theme-mixin.js","react":"/Users/bjackson/repos/rebass/node_modules/react/react.js"}],"/Users/bjackson/repos/rebass/dist/nav-item.js":[function(require,module,exports){
 
 var React = require('react');
+var classnames = require('classnames');
 
 module.exports = React.createClass({displayName: "exports",
 
@@ -472,11 +468,14 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   render: function() {
-    var linkClass = 'center button button-nav-'
-      + (this.props.inverse ? 'dark' : 'light')
-      + (this.props.compact ? ' button-narrow' : ' py2')
-      + (this.props.justified ? ' flex-auto' : '');
-    linkClass += this.props.flush ? '' : ' mr1';
+    var linkClass = 
+      classnames(
+        'center', 'button', 'button-transparent',
+        { white: this.props.inverse },
+        { 'button-narrow': this.props.compact },
+        { py2: !this.props.compact },
+        { 'flex-auto': this.props.justified },
+        { mr1: !this.props.flush });
     return (
       React.createElement("a", React.__spread({},  this.props, {className: linkClass}), 
         this.props.children
@@ -488,7 +487,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"react":"/Users/bjackson/repos/rebass/node_modules/react/react.js"}],"/Users/bjackson/repos/rebass/dist/nav-spacer.js":[function(require,module,exports){
+},{"classnames":"/Users/bjackson/repos/rebass/node_modules/classnames/index.js","react":"/Users/bjackson/repos/rebass/node_modules/react/react.js"}],"/Users/bjackson/repos/rebass/dist/nav-spacer.js":[function(require,module,exports){
 
 var React = require('react');
 
@@ -507,6 +506,7 @@ module.exports = React.createClass({displayName: "exports",
 },{"react":"/Users/bjackson/repos/rebass/node_modules/react/react.js"}],"/Users/bjackson/repos/rebass/dist/navbar.js":[function(require,module,exports){
 
 var React = require('react/addons');
+var classnames = require('classnames');
 var ThemeMixin = require('./theme-mixin');
 
 module.exports = React.createClass({displayName: "exports",
@@ -516,7 +516,7 @@ module.exports = React.createClass({displayName: "exports",
   getDefaultProps: function() {
     return {
       inverse: false,
-      theme: 'lighter-gray',
+      theme: 'silver',
       compact: false,
       wrap: true,
       justified: false,
@@ -535,8 +535,12 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   render: function() {
-    var classes = this.getThemeClasses();
-    var navbarClass = 'flex flex-center ' + (this.props.wrap ? 'flex-wrap ' : '') + 'mb2 ' + classes.main;
+    var themeClasses = this.getThemeClasses();
+    var navbarClass =
+      classnames(
+        'flex', 'flex-center', 'mb2',
+        { 'flex-wrap': this.props.wrap },
+        themeClasses.main);
     return (
       React.createElement("div", React.__spread({},  this.props, {className: navbarClass}), 
         React.Children.map(this.props.children, this.renderChild)
@@ -548,7 +552,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./theme-mixin":"/Users/bjackson/repos/rebass/dist/theme-mixin.js","react/addons":"/Users/bjackson/repos/rebass/node_modules/react/addons.js"}],"/Users/bjackson/repos/rebass/dist/panel.js":[function(require,module,exports){
+},{"./theme-mixin":"/Users/bjackson/repos/rebass/dist/theme-mixin.js","classnames":"/Users/bjackson/repos/rebass/node_modules/classnames/index.js","react/addons":"/Users/bjackson/repos/rebass/node_modules/react/addons.js"}],"/Users/bjackson/repos/rebass/dist/panel.js":[function(require,module,exports){
 
 var React = require('react/addons');
 var ThemeMixin = require('./theme-mixin');
@@ -716,15 +720,15 @@ module.exports = {
   isInverse: function() {
     switch (this.props.theme) {
       case 'white':
-      case 'light-gray':
-      case 'lighter-gray':
+      case 'silver':
       case 'yellow':
         return false;
         break;
       case 'blue':
       case 'green':
       case 'red':
-      case 'dark-gray':
+      case 'gray':
+      case 'black':
         return true;
         break;
       default:
@@ -951,7 +955,7 @@ module.exports = React.createClass({displayName: "exports",
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
           ), 
-          React.createElement("div", {className: "mb2 bg-dark-gray"}, 
+          React.createElement("div", {className: "mb2 bg-black"}, 
             React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
             React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
             React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item")
@@ -971,18 +975,18 @@ module.exports = React.createClass({displayName: "exports",
             React.createElement(NavSpacer, null), 
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
           ), 
-          React.createElement(Navbar, {theme: "dark-gray", compact: true}, 
+          React.createElement(Navbar, {theme: "black", compact: true}, 
             React.createElement(NavItem, {href: "#nav-item"}, "Compact Navbar"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
             React.createElement(NavSpacer, null), 
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
           ), 
-          React.createElement(Navbar, {theme: "dark-gray", justified: true}, 
+          React.createElement(Navbar, {theme: "black", justified: true}, 
             React.createElement(NavItem, {href: "#nav-item"}, "Justified Navbar"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
           ), 
-          React.createElement(Navbar, {theme: "dark-gray"}, 
+          React.createElement(Navbar, {theme: "black"}, 
             React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
             React.createElement(Group, {theme: "gray"}, 
@@ -1004,7 +1008,7 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement(Badge, {theme: "yellow"}, "Badge"), 
           React.createElement(Badge, {theme: "green"}, "Badge"), 
           React.createElement(Badge, {theme: "blue"}, "Badge"), 
-          React.createElement(Badge, {theme: "dark-gray"}, "Badge")
+          React.createElement(Badge, {theme: "black"}, "Badge")
         ), 
 
         React.createElement(Section, {heading: "Message"}, 
@@ -1013,7 +1017,7 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement(Message, {theme: "yellow"}, "Message"), 
           React.createElement(Message, {theme: "green"}, "Message"), 
           React.createElement(Message, {theme: "blue"}, "Message"), 
-          React.createElement(Message, {theme: "dark-gray"}, "Message")
+          React.createElement(Message, {theme: "black"}, "Message")
         ), 
 
         React.createElement(Section, {heading: "Media Object"}, 
@@ -1254,8 +1258,7 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement(Locations, {path: this.props.path}, 
           React.createElement(Location, {path: "/", handler: Home})
         ), 
-        React.createElement(Footer, React.__spread({},  this.props)), 
-        React.createElement("div", null, React.createElement("code", null, "root"))
+        React.createElement(Footer, React.__spread({},  this.props))
       )
     )
   }
@@ -2791,7 +2794,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/bjackson/repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/bjackson/repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports={
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],

@@ -91,7 +91,7 @@ module.exports = React.createClass({
             <NavItem href="#nav-item">Nav Item</NavItem>
             <NavItem href="#nav-item">Nav Item</NavItem>
           </div>
-          <div className="mb2 bg-dark-gray">
+          <div className="mb2 bg-black">
             <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
             <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
             <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
@@ -111,18 +111,18 @@ module.exports = React.createClass({
             <NavSpacer />
             <NavItem href="#nav-item">Nav Item</NavItem>
           </Navbar>
-          <Navbar theme="dark-gray" compact={true}>
+          <Navbar theme="black" compact={true}>
             <NavItem href="#nav-item">Compact Navbar</NavItem>
             <NavItem href="#nav-item">Nav Item</NavItem>
             <NavSpacer />
             <NavItem href="#nav-item">Nav Item</NavItem>
           </Navbar>
-          <Navbar theme="dark-gray" justified={true}>
+          <Navbar theme="black" justified={true}>
             <NavItem href="#nav-item">Justified Navbar</NavItem>
             <NavItem href="#nav-item">Nav Item</NavItem>
             <NavItem href="#nav-item">Nav Item</NavItem>
           </Navbar>
-          <Navbar theme="dark-gray">
+          <Navbar theme="black">
             <NavItem href="#nav-item">Navbar</NavItem>
             <NavItem href="#nav-item">Groups</NavItem>
             <Group theme="gray">
@@ -144,7 +144,7 @@ module.exports = React.createClass({
           <Badge theme="yellow">Badge</Badge>
           <Badge theme="green">Badge</Badge>
           <Badge theme="blue">Badge</Badge>
-          <Badge theme="dark-gray">Badge</Badge>
+          <Badge theme="black">Badge</Badge>
         </Section>
 
         <Section heading="Message">
@@ -153,7 +153,7 @@ module.exports = React.createClass({
           <Message theme="yellow">Message</Message>
           <Message theme="green">Message</Message>
           <Message theme="blue">Message</Message>
-          <Message theme="dark-gray">Message</Message>
+          <Message theme="black">Message</Message>
         </Section>
 
         <Section heading="Media Object">

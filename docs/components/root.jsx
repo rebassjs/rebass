@@ -21,7 +21,6 @@ module.exports = React.createClass({
           <Location path="/" handler={Home} />
         </Locations>
         <Footer {...this.props} />
-        <div><code>root</code></div>
       </Html>
     )
   }

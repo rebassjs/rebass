@@ -51,15 +51,15 @@ module.exports = {
   isInverse: function() {
     switch (this.props.theme) {
       case 'white':
-      case 'light-gray':
-      case 'lighter-gray':
+      case 'silver':
       case 'yellow':
         return false;
         break;
       case 'blue':
       case 'green':
       case 'red':
-      case 'dark-gray':
+      case 'gray':
+      case 'black':
         return true;
         break;
       default:
