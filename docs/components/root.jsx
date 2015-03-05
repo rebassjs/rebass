@@ -14,8 +14,10 @@ var Home = require('./home.jsx');
 
 module.exports = React.createClass({
   render: function() {
+    var script = this.props.baseUrl + this.props.script;
+    //var path = this.props.baseUrl + this.props.path;
     return (
-      <Html {...this.props}>
+      <Html {...this.props} script={script}>
         <Header {...this.props} />
         <Locations path={this.props.path}>
           <Location path="/" handler={Home} />

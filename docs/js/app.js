@@ -1279,8 +1279,10 @@ var Home = require('./home.jsx');
 
 module.exports = React.createClass({displayName: "exports",
   render: function() {
+    var script = this.props.baseUrl + this.props.script;
+    //var path = this.props.baseUrl + this.props.path;
     return (
-      React.createElement(Html, React.__spread({},  this.props), 
+      React.createElement(Html, React.__spread({},  this.props, {script: script}), 
         React.createElement(Header, React.__spread({},  this.props)), 
         React.createElement(Locations, {path: this.props.path}, 
           React.createElement(Location, {path: "/", handler: Home})
