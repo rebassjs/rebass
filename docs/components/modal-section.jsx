@@ -10,11 +10,29 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       isOpen: false,
+      size: 'medium',
+      fullBleed: false,
     }
   },
 
   open: function() {
     this.setState({ isOpen: true });
+  },
+
+  openRegularModal: function() {
+    this.setState({ isOpen: true, size: 'medium', fullBleed: false });
+  },
+
+  openBigModal: function() {
+    this.setState({ isOpen: true, size: 'big', fullBleed: false });
+  },
+
+  openSmallModal: function() {
+    this.setState({ isOpen: true, size: 'small', fullBleed: false });
+  },
+
+  openFullModal: function() {
+    this.setState({ isOpen: true, size: 'medium', fullBleed: true });
   },
 
   close: function() {
@@ -25,8 +43,13 @@ module.exports = React.createClass({
   render: function() {
     return (
       <Section heading="Modal">
-        <Button theme="blue" onClick={this.open}>Open Modal</Button>
+        <Button theme="blue" onClick={this.openRegularModal}>Open Modal</Button>
+        <Button theme="blue" onClick={this.openBigModal}>Open Big Modal</Button>
+        <Button theme="blue" onClick={this.openSmallModal}>Open Small Modal</Button>
+        <Button theme="blue" onClick={this.openFullModal}>Open Full-Bleed Modal</Button>
         <Modal header="Modal header"
+          size={this.state.size}
+          fullBleed={this.state.fullBleed}
           isOpen={this.state.isOpen}
           onDismiss={this.close}>
           <h1>Modal body</h1>

@@ -18,7 +18,7 @@ module.exports = React.createClass({displayName: "exports",
       return false;
     }
     var classes = this.getThemeClasses();
-    var headerClass = 'bold p2 ' + classes.main + (classes.border ? ' border-bottom' : '');
+    var headerClass = 'bold p2 ' + classes.main;
     return (
       React.createElement("div", {className: headerClass}, 
         header

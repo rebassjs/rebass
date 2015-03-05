@@ -29,6 +29,7 @@ module.exports = React.createClass({
     var width = 640;
     if (this.props.size == 'big') { width = 960 }
     else if (this.props.size == 'small') { width = 320 }
+
     var styles = {
       container: {
         display: isOpen ? '' : 'none',
@@ -57,6 +58,7 @@ module.exports = React.createClass({
       },
       dismissButton: this.buttonStyle,
     };
+
     if (this.props.fullBleed) {
       styles.modal.position = 'absolute';
       styles.modal.top = 0;

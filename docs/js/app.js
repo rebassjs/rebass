@@ -384,6 +384,7 @@ module.exports = React.createClass({displayName: "exports",
     var width = 640;
     if (this.props.size == 'big') { width = 960 }
     else if (this.props.size == 'small') { width = 320 }
+
     var styles = {
       container: {
         display: isOpen ? '' : 'none',
@@ -412,6 +413,7 @@ module.exports = React.createClass({displayName: "exports",
       },
       dismissButton: this.buttonStyle,
     };
+
     if (this.props.fullBleed) {
       styles.modal.position = 'absolute';
       styles.modal.top = 0;
@@ -573,7 +575,7 @@ module.exports = React.createClass({displayName: "exports",
       return false;
     }
     var classes = this.getThemeClasses();
-    var headerClass = 'bold p2 ' + classes.main + (classes.border ? ' border-bottom' : '');
+    var headerClass = 'bold p2 ' + classes.main;
     return (
       React.createElement("div", {className: headerClass}, 
         header
@@ -989,7 +991,7 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement(Navbar, {theme: "black"}, 
             React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
-            React.createElement(Group, {theme: "gray"}, 
+            React.createElement(Group, {theme: "blue"}, 
               React.createElement(Button, null, "Button"), 
               React.createElement(Button, null, "Button")
             ), 
@@ -1203,11 +1205,29 @@ module.exports = React.createClass({displayName: "exports",
   getInitialState: function() {
     return {
       isOpen: false,
+      size: 'medium',
+      fullBleed: false,
     }
   },
 
   open: function() {
     this.setState({ isOpen: true });
+  },
+
+  openRegularModal: function() {
+    this.setState({ isOpen: true, size: 'medium', fullBleed: false });
+  },
+
+  openBigModal: function() {
+    this.setState({ isOpen: true, size: 'big', fullBleed: false });
+  },
+
+  openSmallModal: function() {
+    this.setState({ isOpen: true, size: 'small', fullBleed: false });
+  },
+
+  openFullModal: function() {
+    this.setState({ isOpen: true, size: 'medium', fullBleed: true });
   },
 
   close: function() {
@@ -1218,8 +1238,13 @@ module.exports = React.createClass({displayName: "exports",
   render: function() {
     return (
       React.createElement(Section, {heading: "Modal"}, 
-        React.createElement(Button, {theme: "blue", onClick: this.open}, "Open Modal"), 
+        React.createElement(Button, {theme: "blue", onClick: this.openRegularModal}, "Open Modal"), 
+        React.createElement(Button, {theme: "blue", onClick: this.openBigModal}, "Open Big Modal"), 
+        React.createElement(Button, {theme: "blue", onClick: this.openSmallModal}, "Open Small Modal"), 
+        React.createElement(Button, {theme: "blue", onClick: this.openFullModal}, "Open Full-Bleed Modal"), 
         React.createElement(Modal, {header: "Modal header", 
+          size: this.state.size, 
+          fullBleed: this.state.fullBleed, 
           isOpen: this.state.isOpen, 
           onDismiss: this.close}, 
           React.createElement("h1", null, "Modal body"), 
@@ -2794,7 +2819,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/bjackson/repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/bjackson/repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],
@@ -3559,7 +3584,6 @@ var Head = React.createClass({displayName: "Head",
 module.exports = React.createClass({displayName: "exports",
 
   renderScript: function() {
-    console.log('html props', this.props.script);
     if (!this.props.script) { return false; }
     return (React.createElement("script", {src: this.props.script}));
   },
