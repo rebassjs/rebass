@@ -238,6 +238,8 @@ module.exports = React.createClass({displayName: "exports",
         { 'not-rounded': (i > 0 && i < this.props.children.length - 1) });
     var props = {
       theme: this.props.theme ? this.props.theme : child.props.theme,
+      outline: this.props.outline || child.props.outline,
+      transparent: this.props.transparent || child.props.transparent,
       justified: this.props.justified,
       flush: true,
       className: classnames(child.props.className, borderClass, 'x-group-item'),
@@ -991,7 +993,7 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement(Navbar, {theme: "black"}, 
             React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
             React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
-            React.createElement(Group, {theme: "blue"}, 
+            React.createElement(Group, {theme: "white", outline: true}, 
               React.createElement(Button, null, "Button"), 
               React.createElement(Button, null, "Button")
             ), 
@@ -2819,7 +2821,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports={
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],

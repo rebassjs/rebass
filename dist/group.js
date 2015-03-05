@@ -24,6 +24,8 @@ module.exports = React.createClass({displayName: "exports",
         { 'not-rounded': (i > 0 && i < this.props.children.length - 1) });
     var props = {
       theme: this.props.theme ? this.props.theme : child.props.theme,
+      outline: this.props.outline || child.props.outline,
+      transparent: this.props.transparent || child.props.transparent,
       justified: this.props.justified,
       flush: true,
       className: classnames(child.props.className, borderClass, 'x-group-item'),

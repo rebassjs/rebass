@@ -125,7 +125,7 @@ module.exports = React.createClass({
           <Navbar theme="black">
             <NavItem href="#nav-item">Navbar</NavItem>
             <NavItem href="#nav-item">Groups</NavItem>
-            <Group theme="blue">
+            <Group theme="white" outline={true}>
               <Button>Button</Button>
               <Button>Button</Button>
             </Group>
