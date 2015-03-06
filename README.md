@@ -12,41 +12,36 @@ npm install --save rebass
 
 ## Components
 
+### UI Components
 - [x] NavItem
 - [x] Badge
 - [x] Message
-- [x] Media Object
-- [x] Flag Object
-- [x] Panel
-- [x] Dropdown
+- [x] Dropdown - use summary/details elements
 - [x] Group
-- [x] Modal
-- [x] Button
-- [x] RadioButton
+- [x] Modal - Use dialog element
 - [x] Navbar
 - [x] NavSpacer
 - [x] NavItem
 - [x] Icon
-- [x] HslSliders
-- [x] FuzzyInput
-
 - [ ] Menu
-- [ ] Banner
-- [ ] PageHeader
-- [ ] Range
-- [ ] Flex Object
-- [ ] Grid
 - [ ] Pagination
 - [ ] Breadcrumbs
 - [ ] Progress
 - [ ] Navbar Collapse
 - [ ] Collapse Trigger
 - [ ] Tabs (disclosure mechanism)
-- [ ] Card
 - [ ] Modal Trigger
 - [ ] Tooltip
 - [ ] Popover?
-- [ ] RadioGroup
+
+### Form Components
+- [x] Button
+- [x] RadioButton
+- [x] HslSliders
+- [x] FuzzyInput
+  - [ ] Test other react components or https://github.com/LeaVerou/awesomplete
+- [ ] Range
+- [ ] RadioGroup - Group with state
 - [ ] VerticalRange
 - [ ] Knob (circular range)
 - [ ] DoubleRange
@@ -55,13 +50,30 @@ npm install --save rebass
 - [ ] Textcomplete
 - [ ] Tokenizer
 
+### Content Layout
+- [x] Panel
+- [x] Media Object
+- [x] Flag Object
+- [ ] Card
+- [ ] Banner
+- [ ] PageHeader
+- [ ] Flex Object
+- [ ] Grid
+
+### Page Layouts
+- [x] Html
+  - [ ] Allow for stylesheet and scripts arrays
+  - [ ] Allow for custom head content
+- [ ] Collapsing fixed sidebar to off-canvas
+- [ ] Holy Grail
+
+
 ---
 
-### Mixins
+### To Do
 
 - [x] Theme
-
-### To Do
+  - [ ] create generic basscss-theme module instead of mixins
 
 - [ ] Highlightjs code example blocks
 - [ ] Try declarative, non-child selecting approach

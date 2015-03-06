@@ -5,12 +5,12 @@ var staticReact = require('static-react');
 var Root = require('./components/root.jsx');
 var data = require('./data');
 
+data.baseUrl = '';
 if (process.env.NODE_ENV === 'production') {
   console.log('production build');
   data.baseUrl = '/rebass';
 } else {
   console.log('development build');
-  data.baseUrl = '';
 }
 
 

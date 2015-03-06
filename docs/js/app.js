@@ -1278,11 +1278,32 @@ var Home = require('./home.jsx');
 //var NotFoundPage = require('./not-found-page.jsx');
 
 module.exports = React.createClass({displayName: "exports",
+
+  getDefaultProps: function() {
+    return {
+      baseUrl: '',
+      stylesheets: [],
+      scripts: [],
+    }
+  },
+
   render: function() {
-    var script = this.props.baseUrl + this.props.script;
+    //var script = this.props.baseUrl + this.props.script;
     //var path = this.props.baseUrl + this.props.path;
+    //var head = (<link rel="stylesheet" href={this.props.baseUrl + '/css/rebass-temp.css'} />);
+    var baseUrl = this.props.baseUrl;
+    var scripts = [];
+    this.props.scripts.map(function(script) {
+      scripts.push(baseUrl + script);
+    });
+    var stylesheets = [];
+    this.props.stylesheets.map(function(stylesheet) {
+      stylesheets.push(baseUrl + stylesheet);
+    });
     return (
-      React.createElement(Html, React.__spread({},  this.props, {script: script}), 
+      React.createElement(Html, React.__spread({},  this.props, 
+        {stylesheets: stylesheets, 
+        scripts: scripts}), 
         React.createElement(Header, React.__spread({},  this.props)), 
         React.createElement(Locations, {path: this.props.path}, 
           React.createElement(Location, {path: "/", handler: Home})
@@ -3573,36 +3594,85 @@ module.exports = React.createClass({displayName: "exports",
 var React = require('react');
 
 var Head = React.createClass({displayName: "Head",
+
+  getDefaultProps: function() {
+    return {
+      title: '',
+      description: '',
+      author: '',
+      favicon: false,
+      stylesheets: [],
+    }
+  },
+
+  renderStylesheet: function(stylesheet, i) {
+    return (
+      React.createElement("link", {rel: "stylesheet", href: stylesheet, key: 'stylesheet-' + i})
+    )
+  },
+
+  renderFavicon: function() {
+    if (!this.props.favicon) return false;
+    return React.createElement("link", {rel: "icon", href: this.props.favicon})
+  },
+
   render: function() {
+    var stylesheets = [];
+    if (this.props.stylesheet) {
+      stylesheets = [this.props.stylesheet];
+    } else if (this.props.stylesheets) {
+      stylesheets = this.props.stylesheets;
+    }
     return (
       React.createElement("head", null, 
         React.createElement("meta", {charSet: "utf-8"}), 
         React.createElement("title", null, this.props.title), 
+        React.createElement("meta", {name: "description", content: this.props.description}), 
+        React.createElement("meta", {name: "authot", content: this.props.author}), 
         React.createElement("meta", {name: "viewport", content: "width=device-width,initial-scale=1.0"}), 
-        React.createElement("link", {rel: "stylesheet", href: this.props.stylesheet})
+        this.renderFavicon(), 
+        stylesheets.map(this.renderStylesheet)
       )
     )
   }
+
 });
+
 
 module.exports = React.createClass({displayName: "exports",
 
-  renderScript: function() {
-    if (!this.props.script) { return false; }
-    return (React.createElement("script", {src: this.props.script}));
+  getDefaultProps: function() {
+    return {
+      title: '',
+      description: '',
+      author: '',
+      favicon: false,
+      scripts: [],
+      stylesheets: [],
+    }
+  },
+
+  renderScript: function(script, i) {
+    return (React.createElement("script", {src: script, key: 'script-' + i}));
   },
 
   render: function() {
     var init = {
       __html: "window.INITIAL_PROPS = " + JSON.stringify(this._owner.props) + ";\n"
     };
+    var scripts = [];
+    if (this.props.script) {
+      scripts = [this.props.script];
+    } else if (this.props.scripts) {
+      scripts = this.props.scripts;
+    }
     return (
       React.createElement("html", null, 
         React.createElement(Head, React.__spread({},  this.props)), 
         React.createElement("body", null, 
           this.props.children, 
           React.createElement("script", {dangerouslySetInnerHTML: init}), 
-          this.renderScript()
+          scripts.map(this.renderScript)
         )
       )
     )

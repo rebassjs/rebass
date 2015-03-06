@@ -11,6 +11,7 @@
     "react-hsl-sliders": "^1.0.4"
   },
   "devDependencies": {
+    "basswork": "^1.2.0",
     "browserify": "^8.0.3",
     "color": "^0.7.3",
     "countries-in-the-world": "^1.0.4",

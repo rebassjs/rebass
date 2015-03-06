@@ -13,11 +13,32 @@ var Home = require('./home.jsx');
 //var NotFoundPage = require('./not-found-page.jsx');
 
 module.exports = React.createClass({
+
+  getDefaultProps: function() {
+    return {
+      baseUrl: '',
+      stylesheets: [],
+      scripts: [],
+    }
+  },
+
   render: function() {
-    var script = this.props.baseUrl + this.props.script;
+    //var script = this.props.baseUrl + this.props.script;
     //var path = this.props.baseUrl + this.props.path;
+    //var head = (<link rel="stylesheet" href={this.props.baseUrl + '/css/rebass-temp.css'} />);
+    var baseUrl = this.props.baseUrl;
+    var scripts = [];
+    this.props.scripts.map(function(script) {
+      scripts.push(baseUrl + script);
+    });
+    var stylesheets = [];
+    this.props.stylesheets.map(function(stylesheet) {
+      stylesheets.push(baseUrl + stylesheet);
+    });
     return (
-      <Html {...this.props} script={script}>
+      <Html {...this.props}
+        stylesheets={stylesheets}
+        scripts={scripts}>
         <Header {...this.props} />
         <Locations path={this.props.path}>
           <Location path="/" handler={Home} />
