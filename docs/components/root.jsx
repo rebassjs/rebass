@@ -29,11 +29,17 @@ module.exports = React.createClass({
     var baseUrl = this.props.baseUrl;
     var scripts = [];
     this.props.scripts.map(function(script) {
-      scripts.push(baseUrl + script);
+      if (!script.match(/^http|^\/\//)) {
+        script = baseUrl + script;
+      }
+      scripts.push(script);
     });
     var stylesheets = [];
     this.props.stylesheets.map(function(stylesheet) {
-      stylesheets.push(baseUrl + stylesheet);
+      if (!stylesheet.match(/^http|^\/\//)) {
+        stylesheet = baseUrl + stylesheet;
+      }
+      stylesheets.push(stylesheet);
     });
     return (
       <Html {...this.props}
