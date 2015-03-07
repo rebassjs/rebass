@@ -28,7 +28,7 @@ module.exports = function(props) {
     )
   }
   return (
-    <Route name="root" path="/" handler={Root}>
+    <Route name="root" path={props.baseUrl + '/'} handler={Root}>
       {props.routes.map(renderRoute)}
       {props.routes.map(renderRedirect)}
       <DefaultRoute {...this.props} name="404" handler={NotFound}/>
