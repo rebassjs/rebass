@@ -16,25 +16,25 @@ var Docs = require('./components/docs.jsx');
 
 data.stylesheets = [
   'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.3/bassdock.min.css',
-  '/docs/css/rebass.css',
-  '/docs/css/docs.css',
+  'docs/css/rebass.css',
+  'docs/css/docs.css',
 ];
 data.scripts = [
-  '/docs/js/app.js'
+  'docs/js/app.js'
 ];
 
-data.baseUrl = '';
+data.baseUrl = '/';
 if (process.env.NODE_ENV === 'production') {
   console.log('production build');
-  data.baseUrl = '/rebass';
+  data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
 }
 
 data.routes = [
-  { path: '/', name: 'Home', handler: Home },
-  { path: '/getting-started', name: 'Getting Started', handler: GettingStarted },
-  { path: '/docs', name: 'Docs', handler: Docs },
+  { path: '', name: 'Home', handler: Home },
+  { path: 'getting-started', name: 'Getting Started', handler: GettingStarted },
+  { path: 'docs', name: 'Docs', handler: Docs },
 ];
 
 module.exports = data;

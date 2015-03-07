@@ -10,7 +10,7 @@ module.exports = React.createClass({
       <footer className="px1">
         <div className="flex flex-wrap flex-center py3 mxn1">
           <h3 className="h4 m0 px1">
-            <Link to="Home">
+            <Link to={this.props.baseUrl}>
               {this.props.title}
             </Link>
           </h3>

@@ -13,7 +13,7 @@ module.exports = React.createClass({
   },
 
   renderLink: function(route, i) {
-    if (route.path == '/') { return false; }
+    if (route.path == '') { return false; }
     return (
       <Link
         key={'link-' + i}
