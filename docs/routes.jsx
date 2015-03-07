@@ -11,19 +11,25 @@ var NotFound = require('./components/404.jsx');
 module.exports = function(props) { 
   function renderRedirect(route, i) {
     if (route.path == '/') { return false }
+    path = route.path.replace(/^\//, '');
     return (
       <Redirect {...props}
         key={'redirect-' + i}
-        from={route.path + '/'}
+        from={path + '/'}
         to={route.name} />
       )
   }
   function renderRoute(route, i) {
+    if (route.path != '/') {
+      var path = route.path.replace(/^\//, '');
+    } else {
+      var path = route.path;
+    }
     return (
       <Route {...props}
         key={'route-' + i}
         name={route.name}
-        path={route.path}
+        path={path}
         handler={route.handler} />
     )
   }
