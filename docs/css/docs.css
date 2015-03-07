@@ -1,6 +1,25 @@
 /* Rebass docs */
 
-/* Sidebar */
+/* LayoutSidebar */
+
+.LayoutSidebar-sidebar {
+  width: 14rem;
+  margin-left: -14rem;
+  -webkit-transition: margin .2s ease-out;
+          transition: margin .2s ease-out;
+}
+
+@media (min-width: 40em) {
+  .LayoutSidebar-sidebar {
+    margin-left: 0;
+  }
+}
+
+/* HACKS */
+
+.button-transparent.is-active {
+  box-shadow: none;
+}
 
 /* Defaults */
 

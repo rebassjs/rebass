@@ -76,25 +76,32 @@ module.exports = React.createClass({displayName: "exports",
       center: false,
       right: false,
       backgroundImage: false,
+      footer: false,
+      header: false,
     };
   },
 
   render: function() {
 
-    var classes = bassClasses(this.props.theme);
-    var bannerClass =
-      classnames(this.props.className,
-        'px3 py4',
+    var bass = bassClasses(this.props.theme);
+    var classes = {
+      outer: classnames(this.props.className,
         { center: this.props.center },
         { 'right-align': this.props.right },
-        classes.primary);
+        bass.primary),
+      inner: classnames('px3 py4'),
+    };
     var style = {
       backgroundImage: this.props.backgroundImage,
     };
 
     return (
-      React.createElement("div", {className: bannerClass, style: style}, 
-        this.props.children
+      React.createElement("div", {className: classes.outer, style: style}, 
+        this.props.header, 
+        React.createElement("div", {className: classes.inner}, 
+          this.props.children
+        ), 
+        this.props.footer
       )
     )
   }
@@ -950,7 +957,7 @@ module.exports = React.createClass({displayName: "exports",
           React.createElement("div", {className: "h5 bold px1"}, "v", this.props.version), 
           React.createElement(Nav, React.__spread({},  this.props)), 
           React.createElement("div", {className: "flex-auto"}), 
-          React.createElement("p", {className: "h5 px1 m0"}, 
+          React.createElement("p", {className: "bold h5 px1 m0"}, 
             React.createElement("span", null, "Made by "), 
             React.createElement("a", {href: "//jxnblk.com"}, "Jxnblk")
           )
@@ -1023,18 +1030,22 @@ var Nav = require('./nav.jsx');
 module.exports = React.createClass({displayName: "exports",
 
   render: function() {
+    var footer = (
+      React.createElement("div", {className: "flex flex-wrap py2"}, 
+        React.createElement("div", {className: "flex-auto"}), 
+        React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
+      )
+    );
     return (
-      React.createElement(Banner, {theme: "black", className: "aqua"}, 
+      React.createElement(Banner, {theme: "black", 
+        footer: footer, 
+        className: "red"}, 
         React.createElement("h1", {className: "h1 h1-responsive m0"}, 
-          React.createElement(Logo, {className: "h1 mb2 mt4"}), 
+          React.createElement(Logo, {className: "h1 mb2 mt3"}), 
           React.createElement("span", {className: "caps"}, this.props.title), 
           React.createElement("span", {className: "h5 caps"}, " v", this.props.version)
         ), 
-        React.createElement("p", {className: "h3 bold mb4"}, this.props.description), 
-        React.createElement("div", {className: "flex flex-wrap"}, 
-          React.createElement("div", {className: "flex-auto"}), 
-          React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
-        )
+        React.createElement("p", {className: "h3 bold mb2"}, this.props.description)
       )
     )
   }
@@ -1387,32 +1398,58 @@ var React = require('react');
 var Header = require('./header.jsx');
 var Footer = require('./footer.jsx');
 var Sidebar = require('./sidebar.jsx');
+var Logo = require('./logo.jsx');
 
 module.exports = React.createClass({displayName: "exports",
+
+  getInitialState: function() {
+    return {
+      sidebarIsOpen: false,
+    }
+  },
+
+  toggleSidebar: function() {
+    open = !this.state.sidebarIsOpen;
+    this.setState({ sidebarIsOpen: open });
+  },
 
   render: function() {
 
     var styles = {
       sidebar: {
-        width: '16rem',
+        marginLeft: this.state.sidebarIsOpen ? 0 : false,
+      },
+      sidebarToggle: {
+        //display: this.state.sidebarIsOpen ? 'none' : false,
       },
       content: {
         minHeight: '100vh',
-        maxWidth: '48rem',
+        //maxWidth: '48rem',
       },
+      contentBody: {
+        maxWidth: '48rem',
+      }
     };
 
     return (
-      React.createElement("div", {className: "sm-flex"}, 
-        React.createElement("div", {className: "px2 white bg-black", style: styles.sidebar}, 
-          React.createElement(Sidebar, React.__spread({},  this.props))
+      React.createElement("div", {className: "LayoutSidebar flex"}, 
+        React.createElement("div", {className: "LayoutSidebar-sidebar flex-none white bg-black", style: styles.sidebar}, 
+          React.createElement(Sidebar, React.__spread({},  this.props, {toggleSidebar: this.toggleSidebar}))
         ), 
-        React.createElement("div", {className: "flex-auto mx-auto px2 flex flex-column", style: styles.content}, 
-          React.createElement("div", {className: "flex-auto bg-silver"}, 
-            React.createElement("h1", null, "Sidebar Layout"), 
-            this.props.children
+        React.createElement("div", {className: "LayoutSidebar-content flex-auto flex flex-column", style: styles.content}, 
+          React.createElement("div", {className: "flex-auto"}, 
+            React.createElement("div", {className: "flex flex-center sm-hide aqua bg-black", style: styles.sidebarToggle}, 
+              React.createElement("button", {onClick: this.toggleSidebar, 
+                className: "flex flex-center button py2 button-transparent"}, 
+                React.createElement(Logo, {className: "mr2"}), 
+                React.createElement("div", null, "Menu")
+              )
+            ), 
+            React.createElement("div", {className: "px2 mx-auto", style: styles.contentBody}, 
+              this.props.children
+            )
           ), 
-          React.createElement("div", {className: "mxn1"}, 
+          React.createElement("div", {className: "px1"}, 
             React.createElement(Footer, React.__spread({},  this.props))
           )
         )
@@ -1424,7 +1461,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./footer.jsx":"/Users/jackson/Repos/rebass/docs/components/footer.jsx","./header.jsx":"/Users/jackson/Repos/rebass/docs/components/header.jsx","./sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/sidebar.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/logo.jsx":[function(require,module,exports){
+},{"./footer.jsx":"/Users/jackson/Repos/rebass/docs/components/footer.jsx","./header.jsx":"/Users/jackson/Repos/rebass/docs/components/header.jsx","./logo.jsx":"/Users/jackson/Repos/rebass/docs/components/logo.jsx","./sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/sidebar.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/logo.jsx":[function(require,module,exports){
 
 var React = require('react');
 
@@ -1542,15 +1579,11 @@ module.exports = React.createClass({displayName: "exports",
 
   renderLink: function(route, i) {
     if (route.path == '/') { return false; }
-    var linkClass =
-      classnames('button',
-        'button-narrow',
-        'button-transparent');
     return (
       React.createElement(Link, {
         key: 'link-' + i, 
         to: route.name, 
-        className: linkClass, 
+        className: "button button-transparent", 
         activeClassName: "is-active"}, 
         route.name
       )
@@ -1558,12 +1591,11 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   render: function() {
-    var className = classnames(this.props.className, 'mxn1');
+    var className = classnames(this.props.className, '');
     return (
       React.createElement("div", React.__spread({},  this.props, {className: className}), 
         this.props.routes.map(this.renderLink), 
-        React.createElement(NavItem, {href: this.props.homepage, 
-          theme: "blue", compact: true}, 
+        React.createElement("a", {href: this.props.homepage, className: "button button-transparent"}, 
           "Github"
         )
       )
@@ -1674,7 +1706,7 @@ module.exports = React.createClass({displayName: "exports",
     if (route.path == '/') { return false; }
     return (
       React.createElement(Link, {to: route.name, 
-        className: "button block button-transparent aqua", 
+        className: "button block button-transparent red", 
         activeClassName: "is-active"}, 
         route.name
       )
@@ -1683,22 +1715,34 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("div", {className: "py2 aqua"}, 
-        React.createElement(Logo, null), 
-        React.createElement("h1", {className: "h2 caps"}, 
-          React.createElement(Link, {to: "root", className: "aqua"}, this.props.title)
+      React.createElement("div", {className: "red"}, 
+        React.createElement("div", {className: "flex flex-center"}, 
+          React.createElement(Logo, {className: "p2"}), 
+          React.createElement("div", {className: "flex-auto"}), 
+          React.createElement("div", {className: "sm-hide"}, 
+            React.createElement("button", {
+              onClick: this.props.toggleSidebar, 
+              className: "h3 button py2 button-transparent muted"}, 
+              "×"
+            )
+          )
         ), 
-        React.createElement("hr", {className: "border-aqua"}), 
-        React.createElement("div", {className: "mxn2 mb4"}, 
-          this.props.routes.map(this.renderNavItem)
-        ), 
-        React.createElement("div", {className: "mxn2 mt4"}, 
-          React.createElement("a", {href: this.props.homepage, 
-            className: "button block button-transparent muted"}, 
-            "Github"
+        React.createElement("div", {className: "px2"}, 
+          React.createElement("h1", {className: "h2 caps"}, 
+            React.createElement(Link, {to: "root", className: "red"}, this.props.title)
           ), 
-          React.createElement("p", {className: "h5 px2 muted"}, 
-            "Made by ", React.createElement("a", {href: "//jxnblk.com"}, "Jxnblk")
+          React.createElement("hr", {className: "border-red"}), 
+          React.createElement("div", {className: "mxn2 mb4"}, 
+            this.props.routes.map(this.renderNavItem)
+          ), 
+          React.createElement("div", {className: "mxn2 mt4 mb2"}, 
+            React.createElement("a", {href: this.props.homepage, 
+              className: "button block mb1 button-transparent muted"}, 
+              "Github"
+            ), 
+            React.createElement("p", {className: "h5 bold px2 muted"}, 
+              "Made by ", React.createElement("a", {href: "//jxnblk.com"}, "Jxnblk")
+            )
           )
         )
       )
@@ -1730,6 +1774,7 @@ var Docs = require('./components/docs.jsx');
 data.stylesheets = [
   'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.3/bassdock.min.css',
   '/docs/css/rebass.css',
+  '/docs/css/docs.css',
 ];
 data.scripts = [
   '/docs/js/app.js'
@@ -3291,7 +3336,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports={
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],
@@ -38159,7 +38204,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],"/Users/jackson/Repos/rebass/package.json":[function(require,module,exports){
-module.exports={
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
   "name": "rebass",
   "version": "0.0.1",
   "description": "React UI components for Basscss",

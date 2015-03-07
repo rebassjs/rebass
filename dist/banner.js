@@ -12,25 +12,32 @@ module.exports = React.createClass({displayName: "exports",
       center: false,
       right: false,
       backgroundImage: false,
+      footer: false,
+      header: false,
     };
   },
 
   render: function() {
 
-    var classes = bassClasses(this.props.theme);
-    var bannerClass =
-      classnames(this.props.className,
-        'px3 py4',
+    var bass = bassClasses(this.props.theme);
+    var classes = {
+      outer: classnames(this.props.className,
         { center: this.props.center },
         { 'right-align': this.props.right },
-        classes.primary);
+        bass.primary),
+      inner: classnames('px3 py4'),
+    };
     var style = {
       backgroundImage: this.props.backgroundImage,
     };
 
     return (
-      React.createElement("div", {className: bannerClass, style: style}, 
-        this.props.children
+      React.createElement("div", {className: classes.outer, style: style}, 
+        this.props.header, 
+        React.createElement("div", {className: classes.inner}, 
+          this.props.children
+        ), 
+        this.props.footer
       )
     )
   }

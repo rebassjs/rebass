@@ -17,6 +17,7 @@ var Docs = require('./components/docs.jsx');
 data.stylesheets = [
   'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.3/bassdock.min.css',
   '/docs/css/rebass.css',
+  '/docs/css/docs.css',
 ];
 data.scripts = [
   '/docs/js/app.js'

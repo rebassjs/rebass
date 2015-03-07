@@ -14,15 +14,11 @@ module.exports = React.createClass({
 
   renderLink: function(route, i) {
     if (route.path == '/') { return false; }
-    var linkClass =
-      classnames('button',
-        'button-narrow',
-        'button-transparent');
     return (
       <Link
         key={'link-' + i}
         to={route.name}
-        className={linkClass}
+        className="button button-transparent"
         activeClassName="is-active">
         {route.name}
       </Link>
@@ -30,14 +26,13 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var className = classnames(this.props.className, 'mxn1');
+    var className = classnames(this.props.className, '');
     return (
       <div {...this.props} className={className}>
         {this.props.routes.map(this.renderLink)}
-        <NavItem href={this.props.homepage}
-          theme="blue" compact={true}>
+        <a href={this.props.homepage} className="button button-transparent">
           Github
-        </NavItem>
+        </a>
       </div>
     )
   }

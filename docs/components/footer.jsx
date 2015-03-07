@@ -17,7 +17,7 @@ module.exports = React.createClass({
           <div className="h5 bold px1">v{this.props.version}</div>
           <Nav {...this.props} />
           <div className="flex-auto" />
-          <p className="h5 px1 m0">
+          <p className="bold h5 px1 m0">
             <span>Made by </span>
             <a href="//jxnblk.com">Jxnblk</a>
           </p>
