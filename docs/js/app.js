@@ -798,7 +798,213 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../..":"/Users/jackson/Repos/rebass/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/Section.jsx":[function(require,module,exports){
+},{"../..":"/Users/jackson/Repos/rebass/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/Home.jsx":[function(require,module,exports){
+
+var React = require('react');
+var Section = require('./section.jsx');
+
+var Rebass = require('../..');
+var Button = Rebass.Button;
+var RadioButton = Rebass.RadioButton;
+var Group = Rebass.Group;
+var NavItem = Rebass.NavItem;
+var Navbar = Rebass.Navbar;
+var NavSpacer = Rebass.NavSpacer;
+var Dropdown = Rebass.Dropdown;
+var Badge = Rebass.Badge;
+var Message = Rebass.Message;
+var Media = Rebass.Media;
+var Flag = Rebass.Flag
+var Panel = Rebass.Panel
+
+//var Modal = Rebass.Modal;
+
+var ModalSection = require('./modal-section.jsx');
+
+//  var FuzzyInputSection = require('./fuzzy-input-section.jsx');
+var HslSlidersSection = require('./hsl-sliders-section.jsx');
+var IconSection = require('./icon-section.jsx');
+
+module.exports = React.createClass({displayName: "exports",
+
+  render: function() {
+    var style = {
+      minHeight: '100vh',
+    };
+    var handleRadioButton = function(val) {
+      console.log(val);
+    };
+    return (
+      React.createElement("div", {style: style, className: "container px2"}, 
+
+        React.createElement(Section, {heading: "Button"}, 
+          React.createElement(Button, null, "Button"), 
+          React.createElement(Button, {theme: "gray"}, "Button"), 
+          React.createElement(Button, {theme: "blue"}, "Button"), 
+          React.createElement(Button, {theme: "green"}, "Button"), 
+          React.createElement(Button, {theme: "red"}, "Button")
+        ), 
+
+        React.createElement(Section, {heading: "Radio Button"}, 
+          React.createElement(RadioButton, {theme: "blue", outline: true, onClick: handleRadioButton}, "Radio Button"), 
+          React.createElement(RadioButton, {theme: "blue", outline: true, isActive: true}, "Radio Button")
+        ), 
+
+        React.createElement(Section, {heading: "Group"}, 
+          React.createElement(Group, {theme: "orange", className: "mr1"}, 
+            React.createElement(Button, null, "Button"), 
+            React.createElement(Button, {theme: "orange"}, "Button"), 
+            React.createElement(Button, {theme: "orange"}, "Button")
+          ), 
+          React.createElement(Group, {className: "mr1"}, 
+            React.createElement("input", {type: "text", className: "field-light", placeholder: "Search"}), 
+            React.createElement(Button, null, "Go")
+          ), 
+          React.createElement(Group, {theme: "blue"}, 
+            React.createElement(Button, null, "Go"), 
+            React.createElement(Dropdown, {label: "Dropdown", right: true}, 
+              React.createElement(NavItem, {href: "#!"}, "Action"), 
+              React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+              React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+              React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
+            )
+          )
+        ), 
+
+        React.createElement(Section, {heading: "Dropdown"}, 
+          React.createElement(Dropdown, {label: "Dropdown"}, 
+            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
+          ), 
+          React.createElement(Dropdown, {label: "Right", theme: "blue", right: true}, 
+            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
+          )
+        ), 
+
+        React.createElement(ModalSection, null), 
+
+        React.createElement(Section, {heading: "Nav Item"}, 
+          React.createElement("div", {className: "mb2 border-bottom"}, 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+          ), 
+          React.createElement("div", {className: "mb2 bg-black"}, 
+            React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
+            React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
+            React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item")
+          )
+        ), 
+
+        React.createElement(Section, {heading: "Navbar"}, 
+          React.createElement(Navbar, null, 
+            React.createElement(NavItem, {href: "#nav-item"}, "Default Navbar"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+            React.createElement(NavSpacer, null), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+          ), 
+          React.createElement(Navbar, {theme: "blue"}, 
+            React.createElement(NavItem, {href: "#nav-item"}, "Blue Navbar"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+            React.createElement(NavSpacer, null), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+          ), 
+          React.createElement(Navbar, {theme: "black", compact: true}, 
+            React.createElement(NavItem, {href: "#nav-item"}, "Compact Navbar"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+            React.createElement(NavSpacer, null), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+          ), 
+          React.createElement(Navbar, {theme: "black", justified: true}, 
+            React.createElement(NavItem, {href: "#nav-item"}, "Justified Navbar"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+          ), 
+          React.createElement(Navbar, {theme: "black"}, 
+            React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
+            React.createElement(Group, {theme: "white", outline: true}, 
+              React.createElement(Button, null, "Button"), 
+              React.createElement(Button, null, "Button")
+            ), 
+            React.createElement(NavSpacer, null), 
+            React.createElement(Group, null, 
+              React.createElement("input", {type: "text", className: "field-dark", placeholder: "Search"}), 
+              React.createElement(Button, {theme: "blue"}, "Go")
+            ), 
+            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+          )
+        ), 
+
+        React.createElement(Section, {heading: "Badge"}, 
+          React.createElement(Badge, null, "Badge"), 
+          React.createElement(Badge, {theme: "red"}, "Badge"), 
+          React.createElement(Badge, {theme: "yellow"}, "Badge"), 
+          React.createElement(Badge, {theme: "green"}, "Badge"), 
+          React.createElement(Badge, {theme: "blue"}, "Badge"), 
+          React.createElement(Badge, {theme: "black"}, "Badge")
+        ), 
+
+        React.createElement(Section, {heading: "Message"}, 
+          React.createElement(Message, null, "Message"), 
+          React.createElement(Message, {theme: "red"}, "Message"), 
+          React.createElement(Message, {theme: "yellow"}, "Message"), 
+          React.createElement(Message, {theme: "green"}, "Message"), 
+          React.createElement(Message, {theme: "blue"}, "Message"), 
+          React.createElement(Message, {theme: "black"}, "Message")
+        ), 
+
+        React.createElement(Section, {heading: "Media Object"}, 
+          React.createElement(Media, null, 
+            React.createElement("img", {src: "//placehold.it/96"}), 
+            React.createElement("div", null, "Media Object")
+          )
+        ), 
+
+        React.createElement(Section, {heading: "Flag Object"}, 
+          React.createElement(Flag, null, 
+            React.createElement("img", {src: "//placehold.it/96"}), 
+            React.createElement("div", null, "Flag Object")
+          )
+        ), 
+
+        React.createElement(Section, {heading: "Panel"}, 
+          React.createElement(Panel, {header: "Panel Header"}, 
+            React.createElement("div", null, "Panel Body")
+          ), 
+          React.createElement(Panel, {header: "Panel Header", theme: "blue"}, 
+            React.createElement("div", null, "Panel Body")
+          ), 
+          React.createElement(Panel, {header: "Panel Header", theme: "green"}, 
+            React.createElement("div", null, "Panel Body")
+          ), 
+          React.createElement(Panel, {header: "Panel Header", theme: "yellow"}, 
+            React.createElement("div", null, "Panel Body")
+          ), 
+          React.createElement(Panel, {header: "Panel Header", theme: "red"}, 
+            React.createElement("div", null, "Panel Body")
+          )
+        ), 
+
+        /* <FuzzyInputSection />
+        */
+
+        React.createElement(HslSlidersSection, null), 
+
+        React.createElement(IconSection, null)
+
+      )
+    )
+  }
+
+});
+
+
+
+},{"../..":"/Users/jackson/Repos/rebass/index.js","./hsl-sliders-section.jsx":"/Users/jackson/Repos/rebass/docs/components/hsl-sliders-section.jsx","./icon-section.jsx":"/Users/jackson/Repos/rebass/docs/components/icon-section.jsx","./modal-section.jsx":"/Users/jackson/Repos/rebass/docs/components/modal-section.jsx","./section.jsx":"/Users/jackson/Repos/rebass/docs/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/Section.jsx":[function(require,module,exports){
 
 var React = require('react');
 var kebabCase = require('lodash.kebabcase');
@@ -1524,6 +1730,7 @@ var DefaultRoute = Router.DefaultRoute;
 var Redirect = Router.Redirect;
 
 var Root = require('./components/root.jsx');
+var Home = require('./components/Home.jsx');
 var NotFound = require('./components/404.jsx');
 
 module.exports = function(props) { 
@@ -1538,6 +1745,7 @@ module.exports = function(props) {
   }
   function renderRoute(route, i) {
     console.log(route.name, route.path);
+    if (route.path == '') { return false }
     return (
       React.createElement(Route, React.__spread({},  props, 
         {key: 'route-' + i, 
@@ -1550,14 +1758,14 @@ module.exports = function(props) {
     React.createElement(Route, {name: "root", path: props.baseUrl, handler: Root}, 
       props.routes.map(renderRoute), 
       props.routes.map(renderRedirect), 
-      React.createElement(DefaultRoute, React.__spread({},  this.props, {name: "404", handler: NotFound}))
+      React.createElement(DefaultRoute, React.__spread({},  this.props, {name: "Home", handler: Home}))
     )
   )
 };
 
 
 
-},{"./components/404.jsx":"/Users/jackson/Repos/rebass/docs/components/404.jsx","./components/root.jsx":"/Users/jackson/Repos/rebass/docs/components/root.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/index.js":[function(require,module,exports){
+},{"./components/404.jsx":"/Users/jackson/Repos/rebass/docs/components/404.jsx","./components/Home.jsx":"/Users/jackson/Repos/rebass/docs/components/Home.jsx","./components/root.jsx":"/Users/jackson/Repos/rebass/docs/components/root.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/index.js":[function(require,module,exports){
 
 module.exports = {
   Button: require('./dist/button'),

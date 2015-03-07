@@ -6,6 +6,7 @@ var DefaultRoute = Router.DefaultRoute;
 var Redirect = Router.Redirect;
 
 var Root = require('./components/root.jsx');
+var Home = require('./components/Home.jsx');
 var NotFound = require('./components/404.jsx');
 
 module.exports = function(props) { 
@@ -20,6 +21,7 @@ module.exports = function(props) {
   }
   function renderRoute(route, i) {
     console.log(route.name, route.path);
+    if (route.path == '') { return false }
     return (
       <Route {...props}
         key={'route-' + i}
@@ -32,7 +34,7 @@ module.exports = function(props) {
     <Route name="root" path={props.baseUrl} handler={Root}>
       {props.routes.map(renderRoute)}
       {props.routes.map(renderRedirect)}
-      <DefaultRoute {...this.props} name="404" handler={NotFound}/>
+      <DefaultRoute {...this.props} name="Home" handler={Home}/>
     </Route>
   )
 };
