@@ -1024,14 +1024,17 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement(Banner, {theme: "black", className: "red"}, 
+      React.createElement(Banner, {theme: "black", className: "aqua"}, 
         React.createElement("h1", {className: "h1 h1-responsive m0"}, 
           React.createElement(Logo, {className: "h1 mb2 mt4"}), 
           React.createElement("span", {className: "caps"}, this.props.title), 
           React.createElement("span", {className: "h5 caps"}, " v", this.props.version)
         ), 
         React.createElement("p", {className: "h3 bold mb4"}, this.props.description), 
-        React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
+        React.createElement("div", {className: "flex flex-wrap"}, 
+          React.createElement("div", {className: "flex-auto"}), 
+          React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
+        )
       )
     )
   }
@@ -1380,6 +1383,7 @@ module.exports = React.createClass({displayName: "exports",
 },{"./Section.jsx":"/Users/jackson/Repos/rebass/docs/components/Section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/index.js"}],"/Users/jackson/Repos/rebass/docs/components/layout-sidebar.jsx":[function(require,module,exports){
 
 var React = require('react');
+
 var Header = require('./header.jsx');
 var Footer = require('./footer.jsx');
 var Sidebar = require('./sidebar.jsx');
@@ -1387,18 +1391,23 @@ var Sidebar = require('./sidebar.jsx');
 module.exports = React.createClass({displayName: "exports",
 
   render: function() {
+
     var styles = {
+      sidebar: {
+        width: '16rem',
+      },
       content: {
         minHeight: '100vh',
         maxWidth: '48rem',
       },
     };
+
     return (
       React.createElement("div", {className: "sm-flex"}, 
-        React.createElement("div", {className: "sm-col-4 md-col-3 lg-col-2 px2 white bg-black"}, 
+        React.createElement("div", {className: "px2 white bg-black", style: styles.sidebar}, 
           React.createElement(Sidebar, React.__spread({},  this.props))
         ), 
-        React.createElement("div", {className: "sm-col-8 mx-auto px2 flex flex-column", style: styles.content}, 
+        React.createElement("div", {className: "flex-auto mx-auto px2 flex flex-column", style: styles.content}, 
           React.createElement("div", {className: "flex-auto bg-silver"}, 
             React.createElement("h1", null, "Sidebar Layout"), 
             this.props.children
@@ -1653,7 +1662,8 @@ module.exports = React.createClass({displayName: "exports",
 
 var React = require('react');
 var Link = require('react-router').Link;
-var Nav = require('./nav.jsx');
+//var Nav = require('./nav.jsx');
+var Logo = require('./logo.jsx')
 
 var Rebass = require('../..');
 var NavItem = Rebass.NavItem;
@@ -1664,7 +1674,7 @@ module.exports = React.createClass({displayName: "exports",
     if (route.path == '/') { return false; }
     return (
       React.createElement(Link, {to: route.name, 
-        className: "button block button-transparent red", 
+        className: "button block button-transparent aqua", 
         activeClassName: "is-active"}, 
         route.name
       )
@@ -1673,11 +1683,12 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("div", {className: "py2"}, 
+      React.createElement("div", {className: "py2 aqua"}, 
+        React.createElement(Logo, null), 
         React.createElement("h1", {className: "h2 caps"}, 
-          React.createElement(Link, {to: "root", className: "red"}, this.props.title)
+          React.createElement(Link, {to: "root", className: "aqua"}, this.props.title)
         ), 
-        React.createElement("hr", {className: "border-red"}), 
+        React.createElement("hr", {className: "border-aqua"}), 
         React.createElement("div", {className: "mxn2 mb4"}, 
           this.props.routes.map(this.renderNavItem)
         ), 
@@ -1698,7 +1709,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../..":"/Users/jackson/Repos/rebass/index.js","./nav.jsx":"/Users/jackson/Repos/rebass/docs/components/nav.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/data.js":[function(require,module,exports){
+},{"../..":"/Users/jackson/Repos/rebass/index.js","./logo.jsx":"/Users/jackson/Repos/rebass/docs/components/logo.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/data.js":[function(require,module,exports){
 (function (process){
 
 var _ = require('lodash');
@@ -3280,7 +3291,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],
@@ -38148,7 +38159,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],"/Users/jackson/Repos/rebass/package.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+module.exports={
   "name": "rebass",
   "version": "0.0.1",
   "description": "React UI components for Basscss",
@@ -38157,11 +38168,13 @@ module.exports=module.exports=module.exports=module.exports=module.exports=modul
   "dependencies": {
     "classnames": "^1.1.4",
     "fuzzy": "^0.1.0",
+    "radium": "^0.10.0",
     "react-geomicons": "^1.0.1",
     "react-hsl-sliders": "^1.0.4"
   },
   "devDependencies": {
-    "basswork": "^1.2.0",
+    "basscss-defaults": "^1.0.0",
+    "basswork": "^1.2.1",
     "browserify": "^8.0.3",
     "color": "^0.7.3",
     "countries-in-the-world": "^1.0.4",
@@ -38200,9 +38213,11 @@ module.exports=module.exports=module.exports=module.exports=module.exports=modul
     "watch:html": "watch 'npm run build:html' ./docs/components -w 1",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
+    "docs:css": "basswork docs/index.css docs/css/docs.css",
+    "watch:docs:css": "watch 'npm run docs:css' ./docs -w 1",
     "serve": "http-server -p 8000 -s",
     "deploy": "export NODE_ENV=production && npm run jsx && npm run build:html && npm run build:js",
-    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run serve'"
+    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run watch:docs:css' 'npm run serve'"
   },
   "browserify": {
     "transform": [
