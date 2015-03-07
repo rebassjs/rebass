@@ -10,31 +10,25 @@ var NotFound = require('./components/404.jsx');
 
 module.exports = function(props) { 
   function renderRedirect(route, i) {
-    if (route.path == '/') { return false }
-    path = route.path.replace(/^\//, '');
+    if (route.path == '') { return false }
     return (
       <Redirect {...props}
         key={'redirect-' + i}
-        from={path + '/'}
+        from={route.path + '/'}
         to={route.name} />
       )
   }
   function renderRoute(route, i) {
-    if (route.path != '/') {
-      var path = route.path.replace(/^\//, '');
-    } else {
-      var path = route.path;
-    }
     return (
       <Route {...props}
         key={'route-' + i}
         name={route.name}
-        path={path}
+        path={route.path}
         handler={route.handler} />
     )
   }
   return (
-    <Route name="root" path={props.baseUrl + '/'} handler={Root}>
+    <Route name="root" path={props.baseUrl} handler={Root}>
       {props.routes.map(renderRoute)}
       {props.routes.map(renderRedirect)}
       <DefaultRoute {...this.props} name="404" handler={NotFound}/>

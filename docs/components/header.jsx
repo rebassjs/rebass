@@ -11,7 +11,7 @@ module.exports = React.createClass({
       <header className="container px2">
         <div className="flex flex-center flex-wrap py3 border-bottom">
           <div className="flex-auto">
-            <Link to="Home" className="black">
+            <Link to="/" className="black">
               <h1 className="m0">{this.props.title}</h1>
             </Link>
             <p className="m0">{this.props.description}</p>

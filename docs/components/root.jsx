@@ -11,7 +11,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function() {
     return {
-      baseUrl: '',
+      baseUrl: '/',
       stylesheets: [],
       scripts: [],
     }
