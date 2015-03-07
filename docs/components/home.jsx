@@ -18,6 +18,8 @@ var Panel = Rebass.Panel
 
 //var Modal = Rebass.Modal;
 
+var Hero = require('./hero.jsx');
+
 var ModalSection = require('./modal-section.jsx');
 
 //  var FuzzyInputSection = require('./fuzzy-input-section.jsx');
@@ -34,166 +36,172 @@ module.exports = React.createClass({
       console.log(val);
     };
     return (
-      <div style={style} className="container px2">
+      <div style={style} className="">
 
-        <Section heading="Button">
-          <Button>Button</Button>
-          <Button theme="gray">Button</Button>
-          <Button theme="blue">Button</Button>
-          <Button theme="green">Button</Button>
-          <Button theme="red">Button</Button>
-        </Section>
+        <Hero {...this.props} />
 
-        <Section heading="Radio Button">
-          <RadioButton theme="blue" outline={true} onClick={handleRadioButton}>Radio Button</RadioButton>
-          <RadioButton theme="blue" outline={true} isActive={true}>Radio Button</RadioButton>
-        </Section>
+        <div className="px2">
 
-        <Section heading="Group">
-          <Group theme="orange" className="mr1">
+          <Section heading="Button">
             <Button>Button</Button>
-            <Button theme="orange">Button</Button>
-            <Button theme="orange">Button</Button>
-          </Group>
-          <Group className="mr1">
-            <input type="text" className="field-light" placeholder="Search" />
-            <Button>Go</Button>
-          </Group>
-          <Group theme="blue">
-            <Button>Go</Button>
-            <Dropdown label="Dropdown" right={true}>
-              <NavItem href="#!">Action</NavItem>
+            <Button theme="gray">Button</Button>
+            <Button theme="blue">Button</Button>
+            <Button theme="green">Button</Button>
+            <Button theme="red">Button</Button>
+          </Section>
+
+          <Section heading="Radio Button">
+            <RadioButton theme="blue" outline={true} onClick={handleRadioButton}>Radio Button</RadioButton>
+            <RadioButton theme="blue" outline={true} isActive={true}>Radio Button</RadioButton>
+          </Section>
+
+          <Section heading="Group">
+            <Group theme="orange" className="mr1">
+              <Button>Button</Button>
+              <Button theme="orange">Button</Button>
+              <Button theme="orange">Button</Button>
+            </Group>
+            <Group className="mr1">
+              <input type="text" className="field-light" placeholder="Search" />
+              <Button>Go</Button>
+            </Group>
+            <Group theme="blue">
+              <Button>Go</Button>
+              <Dropdown label="Dropdown" right={true}>
+                <NavItem href="#!">Action</NavItem>
+                <a href="#!" className="button block button-nav-light">Action</a>
+                <a href="#!" className="button block button-nav-light">Action</a>
+                <a href="#!" className="button block button-nav-light">Action</a>
+              </Dropdown>
+            </Group>
+          </Section>
+
+          <Section heading="Dropdown">
+            <Dropdown label="Dropdown">
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
             </Dropdown>
-          </Group>
-        </Section>
+            <Dropdown label="Right" theme="blue" right={true}>
+              <a href="#!" className="button block button-nav-light">Action</a>
+              <a href="#!" className="button block button-nav-light">Action</a>
+              <a href="#!" className="button block button-nav-light">Action</a>
+            </Dropdown>
+          </Section>
 
-        <Section heading="Dropdown">
-          <Dropdown label="Dropdown">
-            <a href="#!" className="button block button-nav-light">Action</a>
-            <a href="#!" className="button block button-nav-light">Action</a>
-            <a href="#!" className="button block button-nav-light">Action</a>
-          </Dropdown>
-          <Dropdown label="Right" theme="blue" right={true}>
-            <a href="#!" className="button block button-nav-light">Action</a>
-            <a href="#!" className="button block button-nav-light">Action</a>
-            <a href="#!" className="button block button-nav-light">Action</a>
-          </Dropdown>
-        </Section>
+          <ModalSection />
 
-        <ModalSection />
+          <Section heading="Nav Item">
+            <div className="mb2 border-bottom">
+              <NavItem href="#nav-item">Nav Item</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+            </div>
+            <div className="mb2 bg-black">
+              <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
+              <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
+              <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
+            </div>
+          </Section>
 
-        <Section heading="Nav Item">
-          <div className="mb2 border-bottom">
-            <NavItem href="#nav-item">Nav Item</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-          </div>
-          <div className="mb2 bg-black">
-            <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
-            <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
-            <NavItem href="#nav-item" inverse={true}>Nav Item</NavItem>
-          </div>
-        </Section>
+          <Section heading="Navbar">
+            <Navbar>
+              <NavItem href="#nav-item">Default Navbar</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+              <NavSpacer />
+              <NavItem href="#nav-item">Nav Item</NavItem>
+            </Navbar>
+            <Navbar theme="blue">
+              <NavItem href="#nav-item">Blue Navbar</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+              <NavSpacer />
+              <NavItem href="#nav-item">Nav Item</NavItem>
+            </Navbar>
+            <Navbar theme="black" compact={true}>
+              <NavItem href="#nav-item">Compact Navbar</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+              <NavSpacer />
+              <NavItem href="#nav-item">Nav Item</NavItem>
+            </Navbar>
+            <Navbar theme="black" justified={true}>
+              <NavItem href="#nav-item">Justified Navbar</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+            </Navbar>
+            <Navbar theme="black">
+              <NavItem href="#nav-item">Navbar</NavItem>
+              <NavItem href="#nav-item">Groups</NavItem>
+              <Group theme="white" outline={true}>
+                <Button>Button</Button>
+                <Button>Button</Button>
+              </Group>
+              <NavSpacer />
+              <Group>
+                <input type="text" className="field-dark" placeholder="Search" />
+                <Button theme="blue">Go</Button>
+              </Group>
+              <NavItem href="#nav-item">Nav Item</NavItem>
+            </Navbar>
+          </Section>
 
-        <Section heading="Navbar">
-          <Navbar>
-            <NavItem href="#nav-item">Default Navbar</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-            <NavSpacer />
-            <NavItem href="#nav-item">Nav Item</NavItem>
-          </Navbar>
-          <Navbar theme="blue">
-            <NavItem href="#nav-item">Blue Navbar</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-            <NavSpacer />
-            <NavItem href="#nav-item">Nav Item</NavItem>
-          </Navbar>
-          <Navbar theme="black" compact={true}>
-            <NavItem href="#nav-item">Compact Navbar</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-            <NavSpacer />
-            <NavItem href="#nav-item">Nav Item</NavItem>
-          </Navbar>
-          <Navbar theme="black" justified={true}>
-            <NavItem href="#nav-item">Justified Navbar</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-          </Navbar>
-          <Navbar theme="black">
-            <NavItem href="#nav-item">Navbar</NavItem>
-            <NavItem href="#nav-item">Groups</NavItem>
-            <Group theme="white" outline={true}>
-              <Button>Button</Button>
-              <Button>Button</Button>
-            </Group>
-            <NavSpacer />
-            <Group>
-              <input type="text" className="field-dark" placeholder="Search" />
-              <Button theme="blue">Go</Button>
-            </Group>
-            <NavItem href="#nav-item">Nav Item</NavItem>
-          </Navbar>
-        </Section>
+          <Section heading="Badge">
+            <Badge>Badge</Badge>
+            <Badge theme="red">Badge</Badge>
+            <Badge theme="yellow">Badge</Badge>
+            <Badge theme="green">Badge</Badge>
+            <Badge theme="blue">Badge</Badge>
+            <Badge theme="black">Badge</Badge>
+          </Section>
 
-        <Section heading="Badge">
-          <Badge>Badge</Badge>
-          <Badge theme="red">Badge</Badge>
-          <Badge theme="yellow">Badge</Badge>
-          <Badge theme="green">Badge</Badge>
-          <Badge theme="blue">Badge</Badge>
-          <Badge theme="black">Badge</Badge>
-        </Section>
+          <Section heading="Message">
+            <Message>Message</Message>
+            <Message theme="red">Message</Message>
+            <Message theme="yellow">Message</Message>
+            <Message theme="green">Message</Message>
+            <Message theme="blue">Message</Message>
+            <Message theme="black">Message</Message>
+          </Section>
 
-        <Section heading="Message">
-          <Message>Message</Message>
-          <Message theme="red">Message</Message>
-          <Message theme="yellow">Message</Message>
-          <Message theme="green">Message</Message>
-          <Message theme="blue">Message</Message>
-          <Message theme="black">Message</Message>
-        </Section>
+          <Section heading="Media Object">
+            <Media>
+              <img src="//placehold.it/96" />
+              <div>Media Object</div>
+            </Media>
+          </Section>
 
-        <Section heading="Media Object">
-          <Media>
-            <img src="//placehold.it/96" />
-            <div>Media Object</div>
-          </Media>
-        </Section>
+          <Section heading="Flag Object">
+            <Flag>
+              <img src="//placehold.it/96" />
+              <div>Flag Object</div>
+            </Flag>
+          </Section>
 
-        <Section heading="Flag Object">
-          <Flag>
-            <img src="//placehold.it/96" />
-            <div>Flag Object</div>
-          </Flag>
-        </Section>
+          <Section heading="Panel">
+            <Panel header="Panel Header">
+              <div>Panel Body</div>
+            </Panel>
+            <Panel header="Panel Header" theme="blue">
+              <div>Panel Body</div>
+            </Panel>
+            <Panel header="Panel Header" theme="green">
+              <div>Panel Body</div>
+            </Panel>
+            <Panel header="Panel Header" theme="yellow">
+              <div>Panel Body</div>
+            </Panel>
+            <Panel header="Panel Header" theme="red">
+              <div>Panel Body</div>
+            </Panel>
+          </Section>
 
-        <Section heading="Panel">
-          <Panel header="Panel Header">
-            <div>Panel Body</div>
-          </Panel>
-          <Panel header="Panel Header" theme="blue">
-            <div>Panel Body</div>
-          </Panel>
-          <Panel header="Panel Header" theme="green">
-            <div>Panel Body</div>
-          </Panel>
-          <Panel header="Panel Header" theme="yellow">
-            <div>Panel Body</div>
-          </Panel>
-          <Panel header="Panel Header" theme="red">
-            <div>Panel Body</div>
-          </Panel>
-        </Section>
+          {/* <FuzzyInputSection />
+          */}
 
-        {/* <FuzzyInputSection />
-        */}
+          <HslSlidersSection />
 
-        <HslSlidersSection />
+          <IconSection />
 
-        <IconSection />
+        </div>
 
       </div>
     )

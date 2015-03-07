@@ -7,7 +7,7 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <footer className="container px2">
+      <footer className="px1">
         <div className="flex flex-wrap flex-center py3 mxn1">
           <h3 className="h4 m0 px1">
             <Link to="Home">

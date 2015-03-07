@@ -37,9 +37,9 @@ module.exports = React.createClass({
       <Html {...this.props}
         stylesheets={stylesheets}
         scripts={scripts}>
-        <Header {...this.props} />
+        {/* <Header {...this.props} /> */}
         <RouteHandler {...this.props} />
-        <Footer {...this.props} />
+        {/* <Footer {...this.props} /> */}
       </Html>
     )
   }

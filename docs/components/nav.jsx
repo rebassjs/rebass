@@ -6,14 +6,24 @@ var NavItem = require('../..').NavItem;
 
 module.exports = React.createClass({
 
+  getDefaultProps: function() {
+    return {
+      dark: false,
+    }
+  },
+
   renderLink: function(route, i) {
     if (route.path == '/') { return false; }
+    var linkClass =
+      classnames('button',
+        'button-narrow',
+        'button-transparent');
     return (
       <Link
         key={'link-' + i}
         to={route.name}
-        className="button button-narrow button-transparent blue"
-        activeStyle={{color:'black'}}>
+        className={linkClass}
+        activeClassName="is-active">
         {route.name}
       </Link>
     )

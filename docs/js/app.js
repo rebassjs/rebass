@@ -1,4 +1,38 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/jackson/Repos/rebass/dist/badge.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/jackson/Repos/rebass/bass-classnames.js":[function(require,module,exports){
+
+module.exports = function(name) {
+
+  var primary,
+      secondary,
+      borderColor;
+
+  switch(name) {
+    case 'black':
+      primary = 'white bg-black';
+      secondary = 'black';
+      borderColor = 'black';
+      break;
+    case 'blue':
+      primary = 'white bg-blue';
+      secondary = 'blue';
+      borderColor = 'blue';
+      break;
+    default:
+      primary = 'bg-silver';
+      secondary = 'bg-white';
+      borderColor = 'darken-3';
+  }
+
+  return {
+    primary: primary,
+    secondary: secondary,
+    borderColor: borderColor,
+  };
+
+};
+
+
+},{}],"/Users/jackson/Repos/rebass/dist/badge.js":[function(require,module,exports){
 
 var React = require('react');
 var ThemeMixin = require('./theme-mixin');
@@ -27,7 +61,49 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./theme-mixin":"/Users/jackson/Repos/rebass/dist/theme-mixin.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/dist/button.js":[function(require,module,exports){
+},{"./theme-mixin":"/Users/jackson/Repos/rebass/dist/theme-mixin.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/dist/banner.js":[function(require,module,exports){
+
+var React = require('react');
+
+var classnames = require('classnames');
+var bassClasses = require('../bass-classnames');
+
+module.exports = React.createClass({displayName: "exports",
+
+  getDefaultProps: function() {
+    return {
+      theme: 'black',
+      center: false,
+      right: false,
+      backgroundImage: false,
+    };
+  },
+
+  render: function() {
+
+    var classes = bassClasses(this.props.theme);
+    var bannerClass =
+      classnames(this.props.className,
+        'px3 py4',
+        { center: this.props.center },
+        { 'right-align': this.props.right },
+        classes.primary);
+    var style = {
+      backgroundImage: this.props.backgroundImage,
+    };
+
+    return (
+      React.createElement("div", {className: bannerClass, style: style}, 
+        this.props.children
+      )
+    )
+  }
+
+});
+
+
+
+},{"../bass-classnames":"/Users/jackson/Repos/rebass/bass-classnames.js","classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/dist/button.js":[function(require,module,exports){
 
 var React = require('react');
 var classnames = require('classnames');
@@ -838,12 +914,13 @@ module.exports = React.createClass({displayName: "exports",
 var React = require('react');
 var Rebass = require('../..');
 var Section = require('./section.jsx');
+var LayoutSidebar = require('./layout-sidebar.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("div", {className: "container px2"}, 
+      React.createElement(LayoutSidebar, React.__spread({},  this.props), 
         React.createElement("h1", null, "Docs")
       )
     )
@@ -853,7 +930,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../..":"/Users/jackson/Repos/rebass/index.js","./section.jsx":"/Users/jackson/Repos/rebass/docs/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/footer.jsx":[function(require,module,exports){
+},{"../..":"/Users/jackson/Repos/rebass/index.js","./layout-sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/layout-sidebar.jsx","./section.jsx":"/Users/jackson/Repos/rebass/docs/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/footer.jsx":[function(require,module,exports){
 
 var React = require('react');
 var Link = require('react-router').Link;
@@ -863,7 +940,7 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("footer", {className: "container px2"}, 
+      React.createElement("footer", {className: "px1"}, 
         React.createElement("div", {className: "flex flex-wrap flex-center py3 mxn1"}, 
           React.createElement("h3", {className: "h4 m0 px1"}, 
             React.createElement(Link, {to: "Home"}, 
@@ -890,27 +967,13 @@ module.exports = React.createClass({displayName: "exports",
 
 
 var React = require('react');
-var Section = require('./section.jsx');
-
-var Rebass = require('../..');
-var Button = Rebass.Button;
-var RadioButton = Rebass.RadioButton;
-var Group = Rebass.Group;
-var NavItem = Rebass.NavItem;
-var Navbar = Rebass.Navbar;
-var NavSpacer = Rebass.NavSpacer;
-var Dropdown = Rebass.Dropdown;
-var Badge = Rebass.Badge;
-var Message = Rebass.Message;
-var Media = Rebass.Media;
-var Flag = Rebass.Flag
-var Panel = Rebass.Panel
+var LayoutSidebar = require('./layout-sidebar.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("div", {className: "container px2"}, 
+      React.createElement(LayoutSidebar, React.__spread({},  this.props), 
         React.createElement("h1", null, "Getting Started")
       )
     )
@@ -920,7 +983,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../..":"/Users/jackson/Repos/rebass/index.js","./section.jsx":"/Users/jackson/Repos/rebass/docs/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/header.jsx":[function(require,module,exports){
+},{"./layout-sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/layout-sidebar.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/header.jsx":[function(require,module,exports){
 
 var React = require('react');
 var Link = require('react-router').Link;
@@ -949,7 +1012,35 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./nav.jsx":"/Users/jackson/Repos/rebass/docs/components/nav.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/components/home.jsx":[function(require,module,exports){
+},{"./nav.jsx":"/Users/jackson/Repos/rebass/docs/components/nav.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/components/hero.jsx":[function(require,module,exports){
+
+var React = require('react');
+var Rebass = require('../..');
+var Banner = Rebass.Banner;
+var Logo = require('./logo.jsx');
+var Nav = require('./nav.jsx');
+
+module.exports = React.createClass({displayName: "exports",
+
+  render: function() {
+    return (
+      React.createElement(Banner, {theme: "black", className: "red"}, 
+        React.createElement("h1", {className: "h1 h1-responsive m0"}, 
+          React.createElement(Logo, {className: "h1 mb2 mt4"}), 
+          React.createElement("span", {className: "caps"}, this.props.title), 
+          React.createElement("span", {className: "h5 caps"}, " v", this.props.version)
+        ), 
+        React.createElement("p", {className: "h3 bold mb4"}, this.props.description), 
+        React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
+      )
+    )
+  }
+
+});
+
+
+
+},{"../..":"/Users/jackson/Repos/rebass/index.js","./logo.jsx":"/Users/jackson/Repos/rebass/docs/components/logo.jsx","./nav.jsx":"/Users/jackson/Repos/rebass/docs/components/nav.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/home.jsx":[function(require,module,exports){
 
 var React = require('react');
 var Section = require('./section.jsx');
@@ -970,6 +1061,8 @@ var Panel = Rebass.Panel
 
 //var Modal = Rebass.Modal;
 
+var Hero = require('./hero.jsx');
+
 var ModalSection = require('./modal-section.jsx');
 
 //  var FuzzyInputSection = require('./fuzzy-input-section.jsx');
@@ -986,166 +1079,172 @@ module.exports = React.createClass({displayName: "exports",
       console.log(val);
     };
     return (
-      React.createElement("div", {style: style, className: "container px2"}, 
+      React.createElement("div", {style: style, className: ""}, 
 
-        React.createElement(Section, {heading: "Button"}, 
-          React.createElement(Button, null, "Button"), 
-          React.createElement(Button, {theme: "gray"}, "Button"), 
-          React.createElement(Button, {theme: "blue"}, "Button"), 
-          React.createElement(Button, {theme: "green"}, "Button"), 
-          React.createElement(Button, {theme: "red"}, "Button")
-        ), 
+        React.createElement(Hero, React.__spread({},  this.props)), 
 
-        React.createElement(Section, {heading: "Radio Button"}, 
-          React.createElement(RadioButton, {theme: "blue", outline: true, onClick: handleRadioButton}, "Radio Button"), 
-          React.createElement(RadioButton, {theme: "blue", outline: true, isActive: true}, "Radio Button")
-        ), 
+        React.createElement("div", {className: "px2"}, 
 
-        React.createElement(Section, {heading: "Group"}, 
-          React.createElement(Group, {theme: "orange", className: "mr1"}, 
+          React.createElement(Section, {heading: "Button"}, 
             React.createElement(Button, null, "Button"), 
-            React.createElement(Button, {theme: "orange"}, "Button"), 
-            React.createElement(Button, {theme: "orange"}, "Button")
+            React.createElement(Button, {theme: "gray"}, "Button"), 
+            React.createElement(Button, {theme: "blue"}, "Button"), 
+            React.createElement(Button, {theme: "green"}, "Button"), 
+            React.createElement(Button, {theme: "red"}, "Button")
           ), 
-          React.createElement(Group, {className: "mr1"}, 
-            React.createElement("input", {type: "text", className: "field-light", placeholder: "Search"}), 
-            React.createElement(Button, null, "Go")
+
+          React.createElement(Section, {heading: "Radio Button"}, 
+            React.createElement(RadioButton, {theme: "blue", outline: true, onClick: handleRadioButton}, "Radio Button"), 
+            React.createElement(RadioButton, {theme: "blue", outline: true, isActive: true}, "Radio Button")
           ), 
-          React.createElement(Group, {theme: "blue"}, 
-            React.createElement(Button, null, "Go"), 
-            React.createElement(Dropdown, {label: "Dropdown", right: true}, 
-              React.createElement(NavItem, {href: "#!"}, "Action"), 
+
+          React.createElement(Section, {heading: "Group"}, 
+            React.createElement(Group, {theme: "orange", className: "mr1"}, 
+              React.createElement(Button, null, "Button"), 
+              React.createElement(Button, {theme: "orange"}, "Button"), 
+              React.createElement(Button, {theme: "orange"}, "Button")
+            ), 
+            React.createElement(Group, {className: "mr1"}, 
+              React.createElement("input", {type: "text", className: "field-light", placeholder: "Search"}), 
+              React.createElement(Button, null, "Go")
+            ), 
+            React.createElement(Group, {theme: "blue"}, 
+              React.createElement(Button, null, "Go"), 
+              React.createElement(Dropdown, {label: "Dropdown", right: true}, 
+                React.createElement(NavItem, {href: "#!"}, "Action"), 
+                React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+                React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+                React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
+              )
+            )
+          ), 
+
+          React.createElement(Section, {heading: "Dropdown"}, 
+            React.createElement(Dropdown, {label: "Dropdown"}, 
+              React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+              React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
+              React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
+            ), 
+            React.createElement(Dropdown, {label: "Right", theme: "blue", right: true}, 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
             )
-          )
-        ), 
+          ), 
 
-        React.createElement(Section, {heading: "Dropdown"}, 
-          React.createElement(Dropdown, {label: "Dropdown"}, 
-            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
-            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
-            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
-          ), 
-          React.createElement(Dropdown, {label: "Right", theme: "blue", right: true}, 
-            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
-            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
-            React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
-          )
-        ), 
+          React.createElement(ModalSection, null), 
 
-        React.createElement(ModalSection, null), 
-
-        React.createElement(Section, {heading: "Nav Item"}, 
-          React.createElement("div", {className: "mb2 border-bottom"}, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
-          ), 
-          React.createElement("div", {className: "mb2 bg-black"}, 
-            React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
-            React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
-            React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item")
-          )
-        ), 
-
-        React.createElement(Section, {heading: "Navbar"}, 
-          React.createElement(Navbar, null, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Default Navbar"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
-            React.createElement(NavSpacer, null), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
-          ), 
-          React.createElement(Navbar, {theme: "blue"}, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Blue Navbar"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
-            React.createElement(NavSpacer, null), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
-          ), 
-          React.createElement(Navbar, {theme: "black", compact: true}, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Compact Navbar"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
-            React.createElement(NavSpacer, null), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
-          ), 
-          React.createElement(Navbar, {theme: "black", justified: true}, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Justified Navbar"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
-          ), 
-          React.createElement(Navbar, {theme: "black"}, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
-            React.createElement(Group, {theme: "white", outline: true}, 
-              React.createElement(Button, null, "Button"), 
-              React.createElement(Button, null, "Button")
+          React.createElement(Section, {heading: "Nav Item"}, 
+            React.createElement("div", {className: "mb2 border-bottom"}, 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             ), 
-            React.createElement(NavSpacer, null), 
-            React.createElement(Group, null, 
-              React.createElement("input", {type: "text", className: "field-dark", placeholder: "Search"}), 
-              React.createElement(Button, {theme: "blue"}, "Go")
+            React.createElement("div", {className: "mb2 bg-black"}, 
+              React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
+              React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item"), 
+              React.createElement(NavItem, {href: "#nav-item", inverse: true}, "Nav Item")
+            )
+          ), 
+
+          React.createElement(Section, {heading: "Navbar"}, 
+            React.createElement(Navbar, null, 
+              React.createElement(NavItem, {href: "#nav-item"}, "Default Navbar"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+              React.createElement(NavSpacer, null), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             ), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
-          )
-        ), 
-
-        React.createElement(Section, {heading: "Badge"}, 
-          React.createElement(Badge, null, "Badge"), 
-          React.createElement(Badge, {theme: "red"}, "Badge"), 
-          React.createElement(Badge, {theme: "yellow"}, "Badge"), 
-          React.createElement(Badge, {theme: "green"}, "Badge"), 
-          React.createElement(Badge, {theme: "blue"}, "Badge"), 
-          React.createElement(Badge, {theme: "black"}, "Badge")
-        ), 
-
-        React.createElement(Section, {heading: "Message"}, 
-          React.createElement(Message, null, "Message"), 
-          React.createElement(Message, {theme: "red"}, "Message"), 
-          React.createElement(Message, {theme: "yellow"}, "Message"), 
-          React.createElement(Message, {theme: "green"}, "Message"), 
-          React.createElement(Message, {theme: "blue"}, "Message"), 
-          React.createElement(Message, {theme: "black"}, "Message")
-        ), 
-
-        React.createElement(Section, {heading: "Media Object"}, 
-          React.createElement(Media, null, 
-            React.createElement("img", {src: "//placehold.it/96"}), 
-            React.createElement("div", null, "Media Object")
-          )
-        ), 
-
-        React.createElement(Section, {heading: "Flag Object"}, 
-          React.createElement(Flag, null, 
-            React.createElement("img", {src: "//placehold.it/96"}), 
-            React.createElement("div", null, "Flag Object")
-          )
-        ), 
-
-        React.createElement(Section, {heading: "Panel"}, 
-          React.createElement(Panel, {header: "Panel Header"}, 
-            React.createElement("div", null, "Panel Body")
+            React.createElement(Navbar, {theme: "blue"}, 
+              React.createElement(NavItem, {href: "#nav-item"}, "Blue Navbar"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+              React.createElement(NavSpacer, null), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+            ), 
+            React.createElement(Navbar, {theme: "black", compact: true}, 
+              React.createElement(NavItem, {href: "#nav-item"}, "Compact Navbar"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+              React.createElement(NavSpacer, null), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+            ), 
+            React.createElement(Navbar, {theme: "black", justified: true}, 
+              React.createElement(NavItem, {href: "#nav-item"}, "Justified Navbar"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+            ), 
+            React.createElement(Navbar, {theme: "black"}, 
+              React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
+              React.createElement(Group, {theme: "white", outline: true}, 
+                React.createElement(Button, null, "Button"), 
+                React.createElement(Button, null, "Button")
+              ), 
+              React.createElement(NavSpacer, null), 
+              React.createElement(Group, null, 
+                React.createElement("input", {type: "text", className: "field-dark", placeholder: "Search"}), 
+                React.createElement(Button, {theme: "blue"}, "Go")
+              ), 
+              React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+            )
           ), 
-          React.createElement(Panel, {header: "Panel Header", theme: "blue"}, 
-            React.createElement("div", null, "Panel Body")
-          ), 
-          React.createElement(Panel, {header: "Panel Header", theme: "green"}, 
-            React.createElement("div", null, "Panel Body")
-          ), 
-          React.createElement(Panel, {header: "Panel Header", theme: "yellow"}, 
-            React.createElement("div", null, "Panel Body")
-          ), 
-          React.createElement(Panel, {header: "Panel Header", theme: "red"}, 
-            React.createElement("div", null, "Panel Body")
-          )
-        ), 
 
-        /* <FuzzyInputSection />
-        */
+          React.createElement(Section, {heading: "Badge"}, 
+            React.createElement(Badge, null, "Badge"), 
+            React.createElement(Badge, {theme: "red"}, "Badge"), 
+            React.createElement(Badge, {theme: "yellow"}, "Badge"), 
+            React.createElement(Badge, {theme: "green"}, "Badge"), 
+            React.createElement(Badge, {theme: "blue"}, "Badge"), 
+            React.createElement(Badge, {theme: "black"}, "Badge")
+          ), 
 
-        React.createElement(HslSlidersSection, null), 
+          React.createElement(Section, {heading: "Message"}, 
+            React.createElement(Message, null, "Message"), 
+            React.createElement(Message, {theme: "red"}, "Message"), 
+            React.createElement(Message, {theme: "yellow"}, "Message"), 
+            React.createElement(Message, {theme: "green"}, "Message"), 
+            React.createElement(Message, {theme: "blue"}, "Message"), 
+            React.createElement(Message, {theme: "black"}, "Message")
+          ), 
 
-        React.createElement(IconSection, null)
+          React.createElement(Section, {heading: "Media Object"}, 
+            React.createElement(Media, null, 
+              React.createElement("img", {src: "//placehold.it/96"}), 
+              React.createElement("div", null, "Media Object")
+            )
+          ), 
+
+          React.createElement(Section, {heading: "Flag Object"}, 
+            React.createElement(Flag, null, 
+              React.createElement("img", {src: "//placehold.it/96"}), 
+              React.createElement("div", null, "Flag Object")
+            )
+          ), 
+
+          React.createElement(Section, {heading: "Panel"}, 
+            React.createElement(Panel, {header: "Panel Header"}, 
+              React.createElement("div", null, "Panel Body")
+            ), 
+            React.createElement(Panel, {header: "Panel Header", theme: "blue"}, 
+              React.createElement("div", null, "Panel Body")
+            ), 
+            React.createElement(Panel, {header: "Panel Header", theme: "green"}, 
+              React.createElement("div", null, "Panel Body")
+            ), 
+            React.createElement(Panel, {header: "Panel Header", theme: "yellow"}, 
+              React.createElement("div", null, "Panel Body")
+            ), 
+            React.createElement(Panel, {header: "Panel Header", theme: "red"}, 
+              React.createElement("div", null, "Panel Body")
+            )
+          ), 
+
+          /* <FuzzyInputSection />
+          */
+
+          React.createElement(HslSlidersSection, null), 
+
+          React.createElement(IconSection, null)
+
+        )
 
       )
     )
@@ -1155,7 +1254,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../..":"/Users/jackson/Repos/rebass/index.js","./hsl-sliders-section.jsx":"/Users/jackson/Repos/rebass/docs/components/hsl-sliders-section.jsx","./icon-section.jsx":"/Users/jackson/Repos/rebass/docs/components/icon-section.jsx","./modal-section.jsx":"/Users/jackson/Repos/rebass/docs/components/modal-section.jsx","./section.jsx":"/Users/jackson/Repos/rebass/docs/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/hsl-sliders-section.jsx":[function(require,module,exports){
+},{"../..":"/Users/jackson/Repos/rebass/index.js","./hero.jsx":"/Users/jackson/Repos/rebass/docs/components/hero.jsx","./hsl-sliders-section.jsx":"/Users/jackson/Repos/rebass/docs/components/hsl-sliders-section.jsx","./icon-section.jsx":"/Users/jackson/Repos/rebass/docs/components/icon-section.jsx","./modal-section.jsx":"/Users/jackson/Repos/rebass/docs/components/modal-section.jsx","./section.jsx":"/Users/jackson/Repos/rebass/docs/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/hsl-sliders-section.jsx":[function(require,module,exports){
 
 var React = require('react');
 var Color = require('color');
@@ -1278,7 +1377,78 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./Section.jsx":"/Users/jackson/Repos/rebass/docs/components/Section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/index.js"}],"/Users/jackson/Repos/rebass/docs/components/modal-section.jsx":[function(require,module,exports){
+},{"./Section.jsx":"/Users/jackson/Repos/rebass/docs/components/Section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/index.js"}],"/Users/jackson/Repos/rebass/docs/components/layout-sidebar.jsx":[function(require,module,exports){
+
+var React = require('react');
+var Header = require('./header.jsx');
+var Footer = require('./footer.jsx');
+var Sidebar = require('./sidebar.jsx');
+
+module.exports = React.createClass({displayName: "exports",
+
+  render: function() {
+    var styles = {
+      content: {
+        minHeight: '100vh',
+        maxWidth: '48rem',
+      },
+    };
+    return (
+      React.createElement("div", {className: "sm-flex"}, 
+        React.createElement("div", {className: "sm-col-4 md-col-3 lg-col-2 px2 white bg-black"}, 
+          React.createElement(Sidebar, React.__spread({},  this.props))
+        ), 
+        React.createElement("div", {className: "sm-col-8 mx-auto px2 flex flex-column", style: styles.content}, 
+          React.createElement("div", {className: "flex-auto bg-silver"}, 
+            React.createElement("h1", null, "Sidebar Layout"), 
+            this.props.children
+          ), 
+          React.createElement("div", {className: "mxn1"}, 
+            React.createElement(Footer, React.__spread({},  this.props))
+          )
+        )
+      )
+    )
+  }
+
+});
+
+
+
+},{"./footer.jsx":"/Users/jackson/Repos/rebass/docs/components/footer.jsx","./header.jsx":"/Users/jackson/Repos/rebass/docs/components/header.jsx","./sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/sidebar.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/logo.jsx":[function(require,module,exports){
+
+var React = require('react');
+
+module.exports = React.createClass({displayName: "exports",
+
+  getDefaultProps: function() {
+    return {
+      className: ''
+    }
+  },
+
+  render: function() {
+    var style = {
+      display: 'block',
+      width: '2.5em',
+      height: '1em'
+    };
+    return (
+      React.createElement("svg", {xmlns: "http://www.w3.org/2000/svg", 
+        viewBox: "0 0 40 16", 
+        fill: "currentcolor", 
+        style: style, 
+        className: this.props.className}, 
+        React.createElement("path", {d: "M20 0 L24 8 L40 6 L20 16 L16 8 L0 10 z"})
+      )
+    )
+  }
+
+});
+
+
+
+},{"react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/modal-section.jsx":[function(require,module,exports){
 
 var React = require('react');
 var Section = require('./Section.jsx');
@@ -1355,14 +1525,24 @@ var NavItem = require('../..').NavItem;
 
 module.exports = React.createClass({displayName: "exports",
 
+  getDefaultProps: function() {
+    return {
+      dark: false,
+    }
+  },
+
   renderLink: function(route, i) {
     if (route.path == '/') { return false; }
+    var linkClass =
+      classnames('button',
+        'button-narrow',
+        'button-transparent');
     return (
       React.createElement(Link, {
         key: 'link-' + i, 
         to: route.name, 
-        className: "button button-narrow button-transparent blue", 
-        activeStyle: {color:'black'}}, 
+        className: linkClass, 
+        activeClassName: "is-active"}, 
         route.name
       )
     )
@@ -1425,9 +1605,9 @@ module.exports = React.createClass({displayName: "exports",
       React.createElement(Html, React.__spread({},  this.props, 
         {stylesheets: stylesheets, 
         scripts: scripts}), 
-        React.createElement(Header, React.__spread({},  this.props)), 
-        React.createElement(RouteHandler, React.__spread({},  this.props)), 
-        React.createElement(Footer, React.__spread({},  this.props))
+        /* <Header {...this.props} /> */
+        React.createElement(RouteHandler, React.__spread({},  this.props))
+        /* <Footer {...this.props} /> */
       )
     )
   }
@@ -1469,7 +1649,56 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"lodash.kebabcase":"/Users/jackson/Repos/rebass/node_modules/lodash.kebabcase/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/data.js":[function(require,module,exports){
+},{"lodash.kebabcase":"/Users/jackson/Repos/rebass/node_modules/lodash.kebabcase/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/sidebar.jsx":[function(require,module,exports){
+
+var React = require('react');
+var Link = require('react-router').Link;
+var Nav = require('./nav.jsx');
+
+var Rebass = require('../..');
+var NavItem = Rebass.NavItem;
+
+module.exports = React.createClass({displayName: "exports",
+
+  renderNavItem: function(route) {
+    if (route.path == '/') { return false; }
+    return (
+      React.createElement(Link, {to: route.name, 
+        className: "button block button-transparent red", 
+        activeClassName: "is-active"}, 
+        route.name
+      )
+    )
+  },
+
+  render: function() {
+    return (
+      React.createElement("div", {className: "py2"}, 
+        React.createElement("h1", {className: "h2 caps"}, 
+          React.createElement(Link, {to: "root", className: "red"}, this.props.title)
+        ), 
+        React.createElement("hr", {className: "border-red"}), 
+        React.createElement("div", {className: "mxn2 mb4"}, 
+          this.props.routes.map(this.renderNavItem)
+        ), 
+        React.createElement("div", {className: "mxn2 mt4"}, 
+          React.createElement("a", {href: this.props.homepage, 
+            className: "button block button-transparent muted"}, 
+            "Github"
+          ), 
+          React.createElement("p", {className: "h5 px2 muted"}, 
+            "Made by ", React.createElement("a", {href: "//jxnblk.com"}, "Jxnblk")
+          )
+        )
+      )
+    )
+  }
+
+});
+
+
+
+},{"../..":"/Users/jackson/Repos/rebass/index.js","./nav.jsx":"/Users/jackson/Repos/rebass/docs/components/nav.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/data.js":[function(require,module,exports){
 (function (process){
 
 var _ = require('lodash');
@@ -1571,13 +1800,15 @@ module.exports = {
   Media: require('./dist/media'),
   Message: require('./dist/message'),
   Panel: require('./dist/panel'),
+  Banner: require('./dist/banner'),
+
   //FuzzyInput: require('./dist/fuzzy-input'),
   HslSliders: require('react-hsl-sliders'),
   Icon: require('react-geomicons'),
 };
 
 
-},{"./dist/badge":"/Users/jackson/Repos/rebass/dist/badge.js","./dist/button":"/Users/jackson/Repos/rebass/dist/button.js","./dist/dropdown":"/Users/jackson/Repos/rebass/dist/dropdown.js","./dist/flag":"/Users/jackson/Repos/rebass/dist/flag.js","./dist/group":"/Users/jackson/Repos/rebass/dist/group.js","./dist/media":"/Users/jackson/Repos/rebass/dist/media.js","./dist/message":"/Users/jackson/Repos/rebass/dist/message.js","./dist/modal":"/Users/jackson/Repos/rebass/dist/modal.js","./dist/nav-item":"/Users/jackson/Repos/rebass/dist/nav-item.js","./dist/nav-spacer":"/Users/jackson/Repos/rebass/dist/nav-spacer.js","./dist/navbar":"/Users/jackson/Repos/rebass/dist/navbar.js","./dist/panel":"/Users/jackson/Repos/rebass/dist/panel.js","./dist/radio-button":"/Users/jackson/Repos/rebass/dist/radio-button.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/index.js","react-hsl-sliders":"/Users/jackson/Repos/rebass/node_modules/react-hsl-sliders/hsl-sliders.js"}],"/Users/jackson/Repos/rebass/node_modules/classnames/index.js":[function(require,module,exports){
+},{"./dist/badge":"/Users/jackson/Repos/rebass/dist/badge.js","./dist/banner":"/Users/jackson/Repos/rebass/dist/banner.js","./dist/button":"/Users/jackson/Repos/rebass/dist/button.js","./dist/dropdown":"/Users/jackson/Repos/rebass/dist/dropdown.js","./dist/flag":"/Users/jackson/Repos/rebass/dist/flag.js","./dist/group":"/Users/jackson/Repos/rebass/dist/group.js","./dist/media":"/Users/jackson/Repos/rebass/dist/media.js","./dist/message":"/Users/jackson/Repos/rebass/dist/message.js","./dist/modal":"/Users/jackson/Repos/rebass/dist/modal.js","./dist/nav-item":"/Users/jackson/Repos/rebass/dist/nav-item.js","./dist/nav-spacer":"/Users/jackson/Repos/rebass/dist/nav-spacer.js","./dist/navbar":"/Users/jackson/Repos/rebass/dist/navbar.js","./dist/panel":"/Users/jackson/Repos/rebass/dist/panel.js","./dist/radio-button":"/Users/jackson/Repos/rebass/dist/radio-button.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/index.js","react-hsl-sliders":"/Users/jackson/Repos/rebass/node_modules/react-hsl-sliders/hsl-sliders.js"}],"/Users/jackson/Repos/rebass/node_modules/classnames/index.js":[function(require,module,exports){
 function classNames() {
 	var args = arguments;
 	var classes = [];
@@ -3049,7 +3280,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],
@@ -37917,7 +38148,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],"/Users/jackson/Repos/rebass/package.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
   "name": "rebass",
   "version": "0.0.1",
   "description": "React UI components for Basscss",
