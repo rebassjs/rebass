@@ -1,5 +1,6 @@
 
 var React = require('react');
+var classnames = require('classnames');
 
 var Header = require('./header.jsx');
 var Footer = require('./footer.jsx');
@@ -23,28 +24,28 @@ module.exports = React.createClass({
 
     var styles = {
       sidebar: {
-        marginLeft: this.state.sidebarIsOpen ? 0 : false,
-      },
-      sidebarToggle: {
-        //display: this.state.sidebarIsOpen ? 'none' : false,
+        //marginLeft: this.state.sidebarIsOpen ? 0 : false,
       },
       content: {
         minHeight: '100vh',
-        //maxWidth: '48rem',
       },
       contentBody: {
         maxWidth: '48rem',
       }
     };
 
+    var classes = {
+      layout: classnames('LayoutSidebar', 'flex', { 'is-open': this.state.sidebarIsOpen }),
+    };
+
     return (
-      <div className="LayoutSidebar flex">
+      <div className={classes.layout}>
         <div className="LayoutSidebar-sidebar flex-none white bg-black" style={styles.sidebar}>
           <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
         </div>
         <div className="LayoutSidebar-content flex-auto flex flex-column" style={styles.content}>
           <div className="flex-auto">
-            <div className="flex flex-center sm-hide aqua bg-black" style={styles.sidebarToggle}>
+            <div className="flex flex-center sm-hide red bg-black" style={styles.sidebarToggle}>
               <button onClick={this.toggleSidebar}
                 className="flex flex-center button py2 button-transparent">
                 <Logo className="mr2" />

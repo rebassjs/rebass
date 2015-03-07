@@ -17,9 +17,10 @@ module.exports = React.createClass({displayName: "exports",
     }
   },
 
-  renderChild: function(child) {
+  renderChild: function(child, i) {
     var inverse = this.props.inverse || this.isInverse();
     var childProps = {
+      key: 'navbar-child-' + i,
       inverse: inverse,
       compact: this.props.compact,
       justified: this.props.justified,

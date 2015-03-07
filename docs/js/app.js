@@ -320,6 +320,7 @@ module.exports = React.createClass({displayName: "exports",
         { 'rounded-right': (i == this.props.children.length - 1) },
         { 'not-rounded': (i > 0 && i < this.props.children.length - 1) });
     var props = {
+      key: 'group-child-' + i,
       theme: this.props.theme ? this.props.theme : child.props.theme,
       outline: this.props.outline || child.props.outline,
       transparent: this.props.transparent || child.props.transparent,
@@ -610,9 +611,10 @@ module.exports = React.createClass({displayName: "exports",
     }
   },
 
-  renderChild: function(child) {
+  renderChild: function(child, i) {
     var inverse = this.props.inverse || this.isInverse();
     var childProps = {
+      key: 'navbar-child-' + i,
       inverse: inverse,
       compact: this.props.compact,
       justified: this.props.justified,
@@ -1161,17 +1163,17 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("footer", {className: "px1"}, 
-        React.createElement("div", {className: "flex flex-wrap flex-center py3 mxn1"}, 
-          React.createElement("h3", {className: "h4 m0 px1"}, 
+      React.createElement("footer", {className: "px2"}, 
+        React.createElement("div", {className: "flex flex-wrap flex-center py3 mxn2"}, 
+          React.createElement("h3", {className: "h4 m0 px2"}, 
             React.createElement(Link, {to: this.props.baseUrl}, 
               this.props.title
             )
           ), 
-          React.createElement("div", {className: "h5 bold px1"}, "v", this.props.version), 
+          React.createElement("div", {className: "h5 bold px2"}, "v", this.props.version), 
           React.createElement(Nav, React.__spread({},  this.props)), 
           React.createElement("div", {className: "flex-auto"}), 
-          React.createElement("p", {className: "bold h5 px1 m0"}, 
+          React.createElement("p", {className: "bold h5 px2 m0"}, 
             React.createElement("span", null, "Made by "), 
             React.createElement("a", {href: "//jxnblk.com"}, "Jxnblk")
           )
@@ -1608,6 +1610,7 @@ module.exports = React.createClass({displayName: "exports",
 },{"./Section.jsx":"/Users/jackson/Repos/rebass/docs/components/Section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/index.js"}],"/Users/jackson/Repos/rebass/docs/components/layout-sidebar.jsx":[function(require,module,exports){
 
 var React = require('react');
+var classnames = require('classnames');
 
 var Header = require('./header.jsx');
 var Footer = require('./footer.jsx');
@@ -1631,28 +1634,28 @@ module.exports = React.createClass({displayName: "exports",
 
     var styles = {
       sidebar: {
-        marginLeft: this.state.sidebarIsOpen ? 0 : false,
-      },
-      sidebarToggle: {
-        //display: this.state.sidebarIsOpen ? 'none' : false,
+        //marginLeft: this.state.sidebarIsOpen ? 0 : false,
       },
       content: {
         minHeight: '100vh',
-        //maxWidth: '48rem',
       },
       contentBody: {
         maxWidth: '48rem',
       }
     };
 
+    var classes = {
+      layout: classnames('LayoutSidebar', 'flex', { 'is-open': this.state.sidebarIsOpen }),
+    };
+
     return (
-      React.createElement("div", {className: "LayoutSidebar flex"}, 
+      React.createElement("div", {className: classes.layout}, 
         React.createElement("div", {className: "LayoutSidebar-sidebar flex-none white bg-black", style: styles.sidebar}, 
           React.createElement(Sidebar, React.__spread({},  this.props, {toggleSidebar: this.toggleSidebar}))
         ), 
         React.createElement("div", {className: "LayoutSidebar-content flex-auto flex flex-column", style: styles.content}, 
           React.createElement("div", {className: "flex-auto"}, 
-            React.createElement("div", {className: "flex flex-center sm-hide aqua bg-black", style: styles.sidebarToggle}, 
+            React.createElement("div", {className: "flex flex-center sm-hide red bg-black", style: styles.sidebarToggle}, 
               React.createElement("button", {onClick: this.toggleSidebar, 
                 className: "flex flex-center button py2 button-transparent"}, 
                 React.createElement(Logo, {className: "mr2"}), 
@@ -1675,7 +1678,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./footer.jsx":"/Users/jackson/Repos/rebass/docs/components/footer.jsx","./header.jsx":"/Users/jackson/Repos/rebass/docs/components/header.jsx","./logo.jsx":"/Users/jackson/Repos/rebass/docs/components/logo.jsx","./sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/sidebar.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/logo.jsx":[function(require,module,exports){
+},{"./footer.jsx":"/Users/jackson/Repos/rebass/docs/components/footer.jsx","./header.jsx":"/Users/jackson/Repos/rebass/docs/components/header.jsx","./logo.jsx":"/Users/jackson/Repos/rebass/docs/components/logo.jsx","./sidebar.jsx":"/Users/jackson/Repos/rebass/docs/components/sidebar.jsx","classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/components/logo.jsx":[function(require,module,exports){
 
 var React = require('react');
 
@@ -1916,10 +1919,11 @@ var NavItem = Rebass.NavItem;
 
 module.exports = React.createClass({displayName: "exports",
 
-  renderNavItem: function(route) {
+  renderNavItem: function(route, i) {
     if (route.path == '/') { return false; }
     return (
       React.createElement(Link, {to: route.name, 
+        key: 'sidebar-nav-item-'+i, 
         className: "button block button-transparent red", 
         activeClassName: "is-active"}, 
         route.name
@@ -2000,7 +2004,7 @@ if (process.env.NODE_ENV === 'production') {
   data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
-  data.baseUrl = '/rebass/';
+  //data.baseUrl = '/rebass/';
 }
 
 data.routes = [
@@ -2029,7 +2033,6 @@ var NotFound = require('./components/404.jsx');
 module.exports = function(props) { 
   function renderRedirect(route, i) {
     if (route.path == '') { return false }
-    console.log('renderRedirect', route.name, route.path);
     return (
       React.createElement(Redirect, React.__spread({},  props, 
         {key: 'redirect-' + i, 
@@ -2039,7 +2042,6 @@ module.exports = function(props) {
   }
   function renderRoute(route, i) {
     if (route.path == '') { return false }
-    console.log('renderRoute', route.name, route.path);
     return (
       React.createElement(Route, React.__spread({},  props, 
         {key: 'route-' + i, 
@@ -2048,7 +2050,6 @@ module.exports = function(props) {
         handler: route.handler}))
     )
   }
-  console.log('routes.jsx', props.baseUrl);
   return (
     React.createElement(Route, {name: "root", path: props.baseUrl, handler: Root}, 
       props.routes.map(renderRoute), 
@@ -3556,7 +3557,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 },{"color-name":"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json"}],"/Users/jackson/Repos/rebass/node_modules/color/node_modules/color-string/node_modules/color-name/index.json":[function(require,module,exports){
-module.exports={
+module.exports=module.exports=module.exports={
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
 	"aqua": [0, 255, 255],
@@ -38424,7 +38425,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],"/Users/jackson/Repos/rebass/package.json":[function(require,module,exports){
-module.exports={
+module.exports=module.exports=module.exports={
   "name": "rebass",
   "version": "0.0.1",
   "description": "React UI components for Basscss",

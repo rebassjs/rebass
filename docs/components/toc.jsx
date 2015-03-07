@@ -9,10 +9,10 @@ module.exports = React.createClass({
     }
   },
 
-  renderNavItem: function(item) {
+  renderNavItem: function(item, i) {
     var href = '#' + item.name;
     return (
-      <a href={href} className="button block button-nav-light">
+      <a href={href} key={'toc-nav-item-'+i} className="button block button-nav-light">
         {item.title}
       </a>
     )

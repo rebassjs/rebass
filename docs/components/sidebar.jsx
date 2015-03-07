@@ -9,10 +9,11 @@ var NavItem = Rebass.NavItem;
 
 module.exports = React.createClass({
 
-  renderNavItem: function(route) {
+  renderNavItem: function(route, i) {
     if (route.path == '/') { return false; }
     return (
       <Link to={route.name}
+        key={'sidebar-nav-item-'+i}
         className="button block button-transparent red"
         activeClassName="is-active">
         {route.name}

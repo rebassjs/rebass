@@ -9,9 +9,27 @@
           transition: margin .2s ease-out;
 }
 
+.LayoutSidebar.is-open .LayoutSidebar-sidebar {
+  margin-left: 0;
+  outline: 2px solid tomato;
+}
+
+.LayoutSidebar-content {
+  -webkit-transition: margin .2s ease-out;
+          transition: margin .2s ease-out;
+}
+
+.LayoutSidebar.is-open .LayoutSidebar-content {
+  margin-right: -14rem;
+}
+
 @media (min-width: 40em) {
   .LayoutSidebar-sidebar {
     margin-left: 0;
+  }
+
+  .LayoutSidebar-content {
+    margin-right: 0;
   }
 }
 
