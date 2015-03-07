@@ -1,20 +1,21 @@
 
 var React = require('react');
+var Link = require('react-router').Link;
+var Nav = require('./nav.jsx');
 
 module.exports = React.createClass({
 
   render: function() {
-    var homeLink = '//jxnblk.com/' + this.props.name;
     return (
       <footer className="container px2">
         <div className="flex flex-wrap flex-center py3 mxn1">
           <h3 className="h4 m0 px1">
-            <a href={homeLink}>
-              {this.props.name}
-            </a>
+            <Link to="Home">
+              {this.props.title}
+            </Link>
           </h3>
           <div className="h5 bold px1">v{this.props.version}</div>
-          <a href={this.props.homepage} className="button button-transparent blue">Github</a>
+          <Nav {...this.props} />
           <div className="flex-auto" />
           <p className="h5 px1 m0">
             <span>Made by </span>
