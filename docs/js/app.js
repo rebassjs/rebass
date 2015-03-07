@@ -1072,7 +1072,7 @@ module.exports = React.createClass({displayName: "exports",
       React.createElement("footer", {className: "container px2"}, 
         React.createElement("div", {className: "flex flex-wrap flex-center py3 mxn1"}, 
           React.createElement("h3", {className: "h4 m0 px1"}, 
-            React.createElement(Link, {to: "/"}, 
+            React.createElement(Link, {to: this.props.baseUrl}, 
               this.props.title
             )
           ), 
@@ -1140,7 +1140,7 @@ module.exports = React.createClass({displayName: "exports",
       React.createElement("header", {className: "container px2"}, 
         React.createElement("div", {className: "flex flex-center flex-wrap py3 border-bottom"}, 
           React.createElement("div", {className: "flex-auto"}, 
-            React.createElement(Link, {to: "/", className: "black"}, 
+            React.createElement(Link, {to: this.props.baseUrl, className: "black"}, 
               React.createElement("h1", {className: "m0"}, this.props.title)
             ), 
             React.createElement("p", {className: "m0"}, this.props.description)
