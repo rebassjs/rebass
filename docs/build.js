@@ -11,10 +11,9 @@ var Root = require('./components/root.jsx');
 var data = require('./data');
 
 data.routes.map(function(route) {
-  console.log('build', '/' + route.path);
+  //console.log('build', '/' + route.path);
   Router.run(routes(data), data.baseUrl + route.path, function(Handler, state) {
     var html = React.renderToString(React.createElement(Handler, data));
-    console.log(html);
     var dir = path.join(__dirname, '../' + route.path + '/');
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);

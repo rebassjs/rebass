@@ -19,6 +19,7 @@ module.exports = function(props) {
       )
   }
   function renderRoute(route, i) {
+    console.log(route.name, route.path);
     return (
       <Route {...props}
         key={'route-' + i}
