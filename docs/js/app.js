@@ -1707,7 +1707,6 @@ if (process.env.NODE_ENV === 'production') {
   data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
-  data.baseUrl = '/rebass/';
 }
 
 data.routes = [
