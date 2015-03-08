@@ -1,9 +1,7 @@
 
 var React = require('react');
 var LayoutSidebar = require('./layout-sidebar.jsx');
-
 var md = require('../md.jsx');
-var mdjsx = require('../mdjsx.jsx');
 
 module.exports = React.createClass({
 

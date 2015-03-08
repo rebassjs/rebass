@@ -55,7 +55,7 @@
     "watch:uglify": "watch 'npm run uglify' ./docs/js",
     "build:js": "browserify docs/src/app.js -o docs/js/app.js",
     "build:html": "node docs/src/build",
-    "watch:html": "watch 'npm run build:html' ./docs/src/components -w 1",
+    "watch:html": "watch 'npm run build:html' ./docs/src/",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
     "docs:css": "basswork docs/src/index.css docs/css/docs.css",

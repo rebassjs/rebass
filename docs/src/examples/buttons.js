@@ -17,14 +17,9 @@ module.exports = React.createClass({
   render: function() {
     var theme = this.props.theme; 
     console.log('button transformed');
-    return transform(jsxString);
-    //return (
-    //  <div>
-    //    <Button theme={theme}>Button</Button>
-    //    <Button theme={theme} outline={true}>Button</Button>
-    //    <Button theme={theme} transparent={true}>Button</Button>
-    //  </div>
-    //)
+    console.log(typeof eval(transform(jsxString)) );
+    //return transform(jsxString);
+    return eval(transform(jsxString))
   }
 
 });

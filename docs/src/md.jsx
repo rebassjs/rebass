@@ -3,8 +3,6 @@ global.React = require('react');
 var marked = require('marked');
 var highlight = require('highlight.js');
 
-//var mdReact = require('markdown-react');
-//var reactdown = require('reactdown');
 var md2react = require('md2react');
 
 var renderer = new marked.Renderer();

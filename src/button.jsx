@@ -15,6 +15,7 @@ module.exports = React.createClass({
       className: '',
       outline: false,
       transparent: false,
+      size: false,
     }
   },
 
@@ -26,6 +27,8 @@ module.exports = React.createClass({
         this.props.className,
         (!this.props.active && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
         'button',
+        { 'button-small': this.props.size == 'small' },
+        { 'button-big': this.props.size == 'big' },
         { mr1: !this.props.flush },
         this.props.active ? activeClass : false,
         { 'button-outline': this.props.outline },
