@@ -1,6 +1,6 @@
 
 var React = require('react');
-var Rebass = require('../..');
+var Rebass = require('../../..');
 var Banner = Rebass.Banner;
 var Logo = require('./logo.jsx');
 var Nav = require('./nav.jsx');

@@ -1,7 +1,7 @@
 
 var React = require('react');
 var Section = require('./Section.jsx');
-var Rebass = require('../..');
+var Rebass = require('../../..');
 var Button = Rebass.Button;
 var Modal = Rebass.Modal;
 

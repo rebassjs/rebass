@@ -23,9 +23,6 @@ module.exports = React.createClass({
   render: function() {
 
     var styles = {
-      sidebar: {
-        //marginLeft: this.state.sidebarIsOpen ? 0 : false,
-      },
       content: {
         minHeight: '100vh',
       },
@@ -47,12 +44,12 @@ module.exports = React.createClass({
           <div className="flex-auto">
             <div className="flex flex-center sm-hide red bg-black" style={styles.sidebarToggle}>
               <button onClick={this.toggleSidebar}
-                className="flex flex-center button py2 button-transparent">
+                className="caps flex flex-center button py2 button-transparent">
                 <Logo className="mr2" />
-                <div>Menu</div>
+                <div>Rebass</div>
               </button>
             </div>
-            <div className="px2 mx-auto" style={styles.contentBody}>
+            <div className="px2 py4 mx-auto" style={styles.contentBody}>
               {this.props.children}
             </div>
           </div>

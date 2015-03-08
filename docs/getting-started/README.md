@@ -1,18 +1,13 @@
-# Rebass
 
-React UI components for Basscss (WIP)
+# Getting started
 
-http://jxnbk.com/rebass
-
-## Getting Started
-
-### Install
+## Install
 
 ```bash
 npm install --save rebass
 ```
 
-### Require
+## Require
 
 ```javascript
 var Rebass = require('rebass');
@@ -20,7 +15,7 @@ var Button = Rebass.Button;
 var Badge = Rebass.Badge;
 ```
 
-### Use
+## Use
 
 ```jsx
 <App>
@@ -28,12 +23,4 @@ var Badge = Rebass.Badge;
   <Badge>Badge</Badge>
 </App>
 ```
-
-## Documentation
-
-http://jxnblk.com/rebass/docs/components
-
----
-
-MIT License
 

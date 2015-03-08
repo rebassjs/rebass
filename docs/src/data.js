@@ -1,6 +1,8 @@
 
 var _ = require('lodash');
-var pkg = require('../package.json');
+var fs = require('fs');
+var path = require('path');
+var pkg = require('../../package.json');
 
 var data = {};
 data.title = _.capitalize(pkg.name);
@@ -11,8 +13,9 @@ data.homepage = pkg.homepage;
 data.npm = '//npmjs.com/package/' + pkg.name;
 
 var Home = require('./components/home.jsx');
-var GettingStarted = require('./components/getting-started.jsx');
 var Docs = require('./components/docs.jsx');
+var GettingStarted = require('./components/getting-started.jsx');
+var Components = require('./components/components.jsx');
 
 data.stylesheets = [
   'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.3/bassdock.min.css',
@@ -32,10 +35,33 @@ if (process.env.NODE_ENV === 'production') {
   //data.baseUrl = '/rebass/';
 }
 
+data.markdown = {
+  GettingStarted: fs.readFileSync(path.join(__dirname, '../getting-started/README.md'), 'utf8'),
+  //Components: fs.readFileSync(path.join(__dirname, '../components/README.md'), 'utf8'),
+};
+
+
 data.routes = [
-  { path: '', name: 'Home', handler: Home },
-  { path: 'getting-started', name: 'Getting Started', handler: GettingStarted },
-  { path: 'docs', name: 'Docs', handler: Docs },
+  {
+    path: '',
+    name: 'Home',
+    handler: Home
+  },
+  //{
+  //  path: 'docs',
+  //  name: 'Docs',
+  //  handler: Docs
+  //},
+  {
+    path: 'docs/getting-started',
+    name: 'Getting Started',
+    handler: GettingStarted,
+  },
+  {
+    path: 'docs/components',
+    name: 'Components',
+    handler: Components,
+  },
 ];
 
 module.exports = data;

@@ -4,13 +4,13 @@ var Link = require('react-router').Link;
 //var Nav = require('./nav.jsx');
 var Logo = require('./logo.jsx')
 
-var Rebass = require('../..');
+var Rebass = require('../../..');
 var NavItem = Rebass.NavItem;
 
 module.exports = React.createClass({
 
   renderNavItem: function(route, i) {
-    if (route.path == '/') { return false; }
+    if (route.path == '') { return false; }
     return (
       <Link to={route.name}
         key={'sidebar-nav-item-'+i}
@@ -24,11 +24,12 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div className="red">
-        <div className="flex flex-center">
+        <div className="flex flex-center" onClick={this.props.toggleSidebar}>
           <Logo className="p2" />
           <div className="flex-auto" />
           <div className="sm-hide">
             <button
+              title="Hide navigation"
               onClick={this.props.toggleSidebar}
               className="h3 button py2 button-transparent muted">
               &times;
@@ -43,9 +44,9 @@ module.exports = React.createClass({
           <div className="mxn2 mb4">
             {this.props.routes.map(this.renderNavItem)}
           </div>
-          <div className="mxn2 mt4 mb2">
+          <div className="flex flex-baseline mxn2 mt4 mb2">
             <a href={this.props.homepage}
-              className="button block mb1 button-transparent muted">
+              className="button flex-auto button-transparent muted">
               Github
             </a>
             <p className="h5 bold px2 muted">

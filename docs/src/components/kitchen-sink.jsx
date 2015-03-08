@@ -2,7 +2,7 @@
 var React = require('react');
 var Section = require('./section.jsx');
 
-var Rebass = require('../..');
+var Rebass = require('../../..');
 var Button = Rebass.Button;
 var RadioButton = Rebass.RadioButton;
 var Group = Rebass.Group;
@@ -16,13 +16,10 @@ var Media = Rebass.Media;
 var Flag = Rebass.Flag
 var Panel = Rebass.Panel
 
-//var Modal = Rebass.Modal;
-
-var Hero = require('./hero.jsx');
 
 var ModalSection = require('./modal-section.jsx');
 
-//  var FuzzyInputSection = require('./fuzzy-input-section.jsx');
+//var FuzzyInputSection = require('./fuzzy-input-section.jsx');
 var HslSlidersSection = require('./hsl-sliders-section.jsx');
 var IconSection = require('./icon-section.jsx');
 
@@ -38,9 +35,7 @@ module.exports = React.createClass({
     return (
       <div style={style} className="">
 
-        <Hero {...this.props} />
-
-        <div className="px2">
+        <div className="container px2">
 
           <Section heading="Button">
             <Button>Button</Button>

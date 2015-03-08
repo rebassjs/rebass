@@ -2,7 +2,7 @@
 var React = require('react');
 var countries = require('countries-in-the-world');
 var Section = require('./Section.jsx');
-var FuzzyInput = require('../..').FuzzyInput;
+var FuzzyInput = require('../../..').FuzzyInput;
 
 
 module.exports = React.createClass({

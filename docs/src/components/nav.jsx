@@ -2,7 +2,7 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var classnames = require('classnames');
-var NavItem = require('../..').NavItem;
+var NavItem = require('../../..').NavItem;
 
 module.exports = React.createClass({
 

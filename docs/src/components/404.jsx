@@ -1,6 +1,6 @@
 
 var React = require('react');
-var Rebass = require('../..');
+var Rebass = require('../../..');
 
 module.exports = React.createClass({
 

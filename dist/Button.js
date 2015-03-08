@@ -11,7 +11,7 @@ module.exports = React.createClass({displayName: "exports",
     return {
       theme: 'silver',
       flush: false,
-      isActive: false,
+      active: false,
       className: '',
       outline: false,
       transparent: false,
@@ -24,10 +24,10 @@ module.exports = React.createClass({displayName: "exports",
     var buttonClass =
       classnames(
         this.props.className,
-        (!this.props.isActive && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
+        (!this.props.active && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
         'button',
         { mr1: !this.props.flush },
-        this.props.isActive ? activeClass : false,
+        this.props.active ? activeClass : false,
         { 'button-outline': this.props.outline },
         { 'button-transparent': this.props.transparent });
     return (

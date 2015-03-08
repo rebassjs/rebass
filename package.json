@@ -14,14 +14,19 @@
   "devDependencies": {
     "basscss-defaults": "^1.0.0",
     "basswork": "^1.2.1",
+    "brfs": "^1.4.0",
     "browserify": "^8.0.3",
     "color": "^0.7.3",
     "countries-in-the-world": "^1.0.4",
     "envify": "^3.2.0",
+    "highlight.js": "^8.4.0",
+    "htmltojsx": "^0.2.1",
     "http-server": "^0.7.4",
     "jsx-loader": "^0.12.2",
     "lodash": "^3.1.0",
     "lodash.kebabcase": "^3.0.1",
+    "marked": "^0.3.3",
+    "md2react": "^0.2.3",
     "node-jsx": "^0.12.4",
     "parallelshell": "^1.0.4",
     "react": "^0.12.2",
@@ -30,6 +35,7 @@
     "react-html": "0.0.4",
     "react-router": "^0.12.4",
     "react-tools": "^0.12.2",
+    "reactdown": "^0.8.0",
     "reactify": "^1.0.0",
     "uglify-js": "^2.4.16",
     "uglifyify": "^3.0.1",
@@ -44,23 +50,24 @@
     "Basscss"
   ],
   "scripts": {
-    "watchify": "watchify docs/app.js -o docs/js/app.js",
+    "watchify": "watchify docs/src/app.js -o docs/js/app.js",
     "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
     "watch:uglify": "watch 'npm run uglify' ./docs/js",
-    "build:js": "browserify docs/app.js -o docs/js/app.js",
-    "build:html": "node docs/build",
-    "watch:html": "watch 'npm run build:html' ./docs/components -w 1",
+    "build:js": "browserify docs/src/app.js -o docs/js/app.js",
+    "build:html": "node docs/src/build",
+    "watch:html": "watch 'npm run build:html' ./docs/src/components -w 1",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
-    "docs:css": "basswork docs/index.css docs/css/docs.css",
-    "watch:docs:css": "watch 'npm run docs:css' ./docs -w 1",
+    "docs:css": "basswork docs/src/index.css docs/css/docs.css",
+    "watch:docs:css": "watch 'npm run docs:css' ./docs/src -w 1",
     "serve": "http-server -p 8000 -s",
     "deploy": "export NODE_ENV=production && npm run jsx && npm run build:html && npm run build:js",
     "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run watch:docs:css' 'npm run serve'"
   },
   "browserify": {
     "transform": [
-      "reactify"
+      "reactify",
+      "brfs"
     ]
   },
   "main": "index.js",
