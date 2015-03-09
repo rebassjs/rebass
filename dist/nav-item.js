@@ -2,7 +2,7 @@
 var React = require('react');
 var classnames = require('classnames');
 
-module.exports = React.createClass({displayName: "exports",
+var NavItem = React.createClass({displayName: "NavItem",
 
   getDefaultProps: function() {
     return {
@@ -10,6 +10,7 @@ module.exports = React.createClass({displayName: "exports",
       flush: true,
       compact: false,
       justified: false,
+      block: false,
     }
   },
 
@@ -17,6 +18,7 @@ module.exports = React.createClass({displayName: "exports",
     var linkClass = 
       classnames(
         'center', 'button', 'button-transparent',
+        { block: this.props.block },
         { white: this.props.inverse },
         { 'button-narrow': this.props.compact },
         { py2: !this.props.compact },
@@ -30,4 +32,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = NavItem;
 

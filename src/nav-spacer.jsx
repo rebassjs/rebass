@@ -1,7 +1,7 @@
 
 var React = require('react');
 
-module.exports = React.createClass({
+var NavSpacer = React.createClass({
 
   render: function() {
     return (
@@ -10,4 +10,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = NavSpacer;
 

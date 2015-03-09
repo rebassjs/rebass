@@ -1,10 +1,9 @@
 
 var React = require('react');
-var ThemeMixin = require('./theme-mixin');
+var classnames = require('classnames');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({
-
-  mixins: [ThemeMixin],
+var Modal = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -13,7 +12,7 @@ module.exports = React.createClass({
       fullBleed: false,
       size: 'medium',
       header: '',
-      theme: 'white',
+      theme: false,
       onDismiss: function() {}
     }
   },
@@ -22,10 +21,12 @@ module.exports = React.createClass({
 
     var isOpen = this.props.isOpen;
     var header = this.props.header;
-    var classes = this.getThemeClasses();
-    classes.body = this.props.flush ? '' : 'p2';
-    classes.header = 'flex flex-center ' + classes.main + (classes.border ? ' border-bottom' : '');
-    classes.container = 'flex flex-center overflow-auto bg-darken-3 ' + (this.props.fullBleed ? '' : 'p2');
+    var bassClasses = colorbass(this.props.theme);
+    var classes = {
+      body: classnames( this.props.flush ? '' : 'p2'),
+      header: classnames('flex', 'flex-center', bassClasses.primary),
+      container: classnames('flex flex-center overflow-auto bg-darken-3', { p2: !this.props.fullBleed }),
+    };
     var width = 640;
     if (this.props.size == 'big') { width = 960 }
     else if (this.props.size == 'small') { width = 320 }
@@ -95,4 +96,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Modal;
 

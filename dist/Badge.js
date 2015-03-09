@@ -1,20 +1,18 @@
 
 var React = require('react');
-var ThemeMixin = require('./theme-mixin');
+var classnames = require('classnames');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({displayName: "exports",
-
-  mixins: [ThemeMixin],
+var Badge = React.createClass({displayName: "Badge",
 
   getDefaultProps: function() {
     return {
-      theme: 'mid-gray'
+      theme: false
     };
   },
 
   render: function() {
-    var classes = this.getThemeClasses();
-    var badgeClass = 'h5 bold inline-block px1 mr1 rounded ' + classes.main;
+    var badgeClass = classnames('h5 bold inline-block px1 mr1 rounded ', colorbass(this.props.theme).primary);
     return (
       React.createElement("span", {className: badgeClass}, 
         this.props.children
@@ -23,4 +21,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = Badge;
 

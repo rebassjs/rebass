@@ -15,7 +15,7 @@
 var React = require('react');
 var fuzzy = require('fuzzy');
 
-module.exports = React.createClass({displayName: "exports",
+var FuzzyInput = React.createClass({displayName: "FuzzyInput",
 
   getDefaultProps: function() {
     return {
@@ -216,4 +216,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = FuzzyInput;
 

@@ -2,9 +2,9 @@
 var React = require('react');
 
 var classnames = require('classnames');
-var bassClasses = require('../bass-classnames');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({
+var Banner = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -19,12 +19,11 @@ module.exports = React.createClass({
 
   render: function() {
 
-    var bass = bassClasses(this.props.theme);
     var classes = {
       outer: classnames(this.props.className,
         { center: this.props.center },
         { 'right-align': this.props.right },
-        bass.primary),
+        colorbass(this.props.theme).primary),
       inner: classnames('px3 py4'),
     };
     var style = {
@@ -43,4 +42,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Banner;
 

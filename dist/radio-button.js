@@ -2,7 +2,7 @@
 var React = require('react');
 var Button = require('./button');
 
-module.exports = React.createClass({displayName: "exports",
+var RadioButton = React.createClass({displayName: "RadioButton",
 
   getDefaultProps: function() {
     return {
@@ -34,4 +34,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = RadioButton;
 

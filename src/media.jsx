@@ -1,12 +1,17 @@
 
 var React = require('react/addons');
 
-module.exports = React.createClass({
+var Media = React.createClass({
 
   getDefaultProps: function() {
     return {
       right: false
     }
+  },
+
+  statics: {
+    //Img: MediaImg,
+    //Body: MediaBody,
   },
 
   render: function() {
@@ -34,4 +39,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Media;
 

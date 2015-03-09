@@ -1,7 +1,9 @@
 
 var React = require('react');
+var classnames = require('classnames');
+//var colorbass = require('colorbass');
 
-module.exports = React.createClass({
+var X = React.createClass({
 
   render: function() {
     return (
@@ -10,4 +12,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = X;
 

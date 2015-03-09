@@ -3,11 +3,24 @@ var React = require('react');
 
 var Rebass = require('../../..');
 var Button = Rebass.Button;
+var RadioButton = Rebass.RadioButton;
 var Group = Rebass.Group;
+var NavItem = Rebass.NavItem;
+var Navbar = Rebass.Navbar;
+var NavSpacer = Rebass.NavSpacer;
+var Dropdown = Rebass.Dropdown;
+var Modal = Rebass.Modal;
+var Flag  = Rebass.Flag;
+var Media  = Rebass.Media;
+var Badge = Rebass.Badge;
+var Message  = Rebass.Message;
+var Panel  = Rebass.Panel;
+var Banner  = Rebass.Banner;
+var Icon  = require('react-geomicons');
 
 var LayoutSidebar = require('./layout-sidebar.jsx');
 var Section = require('./section.jsx');
-var Example = require('./example.jsx');
+var Example = require('rebass-example');
 
 var KitchenSink = require('./kitchen-sink.jsx');
 
@@ -24,19 +37,81 @@ module.exports = React.createClass({
   },
 
   getSections: function() {
+    var theme = this.state.theme;
     return [
       {
         name: 'Button',
         description: 'Themeable button component with solid, outline, and transparent variations',
-        jsx: '<div>\n  <Button theme={theme}>Button</Button>\n  <Button theme={theme} outline={true}>Button</Button>\n  <Button theme={theme} transparent={true}>Button</Button>\n</div>',
+        example: (
+          <div>
+            <Button theme={theme}>Button</Button>
+            <Button theme={theme} outline={true}>Button</Button>
+            <Button theme={theme} transparent={true}>Button</Button>
+          </div>
+        ),
         props: ['theme', 'flush', 'active', 'className', 'outline', 'transparent']
       },
       {
         name: 'Badge',
         description: 'Used to label states and properties',
-        jsx: '<div>\n  <Badge theme={theme}>Badge</Badge>\n</div>',
-      }
+        example: <Badge theme={theme}>Badge</Badge>,
+      },
+      {
+        name: 'Group',
+        description: 'Groups buttons and inputs together',
+        example: (
+          <Group>
+            <input type="text" className={'field-light border-'+theme} />
+            <Button theme={theme} outline={true}>Go</Button>
+            <Button theme={theme}>Bacon</Button>
+          </Group>
+        ),
+      },
+      {
+        name: 'Dropdown',
+        description: 'Progressive disclosure for showing lists of actions',
+        example: (
+          <Dropdown label="Actions">
+            <NavItem href="#!" block={true}>Action</NavItem>
+            <NavItem href="#!" block={true}>Action</NavItem>
+            <NavItem href="#!" block={true}>Action</NavItem>
+          </Dropdown>
+        )
+      },
+      {
+        name: 'NavItem',
+        description: 'Link button style for navigation',
+        example: <NavItem>NavItem</NavItem>
+      },
+      {
+        name: 'Navbar',
+        description: 'Visual grouping for navigation links and other components',
+        example: (
+          <Navbar theme="black">
+            <NavItem href="#nav-item">Navbar</NavItem>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavSpacer />
+            <Group>
+              <input type="text" className="field-dark" placeholder="Search" />
+              <Button theme="blue">Go</Button>
+            </Group>
+            <NavItem href="#nav-item">Nav Item</NavItem>
+          </Navbar>
+        ),
+      },
     ]
+  },
+
+  renderSection: function(section, i) {
+    var theme = this.state.theme;
+    return (
+      <Section heading={section.name} key={section.name+'-'+i}>
+        <Example theme={theme}>
+          {section.example}
+        </Example>
+        <p>{section.description}</p>
+      </Section>
+    )
   },
 
   render: function() {
@@ -49,21 +124,12 @@ module.exports = React.createClass({
       self.changeTheme(e.target.value);
     };
 
-    var renderSection = function(section, i) {
-      //console.log('section', section.name, i);
-      return (
-        <Section heading={section.name} key={section.name+'-'+i}>
-          <Example jsx={section.jsx} theme={theme} />
-          <p>{section.description}</p>
-        </Section>
-      )
-    };
-
     var buttons = [
       { value: 'aqua' },
       { value: 'blue' },
       { value: 'navy' },
       { value: 'teal' },
+      { value: 'green' },
       { value: 'olive' },
       { value: 'lime' },
       { value: 'yellow' },
@@ -72,6 +138,10 @@ module.exports = React.createClass({
       { value: 'fuchsia' },
       { value: 'purple' },
       { value: 'maroon' },
+      { value: 'black' },
+      { value: 'gray' },
+      { value: 'silver' },
+      { value: 'white' },
     ];
 
     var renderButton = function(button) {
@@ -98,7 +168,7 @@ module.exports = React.createClass({
             {buttons.map(renderButton)}
           </Group>
         </div>
-        {sections.map(renderSection)}
+        {sections.map(this.renderSection)}
 
         <hr className="border-thick border-aqua"/>
         <h2>Kitchen Sink</h2>

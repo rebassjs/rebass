@@ -1,10 +1,9 @@
 
 var React = require('react');
-var ThemeMixin = require('./theme-mixin');
+var classnames = require('classnames');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({
-
-  mixins: [ThemeMixin],
+var Message = React.createClass({
 
   getInitialState: function() {
     return {
@@ -14,7 +13,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function() {
     return {
-      theme: 'light-gray'
+      theme: false
     };
   },
 
@@ -23,19 +22,22 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var classes = this.getThemeClasses();
-    var messageClass = 'bold flex flex-center mb2 rounded ' + classes.main;
+    var classes = {
+      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.theme).primary),
+      body: classnames('flex-auto', 'p2'),
+      dismiss: classnames('h3'),
+    };
     var style = {
       display: this.state.visible ? '' : 'none'
     };
     return (
-      <div className={messageClass} style={style}>
-        <div className="flex-auto p2">
+      <div className={classes.container} style={style}>
+        <div className={classes.body}>
           {this.props.children}
         </div>
         <button
           onClick={this.dismiss}
-          className="h3"
+          className={classes.dismiss}
           style={this.buttonStyle}
           title="Dismiss">
             &times;
@@ -45,4 +47,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Message;
 

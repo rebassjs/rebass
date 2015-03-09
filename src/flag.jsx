@@ -1,12 +1,17 @@
 
 var React = require('react/addons');
 
-module.exports = React.createClass({
+var Flag = React.createClass({
 
   getDefaultProps: function() {
     return {
       right: false
     }
+  },
+
+  statics: {
+    //Img: FlagImg,
+    //Body: FlagBody,
   },
 
   render: function() {
@@ -34,4 +39,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Flag;
 

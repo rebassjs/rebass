@@ -1,16 +1,27 @@
 
 var React = require('react');
-var ThemeMixin = require('./theme-mixin');
+var classnames = require('classnames');
+var colorbass = require('../colorbass');
 var Button = require('./button');
 
-module.exports = React.createClass({displayName: "exports",
+var DropdownItem = React.createClass({displayName: "DropdownItem",
 
-  mixins: [ThemeMixin],
+  render: function() {
+    return (
+      React.createElement("a", {href: this.props.href}, 
+        this.props.children
+      )
+    )
+  }
+
+});
+
+var Dropdown = React.createClass({displayName: "Dropdown",
 
   getDefaultProps: function() {
     return {
       label: '',
-      theme: 'light-gray',
+      theme: 'silver',
       flush: false,
       top: false,
       right: false,
@@ -21,6 +32,10 @@ module.exports = React.createClass({displayName: "exports",
     return {
       isOpen: false,
     }
+  },
+
+  statics: {
+    Item: DropdownItem,
   },
 
   toggle: function(e) {
@@ -60,15 +75,13 @@ module.exports = React.createClass({displayName: "exports",
         right: 0,
         bottom: 0,
         left: 0,
-        //  backgroundColor: 'tomato', opacity: .5
       }
     };
     var classes = {
-      container: (this.props.className ? this.props.className : '')
-        + ' inline-block rounded '
-        + (this.props.flush ? '' : 'mr1'),
+      container: classnames(this.props.className,
+        'inline-block', 'rounded',
+        {'mr1': !this.props.flush }),
       inner: '',
-      //button: 'button-' + this.props.theme,
       menu: 'mt1 bg-white border rounded ',
     };
 
@@ -94,4 +107,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = Dropdown;
 

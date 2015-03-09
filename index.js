@@ -1,5 +1,6 @@
 
 module.exports = {
+
   Button: require('./dist/button'),
   RadioButton: require('./dist/radio-button'),
   Group: require('./dist/group'),
@@ -18,4 +19,5 @@ module.exports = {
   //FuzzyInput: require('./dist/fuzzy-input'),
   HslSliders: require('react-hsl-sliders'),
   Icon: require('react-geomicons'),
+
 };

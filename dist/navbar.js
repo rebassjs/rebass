@@ -1,11 +1,9 @@
 
 var React = require('react/addons');
 var classnames = require('classnames');
-var ThemeMixin = require('./theme-mixin');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({displayName: "exports",
-
-  mixins: [ThemeMixin],
+var Navbar = React.createClass({displayName: "Navbar",
 
   getDefaultProps: function() {
     return {
@@ -17,10 +15,9 @@ module.exports = React.createClass({displayName: "exports",
     }
   },
 
-  renderChild: function(child, i) {
-    var inverse = this.props.inverse || this.isInverse();
+  renderChild: function(child) {
+    var inverse = this.props.inverse || colorbass(this.props.theme).inverse;
     var childProps = {
-      key: 'navbar-child-' + i,
       inverse: inverse,
       compact: this.props.compact,
       justified: this.props.justified,
@@ -30,12 +27,11 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   render: function() {
-    var themeClasses = this.getThemeClasses();
+    var bassClasses = colorbass(this.props.theme);
     var navbarClass =
-      classnames(
-        'flex', 'flex-center', 'mb2',
+      classnames('flex', 'flex-center', 'mb2',
         { 'flex-wrap': this.props.wrap },
-        themeClasses.main);
+        bassClasses.primary);
     return (
       React.createElement("div", React.__spread({},  this.props, {className: navbarClass}), 
         React.Children.map(this.props.children, this.renderChild)
@@ -44,4 +40,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = Navbar;
 

@@ -1,11 +1,8 @@
 
 var React = require('react/addons');
 var classnames = require('classnames');
-var ThemeMixin = require('./theme-mixin');
 
-module.exports = React.createClass({
-
-  mixins: [ThemeMixin],
+var Group = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -46,4 +43,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Group;
 

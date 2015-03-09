@@ -1,10 +1,9 @@
 
 var React = require('react/addons');
-var ThemeMixin = require('./theme-mixin');
+var classnames = require('classnames');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({
-
-  mixins: [ThemeMixin],
+var Panel = React.createClass({
 
   getDefaultProps: function() {
     return {
@@ -17,8 +16,8 @@ module.exports = React.createClass({
     if (!header) {
       return false;
     }
-    var classes = this.getThemeClasses();
-    var headerClass = 'bold p2 ' + classes.main;
+    var bassClasses = colorbass(this.props.theme);
+    var headerClass = 'bold p2 ' + bassClasses.primary;
     return (
       <div className={headerClass}>
         {header}
@@ -68,4 +67,6 @@ module.exports = React.createClass({
   }
 
 });
+
+module.exports = Panel;
 

@@ -1,11 +1,9 @@
 
 var React = require('react');
 var classnames = require('classnames');
-var ThemeMixin = require('./theme-mixin');
+var colorbass = require('../colorbass');
 
-module.exports = React.createClass({displayName: "exports",
-
-  mixins: [ThemeMixin],
+var Button = React.createClass({displayName: "Button",
 
   getDefaultProps: function() {
     return {
@@ -20,17 +18,16 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   render: function() {
-    var themeClasses = this.getThemeClasses();
-    var activeClass = (this.props.outline || this.props.transparent) ? themeClasses.main : 'is-active';
+    var bassClasses = colorbass(this.props.theme);
     var buttonClass =
       classnames(
         this.props.className,
-        (!this.props.active && this.props.outline || this.props.transparent) ? this.props.theme : themeClasses.main,
+        (!this.props.active && this.props.outline || this.props.transparent) ? bassClasses.secondary : bassClasses.primary,
         'button',
         { 'button-small': this.props.size == 'small' },
         { 'button-big': this.props.size == 'big' },
         { mr1: !this.props.flush },
-        this.props.active ? activeClass : false,
+        { 'is-active': this.props.active },
         { 'button-outline': this.props.outline },
         { 'button-transparent': this.props.transparent });
     return (
@@ -41,4 +38,6 @@ module.exports = React.createClass({displayName: "exports",
   }
 
 });
+
+module.exports = Button;
 
