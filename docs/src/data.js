@@ -23,7 +23,7 @@ data.stylesheets = [
   'docs/css/docs.css',
 ];
 data.scripts = [
-  'docs/js/app.js'
+  'docs/js/app.min.js'
 ];
 
 data.baseUrl = '/';

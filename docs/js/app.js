@@ -2043,7 +2043,7 @@ data.stylesheets = [
   'docs/css/docs.css',
 ];
 data.scripts = [
-  'docs/js/app.js'
+  'docs/js/app.min.js'
 ];
 
 data.baseUrl = '/';
@@ -55354,7 +55354,7 @@ module.exports={
     "docs:css": "basswork docs/src/index.css docs/css/docs.css",
     "watch:docs:css": "watch 'npm run docs:css' ./docs/src -w 1",
     "serve": "http-server -p 8000 -s",
-    "deploy": "export NODE_ENV=production && npm run jsx && npm run build:html && npm run build:js",
+    "deploy": "export NODE_ENV=production && npm run jsx && npm run build:html && npm run build:js && npm run uglify && npm run docs:css",
     "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watchify' 'npm run watch:uglify' 'npm run watch:html' 'npm run watch:docs:css' 'npm run serve'"
   },
   "browserify": {
