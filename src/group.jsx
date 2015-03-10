@@ -20,7 +20,7 @@ var Group = React.createClass({
         { 'rounded-right': (i == this.props.children.length - 1) },
         { 'not-rounded': (i > 0 && i < this.props.children.length - 1) });
     var props = {
-      theme: this.props.theme ? this.props.theme : child.props.theme,
+      color: this.props.color ? this.props.color : child.props.color,
       outline: this.props.outline || child.props.outline,
       transparent: this.props.transparent || child.props.transparent,
       justified: this.props.justified,

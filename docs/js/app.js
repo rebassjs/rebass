@@ -8,12 +8,12 @@ var Badge = React.createClass({displayName: "Badge",
 
   getDefaultProps: function() {
     return {
-      theme: false
+      color: false
     };
   },
 
   render: function() {
-    var badgeClass = classnames('h5 bold inline-block px1 mr1 rounded ', colorbass(this.props.theme).primary);
+    var badgeClass = classnames('h5 bold inline-block px1 mr1 rounded ', colorbass(this.props.color).primary);
     return (
       React.createElement("span", {className: badgeClass}, 
         this.props.children
@@ -38,7 +38,7 @@ var Banner = React.createClass({displayName: "Banner",
 
   getDefaultProps: function() {
     return {
-      theme: 'black',
+      color: 'black',
       center: false,
       right: false,
       backgroundImage: false,
@@ -53,7 +53,7 @@ var Banner = React.createClass({displayName: "Banner",
       outer: classnames(this.props.className,
         { center: this.props.center },
         { 'right-align': this.props.right },
-        colorbass(this.props.theme).primary),
+        colorbass(this.props.color).primary),
       inner: classnames('px3 py4'),
     };
     var style = {
@@ -87,7 +87,7 @@ var Button = React.createClass({displayName: "Button",
 
   getDefaultProps: function() {
     return {
-      theme: 'silver',
+      color: 'silver',
       flush: false,
       active: false,
       className: '',
@@ -98,7 +98,7 @@ var Button = React.createClass({displayName: "Button",
   },
 
   render: function() {
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var buttonClass =
       classnames(
         this.props.className,
@@ -130,31 +130,12 @@ var classnames = require('classnames');
 var colorbass = require('colorbass');
 var Button = require('./button');
 
-var DropdownItem = React.createClass({displayName: "DropdownItem",
-
-  getDefaultProps: function() {
-    return {
-      href: '#!',
-      onClick: function() {},
-    }
-  },
-
-  render: function() {
-    return (
-      React.createElement("a", {href: this.props.href, onClick: this.props.onClick, className: "button block button-transparent"}, 
-        this.props.children
-      )
-    )
-  }
-
-});
-
 var Dropdown = React.createClass({displayName: "Dropdown",
 
   getDefaultProps: function() {
     return {
       label: '',
-      theme: 'silver',
+      color: 'silver',
       flush: false,
       top: false,
       right: false,
@@ -168,7 +149,7 @@ var Dropdown = React.createClass({displayName: "Dropdown",
   },
 
   statics: {
-    Item: DropdownItem,
+    //Item: Dropdown.Item,
   },
 
   toggle: function(e) {
@@ -224,7 +205,7 @@ var Dropdown = React.createClass({displayName: "Dropdown",
           style: styles.overlay, 
           onClick: this.close}), 
         React.createElement("div", {className: classes.inner, style: styles.inner}, 
-          React.createElement(Button, {theme: this.props.theme, 
+          React.createElement(Button, {color: this.props.color, 
             flush: true, 
             style: styles.button, 
             onClick: this.toggle}, 
@@ -315,7 +296,7 @@ var Group = React.createClass({displayName: "Group",
         { 'rounded-right': (i == this.props.children.length - 1) },
         { 'not-rounded': (i > 0 && i < this.props.children.length - 1) });
     var props = {
-      theme: this.props.theme ? this.props.theme : child.props.theme,
+      color: this.props.color ? this.props.color : child.props.color,
       outline: this.props.outline || child.props.outline,
       transparent: this.props.transparent || child.props.transparent,
       justified: this.props.justified,
@@ -390,7 +371,44 @@ module.exports = Media;
 
 
 
-},{"react/addons":"/Users/jackson/Repos/rebass/node_modules/react/addons.js"}],"/Users/jackson/Repos/rebass/dist/message.js":[function(require,module,exports){
+},{"react/addons":"/Users/jackson/Repos/rebass/node_modules/react/addons.js"}],"/Users/jackson/Repos/rebass/dist/menu-item.js":[function(require,module,exports){
+
+var React = require('react');
+var classnames = require('classnames');
+
+var MenuItem = React.createClass({displayName: "MenuItem",
+
+  getDefaultProps: function() {
+    return {
+      label: false,
+      inverse: false,
+      big: false,
+    }
+  },
+
+  render: function() {
+    var linkClass = 
+      classnames(
+        'button',
+        'block',
+        'button-transparent',
+        { white: this.props.inverse },
+        { py2: this.props.big });
+    var label = this.props.label || this.props.children || false;
+    return (
+      React.createElement("a", React.__spread({},  this.props, {className: linkClass}), 
+        label
+      )
+    )
+  }
+
+});
+
+module.exports = MenuItem;
+
+
+
+},{"classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/dist/message.js":[function(require,module,exports){
 
 var React = require('react');
 var classnames = require('classnames');
@@ -406,7 +424,7 @@ var Message = React.createClass({displayName: "Message",
 
   getDefaultProps: function() {
     return {
-      theme: false
+      color: false
     };
   },
 
@@ -416,7 +434,7 @@ var Message = React.createClass({displayName: "Message",
 
   render: function() {
     var classes = {
-      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.theme).primary),
+      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.color).primary),
       body: classnames('flex-auto', 'p2'),
       dismiss: classnames('h3'),
     };
@@ -460,7 +478,7 @@ var Modal = React.createClass({displayName: "Modal",
       fullBleed: false,
       size: 'medium',
       header: '',
-      theme: false,
+      color: false,
       onDismiss: function() {}
     }
   },
@@ -469,7 +487,7 @@ var Modal = React.createClass({displayName: "Modal",
 
     var isOpen = this.props.isOpen;
     var header = this.props.header;
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var classes = {
       body: classnames( this.props.flush ? '' : 'p2'),
       header: classnames('flex', 'flex-center', bassClasses.primary),
@@ -558,9 +576,10 @@ var NavItem = React.createClass({displayName: "NavItem",
 
   getDefaultProps: function() {
     return {
+      label: false,
       inverse: false,
       flush: true,
-      compact: false,
+      big: false,
       justified: false,
       block: false,
     }
@@ -569,16 +588,16 @@ var NavItem = React.createClass({displayName: "NavItem",
   render: function() {
     var linkClass = 
       classnames(
-        'center', 'button', 'button-transparent',
+        'button', 'button-transparent',
         { block: this.props.block },
         { white: this.props.inverse },
-        { 'button-narrow': this.props.compact },
-        { py2: !this.props.compact },
-        { 'flex-auto': this.props.justified },
+        { py2: this.props.big },
+        { 'center flex-auto': this.props.justified },
         { mr1: !this.props.flush });
+    var label = this.props.label || this.props.children || false;
     return (
       React.createElement("a", React.__spread({},  this.props, {className: linkClass}), 
-        this.props.children
+        label
       )
     )
   }
@@ -618,7 +637,7 @@ var Navbar = React.createClass({displayName: "Navbar",
   getDefaultProps: function() {
     return {
       inverse: false,
-      theme: 'silver',
+      color: 'silver',
       compact: false,
       wrap: true,
       justified: false,
@@ -626,10 +645,10 @@ var Navbar = React.createClass({displayName: "Navbar",
   },
 
   renderChild: function(child) {
-    var inverse = this.props.inverse || colorbass(this.props.theme).inverse;
+    var inverse = this.props.inverse || colorbass(this.props.color).inverse;
     var childProps = {
       inverse: inverse,
-      compact: this.props.compact,
+      big: !this.props.compact,
       justified: this.props.justified,
     };
     var newChild = React.addons.cloneWithProps(child, childProps);
@@ -637,7 +656,7 @@ var Navbar = React.createClass({displayName: "Navbar",
   },
 
   render: function() {
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var navbarClass =
       classnames('flex', 'flex-center', 'mb2',
         { 'flex-wrap': this.props.wrap },
@@ -667,6 +686,7 @@ var Panel = React.createClass({displayName: "Panel",
     return {
       header: false,
       footer: false,
+      theme: 'silver',
     }
   },
 
@@ -674,7 +694,7 @@ var Panel = React.createClass({displayName: "Panel",
     if (!header) {
       return false;
     }
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var headerClass = 'bold p2 ' + bassClasses.primary;
     return (
       React.createElement("div", {className: headerClass}, 
@@ -710,7 +730,7 @@ var Panel = React.createClass({displayName: "Panel",
   },
 
   render: function() {
-    var borderColor = 'border-' + this.props.theme;
+    var borderColor = 'border-' + this.props.color;
     var panelClass = 'mb2 overflow-hidden rounded border ' + borderColor;
     var children = this.filterChildren(this.props.children);
     return (
@@ -909,6 +929,7 @@ var Group = Rebass.Group;
 var NavItem = Rebass.NavItem;
 var Navbar = Rebass.Navbar;
 var NavSpacer = Rebass.NavSpacer;
+var MenuItem = Rebass.MenuItem;
 var Dropdown = Rebass.Dropdown;
 var Modal = Rebass.Modal;
 var Flag  = Rebass.Flag;
@@ -934,75 +955,79 @@ module.exports = React.createClass({displayName: "exports",
 
   getInitialState: function() {
     return {
-      theme: 'blue'
+      color: 'blue'
     }
   },
 
-  changeTheme: function(theme) {
-    this.setState({ theme: theme });
+  changeTheme: function(color) {
+    this.setState({ color: color });
   },
 
   getSections: function() {
-    var theme = this.state.theme;
+    var color = this.state.color;
     return [
       {
         name: 'Button',
         description: 'Themeable button component with solid, outline, and transparent variations',
         example: (
           React.createElement("div", null, 
-            React.createElement(Button, {theme: theme}, "Button"), 
-            React.createElement(Button, {theme: theme, outline: true}, "Button"), 
-            React.createElement(Button, {theme: theme, transparent: true}, "Button")
+            React.createElement(Button, {color: color}, "Button"), 
+            React.createElement(Button, {color: color, outline: true}, "Button"), 
+            React.createElement(Button, {color: color, transparent: true}, "Button")
           )
         ),
-        props: ['theme', 'flush', 'active', 'className', 'outline', 'transparent']
+        props: ['color', 'flush', 'active', 'className', 'outline', 'transparent']
       },
       {
         name: 'Badge',
         description: 'Used to label states and properties',
-        example: React.createElement(Badge, {theme: theme}, "Badge"),
+        example: React.createElement(Badge, {color: color}, "Badge"),
       },
       {
         name: 'Group',
         description: 'Groups buttons and inputs together',
         example: (
           React.createElement(Group, null, 
-            React.createElement("input", {type: "text", className: 'field-light border-'+theme}), 
-            React.createElement(Button, {theme: theme, outline: true}, "Go"), 
-            React.createElement(Button, {theme: theme}, "Bacon")
+            React.createElement("input", {type: "text", className: 'field-light border-'+color}), 
+            React.createElement(Button, {color: color, outline: true}, "Go"), 
+            React.createElement(Button, {color: color}, "Bacon")
           )
         ),
       },
       {
+        name: 'MenuItem',
+        description: 'Full width, block link for menus',
+        example: React.createElement(MenuItem, {label: "MenuItem", href: "#MenuItem"}),
+      },
+      {
         name: 'Dropdown',
         description: 'Progressive disclosure for showing lists of actions',
-        example: false,
         example: (
-          React.createElement(Dropdown, {label: "Actions", theme: theme}, 
-            React.createElement(NavItem, {href: "#!", block: true}, "Action"), 
-            React.createElement(NavItem, {href: "#!", block: true}, "Action"), 
-            React.createElement(NavItem, {href: "#!", block: true}, "Action")
+          React.createElement(Dropdown, {label: "Actions", color: color}, 
+            React.createElement(MenuItem, {label: "Action", href: "#dropdown"}), 
+            React.createElement(MenuItem, {label: "Action", href: "#!"}), 
+            React.createElement(MenuItem, {label: "Action", href: "#!"})
           )
         )
       },
       {
         name: 'NavItem',
         description: 'Link button style for navigation',
-        example: React.createElement(NavItem, null, "NavItem")
+        example: React.createElement(NavItem, {label: "NavItem"})
       },
       {
         name: 'Navbar',
         description: 'Visual grouping for navigation links and other components',
         example: (
-          React.createElement(Navbar, {theme: theme}, 
-            React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
+          React.createElement(Navbar, {color: color}, 
+            React.createElement(NavItem, {label: "NavItem", href: "#nav-item"}), 
+            React.createElement(NavItem, {label: "NavItem", href: "#nav-item"}), 
             React.createElement(NavSpacer, null), 
             React.createElement(Group, null, 
               React.createElement("input", {type: "text", className: "field-dark", placeholder: "Search"}), 
-              React.createElement(Button, {theme: "blue"}, "Go")
+              React.createElement(Button, {color: "blue"}, "Go")
             ), 
-            React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
+            React.createElement(NavItem, {label: "NavItem", href: "#nav-item"})
           )
         ),
       },
@@ -1010,7 +1035,7 @@ module.exports = React.createClass({displayName: "exports",
         name: 'Icon',
         description: 'Icons from Geomicons',
         example: (
-          React.createElement("div", {className: 'h2 flex flex-center mxn2 ' + theme}, 
+          React.createElement("div", {className: 'h2 flex flex-center mxn2 ' + color}, 
             React.createElement(Icon, {name: "bookmark", className: "m2"}), 
             React.createElement(Icon, {name: "cloud", className: "m2"}), 
             React.createElement(Icon, {name: "cog", className: "m2"}), 
@@ -1023,10 +1048,10 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   renderSection: function(section, i) {
-    var theme = this.state.theme;
+    var color = this.state.color;
     return (
       React.createElement(Section, {heading: section.name, key: section.name+'-'+i}, 
-        React.createElement(Example, {theme: theme}, 
+        React.createElement(Example, {color: color}, 
           section.example
         ), 
         React.createElement("p", null, section.description)
@@ -1038,7 +1063,7 @@ module.exports = React.createClass({displayName: "exports",
 
     var self = this;
     var sections = this.getSections();
-    var theme = this.state.theme;
+    var color = this.state.color;
 
     var handleClick = function(e) {
       self.changeTheme(e.target.value);
@@ -1065,13 +1090,13 @@ module.exports = React.createClass({displayName: "exports",
     ];
 
     var renderButton = function(button) {
-      var isActive = theme == button.value;
+      var isActive = color == button.value;
       return (
         React.createElement(Button, {onClick: handleClick, 
           size: "small", 
           active: isActive, 
           transparent: true, 
-          theme: button.value, 
+          color: button.value, 
           key: 'button-'+button.value, 
           value: button.value}, 
           button.value
@@ -1225,7 +1250,7 @@ module.exports = React.createClass({displayName: "exports",
       )
     );
     return (
-      React.createElement(Banner, {theme: "black", 
+      React.createElement(Banner, {color: "black", 
         footer: footer, 
         className: "red"}, 
         React.createElement("h1", {className: "h1 h1-responsive m0"}, 
@@ -1464,28 +1489,28 @@ module.exports = React.createClass({displayName: "exports",
 
           React.createElement(Section, {heading: "Button"}, 
             React.createElement(Button, null, "Button"), 
-            React.createElement(Button, {theme: "gray"}, "Button"), 
-            React.createElement(Button, {theme: "blue"}, "Button"), 
-            React.createElement(Button, {theme: "green"}, "Button"), 
-            React.createElement(Button, {theme: "red"}, "Button")
+            React.createElement(Button, {color: "gray"}, "Button"), 
+            React.createElement(Button, {color: "blue"}, "Button"), 
+            React.createElement(Button, {color: "green"}, "Button"), 
+            React.createElement(Button, {color: "red"}, "Button")
           ), 
 
           React.createElement(Section, {heading: "Radio Button"}, 
-            React.createElement(RadioButton, {theme: "blue", outline: true, onClick: handleRadioButton}, "Radio Button"), 
-            React.createElement(RadioButton, {theme: "blue", outline: true, isActive: true}, "Radio Button")
+            React.createElement(RadioButton, {color: "blue", outline: true, onClick: handleRadioButton}, "Radio Button"), 
+            React.createElement(RadioButton, {color: "blue", outline: true, isActive: true}, "Radio Button")
           ), 
 
           React.createElement(Section, {heading: "Group"}, 
-            React.createElement(Group, {theme: "orange", className: "mr1"}, 
+            React.createElement(Group, {color: "orange", className: "mr1"}, 
               React.createElement(Button, null, "Button"), 
-              React.createElement(Button, {theme: "orange"}, "Button"), 
-              React.createElement(Button, {theme: "orange"}, "Button")
+              React.createElement(Button, {color: "orange"}, "Button"), 
+              React.createElement(Button, {color: "orange"}, "Button")
             ), 
             React.createElement(Group, {className: "mr1"}, 
               React.createElement("input", {type: "text", className: "field-light", placeholder: "Search"}), 
               React.createElement(Button, null, "Go")
             ), 
-            React.createElement(Group, {theme: "blue"}, 
+            React.createElement(Group, {color: "blue"}, 
               React.createElement(Button, null, "Go"), 
               React.createElement(Dropdown, {label: "Dropdown", right: true}, 
                 React.createElement(NavItem, {href: "#!"}, "Action"), 
@@ -1502,7 +1527,7 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
             ), 
-            React.createElement(Dropdown, {label: "Right", theme: "blue", right: true}, 
+            React.createElement(Dropdown, {label: "Right", color: "blue", right: true}, 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action"), 
               React.createElement("a", {href: "#!", className: "button block button-nav-light"}, "Action")
@@ -1531,34 +1556,34 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement(NavSpacer, null), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             ), 
-            React.createElement(Navbar, {theme: "blue"}, 
+            React.createElement(Navbar, {color: "blue"}, 
               React.createElement(NavItem, {href: "#nav-item"}, "Blue Navbar"), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
               React.createElement(NavSpacer, null), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             ), 
-            React.createElement(Navbar, {theme: "black", compact: true}, 
+            React.createElement(Navbar, {color: "black", compact: true}, 
               React.createElement(NavItem, {href: "#nav-item"}, "Compact Navbar"), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
               React.createElement(NavSpacer, null), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             ), 
-            React.createElement(Navbar, {theme: "black", justified: true}, 
+            React.createElement(Navbar, {color: "black", justified: true}, 
               React.createElement(NavItem, {href: "#nav-item"}, "Justified Navbar"), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item"), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             ), 
-            React.createElement(Navbar, {theme: "black"}, 
+            React.createElement(Navbar, {color: "black"}, 
               React.createElement(NavItem, {href: "#nav-item"}, "Navbar"), 
               React.createElement(NavItem, {href: "#nav-item"}, "Groups"), 
-              React.createElement(Group, {theme: "white", outline: true}, 
+              React.createElement(Group, {color: "white", outline: true}, 
                 React.createElement(Button, null, "Button"), 
                 React.createElement(Button, null, "Button")
               ), 
               React.createElement(NavSpacer, null), 
               React.createElement(Group, null, 
                 React.createElement("input", {type: "text", className: "field-dark", placeholder: "Search"}), 
-                React.createElement(Button, {theme: "blue"}, "Go")
+                React.createElement(Button, {color: "blue"}, "Go")
               ), 
               React.createElement(NavItem, {href: "#nav-item"}, "Nav Item")
             )
@@ -1566,20 +1591,20 @@ module.exports = React.createClass({displayName: "exports",
 
           React.createElement(Section, {heading: "Badge"}, 
             React.createElement(Badge, null, "Badge"), 
-            React.createElement(Badge, {theme: "red"}, "Badge"), 
-            React.createElement(Badge, {theme: "yellow"}, "Badge"), 
-            React.createElement(Badge, {theme: "green"}, "Badge"), 
-            React.createElement(Badge, {theme: "blue"}, "Badge"), 
-            React.createElement(Badge, {theme: "black"}, "Badge")
+            React.createElement(Badge, {color: "red"}, "Badge"), 
+            React.createElement(Badge, {color: "yellow"}, "Badge"), 
+            React.createElement(Badge, {color: "green"}, "Badge"), 
+            React.createElement(Badge, {color: "blue"}, "Badge"), 
+            React.createElement(Badge, {color: "black"}, "Badge")
           ), 
 
           React.createElement(Section, {heading: "Message"}, 
             React.createElement(Message, null, "Message"), 
-            React.createElement(Message, {theme: "red"}, "Message"), 
-            React.createElement(Message, {theme: "yellow"}, "Message"), 
-            React.createElement(Message, {theme: "green"}, "Message"), 
-            React.createElement(Message, {theme: "blue"}, "Message"), 
-            React.createElement(Message, {theme: "black"}, "Message")
+            React.createElement(Message, {color: "red"}, "Message"), 
+            React.createElement(Message, {color: "yellow"}, "Message"), 
+            React.createElement(Message, {color: "green"}, "Message"), 
+            React.createElement(Message, {color: "blue"}, "Message"), 
+            React.createElement(Message, {color: "black"}, "Message")
           ), 
 
           React.createElement(Section, {heading: "Media Object"}, 
@@ -1600,16 +1625,16 @@ module.exports = React.createClass({displayName: "exports",
             React.createElement(Panel, {header: "Panel Header"}, 
               React.createElement("div", null, "Panel Body")
             ), 
-            React.createElement(Panel, {header: "Panel Header", theme: "blue"}, 
+            React.createElement(Panel, {header: "Panel Header", color: "blue"}, 
               React.createElement("div", null, "Panel Body")
             ), 
-            React.createElement(Panel, {header: "Panel Header", theme: "green"}, 
+            React.createElement(Panel, {header: "Panel Header", color: "green"}, 
               React.createElement("div", null, "Panel Body")
             ), 
-            React.createElement(Panel, {header: "Panel Header", theme: "yellow"}, 
+            React.createElement(Panel, {header: "Panel Header", color: "yellow"}, 
               React.createElement("div", null, "Panel Body")
             ), 
-            React.createElement(Panel, {header: "Panel Header", theme: "red"}, 
+            React.createElement(Panel, {header: "Panel Header", color: "red"}, 
               React.createElement("div", null, "Panel Body")
             )
           ), 
@@ -1778,10 +1803,10 @@ module.exports = React.createClass({displayName: "exports",
   render: function() {
     return (
       React.createElement(Section, {heading: "Modal"}, 
-        React.createElement(Button, {theme: "blue", onClick: this.openRegularModal}, "Open Modal"), 
-        React.createElement(Button, {theme: "blue", onClick: this.openBigModal}, "Open Big Modal"), 
-        React.createElement(Button, {theme: "blue", onClick: this.openSmallModal}, "Open Small Modal"), 
-        React.createElement(Button, {theme: "blue", onClick: this.openFullModal}, "Open Full-Bleed Modal"), 
+        React.createElement(Button, {color: "blue", onClick: this.openRegularModal}, "Open Modal"), 
+        React.createElement(Button, {color: "blue", onClick: this.openBigModal}, "Open Big Modal"), 
+        React.createElement(Button, {color: "blue", onClick: this.openSmallModal}, "Open Small Modal"), 
+        React.createElement(Button, {color: "blue", onClick: this.openFullModal}, "Open Full-Bleed Modal"), 
         React.createElement(Modal, {header: "Modal header", 
           size: this.state.size, 
           fullBleed: this.state.fullBleed, 
@@ -2161,6 +2186,7 @@ module.exports = {
   NavItem: require('./dist/nav-item'),
   Navbar: require('./dist/navbar'),
   NavSpacer: require('./dist/nav-spacer'),
+  MenuItem: require('./dist/menu-item'),
   Dropdown: require('./dist/dropdown'),
   Modal: require('./dist/modal'),
   Badge: require('./dist/badge'),
@@ -2177,7 +2203,7 @@ module.exports = {
 };
 
 
-},{"./dist/badge":"/Users/jackson/Repos/rebass/dist/badge.js","./dist/banner":"/Users/jackson/Repos/rebass/dist/banner.js","./dist/button":"/Users/jackson/Repos/rebass/dist/button.js","./dist/dropdown":"/Users/jackson/Repos/rebass/dist/dropdown.js","./dist/flag":"/Users/jackson/Repos/rebass/dist/flag.js","./dist/group":"/Users/jackson/Repos/rebass/dist/group.js","./dist/media":"/Users/jackson/Repos/rebass/dist/media.js","./dist/message":"/Users/jackson/Repos/rebass/dist/message.js","./dist/modal":"/Users/jackson/Repos/rebass/dist/modal.js","./dist/nav-item":"/Users/jackson/Repos/rebass/dist/nav-item.js","./dist/nav-spacer":"/Users/jackson/Repos/rebass/dist/nav-spacer.js","./dist/navbar":"/Users/jackson/Repos/rebass/dist/navbar.js","./dist/panel":"/Users/jackson/Repos/rebass/dist/panel.js","./dist/radio-button":"/Users/jackson/Repos/rebass/dist/radio-button.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/geomicon.js","react-hsl-sliders":"/Users/jackson/Repos/rebass/node_modules/react-hsl-sliders/hsl-sliders.js"}],"/Users/jackson/Repos/rebass/node_modules/classnames/index.js":[function(require,module,exports){
+},{"./dist/badge":"/Users/jackson/Repos/rebass/dist/badge.js","./dist/banner":"/Users/jackson/Repos/rebass/dist/banner.js","./dist/button":"/Users/jackson/Repos/rebass/dist/button.js","./dist/dropdown":"/Users/jackson/Repos/rebass/dist/dropdown.js","./dist/flag":"/Users/jackson/Repos/rebass/dist/flag.js","./dist/group":"/Users/jackson/Repos/rebass/dist/group.js","./dist/media":"/Users/jackson/Repos/rebass/dist/media.js","./dist/menu-item":"/Users/jackson/Repos/rebass/dist/menu-item.js","./dist/message":"/Users/jackson/Repos/rebass/dist/message.js","./dist/modal":"/Users/jackson/Repos/rebass/dist/modal.js","./dist/nav-item":"/Users/jackson/Repos/rebass/dist/nav-item.js","./dist/nav-spacer":"/Users/jackson/Repos/rebass/dist/nav-spacer.js","./dist/navbar":"/Users/jackson/Repos/rebass/dist/navbar.js","./dist/panel":"/Users/jackson/Repos/rebass/dist/panel.js","./dist/radio-button":"/Users/jackson/Repos/rebass/dist/radio-button.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/geomicon.js","react-hsl-sliders":"/Users/jackson/Repos/rebass/node_modules/react-hsl-sliders/hsl-sliders.js"}],"/Users/jackson/Repos/rebass/node_modules/classnames/index.js":[function(require,module,exports){
 function classNames() {
 	var args = arguments;
 	var classes = [];
@@ -54628,15 +54654,19 @@ var highlight = require('highlight.js');
 var classnames = require('classnames');
 var reactToJsx = require('react-to-jsx');
 
+var JS_COMMENT_REGEX = /(\/\*[\w\'\s\r\n\*]*\*\/)|(\/\/[\w\s\']*)|(\<![\-\-\s\w\>\/]*\>)/;
+
 module.exports = React.createClass({displayName: "exports",
 
   getDefaultProps: function() {
     return {
-      theme: 'silver'
+      color: 'silver'
     }
   },
 
   highlight: function(string) {
+    // Attempting to remove js comments
+    //var string = string.replace(JS_COMMENT_REGEX, '');
     var code = highlight.highlight('xml', string).value;
     var html = { __html: code };
     return React.createElement("pre", {dangerouslySetInnerHTML: html, className: "p2 mb0 rounded-bottom bg-darken-1"})
@@ -54646,7 +54676,7 @@ module.exports = React.createClass({displayName: "exports",
 
     var string = reactToJsx(this.props.children, { indent: '  ' });
     var classes = {
-      container: classnames('mb2', 'border', 'rounded', 'border-' + this.props.theme),
+      container: classnames('mb2', 'border', 'rounded', 'border-' + this.props.color),
       rendered: classnames('p2'),
     };
 
@@ -55299,7 +55329,7 @@ module.exports={
     "react-tools": "^0.12.2",
     "reactdown": "^0.8.0",
     "reactify": "^1.0.0",
-    "rebass-example": "^1.0.0",
+    "rebass-example": "^1.1.0",
     "uglify-js": "^2.4.16",
     "uglifyify": "^3.0.1",
     "watch": "^0.14.0",

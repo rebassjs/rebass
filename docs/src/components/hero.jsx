@@ -15,7 +15,7 @@ module.exports = React.createClass({
       </div>
     );
     return (
-      <Banner theme="black"
+      <Banner color="black"
         footer={footer}
         className="red">
         <h1 className="h1 h1-responsive m0">

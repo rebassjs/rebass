@@ -9,6 +9,7 @@ var Panel = React.createClass({displayName: "Panel",
     return {
       header: false,
       footer: false,
+      theme: 'silver',
     }
   },
 
@@ -16,7 +17,7 @@ var Panel = React.createClass({displayName: "Panel",
     if (!header) {
       return false;
     }
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var headerClass = 'bold p2 ' + bassClasses.primary;
     return (
       React.createElement("div", {className: headerClass}, 
@@ -52,7 +53,7 @@ var Panel = React.createClass({displayName: "Panel",
   },
 
   render: function() {
-    var borderColor = 'border-' + this.props.theme;
+    var borderColor = 'border-' + this.props.color;
     var panelClass = 'mb2 overflow-hidden rounded border ' + borderColor;
     var children = this.filterChildren(this.props.children);
     return (

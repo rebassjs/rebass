@@ -8,6 +8,7 @@ var Group = Rebass.Group;
 var NavItem = Rebass.NavItem;
 var Navbar = Rebass.Navbar;
 var NavSpacer = Rebass.NavSpacer;
+var MenuItem = Rebass.MenuItem;
 var Dropdown = Rebass.Dropdown;
 var Modal = Rebass.Modal;
 var Flag  = Rebass.Flag;
@@ -33,75 +34,79 @@ module.exports = React.createClass({
 
   getInitialState: function() {
     return {
-      theme: 'blue'
+      color: 'blue'
     }
   },
 
-  changeTheme: function(theme) {
-    this.setState({ theme: theme });
+  changeTheme: function(color) {
+    this.setState({ color: color });
   },
 
   getSections: function() {
-    var theme = this.state.theme;
+    var color = this.state.color;
     return [
       {
         name: 'Button',
         description: 'Themeable button component with solid, outline, and transparent variations',
         example: (
           <div>
-            <Button theme={theme}>Button</Button>
-            <Button theme={theme} outline={true}>Button</Button>
-            <Button theme={theme} transparent={true}>Button</Button>
+            <Button color={color}>Button</Button>
+            <Button color={color} outline={true}>Button</Button>
+            <Button color={color} transparent={true}>Button</Button>
           </div>
         ),
-        props: ['theme', 'flush', 'active', 'className', 'outline', 'transparent']
+        props: ['color', 'flush', 'active', 'className', 'outline', 'transparent']
       },
       {
         name: 'Badge',
         description: 'Used to label states and properties',
-        example: <Badge theme={theme}>Badge</Badge>,
+        example: <Badge color={color}>Badge</Badge>,
       },
       {
         name: 'Group',
         description: 'Groups buttons and inputs together',
         example: (
           <Group>
-            <input type="text" className={'field-light border-'+theme} />
-            <Button theme={theme} outline={true}>Go</Button>
-            <Button theme={theme}>Bacon</Button>
+            <input type="text" className={'field-light border-'+color} />
+            <Button color={color} outline={true}>Go</Button>
+            <Button color={color}>Bacon</Button>
           </Group>
         ),
       },
       {
+        name: 'MenuItem',
+        description: 'Full width, block link for menus',
+        example: <MenuItem label="MenuItem" href="#MenuItem" />,
+      },
+      {
         name: 'Dropdown',
         description: 'Progressive disclosure for showing lists of actions',
-        example: false,
         example: (
-          <Dropdown label="Actions" theme={theme}>
-            <NavItem href="#!" block={true}>Action</NavItem>
-            <NavItem href="#!" block={true}>Action</NavItem>
-            <NavItem href="#!" block={true}>Action</NavItem>
+          <Dropdown label="Actions" color={color}>
+            <MenuItem label="Action" href="#dropdown" />
+            <MenuItem label="Action" href="#!" />
+            <MenuItem label="Action" href="#!" />
           </Dropdown>
         )
       },
       {
         name: 'NavItem',
         description: 'Link button style for navigation',
-        example: <NavItem>NavItem</NavItem>
+        example: <NavItem label="NavItem" />
       },
       {
         name: 'Navbar',
         description: 'Visual grouping for navigation links and other components',
         example: (
-          <Navbar theme={theme}>
-            <NavItem href="#nav-item">Navbar</NavItem>
-            <NavItem href="#nav-item">Nav Item</NavItem>
+          <Navbar color={color}>
+            <NavItem label="NavItem" href="#nav-item" />
+            <NavItem label="NavItem" href="#nav-item" />
             <NavSpacer />
             <Group>
               <input type="text" className="field-dark" placeholder="Search" />
-              <Button theme="blue">Go</Button>
+              <Button color="blue">Go</Button>
             </Group>
-            <NavItem href="#nav-item">Nav Item</NavItem>
+            <NavItem label="NavItem" href="#nav-item" />
           </Navbar>
         ),
       },
@@ -109,7 +114,7 @@ module.exports = React.createClass({
         name: 'Icon',
         description: 'Icons from Geomicons',
         example: (
-          <div className={'h2 flex flex-center mxn2 ' + theme}>
+          <div className={'h2 flex flex-center mxn2 ' + color}>
             <Icon name="bookmark" className="m2" />
             <Icon name="cloud" className="m2" />
             <Icon name="cog" className="m2" />
@@ -122,10 +127,10 @@ module.exports = React.createClass({
   },
 
   renderSection: function(section, i) {
-    var theme = this.state.theme;
+    var color = this.state.color;
     return (
       <Section heading={section.name} key={section.name+'-'+i}>
-        <Example theme={theme}>
+        <Example color={color}>
           {section.example}
         </Example>
         <p>{section.description}</p>
@@ -137,7 +142,7 @@ module.exports = React.createClass({
 
     var self = this;
     var sections = this.getSections();
-    var theme = this.state.theme;
+    var color = this.state.color;
 
     var handleClick = function(e) {
       self.changeTheme(e.target.value);
@@ -164,13 +169,13 @@ module.exports = React.createClass({
     ];
 
     var renderButton = function(button) {
-      var isActive = theme == button.value;
+      var isActive = color == button.value;
       return (
         <Button onClick={handleClick}
           size="small"
           active={isActive}
           transparent={true}
-          theme={button.value}
+          color={button.value}
           key={'button-'+button.value}
           value={button.value}>
           {button.value}

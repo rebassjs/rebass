@@ -8,7 +8,7 @@ var Navbar = React.createClass({
   getDefaultProps: function() {
     return {
       inverse: false,
-      theme: 'silver',
+      color: 'silver',
       compact: false,
       wrap: true,
       justified: false,
@@ -16,10 +16,10 @@ var Navbar = React.createClass({
   },
 
   renderChild: function(child) {
-    var inverse = this.props.inverse || colorbass(this.props.theme).inverse;
+    var inverse = this.props.inverse || colorbass(this.props.color).inverse;
     var childProps = {
       inverse: inverse,
-      compact: this.props.compact,
+      big: !this.props.compact,
       justified: this.props.justified,
     };
     var newChild = React.addons.cloneWithProps(child, childProps);
@@ -27,7 +27,7 @@ var Navbar = React.createClass({
   },
 
   render: function() {
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var navbarClass =
       classnames('flex', 'flex-center', 'mb2',
         { 'flex-wrap': this.props.wrap },

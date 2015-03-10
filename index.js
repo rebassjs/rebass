@@ -7,6 +7,7 @@ module.exports = {
   NavItem: require('./dist/nav-item'),
   Navbar: require('./dist/navbar'),
   NavSpacer: require('./dist/nav-spacer'),
+  MenuItem: require('./dist/menu-item'),
   Dropdown: require('./dist/dropdown'),
   Modal: require('./dist/modal'),
   Badge: require('./dist/badge'),

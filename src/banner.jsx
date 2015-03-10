@@ -8,7 +8,7 @@ var Banner = React.createClass({
 
   getDefaultProps: function() {
     return {
-      theme: 'black',
+      color: 'black',
       center: false,
       right: false,
       backgroundImage: false,
@@ -23,7 +23,7 @@ var Banner = React.createClass({
       outer: classnames(this.props.className,
         { center: this.props.center },
         { 'right-align': this.props.right },
-        colorbass(this.props.theme).primary),
+        colorbass(this.props.color).primary),
       inner: classnames('px3 py4'),
     };
     var style = {

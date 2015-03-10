@@ -7,7 +7,7 @@ var Button = React.createClass({
 
   getDefaultProps: function() {
     return {
-      theme: 'silver',
+      color: 'silver',
       flush: false,
       active: false,
       className: '',
@@ -18,7 +18,7 @@ var Button = React.createClass({
   },
 
   render: function() {
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var buttonClass =
       classnames(
         this.props.className,

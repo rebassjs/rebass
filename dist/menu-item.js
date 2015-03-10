@@ -2,28 +2,24 @@
 var React = require('react');
 var classnames = require('classnames');
 
-var NavItem = React.createClass({displayName: "NavItem",
+var MenuItem = React.createClass({displayName: "MenuItem",
 
   getDefaultProps: function() {
     return {
       label: false,
       inverse: false,
-      flush: true,
       big: false,
-      justified: false,
-      block: false,
     }
   },
 
   render: function() {
     var linkClass = 
       classnames(
-        'button', 'button-transparent',
-        { block: this.props.block },
+        'button',
+        'block',
+        'button-transparent',
         { white: this.props.inverse },
-        { py2: this.props.big },
-        { 'center flex-auto': this.props.justified },
-        { mr1: !this.props.flush });
+        { py2: this.props.big });
     var label = this.props.label || this.props.children || false;
     return (
       React.createElement("a", React.__spread({},  this.props, {className: linkClass}), 
@@ -34,5 +30,5 @@ var NavItem = React.createClass({displayName: "NavItem",
 
 });
 
-module.exports = NavItem;
+module.exports = MenuItem;
 

@@ -13,7 +13,7 @@ var Message = React.createClass({displayName: "Message",
 
   getDefaultProps: function() {
     return {
-      theme: false
+      color: false
     };
   },
 
@@ -23,7 +23,7 @@ var Message = React.createClass({displayName: "Message",
 
   render: function() {
     var classes = {
-      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.theme).primary),
+      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.color).primary),
       body: classnames('flex-auto', 'p2'),
       dismiss: classnames('h3'),
     };

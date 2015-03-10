@@ -12,7 +12,7 @@ var Modal = React.createClass({displayName: "Modal",
       fullBleed: false,
       size: 'medium',
       header: '',
-      theme: false,
+      color: false,
       onDismiss: function() {}
     }
   },
@@ -21,7 +21,7 @@ var Modal = React.createClass({displayName: "Modal",
 
     var isOpen = this.props.isOpen;
     var header = this.props.header;
-    var bassClasses = colorbass(this.props.theme);
+    var bassClasses = colorbass(this.props.color);
     var classes = {
       body: classnames( this.props.flush ? '' : 'p2'),
       header: classnames('flex', 'flex-center', bassClasses.primary),

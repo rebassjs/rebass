@@ -43,10 +43,10 @@ module.exports = React.createClass({
   render: function() {
     return (
       <Section heading="Modal">
-        <Button theme="blue" onClick={this.openRegularModal}>Open Modal</Button>
-        <Button theme="blue" onClick={this.openBigModal}>Open Big Modal</Button>
-        <Button theme="blue" onClick={this.openSmallModal}>Open Small Modal</Button>
-        <Button theme="blue" onClick={this.openFullModal}>Open Full-Bleed Modal</Button>
+        <Button color="blue" onClick={this.openRegularModal}>Open Modal</Button>
+        <Button color="blue" onClick={this.openBigModal}>Open Big Modal</Button>
+        <Button color="blue" onClick={this.openSmallModal}>Open Small Modal</Button>
+        <Button color="blue" onClick={this.openFullModal}>Open Full-Bleed Modal</Button>
         <Modal header="Modal header"
           size={this.state.size}
           fullBleed={this.state.fullBleed}

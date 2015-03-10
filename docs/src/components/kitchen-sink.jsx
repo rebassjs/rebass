@@ -39,28 +39,28 @@ module.exports = React.createClass({
 
           <Section heading="Button">
             <Button>Button</Button>
-            <Button theme="gray">Button</Button>
-            <Button theme="blue">Button</Button>
-            <Button theme="green">Button</Button>
-            <Button theme="red">Button</Button>
+            <Button color="gray">Button</Button>
+            <Button color="blue">Button</Button>
+            <Button color="green">Button</Button>
+            <Button color="red">Button</Button>
           </Section>
 
           <Section heading="Radio Button">
-            <RadioButton theme="blue" outline={true} onClick={handleRadioButton}>Radio Button</RadioButton>
-            <RadioButton theme="blue" outline={true} isActive={true}>Radio Button</RadioButton>
+            <RadioButton color="blue" outline={true} onClick={handleRadioButton}>Radio Button</RadioButton>
+            <RadioButton color="blue" outline={true} isActive={true}>Radio Button</RadioButton>
           </Section>
 
           <Section heading="Group">
-            <Group theme="orange" className="mr1">
+            <Group color="orange" className="mr1">
               <Button>Button</Button>
-              <Button theme="orange">Button</Button>
-              <Button theme="orange">Button</Button>
+              <Button color="orange">Button</Button>
+              <Button color="orange">Button</Button>
             </Group>
             <Group className="mr1">
               <input type="text" className="field-light" placeholder="Search" />
               <Button>Go</Button>
             </Group>
-            <Group theme="blue">
+            <Group color="blue">
               <Button>Go</Button>
               <Dropdown label="Dropdown" right={true}>
                 <NavItem href="#!">Action</NavItem>
@@ -77,7 +77,7 @@ module.exports = React.createClass({
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
             </Dropdown>
-            <Dropdown label="Right" theme="blue" right={true}>
+            <Dropdown label="Right" color="blue" right={true}>
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
               <a href="#!" className="button block button-nav-light">Action</a>
@@ -106,34 +106,34 @@ module.exports = React.createClass({
               <NavSpacer />
               <NavItem href="#nav-item">Nav Item</NavItem>
             </Navbar>
-            <Navbar theme="blue">
+            <Navbar color="blue">
               <NavItem href="#nav-item">Blue Navbar</NavItem>
               <NavItem href="#nav-item">Nav Item</NavItem>
               <NavSpacer />
               <NavItem href="#nav-item">Nav Item</NavItem>
             </Navbar>
-            <Navbar theme="black" compact={true}>
+            <Navbar color="black" compact={true}>
               <NavItem href="#nav-item">Compact Navbar</NavItem>
               <NavItem href="#nav-item">Nav Item</NavItem>
               <NavSpacer />
               <NavItem href="#nav-item">Nav Item</NavItem>
             </Navbar>
-            <Navbar theme="black" justified={true}>
+            <Navbar color="black" justified={true}>
               <NavItem href="#nav-item">Justified Navbar</NavItem>
               <NavItem href="#nav-item">Nav Item</NavItem>
               <NavItem href="#nav-item">Nav Item</NavItem>
             </Navbar>
-            <Navbar theme="black">
+            <Navbar color="black">
               <NavItem href="#nav-item">Navbar</NavItem>
               <NavItem href="#nav-item">Groups</NavItem>
-              <Group theme="white" outline={true}>
+              <Group color="white" outline={true}>
                 <Button>Button</Button>
                 <Button>Button</Button>
               </Group>
               <NavSpacer />
               <Group>
                 <input type="text" className="field-dark" placeholder="Search" />
-                <Button theme="blue">Go</Button>
+                <Button color="blue">Go</Button>
               </Group>
               <NavItem href="#nav-item">Nav Item</NavItem>
             </Navbar>
@@ -141,20 +141,20 @@ module.exports = React.createClass({
 
           <Section heading="Badge">
             <Badge>Badge</Badge>
-            <Badge theme="red">Badge</Badge>
-            <Badge theme="yellow">Badge</Badge>
-            <Badge theme="green">Badge</Badge>
-            <Badge theme="blue">Badge</Badge>
-            <Badge theme="black">Badge</Badge>
+            <Badge color="red">Badge</Badge>
+            <Badge color="yellow">Badge</Badge>
+            <Badge color="green">Badge</Badge>
+            <Badge color="blue">Badge</Badge>
+            <Badge color="black">Badge</Badge>
           </Section>
 
           <Section heading="Message">
             <Message>Message</Message>
-            <Message theme="red">Message</Message>
-            <Message theme="yellow">Message</Message>
-            <Message theme="green">Message</Message>
-            <Message theme="blue">Message</Message>
-            <Message theme="black">Message</Message>
+            <Message color="red">Message</Message>
+            <Message color="yellow">Message</Message>
+            <Message color="green">Message</Message>
+            <Message color="blue">Message</Message>
+            <Message color="black">Message</Message>
           </Section>
 
           <Section heading="Media Object">
@@ -175,16 +175,16 @@ module.exports = React.createClass({
             <Panel header="Panel Header">
               <div>Panel Body</div>
             </Panel>
-            <Panel header="Panel Header" theme="blue">
+            <Panel header="Panel Header" color="blue">
               <div>Panel Body</div>
             </Panel>
-            <Panel header="Panel Header" theme="green">
+            <Panel header="Panel Header" color="green">
               <div>Panel Body</div>
             </Panel>
-            <Panel header="Panel Header" theme="yellow">
+            <Panel header="Panel Header" color="yellow">
               <div>Panel Body</div>
             </Panel>
-            <Panel header="Panel Header" theme="red">
+            <Panel header="Panel Header" color="red">
               <div>Panel Body</div>
             </Panel>
           </Section>

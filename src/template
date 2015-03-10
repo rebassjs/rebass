@@ -5,6 +5,11 @@ var classnames = require('classnames');
 
 var X = React.createClass({
 
+  getDefaultProps: function() {
+    return {
+    }
+  },
+
   render: function() {
     return (
       <div></div>
