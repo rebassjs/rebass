@@ -30,9 +30,12 @@ data.baseUrl = '/';
 if (process.env.NODE_ENV === 'production') {
   console.log('production build');
   data.baseUrl = '/rebass/';
+} else if (process.env.NODE_ENV === 'github') {
+  console.log('github build');
+  data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
-  data.baseUrl = '/rebass/';
+  //data.baseUrl = '/rebass/';
 }
 
 data.markdown = {
