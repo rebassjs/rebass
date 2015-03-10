@@ -1,7 +1,7 @@
 
 var React = require('react/addons');
 var classnames = require('classnames');
-var colorbass = require('../colorbass');
+var colorbass = require('colorbass');
 
 var Navbar = React.createClass({displayName: "Navbar",
 

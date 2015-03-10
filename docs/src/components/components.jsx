@@ -16,11 +16,16 @@ var Badge = Rebass.Badge;
 var Message  = Rebass.Message;
 var Panel  = Rebass.Panel;
 var Banner  = Rebass.Banner;
-var Icon  = require('react-geomicons');
+
+var Icon = Rebass.Icon;
+
+var HslSliders = require('react-hsl-sliders');
 
 var LayoutSidebar = require('./layout-sidebar.jsx');
 var Section = require('./section.jsx');
 var Example = require('rebass-example');
+
+var IconSection = require('./icon-section.jsx');
 
 var KitchenSink = require('./kitchen-sink.jsx');
 
@@ -70,8 +75,9 @@ module.exports = React.createClass({
       {
         name: 'Dropdown',
         description: 'Progressive disclosure for showing lists of actions',
+        example: false,
         example: (
-          <Dropdown label="Actions">
+          <Dropdown label="Actions" theme={theme}>
             <NavItem href="#!" block={true}>Action</NavItem>
             <NavItem href="#!" block={true}>Action</NavItem>
             <NavItem href="#!" block={true}>Action</NavItem>
@@ -87,7 +93,7 @@ module.exports = React.createClass({
         name: 'Navbar',
         description: 'Visual grouping for navigation links and other components',
         example: (
-          <Navbar theme="black">
+          <Navbar theme={theme}>
             <NavItem href="#nav-item">Navbar</NavItem>
             <NavItem href="#nav-item">Nav Item</NavItem>
             <NavSpacer />
@@ -97,6 +103,19 @@ module.exports = React.createClass({
             </Group>
             <NavItem href="#nav-item">Nav Item</NavItem>
           </Navbar>
+        ),
+      },
+      {
+        name: 'Icon',
+        description: 'Icons from Geomicons',
+        example: (
+          <div className={'h2 flex flex-center mxn2 ' + theme}>
+            <Icon name="bookmark" className="m2" />
+            <Icon name="cloud" className="m2" />
+            <Icon name="cog" className="m2" />
+            <Icon name="heart" className="m2" />
+            <Icon name="search" className="m2" />
+          </div>
         ),
       },
     ]
@@ -169,10 +188,6 @@ module.exports = React.createClass({
           </Group>
         </div>
         {sections.map(this.renderSection)}
-
-        <hr className="border-thick border-aqua"/>
-        <h2>Kitchen Sink</h2>
-        <KitchenSink />
       </LayoutSidebar>
     )
   }

@@ -32,6 +32,17 @@
 
 /* HACKS */
 
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 3;
+  vertical-align: middle;
+  border-top: 7px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
 .button-transparent.is-active {
   box-shadow: none;
 }

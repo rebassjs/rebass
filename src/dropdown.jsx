@@ -1,14 +1,21 @@
 
 var React = require('react');
 var classnames = require('classnames');
-var colorbass = require('../colorbass');
+var colorbass = require('colorbass');
 var Button = require('./button');
 
 var DropdownItem = React.createClass({
 
+  getDefaultProps: function() {
+    return {
+      href: '#!',
+      onClick: function() {},
+    }
+  },
+
   render: function() {
     return (
-      <a href={this.props.href}>
+      <a href={this.props.href} onClick={this.props.onClick} className="button block button-transparent">
         {this.props.children}
       </a>
     )
@@ -95,7 +102,7 @@ var Dropdown = React.createClass({
             flush={true}
             style={styles.button}
             onClick={this.toggle}>
-            {this.props.label} <span style={this.caretStyle} />
+            {this.props.label} <span className="caret" />
           </Button>
           <div className={classes.menu} style={styles.menu} onClick={this.close}>
             {this.props.children}

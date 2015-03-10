@@ -2,7 +2,7 @@
 var React = require('react');
 
 var classnames = require('classnames');
-var colorbass = require('../colorbass');
+var colorbass = require('colorbass');
 
 var Banner = React.createClass({
 
