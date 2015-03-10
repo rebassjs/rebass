@@ -14,10 +14,11 @@ module.exports = React.createClass({
         <Nav {...this.props} dark={true} />
       </div>
     );
+    var bannerColor = this.props.dark ? 'black' : 'silver';
     return (
-      <Banner color="black"
+      <Banner color={bannerColor}
         footer={footer}
-        className="red">
+        className={this.props.color}>
         <h1 className="h1 h1-responsive m0">
           <Logo className="h1 mb2 mt3" />
           <span className="caps">{this.props.title}</span>

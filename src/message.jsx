@@ -25,7 +25,7 @@ var Message = React.createClass({
     var classes = {
       container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.color).primary),
       body: classnames('flex-auto', 'p2'),
-      dismiss: classnames('h3'),
+      dismiss: classnames('h3 py2 button-transparent muted'),
     };
     var style = {
       display: this.state.visible ? '' : 'none'

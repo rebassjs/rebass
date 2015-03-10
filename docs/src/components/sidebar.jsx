@@ -3,6 +3,7 @@ var React = require('react');
 var Link = require('react-router').Link;
 //var Nav = require('./nav.jsx');
 var Logo = require('./logo.jsx')
+var ColorSelect = require('./color-select.jsx')
 
 var Rebass = require('../../..');
 var NavItem = Rebass.NavItem;
@@ -14,7 +15,7 @@ module.exports = React.createClass({
     return (
       <Link to={route.name}
         key={'sidebar-nav-item-'+i}
-        className="button block button-transparent red"
+        className={'button block button-transparent '+this.props.color}
         activeClassName="is-active">
         {route.name}
       </Link>
@@ -22,8 +23,9 @@ module.exports = React.createClass({
   },
 
   render: function() {
+
     return (
-      <div className="red">
+      <div className={this.props.color}>
         <div className="flex flex-center" onClick={this.props.toggleSidebar}>
           <Logo className="p2" />
           <div className="flex-auto" />
@@ -38,11 +40,15 @@ module.exports = React.createClass({
         </div>
         <div className="px2">
           <h1 className="h2 caps">
-            <Link to="root" className="red">{this.props.title}</Link>
+            <Link to="root" className={this.props.color}>{this.props.title}</Link>
           </h1>
-          <hr className="border-red" />
+          <hr className={'border-'+this.props.color} />
           <div className="mxn2 mb4">
             {this.props.routes.map(this.renderNavItem)}
+          </div>
+          <div className="">
+            <ColorSelect
+              {...this.props} />
           </div>
           <div className="flex flex-baseline mxn2 mt4 mb2">
             <a href={this.props.homepage}

@@ -43,6 +43,12 @@ data.markdown = {
   //Components: fs.readFileSync(path.join(__dirname, '../components/README.md'), 'utf8'),
 };
 
+data.colors = [
+  'aqua', 'blue', 'navy', 'teal',
+  'green', 'olive', 'lime', 'yellow',
+  'orange', 'red', 'fuchsia', 'purple', 'maroon',
+  'black', 'gray', 'silver', 'white',
+];
 
 data.routes = [
   {

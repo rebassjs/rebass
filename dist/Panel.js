@@ -30,8 +30,9 @@ var Panel = React.createClass({displayName: "Panel",
     if (!footer) {
       return false;
     }
+    var footerClass = classnames('p2 bg-darken-1 border-top', 'border-'+this.props.color);
     return (
-      React.createElement("div", {className: "p2 bg-lighter-gray border-top"}, 
+      React.createElement("div", {className: footerClass}, 
         footer
       )
     )

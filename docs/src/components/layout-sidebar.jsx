@@ -33,11 +33,15 @@ module.exports = React.createClass({
 
     var classes = {
       layout: classnames('LayoutSidebar', 'flex', { 'is-open': this.state.sidebarIsOpen }),
+      sidebar: classnames('LayoutSidebar-sidebar',
+        'flex-none', 'white',
+        this.props.dark ? 'bg-black' : 'bg-silver')
     };
+
 
     return (
       <div className={classes.layout}>
-        <div className="LayoutSidebar-sidebar flex-none white bg-black" style={styles.sidebar}>
+        <div className={classes.sidebar} style={styles.sidebar}>
           <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
         </div>
         <div className="LayoutSidebar-content flex-auto flex flex-column" style={styles.content}>
