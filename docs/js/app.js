@@ -94,6 +94,7 @@ var Button = React.createClass({displayName: "Button",
       outline: false,
       transparent: false,
       size: false,
+      justified: false,
     }
   },
 
@@ -107,6 +108,7 @@ var Button = React.createClass({displayName: "Button",
         { 'button-small': this.props.size == 'small' },
         { 'button-big': this.props.size == 'big' },
         { mr1: !this.props.flush },
+        { 'center block': this.props.justified },
         { 'is-active': this.props.active },
         { 'button-outline': this.props.outline },
         { 'button-transparent': this.props.transparent });
@@ -139,12 +141,13 @@ var Dropdown = React.createClass({displayName: "Dropdown",
       flush: false,
       top: false,
       right: false,
+      open: false,
     }
   },
 
   getInitialState: function() {
     return {
-      isOpen: false,
+      isOpen: this.props.open,
     }
   },
 
@@ -319,7 +322,7 @@ var Group = React.createClass({displayName: "Group",
   },
 
   render: function() {
-    var groupClass = classnames(this.props.className, 'inline-block', 'rounded');
+    var groupClass = classnames(this.props.className, 'flex', { 'full-width': this.props.justified }, 'rounded');
     return (
       React.createElement("div", React.__spread({},  this.props, {className: groupClass}), 
         React.Children.map(this.props.children, this.renderChild)
@@ -433,7 +436,8 @@ var Message = React.createClass({displayName: "Message",
 
   getDefaultProps: function() {
     return {
-      color: false
+      color: false,
+      outline: false,
     };
   },
 
@@ -442,8 +446,10 @@ var Message = React.createClass({displayName: "Message",
   },
 
   render: function() {
+    var bassClasses = colorbass(this.props.color);
     var classes = {
-      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.color).primary),
+      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded',
+        this.props.outline ?  (this.props.color + ' border border-' + this.props.color) : bassClasses.primary),
       body: classnames('flex-auto', 'p2'),
       dismiss: classnames('h3 py2 button-transparent muted'),
     };
@@ -840,13 +846,15 @@ module.exports = React.createClass({displayName: "exports",
 
 var React = require('react');
 
+var Link = require('react-router').Link;
+
 var Rebass = require('../../..');
 var Button = Rebass.Button;
 
 var Hero = require('./hero.jsx');
 var Footer = require('./footer.jsx');
 //var Section = require('./section.jsx');
-
+var DemoBanner = require('./demo-banner.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
@@ -860,29 +868,54 @@ module.exports = React.createClass({displayName: "exports",
       React.createElement("div", {style: style}, 
         React.createElement(Hero, React.__spread({},  this.props)), 
         React.createElement("div", {className: "container px2"}, 
-          React.createElement("section", {id: "intro", className: "py4"}, 
+          React.createElement("section", {id: "intro", className: "mt4"}, 
             React.createElement("p", {className: "h3 bold"}, 
-              "Rebass is a library of themeable UI components built with the global core ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " styles."
+              "Themeable UI components built with global ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " styles."
             )
           ), 
           React.createElement("section", {id: "features", className: "sm-flex py4 mxn2"}, 
             React.createElement("div", {className: "sm-col-4 px2"}, 
-              React.createElement("h2", null, "Reusable Components"), 
-              React.createElement("p", null)
-            ), 
-            React.createElement("div", {className: "sm-col-4 px2"}, 
               React.createElement("h2", null, "Common Styling API"), 
-              React.createElement("p", null)
+              React.createElement("p", null, 
+                "Basscss’s powerful utilities offer the ability to extend and create custom components" + ' ' +
+                "without the need to manage custom style attributes and media queries." + ' ' +
+                "Basscss and React is a match made in heaven."
+              )
             ), 
             React.createElement("div", {className: "sm-col-4 px2"}, 
               React.createElement("h2", null, "Themeable"), 
-              React.createElement("p", null)
+              React.createElement("p", null, 
+                "Switch colors in real time or create custom themes to match your current styling." + ' ' +
+                "Basscss can even be incorporated into other CSS frameworks like Bootstrap, Foundation, or PureCSS."
+              )
+            ), 
+            React.createElement("div", {className: "sm-col-4 px2"}, 
+              React.createElement("h2", null, "Just Add State"), 
+              React.createElement("p", null, 
+                "Use these content-agnostic components in any React project" + ' ' +
+                "and spend less time worrying about what things look like."
+              )
             )
           ), 
-          React.createElement("section", {id: "examples-promo", className: "py4"}
+          /*
+          <section id="examples-promo" className="py4 bg-black">
+            <DemoBanner color={this.props.color} />
+          </section>
+          */
+          React.createElement("hr", {className: 'border border-'+this.props.color}), 
+          React.createElement("section", {id: "cta", className: "sm-flex flex-center py4"}, 
+            React.createElement("div", {className: "flex-auto"}, 
+              React.createElement("h1", null, "Install it now"), 
+              React.createElement("p", null, "Try it out in your own app")
+            ), 
+            React.createElement("div", {className: "sm-col-3"}, 
+              React.createElement(Link, {to: "/docs/getting-started", 
+                className: 'button button-big bg-'+this.props.color}, 
+                "Getting Started"
+              )
+            )
           ), 
-          React.createElement("section", {id: "cta", className: "py4"}
-          )
+          React.createElement("hr", {className: 'border border-'+this.props.color})
         ), 
         React.createElement(Footer, React.__spread({},  this.props))
       )
@@ -893,7 +926,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":"/Users/jackson/Repos/rebass/index.js","./footer.jsx":"/Users/jackson/Repos/rebass/docs/src/components/footer.jsx","./hero.jsx":"/Users/jackson/Repos/rebass/docs/src/components/hero.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/src/components/color-select.jsx":[function(require,module,exports){
+},{"../../..":"/Users/jackson/Repos/rebass/index.js","./demo-banner.jsx":"/Users/jackson/Repos/rebass/docs/src/components/demo-banner.jsx","./footer.jsx":"/Users/jackson/Repos/rebass/docs/src/components/footer.jsx","./hero.jsx":"/Users/jackson/Repos/rebass/docs/src/components/hero.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/src/components/color-select.jsx":[function(require,module,exports){
 
 var React = require('react');
 
@@ -921,7 +954,7 @@ var ColorSelect = React.createClass({displayName: "ColorSelect",
     var selectClass = 'block full-width field-' + (this.props.dark ? 'dark' : 'light');
     return (
       React.createElement("div", null, 
-        React.createElement("label", {className: "h5 bold block mb1"}, "Change Color"), 
+        React.createElement("label", {className: "h5 bold block mb1"}, "Color"), 
         React.createElement("select", {className: selectClass, 
           onChange: this.handleChange, 
           value: this.props.color}, 
@@ -999,7 +1032,93 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":"/Users/jackson/Repos/rebass/index.js","./layout-sidebar.jsx":"/Users/jackson/Repos/rebass/docs/src/components/layout-sidebar.jsx","./section.jsx":"/Users/jackson/Repos/rebass/docs/src/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","rebass-example":"/Users/jackson/Repos/rebass/node_modules/rebass-example/example.js"}],"/Users/jackson/Repos/rebass/docs/src/components/docs.jsx":[function(require,module,exports){
+},{"../../..":"/Users/jackson/Repos/rebass/index.js","./layout-sidebar.jsx":"/Users/jackson/Repos/rebass/docs/src/components/layout-sidebar.jsx","./section.jsx":"/Users/jackson/Repos/rebass/docs/src/components/section.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","rebass-example":"/Users/jackson/Repos/rebass/node_modules/rebass-example/example.js"}],"/Users/jackson/Repos/rebass/docs/src/components/demo-banner.jsx":[function(require,module,exports){
+
+var React = require('react');
+var classnames = require('classnames');
+
+var Rebass = require('../../..');
+var Button = Rebass.Button;
+var RadioButton = Rebass.RadioButton;
+var Group = Rebass.Group;
+var NavItem = Rebass.NavItem;
+var Navbar = Rebass.Navbar;
+var NavSpacer = Rebass.NavSpacer;
+var MenuItem = Rebass.MenuItem;
+var Dropdown = Rebass.Dropdown;
+var Modal = Rebass.Modal;
+var Flag  = Rebass.Flag;
+var Media  = Rebass.Media;
+var Badge = Rebass.Badge;
+var Message  = Rebass.Message;
+var Panel  = Rebass.Panel;
+var Banner  = Rebass.Banner;
+
+var Icon = Rebass.Icon;
+
+
+var DemoBanner = React.createClass({displayName: "DemoBanner",
+
+  render: function() {
+    var color = this.props.color;
+    var classes = {
+      container: classnames('p2', color),
+    };
+    return (
+      React.createElement("div", {className: classes.container}, 
+        React.createElement("div", {className: "sm-flex flex-center mxn2"}, 
+          React.createElement("div", {className: "sm-col-7 px2"}, 
+            React.createElement(Panel, {header: "Hamburger", color: color}, 
+              "Hamburger"
+            )
+          ), 
+          React.createElement("div", {className: "sm-col-5 px2 nowrap"}, 
+            React.createElement("div", {className: "mb2"}, 
+              React.createElement(Group, {justified: true}, 
+                React.createElement(Button, {outline: true, color: color}, "Hamburger"), 
+                React.createElement(Button, {outline: true, color: color}, "Hamburger"), 
+                React.createElement(Button, {outline: true, color: color}, "Hamburger")
+              )
+            ), 
+            React.createElement(Group, {justified: true}, 
+              React.createElement("input", {type: "text", className: 'flex-auto m0 field-light border-'+color}), 
+              React.createElement(Button, {color: color, outline: true}, "Go")
+            ), 
+            React.createElement("div", {className: "flex mxn2"}, 
+              React.createElement(Icon, {className: "h2 m2", name: "cloud"}), 
+              React.createElement("div", {className: "flex-auto"}), 
+              React.createElement(Icon, {className: "h2 m2", name: "cog"}), 
+              React.createElement("div", {className: "flex-auto"}), 
+              React.createElement(Icon, {className: "h2 m2", name: "heart"}), 
+              React.createElement("div", {className: "flex-auto"}), 
+              React.createElement(Icon, {className: "h2 m2", name: "search"})
+            )
+          )
+        ), 
+        React.createElement("div", {className: "sm-flex flex-start mxn2"}, 
+          React.createElement("div", {className: "sm-col-9 px2"}, 
+            React.createElement(Message, {color: color, outline: true}, "Hamburger pickle")
+          ), 
+          React.createElement("div", {className: "sm-col-3 px2"}, 
+            React.createElement(Dropdown, {label: "Hamburger", 
+              color: color, 
+              open: true}, 
+              React.createElement(Dropdown.Item, {href: "#!", label: "Hotdog"}), 
+              React.createElement(Dropdown.Item, {href: "#!", label: "Hotdog"})
+            )
+          )
+        )
+      )
+    )
+  }
+
+});
+
+module.exports = DemoBanner;
+
+
+
+},{"../../..":"/Users/jackson/Repos/rebass/index.js","classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/src/components/docs.jsx":[function(require,module,exports){
 
 var React = require('react');
 var Rebass = require('../../..');
@@ -1030,8 +1149,9 @@ module.exports = React.createClass({displayName: "exports",
 
   render: function() {
     return (
-      React.createElement("footer", {className: "container px2"}, 
-        React.createElement("div", {className: "flex flex-wrap flex-center py3 mxn2"}, 
+      React.createElement("footer", {className: "container px2 py3"}, 
+        React.createElement(Nav, React.__spread({},  this.props, {className: "mxn2 mb1"})), 
+        React.createElement("div", {className: "flex flex-wrap flex-baseline mxn2"}, 
           React.createElement("div", {className: "flex flex-baseline px2"}, 
             React.createElement("h3", {className: "h4 m0"}, 
               React.createElement(Link, {to: this.props.baseUrl}, 
@@ -1040,7 +1160,12 @@ module.exports = React.createClass({displayName: "exports",
             ), 
             React.createElement("span", {className: "h5 bold"}, "v", this.props.version)
           ), 
-          React.createElement(Nav, React.__spread({},  this.props)), 
+          React.createElement("a", {href: this.props.npm, className: "button button-transparent"}, 
+            "NPM"
+          ), 
+          React.createElement("a", {href: this.props.homepage, className: "button button-transparent"}, 
+            "Github"
+          ), 
           React.createElement("div", {className: "flex-auto"}), 
           React.createElement("p", {className: "bold h5 px2 m0"}, 
             React.createElement("span", null, "Made by "), 
@@ -1122,7 +1247,7 @@ module.exports = React.createClass({displayName: "exports",
   render: function() {
     var footer = (
       React.createElement("div", {className: "flex flex-wrap py2"}, 
-        React.createElement("div", {className: "flex-auto"}), 
+        React.createElement("div", {className: "sm-show flex-auto"}), 
         React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
       )
     );
@@ -1149,13 +1274,15 @@ module.exports = React.createClass({displayName: "exports",
 
 var React = require('react');
 
+var Link = require('react-router').Link;
+
 var Rebass = require('../../..');
 var Button = Rebass.Button;
 
 var Hero = require('./hero.jsx');
 var Footer = require('./footer.jsx');
 //var Section = require('./section.jsx');
-
+var DemoBanner = require('./demo-banner.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
@@ -1169,29 +1296,54 @@ module.exports = React.createClass({displayName: "exports",
       React.createElement("div", {style: style}, 
         React.createElement(Hero, React.__spread({},  this.props)), 
         React.createElement("div", {className: "container px2"}, 
-          React.createElement("section", {id: "intro", className: "py4"}, 
+          React.createElement("section", {id: "intro", className: "mt4"}, 
             React.createElement("p", {className: "h3 bold"}, 
-              "Rebass is a library of themeable UI components built with the global core ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " styles."
+              "Themeable UI components built with global ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " styles."
             )
           ), 
           React.createElement("section", {id: "features", className: "sm-flex py4 mxn2"}, 
             React.createElement("div", {className: "sm-col-4 px2"}, 
-              React.createElement("h2", null, "Reusable Components"), 
-              React.createElement("p", null)
-            ), 
-            React.createElement("div", {className: "sm-col-4 px2"}, 
               React.createElement("h2", null, "Common Styling API"), 
-              React.createElement("p", null)
+              React.createElement("p", null, 
+                "Basscss’s powerful utilities offer the ability to extend and create custom components" + ' ' +
+                "without the need to manage custom style attributes and media queries." + ' ' +
+                "Basscss and React is a match made in heaven."
+              )
             ), 
             React.createElement("div", {className: "sm-col-4 px2"}, 
               React.createElement("h2", null, "Themeable"), 
-              React.createElement("p", null)
+              React.createElement("p", null, 
+                "Switch colors in real time or create custom themes to match your current styling." + ' ' +
+                "Basscss can even be incorporated into other CSS frameworks like Bootstrap, Foundation, or PureCSS."
+              )
+            ), 
+            React.createElement("div", {className: "sm-col-4 px2"}, 
+              React.createElement("h2", null, "Just Add State"), 
+              React.createElement("p", null, 
+                "Use these content-agnostic components in any React project" + ' ' +
+                "and spend less time worrying about what things look like."
+              )
             )
           ), 
-          React.createElement("section", {id: "examples-promo", className: "py4"}
+          /*
+          <section id="examples-promo" className="py4 bg-black">
+            <DemoBanner color={this.props.color} />
+          </section>
+          */
+          React.createElement("hr", {className: 'border border-'+this.props.color}), 
+          React.createElement("section", {id: "cta", className: "sm-flex flex-center py4"}, 
+            React.createElement("div", {className: "flex-auto"}, 
+              React.createElement("h1", null, "Install it now"), 
+              React.createElement("p", null, "Try it out in your own app")
+            ), 
+            React.createElement("div", {className: "sm-col-3"}, 
+              React.createElement(Link, {to: "/docs/getting-started", 
+                className: 'button button-big bg-'+this.props.color}, 
+                "Getting Started"
+              )
+            )
           ), 
-          React.createElement("section", {id: "cta", className: "py4"}
-          )
+          React.createElement("hr", {className: 'border border-'+this.props.color})
         ), 
         React.createElement(Footer, React.__spread({},  this.props))
       )
@@ -1202,7 +1354,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":"/Users/jackson/Repos/rebass/index.js","./footer.jsx":"/Users/jackson/Repos/rebass/docs/src/components/footer.jsx","./hero.jsx":"/Users/jackson/Repos/rebass/docs/src/components/hero.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/docs/src/components/layout-sidebar.jsx":[function(require,module,exports){
+},{"../../..":"/Users/jackson/Repos/rebass/index.js","./demo-banner.jsx":"/Users/jackson/Repos/rebass/docs/src/components/demo-banner.jsx","./footer.jsx":"/Users/jackson/Repos/rebass/docs/src/components/footer.jsx","./hero.jsx":"/Users/jackson/Repos/rebass/docs/src/components/hero.jsx","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js","react-router":"/Users/jackson/Repos/rebass/node_modules/react-router/lib/index.js"}],"/Users/jackson/Repos/rebass/docs/src/components/layout-sidebar.jsx":[function(require,module,exports){
 
 var React = require('react');
 var classnames = require('classnames');
@@ -1221,7 +1373,7 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   toggleSidebar: function() {
-    console.log('toggleSidebar');
+    //console.log('toggleSidebar');
     open = !this.state.sidebarIsOpen;
     this.setState({ sidebarIsOpen: open });
   },
@@ -1333,7 +1485,7 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   renderLink: function(route, i) {
-    if (route.path == '') { return false; }
+    //if (route.path == '') { return false; }
     return (
       React.createElement(Link, {
         key: 'link-' + i, 
@@ -1349,10 +1501,7 @@ module.exports = React.createClass({displayName: "exports",
     var className = classnames(this.props.className, '');
     return (
       React.createElement("div", React.__spread({},  this.props, {className: className}), 
-        this.props.routes.map(this.renderLink), 
-        React.createElement("a", {href: this.props.homepage, className: "button button-transparent"}, 
-          "Github"
-        )
+        this.props.routes.map(this.renderLink)
       )
     )
   }
@@ -1743,7 +1892,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 data.markdown = {
-  GettingStarted: "\n# Getting started\n\n## Install\n\n```bash\nnpm install --save rebass\n```\n\n## Require\n\n```javascript\nvar Rebass = require('rebass');\nvar Button = Rebass.Button;\nvar Badge = Rebass.Badge;\n```\n\n## Use\n\n```jsx\n<App>\n  <Button>Button</Button>\n  <Badge>Badge</Badge>\n</App>\n```\n\n",
+  GettingStarted: "\n# Getting started\n\n## Install\n\n```bash\nnpm install --save rebass\n```\n\n## Require\n\n```javascript\nvar Rebass = require('rebass');\nvar Button = Rebass.Button;\nvar Badge = Rebass.Badge;\n```\n\n## Use\n\n```jsx\n<App>\n  <Button>Button</Button>\n  <Badge>Badge</Badge>\n</App>\n```\n\n### Requires Basscss\n\n[Download Basscss](http://basscss.com/docs/getting-started)\n\n",
   //Components: fs.readFileSync(path.join(__dirname, '../components/README.md'), 'utf8'),
 };
 

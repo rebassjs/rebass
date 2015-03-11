@@ -24,3 +24,7 @@ var Badge = Rebass.Badge;
 </App>
 ```
 
+### Requires Basscss
+
+[Download Basscss](http://basscss.com/docs/getting-started)
+

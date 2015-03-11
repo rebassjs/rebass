@@ -34,7 +34,7 @@ var Group = React.createClass({displayName: "Group",
   },
 
   render: function() {
-    var groupClass = classnames(this.props.className, 'inline-block', 'rounded');
+    var groupClass = classnames(this.props.className, 'flex', { 'full-width': this.props.justified }, 'rounded');
     return (
       React.createElement("div", React.__spread({},  this.props, {className: groupClass}), 
         React.Children.map(this.props.children, this.renderChild)

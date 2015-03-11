@@ -13,12 +13,13 @@ var Dropdown = React.createClass({displayName: "Dropdown",
       flush: false,
       top: false,
       right: false,
+      open: false,
     }
   },
 
   getInitialState: function() {
     return {
-      isOpen: false,
+      isOpen: this.props.open,
     }
   },
 

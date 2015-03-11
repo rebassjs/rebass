@@ -13,7 +13,7 @@ module.exports = React.createClass({
   },
 
   renderLink: function(route, i) {
-    if (route.path == '') { return false; }
+    //if (route.path == '') { return false; }
     return (
       <Link
         key={'link-' + i}
@@ -30,9 +30,6 @@ module.exports = React.createClass({
     return (
       <div {...this.props} className={className}>
         {this.props.routes.map(this.renderLink)}
-        <a href={this.props.homepage} className="button button-transparent">
-          Github
-        </a>
       </div>
     )
   }

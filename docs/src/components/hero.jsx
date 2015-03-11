@@ -10,7 +10,7 @@ module.exports = React.createClass({
   render: function() {
     var footer = (
       <div className="flex flex-wrap py2">
-        <div className="flex-auto" />
+        <div className="sm-show flex-auto" />
         <Nav {...this.props} dark={true} />
       </div>
     );

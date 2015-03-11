@@ -36,7 +36,7 @@ module.exports = React.createClass({
   },
 
   close: function() {
-    console.log('close modal');
+    //console.log('close modal');
     this.setState({ isOpen: false });
   },
 

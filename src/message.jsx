@@ -13,7 +13,8 @@ var Message = React.createClass({
 
   getDefaultProps: function() {
     return {
-      color: false
+      color: false,
+      outline: false,
     };
   },
 
@@ -22,8 +23,10 @@ var Message = React.createClass({
   },
 
   render: function() {
+    var bassClasses = colorbass(this.props.color);
     var classes = {
-      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded', colorbass(this.props.color).primary),
+      container: classnames('bold', 'flex', 'flex-center', 'mb2', 'rounded',
+        this.props.outline ?  (this.props.color + ' border border-' + this.props.color) : bassClasses.primary),
       body: classnames('flex-auto', 'p2'),
       dismiss: classnames('h3 py2 button-transparent muted'),
     };

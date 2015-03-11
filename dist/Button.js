@@ -14,6 +14,7 @@ var Button = React.createClass({displayName: "Button",
       outline: false,
       transparent: false,
       size: false,
+      justified: false,
     }
   },
 
@@ -27,6 +28,7 @@ var Button = React.createClass({displayName: "Button",
         { 'button-small': this.props.size == 'small' },
         { 'button-big': this.props.size == 'big' },
         { mr1: !this.props.flush },
+        { 'center block': this.props.justified },
         { 'is-active': this.props.active },
         { 'button-outline': this.props.outline },
         { 'button-transparent': this.props.transparent });

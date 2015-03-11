@@ -16,7 +16,7 @@ module.exports = React.createClass({
   },
 
   toggleSidebar: function() {
-    console.log('toggleSidebar');
+    //console.log('toggleSidebar');
     open = !this.state.sidebarIsOpen;
     this.setState({ sidebarIsOpen: open });
   },

@@ -25,7 +25,7 @@ var ColorSelect = React.createClass({
     var selectClass = 'block full-width field-' + (this.props.dark ? 'dark' : 'light');
     return (
       <div>
-        <label className="h5 bold block mb1">Change Color</label>
+        <label className="h5 bold block mb1">Color</label>
         <select className={selectClass}
           onChange={this.handleChange}
           value={this.props.color}>
