@@ -25,8 +25,7 @@ module.exports = function(props) {
         key={'route-' + i}
         name={route.name}
         path={route.path}
-        handler={route.handler}
-        ignoreScrollBehavior={true} />
+        handler={route.handler} />
     )
   }
   var redirects = [];
@@ -37,7 +36,6 @@ module.exports = function(props) {
   redirects = redirects.concat(props.redirects);
   return (
     <Route name="root"
-      ignoreScrollBehavior={true}
       path={props.baseUrl}
       handler={Root}>
       {props.routes.map(renderRoute)}
