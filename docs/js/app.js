@@ -909,7 +909,7 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement("p", null, "Try it out in your own app")
             ), 
             React.createElement("div", {className: "sm-col-3"}, 
-              React.createElement(Link, {to: "/docs/getting-started", 
+              React.createElement(Link, {to: "Getting Started", 
                 className: 'button button-big bg-'+this.props.color}, 
                 "Getting Started"
               )
@@ -1337,7 +1337,7 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement("p", null, "Try it out in your own app")
             ), 
             React.createElement("div", {className: "sm-col-3"}, 
-              React.createElement(Link, {to: "/docs/getting-started", 
+              React.createElement(Link, {to: "Getting Started", 
                 className: 'button button-big bg-'+this.props.color}, 
                 "Getting Started"
               )

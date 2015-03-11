@@ -64,7 +64,7 @@ module.exports = React.createClass({
               <p>Try it out in your own app</p>
             </div>
             <div className="sm-col-3">
-              <Link to="/docs/getting-started"
+              <Link to="Getting Started"
                 className={'button button-big bg-'+this.props.color}>
                 Getting Started
               </Link>
