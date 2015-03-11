@@ -11,7 +11,8 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var name = kebabCase(this.props.heading);
+    //var name = kebabCase(this.props.heading);
+    var name = this.props.heading;
     var sectionLink = '#' + name;
     return (
       <section ref={name}

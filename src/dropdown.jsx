@@ -22,10 +22,6 @@ var Dropdown = React.createClass({
     }
   },
 
-  statics: {
-    //Item: Dropdown.Item,
-  },
-
   toggle: function(e) {
     if (e) { e.preventDefault() }
     var isOpen = !this.state.isOpen;
@@ -92,6 +88,19 @@ var Dropdown = React.createClass({
       </div>
     )
 
+  }
+
+});
+
+Dropdown.Item = React.createClass({
+
+  render: function() {
+    var label = this.props.label || this.props.children;
+    return (
+      <a {...this.props} className="button block button-transparent">
+        {label}
+      </a>
+    )
   }
 
 });

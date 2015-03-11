@@ -16,6 +16,7 @@ module.exports = React.createClass({
   },
 
   toggleSidebar: function() {
+    console.log('toggleSidebar');
     open = !this.state.sidebarIsOpen;
     this.setState({ sidebarIsOpen: open });
   },
@@ -23,6 +24,10 @@ module.exports = React.createClass({
   render: function() {
 
     var styles = {
+      overlay: {
+        display: this.state.sidebarIsOpen ? 'block' : 'none',
+      },
+      sidebar: { },
       content: {
         minHeight: '100vh',
       },
@@ -32,7 +37,8 @@ module.exports = React.createClass({
     };
 
     var classes = {
-      layout: classnames('LayoutSidebar', 'flex', { 'is-open': this.state.sidebarIsOpen }),
+      overlay: classnames('fixed top-0 right-0 bottom-0 left-0 z1 no-touch-highlight'),
+      layout: classnames('LayoutSidebar', 'flex', 'overflow-hidden', { 'is-open': this.state.sidebarIsOpen }),
       sidebar: classnames('LayoutSidebar-sidebar',
         'flex-none', 'white',
         this.props.dark ? 'bg-black' : 'bg-silver')
@@ -41,12 +47,16 @@ module.exports = React.createClass({
 
     return (
       <div className={classes.layout}>
+        <a href="#!"
+          className={classes.overlay}
+          style={styles.overlay}
+          onClick={this.toggleSidebar} />
         <div className={classes.sidebar} style={styles.sidebar}>
           <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
         </div>
         <div className="LayoutSidebar-content flex-auto flex flex-column" style={styles.content}>
           <div className="flex-auto">
-            <div className="flex flex-center sm-hide red bg-black" style={styles.sidebarToggle}>
+            <div className={'flex flex-center sm-hide bg-black '+this.props.color} style={styles.sidebarToggle}>
               <button onClick={this.toggleSidebar}
                 className="caps flex flex-center button py2 button-transparent">
                 <Logo className="mr2" />

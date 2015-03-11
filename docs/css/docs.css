@@ -3,33 +3,50 @@
 /* LayoutSidebar */
 
 .LayoutSidebar-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  overflow: auto;
   width: 14rem;
-  margin-left: -14rem;
-  -webkit-transition: margin .2s ease-out;
-          transition: margin .2s ease-out;
+  -webkit-transform: translateX(-14rem);
+      -ms-transform: translateX(-14rem);
+          transform: translateX(-14rem);
+  -webkit-transition: margin .2s ease-out, -webkit-transform .2s ease-out;
+          transition: margin .2s ease-out, transform .2s ease-out;
+  -webkit-overflow-scrolling: touch;
 }
 
 .LayoutSidebar.is-open .LayoutSidebar-sidebar {
-  margin-left: 0;
-  outline: 2px solid tomato;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .LayoutSidebar-content {
-  -webkit-transition: margin .2s ease-out;
-          transition: margin .2s ease-out;
+  -webkit-transition: -webkit-transform .2s ease-out;
+          transition: transform .2s ease-out;
 }
 
 .LayoutSidebar.is-open .LayoutSidebar-content {
-  margin-right: -14rem;
+  -webkit-transform: translateX(14rem);
+      -ms-transform: translateX(14rem);
+          transform: translateX(14rem);
 }
 
 @media (min-width: 40em) {
-  .LayoutSidebar-sidebar {
-    margin-left: 0;
+  .LayoutSidebar-sidebar,
+  .LayoutSidebar-content,
+  .LayoutSidebar.is-open .LayoutSidebar-sidebar,
+  .LayoutSidebar.is-open .LayoutSidebar-content {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 
   .LayoutSidebar-content {
-    margin-right: 0;
+    margin-left: 14rem;
   }
 }
 
@@ -44,6 +61,14 @@
   border-top: 7px solid;
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
+}
+
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-touch-highlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .button-transparent.is-active {

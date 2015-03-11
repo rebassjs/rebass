@@ -10,13 +10,12 @@ var Home = require('./components/Home.jsx');
 var NotFound = require('./components/404.jsx');
 
 module.exports = function(props) { 
-  function renderRedirect(route, i) {
-    if (route.path == '') { return false }
+  function renderRedirect(redirect, i) {
     return (
       <Redirect {...props}
         key={'redirect-' + i}
-        from={route.path + '/'}
-        to={route.name} />
+        from={redirect.from}
+        to={redirect.to} />
       )
   }
   function renderRoute(route, i) {
@@ -26,13 +25,23 @@ module.exports = function(props) {
         key={'route-' + i}
         name={route.name}
         path={route.path}
-        handler={route.handler} />
+        handler={route.handler}
+        ignoreScrollBehavior={true} />
     )
   }
+  var redirects = [];
+  props.routes.forEach(function(route) {
+    if (route.path == '') { return false }
+    redirects.push({ from: route.path + '/', to: route.name });
+  });
+  redirects = redirects.concat(props.redirects);
   return (
-    <Route name="root" path={props.baseUrl} handler={Root}>
+    <Route name="root"
+      ignoreScrollBehavior={true}
+      path={props.baseUrl}
+      handler={Root}>
       {props.routes.map(renderRoute)}
-      {props.routes.map(renderRedirect)}
+      {redirects.map(renderRedirect)}
       <DefaultRoute {...this.props} name="Home" handler={Home}/>
     </Route>
   )

@@ -58,12 +58,12 @@ module.exports = function(color) {
       },
         {
           name: 'Dropdown',
-          description: 'Progressive disclosure for showing lists of actions',
+          description: 'Progressive disclosure for showing lists of actions (Note: this uses the Dropdown.Item Subcomponent)',
           example: (
             <Dropdown label="Actions" color={color}>
-              <MenuItem label="Action" href="#dropdown" />
-              <MenuItem label="Action" href="#!" />
-              <MenuItem label="Action" href="#!" />
+              <Dropdown.Item label="Action" href="#dropdown" />
+              <Dropdown.Item label="Action" href="#!" />
+              <Dropdown.Item label="Action" href="#!" />
             </Dropdown>
           )
         },

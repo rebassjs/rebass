@@ -56,11 +56,6 @@ data.routes = [
     name: 'Home',
     handler: Home
   },
-  //{
-  //  path: 'docs',
-  //  name: 'Docs',
-  //  handler: Docs
-  //},
   {
     path: 'docs/getting-started',
     name: 'Getting Started',
@@ -71,6 +66,17 @@ data.routes = [
     name: 'Components',
     handler: Components,
   },
+];
+
+data.redirects = [
+  {
+    from: '/docs',
+    to: '/docs/getting-started',
+  },
+  {
+    from: '/docs/',
+    to: '/docs/getting-started',
+  }
 ];
 
 module.exports = data;
