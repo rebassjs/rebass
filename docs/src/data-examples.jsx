@@ -19,6 +19,7 @@ var Panel  = Rebass.Panel;
 var Banner  = Rebass.Banner;
 var Pagination  = Rebass.Pagination;
 var Breadcrumbs  = Rebass.Breadcrumbs;
+var Progress  = Rebass.Progress;
 var Icon  = Rebass.Icon;
 
 
@@ -144,6 +145,14 @@ module.exports = function(color) {
       example: (
         <Breadcrumbs color={color}
           links={[{name:'Home',href:'#Breadcrumbs'},{name:'Hamburgers',href:'#Breadcrumbs'},{name:'Bacon Cheeseburger',href:'#Breadcrumbs'}]} />
+      )
+    },
+    {
+      name: 'Progress',
+      description: 'Styled progress element',
+      example: (
+        <Progress color={color}
+          value={0.375}/>
       )
     },
     {

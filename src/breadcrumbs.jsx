@@ -13,18 +13,19 @@ var Breadcrumbs = React.createClass({
 
   renderLink: function(link, i) {
     var isLast = (i == this.props.links.length - 1);
-    var linkClasses = classnames(isLast ? 'black' : this.props.color);
+    var linkClasses = classnames('button', 'button-narrow', 'button-transparent', isLast ? 'black' : this.props.color);
     return (
       <span className="inline-block" key={'breadcrumb-link-'+i}>
         <a href={link.href} className={linkClasses}>{link.name}</a>
-        {isLast ? '' : '/'}
+        {isLast ? '' : ' / '}
       </span>
     )
   },
 
   render: function() {
+    var containerClasses = classnames(this.props.className, 'mxn1');
     return (
-      <div {...this.props}>
+      <div {...this.props} className={containerClasses}>
         {this.props.links.map(this.renderLink)}
       </div>
     )

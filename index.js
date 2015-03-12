@@ -18,6 +18,7 @@ module.exports = {
   Banner: require('./dist/banner'),
   Pagination: require('./dist/pagination'),
   Breadcrumbs: require('./dist/breadcrumbs'),
+  Progress: require('./dist/progress'),
 
   //FuzzyInput: require('./dist/fuzzy-input'),
   HslSliders: require('react-hsl-sliders'),

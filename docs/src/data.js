@@ -30,9 +30,6 @@ data.baseUrl = '/';
 if (process.env.NODE_ENV === 'production') {
   console.log('production build');
   data.baseUrl = '/rebass/';
-} else if (process.env.NODE_ENV === 'github') {
-  console.log('github build');
-  data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
   data.baseUrl = '/rebass/';
@@ -40,7 +37,6 @@ if (process.env.NODE_ENV === 'production') {
 
 data.markdown = {
   GettingStarted: fs.readFileSync(path.join(__dirname, '../getting-started/README.md'), 'utf8'),
-  //Components: fs.readFileSync(path.join(__dirname, '../components/README.md'), 'utf8'),
 };
 
 data.colors = [

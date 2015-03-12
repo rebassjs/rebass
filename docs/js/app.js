@@ -107,18 +107,19 @@ var Breadcrumbs = React.createClass({displayName: "Breadcrumbs",
 
   renderLink: function(link, i) {
     var isLast = (i == this.props.links.length - 1);
-    var linkClasses = classnames(isLast ? 'black' : this.props.color);
+    var linkClasses = classnames('button', 'button-narrow', 'button-transparent', isLast ? 'black' : this.props.color);
     return (
       React.createElement("span", {className: "inline-block", key: 'breadcrumb-link-'+i}, 
         React.createElement("a", {href: link.href, className: linkClasses}, link.name), 
-        isLast ? '' : '/'
+        isLast ? '' : ' / '
       )
     )
   },
 
   render: function() {
+    var containerClasses = classnames(this.props.className, 'mxn1');
     return (
-      React.createElement("div", React.__spread({},  this.props), 
+      React.createElement("div", React.__spread({},  this.props, {className: containerClasses}), 
         this.props.links.map(this.renderLink)
       )
     )
@@ -887,7 +888,32 @@ module.exports = Panel;
 
 
 
-},{"classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","colorbass":"/Users/jackson/Repos/rebass/node_modules/colorbass/index.js","react/addons":"/Users/jackson/Repos/rebass/node_modules/react/addons.js"}],"/Users/jackson/Repos/rebass/dist/radio-button.js":[function(require,module,exports){
+},{"classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","colorbass":"/Users/jackson/Repos/rebass/node_modules/colorbass/index.js","react/addons":"/Users/jackson/Repos/rebass/node_modules/react/addons.js"}],"/Users/jackson/Repos/rebass/dist/progress.js":[function(require,module,exports){
+
+var React = require('react');
+var classnames = require('classnames');
+
+var Progress = React.createClass({displayName: "Progress",
+
+  getDefaultProps: function() {
+    return {
+      value: 0,
+      color: 'blue',
+    }
+  },
+
+  render: function() {
+    var progressClasses = classnames(this.props.className, 'progress', this.props.color);
+    return React.createElement("progress", React.__spread({},  this.props, {className: progressClasses}), this.props.value)
+  }
+
+});
+
+module.exports = Progress;
+
+
+
+},{"classnames":"/Users/jackson/Repos/rebass/node_modules/classnames/index.js","react":"/Users/jackson/Repos/rebass/node_modules/react/react.js"}],"/Users/jackson/Repos/rebass/dist/radio-button.js":[function(require,module,exports){
 
 var React = require('react');
 var Button = require('./button');
@@ -1881,6 +1907,7 @@ var Panel  = Rebass.Panel;
 var Banner  = Rebass.Banner;
 var Pagination  = Rebass.Pagination;
 var Breadcrumbs  = Rebass.Breadcrumbs;
+var Progress  = Rebass.Progress;
 var Icon  = Rebass.Icon;
 
 
@@ -2009,6 +2036,14 @@ module.exports = function(color) {
       )
     },
     {
+      name: 'Progress',
+      description: 'Styled progress element',
+      example: (
+        React.createElement(Progress, {color: color, 
+          value: 0.375})
+      )
+    },
+    {
       name: 'Icon',
       description: 'Icons from Geomicons',
       example: (
@@ -2108,9 +2143,6 @@ data.baseUrl = '/';
 if (process.env.NODE_ENV === 'production') {
   console.log('production build');
   data.baseUrl = '/rebass/';
-} else if (process.env.NODE_ENV === 'github') {
-  console.log('github build');
-  data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
   data.baseUrl = '/rebass/';
@@ -2118,7 +2150,6 @@ if (process.env.NODE_ENV === 'production') {
 
 data.markdown = {
   GettingStarted: "\n# Getting started\n\n## Install\n\n```bash\nnpm install --save rebass\n```\n\n## Require\n\n```javascript\nvar Rebass = require('rebass');\nvar Button = Rebass.Button;\nvar Badge = Rebass.Badge;\n```\n\n## Use\n\n```jsx\n<App>\n  <Button>Button</Button>\n  <Badge>Badge</Badge>\n</App>\n```\n\n### Requires Basscss\n\n[Download Basscss](http://basscss.com/docs/getting-started)\n\n",
-  //Components: fs.readFileSync(path.join(__dirname, '../components/README.md'), 'utf8'),
 };
 
 data.colors = [
@@ -2277,6 +2308,7 @@ module.exports = {
   Banner: require('./dist/banner'),
   Pagination: require('./dist/pagination'),
   Breadcrumbs: require('./dist/breadcrumbs'),
+  Progress: require('./dist/progress'),
 
   //FuzzyInput: require('./dist/fuzzy-input'),
   HslSliders: require('react-hsl-sliders'),
@@ -2285,7 +2317,7 @@ module.exports = {
 };
 
 
-},{"./dist/badge":"/Users/jackson/Repos/rebass/dist/badge.js","./dist/banner":"/Users/jackson/Repos/rebass/dist/banner.js","./dist/breadcrumbs":"/Users/jackson/Repos/rebass/dist/breadcrumbs.js","./dist/button":"/Users/jackson/Repos/rebass/dist/button.js","./dist/dropdown":"/Users/jackson/Repos/rebass/dist/dropdown.js","./dist/flag":"/Users/jackson/Repos/rebass/dist/flag.js","./dist/group":"/Users/jackson/Repos/rebass/dist/group.js","./dist/media":"/Users/jackson/Repos/rebass/dist/media.js","./dist/menu-item":"/Users/jackson/Repos/rebass/dist/menu-item.js","./dist/message":"/Users/jackson/Repos/rebass/dist/message.js","./dist/modal":"/Users/jackson/Repos/rebass/dist/modal.js","./dist/nav-item":"/Users/jackson/Repos/rebass/dist/nav-item.js","./dist/nav-spacer":"/Users/jackson/Repos/rebass/dist/nav-spacer.js","./dist/navbar":"/Users/jackson/Repos/rebass/dist/navbar.js","./dist/pagination":"/Users/jackson/Repos/rebass/dist/pagination.js","./dist/panel":"/Users/jackson/Repos/rebass/dist/panel.js","./dist/radio-button":"/Users/jackson/Repos/rebass/dist/radio-button.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/geomicon.js","react-hsl-sliders":"/Users/jackson/Repos/rebass/node_modules/react-hsl-sliders/hsl-sliders.js"}],"/Users/jackson/Repos/rebass/node_modules/classnames/index.js":[function(require,module,exports){
+},{"./dist/badge":"/Users/jackson/Repos/rebass/dist/badge.js","./dist/banner":"/Users/jackson/Repos/rebass/dist/banner.js","./dist/breadcrumbs":"/Users/jackson/Repos/rebass/dist/breadcrumbs.js","./dist/button":"/Users/jackson/Repos/rebass/dist/button.js","./dist/dropdown":"/Users/jackson/Repos/rebass/dist/dropdown.js","./dist/flag":"/Users/jackson/Repos/rebass/dist/flag.js","./dist/group":"/Users/jackson/Repos/rebass/dist/group.js","./dist/media":"/Users/jackson/Repos/rebass/dist/media.js","./dist/menu-item":"/Users/jackson/Repos/rebass/dist/menu-item.js","./dist/message":"/Users/jackson/Repos/rebass/dist/message.js","./dist/modal":"/Users/jackson/Repos/rebass/dist/modal.js","./dist/nav-item":"/Users/jackson/Repos/rebass/dist/nav-item.js","./dist/nav-spacer":"/Users/jackson/Repos/rebass/dist/nav-spacer.js","./dist/navbar":"/Users/jackson/Repos/rebass/dist/navbar.js","./dist/pagination":"/Users/jackson/Repos/rebass/dist/pagination.js","./dist/panel":"/Users/jackson/Repos/rebass/dist/panel.js","./dist/progress":"/Users/jackson/Repos/rebass/dist/progress.js","./dist/radio-button":"/Users/jackson/Repos/rebass/dist/radio-button.js","react-geomicons":"/Users/jackson/Repos/rebass/node_modules/react-geomicons/geomicon.js","react-hsl-sliders":"/Users/jackson/Repos/rebass/node_modules/react-hsl-sliders/hsl-sliders.js"}],"/Users/jackson/Repos/rebass/node_modules/classnames/index.js":[function(require,module,exports){
 function classNames() {
 	var args = arguments;
 	var classes = [];

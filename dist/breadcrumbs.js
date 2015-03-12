@@ -13,18 +13,19 @@ var Breadcrumbs = React.createClass({displayName: "Breadcrumbs",
 
   renderLink: function(link, i) {
     var isLast = (i == this.props.links.length - 1);
-    var linkClasses = classnames(isLast ? 'black' : this.props.color);
+    var linkClasses = classnames('button', 'button-narrow', 'button-transparent', isLast ? 'black' : this.props.color);
     return (
       React.createElement("span", {className: "inline-block", key: 'breadcrumb-link-'+i}, 
         React.createElement("a", {href: link.href, className: linkClasses}, link.name), 
-        isLast ? '' : '/'
+        isLast ? '' : ' / '
       )
     )
   },
 
   render: function() {
+    var containerClasses = classnames(this.props.className, 'mxn1');
     return (
-      React.createElement("div", React.__spread({},  this.props), 
+      React.createElement("div", React.__spread({},  this.props, {className: containerClasses}), 
         this.props.links.map(this.renderLink)
       )
     )
