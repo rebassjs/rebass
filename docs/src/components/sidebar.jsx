@@ -37,12 +37,12 @@ module.exports = React.createClass({
   renderInPageNavItems: function(route, items) {
     var links = [];
     var color = this.props.color;
-    var toggleSidebar = this.props.toggleSidebar;
+    var closeSidebar = this.props.closeSidebar;
     items.map(function(item, i) {
       links.push (
         <a href={'#'+item.name}
           key={'in-page-nav-item-'+item.name}
-          onClick={toggleSidebar}
+          onClick={closeSidebar}
           className={'button block button-transparent '+color}>
           {item.name}
         </a>
@@ -65,13 +65,13 @@ module.exports = React.createClass({
 
     return (
       <div className={classes.container} style={styles.container}>
-        <div className="flex flex-center" onClick={this.props.toggleSidebar}>
+        <div className="flex flex-center" onClick={this.props.closeSidebar}>
           <Logo className="p2" />
           <div className="flex-auto" />
           <div className="sm-hide">
             <button
               title="Hide navigation"
-              onClick={this.props.toggleSidebar}
+              onClick={this.props.closeSidebar}
               className="h3 button py2 button-transparent muted">
               &times;
             </button>

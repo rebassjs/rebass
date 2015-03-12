@@ -16,6 +16,8 @@ module.exports = {
   Message: require('./dist/message'),
   Panel: require('./dist/panel'),
   Banner: require('./dist/banner'),
+  Pagination: require('./dist/pagination'),
+  Breadcrumbs: require('./dist/breadcrumbs'),
 
   //FuzzyInput: require('./dist/fuzzy-input'),
   HslSliders: require('react-hsl-sliders'),

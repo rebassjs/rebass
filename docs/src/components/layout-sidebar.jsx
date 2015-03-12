@@ -15,8 +15,11 @@ module.exports = React.createClass({
     }
   },
 
+  closeSidebar: function() {
+    this.setState({ sidebarIsOpen: false });
+  },
+
   toggleSidebar: function() {
-    //console.log('toggleSidebar');
     open = !this.state.sidebarIsOpen;
     this.setState({ sidebarIsOpen: open });
   },
@@ -37,7 +40,7 @@ module.exports = React.createClass({
     };
 
     var classes = {
-      overlay: classnames('fixed top-0 right-0 bottom-0 left-0 z1 no-touch-highlight'),
+      overlay: classnames('sm-hide fixed top-0 right-0 bottom-0 left-0 z1 no-touch-highlight'),
       layout: classnames('LayoutSidebar', 'flex', 'overflow-hidden', { 'is-open': this.state.sidebarIsOpen }),
       sidebar: classnames('LayoutSidebar-sidebar',
         'flex-none', 'white',
@@ -47,12 +50,12 @@ module.exports = React.createClass({
 
     return (
       <div className={classes.layout}>
-        <a href="#!"
+        <a href=""
           className={classes.overlay}
           style={styles.overlay}
-          onClick={this.toggleSidebar} />
+          onClick={this.closeSidebar} />
         <div className={classes.sidebar} style={styles.sidebar}>
-          <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
+          <Sidebar {...this.props} closeSidebar={this.closeSidebar} />
         </div>
         <div className="LayoutSidebar-content flex-auto flex flex-column" style={styles.content}>
           <div className="flex-auto">

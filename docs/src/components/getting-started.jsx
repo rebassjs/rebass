@@ -8,7 +8,6 @@ module.exports = React.createClass({
   render: function() {
 
     var markdown = this.props.markdown.GettingStarted;
-    //var jsxcontent = mdjsx(markdown);
     var html = { __html: md(markdown).html };
 
     return (

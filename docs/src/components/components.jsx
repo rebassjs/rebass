@@ -20,24 +20,21 @@ var Banner  = Rebass.Banner;
 
 var Icon = Rebass.Icon;
 
-
 var LayoutSidebar = require('./layout-sidebar.jsx');
 var Section = require('./section.jsx');
 var Example = require('rebass-example');
-
-//var HslSliders = require('react-hsl-sliders');
-//var KitchenSink = require('./kitchen-sink.jsx');
 
 module.exports = React.createClass({
 
   renderSection: function(section, i) {
     var color = this.props.color;
     return (
-      <Section heading={section.name} key={section.name+'-'+i}>
-        <Example color={color}>
+      <Section heading={section.name}
+        key={'example-'+section.name}>
+        <p>{section.description}</p>
+        <Example color={color} preMaxHeight={256}>
           {section.example}
         </Example>
-        <p>{section.description}</p>
       </Section>
     )
   },

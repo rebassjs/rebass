@@ -9,9 +9,10 @@ var Banner = React.createClass({
   getDefaultProps: function() {
     return {
       color: 'black',
-      center: false,
-      right: false,
+      align: 'left',
       backgroundImage: false,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
       footer: false,
       header: false,
     };
@@ -21,22 +22,35 @@ var Banner = React.createClass({
 
     var classes = {
       outer: classnames(this.props.className,
-        { center: this.props.center },
-        { 'right-align': this.props.right },
         colorbass(this.props.color).primary),
       inner: classnames('px3 py4'),
     };
     var style = {
+      textAlign: this.props.align,
       backgroundImage: this.props.backgroundImage,
+      backgroundPosition: this.props.backgroundPosition,
+      backgroundSize: this.props.backgroundSize,
     };
+
+    if (typeof this.props.header == 'string') {
+      var header = <div className="p2">{this.props.header}</div>;
+    } else {
+      var header = this.props.header;
+    }
+
+    if (typeof this.props.footer == 'string') {
+      var footer = <div className="p2">{this.props.footer}</div>;
+    } else {
+      var footer = this.props.footer;
+    }
 
     return (
       <div className={classes.outer} style={style}>
-        {this.props.header}
+        {header}
         <div className={classes.inner}>
           {this.props.children}
         </div>
-        {this.props.footer}
+        {footer}
       </div>
     )
   }
