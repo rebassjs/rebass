@@ -55425,6 +55425,7 @@ module.exports={
   },
   "devDependencies": {
     "basscss-defaults": "^1.0.0",
+    "basscss-progress": "^1.0.0",
     "basswork": "^1.2.1",
     "brfs": "^1.4.0",
     "browserify": "^8.0.3",
