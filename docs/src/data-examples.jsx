@@ -155,6 +155,20 @@ module.exports = function(color) {
           value={0.375}/>
       )
     },
+    /*
+    {
+      name: 'Modal',
+      description: 'Modal overlay for handling discrete interactions',
+      example: (
+        <div>
+          <Button color={color} onClick={this.openModal}>Open Modal</Button>
+          <Modal header="Hamburger" isOpen={modalIsOpen} onDismiss={this.closeModal}>
+            <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.</p>
+          </Modal>
+        </div>
+      )
+    },
+    */
     {
       name: 'Icon',
       description: 'Icons from Geomicons',

@@ -31,8 +31,8 @@ var Pagination = React.createClass({displayName: "Pagination",
 
     var classes ={
       container: classnames(this.props.className, 'flex', colors.secondary),
-      previous: classnames('button', 'button-transparent', 'rounded-left'),
-      next: classnames('button', 'button-transparent', 'rounded-right'),
+      previous: classnames('nowrap', 'flex-none', 'button', 'button-transparent', 'rounded-left'),
+      next: classnames('no wrap', 'flex-none', 'button', 'button-transparent', 'rounded-right'),
     };
 
     var styles = {

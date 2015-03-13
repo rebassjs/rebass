@@ -26,6 +26,20 @@ var Example = require('rebass-example');
 
 module.exports = React.createClass({
 
+  getInitialState: function() {
+    return {
+      modalIsOpen: false,
+    }
+  },
+
+  openModal: function() {
+    this.setState({ modalIsOpen: true });
+  },
+
+  closeModal: function() {
+    this.setState({ modalIsOpen: false });
+  },
+
   renderSection: function(section, i) {
     var color = this.props.color;
     return (

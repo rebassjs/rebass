@@ -18,6 +18,8 @@ var Badge = Rebass.Badge;
 var Message  = Rebass.Message;
 var Panel  = Rebass.Panel;
 var Banner  = Rebass.Banner;
+var Pagination  = Rebass.Pagination;
+var Breadcrumbs  = Rebass.Breadcrumbs;
 
 var Icon = Rebass.Icon;
 
@@ -27,11 +29,11 @@ var DemoBanner = React.createClass({
   render: function() {
     var color = this.props.color;
     var classes = {
-      container: classnames('p2', color),
+      container: classnames(this.props.className, color),
     };
     return (
-      <div className={classes.container}>
-        <div className="sm-flex flex-center mxn2">
+      <div {...this.props} className={classes.container}>
+        <div className="sm-flex flex-start mxn2">
           <div className="sm-col-7 px2">
             <Panel header="Hamburger" color={color}>
               Hamburger
@@ -50,19 +52,40 @@ var DemoBanner = React.createClass({
               <Button color={color} outline={true}>Go</Button>
             </Group>
             <div className="flex mxn2">
-              <Icon className="h2 m2" name="cloud" />
+              <Icon className="h3 m2" name="cloud" />
               <div className="flex-auto" />
-              <Icon className="h2 m2" name="cog" />
+              <Icon className="h3 m2" name="cog" />
               <div className="flex-auto" />
-              <Icon className="h2 m2" name="heart" />
+              <Icon className="h3 m2" name="heart" />
               <div className="flex-auto" />
-              <Icon className="h2 m2" name="search" />
+              <Icon className="h3 m2" name="check" />
+              <div className="flex-auto" />
+              <Icon className="h3 m2" name="pin" />
+              <div className="flex-auto" />
+              <Icon className="h3 m2" name="search" />
             </div>
           </div>
         </div>
         <div className="sm-flex flex-start mxn2">
           <div className="sm-col-9 px2">
             <Message color={color} outline={true}>Hamburger pickle</Message>
+            <Pagination color={color}
+              pages={[{number:1,href:'#'},{number:2,href:'#'},{number:3,href:'#'}]} />
+          </div>
+          <div className="sm-col-3 px2">
+            <Media align="middle">
+              <Media.Img><div className={'p3 bg-'+color} /></Media.Img>
+              <Media.Body>Hamburger</Media.Body>
+            </Media>
+          </div>
+        </div>
+        <div className="sm-flex flex-center py1 mxn2">
+          <div className="sm-col-4 px2">
+            <h1 className="m0">Hamburger <Badge color={color}>Pickle</Badge></h1>
+          </div>
+          <div className="sm-col-5 px2">
+            <Breadcrumbs color={color}
+          links={[{name:'Home',href:'#'},{name:'Hamburgers',href:'#'},{name:'Bacon Cheeseburger',href:'#'}]} />
           </div>
           <div className="sm-col-3 px2">
             <Dropdown label="Hamburger"

@@ -17,6 +17,15 @@ var Docs = require('./components/docs.jsx');
 var GettingStarted = require('./components/getting-started.jsx');
 var Components = require('./components/components.jsx');
 
+data.baseUrl = '/';
+if (process.env.NODE_ENV === 'production') {
+  console.log('production build');
+  data.baseUrl = '/rebass/';
+} else {
+  console.log('development build');
+  data.baseUrl = '/rebass/';
+}
+
 data.stylesheets = [
   'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.3/bassdock.min.css',
   'docs/css/rebass.css',
@@ -26,14 +35,6 @@ data.scripts = [
   'docs/js/app.min.js'
 ];
 
-data.baseUrl = '/';
-if (process.env.NODE_ENV === 'production') {
-  console.log('production build');
-  data.baseUrl = '/rebass/';
-} else {
-  console.log('development build');
-  data.baseUrl = '/rebass/';
-}
 
 data.markdown = {
   GettingStarted: fs.readFileSync(path.join(__dirname, '../getting-started/README.md'), 'utf8'),

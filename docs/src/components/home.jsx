@@ -1,5 +1,6 @@
 
 var React = require('react');
+var classnames = require('classnames');
 
 var Link = require('react-router').Link;
 
@@ -19,13 +20,17 @@ module.exports = React.createClass({
       minHeight: '100vh',
     };
 
+    var classes = {
+      demoBanner: classnames('p3', 'overflow-hidden', this.props.dark ? 'bg-silver' : 'bg-silver'),
+    };
+
     return (
       <div style={style}>
         <Hero {...this.props} />
         <div className="container px2">
           <section id="intro" className="mt4">
-            <p className="h3 bold">
-              Themeable UI components built with global <a href="//basscss.com">Basscss</a> styles.
+            <p className="h2 bold">
+              Themeable UI components built with <a href="//basscss.com">Basscss’s</a> low-level modular CSS.
             </p>
           </section>
           <section id="features" className="sm-flex py4 mxn2">
@@ -33,8 +38,7 @@ module.exports = React.createClass({
               <h2>Common Styling API</h2>
               <p>
                 Basscss’s powerful utilities offer the ability to extend and create custom components
-                without the need to manage custom style attributes and media queries.
-                Basscss and React is a match made in heaven.
+                without the need to manage style attributes and media queries.
               </p>
             </div>
             <div className="sm-col-4 px2">
@@ -52,11 +56,13 @@ module.exports = React.createClass({
               </p>
             </div>
           </section>
-          {/*
-          <section id="examples-promo" className="py4 bg-black">
-            <DemoBanner color={this.props.color} />
-          </section>
-          */}
+        </div>
+        {/*
+        <section id="examples-promo" className={classes.demoBanner}>
+          <DemoBanner color={this.props.color} style={{opacity:.5}} />
+        </section>
+        */}
+        <div className="container px2">
           <hr className={'border border-'+this.props.color} />
           <section id="cta" className="sm-flex flex-center py4">
             <div className="flex-auto">
