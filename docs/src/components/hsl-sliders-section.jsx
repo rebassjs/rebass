@@ -1,6 +1,5 @@
 
 var React = require('react');
-var Color = require('color');
 var Section = require('./Section.jsx');
 var HslSliders = require('../../..').HslSliders;
 
@@ -17,13 +16,8 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    try {
-      var chipColor = Color(this.state.color).light() ? 'black' : 'white';
-    } catch(e) {
-      var chipColor = 'white';
-    }
     var chipStyle = {
-      color: chipColor,
+      color: 'white',
       backgroundColor: this.state.color,
     };
     return (

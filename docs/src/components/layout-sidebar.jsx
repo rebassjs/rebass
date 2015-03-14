@@ -50,7 +50,7 @@ module.exports = React.createClass({
 
     return (
       <div className={classes.layout}>
-        <a href=""
+        <a href="#!"
           className={classes.overlay}
           style={styles.overlay}
           onClick={this.closeSidebar} />

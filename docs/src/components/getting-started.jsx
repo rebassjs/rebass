@@ -1,18 +1,24 @@
 
 var React = require('react');
 var LayoutSidebar = require('./layout-sidebar.jsx');
-var md = require('../md.jsx');
+var Highlight = require('./highlight.jsx');
 
 module.exports = React.createClass({
 
   render: function() {
 
-    var markdown = this.props.markdown.GettingStarted;
-    var html = { __html: md(markdown).html };
+    var requireCode = "var Rebass = require('rebass');\nvar Button = Rebass.Button;\nvar Badge = Rebass.Badge;";
+    var jsxCode = '<App>\n  <Button>Button</Button>\n  <Badge>Badge</Badge>\n</App>';
 
     return (
       <LayoutSidebar {...this.props}>
-        <div dangerouslySetInnerHTML={html} />
+        <h2>Install</h2>
+        <Highlight string="npm install rebass" lang="bash" />
+        <h2>Require</h2>
+        <Highlight string={requireCode} lang="javascript" />
+        <h2>Use</h2>
+        <Highlight string={jsxCode} lang="xml" />
+        <p>Note: Rebass components require <a href="//basscss.com">Basscss</a> for styling.</p>
       </LayoutSidebar>
     )
   }

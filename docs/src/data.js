@@ -1,7 +1,5 @@
 
 var _ = require('lodash');
-var fs = require('fs');
-var path = require('path');
 var pkg = require('../../package.json');
 
 var data = {};
@@ -16,6 +14,7 @@ var Home = require('./components/home.jsx');
 var Docs = require('./components/docs.jsx');
 var GettingStarted = require('./components/getting-started.jsx');
 var Components = require('./components/components.jsx');
+var KitchenSink = require('./components/kitchen-sink.jsx');
 
 data.baseUrl = '/';
 if (process.env.NODE_ENV === 'production') {
@@ -34,11 +33,6 @@ data.stylesheets = [
 data.scripts = [
   'docs/js/app.min.js'
 ];
-
-
-data.markdown = {
-  GettingStarted: fs.readFileSync(path.join(__dirname, '../getting-started/README.md'), 'utf8'),
-};
 
 data.colors = [
   'aqua', 'blue', 'navy', 'teal',
