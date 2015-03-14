@@ -9,7 +9,7 @@ var Panel = React.createClass({displayName: "Panel",
     return {
       header: false,
       footer: false,
-      theme: 'silver',
+      color: 'silver',
     }
   },
 

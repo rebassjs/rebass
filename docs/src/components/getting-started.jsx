@@ -3,6 +3,7 @@ var React = require('react');
 var Link = require('react-router').Link;
 
 var LayoutSidebar = require('./layout-sidebar.jsx');
+var DocsHeader = require('./docs-header.jsx');
 var Highlight = require('./highlight.jsx');
 
 module.exports = React.createClass({
@@ -14,6 +15,8 @@ module.exports = React.createClass({
 
     return (
       <LayoutSidebar {...this.props}>
+        <DocsHeader title="Getting Started"
+          color={this.props.color} />
         <h2>Install</h2>
         <Highlight string="npm install rebass" lang="bash" />
         <h2>Require</h2>
@@ -23,7 +26,7 @@ module.exports = React.createClass({
         <p>Note: Rebass components require <a href="//basscss.com">Basscss</a> for styling.</p>
         <hr className={'border border-'+this.props.color} />
         <div className="right-align">
-          <Link to="Components" className={'h4 button button-big bg-'+this.props.color}>Components</Link>
+          <Link to="Components" className={'h4 button button-big '+this.props.bassClasses.primary}>Components</Link>
         </div>
       </LayoutSidebar>
     )

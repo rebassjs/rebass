@@ -23,7 +23,7 @@ module.exports = React.createClass({
     };
 
     var classes = {
-      demoBanner: classnames('p3', 'overflow-hidden', this.props.color, this.props.dark ? 'bg-black' : 'bg-silver'),
+      demoBanner: classnames('p3', this.props.color, this.props.dark ? 'bg-black' : 'bg-silver'),
     };
 
     return (
@@ -32,7 +32,7 @@ module.exports = React.createClass({
         <div className="container px2">
           <section id="intro" className="mt4">
             <p className="h2 bold">
-              Themeable UI components built with <a href="//basscss.com">Basscss’s</a> low-level modular CSS.
+              {this.props.componentKeys.length} Themeable UI components built with <a href="//basscss.com">Basscss’s</a> low-level modular CSS.
             </p>
           </section>
           <section id="features" className="sm-flex py4 mxn2">
@@ -61,8 +61,11 @@ module.exports = React.createClass({
         </div>
         <section id="examples-promo" className={classes.demoBanner}>
           <div className="container">
-            <DemoBanner color={this.props.color} style={{opacity:1}} />
+            <DemoBanner dark={this.props.dark} color={this.props.color} style={{opacity:1}} />
             <ColorPicker {...this.props} />
+            <div className="center mt2">
+              <Link to="Components" className="button button-transparent">View All Components</Link>
+            </div>
           </div>
         </section>
         <div className="container px2">
@@ -73,7 +76,7 @@ module.exports = React.createClass({
             </div>
             <div className="center sm-col-5">
               <Link to="Getting Started"
-                className={'button button-big bg-'+this.props.color}>
+                className={'button button-big '+this.props.bassClasses.primary}>
                 Getting Started
               </Link>
             </div>

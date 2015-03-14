@@ -1,5 +1,6 @@
 
 var React = require('react');
+var Example = require('rebass-example');
 
 var Rebass = require('../../..');
 var Button = Rebass.Button;
@@ -21,8 +22,9 @@ var Banner  = Rebass.Banner;
 var Icon = Rebass.Icon;
 
 var LayoutSidebar = require('./layout-sidebar.jsx');
+var DocsHeader = require('./docs-header.jsx');
 var Section = require('./section.jsx');
-var Example = require('rebass-example');
+var PropsTable = require('./props-table.jsx');
 
 module.exports = React.createClass({
 
@@ -60,6 +62,7 @@ module.exports = React.createClass({
         <p>{section.description}</p>
         {demo}
         {example}
+        <PropsTable {...this.props} props={section.props} />
       </Section>
     )
   },
@@ -71,7 +74,8 @@ module.exports = React.createClass({
 
     return (
       <LayoutSidebar {...this.props}>
-        <h1>Components</h1>
+        <DocsHeader title="Components"
+          color={this.props.color} />
         {examples.map(this.renderSection)}
       </LayoutSidebar>
     )

@@ -22,61 +22,86 @@ var Breadcrumbs  = Rebass.Breadcrumbs;
 var Progress  = Rebass.Progress;
 var Icon  = Rebass.Icon;
 
-var ModalExample = React.createClass({
-  getInitialState: function() {
-    return { open: false }
-  },
-  open: function() {
-    this.setState({ open: true });
-  },
-  close: function() {
-    this.setState({ open: false });
-  },
-  render: function() {
-    console.log('render ModalExample');
-    var children = [];
-    React.Children.map(this.props.children, function(child) {
-      console.log(child);
-    });
-    return (
-      <div>{this.props.children}</div>
-    )
-  }
-});
-
-
 module.exports = function(color) {
 
   return [
     {
       name: 'Panel',
       description: 'Module to visually separate content',
+      props: [
+        { name: 'header',
+          description: 'Header content',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'footer',
+          description: 'Footer content',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color style',
+          type: 'string',
+          defaults: 'silver' },
+      ],
       example: (
         <Panel color={color} header="Hamburger" footer="Bacon">
           <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin.</p>
         </Panel>
       )
+
     },
     {
       name: 'Button',
       description: 'Themeable button component with solid, outline, and transparent variations',
+      props: [
+        { name: 'color',
+          description: '',
+          type: 'string',
+          defaults: 'blue' },
+        { name: 'active',
+          description: '',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'outline',
+          description: 'Outline button style',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'transparent',
+          description: 'Transparent button style',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'size',
+          description: 'Big and small size modifier',
+          type: 'string',
+          defaults: 'false' },
+        { name: 'flush',
+          description: 'Remove space betweed buttons',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'justifed',
+          description: 'Sets display block and centers text',
+          type: 'boolean',
+          defaults: 'false' },
+      ],
       example: (
         <div>
           <Button color={color}>Button</Button>
           <Button color={color} outline={true}>Button</Button>
           <Button color={color} transparent={true}>Button</Button>
         </div>
-      ),
-      props: ['color', 'flush', 'active', 'className', 'outline', 'transparent']
+      )
     },
     {
       name: 'Badge',
       description: 'Used to label states and properties',
-      example: <Badge color={color}>Badge</Badge>,
+      props: [
+      ],
+      example: <h1 className="m0">Hamburger <Badge color={color}>Badge</Badge></h1>,
     },
     {
       name: 'Group',
       description: 'Groups buttons and inputs together',
+      props: [
+      ],
       example: (
         <Group>
           <input type="text" className={'m0 field-light border-'+color} />
@@ -88,6 +113,8 @@ module.exports = function(color) {
     {
       name: 'Dropdown',
       description: 'Progressive disclosure for showing lists of actions (Note: this uses the Dropdown.Item Subcomponent)',
+      props: [
+      ],
       example: (
         <Dropdown label="Actions" color={color}>
           <Dropdown.Item label="Action" href="#dropdown" />
@@ -96,14 +123,16 @@ module.exports = function(color) {
         </Dropdown>
       )
     },
-    {
-      name: 'NavItem',
-      description: 'Link button style for navigation',
-      example: <NavItem label="NavItem" />
-    },
+    //{
+    //  name: 'NavItem',
+    //  description: 'Link button style for navigation',
+    //  example: <NavItem label="NavItem" />
+    //},
     {
       name: 'Navbar',
       description: 'Visual grouping for navigation links and other components',
+      props: [
+      ],
       example: (
         <Navbar color={color}>
           <NavItem label="NavItem" href="#nav-item" />
@@ -120,6 +149,8 @@ module.exports = function(color) {
     {
       name: 'Banner',
       description: 'Hero banner with support for background images',
+      props: [
+      ],
       example: (
         <Banner color={color}
           align="center"
@@ -134,6 +165,8 @@ module.exports = function(color) {
     {
       name: 'Media',
       description: 'Flexbox based media object with alignment props',
+      props: [
+      ],
       example: (
         <div>
           <Media>
@@ -158,6 +191,8 @@ module.exports = function(color) {
     {
       name: 'Pagination',
       description: 'Stateless pagination controls',
+      props: [
+      ],
       example: (
         <Pagination color={color}
           currentIndex={0}
@@ -167,6 +202,8 @@ module.exports = function(color) {
     {
       name: 'Breadcrumbs',
       description: 'Link-based wayfinding for deep hierarchies',
+      props: [
+      ],
       example: (
         <Breadcrumbs color={color}
           links={[{name:'Home',href:'#Breadcrumbs'},{name:'Hamburgers',href:'#Breadcrumbs'},{name:'Bacon Cheeseburger',href:'#Breadcrumbs'}]} />
@@ -175,6 +212,8 @@ module.exports = function(color) {
     {
       name: 'Progress',
       description: 'Styled progress element',
+      props: [
+      ],
       example: (
         <Progress color={color}
           value={0.375}/>
@@ -183,6 +222,8 @@ module.exports = function(color) {
     {
       name: 'Modal',
       description: 'Modal overlay for handling discrete interactions',
+      props: [
+      ],
       Demo: React.createClass({
         getInitialState: function() {
           return { open: false }
@@ -213,6 +254,8 @@ module.exports = function(color) {
     {
       name: 'Icon',
       description: 'Icons from Geomicons',
+      props: [
+      ],
       example: (
         <div className={'h2 flex flex-center flex-wrap mxn2 ' + color}>
           <Icon name="bookmark" className="m2" />

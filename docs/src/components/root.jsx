@@ -2,6 +2,7 @@
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
+var colorbass = require('colorbass');
 
 var Html = require('react-html');
 var Header = require('./header.jsx');
@@ -46,6 +47,7 @@ module.exports = React.createClass({
 
   render: function() {
 
+    var bassClasses = colorbass(this.state.color);
     var baseUrl = this.props.baseUrl;
     var scripts = [];
     this.props.scripts.map(function(script) {
@@ -71,7 +73,8 @@ module.exports = React.createClass({
         <RouteHandler {...this.props}
           {...this.state}
           changeColor={this.changeColor}
-          examples={examples} />
+          examples={examples}
+          bassClasses={bassClasses} />
       </Html>
     )
   }

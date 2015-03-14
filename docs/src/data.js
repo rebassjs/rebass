@@ -9,12 +9,13 @@ data.description = pkg.description;
 data.author = pkg.author;
 data.homepage = pkg.homepage;
 data.npm = '//npmjs.com/package/' + pkg.name;
+data.componentKeys = Object.keys(require('../..'));
 
 var Home = require('./components/home.jsx');
 var Docs = require('./components/docs.jsx');
 var GettingStarted = require('./components/getting-started.jsx');
 var Components = require('./components/components.jsx');
-var KitchenSink = require('./components/kitchen-sink.jsx');
+var Demo = require('./components/demo.jsx');
 
 data.baseUrl = '/';
 if (process.env.NODE_ENV === 'production') {
@@ -56,6 +57,11 @@ data.routes = [
     path: 'docs/components',
     name: 'Components',
     handler: Components,
+  },
+  {
+    path: 'docs/demo',
+    name: 'Demo',
+    handler: Demo,
   },
 ];
 

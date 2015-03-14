@@ -19,8 +19,6 @@ var Modal = React.createClass({displayName: "Modal",
 
   render: function() {
 
-    console.log('Modal', this.props.color);
-
     var isOpen = this.props.isOpen;
     var header = this.props.header;
     var bassClasses = colorbass(this.props.color);

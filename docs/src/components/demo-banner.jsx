@@ -48,7 +48,7 @@ var DemoBanner = React.createClass({
               </Group>
             </div>
             <Group justified={true}>
-              <input type="text" className={'flex-auto m0 field-light border-'+color} />
+              <input type="text" className={'flex-auto m0 field-' + (this.props.dark ? 'dark' : 'light') +' border-'+color} />
               <Button color={color} outline={true}>Go</Button>
             </Group>
             <div className="flex mxn2">
@@ -72,7 +72,7 @@ var DemoBanner = React.createClass({
             <Pagination color={color}
               pages={[{number:1,href:'#'},{number:2,href:'#'},{number:3,href:'#'}]} />
           </div>
-          <div className="sm-col-3 px2">
+          <div className="sm-col-3 px2 relative z2">
             <Dropdown label="Hamburger"
               color={color}>
               <Dropdown.Item href="#!" label="Hotdog" />

@@ -9,6 +9,14 @@ var Logo = require('./logo.jsx');
 
 module.exports = React.createClass({
 
+  getDefaultProps: function() {
+    return {
+      dark: true,
+      color: 'blue',
+      fullWidth: false,
+    }
+  },
+
   getInitialState: function() {
     return {
       sidebarIsOpen: false,
@@ -35,7 +43,7 @@ module.exports = React.createClass({
         minHeight: '100vh',
       },
       contentBody: {
-        maxWidth: '48rem',
+        maxWidth: this.props.fullWidth ? false : '58rem',
       }
     };
 
