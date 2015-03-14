@@ -23,7 +23,7 @@ module.exports = React.createClass({
         <p>Note: Rebass components require <a href="//basscss.com">Basscss</a> for styling.</p>
         <hr className={'border border-'+this.props.color} />
         <div className="right-align">
-          <Link to="/docs/components" className={'h4 button button-big bg-'+this.props.color}>Components</Link>
+          <Link to="Components" className={'h4 button button-big bg-'+this.props.color}>Components</Link>
         </div>
       </LayoutSidebar>
     )

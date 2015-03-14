@@ -1441,7 +1441,7 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement("p", null, "Note: Rebass components require ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " for styling."), 
         React.createElement("hr", {className: 'border border-'+this.props.color}), 
         React.createElement("div", {className: "right-align"}, 
-          React.createElement(Link, {to: "/docs/components", className: 'h4 button button-big bg-'+this.props.color}, "Components")
+          React.createElement(Link, {to: "Components", className: 'h4 button button-big bg-'+this.props.color}, "Components")
         )
       )
     )
