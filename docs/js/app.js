@@ -1116,6 +1116,7 @@ module.exports = React.createClass({displayName: "exports",
 },{"react":375}],23:[function(require,module,exports){
 
 var React = require('react');
+var classnames = require('classnames');
 
 var ColorSelect = React.createClass({displayName: "ColorSelect",
 
@@ -1134,17 +1135,27 @@ var ColorSelect = React.createClass({displayName: "ColorSelect",
   },
 
   renderOption: function(value, i) {
-    return (React.createElement("option", {value: value, key: 'color-option-'+value}, value))
+    var buttonClass = classnames('flex-auto', 'button', 'not-rounded', 'bg-'+value, { 'is-active': value == this.props.color });
+    var buttonStyle = {
+      height: 32
+    };
+    return (
+      React.createElement("button", {className: buttonClass, 
+        style: buttonStyle, 
+        title: value, 
+        value: value, 
+        key: 'color-swatch-'+value, 
+        onClick: this.handleChange}, 
+        React.createElement("span", {className: "hide"}, value)
+      )
+    )
   },
 
   render: function() {
-    var selectClass = 'block full-width field-' + (this.props.dark ? 'dark' : 'light');
     return (
       React.createElement("div", null, 
         React.createElement("label", {className: "h5 bold block mb1"}, "Color"), 
-        React.createElement("select", {className: selectClass, 
-          onChange: this.handleChange, 
-          value: this.props.color}, 
+        React.createElement("div", {className: "flex flex-wrap"}, 
           this.props.colors.map(this.renderOption)
         )
       )
@@ -1157,7 +1168,7 @@ module.exports = ColorSelect;
 
 
 
-},{"react":375}],24:[function(require,module,exports){
+},{"classnames":48,"react":375}],24:[function(require,module,exports){
 
 var React = require('react');
 
@@ -2299,7 +2310,7 @@ var React = require('react');
 var classnames = require('classnames');
 var Link = require('react-router').Link;
 var Logo = require('./logo.jsx')
-var ColorSelect = require('./color-select.jsx')
+var ColorPicker = require('./color-picker.jsx')
 
 var Rebass = require('../../..');
 var NavItem = Rebass.NavItem;
@@ -2383,10 +2394,7 @@ module.exports = React.createClass({displayName: "exports",
           )
         ), 
         React.createElement("div", {className: "px2"}, 
-          React.createElement("div", {className: ""}, 
-            React.createElement(ColorSelect, React.__spread({}, 
-              this.props))
-          ), 
+          React.createElement(ColorPicker, React.__spread({},  this.props)), 
           React.createElement("div", {className: "flex flex-baseline mxn2 mt4 mb2"}, 
             React.createElement("a", {href: this.props.homepage, 
               className: "button flex-auto button-transparent muted"}, 
@@ -2405,7 +2413,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":46,"./color-select.jsx":23,"./logo.jsx":37,"classnames":48,"react":375,"react-router":201}],43:[function(require,module,exports){
+},{"../../..":46,"./color-picker.jsx":23,"./logo.jsx":37,"classnames":48,"react":375,"react-router":201}],43:[function(require,module,exports){
 
 var React = require('react');
 
@@ -49265,7 +49273,7 @@ exports.toXML = toXML;
 },{}],379:[function(require,module,exports){
 module.exports={
   "name": "rebass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React UI components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -49309,15 +49317,18 @@ module.exports={
   "scripts": {
     "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
     "watch:uglify": "watch 'npm run uglify' ./docs/js",
-    "build:js": "browserify docs/src/app.js -o docs/js/app.js",
-    "build:html": "node docs/src/build",
-    "watch:html": "watch 'npm run build:html' ./docs/src/",
+    "js": "browserify docs/src/app.js -o docs/js/app.js",
+    "watch:js": "watch 'npm run js' ./docs/src",
+    "html": "node docs/src/build",
+    "watch:html": "watch 'npm run html' ./docs/src",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
     "docs:css": "basswork docs/src/index.css docs/css/docs.css",
-    "watch:docs:css": "watch 'npm run docs:css' ./docs/src -w 1",
-    "serve": "http-server -p 8000 -s",
-    "deploy": "export NODE_ENV=development && npm run jsx && npm run build:html && npm run build:js && npm run uglify && npm run docs:css",
+    "watch:docs:css": "watch 'npm run docs:css' ./docs/src",
+
+    "watch:docs": "watch 'npm run html && npm run js && npm run uglify && npm run docs:css' ./docs/src",
+    "serve": "http-server -p 8000",
+    "deploy": "export NODE_ENV=development && npm run jsx && npm run html && npm run js && npm run uglify && npm run docs:css",
     "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:uglify' 'npm run watch:html' 'npm run watch:docs:css' 'npm run serve'"
   },
   "browserify": {

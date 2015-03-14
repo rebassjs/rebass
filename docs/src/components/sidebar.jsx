@@ -3,7 +3,7 @@ var React = require('react');
 var classnames = require('classnames');
 var Link = require('react-router').Link;
 var Logo = require('./logo.jsx')
-var ColorSelect = require('./color-select.jsx')
+var ColorPicker = require('./color-picker.jsx')
 
 var Rebass = require('../../..');
 var NavItem = Rebass.NavItem;
@@ -87,10 +87,7 @@ module.exports = React.createClass({
           </div>
         </div>
         <div className="px2">
-          <div className="">
-            <ColorSelect
-              {...this.props} />
-          </div>
+          <ColorPicker {...this.props} />
           <div className="flex flex-baseline mxn2 mt4 mb2">
             <a href={this.props.homepage}
               className="button flex-auto button-transparent muted">
