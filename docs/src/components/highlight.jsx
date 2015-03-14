@@ -13,7 +13,7 @@ var Highlight = React.createClass({
 
   render: function() {
     var code = highlight.highlightAuto(this.props.string, [this.props.lang]).value;
-    return <pre dangerouslySetInnerHTML={{ __html: code }} />
+    return <pre {...this.props} dangerouslySetInnerHTML={{ __html: code }} />
   }
 
 });

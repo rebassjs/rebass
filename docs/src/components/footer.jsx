@@ -11,12 +11,11 @@ module.exports = React.createClass({
         <Nav {...this.props} className="mxn2 mb1" />
         <div className="flex flex-wrap flex-baseline mxn2">
           <div className="flex flex-baseline px2">
-            <h3 className="h4 m0">
+            <h4 className="h5 m0">
               <Link to={this.props.baseUrl}>
-                {this.props.title}
+                {this.props.title} <span className="h5">v{this.props.version}</span>
               </Link>
-            </h3>
-            <span className="h5 bold">v{this.props.version}</span>
+            </h4>
           </div>
           <a href={this.props.npm} className="button button-transparent">
             NPM

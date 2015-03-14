@@ -10,6 +10,7 @@ var ColorSelect = React.createClass({
       colors: [],
       color: 'blue',
       dark: true,
+      big: false,
     }
   },
 

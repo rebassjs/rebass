@@ -1,5 +1,7 @@
 
 var React = require('react');
+var Link = require('react-router').Link;
+
 var LayoutSidebar = require('./layout-sidebar.jsx');
 var Highlight = require('./highlight.jsx');
 
@@ -19,6 +21,10 @@ module.exports = React.createClass({
         <h2>Use</h2>
         <Highlight string={jsxCode} lang="xml" />
         <p>Note: Rebass components require <a href="//basscss.com">Basscss</a> for styling.</p>
+        <hr className={'border border-'+this.props.color} />
+        <div className="right-align">
+          <Link to="/docs/components" className={'h4 button button-big bg-'+this.props.color}>Components</Link>
+        </div>
       </LayoutSidebar>
     )
   }

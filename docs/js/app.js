@@ -1003,6 +1003,8 @@ var Hero = require('./hero.jsx');
 var Footer = require('./footer.jsx');
 //var Section = require('./section.jsx');
 var DemoBanner = require('./demo-banner.jsx');
+var ColorPicker = require('./color-picker.jsx');
+var Highlight = require('./highlight.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
@@ -1012,8 +1014,10 @@ module.exports = React.createClass({displayName: "exports",
       minHeight: '100vh',
     };
 
+    console.log('home dark', this.props.dark);
+
     var classes = {
-      demoBanner: classnames('p3', 'overflow-hidden', this.props.dark ? 'bg-silver' : 'bg-silver'),
+      demoBanner: classnames('p3', 'overflow-hidden', this.props.color, this.props.dark ? 'bg-black' : 'bg-silver'),
     };
 
     return (
@@ -1049,19 +1053,19 @@ module.exports = React.createClass({displayName: "exports",
             )
           )
         ), 
-        /*
-        <section id="examples-promo" className={classes.demoBanner}>
-          <DemoBanner color={this.props.color} style={{opacity:.5}} />
-        </section>
-        */
+        React.createElement("section", {id: "examples-promo", className: classes.demoBanner}, 
+          React.createElement("div", {className: "container"}, 
+            React.createElement(DemoBanner, {color: this.props.color, style: {opacity:1}}), 
+            React.createElement(ColorPicker, React.__spread({},  this.props))
+          )
+        ), 
         React.createElement("div", {className: "container px2"}, 
-          React.createElement("hr", {className: 'border border-'+this.props.color}), 
           React.createElement("section", {id: "cta", className: "sm-flex flex-center py4"}, 
-            React.createElement("div", {className: "flex-auto"}, 
-              React.createElement("h1", null, "Install it now"), 
-              React.createElement("p", null, "Try it out in your own app")
+            React.createElement("div", {className: "sm-col-7"}, 
+              React.createElement("h1", null, "Install now"), 
+              React.createElement(Highlight, {string: "npm install rebass", lang: "bash"})
             ), 
-            React.createElement("div", {className: "sm-col-3"}, 
+            React.createElement("div", {className: "center sm-col-5"}, 
               React.createElement(Link, {to: "Getting Started", 
                 className: 'button button-big bg-'+this.props.color}, 
                 "Getting Started"
@@ -1079,7 +1083,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":46,"./demo-banner.jsx":25,"./footer.jsx":27,"./hero.jsx":30,"classnames":48,"react":375,"react-router":201}],22:[function(require,module,exports){
+},{"../../..":46,"./color-picker.jsx":23,"./demo-banner.jsx":25,"./footer.jsx":27,"./hero.jsx":30,"./highlight.jsx":31,"classnames":48,"react":375,"react-router":201}],22:[function(require,module,exports){
 
 var React = require('react');
 
@@ -1126,6 +1130,7 @@ var ColorSelect = React.createClass({displayName: "ColorSelect",
       colors: [],
       color: 'blue',
       dark: true,
+      big: false,
     }
   },
 
@@ -1310,16 +1315,17 @@ var DemoBanner = React.createClass({displayName: "DemoBanner",
             )
           )
         ), 
-        React.createElement("div", {className: "sm-flex flex-start mxn2"}, 
+        React.createElement("div", {className: "sm-flex flex-center mxn2"}, 
           React.createElement("div", {className: "sm-col-9 px2"}, 
             React.createElement(Message, {color: color, outline: true}, "Hamburger pickle"), 
             React.createElement(Pagination, {color: color, 
               pages: [{number:1,href:'#'},{number:2,href:'#'},{number:3,href:'#'}]})
           ), 
           React.createElement("div", {className: "sm-col-3 px2"}, 
-            React.createElement(Media, {align: "middle"}, 
-              React.createElement(Media.Img, null, React.createElement("div", {className: 'p3 bg-'+color})), 
-              React.createElement(Media.Body, null, "Hamburger")
+            React.createElement(Dropdown, {label: "Hamburger", 
+              color: color}, 
+              React.createElement(Dropdown.Item, {href: "#!", label: "Hotdog"}), 
+              React.createElement(Dropdown.Item, {href: "#!", label: "Hotdog"})
             )
           )
         ), 
@@ -1327,17 +1333,15 @@ var DemoBanner = React.createClass({displayName: "DemoBanner",
           React.createElement("div", {className: "sm-col-4 px2"}, 
             React.createElement("h1", {className: "m0"}, "Hamburger ", React.createElement(Badge, {color: color}, "Pickle"))
           ), 
+          React.createElement("div", {className: "sm-col-3 px2"}, 
+            React.createElement(Media, {align: "middle"}, 
+              React.createElement(Media.Img, null, React.createElement("div", {className: 'p3 bg-'+color})), 
+              React.createElement(Media.Body, null, "Hamburger")
+            )
+          ), 
           React.createElement("div", {className: "sm-col-5 px2"}, 
             React.createElement(Breadcrumbs, {color: color, 
           links: [{name:'Home',href:'#'},{name:'Hamburgers',href:'#'},{name:'Bacon Cheeseburger',href:'#'}]})
-          ), 
-          React.createElement("div", {className: "sm-col-3 px2"}, 
-            React.createElement(Dropdown, {label: "Hamburger", 
-              color: color, 
-              open: true}, 
-              React.createElement(Dropdown.Item, {href: "#!", label: "Hotdog"}), 
-              React.createElement(Dropdown.Item, {href: "#!", label: "Hotdog"})
-            )
           )
         )
       )
@@ -1385,12 +1389,11 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement(Nav, React.__spread({},  this.props, {className: "mxn2 mb1"})), 
         React.createElement("div", {className: "flex flex-wrap flex-baseline mxn2"}, 
           React.createElement("div", {className: "flex flex-baseline px2"}, 
-            React.createElement("h3", {className: "h4 m0"}, 
+            React.createElement("h4", {className: "h5 m0"}, 
               React.createElement(Link, {to: this.props.baseUrl}, 
-                this.props.title
+                this.props.title, " ", React.createElement("span", {className: "h5"}, "v", this.props.version)
               )
-            ), 
-            React.createElement("span", {className: "h5 bold"}, "v", this.props.version)
+            )
           ), 
           React.createElement("a", {href: this.props.npm, className: "button button-transparent"}, 
             "NPM"
@@ -1415,6 +1418,8 @@ module.exports = React.createClass({displayName: "exports",
 },{"./nav.jsx":39,"react":375,"react-router":201}],28:[function(require,module,exports){
 
 var React = require('react');
+var Link = require('react-router').Link;
+
 var LayoutSidebar = require('./layout-sidebar.jsx');
 var Highlight = require('./highlight.jsx');
 
@@ -1433,7 +1438,11 @@ module.exports = React.createClass({displayName: "exports",
         React.createElement(Highlight, {string: requireCode, lang: "javascript"}), 
         React.createElement("h2", null, "Use"), 
         React.createElement(Highlight, {string: jsxCode, lang: "xml"}), 
-        React.createElement("p", null, "Note: Rebass components require ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " for styling.")
+        React.createElement("p", null, "Note: Rebass components require ", React.createElement("a", {href: "//basscss.com"}, "Basscss"), " for styling."), 
+        React.createElement("hr", {className: 'border border-'+this.props.color}), 
+        React.createElement("div", {className: "right-align"}, 
+          React.createElement(Link, {to: "/docs/components", className: 'h4 button button-big bg-'+this.props.color}, "Components")
+        )
       )
     )
   }
@@ -1442,7 +1451,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"./highlight.jsx":31,"./layout-sidebar.jsx":36,"react":375}],29:[function(require,module,exports){
+},{"./highlight.jsx":31,"./layout-sidebar.jsx":36,"react":375,"react-router":201}],29:[function(require,module,exports){
 
 var React = require('react');
 var Link = require('react-router').Link;
@@ -1479,40 +1488,34 @@ var Rebass = require('../../..');
 var Banner = Rebass.Banner;
 var Logo = require('./logo.jsx');
 var Nav = require('./nav.jsx');
-var DemoBanner = require('./demo-banner.jsx');
+var Highlight = require('./highlight.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
   render: function() {
 
     var footer = (
-      React.createElement("div", {className: "flex flex-wrap py2"}, 
+      React.createElement("div", {className: "flex flex-center flex-wrap py2"}, 
+        React.createElement(Highlight, {string: "npm install rebass", className: "py1 px2 m0", style: {backgroundColor:'transparent'}}), 
         React.createElement("div", {className: "sm-show flex-auto"}), 
         React.createElement(Nav, React.__spread({},  this.props, {dark: true}))
       )
     );
     var bannerColor = this.props.dark ? 'black' : 'silver';
     var classes = {
-      banner: classnames('relative', 'overflow-hidden', this.props.color),
+      banner: classnames(this.props.color),
     };
 
     return (
       React.createElement(Banner, {color: bannerColor, 
         footer: footer, 
         className: classes.banner}, 
-        /*
-        <div className="absolute" style={{top:'5%', left:'40%',right:'-20%',opacity:0.1}}>
-          <DemoBanner color={this.props.color} />
-        </div>
-        */
-        React.createElement("div", {className: "relative"}, 
           React.createElement("h1", {className: "h1 h1-responsive m0"}, 
             React.createElement(Logo, {className: "h1 mb2 mt3"}), 
             React.createElement("span", {className: "caps"}, this.props.title), 
             React.createElement("span", {className: "h5 caps"}, " v", this.props.version)
           ), 
           React.createElement("p", {className: "h3 bold mb2"}, this.props.description)
-        )
       )
     )
   }
@@ -1521,7 +1524,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":46,"./demo-banner.jsx":25,"./logo.jsx":37,"./nav.jsx":39,"classnames":48,"react":375}],31:[function(require,module,exports){
+},{"../../..":46,"./highlight.jsx":31,"./logo.jsx":37,"./nav.jsx":39,"classnames":48,"react":375}],31:[function(require,module,exports){
 
 var React = require('react');
 var highlight = require('highlight.js');
@@ -1537,7 +1540,7 @@ var Highlight = React.createClass({displayName: "Highlight",
 
   render: function() {
     var code = highlight.highlightAuto(this.props.string, [this.props.lang]).value;
-    return React.createElement("pre", {dangerouslySetInnerHTML: { __html: code}})
+    return React.createElement("pre", React.__spread({},  this.props, {dangerouslySetInnerHTML: { __html: code}}))
   }
 
 });
@@ -1560,6 +1563,8 @@ var Hero = require('./hero.jsx');
 var Footer = require('./footer.jsx');
 //var Section = require('./section.jsx');
 var DemoBanner = require('./demo-banner.jsx');
+var ColorPicker = require('./color-picker.jsx');
+var Highlight = require('./highlight.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 
@@ -1569,8 +1574,10 @@ module.exports = React.createClass({displayName: "exports",
       minHeight: '100vh',
     };
 
+    console.log('home dark', this.props.dark);
+
     var classes = {
-      demoBanner: classnames('p3', 'overflow-hidden', this.props.dark ? 'bg-silver' : 'bg-silver'),
+      demoBanner: classnames('p3', 'overflow-hidden', this.props.color, this.props.dark ? 'bg-black' : 'bg-silver'),
     };
 
     return (
@@ -1606,19 +1613,19 @@ module.exports = React.createClass({displayName: "exports",
             )
           )
         ), 
-        /*
-        <section id="examples-promo" className={classes.demoBanner}>
-          <DemoBanner color={this.props.color} style={{opacity:.5}} />
-        </section>
-        */
+        React.createElement("section", {id: "examples-promo", className: classes.demoBanner}, 
+          React.createElement("div", {className: "container"}, 
+            React.createElement(DemoBanner, {color: this.props.color, style: {opacity:1}}), 
+            React.createElement(ColorPicker, React.__spread({},  this.props))
+          )
+        ), 
         React.createElement("div", {className: "container px2"}, 
-          React.createElement("hr", {className: 'border border-'+this.props.color}), 
           React.createElement("section", {id: "cta", className: "sm-flex flex-center py4"}, 
-            React.createElement("div", {className: "flex-auto"}, 
-              React.createElement("h1", null, "Install it now"), 
-              React.createElement("p", null, "Try it out in your own app")
+            React.createElement("div", {className: "sm-col-7"}, 
+              React.createElement("h1", null, "Install now"), 
+              React.createElement(Highlight, {string: "npm install rebass", lang: "bash"})
             ), 
-            React.createElement("div", {className: "sm-col-3"}, 
+            React.createElement("div", {className: "center sm-col-5"}, 
               React.createElement(Link, {to: "Getting Started", 
                 className: 'button button-big bg-'+this.props.color}, 
                 "Getting Started"
@@ -1636,7 +1643,7 @@ module.exports = React.createClass({displayName: "exports",
 
 
 
-},{"../../..":46,"./demo-banner.jsx":25,"./footer.jsx":27,"./hero.jsx":30,"classnames":48,"react":375,"react-router":201}],33:[function(require,module,exports){
+},{"../../..":46,"./color-picker.jsx":23,"./demo-banner.jsx":25,"./footer.jsx":27,"./hero.jsx":30,"./highlight.jsx":31,"classnames":48,"react":375,"react-router":201}],33:[function(require,module,exports){
 
 var React = require('react');
 var Section = require('./Section.jsx');

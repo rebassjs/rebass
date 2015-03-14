@@ -11,6 +11,8 @@ var Hero = require('./hero.jsx');
 var Footer = require('./footer.jsx');
 //var Section = require('./section.jsx');
 var DemoBanner = require('./demo-banner.jsx');
+var ColorPicker = require('./color-picker.jsx');
+var Highlight = require('./highlight.jsx');
 
 module.exports = React.createClass({
 
@@ -20,8 +22,10 @@ module.exports = React.createClass({
       minHeight: '100vh',
     };
 
+    console.log('home dark', this.props.dark);
+
     var classes = {
-      demoBanner: classnames('p3', 'overflow-hidden', this.props.dark ? 'bg-silver' : 'bg-silver'),
+      demoBanner: classnames('p3', 'overflow-hidden', this.props.color, this.props.dark ? 'bg-black' : 'bg-silver'),
     };
 
     return (
@@ -57,19 +61,19 @@ module.exports = React.createClass({
             </div>
           </section>
         </div>
-        {/*
         <section id="examples-promo" className={classes.demoBanner}>
-          <DemoBanner color={this.props.color} style={{opacity:.5}} />
+          <div className="container">
+            <DemoBanner color={this.props.color} style={{opacity:1}} />
+            <ColorPicker {...this.props} />
+          </div>
         </section>
-        */}
         <div className="container px2">
-          <hr className={'border border-'+this.props.color} />
           <section id="cta" className="sm-flex flex-center py4">
-            <div className="flex-auto">
-              <h1>Install it now</h1>
-              <p>Try it out in your own app</p>
+            <div className="sm-col-7">
+              <h1>Install now</h1>
+              <Highlight string="npm install rebass" lang="bash" />
             </div>
-            <div className="sm-col-3">
+            <div className="center sm-col-5">
               <Link to="Getting Started"
                 className={'button button-big bg-'+this.props.color}>
                 Getting Started

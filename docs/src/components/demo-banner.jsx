@@ -66,11 +66,23 @@ var DemoBanner = React.createClass({
             </div>
           </div>
         </div>
-        <div className="sm-flex flex-start mxn2">
+        <div className="sm-flex flex-center mxn2">
           <div className="sm-col-9 px2">
             <Message color={color} outline={true}>Hamburger pickle</Message>
             <Pagination color={color}
               pages={[{number:1,href:'#'},{number:2,href:'#'},{number:3,href:'#'}]} />
+          </div>
+          <div className="sm-col-3 px2">
+            <Dropdown label="Hamburger"
+              color={color}>
+              <Dropdown.Item href="#!" label="Hotdog" />
+              <Dropdown.Item href="#!" label="Hotdog" />
+            </Dropdown>
+          </div>
+        </div>
+        <div className="sm-flex flex-center py1 mxn2">
+          <div className="sm-col-4 px2">
+            <h1 className="m0">Hamburger <Badge color={color}>Pickle</Badge></h1>
           </div>
           <div className="sm-col-3 px2">
             <Media align="middle">
@@ -78,22 +90,9 @@ var DemoBanner = React.createClass({
               <Media.Body>Hamburger</Media.Body>
             </Media>
           </div>
-        </div>
-        <div className="sm-flex flex-center py1 mxn2">
-          <div className="sm-col-4 px2">
-            <h1 className="m0">Hamburger <Badge color={color}>Pickle</Badge></h1>
-          </div>
           <div className="sm-col-5 px2">
             <Breadcrumbs color={color}
           links={[{name:'Home',href:'#'},{name:'Hamburgers',href:'#'},{name:'Bacon Cheeseburger',href:'#'}]} />
-          </div>
-          <div className="sm-col-3 px2">
-            <Dropdown label="Hamburger"
-              color={color}
-              open={true}>
-              <Dropdown.Item href="#!" label="Hotdog" />
-              <Dropdown.Item href="#!" label="Hotdog" />
-            </Dropdown>
           </div>
         </div>
       </div>
