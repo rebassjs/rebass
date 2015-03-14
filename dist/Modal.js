@@ -19,6 +19,8 @@ var Modal = React.createClass({displayName: "Modal",
 
   render: function() {
 
+    console.log('Modal', this.props.color);
+
     var isOpen = this.props.isOpen;
     var header = this.props.header;
     var bassClasses = colorbass(this.props.color);
@@ -57,7 +59,7 @@ var Modal = React.createClass({displayName: "Modal",
         overflow: 'hidden',
         boxShadow: '0 4px 4px rgba(0,0,0,.1)',
       },
-      dismissButton: this.buttonStyle,
+      //dismissButton: this.buttonStyle,
     };
 
     if (this.props.fullBleed) {
@@ -79,8 +81,7 @@ var Modal = React.createClass({displayName: "Modal",
           style: styles.modal}, 
           React.createElement("div", {className: classes.header}, 
             React.createElement("div", {className: "bold p2 flex-auto"}, header), 
-            React.createElement("button", {className: "h3", 
-              style: styles.dismissButton, 
+            React.createElement("button", {className: "h3 button button-transparent muted", 
               onClick: this.props.onDismiss, 
               title: "Dismiss modal overlay"}, 
               "×"

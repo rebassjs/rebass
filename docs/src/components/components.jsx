@@ -42,13 +42,24 @@ module.exports = React.createClass({
 
   renderSection: function(section, i) {
     var color = this.props.color;
+    var example = false;
+    if (section.example) {
+      example = (
+        <Example color={color} preMaxHeight={256}>
+          {section.example}
+        </Example>
+      )
+    }
+    var demo = false;
+    if (section.Demo) {
+      demo = <section.Demo {...this.props} />
+    } 
     return (
       <Section heading={section.name}
         key={'example-'+section.name}>
         <p>{section.description}</p>
-        <Example color={color} preMaxHeight={256}>
-          {section.example}
-        </Example>
+        {demo}
+        {example}
       </Section>
     )
   },

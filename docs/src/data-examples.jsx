@@ -22,10 +22,41 @@ var Breadcrumbs  = Rebass.Breadcrumbs;
 var Progress  = Rebass.Progress;
 var Icon  = Rebass.Icon;
 
+var ModalExample = React.createClass({
+  getInitialState: function() {
+    return { open: false }
+  },
+  open: function() {
+    this.setState({ open: true });
+  },
+  close: function() {
+    this.setState({ open: false });
+  },
+  render: function() {
+    console.log('render ModalExample');
+    var children = [];
+    React.Children.map(this.props.children, function(child) {
+      console.log(child);
+    });
+    return (
+      <div>{this.props.children}</div>
+    )
+  }
+});
+
 
 module.exports = function(color) {
 
   return [
+    {
+      name: 'Panel',
+      description: 'Module to visually separate content',
+      example: (
+        <Panel color={color} header="Hamburger" footer="Bacon">
+          <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin.</p>
+        </Panel>
+      )
+    },
     {
       name: 'Button',
       description: 'Themeable button component with solid, outline, and transparent variations',
@@ -54,11 +85,6 @@ module.exports = function(color) {
         </Group>
       ),
     },
-    //{
-    //  name: 'MenuItem',
-    //  description: 'Full width, block link for menus',
-    //  example: <MenuItem label="MenuItem" href="#MenuItem" />,
-    //},
     {
       name: 'Dropdown',
       description: 'Progressive disclosure for showing lists of actions (Note: this uses the Dropdown.Item Subcomponent)',
@@ -94,7 +120,6 @@ module.exports = function(color) {
     {
       name: 'Banner',
       description: 'Hero banner with support for background images',
-        // backgroundImage="url(http://www.noao.edu/image_gallery/images/d7/vdb141-1000.jpg)"
       example: (
         <Banner color={color}
           align="center"
@@ -155,20 +180,36 @@ module.exports = function(color) {
           value={0.375}/>
       )
     },
-    /*
     {
       name: 'Modal',
       description: 'Modal overlay for handling discrete interactions',
+      Demo: React.createClass({
+        getInitialState: function() {
+          return { open: false }
+        },
+        open: function() {
+          this.setState({ open: true });
+        },
+        close: function() {
+          this.setState({ open: false });
+        },
+        render: function() {
+          return (
+            <div>
+              <Button color={this.props.color} onClick={this.open} className="mb2">Open Demo Modal</Button>
+              <Modal header="Hamburger" isOpen={this.state.open} onDismiss={this.close} color={this.props.color}>
+                <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.</p>
+              </Modal>
+            </div>
+          )
+        }
+      }),
       example: (
-        <div>
-          <Button color={color} onClick={this.openModal}>Open Modal</Button>
-          <Modal header="Hamburger" isOpen={modalIsOpen} onDismiss={this.closeModal}>
-            <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.</p>
-          </Modal>
-        </div>
+        <Modal header="Hamburger" isOpen={false} onDismiss={false}>
+          <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.</p>
+        </Modal>
       )
     },
-    */
     {
       name: 'Icon',
       description: 'Icons from Geomicons',

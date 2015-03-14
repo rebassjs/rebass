@@ -22,8 +22,6 @@ module.exports = React.createClass({
       minHeight: '100vh',
     };
 
-    console.log('home dark', this.props.dark);
-
     var classes = {
       demoBanner: classnames('p3', 'overflow-hidden', this.props.color, this.props.dark ? 'bg-black' : 'bg-silver'),
     };
