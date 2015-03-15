@@ -3,6 +3,7 @@ var React = require('react');
 var classnames = require('classnames');
 var colorbass = require('colorbass');
 var Button = require('./button');
+var Arrow = require('./arrow');
 
 var Dropdown = React.createClass({
 
@@ -76,10 +77,11 @@ var Dropdown = React.createClass({
           onClick={this.close} />
         <div className={classes.inner} style={styles.inner}>
           <Button color={this.props.color}
+            className="nowrap"
             flush={true}
             style={styles.button}
             onClick={this.toggle}>
-            {this.props.label} <span className="caret" />
+            {this.props.label} <Arrow />
           </Button>
           <div className={classes.menu} style={styles.menu} onClick={this.close}>
             {this.props.children}

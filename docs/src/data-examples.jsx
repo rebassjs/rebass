@@ -20,6 +20,7 @@ var Banner  = Rebass.Banner;
 var Pagination  = Rebass.Pagination;
 var Breadcrumbs  = Rebass.Breadcrumbs;
 var Progress  = Rebass.Progress;
+var Arrow  = Rebass.Arrow;
 var Icon  = Rebass.Icon;
 
 module.exports = function(color) {
@@ -76,7 +77,7 @@ module.exports = function(color) {
           description: 'Remove space betweed buttons',
           type: 'boolean',
           defaults: 'false' },
-        { name: 'justifed',
+        { name: 'justified',
           description: 'Sets display block and centers text',
           type: 'boolean',
           defaults: 'false' },
@@ -177,7 +178,7 @@ module.exports = function(color) {
         { name: 'wrap',
           description: 'Sets flex wrap',
           type: 'boolean',
-          defaults: 'false' },
+          defaults: 'true' },
         { name: 'color',
           description: 'Color theme',
           type: 'string',
@@ -185,14 +186,20 @@ module.exports = function(color) {
       ],
       example: (
         <Navbar color={color}>
-          <NavItem label="NavItem" href="#nav-item" />
-          <NavItem label="NavItem" href="#nav-item" />
-          <NavSpacer />
-          <Group>
-            <input type="text" className="field-dark" placeholder="Search" />
-            <Button color="blue">Go</Button>
-          </Group>
-          <NavItem label="NavItem" href="#nav-item" />
+          <Navbar.Item label="Navbar.Item" href="#Navbar" />
+          <Navbar.Item label="Navbar.Item" href="#Navbar" />
+          <Navbar.Spacer />
+          <Navbar.Toggle>
+            More <Arrow />
+          </Navbar.Toggle>
+          <Navbar.Drawer className="bg-darken-2">
+            <Navbar.Item label="Navbar.Item" href="#Navbar" />
+            <Navbar.Item label="Navbar.Item" href="#Navbar" />
+            <Group className="px2 py1">
+              <input type="text" className="field-dark" placeholder="Search" />
+              <Button className="white bg-darken-3">Go</Button>
+            </Group>
+          </Navbar.Drawer>
         </Navbar>
       ),
     },
@@ -399,6 +406,22 @@ module.exports = function(color) {
         <Modal header="Hamburger" isOpen={false} onDismiss={false}>
           <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.</p>
         </Modal>
+      )
+    },
+    {
+      name: 'Arrow',
+      description: 'Triangle arrow affordance used in the Dropdown component',
+      props: [
+        { name: 'up',
+          description: 'Displays the arrow pointing upward',
+          type: 'boolean',
+          default: 'false' }
+      ],
+      example: (
+        <div>
+          <Arrow />
+          <Arrow up />
+        </div>
       )
     },
     {

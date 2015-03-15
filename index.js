@@ -17,6 +17,7 @@ module.exports = {
   Pagination: require('./dist/pagination'),
   Breadcrumbs: require('./dist/breadcrumbs'),
   Progress: require('./dist/progress'),
+  Arrow: require('./dist/arrow'),
   Icon: require('react-geomicons'),
 
 };

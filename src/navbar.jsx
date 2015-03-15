@@ -14,11 +14,28 @@ var Navbar = React.createClass({
     }
   },
 
+  getInitialState: function() {
+    return {
+      open: false
+    }
+  },
+
+  expand: function() {
+    this.setState({ open: true });
+  },
+
+  collapse: function() {
+    this.setState({ open: false });
+  },
+
   renderChild: function(child) {
-    var inverse = this.props.inverse || colorbass(this.props.color).inverse;
     var childProps = {
-      big: !this.props.compact,
+      inverse: colorbass(this.props.color).inverse,
+      compact: this.props.compact,
       justified: this.props.justified,
+      open: this.state.open,
+      expand: this.expand,
+      collapse: this.collapse,
     };
     var newChild = React.addons.cloneWithProps(child, childProps);
     return newChild;
@@ -38,6 +55,85 @@ var Navbar = React.createClass({
   }
 
 });
+
+
+Navbar.Item = React.createClass({
+
+  getDefaultProps: function() {
+    return {
+      label: false,
+      flush: true,
+      compact: false,
+      justified: false,
+      inverse: false,
+    }
+  },
+
+  render: function() {
+    var linkClass = 
+      classnames(
+        'button', 'button-transparent',
+        { white: this.props.inverse },
+        { py2: !this.props.compact },
+        { 'center flex-auto': this.props.justified },
+        { mr1: !this.props.flush });
+    var label = this.props.label || this.props.children || false;
+    return (
+      <a {...this.props} className={linkClass}>
+        {label} 
+      </a>
+    )
+  }
+
+});
+
+
+Navbar.Toggle = React.createClass({
+  getDefaultProps: function() {
+    return {
+      open: false,
+      expand: function() {},
+      collapse: function() {},
+    }
+  },
+  toggle: function() {
+    var open = !this.props.open;
+    if (open) { this.props.expand() }
+    else if (!open) { this.props.collapse() }
+  },
+  render: function() {
+    return <Navbar.Item {...this.props} onClick={this.toggle} />
+  }
+});
+
+
+Navbar.Drawer = React.createClass({
+  getDefaultProps: function() {
+    return {
+      open: false
+    }
+  },
+  render: function() {
+    var containerStyles = {
+      maxHeight: this.props.open ? '100vh' : 0,
+      transition: 'max-height .3s ease-in-out',
+    };
+    var containerClasses = classnames(this.props.className, 'full-width', 'md-flex', 'flex-center', 'overflow-auto');
+    return (
+      <div className={containerClasses} style={containerStyles}>
+        {this.props.children}
+      </div>
+    )
+  }
+});
+
+
+Navbar.Spacer = React.createClass({
+  render: function() {
+    return <div className="flex-auto" />
+  }
+});
+
 
 module.exports = Navbar;
 

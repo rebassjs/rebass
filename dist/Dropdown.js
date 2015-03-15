@@ -3,6 +3,7 @@ var React = require('react');
 var classnames = require('classnames');
 var colorbass = require('colorbass');
 var Button = require('./button');
+var Arrow = require('./arrow');
 
 var Dropdown = React.createClass({displayName: "Dropdown",
 
@@ -76,10 +77,11 @@ var Dropdown = React.createClass({displayName: "Dropdown",
           onClick: this.close}), 
         React.createElement("div", {className: classes.inner, style: styles.inner}, 
           React.createElement(Button, {color: this.props.color, 
+            className: "nowrap", 
             flush: true, 
             style: styles.button, 
             onClick: this.toggle}, 
-            this.props.label, " ", React.createElement("span", {className: "caret"})
+            this.props.label, " ", React.createElement(Arrow, null)
           ), 
           React.createElement("div", {className: classes.menu, style: styles.menu, onClick: this.close}, 
             this.props.children
