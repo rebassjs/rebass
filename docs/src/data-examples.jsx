@@ -17,6 +17,7 @@ var Badge = Rebass.Badge;
 var Message  = Rebass.Message;
 var Panel  = Rebass.Panel;
 var Banner  = Rebass.Banner;
+var PageHeader  = Rebass.PageHeader;
 var Pagination  = Rebass.Pagination;
 var Breadcrumbs  = Rebass.Breadcrumbs;
 var Progress  = Rebass.Progress;
@@ -245,6 +246,33 @@ module.exports = function(color) {
           <h1 className="h1 h1-responsive m0">Hamburger</h1>
           <p className="h3 bold m0">Pastrami bacon wrapped hot dogs</p>
         </Banner>
+      )
+    },
+    {
+      name: 'PageHeader',
+      description: 'Header element with visual spacing for page-level hierarchy',
+      props: [
+        { name: 'title',
+          description: 'Page title',
+          type: 'string or component',
+          defaults: '' },
+        { name: 'description',
+          description: 'Page description',
+          type: 'string',
+          defaults: 'false' },
+        { name: 'right',
+          description: 'Content displayed on the right side',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'size',
+          description: 'Font size for h1 title (medium, big, or huge)',
+          type: 'string',
+          defaults: 'medium' },
+      ],
+      example: (
+        <PageHeader title="Hamburger"
+          description="Bacon wrapped hot dogs"
+          right="Onion Rings" size="big" />
       )
     },
     {
