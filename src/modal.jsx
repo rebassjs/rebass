@@ -7,19 +7,19 @@ var Modal = React.createClass({
 
   getDefaultProps: function() {
     return {
-      isOpen: false,
+      open: false,
       flush: false,
       fullBleed: false,
       size: 'medium',
       header: '',
-      color: false,
+      color: 'silver',
       onDismiss: function() {}
     }
   },
 
   render: function() {
 
-    var isOpen = this.props.isOpen;
+    var open = this.props.open;
     var header = this.props.header;
     var bassClasses = colorbass(this.props.color);
     var classes = {
@@ -33,7 +33,7 @@ var Modal = React.createClass({
 
     var styles = {
       container: {
-        display: isOpen ? '' : 'none',
+        display: open ? '' : 'none',
         position: 'fixed',
         top: 0,
         right: 0,

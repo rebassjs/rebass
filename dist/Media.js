@@ -6,7 +6,6 @@ var Media = React.createClass({displayName: "Media",
 
   getDefaultProps: function() {
     return {
-      right: false,
       align: 'top',
     }
   },

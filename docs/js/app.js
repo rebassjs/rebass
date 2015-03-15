@@ -194,13 +194,12 @@ var Dropdown = React.createClass({displayName: "Dropdown",
       flush: false,
       top: false,
       right: false,
-      open: false,
     }
   },
 
   getInitialState: function() {
     return {
-      isOpen: this.props.open,
+      isOpen: false,
     }
   },
 
@@ -351,7 +350,6 @@ var Media = React.createClass({displayName: "Media",
 
   getDefaultProps: function() {
     return {
-      right: false,
       align: 'top',
     }
   },
@@ -459,19 +457,19 @@ var Modal = React.createClass({displayName: "Modal",
 
   getDefaultProps: function() {
     return {
-      isOpen: false,
+      open: false,
       flush: false,
       fullBleed: false,
       size: 'medium',
       header: '',
-      color: false,
+      color: 'silver',
       onDismiss: function() {}
     }
   },
 
   render: function() {
 
-    var isOpen = this.props.isOpen;
+    var open = this.props.open;
     var header = this.props.header;
     var bassClasses = colorbass(this.props.color);
     var classes = {
@@ -485,7 +483,7 @@ var Modal = React.createClass({displayName: "Modal",
 
     var styles = {
       container: {
-        display: isOpen ? '' : 'none',
+        display: open ? '' : 'none',
         position: 'fixed',
         top: 0,
         right: 0,
@@ -621,7 +619,6 @@ var Navbar = React.createClass({displayName: "Navbar",
 
   getDefaultProps: function() {
     return {
-      inverse: false,
       color: 'silver',
       compact: false,
       wrap: true,
@@ -632,7 +629,6 @@ var Navbar = React.createClass({displayName: "Navbar",
   renderChild: function(child) {
     var inverse = this.props.inverse || colorbass(this.props.color).inverse;
     var childProps = {
-      inverse: inverse,
       big: !this.props.compact,
       justified: this.props.justified,
     };
@@ -1858,8 +1854,8 @@ var PropsTable = React.createClass({displayName: "PropsTable",
 
   render: function() {
     return (
-      React.createElement("div", {className: "overflow-auto"}, 
-        React.createElement("table", React.__spread({},  this.props, {className: classnames(this.props.className, 'table-light', 'border')}), 
+      React.createElement("div", {className: "overflow-auto rounded bg-darken-1"}, 
+        React.createElement("table", React.__spread({},  this.props, {className: classnames(this.props.className, 'table-light')}), 
           React.createElement("thead", null, 
             React.createElement("tr", null, 
               React.createElement("th", {className: "bold col-2"}, "Props"), 
@@ -2159,7 +2155,6 @@ module.exports = function(color) {
           React.createElement("p", null, "Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin.")
         )
       )
-
     },
     {
       name: 'Button',
@@ -2206,6 +2201,10 @@ module.exports = function(color) {
       name: 'Badge',
       description: 'Used to label states and properties',
       props: [
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'false' },
       ],
       example: React.createElement("h1", {className: "m0"}, "Hamburger ", React.createElement(Badge, {color: color}, "Badge")),
     },
@@ -2213,6 +2212,22 @@ module.exports = function(color) {
       name: 'Group',
       description: 'Groups buttons and inputs together',
       props: [
+        { name: 'wrap',
+          description: 'Sets flex wrap',
+          type: 'boolean',
+          defaults: 'true' },
+        { name: 'justified',
+          description: 'Sets flex auto and centered text on all children',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'outline',
+          description: 'Apply outline prop to children',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'transparent',
+          description: 'Apply transparent prop to children',
+          type: 'boolean',
+          defaults: 'false' },
       ],
       example: (
         React.createElement(Group, null, 
@@ -2226,6 +2241,26 @@ module.exports = function(color) {
       name: 'Dropdown',
       description: 'Progressive disclosure for showing lists of actions (Note: this uses the Dropdown.Item Subcomponent)',
       props: [
+        { name: 'label',
+          description: 'Label for dropdown toggle button',
+          type: 'string',
+          defaults: '\'\'' },
+        { name: 'right',
+          description: 'Align the menu to the right edge of the toggle',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'top',
+          description: 'Position menu above the toggle',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'flush',
+          description: 'Remove space on the right side of the toggle button',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'silver' },
       ],
       example: (
         React.createElement(Dropdown, {label: "Actions", color: color}, 
@@ -2235,15 +2270,26 @@ module.exports = function(color) {
         )
       )
     },
-    //{
-    //  name: 'NavItem',
-    //  description: 'Link button style for navigation',
-    //  example: <NavItem label="NavItem" />
-    //},
     {
       name: 'Navbar',
       description: 'Visual grouping for navigation links and other components',
       props: [
+        { name: 'compact',
+          description: 'Small navbar',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'justified',
+          description: 'Sets flex auto and centers text on all children',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'wrap',
+          description: 'Sets flex wrap',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'silver' },
       ],
       example: (
         React.createElement(Navbar, {color: color}, 
@@ -2262,6 +2308,34 @@ module.exports = function(color) {
       name: 'Banner',
       description: 'Hero banner with support for background images',
       props: [
+        { name: 'align',
+          description: 'Text alignment',
+          type: 'string',
+          defaults: 'left' },
+        { name: 'header',
+          description: 'Banner header content',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'footer',
+          description: 'Banner footer content',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'black' },
+        { name: 'backgroundImage',
+          description: 'Background image style (can be url, linear-gradient, etc)',
+          type: 'string',
+          defaults: 'false' },
+        { name: 'backgroundPosition',
+          description: 'Background position style',
+          type: 'string',
+          defaults: 'center' },
+        { name: 'backgroundSize',
+          description: 'Background size style',
+          type: 'string',
+          defaults: 'cover' },
       ],
       example: (
         React.createElement(Banner, {color: color, 
@@ -2278,6 +2352,10 @@ module.exports = function(color) {
       name: 'Media',
       description: 'Flexbox based media object with alignment props',
       props: [
+        { name: 'align',
+          description: 'Flexbox vertical alignment (middle, top, bottom)',
+          type: 'string',
+          defaults: 'top' },
       ],
       example: (
         React.createElement("div", null, 
@@ -2304,6 +2382,30 @@ module.exports = function(color) {
       name: 'Pagination',
       description: 'Stateless pagination controls',
       props: [
+        { name: 'pages',
+          description: 'Array of page objects consisting of number and href',
+          type: 'array',
+          defaults: '[]' },
+        { name: 'currentIndex',
+          description: 'Current page in pages array',
+          type: 'number',
+          defaults: '0' },
+        { name: 'onClick',
+          description: 'Callback with the page number clicked passed as an argument',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'previous',
+          description: 'onClick callback for the previous button',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'next',
+          description: 'onClick callback for the next button',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'blue' },
       ],
       example: (
         React.createElement(Pagination, {color: color, 
@@ -2315,6 +2417,14 @@ module.exports = function(color) {
       name: 'Breadcrumbs',
       description: 'Link-based wayfinding for deep hierarchies',
       props: [
+        { name: 'links',
+          description: 'Array of link objects consisting of name and href',
+          type: 'array',
+          defaults: '[]' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'blue' },
       ],
       example: (
         React.createElement(Breadcrumbs, {color: color, 
@@ -2325,6 +2435,14 @@ module.exports = function(color) {
       name: 'Progress',
       description: 'Styled progress element',
       props: [
+        { name: 'value',
+          description: 'Progress value between 0 and 1. Min and max can be set to any number',
+          type: 'number',
+          defaults: '0' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'blue' },
       ],
       example: (
         React.createElement(Progress, {color: color, 
@@ -2335,6 +2453,34 @@ module.exports = function(color) {
       name: 'Modal',
       description: 'Modal overlay for handling discrete interactions',
       props: [
+        { name: 'open',
+          description: 'When set to open, modal is visible',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'onDismiss',
+          description: 'onClick callback when either the close button or overlay is clicked',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'header',
+          description: 'Header content',
+          type: 'string or component',
+          defaults: '' },
+        { name: 'size',
+          description: 'Width of modal (small, medium, big)',
+          type: 'string',
+          defaults: 'medium' },
+        { name: 'fullBleed',
+          description: 'Sets the modal to be full screen when open',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'flush',
+          description: 'Removes padding from modal body',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'silver' },
       ],
       Demo: React.createClass({displayName: "Demo",
         getInitialState: function() {
@@ -2350,7 +2496,7 @@ module.exports = function(color) {
           return (
             React.createElement("div", null, 
               React.createElement(Button, {color: this.props.color, onClick: this.open, className: "mb2"}, "Open Demo Modal"), 
-              React.createElement(Modal, {header: "Hamburger", isOpen: this.state.open, onDismiss: this.close, color: this.props.color}, 
+              React.createElement(Modal, {header: "Hamburger", open: this.state.open, onDismiss: this.close, color: this.props.color}, 
                 React.createElement("p", null, "Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.")
               )
             )
@@ -2367,6 +2513,22 @@ module.exports = function(color) {
       name: 'Icon',
       description: 'Icons from Geomicons',
       props: [
+        { name: 'name',
+          description: 'Camel cased icon id',
+          type: 'string',
+          default: 'warning' },
+        { name: 'width',
+          description: 'SVG width attribute',
+          type: 'string',
+          default: '1em' },
+        { name: 'height',
+          description: 'SVG height attribute',
+          type: 'string',
+          default: '1em' },
+        { name: 'fill',
+          description: 'SVG fill attribute',
+          type: 'string',
+          default: '1em' },
       ],
       example: (
         React.createElement("div", {className: 'h2 flex flex-center flex-wrap mxn2 ' + color}, 
@@ -2434,11 +2596,10 @@ module.exports = function(color) {
 },{"../..":43,"react":366}],41:[function(require,module,exports){
 (function (process){
 
-var _ = require('lodash');
 var pkg = require('../../package.json');
 
 var data = {};
-data.title = _.capitalize(pkg.name);
+data.title = pkg.name;
 data.version = pkg.version;
 data.description = pkg.description;
 data.author = pkg.author;
@@ -2458,7 +2619,7 @@ if (process.env.NODE_ENV === 'production') {
   data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
-  data.baseUrl = '/rebass/';
+  //data.baseUrl = '/rebass/';
 }
 
 data.stylesheets = [
@@ -2516,7 +2677,7 @@ module.exports = data;
 
 
 }).call(this,require('_process'))
-},{"../..":43,"../../package.json":370,"./components/components.jsx":21,"./components/demo.jsx":23,"./components/docs.jsx":25,"./components/getting-started.jsx":27,"./components/home.jsx":31,"_process":44,"lodash":161}],42:[function(require,module,exports){
+},{"../..":43,"../../package.json":370,"./components/components.jsx":21,"./components/demo.jsx":23,"./components/docs.jsx":25,"./components/getting-started.jsx":27,"./components/home.jsx":31,"_process":44}],42:[function(require,module,exports){
 
 var React = require('react');
 var Router = require('react-router');
@@ -47341,14 +47502,11 @@ module.exports={
     "basswork": "^1.2.1",
     "browserify": "^8.0.3",
     "highlight.js": "^8.4.0",
-    "htmltojsx": "^0.2.1",
     "http-server": "^0.7.4",
     "jsx-loader": "^0.12.2",
-    "lodash": "^3.1.0",
     "node-jsx": "^0.12.4",
     "parallelshell": "^1.0.4",
     "react": "^0.12.2",
-    "react-async": "^2.0.1",
     "react-bootstrap": "^0.15.1",
     "react-html": "0.0.4",
     "react-router": "^0.12.4",
@@ -47356,7 +47514,6 @@ module.exports={
     "reactify": "^1.0.0",
     "rebass-example": "^1.1.1",
     "uglify-js": "^2.4.16",
-    "uglifyify": "^3.0.1",
     "watch": "^0.14.0"
   },
   "keywords": [
@@ -47368,20 +47525,17 @@ module.exports={
   ],
   "scripts": {
     "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
-    "watch:uglify": "watch 'npm run uglify' ./docs/js",
     "js": "browserify docs/src/app.js -o docs/js/app.js",
-    "watch:js": "watch 'npm run js' ./docs/src",
+    "watch:js": "watch 'npm run js && npm run uglify' ./docs/src",
     "html": "node docs/src/build",
     "watch:html": "watch 'npm run html' ./docs/src",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
     "docs:css": "basswork docs/src/index.css docs/css/docs.css",
     "watch:docs:css": "watch 'npm run docs:css' ./docs/src",
-
-    "watch:docs": "watch 'npm run html && npm run js && npm run uglify && npm run docs:css' ./docs/src",
     "serve": "http-server -p 8000",
     "deploy": "export NODE_ENV=development && npm run jsx && npm run html && npm run js && npm run uglify && npm run docs:css",
-    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:uglify' 'npm run watch:html' 'npm run watch:docs:css' 'npm run serve'"
+    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:html' 'npm run watch:docs:css'"
   },
   "browserify": {
     "transform": [

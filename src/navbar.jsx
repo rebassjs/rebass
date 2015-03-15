@@ -7,7 +7,6 @@ var Navbar = React.createClass({
 
   getDefaultProps: function() {
     return {
-      inverse: false,
       color: 'silver',
       compact: false,
       wrap: true,
@@ -18,7 +17,6 @@ var Navbar = React.createClass({
   renderChild: function(child) {
     var inverse = this.props.inverse || colorbass(this.props.color).inverse;
     var childProps = {
-      inverse: inverse,
       big: !this.props.compact,
       justified: this.props.justified,
     };

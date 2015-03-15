@@ -16,14 +16,11 @@
     "basswork": "^1.2.1",
     "browserify": "^8.0.3",
     "highlight.js": "^8.4.0",
-    "htmltojsx": "^0.2.1",
     "http-server": "^0.7.4",
     "jsx-loader": "^0.12.2",
-    "lodash": "^3.1.0",
     "node-jsx": "^0.12.4",
     "parallelshell": "^1.0.4",
     "react": "^0.12.2",
-    "react-async": "^2.0.1",
     "react-bootstrap": "^0.15.1",
     "react-html": "0.0.4",
     "react-router": "^0.12.4",
@@ -31,7 +28,6 @@
     "reactify": "^1.0.0",
     "rebass-example": "^1.1.1",
     "uglify-js": "^2.4.16",
-    "uglifyify": "^3.0.1",
     "watch": "^0.14.0"
   },
   "keywords": [
@@ -43,20 +39,17 @@
   ],
   "scripts": {
     "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
-    "watch:uglify": "watch 'npm run uglify' ./docs/js",
     "js": "browserify docs/src/app.js -o docs/js/app.js",
-    "watch:js": "watch 'npm run js' ./docs/src",
+    "watch:js": "watch 'npm run js && npm run uglify' ./docs/src",
     "html": "node docs/src/build",
     "watch:html": "watch 'npm run html' ./docs/src",
     "jsx": "jsx -x jsx src dist",
     "watch:jsx": "jsx -x jsx -w src dist",
     "docs:css": "basswork docs/src/index.css docs/css/docs.css",
     "watch:docs:css": "watch 'npm run docs:css' ./docs/src",
-
-    "watch:docs": "watch 'npm run html && npm run js && npm run uglify && npm run docs:css' ./docs/src",
     "serve": "http-server -p 8000",
     "deploy": "export NODE_ENV=development && npm run jsx && npm run html && npm run js && npm run uglify && npm run docs:css",
-    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:uglify' 'npm run watch:html' 'npm run watch:docs:css' 'npm run serve'"
+    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:html' 'npm run watch:docs:css'"
   },
   "browserify": {
     "transform": [

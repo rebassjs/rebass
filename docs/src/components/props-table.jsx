@@ -24,8 +24,8 @@ var PropsTable = React.createClass({
 
   render: function() {
     return (
-      <div className="overflow-auto">
-        <table {...this.props} className={classnames(this.props.className, 'table-light', 'border')}>
+      <div className="overflow-auto rounded bg-darken-1">
+        <table {...this.props} className={classnames(this.props.className, 'table-light')}>
           <thead>
             <tr>
               <th className="bold col-2">Props</th>

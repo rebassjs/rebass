@@ -1,9 +1,8 @@
 
-var _ = require('lodash');
 var pkg = require('../../package.json');
 
 var data = {};
-data.title = _.capitalize(pkg.name);
+data.title = pkg.name;
 data.version = pkg.version;
 data.description = pkg.description;
 data.author = pkg.author;
@@ -23,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
   data.baseUrl = '/rebass/';
 } else {
   console.log('development build');
-  data.baseUrl = '/rebass/';
+  //data.baseUrl = '/rebass/';
 }
 
 data.stylesheets = [

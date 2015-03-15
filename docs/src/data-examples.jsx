@@ -47,7 +47,6 @@ module.exports = function(color) {
           <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin.</p>
         </Panel>
       )
-
     },
     {
       name: 'Button',
@@ -94,6 +93,10 @@ module.exports = function(color) {
       name: 'Badge',
       description: 'Used to label states and properties',
       props: [
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'false' },
       ],
       example: <h1 className="m0">Hamburger <Badge color={color}>Badge</Badge></h1>,
     },
@@ -101,6 +104,22 @@ module.exports = function(color) {
       name: 'Group',
       description: 'Groups buttons and inputs together',
       props: [
+        { name: 'wrap',
+          description: 'Sets flex wrap',
+          type: 'boolean',
+          defaults: 'true' },
+        { name: 'justified',
+          description: 'Sets flex auto and centered text on all children',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'outline',
+          description: 'Apply outline prop to children',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'transparent',
+          description: 'Apply transparent prop to children',
+          type: 'boolean',
+          defaults: 'false' },
       ],
       example: (
         <Group>
@@ -114,6 +133,26 @@ module.exports = function(color) {
       name: 'Dropdown',
       description: 'Progressive disclosure for showing lists of actions (Note: this uses the Dropdown.Item Subcomponent)',
       props: [
+        { name: 'label',
+          description: 'Label for dropdown toggle button',
+          type: 'string',
+          defaults: '\'\'' },
+        { name: 'right',
+          description: 'Align the menu to the right edge of the toggle',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'top',
+          description: 'Position menu above the toggle',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'flush',
+          description: 'Remove space on the right side of the toggle button',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'silver' },
       ],
       example: (
         <Dropdown label="Actions" color={color}>
@@ -123,15 +162,26 @@ module.exports = function(color) {
         </Dropdown>
       )
     },
-    //{
-    //  name: 'NavItem',
-    //  description: 'Link button style for navigation',
-    //  example: <NavItem label="NavItem" />
-    //},
     {
       name: 'Navbar',
       description: 'Visual grouping for navigation links and other components',
       props: [
+        { name: 'compact',
+          description: 'Small navbar',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'justified',
+          description: 'Sets flex auto and centers text on all children',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'wrap',
+          description: 'Sets flex wrap',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'silver' },
       ],
       example: (
         <Navbar color={color}>
@@ -150,6 +200,34 @@ module.exports = function(color) {
       name: 'Banner',
       description: 'Hero banner with support for background images',
       props: [
+        { name: 'align',
+          description: 'Text alignment',
+          type: 'string',
+          defaults: 'left' },
+        { name: 'header',
+          description: 'Banner header content',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'footer',
+          description: 'Banner footer content',
+          type: 'string or component',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'black' },
+        { name: 'backgroundImage',
+          description: 'Background image style (can be url, linear-gradient, etc)',
+          type: 'string',
+          defaults: 'false' },
+        { name: 'backgroundPosition',
+          description: 'Background position style',
+          type: 'string',
+          defaults: 'center' },
+        { name: 'backgroundSize',
+          description: 'Background size style',
+          type: 'string',
+          defaults: 'cover' },
       ],
       example: (
         <Banner color={color}
@@ -166,6 +244,10 @@ module.exports = function(color) {
       name: 'Media',
       description: 'Flexbox based media object with alignment props',
       props: [
+        { name: 'align',
+          description: 'Flexbox vertical alignment (middle, top, bottom)',
+          type: 'string',
+          defaults: 'top' },
       ],
       example: (
         <div>
@@ -192,6 +274,30 @@ module.exports = function(color) {
       name: 'Pagination',
       description: 'Stateless pagination controls',
       props: [
+        { name: 'pages',
+          description: 'Array of page objects consisting of number and href',
+          type: 'array',
+          defaults: '[]' },
+        { name: 'currentIndex',
+          description: 'Current page in pages array',
+          type: 'number',
+          defaults: '0' },
+        { name: 'onClick',
+          description: 'Callback with the page number clicked passed as an argument',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'previous',
+          description: 'onClick callback for the previous button',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'next',
+          description: 'onClick callback for the next button',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'blue' },
       ],
       example: (
         <Pagination color={color}
@@ -203,6 +309,14 @@ module.exports = function(color) {
       name: 'Breadcrumbs',
       description: 'Link-based wayfinding for deep hierarchies',
       props: [
+        { name: 'links',
+          description: 'Array of link objects consisting of name and href',
+          type: 'array',
+          defaults: '[]' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'blue' },
       ],
       example: (
         <Breadcrumbs color={color}
@@ -213,6 +327,14 @@ module.exports = function(color) {
       name: 'Progress',
       description: 'Styled progress element',
       props: [
+        { name: 'value',
+          description: 'Progress value between 0 and 1. Min and max can be set to any number',
+          type: 'number',
+          defaults: '0' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'blue' },
       ],
       example: (
         <Progress color={color}
@@ -223,6 +345,34 @@ module.exports = function(color) {
       name: 'Modal',
       description: 'Modal overlay for handling discrete interactions',
       props: [
+        { name: 'open',
+          description: 'When set to open, modal is visible',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'onDismiss',
+          description: 'onClick callback when either the close button or overlay is clicked',
+          type: 'function',
+          defaults: 'function() {}' },
+        { name: 'header',
+          description: 'Header content',
+          type: 'string or component',
+          defaults: '' },
+        { name: 'size',
+          description: 'Width of modal (small, medium, big)',
+          type: 'string',
+          defaults: 'medium' },
+        { name: 'fullBleed',
+          description: 'Sets the modal to be full screen when open',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'flush',
+          description: 'Removes padding from modal body',
+          type: 'boolean',
+          defaults: 'false' },
+        { name: 'color',
+          description: 'Color theme',
+          type: 'string',
+          defaults: 'silver' },
       ],
       Demo: React.createClass({
         getInitialState: function() {
@@ -238,7 +388,7 @@ module.exports = function(color) {
           return (
             <div>
               <Button color={this.props.color} onClick={this.open} className="mb2">Open Demo Modal</Button>
-              <Modal header="Hamburger" isOpen={this.state.open} onDismiss={this.close} color={this.props.color}>
+              <Modal header="Hamburger" open={this.state.open} onDismiss={this.close} color={this.props.color}>
                 <p>Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison. Ham bacon corned beef, sausage kielbasa flank tongue pig drumstick capicola swine short loin ham hock kevin. Bacon t-bone hamburger turkey capicola rump short loin. Drumstick pork fatback pork chop doner pork belly prosciutto pastrami sausage. Ground round prosciutto shank pastrami corned beef venison tail. Turkey short loin tenderloin jerky porchetta pork loin.</p>
               </Modal>
             </div>
@@ -255,6 +405,22 @@ module.exports = function(color) {
       name: 'Icon',
       description: 'Icons from Geomicons',
       props: [
+        { name: 'name',
+          description: 'Camel cased icon id',
+          type: 'string',
+          default: 'warning' },
+        { name: 'width',
+          description: 'SVG width attribute',
+          type: 'string',
+          default: '1em' },
+        { name: 'height',
+          description: 'SVG height attribute',
+          type: 'string',
+          default: '1em' },
+        { name: 'fill',
+          description: 'SVG fill attribute',
+          type: 'string',
+          default: '1em' },
       ],
       example: (
         <div className={'h2 flex flex-center flex-wrap mxn2 ' + color}>
