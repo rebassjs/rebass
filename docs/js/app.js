@@ -47614,7 +47614,7 @@ exports.toXML = toXML;
 },{}],369:[function(require,module,exports){
 module.exports={
   "name": "rebass",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React UI components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
