@@ -70,8 +70,8 @@ module.exports = React.createClass({
             <div className={'flex flex-center sm-hide bg-black '+this.props.color} style={styles.sidebarToggle}>
               <button onClick={this.toggleSidebar}
                 className="caps flex flex-center button py2 button-transparent">
-                <Logo className="mr2" />
-                <div>Rebass</div>
+                <Logo className="mr1" />
+                <div>Menu</div>
               </button>
             </div>
             <div className="px2 py4 mx-auto" style={styles.contentBody}>

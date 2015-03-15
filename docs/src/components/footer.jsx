@@ -8,7 +8,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <footer className="container px2 py3">
-        <Nav {...this.props} className="mxn2 mb1" />
+        <Nav {...this.props} className="mb1" />
         <div className="flex flex-wrap flex-baseline mxn2">
           <div className="flex flex-baseline px2">
             <h4 className="h5 m0">
@@ -17,10 +17,10 @@ module.exports = React.createClass({
               </Link>
             </h4>
           </div>
-          <a href={this.props.npm} className="button button-transparent">
+          <a href={this.props.npm} className="button button-small mr1 button-link">
             NPM
           </a>
-          <a href={this.props.homepage} className="button button-transparent">
+          <a href={this.props.homepage} className="button button-small mr1 button-link">
             Github
           </a>
           <div className="flex-auto" />

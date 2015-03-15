@@ -15,7 +15,6 @@ module.exports = React.createClass({
   mixins: [Router.State],
 
   renderNavItem: function(route, i) {
-    if (route.path == '') { return false; }
     var examples;
     if (route.path == 'docs/components') {
       examples = this.props.examples;
@@ -78,10 +77,9 @@ module.exports = React.createClass({
           </div>
         </div>
         <div className="flex-auto px2">
-          <h1 className="h2 caps">
+          <h1 className="h2 caps sm-show">
             <Link to="root" className={this.props.color}>{this.props.title}</Link>
           </h1>
-          <hr className={'border-'+this.props.color} />
           <div className="mxn2 mb4">
             {this.props.routes.map(this.renderNavItem)}
           </div>

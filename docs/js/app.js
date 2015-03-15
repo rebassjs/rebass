@@ -143,17 +143,17 @@ var Breadcrumbs = React.createClass({displayName: "Breadcrumbs",
 
   renderLink: function(link, i) {
     var isLast = (i == this.props.links.length - 1);
-    var linkClasses = classnames('button', 'button-narrow', 'button-transparent', isLast ? 'black' : this.props.color);
+    var linkClasses = classnames('button', 'button-small', 'mr1', 'button-link', isLast ? 'black' : this.props.color);
     return (
       React.createElement("span", {className: "inline-block", key: 'breadcrumb-link-'+i}, 
         React.createElement("a", {href: link.href, className: linkClasses}, link.name), 
-        isLast ? '' : ' / '
+         isLast ? '' :  React.createElement("span", {className: "mr1"}, "/")
       )
     )
   },
 
   render: function() {
-    var containerClasses = classnames(this.props.className, 'mxn1');
+    var containerClasses = classnames(this.props.className);
     return (
       React.createElement("div", React.__spread({},  this.props, {className: containerClasses}), 
         this.props.links.map(this.renderLink)
@@ -1413,7 +1413,7 @@ module.exports = React.createClass({displayName: "exports",
   render: function() {
     return (
       React.createElement("footer", {className: "container px2 py3"}, 
-        React.createElement(Nav, React.__spread({},  this.props, {className: "mxn2 mb1"})), 
+        React.createElement(Nav, React.__spread({},  this.props, {className: "mb1"})), 
         React.createElement("div", {className: "flex flex-wrap flex-baseline mxn2"}, 
           React.createElement("div", {className: "flex flex-baseline px2"}, 
             React.createElement("h4", {className: "h5 m0"}, 
@@ -1422,10 +1422,10 @@ module.exports = React.createClass({displayName: "exports",
               )
             )
           ), 
-          React.createElement("a", {href: this.props.npm, className: "button button-transparent"}, 
+          React.createElement("a", {href: this.props.npm, className: "button button-small mr1 button-link"}, 
             "NPM"
           ), 
-          React.createElement("a", {href: this.props.homepage, className: "button button-transparent"}, 
+          React.createElement("a", {href: this.props.homepage, className: "button button-small mr1 button-link"}, 
             "Github"
           ), 
           React.createElement("div", {className: "flex-auto"}), 
@@ -1812,8 +1812,8 @@ module.exports = React.createClass({displayName: "exports",
             React.createElement("div", {className: 'flex flex-center sm-hide bg-black '+this.props.color, style: styles.sidebarToggle}, 
               React.createElement("button", {onClick: this.toggleSidebar, 
                 className: "caps flex flex-center button py2 button-transparent"}, 
-                React.createElement(Logo, {className: "mr2"}), 
-                React.createElement("div", null, "Rebass")
+                React.createElement(Logo, {className: "mr1"}), 
+                React.createElement("div", null, "Menu")
               )
             ), 
             React.createElement("div", {className: "px2 py4 mx-auto", style: styles.contentBody}, 
@@ -1886,7 +1886,7 @@ module.exports = React.createClass({displayName: "exports",
       React.createElement(Link, {
         key: 'link-' + i, 
         to: route.name, 
-        className: "button button-transparent", 
+        className: "button button-small mr1 button-link", 
         activeClassName: "is-active"}, 
         route.name
       )
@@ -2093,7 +2093,6 @@ module.exports = React.createClass({displayName: "exports",
   mixins: [Router.State],
 
   renderNavItem: function(route, i) {
-    if (route.path == '') { return false; }
     var examples;
     if (route.path == 'docs/components') {
       examples = this.props.examples;
@@ -2156,10 +2155,9 @@ module.exports = React.createClass({displayName: "exports",
           )
         ), 
         React.createElement("div", {className: "flex-auto px2"}, 
-          React.createElement("h1", {className: "h2 caps"}, 
+          React.createElement("h1", {className: "h2 caps sm-show"}, 
             React.createElement(Link, {to: "root", className: this.props.color}, this.props.title)
           ), 
-          React.createElement("hr", {className: 'border-'+this.props.color}), 
           React.createElement("div", {className: "mxn2 mb4"}, 
             this.props.routes.map(this.renderNavItem)
           )
@@ -2753,7 +2751,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 data.stylesheets = [
-  'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.0.3/bassdock.min.css',
+  'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.1.1/bassdock.min.css',
   'docs/css/rebass.css',
   'docs/css/docs.css',
 ];
@@ -47616,7 +47614,7 @@ exports.toXML = toXML;
 },{}],369:[function(require,module,exports){
 module.exports={
   "name": "rebass",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React UI components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",

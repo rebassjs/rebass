@@ -18,7 +18,7 @@ module.exports = React.createClass({
       <Link
         key={'link-' + i}
         to={route.name}
-        className="button button-transparent"
+        className="button button-small mr1 button-link"
         activeClassName="is-active">
         {route.name}
       </Link>
