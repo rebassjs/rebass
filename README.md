@@ -2,7 +2,7 @@
 
 React UI components for Basscss (WIP)
 
-http://jxnbk.com/rebass
+http://jxnblk.com/rebass
 
 ## Getting Started
 

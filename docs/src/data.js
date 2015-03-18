@@ -26,12 +26,12 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 data.stylesheets = [
-  'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.1.1/bassdock.min.css',
+  'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.2.1/bassdock.min.css',
   'docs/css/rebass.css',
   'docs/css/docs.css',
 ];
 data.scripts = [
-  'docs/js/app.min.js'
+  'docs/js/app.js'
 ];
 
 data.colors = [

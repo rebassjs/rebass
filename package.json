@@ -38,9 +38,9 @@
     "Basscss"
   ],
   "scripts": {
-    "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
+      "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
     "js": "browserify docs/src/app.js -o docs/js/app.js",
-    "watch:js": "watch 'npm run js && npm run uglify' ./docs/src",
+    "watch:js": "watch 'npm run js' ./docs/src",
     "html": "node docs/src/build",
     "watch:html": "watch 'npm run html' ./docs/src",
     "jsx": "jsx -x jsx src dist",
@@ -48,7 +48,7 @@
     "docs:css": "basswork docs/src/index.css docs/css/docs.css",
     "watch:docs:css": "watch 'npm run docs:css' ./docs/src",
     "serve": "http-server -p 8000",
-    "deploy": "export NODE_ENV=development && npm run jsx && npm run html && npm run js && npm run uglify && npm run docs:css",
+    "deploy": "export NODE_ENV=production && npm run jsx && npm run html && npm run js && npm run docs:css",
     "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:html' 'npm run watch:docs:css'"
   },
   "browserify": {
