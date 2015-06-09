@@ -1,33 +1,34 @@
 
-var React = require('react');
+import React from 'react'
 
-var Arrow = React.createClass({
+class Arrow extends React.Component {
 
-  getDefaultProps: function() {
-    return {
-      up: false,
+  render() {
+    styles = {
+      arrow: {
+        display: 'inline-block',
+        width: 0,
+        height: 0,
+        marginLeft: '.1875em',
+        verticalAlign: 'middle',
+        borderRight: '.3125em solid transparent',
+        borderLeft: '.3125em solid transparent'
+      }
     }
-  },
-
-  render: function() {
-    var arrowStyle = {
-      display: 'inline-block',
-      width: 0,
-      height: 0,
-      marginLeft: '.1875em',
-      verticalAlign: 'middle',
-      borderRight: '.3125em solid transparent',
-      borderLeft: '.3125em solid transparent',
-    };
     if (!this.props.up) {
-      arrowStyle.borderTop = '.4375em solid';
+      styles.arrow.borderTop = '.4375em solid'
     } else if (this.props.up) {
-      arrowStyle.borderBottom = '.4375em solid';
+      styles.arrow.borderBottom = '.4375em solid'
     }
-    return <span style={arrowStyle} />
+
+    return <span style={styles.arrow} />
   }
 
-});
+}
 
-module.exports = Arrow;
+Arrow.propTypes = {
+  up: React.PropTypes.bool
+}
+
+export default Arrow
 

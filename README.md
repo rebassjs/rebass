@@ -1,6 +1,6 @@
 # Rebass
 
-React UI components for Basscss (WIP)
+React UI components for Basscss
 
 http://jxnblk.com/rebass
 
@@ -31,7 +31,7 @@ var Badge = Rebass.Badge;
 
 ## Documentation
 
-http://jxnblk.com/rebass/docs/components
+http://jxnblk.com/rebass
 
 ---
 

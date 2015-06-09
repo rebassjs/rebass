@@ -1,61 +1,42 @@
 {
   "name": "rebass",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "React UI components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
+  "scripts": {
+    "babel": "babel src --out-dir .",
+    "babel:watch": "babel src -w --out-dir .",
+    "docs": "webpack --progress --colors --config webpack.config.js",
+    "docs:dev": "webpack-dev-server --progress --colors --config webpack.config.js",
+    "start": "npm run babel:watch & npm run docs:dev"
+  },
   "dependencies": {
     "classnames": "^1.1.4",
-    "colorbass": "^1.0.0",
-    "react-geomicons": "^2.0.0",
-    "react-hsl-sliders": "^1.0.4"
+    "colorbass": "^1.0.0"
   },
   "devDependencies": {
-    "basscss-defaults": "^1.0.0",
-    "basscss-progress": "^1.0.0",
-    "basswork": "^1.2.1",
-    "browserify": "^8.0.3",
+    "babel": "^5.5.6",
+    "babel-core": "^5.5.6",
+    "babel-loader": "^5.1.4",
+    "basscss": "^7.0.0-beta.2",
+    "css-loader": "^0.14.5",
+    "cssnext-loader": "^1.0.1",
     "highlight.js": "^8.4.0",
-    "http-server": "^0.7.4",
     "jsx-loader": "^0.12.2",
-    "node-jsx": "^0.12.4",
-    "parallelshell": "^1.0.4",
-    "react": "^0.12.2",
-    "react-bootstrap": "^0.15.1",
-    "react-html": "0.0.4",
-    "react-router": "^0.12.4",
-    "react-tools": "^0.12.2",
-    "reactify": "^1.0.0",
-    "rebass-example": "^1.1.1",
-    "uglify-js": "^2.4.16",
-    "watch": "^0.14.0"
+    "node-libs-browser": "^0.5.2",
+    "react": "^0.13.3",
+    "static-site-generator-webpack-plugin": "^1.0.0",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
   },
   "keywords": [
-    "React",
-    "Components",
+    "react",
+    "components",
     "react-component",
-    "UI",
-    "Basscss"
+    "ui",
+    "basscss"
   ],
-  "scripts": {
-      "uglify": "uglifyjs ./docs/js/app.js -o docs/js/app.min.js",
-    "js": "browserify docs/src/app.js -o docs/js/app.js",
-    "watch:js": "watch 'npm run js' ./docs/src",
-    "html": "node docs/src/build",
-    "watch:html": "watch 'npm run html' ./docs/src",
-    "jsx": "jsx -x jsx src dist",
-    "watch:jsx": "jsx -x jsx -w src dist",
-    "docs:css": "basswork docs/src/index.css docs/css/docs.css",
-    "watch:docs:css": "watch 'npm run docs:css' ./docs/src",
-    "serve": "http-server -p 8000",
-    "deploy": "export NODE_ENV=production && npm run jsx && npm run html && npm run js && npm run docs:css",
-    "start": "export NODE_ENV=development && parallelshell 'npm run watch:jsx' 'npm run watch:js' 'npm run watch:html' 'npm run watch:docs:css'"
-  },
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
-  },
   "main": "index.js",
   "repository": {
     "type": "git",

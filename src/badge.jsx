@@ -1,26 +1,30 @@
 
-var React = require('react');
-var classnames = require('classnames');
-var colorbass = require('colorbass');
+import React from 'react'
+import cx from 'classnames'
+import colorbass from 'colorbass'
 
-var Badge = React.createClass({
+class Badge extends React.Component {
 
-  getDefaultProps: function() {
-    return {
-      color: false
-    };
-  },
-
-  render: function() {
-    var badgeClass = classnames('h5 bold inline-block px1 mr1 rounded ', colorbass(this.props.color).primary);
+  render() {
+    classes = cx('h5', 'bold',
+      colorbass(this.props.color).primary
+    )
     return (
-      <span className={badgeClass}>
+      <span className={classes}>
         {this.props.children}
       </span>
     )
   }
 
-});
+}
 
-module.exports = Badge;
+Badge.propTypes = {
+  color: React.PropTypes.string
+}
+
+//Badge.defaultProps = {
+//  color: false
+//}
+
+export default Badge
 

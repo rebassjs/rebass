@@ -1,22 +1,21 @@
+'use strict';
 
-module.exports = {
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
-  Button: require('./dist/button'),
-  //RadioButton: require('./dist/radio-button'),
-  Group: require('./dist/group'),
-  Navbar: require('./dist/navbar'),
-  Dropdown: require('./dist/dropdown'),
-  Modal: require('./dist/modal'),
-  Badge: require('./dist/badge'),
-  Media: require('./dist/media'),
-  Message: require('./dist/message'),
-  Panel: require('./dist/panel'),
-  Banner: require('./dist/banner'),
-  Pagination: require('./dist/pagination'),
-  Breadcrumbs: require('./dist/breadcrumbs'),
-  Progress: require('./dist/progress'),
-  Arrow: require('./dist/arrow'),
-  PageHeader: require('./dist/page-header'),
-  Icon: require('react-geomicons'),
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+var _Arrow = require('./Arrow');
+
+var _Arrow2 = _interopRequireDefault(_Arrow);
+
+var _Badge = require('./Badge');
+
+var _Badge2 = _interopRequireDefault(_Badge);
+
+exports['default'] = {
+  Arrow: _Arrow2['default'],
+  Badge: _Badge2['default']
 };
+module.exports = exports['default'];
