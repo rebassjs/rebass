@@ -18,42 +18,28 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Container = (function (_React$Component) {
+  function Container() {
+    _classCallCheck(this, Container);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Badge = (function (_React$Component) {
-  function Badge() {
-    _classCallCheck(this, Badge);
-
-    _get(Object.getPrototypeOf(Badge.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Badge, _React$Component);
+  _inherits(Container, _React$Component);
 
-  _createClass(Badge, [{
+  _createClass(Container, [{
     key: 'render',
     value: function render() {
-      var classes = (0, _classnames2['default'])('h5', 'bold', 'px1', 'inline-block', 'rounded', 'white', 'bg-' + this.props.color);
-
       return _react2['default'].createElement(
-        'span',
-        { className: classes },
+        'div',
+        { className: 'container px2' },
         this.props.children
       );
     }
   }]);
 
-  return Badge;
+  return Container;
 })(_react2['default'].Component);
 
-Badge.propTypes = {
-  color: _react2['default'].PropTypes.string
-};
-
-Badge.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Badge;
+exports['default'] = Container;
 module.exports = exports['default'];

@@ -1,24 +1,45 @@
 
 import React from 'react'
-import bass from 'basscss/src/basscss.css'
-import { Arrow, Badge } from '../..'
+import css from 'basscss.github.io/css/base.css'
+import {
+  Container,
+  PageHeader,
+  Footer
+} from '../..'
+import Components from './Components.jsx'
 
 class Root extends React.Component {
 
   render() {
+    let initialProps = {
+      __html: safeStringify(this.props)
+    }
+    console.log('Components', Components)
     return (
       <html>
         <head>
           <title>{this.props.title}</title>
-          <style dangerouslySetInnerHTML={{ __html: bass }} />
+          <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
-        <body className="p3">
-          <h1>{this.props.title} v{this.props.version}</h1>
-          <h3>Arrow</h3>
-          <Arrow />
-          <Arrow up />
-          <h3>Badge</h3>
-          <Badge>Badge</Badge>
+        <body>
+          <Container>
+            <PageHeader {...this.props}>
+              <div>v{this.props.version}</div>
+            </PageHeader>
+            <Components />
+            <Footer>
+              <div>{this.props.title}</div>
+              <div>
+                <a href='//jxnblk.com'>
+                  Made by Jxnblk
+                </a>
+              </div>
+            </Footer>
+          </Container>
+          <script id='initial-props'
+            type='application/json'
+            dangerouslySetInnerHTML={initialProps} />
+          <script src='bundle.js' />
         </body>
       </html>
     )
@@ -26,4 +47,9 @@ class Root extends React.Component {
 
 }
 
+function safeStringify(obj) {
+  return JSON.stringify(obj).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--')
+}
+
 export default Root
+

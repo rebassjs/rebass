@@ -18,42 +18,60 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Col = (function (_React$Component) {
+  function Col() {
+    _classCallCheck(this, Col);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Badge = (function (_React$Component) {
-  function Badge() {
-    _classCallCheck(this, Badge);
-
-    _get(Object.getPrototypeOf(Badge.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Col.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Badge, _React$Component);
+  _inherits(Col, _React$Component);
 
-  _createClass(Badge, [{
+  _createClass(Col, [{
     key: 'render',
     value: function render() {
-      var classes = (0, _classnames2['default'])('h5', 'bold', 'px1', 'inline-block', 'rounded', 'white', 'bg-' + this.props.color);
+      var _props = this.props;
+      var xs = _props.xs;
+      var sm = _props.sm;
+      var md = _props.md;
+      var lg = _props.lg;
+
+      var c = [];
+
+      if (xs) {
+        c.push('col');
+      } else if (sm) {
+        c.push('sm-col');
+      } else if (md) {
+        c.push('md-col');
+      } else if (lg) {
+        c.push('lg-col');
+      }
+
+      if (xs) {
+        c.push('col-' + xs);
+      }
+      if (sm) {
+        c.push('sm-col-' + sm);
+      }
+      if (md) {
+        c.push('md-col-' + md);
+      }
+      if (lg) {
+        c.push('lg-col-' + lg);
+      }
+      c.push('px2');
 
       return _react2['default'].createElement(
-        'span',
-        { className: classes },
+        'div',
+        { className: c.join(' ') },
         this.props.children
       );
     }
   }]);
 
-  return Badge;
+  return Col;
 })(_react2['default'].Component);
 
-Badge.propTypes = {
-  color: _react2['default'].PropTypes.string
-};
-
-Badge.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Badge;
+exports['default'] = Col;
 module.exports = exports['default'];

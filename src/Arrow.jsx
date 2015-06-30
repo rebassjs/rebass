@@ -4,9 +4,8 @@ import React from 'react'
 class Arrow extends React.Component {
 
   render() {
-    styles = {
+    let styles = {
       arrow: {
-        display: 'inline-block',
         width: 0,
         height: 0,
         marginLeft: '.1875em',
@@ -15,13 +14,14 @@ class Arrow extends React.Component {
         borderLeft: '.3125em solid transparent'
       }
     }
+
     if (!this.props.up) {
       styles.arrow.borderTop = '.4375em solid'
     } else if (this.props.up) {
       styles.arrow.borderBottom = '.4375em solid'
     }
 
-    return <span style={styles.arrow} />
+    return <span className='inline-block' style={styles.arrow} />
   }
 
 }

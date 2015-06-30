@@ -22,38 +22,80 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var Badge = (function (_React$Component) {
-  function Badge() {
-    _classCallCheck(this, Badge);
+var Flex = (function (_React$Component) {
+  function Flex() {
+    _classCallCheck(this, Flex);
 
-    _get(Object.getPrototypeOf(Badge.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Flex.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Badge, _React$Component);
+  _inherits(Flex, _React$Component);
 
-  _createClass(Badge, [{
+  _createClass(Flex, [{
     key: 'render',
     value: function render() {
-      var classes = (0, _classnames2['default'])('h5', 'bold', 'px1', 'inline-block', 'rounded', 'white', 'bg-' + this.props.color);
-
       return _react2['default'].createElement(
-        'span',
-        { className: classes },
+        'div',
+        {
+          className: (0, _classnames2['default'])('flex', {
+            'flex-wrap': this.props.wrap,
+            'flex-center': this.props.center,
+            'mxn2': this.props.pad
+          }) },
         this.props.children
       );
     }
   }]);
 
-  return Badge;
+  return Flex;
 })(_react2['default'].Component);
 
-Badge.propTypes = {
-  color: _react2['default'].PropTypes.string
+Flex.propTypes = {
+  wrap: _react2['default'].PropTypes.bool,
+  center: _react2['default'].PropTypes.bool,
+  pad: _react2['default'].PropTypes.bool
 };
 
-Badge.defaultProps = {
-  color: 'blue'
+Flex.defaultProps = {
+  center: true,
+  pad: true
 };
 
-exports['default'] = Badge;
+var FlexItem = (function (_React$Component2) {
+  function FlexItem() {
+    _classCallCheck(this, FlexItem);
+
+    _get(Object.getPrototypeOf(FlexItem.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _inherits(FlexItem, _React$Component2);
+
+  _createClass(FlexItem, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'div',
+        { className: (0, _classnames2['default'])({
+            'flex-auto': this.props.auto,
+            'flex-none': !this.props.auto,
+            'px2': this.props.pad
+          }) },
+        this.props.children
+      );
+    }
+  }]);
+
+  return FlexItem;
+})(_react2['default'].Component);
+
+FlexItem.propTypes = {
+  auto: _react2['default'].PropTypes.bool,
+  pad: _react2['default'].PropTypes.bool
+};
+
+FlexItem.defaultProps = {
+  pad: true
+};
+
+exports['default'] = { Flex: Flex, FlexItem: FlexItem };
 module.exports = exports['default'];

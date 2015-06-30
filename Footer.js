@@ -4,6 +4,8 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -22,38 +24,29 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var Badge = (function (_React$Component) {
-  function Badge() {
-    _classCallCheck(this, Badge);
+var Footer = (function (_React$Component) {
+  function Footer() {
+    _classCallCheck(this, Footer);
 
-    _get(Object.getPrototypeOf(Badge.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Footer.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Badge, _React$Component);
+  _inherits(Footer, _React$Component);
 
-  _createClass(Badge, [{
+  _createClass(Footer, [{
     key: 'render',
     value: function render() {
-      var classes = (0, _classnames2['default'])('h5', 'bold', 'px1', 'inline-block', 'rounded', 'white', 'bg-' + this.props.color);
-
       return _react2['default'].createElement(
-        'span',
-        { className: classes },
+        'footer',
+        _extends({}, this.props, {
+          className: 'h5 py2 mt4 border-top' }),
         this.props.children
       );
     }
   }]);
 
-  return Badge;
+  return Footer;
 })(_react2['default'].Component);
 
-Badge.propTypes = {
-  color: _react2['default'].PropTypes.string
-};
-
-Badge.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Badge;
+exports['default'] = Footer;
 module.exports = exports['default'];
