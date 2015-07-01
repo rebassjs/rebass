@@ -1,14 +1,18 @@
 
 import React from 'react'
 import css from '../docs.css'
-//import rebass from '../../rebass.css'
+import Logo from 'basscss-logo'
 import {
   Container,
+  Banner,
   PageHeader,
   Flex,
   FlexItem,
+  Link,
+  LinkBtn,
   Footer
 } from '../..'
+import ValueProps from './ValueProps.jsx'
 import Components from './Components.jsx'
 
 class Root extends React.Component {
@@ -26,10 +30,30 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
+          <Banner left>
+            <Flex>
+              <FlexItem auto>
+                <Logo />
+                <h1 className='m0'>{this.props.title}</h1>
+                <p>{this.props.description}</p>
+              </FlexItem>
+              <FlexItem>
+                <LinkBtn
+                  href='//github.com/jxnblk/rebass'
+                  color='darken-4'>
+                  GitHub
+                </LinkBtn>
+                {' '}
+                <LinkBtn
+                  href='//npmjs.com/package/rebass'
+                  color='darken-4'>
+                  npm
+                </LinkBtn>
+              </FlexItem>
+            </Flex>
+          </Banner>
           <Container>
-            <PageHeader {...this.props}>
-              <div>v{this.props.version}</div>
-            </PageHeader>
+            <ValueProps />
             <Components />
             <Footer>
               <Flex>

@@ -18,6 +18,7 @@
 }
 
 :root {
+  --container-width: 64rem;
   --btn-hover-color: color(var(--aqua) a(.125));
 }
 

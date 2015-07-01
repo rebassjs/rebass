@@ -5,40 +5,46 @@ import components from '../components-data.jsx'
 import {
   Section,
   SectionHeader,
+  Row,
+  Col
 } from '../..'
 
 class Components extends React.Component {
 
   render () {
     return (
-      <div>
-        <ul className='list-reset m2 fixed top-0 right-0'>
+      <Row>
+        <Col sm={8} md={9}>
           {components.map(function(comp, i) {
             return (
-              <li key={i}>
-                <a href={'#' + comp.name}
-                  className='h5 bold'>
-                  {comp.name}
-                </a>
-              </li>
+              <Section key={i}>
+                <SectionHeader title={comp.name} />
+                {comp.examples.map(function(example, i) {
+                  return (
+                    <Example key={i}>
+                      {example}
+                    </Example>
+                  )
+                })}
+              </Section>
             )
           })}
-        </ul>
-        {components.map(function(comp, i) {
-          return (
-            <Section key={i}>
-              <SectionHeader title={comp.name} />
-              {comp.examples.map(function(example, i) {
-                return (
-                  <Example key={i}>
-                    {example}
-                  </Example>
-                )
-              })}
-            </Section>
-          )
-        })}
-      </div>
+        </Col>
+        <Col sm={4} md={3}>
+          <ul className='list-reset m2'>
+            {components.map(function(comp, i) {
+              return (
+                <li key={i}>
+                  <a href={'#' + comp.name}
+                    className='h5 bold'>
+                    {comp.name}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </Col>
+      </Row>
     )
   }
 
