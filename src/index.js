@@ -33,6 +33,8 @@ import PanelFooter from './PanelFooter'
 import PanelBody from './PanelBody'
 import Card from './Card'
 import Banner from './Banner'
+import Space from './Space'
+import Pad from './Pad'
 
 export default {
   Arrow,
@@ -69,5 +71,7 @@ export default {
   PanelFooter,
   Card,
   Banner,
+  Space,
+  Pad,
 }
 

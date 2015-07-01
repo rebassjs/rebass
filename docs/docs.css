@@ -5,6 +5,10 @@
 @import 'basscss-input-range';
 @import 'basscss-color-input-range';
 
+@media (--breakpoint-md) {
+  .md-fixed { position: fixed }
+}
+
 /*
  * Hacks
  */

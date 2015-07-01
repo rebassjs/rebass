@@ -5,16 +5,19 @@ import components from '../components-data.jsx'
 import {
   Section,
   SectionHeader,
+  Flex,
+  FlexItem,
   Row,
   Col
 } from '../..'
+import ScrollFix from './ScrollFix.jsx'
 
 class Components extends React.Component {
 
   render () {
     return (
-      <Row>
-        <Col sm={8} md={9}>
+      <Flex sm top>
+        <FlexItem auto>
           {components.map(function(comp, i) {
             return (
               <Section key={i}>
@@ -29,22 +32,24 @@ class Components extends React.Component {
               </Section>
             )
           })}
-        </Col>
-        <Col sm={4} md={3}>
-          <ul className='list-reset m2'>
-            {components.map(function(comp, i) {
-              return (
-                <li key={i}>
-                  <a href={'#' + comp.name}
-                    className='h5 bold'>
-                    {comp.name}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </Col>
-      </Row>
+        </FlexItem>
+        <FlexItem noshrink>
+          <ScrollFix>
+            <ul className='list-reset mt4'>
+              {components.map(function(comp, i) {
+                return (
+                  <li key={i}>
+                    <a href={'#' + comp.name}
+                      className='h5 bold'>
+                      {comp.name}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </ScrollFix>
+        </FlexItem>
+      </Flex>
     )
   }
 

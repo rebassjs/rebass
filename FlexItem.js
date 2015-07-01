@@ -38,7 +38,7 @@ var FlexItem = (function (_React$Component) {
         'div',
         { className: (0, _classnames2['default'])({
             'flex-auto': this.props.auto,
-            'flex-none': !this.props.auto,
+            'flex-none': this.props.noshrink,
             'px2': this.props.pad
           }) },
         this.props.children
@@ -51,6 +51,7 @@ var FlexItem = (function (_React$Component) {
 
 FlexItem.propTypes = {
   auto: _react2['default'].PropTypes.bool,
+  noshrink: _react2['default'].PropTypes.bool,
   pad: _react2['default'].PropTypes.bool
 };
 

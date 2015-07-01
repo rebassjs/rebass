@@ -4,15 +4,15 @@ import css from '../docs.css'
 import Logo from 'basscss-logo'
 import {
   Container,
-  Banner,
   PageHeader,
   Flex,
   FlexItem,
-  Link,
-  LinkBtn,
   Footer
 } from '../..'
+import Hero from './Hero.jsx'
+import Intro from './Intro.jsx'
 import ValueProps from './ValueProps.jsx'
+import GettingStarted from './GettingStarted.jsx'
 import Components from './Components.jsx'
 
 class Root extends React.Component {
@@ -30,30 +30,11 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
-          <Banner left>
-            <Flex>
-              <FlexItem auto>
-                <Logo />
-                <h1 className='m0'>{this.props.title}</h1>
-                <p>{this.props.description}</p>
-              </FlexItem>
-              <FlexItem>
-                <LinkBtn
-                  href='//github.com/jxnblk/rebass'
-                  color='darken-4'>
-                  GitHub
-                </LinkBtn>
-                {' '}
-                <LinkBtn
-                  href='//npmjs.com/package/rebass'
-                  color='darken-4'>
-                  npm
-                </LinkBtn>
-              </FlexItem>
-            </Flex>
-          </Banner>
+          <Hero {...this.props} />
           <Container>
+            <Intro />
             <ValueProps />
+            <GettingStarted {...this.props} />
             <Components />
             <Footer>
               <Flex>

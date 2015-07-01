@@ -18,75 +18,51 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Pad = (function (_React$Component) {
+  function Pad() {
+    _classCallCheck(this, Pad);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Flex = (function (_React$Component) {
-  function Flex() {
-    _classCallCheck(this, Flex);
-
-    _get(Object.getPrototypeOf(Flex.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Pad.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Flex, _React$Component);
+  _inherits(Pad, _React$Component);
 
-  _createClass(Flex, [{
+  _createClass(Pad, [{
     key: 'render',
     value: function render() {
-      var flex = 'flex';
-      var align = 'flex-center';
       var _props = this.props;
-      var top = _props.top;
-      var bottom = _props.bottom;
-      var sm = _props.sm;
-      var md = _props.md;
-      var lg = _props.lg;
+      var x = _props.x;
+      var y = _props.y;
 
-      if (top) {
-        align = 'flex-start';
-      } else if (bottom) {
-        align = 'flex-end';
+      var px = '',
+          py = '';
+      if (x) {
+        px = 'px' + x;
       }
-      if (sm) {
-        flex = 'sm-flex';
-      } else if (md) {
-        flex = 'md-flex';
-      } else if (lg) {
-        flex = 'lg-flex';
+      if (y) {
+        py = 'py' + y;
       }
+
       return _react2['default'].createElement(
         'div',
-        {
-          className: (0, _classnames2['default'])(flex, align, {
-            'flex-wrap': this.props.wrap,
-            'mxn2': this.props.pad
-          }) },
+        { className: [px, py].join(' ') },
         this.props.children
       );
     }
   }]);
 
-  return Flex;
+  return Pad;
 })(_react2['default'].Component);
 
-Flex.propTypes = {
-  wrap: _react2['default'].PropTypes.bool,
-  sm: _react2['default'].PropTypes.bool,
-  md: _react2['default'].PropTypes.bool,
-  lg: _react2['default'].PropTypes.bool,
-  top: _react2['default'].PropTypes.bool,
-  bottom: _react2['default'].PropTypes.bool,
-  center: _react2['default'].PropTypes.bool,
-  pad: _react2['default'].PropTypes.bool
+Pad.propTypes = {
+  x: _react2['default'].PropTypes.number,
+  y: _react2['default'].PropTypes.number
 };
 
-Flex.defaultProps = {
-  top: false,
-  bottom: false,
-  center: true,
-  pad: true
+Pad.defaultProps = {
+  x: 0,
+  y: 0
 };
 
-exports['default'] = Flex;
+exports['default'] = Pad;
 module.exports = exports['default'];

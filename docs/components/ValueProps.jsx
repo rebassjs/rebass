@@ -8,27 +8,36 @@ class ValueProps extends React.Component {
     return (
       <Section>
         <Row>
-          <Col sm={4}>
+          <Col sm={6}>
+            <h4 className='h3'>
+              Component-Centric CSS
+            </h4>
+            <p className=''>
+              Basscss is designed for component-based architecture and doesn’t add the bulky overhead found in other frameworks.
+            </p>
+          </Col>
+          <Col sm={6}>
             <h4 className='h3'>
               Common Styling API
             </h4>
             <p className=''>
-              Basscss’s powerful utilities offer the ability to extend and create custom components without the need to manage component-specific styles.
+              Powerful CSS utilities offer the ability to extend and create custom UI without the need to manage component-specific styles.
             </p>
           </Col>
-          <Col sm={4}>
-            <h4 className='h3'>
-              Prop
-            </h4>
-            <p className=''>
-            </p>
-          </Col>
-          <Col sm={4}>
+          <Col sm={6}>
             <h4 className='h3'>
               Just Add State
             </h4>
             <p className=''>
-              Limited to pure render functions, these “dumb” components promote quickly building out UI in any application
+              Each component is a pure render function, ready to be hooked into any application.
+            </p>
+          </Col>
+          <Col sm={6}>
+            <h4 className='h3'>
+              Prototype and Build Faster
+            </h4>
+            <p className=''>
+              Quickly build out UI and stay focused on the design decisions that matter most. Wireframe, prototype, then ship to production.
             </p>
           </Col>
         </Row>

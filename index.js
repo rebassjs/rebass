@@ -142,6 +142,14 @@ var _Banner = require('./Banner');
 
 var _Banner2 = _interopRequireDefault(_Banner);
 
+var _Space = require('./Space');
+
+var _Space2 = _interopRequireDefault(_Space);
+
+var _Pad = require('./Pad');
+
+var _Pad2 = _interopRequireDefault(_Pad);
+
 exports['default'] = {
   Arrow: _Arrow2['default'],
   Badge: _Badge2['default'],
@@ -176,6 +184,8 @@ exports['default'] = {
   PanelBody: _PanelBody2['default'],
   PanelFooter: _PanelFooter2['default'],
   Card: _Card2['default'],
-  Banner: _Banner2['default']
+  Banner: _Banner2['default'],
+  Space: _Space2['default'],
+  Pad: _Pad2['default']
 };
 module.exports = exports['default'];
