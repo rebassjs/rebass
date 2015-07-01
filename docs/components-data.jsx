@@ -23,8 +23,14 @@ import {
   Textarea,
   Radio,
   Checkbox,
+  Range,
+  Fieldset,
+  Progress,
   Toolbar,
   NavItem,
+  Menu,
+  MenuItem,
+  Message,
 } from '..'
 
 export default [
@@ -208,6 +214,45 @@ export default [
     ]
   },
   {
+    name: 'Range',
+    examples: [
+      <Range
+        label='Range'
+        name='demo-range' />
+    ]
+  },
+  {
+    name: 'Fieldset',
+    examples: [
+      <Fieldset
+        legend='Hamburger'>
+        <Input
+          label='Fries'
+          name='demo-fries' />
+        <Input
+          label='Pickles'
+          name='demo-pickles' />
+        <Select
+          label='Temperature'
+          name='demo-temperature'
+          options={[
+            { value: 1, label: 'Rare' },
+            { value: 2, label: 'Medium Rare' },
+            { value: 3, label: 'Medium' },
+            { value: 4, label: 'Medium Well' },
+            { value: 5, label: 'Well Done' },
+          ]}/>
+      </Fieldset>
+    ]
+  },
+  {
+    name: 'Progress',
+    examples: [
+      <Progress value={32} max={100} />,
+      <Progress value={96} max={100} color='red' />,
+    ]
+  },
+  {
     name: 'Toolbar',
     examples: [
       <Toolbar>
@@ -222,8 +267,30 @@ export default [
         <NavItem href='#Toolbar'>NavItem</NavItem>
         <NavItem href='#Toolbar'>NavItem</NavItem>
         <FlexItem auto />
-        <Button>Button</Button>
+        <Button color='darken-3'>Button</Button>
       </Toolbar>
+    ]
+  },
+  {
+    name: 'Menu',
+    examples: [
+      <Menu>
+        <MenuItem href='#Menu'
+          label='MenuItem' />
+        <MenuItem href='#Menu'
+          label='MenuItem' />
+        <MenuItem href='#Menu'
+          label='MenuItem' />
+      </Menu>
+    ]
+  },
+  {
+    name: 'Message',
+    examples: [
+      <Message>Flash Message</Message>,
+      <Message>Flash Message - Yay! Success always feels great</Message>,
+      <Message color='red'>Flash Message - this one’s probably an error</Message>,
+      <Message color='red' outline>Flash Message - this one’s probably a little less severe</Message>,
     ]
   },
   {

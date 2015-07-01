@@ -20,6 +20,19 @@ import Radio from './Radio'
 import Checkbox from './Checkbox'
 import Toolbar from './Toolbar'
 import NavItem from './NavItem'
+import Menu from './Menu'
+import MenuItem from './MenuItem'
+import Message from './Message'
+import Range from './Range'
+import Fieldset from './Fieldset'
+import Progress from './Progress'
+//import Panel from './Panel'
+//import PanelHeader from './PanelHeader'
+//import PanelFooter from './PanelFooter'
+//import PanelBody from './PanelBody'
+//import Card from './Card'
+//import Banner from './Banner'
+//import Overlay from './Overlay'
 
 export default {
   Arrow,
@@ -44,7 +57,13 @@ export default {
   Textarea,
   Radio,
   Checkbox,
+  Range,
+  Fieldset,
+  Progress,
   Toolbar,
   NavItem,
+  Menu,
+  MenuItem,
+  Message,
 }
 

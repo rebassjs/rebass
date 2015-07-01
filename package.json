@@ -13,6 +13,10 @@
   },
   "dependencies": {
     "basscss": "^7.0.0",
+    "basscss-color-input-range": "^1.0.0",
+    "basscss-color-progress": "^1.0.0",
+    "basscss-input-range": "^1.1.5",
+    "basscss-progress": "^1.0.5",
     "classnames": "^1.1.4",
     "colorbass": "^1.0.0"
   },

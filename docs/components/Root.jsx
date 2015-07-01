@@ -1,6 +1,10 @@
 
 import React from 'react'
 import css from 'basscss.github.io/css/base.css'
+import progress from 'basscss-progress/index.css'
+import colorProgress from 'basscss-color-progress/index.css'
+import range from 'basscss-input-range/index.css'
+import colorRange from 'basscss-color-input-range/index.css'
 import {
   Container,
   PageHeader,
@@ -18,8 +22,13 @@ class Root extends React.Component {
     return (
       <html>
         <head>
+          <meta charSet='utf-8' />
           <title>{this.props.title}</title>
           <style dangerouslySetInnerHTML={{ __html: css }} />
+          <style dangerouslySetInnerHTML={{ __html: progress }} />
+          <style dangerouslySetInnerHTML={{ __html: colorProgress }} />
+          <style dangerouslySetInnerHTML={{ __html: range }} />
+          <style dangerouslySetInnerHTML={{ __html: colorRange }} />
         </head>
         <body>
           <Container>

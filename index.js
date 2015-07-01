@@ -86,6 +86,38 @@ var _NavItem = require('./NavItem');
 
 var _NavItem2 = _interopRequireDefault(_NavItem);
 
+var _Menu = require('./Menu');
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+var _MenuItem = require('./MenuItem');
+
+var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+var _Message = require('./Message');
+
+var _Message2 = _interopRequireDefault(_Message);
+
+var _Range = require('./Range');
+
+var _Range2 = _interopRequireDefault(_Range);
+
+var _Fieldset = require('./Fieldset');
+
+var _Fieldset2 = _interopRequireDefault(_Fieldset);
+
+var _Progress = require('./Progress');
+
+var _Progress2 = _interopRequireDefault(_Progress);
+
+//import Panel from './Panel'
+//import PanelHeader from './PanelHeader'
+//import PanelFooter from './PanelFooter'
+//import PanelBody from './PanelBody'
+//import Card from './Card'
+//import Banner from './Banner'
+//import Overlay from './Overlay'
+
 exports['default'] = {
   Arrow: _Arrow2['default'],
   Badge: _Badge2['default'],
@@ -109,7 +141,13 @@ exports['default'] = {
   Textarea: _Textarea2['default'],
   Radio: _Radio2['default'],
   Checkbox: _Checkbox2['default'],
+  Range: _Range2['default'],
+  Fieldset: _Fieldset2['default'],
+  Progress: _Progress2['default'],
   Toolbar: _Toolbar2['default'],
-  NavItem: _NavItem2['default']
+  NavItem: _NavItem2['default'],
+  Menu: _Menu2['default'],
+  MenuItem: _MenuItem2['default'],
+  Message: _Message2['default']
 };
 module.exports = exports['default'];

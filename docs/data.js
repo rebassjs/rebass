@@ -2,7 +2,7 @@
 var pkg = require('../package.json')
 
 module.exports = {
-  title: 'rebass',
+  title: 'Rebass',
   description: pkg.description,
   version: pkg.version,
 }
