@@ -1,0 +1,23 @@
+
+@import 'basscss.github.io/css/base.css';
+@import 'basscss-progress';
+@import 'basscss-color-progress';
+@import 'basscss-input-range';
+@import 'basscss-color-input-range';
+
+/*
+ * Hacks
+ */
+
+.btn-transparent {}
+
+.btn:not(.btn-primary):not(.btn-outline):hover,
+.btn-transparent:hover {
+  border-color: var(--btn-hover-color);
+  box-shadow: inset 0 99999px var(--btn-hover-color);
+}
+
+:root {
+  --btn-hover-color: color(var(--aqua) a(.125));
+}
+

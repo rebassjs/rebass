@@ -18,29 +18,37 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var Menu = (function (_React$Component) {
-  function Menu() {
-    _classCallCheck(this, Menu);
+var Card = (function (_React$Component) {
+  function Card() {
+    _classCallCheck(this, Card);
 
-    _get(Object.getPrototypeOf(Menu.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Card.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Menu, _React$Component);
+  _inherits(Card, _React$Component);
 
-  _createClass(Menu, [{
+  _createClass(Card, [{
     key: 'render',
     value: function render() {
-
       return _react2['default'].createElement(
         'div',
-        { className: 'bg-white border rounded' },
-        this.props.children
+        { className: 'mb3 border rounded' },
+        this.props.image,
+        _react2['default'].createElement(
+          'div',
+          { className: 'p1' },
+          this.props.children
+        )
       );
     }
   }]);
 
-  return Menu;
+  return Card;
 })(_react2['default'].Component);
 
-exports['default'] = Menu;
+Card.propTypes = {
+  image: _react2['default'].PropTypes.element
+};
+
+exports['default'] = Card;
 module.exports = exports['default'];

@@ -1,12 +1,12 @@
 
 import React from 'react'
 
-class Menu extends React.Component {
+class Panel extends React.Component {
 
   render () {
-
     return (
-      <div className='bg-white border rounded'>
+      <div
+        className='border rounded'>
         {this.props.children}
       </div>
     )
@@ -14,5 +14,5 @@ class Menu extends React.Component {
 
 }
 
-export default Menu
+export default Panel
 

@@ -1,13 +1,12 @@
 
 import React from 'react'
-import css from 'basscss.github.io/css/base.css'
-import progress from 'basscss-progress/index.css'
-import colorProgress from 'basscss-color-progress/index.css'
-import range from 'basscss-input-range/index.css'
-import colorRange from 'basscss-color-input-range/index.css'
+import css from '../docs.css'
+//import rebass from '../../rebass.css'
 import {
   Container,
   PageHeader,
+  Flex,
+  FlexItem,
   Footer
 } from '../..'
 import Components from './Components.jsx'
@@ -25,10 +24,6 @@ class Root extends React.Component {
           <meta charSet='utf-8' />
           <title>{this.props.title}</title>
           <style dangerouslySetInnerHTML={{ __html: css }} />
-          <style dangerouslySetInnerHTML={{ __html: progress }} />
-          <style dangerouslySetInnerHTML={{ __html: colorProgress }} />
-          <style dangerouslySetInnerHTML={{ __html: range }} />
-          <style dangerouslySetInnerHTML={{ __html: colorRange }} />
         </head>
         <body>
           <Container>
@@ -37,12 +32,15 @@ class Root extends React.Component {
             </PageHeader>
             <Components />
             <Footer>
-              <div>{this.props.title}</div>
-              <div>
-                <a href='//jxnblk.com'>
+              <Flex>
+                <FlexItem auto>
+                  {this.props.title} v{this.props.version}
+                </FlexItem>
+                <a href='//jxnblk.com'
+                  className='btn'>
                   Made by Jxnblk
                 </a>
-              </div>
+              </Flex>
             </Footer>
           </Container>
           <script id='initial-props'

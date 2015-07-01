@@ -44,7 +44,7 @@ var PageHeader = (function (_React$Component) {
       return _react2['default'].createElement(
         'header',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('flex', 'flex-wrap', 'py3', 'mb4', 'border-bottom', this.props.center ? 'flex-center' : 'flex-baseline') }),
+          className: (0, _classnames2['default'])('flex', 'flex-wrap', this.props.center ? 'flex-center' : 'flex-baseline', 'py3', 'mb4', 'border-bottom') }),
         _react2['default'].createElement(
           'div',
           { className: 'flex-auto' },

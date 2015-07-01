@@ -18,29 +18,82 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var Menu = (function (_React$Component) {
-  function Menu() {
-    _classCallCheck(this, Menu);
+var Banner = (function (_React$Component) {
+  function Banner() {
+    _classCallCheck(this, Banner);
 
-    _get(Object.getPrototypeOf(Menu.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Banner.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Menu, _React$Component);
+  _inherits(Banner, _React$Component);
 
-  _createClass(Menu, [{
+  _createClass(Banner, [{
     key: 'render',
     value: function render() {
+      var styles = {
+        container: {
+          textAlign: 'center',
+          backgroundImage: this.props.bgImage,
+          backgroundPostion: this.props.bgPosition,
+          backgroundSize: this.props.bgSize
+        },
+        header: {
+          minHeight: '1.5em'
+        },
+        footer: {
+          minHeight: '1.5em'
+        }
+      };
+      if (this.props.left) {
+        styles.container.textAlign = 'left';
+      } else if (this.props.right) {
+        styles.container.textAlign = 'right';
+      }
 
       return _react2['default'].createElement(
         'div',
-        { className: 'bg-white border rounded' },
-        this.props.children
+        { className: ['white', 'bg-' + this.props.bgColor].join(' '),
+          style: styles.container },
+        _react2['default'].createElement(
+          'div',
+          {
+            className: 'p2',
+            style: styles.header },
+          this.props.header
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'px3 py4' },
+          this.props.children
+        ),
+        _react2['default'].createElement(
+          'div',
+          {
+            className: 'p2',
+            style: styles.footer },
+          this.props.footer
+        )
       );
     }
   }]);
 
-  return Menu;
+  return Banner;
 })(_react2['default'].Component);
 
-exports['default'] = Menu;
+Banner.propTypes = {
+  left: _react2['default'].PropTypes.bool,
+  right: _react2['default'].PropTypes.bool,
+  bgColor: _react2['default'].PropTypes.string,
+  bgImage: _react2['default'].PropTypes.string,
+  bgSize: _react2['default'].PropTypes.string,
+  bgPosition: _react2['default'].PropTypes.string
+};
+
+Banner.defaultProps = {
+  bgColor: 'black',
+  bgSize: 'cover',
+  bgPosition: 'center'
+};
+
+exports['default'] = Banner;
 module.exports = exports['default'];

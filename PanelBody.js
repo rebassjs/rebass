@@ -18,29 +18,28 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var Menu = (function (_React$Component) {
-  function Menu() {
-    _classCallCheck(this, Menu);
+var PanelBody = (function (_React$Component) {
+  function PanelBody() {
+    _classCallCheck(this, PanelBody);
 
-    _get(Object.getPrototypeOf(Menu.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(PanelBody.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Menu, _React$Component);
+  _inherits(PanelBody, _React$Component);
 
-  _createClass(Menu, [{
+  _createClass(PanelBody, [{
     key: 'render',
     value: function render() {
-
       return _react2['default'].createElement(
         'div',
-        { className: 'bg-white border rounded' },
+        { className: 'p2' },
         this.props.children
       );
     }
   }]);
 
-  return Menu;
+  return PanelBody;
 })(_react2['default'].Component);
 
-exports['default'] = Menu;
+exports['default'] = PanelBody;
 module.exports = exports['default'];

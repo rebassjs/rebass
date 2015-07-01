@@ -13,8 +13,6 @@ import {
   Flex,
   FlexItem,
   Media,
-  MediaImg,
-  MediaBody,
   Link,
   LinkBtn,
   Button,
@@ -31,6 +29,12 @@ import {
   Menu,
   MenuItem,
   Message,
+  Panel,
+  PanelHeader,
+  PanelBody,
+  PanelFooter,
+  Card,
+  Banner,
 } from '..'
 
 export default [
@@ -58,29 +62,19 @@ export default [
   {
     name: 'Media',
     examples: [
-      <Media>
-        <MediaImg>
-          <img src='//placehold.it/128' />
-        </MediaImg>
-        <MediaBody>
-          Media Object
-        </MediaBody>
+      <Media
+        image={<img src='//placehold.it/128' />}>
+        Media Object
       </Media>,
-      <Media>
-        <MediaImg middle>
-          <img src='//placehold.it/128' />
-        </MediaImg>
-        <MediaBody middle>
-          Media Object
-        </MediaBody>
+      <Media
+        middle
+        image={<img src='//placehold.it/128' />}>
+        Media Object
       </Media>,
-      <Media>
-        <MediaBody middle>
-          Media Object
-        </MediaBody>
-        <MediaImg middle>
-          <img src='//placehold.it/128' width='128' />
-        </MediaImg>
+      <Media
+        bottom
+        image={<img src='//placehold.it/128' />}>
+        Media Object
       </Media>,
     ]
   },
@@ -308,4 +302,58 @@ export default [
       <Arrow up />
     ]
   },
+  {
+    name: 'Panel',
+    examples: [
+      <Panel>
+        <PanelHeader title='PanelHeader' />
+        <PanelBody>
+          <Input
+            label='Username'
+            name='demo-username' />
+          <Input
+            label='Password'
+            name='demo-password' />
+          <Button>Sign In</Button>
+        </PanelBody>
+        <PanelFooter text='PanelFooter' />
+      </Panel>
+    ]
+  },
+  {
+    name: 'Card',
+    examples: [
+      <Row>
+        <Col sm={6} md={4}>
+          <Card
+            image={<img src='//placehold.it/512x384' />}>
+            <Media
+              image={<img src='//placehold.it/48'
+                className='circle'/>}>
+              <h3 className='h4 m0'>Nested Media Object</h3>
+            </Media>
+          </Card>
+        </Col>
+      </Row>
+    ]
+  },
+  {
+    name: 'Banner',
+    examples: [
+      <Banner>
+        <h1 className='m0'>Default Banner</h1>
+      </Banner>,
+      <Banner
+        header='BannerHeader'
+        footer='BannerFooter'
+        bgImage='url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)'>
+        <h1 className='m0'>Banner with Background Image</h1>
+      </Banner>,
+      <Banner
+        left
+        bgImage='url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)'>
+        <h1 className='m0'>Left Aligned Banner</h1>
+      </Banner>
+    ]
+  }
 ]

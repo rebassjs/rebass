@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Example from 'rebass-example'
+import Example from './Example.jsx'
 import components from '../components-data.jsx'
 import {
   Section,

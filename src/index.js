@@ -8,8 +8,9 @@ import PageHeader from './PageHeader'
 import Section from './Section'
 import SectionHeader from './SectionHeader'
 import Footer from './Footer'
-import { Flex, FlexItem } from './Flex'
-import { Media, MediaImg, MediaBody } from './Media'
+import Flex from './Flex'
+import FlexItem from './FlexItem'
+import Media from './Media'
 import Link from './Link'
 import LinkBtn from './LinkBtn'
 import Button from './Button'
@@ -26,13 +27,12 @@ import Message from './Message'
 import Range from './Range'
 import Fieldset from './Fieldset'
 import Progress from './Progress'
-//import Panel from './Panel'
-//import PanelHeader from './PanelHeader'
-//import PanelFooter from './PanelFooter'
-//import PanelBody from './PanelBody'
-//import Card from './Card'
-//import Banner from './Banner'
-//import Overlay from './Overlay'
+import Panel from './Panel'
+import PanelHeader from './PanelHeader'
+import PanelFooter from './PanelFooter'
+import PanelBody from './PanelBody'
+import Card from './Card'
+import Banner from './Banner'
 
 export default {
   Arrow,
@@ -47,8 +47,6 @@ export default {
   Flex,
   FlexItem,
   Media,
-  MediaImg,
-  MediaBody,
   Link,
   LinkBtn,
   Button,
@@ -65,5 +63,11 @@ export default {
   Menu,
   MenuItem,
   Message,
+  Panel,
+  PanelHeader,
+  PanelBody,
+  PanelFooter,
+  Card,
+  Banner,
 }
 

@@ -61,41 +61,5 @@ Flex.defaultProps = {
   pad: true
 };
 
-var FlexItem = (function (_React$Component2) {
-  function FlexItem() {
-    _classCallCheck(this, FlexItem);
-
-    _get(Object.getPrototypeOf(FlexItem.prototype), 'constructor', this).apply(this, arguments);
-  }
-
-  _inherits(FlexItem, _React$Component2);
-
-  _createClass(FlexItem, [{
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(
-        'div',
-        { className: (0, _classnames2['default'])({
-            'flex-auto': this.props.auto,
-            'flex-none': !this.props.auto,
-            'px2': this.props.pad
-          }) },
-        this.props.children
-      );
-    }
-  }]);
-
-  return FlexItem;
-})(_react2['default'].Component);
-
-FlexItem.propTypes = {
-  auto: _react2['default'].PropTypes.bool,
-  pad: _react2['default'].PropTypes.bool
-};
-
-FlexItem.defaultProps = {
-  pad: true
-};
-
-exports['default'] = { Flex: Flex, FlexItem: FlexItem };
+exports['default'] = Flex;
 module.exports = exports['default'];

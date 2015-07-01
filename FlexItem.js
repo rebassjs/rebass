@@ -18,29 +18,45 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var Menu = (function (_React$Component) {
-  function Menu() {
-    _classCallCheck(this, Menu);
+var _classnames = require('classnames');
 
-    _get(Object.getPrototypeOf(Menu.prototype), 'constructor', this).apply(this, arguments);
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var FlexItem = (function (_React$Component) {
+  function FlexItem() {
+    _classCallCheck(this, FlexItem);
+
+    _get(Object.getPrototypeOf(FlexItem.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Menu, _React$Component);
+  _inherits(FlexItem, _React$Component);
 
-  _createClass(Menu, [{
+  _createClass(FlexItem, [{
     key: 'render',
     value: function render() {
-
       return _react2['default'].createElement(
         'div',
-        { className: 'bg-white border rounded' },
+        { className: (0, _classnames2['default'])({
+            'flex-auto': this.props.auto,
+            'flex-none': !this.props.auto,
+            'px2': this.props.pad
+          }) },
         this.props.children
       );
     }
   }]);
 
-  return Menu;
+  return FlexItem;
 })(_react2['default'].Component);
 
-exports['default'] = Menu;
+FlexItem.propTypes = {
+  auto: _react2['default'].PropTypes.bool,
+  pad: _react2['default'].PropTypes.bool
+};
+
+FlexItem.defaultProps = {
+  pad: true
+};
+
+exports['default'] = FlexItem;
 module.exports = exports['default'];

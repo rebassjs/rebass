@@ -16,7 +16,7 @@ module.exports = {
     loaders: [
       { test: /(\.js$|\.jsx?$)/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /(^basscss|\.css$)/, exclude: /colors\.css/, loader: 'css-loader!cssnext-loader' }
+      { test: /\.css$/, exclude: /colors\.css/, loader: 'css-loader!cssnext-loader' }
     ]
   },
 
@@ -27,9 +27,6 @@ module.exports = {
   cssnext: {
     compress: true,
     features: {
-      //import : {
-      //  path : ['node_modules']
-      //},
       rem: false,
       pseudoElements: false,
       colorRgba: false

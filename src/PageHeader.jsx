@@ -11,10 +11,10 @@ class PageHeader extends React.Component {
         className={cx(
           'flex',
           'flex-wrap',
-          this.props.center ? 'flex-center' : 'flex-baseline'
+          (this.props.center ? 'flex-center' : 'flex-baseline'),
           'py3',
           'mb4',
-          'border-bottom',
+          'border-bottom'
         )}>
         <div className='flex-auto'>
           <h1 className='m0'>

@@ -44,7 +44,15 @@ var _Footer2 = _interopRequireDefault(_Footer);
 
 var _Flex = require('./Flex');
 
+var _Flex2 = _interopRequireDefault(_Flex);
+
+var _FlexItem = require('./FlexItem');
+
+var _FlexItem2 = _interopRequireDefault(_FlexItem);
+
 var _Media = require('./Media');
+
+var _Media2 = _interopRequireDefault(_Media);
 
 var _Link = require('./Link');
 
@@ -110,13 +118,29 @@ var _Progress = require('./Progress');
 
 var _Progress2 = _interopRequireDefault(_Progress);
 
-//import Panel from './Panel'
-//import PanelHeader from './PanelHeader'
-//import PanelFooter from './PanelFooter'
-//import PanelBody from './PanelBody'
-//import Card from './Card'
-//import Banner from './Banner'
-//import Overlay from './Overlay'
+var _Panel = require('./Panel');
+
+var _Panel2 = _interopRequireDefault(_Panel);
+
+var _PanelHeader = require('./PanelHeader');
+
+var _PanelHeader2 = _interopRequireDefault(_PanelHeader);
+
+var _PanelFooter = require('./PanelFooter');
+
+var _PanelFooter2 = _interopRequireDefault(_PanelFooter);
+
+var _PanelBody = require('./PanelBody');
+
+var _PanelBody2 = _interopRequireDefault(_PanelBody);
+
+var _Card = require('./Card');
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _Banner = require('./Banner');
+
+var _Banner2 = _interopRequireDefault(_Banner);
 
 exports['default'] = {
   Arrow: _Arrow2['default'],
@@ -128,11 +152,9 @@ exports['default'] = {
   Section: _Section2['default'],
   SectionHeader: _SectionHeader2['default'],
   Footer: _Footer2['default'],
-  Flex: _Flex.Flex,
-  FlexItem: _Flex.FlexItem,
-  Media: _Media.Media,
-  MediaImg: _Media.MediaImg,
-  MediaBody: _Media.MediaBody,
+  Flex: _Flex2['default'],
+  FlexItem: _FlexItem2['default'],
+  Media: _Media2['default'],
   Link: _Link2['default'],
   LinkBtn: _LinkBtn2['default'],
   Button: _Button2['default'],
@@ -148,6 +170,12 @@ exports['default'] = {
   NavItem: _NavItem2['default'],
   Menu: _Menu2['default'],
   MenuItem: _MenuItem2['default'],
-  Message: _Message2['default']
+  Message: _Message2['default'],
+  Panel: _Panel2['default'],
+  PanelHeader: _PanelHeader2['default'],
+  PanelBody: _PanelBody2['default'],
+  PanelFooter: _PanelFooter2['default'],
+  Card: _Card2['default'],
+  Banner: _Banner2['default']
 };
 module.exports = exports['default'];

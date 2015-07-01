@@ -18,10 +18,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
 var Media = (function (_React$Component) {
   function Media() {
     _classCallCheck(this, Media);
@@ -34,10 +30,31 @@ var Media = (function (_React$Component) {
   _createClass(Media, [{
     key: 'render',
     value: function render() {
+      var middle = this.props.middle;
+      var bottom = this.props.bottom;
+      var alignClassName = 'align-top';
+      if (this.props.middle) {
+        alignClassName = 'align-middle';
+      } else if (this.props.bottom) {
+        alignClassName = 'align-bottom';
+      }
+      var images = _react2['default'].Children.map(this.props.image, function (child) {
+        var c = _react2['default'].cloneElement(child, { style: { maxWidth: 'none' } });
+        return c;
+      });
       return _react2['default'].createElement(
         'div',
-        { className: 'overflow-hidden mb2 mxn1' },
-        this.props.children
+        { className: 'overflow-hidden mxn1' },
+        _react2['default'].createElement(
+          'div',
+          { className: ['table-cell', 'px1', alignClassName].join(' ') },
+          images
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: ['table-cell', 'px1', 'col-12', alignClassName].join(' ') },
+          this.props.children
+        )
       );
     }
   }]);
@@ -45,73 +62,11 @@ var Media = (function (_React$Component) {
   return Media;
 })(_react2['default'].Component);
 
-var MediaImg = (function (_React$Component2) {
-  function MediaImg() {
-    _classCallCheck(this, MediaImg);
-
-    _get(Object.getPrototypeOf(MediaImg.prototype), 'constructor', this).apply(this, arguments);
-  }
-
-  _inherits(MediaImg, _React$Component2);
-
-  _createClass(MediaImg, [{
-    key: 'render',
-    value: function render() {
-      var children = _react2['default'].Children.map(this.props.children, function (child) {
-        var c = _react2['default'].cloneElement(child, { style: { maxWidth: 'none' } });
-        return c;
-      });
-      return _react2['default'].createElement(
-        'div',
-        { className: (0, _classnames2['default'])('table-cell', 'px1', {
-            'align-middle': this.props.middle,
-            'align-bottom': this.props.bottom,
-            'align-top': !this.props.middle && !this.props.bottom
-          }) },
-        children
-      );
-    }
-  }]);
-
-  return MediaImg;
-})(_react2['default'].Component);
-
-MediaImg.propTypes = {
+Media.propTypes = {
+  image: _react2['default'].PropTypes.element,
   middle: _react2['default'].PropTypes.bool,
   bottom: _react2['default'].PropTypes.bool
 };
 
-var MediaBody = (function (_React$Component3) {
-  function MediaBody() {
-    _classCallCheck(this, MediaBody);
-
-    _get(Object.getPrototypeOf(MediaBody.prototype), 'constructor', this).apply(this, arguments);
-  }
-
-  _inherits(MediaBody, _React$Component3);
-
-  _createClass(MediaBody, [{
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(
-        'div',
-        { className: (0, _classnames2['default'])('table-cell', 'px1', 'col-12', {
-            'align-middle': this.props.middle,
-            'align-bottom': this.props.bottom,
-            'align-top': !this.props.middle && !this.props.bottom
-          }) },
-        this.props.children
-      );
-    }
-  }]);
-
-  return MediaBody;
-})(_react2['default'].Component);
-
-MediaBody.propTypes = {
-  middle: _react2['default'].PropTypes.bool,
-  bottom: _react2['default'].PropTypes.bool
-};
-
-exports['default'] = { Media: Media, MediaImg: MediaImg, MediaBody: MediaBody };
+exports['default'] = Media;
 module.exports = exports['default'];
