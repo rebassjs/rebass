@@ -9,6 +9,17 @@ import Section from './Section'
 import SectionHeader from './SectionHeader'
 import Footer from './Footer'
 import { Flex, FlexItem } from './Flex'
+import { Media, MediaImg, MediaBody } from './Media'
+import Link from './Link'
+import LinkBtn from './LinkBtn'
+import Button from './Button'
+import Input from './Input'
+import Select from './Select'
+import Textarea from './Textarea'
+import Radio from './Radio'
+import Checkbox from './Checkbox'
+import Toolbar from './Toolbar'
+import NavItem from './NavItem'
 
 export default {
   Arrow,
@@ -21,6 +32,19 @@ export default {
   SectionHeader,
   Footer,
   Flex,
-  FlexItem
+  FlexItem,
+  Media,
+  MediaImg,
+  MediaBody,
+  Link,
+  LinkBtn,
+  Button,
+  Input,
+  Select,
+  Textarea,
+  Radio,
+  Checkbox,
+  Toolbar,
+  NavItem,
 }
 

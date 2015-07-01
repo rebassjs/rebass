@@ -20,41 +20,43 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var _classnames = require('classnames');
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var Button = (function (_React$Component) {
+  function Button() {
+    _classCallCheck(this, Button);
+
+    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(Button, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(Button, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
+      var color = this.props.color;
+      var outline = this.props.outline;
       return _react2['default'].createElement(
-        'header',
+        'button',
         _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
-        _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
-        ),
+          className: (0, _classnames2['default'])('btn', color ? outline ? color : 'bg-' + color : false, {
+            'btn-primary': !outline,
+            'btn-outline': outline
+          }) }),
         this.props.children
       );
     }
   }]);
 
-  return SectionHeader;
+  return Button;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+Button.propTypes = {
+  color: _react2['default'].PropTypes.string,
+  outline: _react2['default'].PropTypes.bool
+};
+
+exports['default'] = Button;
 module.exports = exports['default'];

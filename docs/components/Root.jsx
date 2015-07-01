@@ -14,7 +14,7 @@ class Root extends React.Component {
     let initialProps = {
       __html: safeStringify(this.props)
     }
-    console.log('Components', Components)
+    console.log('Components')
     return (
       <html>
         <head>

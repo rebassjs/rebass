@@ -20,41 +20,29 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var NavItem = (function (_React$Component) {
+  function NavItem() {
+    _classCallCheck(this, NavItem);
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(NavItem.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(NavItem, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(NavItem, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
       return _react2['default'].createElement(
-        'header',
+        'a',
         _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
-        _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
-        ),
+          className: 'btn' }),
         this.props.children
       );
     }
   }]);
 
-  return SectionHeader;
+  return NavItem;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+exports['default'] = NavItem;
 module.exports = exports['default'];

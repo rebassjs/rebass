@@ -20,41 +20,40 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var _classnames = require('classnames');
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var LinkBtn = (function (_React$Component) {
+  function LinkBtn() {
+    _classCallCheck(this, LinkBtn);
+
+    _get(Object.getPrototypeOf(LinkBtn.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(LinkBtn, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(LinkBtn, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
       return _react2['default'].createElement(
-        'header',
+        'a',
         _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
-        _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
-        ),
+          className: (0, _classnames2['default'])('btn', {
+            'btn-primary': !this.props.outline,
+            'btn-outline': this.props.outline
+          }) }),
         this.props.children
       );
     }
   }]);
 
-  return SectionHeader;
+  return LinkBtn;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+LinkBtn.propTypes = {
+  outline: _react2['default'].PropTypes.bool
+};
+
+exports['default'] = LinkBtn;
 module.exports = exports['default'];

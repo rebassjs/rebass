@@ -20,41 +20,54 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var Select = (function (_React$Component) {
+  function Select() {
+    _classCallCheck(this, Select);
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Select.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(Select, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(Select, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
+      var type = this.props.type || 'text';
       return _react2['default'].createElement(
-        'header',
-        _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
+        'div',
+        { className: 'mb2' },
         _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
+          'label',
+          {
+            htmlFor: this.props.name,
+            className: 'h5 bold block' },
+          this.props.label
         ),
-        this.props.children
+        _react2['default'].createElement(
+          'select',
+          _extends({}, this.props, {
+            className: 'block col-12 field' }),
+          this.props.options.map(function (option, i) {
+            return _react2['default'].createElement(
+              'option',
+              { key: i,
+                value: option.value },
+              option.label
+            );
+          })
+        )
       );
     }
   }]);
 
-  return SectionHeader;
+  return Select;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+Select.propTypes = {
+  label: _react2['default'].PropTypes.string.isRequired,
+  name: _react2['default'].PropTypes.string.isRequired,
+  options: _react2['default'].PropTypes.array.isRequired
+};
+
+exports['default'] = Select;
 module.exports = exports['default'];

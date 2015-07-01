@@ -20,41 +20,41 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var Radio = (function (_React$Component) {
+  function Radio() {
+    _classCallCheck(this, Radio);
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Radio.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(Radio, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(Radio, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
+      var type = this.props.type || 'text';
       return _react2['default'].createElement(
-        'header',
-        _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
+        'div',
+        { className: 'mb2' },
         _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
-        ),
-        this.props.children
+          'label',
+          { className: 'h5 bold block' },
+          _react2['default'].createElement('input', _extends({}, this.props, {
+            type: 'radio',
+            className: 'mr1' })),
+          this.props.label
+        )
       );
     }
   }]);
 
-  return SectionHeader;
+  return Radio;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+Radio.propTypes = {
+  label: _react2['default'].PropTypes.string.isRequired,
+  name: _react2['default'].PropTypes.string.isRequired
+};
+
+exports['default'] = Radio;
 module.exports = exports['default'];

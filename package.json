@@ -1,7 +1,7 @@
 {
   "name": "rebass",
   "version": "0.1.0",
-  "description": "React UI components for Basscss",
+  "description": "Stateless React UI components for Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {

@@ -20,41 +20,41 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var Checkbox = (function (_React$Component) {
+  function Checkbox() {
+    _classCallCheck(this, Checkbox);
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Checkbox.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(Checkbox, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(Checkbox, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
+      var type = this.props.type || 'text';
       return _react2['default'].createElement(
-        'header',
-        _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
+        'div',
+        { className: 'mb2' },
         _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
-        ),
-        this.props.children
+          'label',
+          { className: 'h5 bold block' },
+          _react2['default'].createElement('input', _extends({}, this.props, {
+            type: 'checkbox',
+            className: 'mr1' })),
+          this.props.label
+        )
       );
     }
   }]);
 
-  return SectionHeader;
+  return Checkbox;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+Checkbox.propTypes = {
+  label: _react2['default'].PropTypes.string.isRequired,
+  name: _react2['default'].PropTypes.string.isRequired
+};
+
+exports['default'] = Checkbox;
 module.exports = exports['default'];

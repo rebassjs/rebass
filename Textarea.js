@@ -20,41 +20,41 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var SectionHeader = (function (_React$Component) {
-  function SectionHeader() {
-    _classCallCheck(this, SectionHeader);
+var Textarea = (function (_React$Component) {
+  function Textarea() {
+    _classCallCheck(this, Textarea);
 
-    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Textarea.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(SectionHeader, _React$Component);
+  _inherits(Textarea, _React$Component);
 
-  _createClass(SectionHeader, [{
+  _createClass(Textarea, [{
     key: 'render',
     value: function render() {
-      var id = this.props.id || this.props.title || '!';
       return _react2['default'].createElement(
-        'header',
-        _extends({}, this.props, {
-          id: id,
-          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
+        'div',
+        { className: 'mb2' },
         _react2['default'].createElement(
-          'h2',
-          { className: 'flex-auto m0' },
-          _react2['default'].createElement(
-            'a',
-            { href: '#' + id,
-              className: 'color-inherit' },
-            this.props.title
-          )
+          'label',
+          {
+            htmlFor: this.props.name,
+            className: 'h5 bold block' },
+          this.props.label
         ),
-        this.props.children
+        _react2['default'].createElement('textarea', _extends({}, this.props, {
+          className: 'block col-12 field' }))
       );
     }
   }]);
 
-  return SectionHeader;
+  return Textarea;
 })(_react2['default'].Component);
 
-exports['default'] = SectionHeader;
+Textarea.propTypes = {
+  label: _react2['default'].PropTypes.string.isRequired,
+  name: _react2['default'].PropTypes.string.isRequired
+};
+
+exports['default'] = Textarea;
 module.exports = exports['default'];

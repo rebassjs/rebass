@@ -1,18 +1,10 @@
 
 import React from 'react'
 import Example from 'rebass-example'
+import components from '../components-data.jsx'
 import {
-  Arrow,
-  Badge,
-  Container,
-  Row,
-  Col,
-  PageHeader,
   Section,
   SectionHeader,
-  Footer,
-  Flex,
-  FlexItem
 } from '../..'
 
 class Components extends React.Component {
@@ -20,110 +12,38 @@ class Components extends React.Component {
   render () {
     return (
       <div>
-        <Section>
-          <SectionHeader title='Container' />
-          <Example>
-            <Container>
-              <div>Container children</div>
-            </Container>
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Grid' />
-          <Example>
-            <Container>
-              <Row>
-                <Col xs={6}>Col 6</Col>
-                <Col xs={6}>Col 6</Col>
-              </Row>
-            </Container>
-          </Example>
-          <Example>
-            <Container>
-              <Row>
-                <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-                <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-                <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-                <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-                <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-                <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-              </Row>
-            </Container>
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Media' />
-          <Example>
-            Media TK
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Flex' />
-          <Example>
-            <Flex>
-              <FlexItem auto>FlexItem</FlexItem>
-              <FlexItem>FlexItem</FlexItem>
-              <FlexItem>FlexItem</FlexItem>
-            </Flex>
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Button' />
-          <Example>
-            Button TK
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Arrow' id='Arrow' />
-          <Example>
-            <Arrow />
-          </Example>
-          <Example>
-            <Arrow up />
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Badge'>
-            Badge
-          </SectionHeader>
-          <Example>
-            <Badge>Badge</Badge>
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Input' />
-          <Example>
-            Input TK
-          </Example>
-        </Section>
+        <ul className='list-reset m2 fixed top-0 right-0'>
+          {components.map(function(comp, i) {
+            return (
+              <li key={i}>
+                <a href={'#' + comp.name}
+                  className='h5 bold'>
+                  {comp.name}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+        {components.map(function(comp, i) {
+          return (
+            <Section key={i}>
+              <SectionHeader title={comp.name} />
+              {comp.examples.map(function(example, i) {
+                return (
+                  <Example key={i}>
+                    {example}
+                  </Example>
+                )
+              })}
+            </Section>
+          )
+        })}
+        <hr />
+        {/*
         <Section>
           <SectionHeader title='Range' />
           <Example>
             Range TK
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Select' />
-          <Example>
-            Select TK
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Textarea' />
-          <Example>
-            Textarea TK
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Radio' />
-          <Example>
-            Radio TK
-          </Example>
-        </Section>
-        <Section>
-          <SectionHeader title='Checkbox' />
-          <Example>
-            Checkbox TK
           </Example>
         </Section>
         <Section>
@@ -145,11 +65,60 @@ class Components extends React.Component {
           </Example>
         </Section>
         <Section>
-          <SectionHeader title='Fieldset' />
+          <SectionHeader title='Toolbar' />
           <Example>
-            Fieldset TK
+            Toolbar TK
           </Example>
         </Section>
+        <Section>
+          <SectionHeader title='Menu' />
+          <Example>
+            Menu TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='MenuItem' />
+          <Example>
+            MenuItem TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='NavItem' />
+          <Example>
+            Overlay TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='Panel' />
+          <Example>
+            Panel TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='Card' />
+          <Example>
+            Card TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='Message' />
+          <Example>
+            Message TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='Banner' />
+          <Example>
+            Banner TK
+          </Example>
+        </Section>
+        <Section>
+          <SectionHeader title='Overlay' />
+          <Example>
+            Overlay TK
+          </Example>
+        </Section>
+        */}
       </div>
     )
   }

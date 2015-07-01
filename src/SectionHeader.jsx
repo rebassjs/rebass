@@ -7,6 +7,7 @@ class SectionHeader extends React.Component {
     let id = this.props.id || this.props.title || '!'
     return (
       <header {...this.props}
+        id={id}
         className='flex flex-baseline flex-wrap py2 mb2 border-bottom'>
         <h2 className='flex-auto m0'>
           <a href={'#' + id}
