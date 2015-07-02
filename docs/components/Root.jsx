@@ -4,6 +4,7 @@ import css from '../docs.css'
 import Logo from 'basscss-logo'
 import favicon from 'basscss-logo/images/basscss-32.png'
 import touchicon from 'basscss-logo/images/basscss-512.png'
+import ga from '../ga'
 import {
   Container,
   PageHeader,
@@ -42,7 +43,6 @@ class Root extends React.Component {
     let initialProps = {
       __html: safeStringify(this.props)
     }
-    console.log('Components')
     return (
       <html>
         <head>
@@ -81,6 +81,7 @@ class Root extends React.Component {
             type='application/json'
             dangerouslySetInnerHTML={initialProps} />
           <script src='bundle.js' />
+          <script dangerouslySetInnerHTML={{ __html: ga }} />
         </body>
       </html>
     )
