@@ -20,46 +20,36 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Fieldset = (function (_React$Component) {
+  function Fieldset() {
+    _classCallCheck(this, Fieldset);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Fieldset.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Fieldset, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Fieldset, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var legend = this.props.legend ? _react2['default'].createElement(
+        'legend',
+        {
+          className: 'bold p0 py1 mb2 col-12 border-bottom' },
+        this.props.legend
+      ) : false;
       return _react2['default'].createElement(
-        'div',
+        'fieldset',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
+          className: 'p0 m0 border-none' }),
+        legend,
         this.props.children
       );
     }
   }]);
 
-  return Message;
+  return Fieldset;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
-};
-
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = Fieldset;
 module.exports = exports['default'];

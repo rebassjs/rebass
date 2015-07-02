@@ -4,8 +4,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -20,46 +18,45 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Arrow = (function (_React$Component) {
+  function Arrow() {
+    _classCallCheck(this, Arrow);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Arrow.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Arrow, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Arrow, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
-      return _react2['default'].createElement(
-        'div',
-        _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
-        this.props.children
-      );
+      var styles = {
+        arrow: {
+          width: 0,
+          height: 0,
+          marginLeft: '.1875em',
+          verticalAlign: 'middle',
+          borderRight: '.3125em solid transparent',
+          borderLeft: '.3125em solid transparent'
+        }
+      };
+
+      if (!this.props.up) {
+        styles.arrow.borderTop = '.4375em solid';
+      } else if (this.props.up) {
+        styles.arrow.borderBottom = '.4375em solid';
+      }
+
+      return _react2['default'].createElement('span', { className: 'inline-block', style: styles.arrow });
     }
   }]);
 
-  return Message;
+  return Arrow;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
+Arrow.propTypes = {
+  up: _react2['default'].PropTypes.bool
 };
 
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = Arrow;
 module.exports = exports['default'];

@@ -1,44 +1,62 @@
+'use strict';
 
-var React = require('react');
-var classnames = require('classnames');
-var colorbass = require('colorbass');
-
-var Button = React.createClass({displayName: "Button",
-
-  getDefaultProps: function() {
-    return {
-      color: 'silver',
-      flush: false,
-      active: false,
-      outline: false,
-      transparent: false,
-      size: false,
-      justified: false,
-    }
-  },
-
-  render: function() {
-    var bassClasses = colorbass(this.props.color);
-    var buttonClass =
-      classnames(
-        this.props.className,
-        (!this.props.active && this.props.outline || this.props.transparent) ? bassClasses.secondary : bassClasses.primary,
-        'button',
-        { 'button-small': this.props.size == 'small' },
-        { 'button-big': this.props.size == 'big' },
-        { mr1: !this.props.flush },
-        { 'center block': this.props.justified },
-        { 'is-active': this.props.active },
-        { 'button-outline': this.props.outline },
-        { 'button-transparent': this.props.transparent });
-    return (
-      React.createElement("button", React.__spread({},  this.props, {className: buttonClass}), 
-        this.props.children
-      )
-    )
-  }
-
+Object.defineProperty(exports, '__esModule', {
+  value: true
 });
 
-module.exports = Button;
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var Button = (function (_React$Component) {
+  function Button() {
+    _classCallCheck(this, Button);
+
+    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _inherits(Button, _React$Component);
+
+  _createClass(Button, [{
+    key: 'render',
+    value: function render() {
+      var color = this.props.color;
+      var outline = this.props.outline;
+      return _react2['default'].createElement(
+        'button',
+        _extends({}, this.props, {
+          className: (0, _classnames2['default'])('btn', color ? outline ? color : 'bg-' + color : false, {
+            'btn-primary': !outline,
+            'btn-outline': outline
+          }) }),
+        this.props.children
+      );
+    }
+  }]);
+
+  return Button;
+})(_react2['default'].Component);
+
+Button.propTypes = {
+  color: _react2['default'].PropTypes.string,
+  outline: _react2['default'].PropTypes.bool
+};
+
+exports['default'] = Button;
+module.exports = exports['default'];

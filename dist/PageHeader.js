@@ -24,42 +24,44 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
+var PageHeader = (function (_React$Component) {
+  function PageHeader() {
+    _classCallCheck(this, PageHeader);
 
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(PageHeader.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(PageHeader, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(PageHeader, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var description = this.props.description ? _react2['default'].createElement(
+        'p',
+        { className: 'm0' },
+        this.props.description
+      ) : false;
       return _react2['default'].createElement(
-        'div',
+        'header',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
+          className: (0, _classnames2['default'])('flex', 'flex-wrap', this.props.center ? 'flex-center' : 'flex-baseline', 'py3', 'mb4', 'border-bottom') }),
+        _react2['default'].createElement(
+          'div',
+          { className: 'flex-auto' },
+          _react2['default'].createElement(
+            'h1',
+            { className: 'm0' },
+            this.props.title
+          ),
+          description
+        ),
         this.props.children
       );
     }
   }]);
 
-  return Message;
+  return PageHeader;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
-};
-
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = PageHeader;
 module.exports = exports['default'];

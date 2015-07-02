@@ -4,8 +4,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -20,46 +18,82 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Banner = (function (_React$Component) {
+  function Banner() {
+    _classCallCheck(this, Banner);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Banner.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Banner, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Banner, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var styles = {
+        container: {
+          textAlign: 'center',
+          backgroundImage: this.props.bgImage,
+          backgroundPostion: this.props.bgPosition,
+          backgroundSize: this.props.bgSize
+        },
+        header: {
+          minHeight: '1.5em'
+        },
+        footer: {
+          minHeight: '1.5em'
+        }
+      };
+      if (this.props.left) {
+        styles.container.textAlign = 'left';
+      } else if (this.props.right) {
+        styles.container.textAlign = 'right';
+      }
+
       return _react2['default'].createElement(
         'div',
-        _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
-        this.props.children
+        { className: ['white', 'bg-' + this.props.bgColor].join(' '),
+          style: styles.container },
+        _react2['default'].createElement(
+          'div',
+          {
+            className: 'p2',
+            style: styles.header },
+          this.props.header
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: 'px3 py4' },
+          this.props.children
+        ),
+        _react2['default'].createElement(
+          'div',
+          {
+            className: 'p2',
+            style: styles.footer },
+          this.props.footer
+        )
       );
     }
   }]);
 
-  return Message;
+  return Banner;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
+Banner.propTypes = {
+  left: _react2['default'].PropTypes.bool,
+  right: _react2['default'].PropTypes.bool,
+  bgColor: _react2['default'].PropTypes.string,
+  bgImage: _react2['default'].PropTypes.string,
+  bgSize: _react2['default'].PropTypes.string,
+  bgPosition: _react2['default'].PropTypes.string
 };
 
-Message.defaultProps = {
-  color: 'blue'
+Banner.defaultProps = {
+  bgColor: 'black',
+  bgSize: 'cover',
+  bgPosition: 'center'
 };
 
-exports['default'] = Message;
+exports['default'] = Banner;
 module.exports = exports['default'];

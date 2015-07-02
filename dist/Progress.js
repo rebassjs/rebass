@@ -24,42 +24,37 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
+var Progress = (function (_React$Component) {
+  function Progress() {
+    _classCallCheck(this, Progress);
 
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Progress.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Progress, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Progress, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
       return _react2['default'].createElement(
-        'div',
+        'progress',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
-        this.props.children
+          className: (0, _classnames2['default'])('progress', this.props.color) }),
+        this.props.value
       );
     }
   }]);
 
-  return Message;
+  return Progress;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
+Progress.propTypes = {
+  color: _react2['default'].PropTypes.string
 };
 
-Message.defaultProps = {
+Progress.defaultProps = {
   color: 'blue'
 };
 
-exports['default'] = Message;
+exports['default'] = Progress;
 module.exports = exports['default'];

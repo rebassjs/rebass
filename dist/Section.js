@@ -20,46 +20,29 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Section = (function (_React$Component) {
+  function Section() {
+    _classCallCheck(this, Section);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Section.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Section, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Section, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
       return _react2['default'].createElement(
-        'div',
+        'section',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
+          className: 'py3' }),
         this.props.children
       );
     }
   }]);
 
-  return Message;
+  return Section;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
-};
-
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = Section;
 module.exports = exports['default'];

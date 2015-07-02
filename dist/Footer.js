@@ -24,42 +24,29 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
+var Footer = (function (_React$Component) {
+  function Footer() {
+    _classCallCheck(this, Footer);
 
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Footer.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Footer, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Footer, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
       return _react2['default'].createElement(
-        'div',
+        'footer',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
+          className: 'h5 py2 mt4 border-top' }),
         this.props.children
       );
     }
   }]);
 
-  return Message;
+  return Footer;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
-};
-
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = Footer;
 module.exports = exports['default'];

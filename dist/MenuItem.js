@@ -20,46 +20,30 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var MenuItem = (function (_React$Component) {
+  function MenuItem() {
+    _classCallCheck(this, MenuItem);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(MenuItem.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(MenuItem, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(MenuItem, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var label = this.props.children || this.props.label;
       return _react2['default'].createElement(
-        'div',
+        'a',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
-        this.props.children
+          className: 'btn block' }),
+        label
       );
     }
   }]);
 
-  return Message;
+  return MenuItem;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
-};
-
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = MenuItem;
 module.exports = exports['default'];

@@ -20,46 +20,54 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Select = (function (_React$Component) {
+  function Select() {
+    _classCallCheck(this, Select);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Select.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Select, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Select, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var type = this.props.type || 'text';
       return _react2['default'].createElement(
         'div',
-        _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
-        this.props.children
+        { className: 'mb2' },
+        _react2['default'].createElement(
+          'label',
+          {
+            htmlFor: this.props.name,
+            className: 'h5 bold block' },
+          this.props.label
+        ),
+        _react2['default'].createElement(
+          'select',
+          _extends({}, this.props, {
+            className: 'block col-12 field' }),
+          this.props.options.map(function (option, i) {
+            return _react2['default'].createElement(
+              'option',
+              { key: i,
+                value: option.value },
+              option.label
+            );
+          })
+        )
       );
     }
   }]);
 
-  return Message;
+  return Select;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
+Select.propTypes = {
+  label: _react2['default'].PropTypes.string.isRequired,
+  name: _react2['default'].PropTypes.string.isRequired,
+  options: _react2['default'].PropTypes.array.isRequired
 };
 
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = Select;
 module.exports = exports['default'];

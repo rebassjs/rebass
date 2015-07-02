@@ -20,46 +20,41 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var SectionHeader = (function (_React$Component) {
+  function SectionHeader() {
+    _classCallCheck(this, SectionHeader);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(SectionHeader.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(SectionHeader, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(SectionHeader, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var id = this.props.id || this.props.title || '!';
       return _react2['default'].createElement(
-        'div',
+        'header',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
+          id: id,
+          className: 'flex flex-baseline flex-wrap py2 mb2 border-bottom' }),
+        _react2['default'].createElement(
+          'h2',
+          { className: 'flex-auto m0' },
+          _react2['default'].createElement(
+            'a',
+            { href: '#' + id,
+              className: 'color-inherit' },
+            this.props.title
+          )
+        ),
         this.props.children
       );
     }
   }]);
 
-  return Message;
+  return SectionHeader;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
-};
-
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = SectionHeader;
 module.exports = exports['default'];

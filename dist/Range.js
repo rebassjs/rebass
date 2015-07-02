@@ -20,46 +20,42 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Range = (function (_React$Component) {
+  function Range() {
+    _classCallCheck(this, Range);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
-
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Range.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(Range, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(Range, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
       return _react2['default'].createElement(
         'div',
-        _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
-          }) }),
-        this.props.children
+        { className: 'mb2' },
+        _react2['default'].createElement(
+          'label',
+          {
+            htmlFor: this.props.name,
+            className: 'h5 bold mb1 block' },
+          this.props.label
+        ),
+        _react2['default'].createElement('input', _extends({}, this.props, {
+          type: 'range',
+          className: 'block col-12 range-light' }))
       );
     }
   }]);
 
-  return Message;
+  return Range;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
-  outline: _react2['default'].PropTypes.bool
+Range.propTypes = {
+  label: _react2['default'].PropTypes.string.isRequired,
+  name: _react2['default'].PropTypes.string.isRequired
 };
 
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = Range;
 module.exports = exports['default'];

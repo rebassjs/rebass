@@ -24,42 +24,44 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var Message = (function (_React$Component) {
-  function Message() {
-    _classCallCheck(this, Message);
+var LinkBtn = (function (_React$Component) {
+  function LinkBtn() {
+    _classCallCheck(this, LinkBtn);
 
-    _get(Object.getPrototypeOf(Message.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(LinkBtn.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Message, _React$Component);
+  _inherits(LinkBtn, _React$Component);
 
-  _createClass(Message, [{
+  _createClass(LinkBtn, [{
     key: 'render',
     value: function render() {
-      var color = this.props.color;
-      var outline = this.props.outline;
+      var color = false;
+      if (this.props.color) {
+        if (this.props.outline) {
+          color = this.props.color;
+        } else {
+          color = 'bg-' + this.props.color;
+        }
+      }
       return _react2['default'].createElement(
-        'div',
+        'a',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('bold', 'p2', outline ? color : 'bg-' + color, 'white', 'rounded', {
-            'border': outline
+          className: (0, _classnames2['default'])('btn', color, {
+            'btn-primary': !this.props.outline,
+            'btn-outline': this.props.outline
           }) }),
         this.props.children
       );
     }
   }]);
 
-  return Message;
+  return LinkBtn;
 })(_react2['default'].Component);
 
-Message.propTypes = {
-  color: _react2['default'].PropTypes.string,
+LinkBtn.propTypes = {
   outline: _react2['default'].PropTypes.bool
 };
 
-Message.defaultProps = {
-  color: 'blue'
-};
-
-exports['default'] = Message;
+exports['default'] = LinkBtn;
 module.exports = exports['default'];
