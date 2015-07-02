@@ -11,7 +11,6 @@ import Footer from './Footer'
 import FlexRow from './FlexRow'
 import Flex from './Flex'
 import Media from './Media'
-import Link from './Link'
 import LinkBtn from './LinkBtn'
 import Button from './Button'
 import Input from './Input'
@@ -49,7 +48,6 @@ export default {
   FlexRow,
   Flex,
   Media,
-  Link,
   LinkBtn,
   Button,
   Input,

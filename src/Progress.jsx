@@ -1,6 +1,7 @@
 
 import React from 'react'
 import cx from 'classnames'
+import colors from './colors'
 
 class Progress extends React.Component {
 
@@ -16,7 +17,7 @@ class Progress extends React.Component {
 }
 
 Progress.propTypes = {
-  color: React.PropTypes.string
+  color: React.PropTypes.oneOf(colors)
 }
 
 Progress.defaultProps = {

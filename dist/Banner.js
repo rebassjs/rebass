@@ -18,6 +18,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _colors = require('./colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
 var Banner = (function (_React$Component) {
   function Banner() {
     _classCallCheck(this, Banner);
@@ -83,7 +87,7 @@ var Banner = (function (_React$Component) {
 Banner.propTypes = {
   left: _react2['default'].PropTypes.bool,
   right: _react2['default'].PropTypes.bool,
-  bgColor: _react2['default'].PropTypes.string,
+  bgColor: _react2['default'].PropTypes.oneOf(_colors2['default']),
   bgImage: _react2['default'].PropTypes.string,
   bgSize: _react2['default'].PropTypes.string,
   bgPosition: _react2['default'].PropTypes.string

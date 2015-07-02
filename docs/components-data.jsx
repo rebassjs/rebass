@@ -13,7 +13,6 @@ import {
   FlexRow,
   Flex,
   Media,
-  Link,
   LinkBtn,
   Button,
   Input,
@@ -171,13 +170,6 @@ export default [
       </Section>
     ]
   },
-  //{
-  //  name: 'Link',
-  //  description: 'Just a link tag',
-  //  examples: [
-  //    <Link href='#Link'>Link</Link>
-  //  ]
-  //},
   {
     name: 'LinkBtn',
     description: 'Solid and outline button styled links',

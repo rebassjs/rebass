@@ -9,7 +9,6 @@ class Example extends React.Component {
   highlight (str) {
     let code = highlight.highlight('xml', str).value
     let html = { __html: code }
-    // maxHeight
     return <pre dangerouslySetInnerHTML={html}
       className='p2 mb0 rounded-bottom border-none' />
   }

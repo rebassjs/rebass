@@ -1,5 +1,6 @@
 
 import React from 'react'
+import colors from './colors'
 
 class Banner extends React.Component {
 
@@ -52,7 +53,7 @@ class Banner extends React.Component {
 Banner.propTypes = {
   left: React.PropTypes.bool,
   right: React.PropTypes.bool,
-  bgColor: React.PropTypes.string,
+  bgColor: React.PropTypes.oneOf(colors),
   bgImage: React.PropTypes.string,
   bgSize: React.PropTypes.string,
   bgPosition: React.PropTypes.string,

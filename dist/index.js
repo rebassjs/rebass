@@ -54,10 +54,6 @@ var _Media = require('./Media');
 
 var _Media2 = _interopRequireDefault(_Media);
 
-var _Link = require('./Link');
-
-var _Link2 = _interopRequireDefault(_Link);
-
 var _LinkBtn = require('./LinkBtn');
 
 var _LinkBtn2 = _interopRequireDefault(_LinkBtn);
@@ -163,7 +159,6 @@ exports['default'] = {
   FlexRow: _FlexRow2['default'],
   Flex: _Flex2['default'],
   Media: _Media2['default'],
-  Link: _Link2['default'],
   LinkBtn: _LinkBtn2['default'],
   Button: _Button2['default'],
   Input: _Input2['default'],

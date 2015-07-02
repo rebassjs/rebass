@@ -1,6 +1,7 @@
 
 import React from 'react'
 import cx from 'classnames'
+import colors from './colors'
 
 class Toolbar extends React.Component {
 
@@ -22,6 +23,10 @@ class Toolbar extends React.Component {
     )
   }
 
+}
+
+Toolbar.propTypes = {
+  color: React.PropTypes.oneOf(colors)
 }
 
 export default Toolbar

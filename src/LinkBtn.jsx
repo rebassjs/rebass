@@ -1,6 +1,7 @@
 
 import React from 'react'
 import cx from 'classnames'
+import colors from './colors'
 
 class LinkBtn extends React.Component {
 
@@ -27,6 +28,7 @@ class LinkBtn extends React.Component {
 }
 
 LinkBtn.propTypes = {
+  color: React.PropTypes.oneOf(colors),
   outline: React.PropTypes.bool
 }
 

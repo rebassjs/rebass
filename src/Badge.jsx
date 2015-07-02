@@ -1,6 +1,7 @@
 
 import React from 'react'
 import cx from 'classnames'
+import colors from './colors'
 
 class Badge extends React.Component {
 
@@ -25,7 +26,7 @@ class Badge extends React.Component {
 }
 
 Badge.propTypes = {
-  color: React.PropTypes.string
+  color: React.PropTypes.oneOf(colors)
 }
 
 Badge.defaultProps = {

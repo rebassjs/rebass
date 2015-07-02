@@ -22,6 +22,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _colors = require('./colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
 var Badge = (function (_React$Component) {
   function Badge() {
     _classCallCheck(this, Badge);
@@ -48,7 +52,7 @@ var Badge = (function (_React$Component) {
 })(_react2['default'].Component);
 
 Badge.propTypes = {
-  color: _react2['default'].PropTypes.string
+  color: _react2['default'].PropTypes.oneOf(_colors2['default'])
 };
 
 Badge.defaultProps = {

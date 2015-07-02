@@ -22,6 +22,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _colors = require('./colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
 var Toolbar = (function (_React$Component) {
   function Toolbar() {
     _classCallCheck(this, Toolbar);
@@ -46,6 +50,10 @@ var Toolbar = (function (_React$Component) {
 
   return Toolbar;
 })(_react2['default'].Component);
+
+Toolbar.propTypes = {
+  color: _react2['default'].PropTypes.oneOf(_colors2['default'])
+};
 
 exports['default'] = Toolbar;
 module.exports = exports['default'];

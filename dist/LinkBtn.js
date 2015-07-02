@@ -24,6 +24,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _colors = require('./colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
 var LinkBtn = (function (_React$Component) {
   function LinkBtn() {
     _classCallCheck(this, LinkBtn);
@@ -60,6 +64,7 @@ var LinkBtn = (function (_React$Component) {
 })(_react2['default'].Component);
 
 LinkBtn.propTypes = {
+  color: _react2['default'].PropTypes.oneOf(_colors2['default']),
   outline: _react2['default'].PropTypes.bool
 };
 
