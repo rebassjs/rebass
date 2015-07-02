@@ -47,6 +47,7 @@
     "ui"
   ],
   "main": "dist/index.js",
+  "style": "rebass.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/jxnblk/rebass.git"
