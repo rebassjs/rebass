@@ -192,10 +192,10 @@ export default [
     name: 'Button',
     description: 'Solid and outline buttons with color prop',
     examples: [
-      <Button href='#Button'>Hamburger</Button>,
-      <Button href='#Button' color='red'>Hamburger</Button>,
-      <Button href='#Button' outline>Hamburger</Button>,
-      <Button href='#Button' outline color='blue'>Hamburger</Button>,
+      <Button>Hamburger</Button>,
+      <Button>Hamburger</Button>,
+      <Button>Hamburger</Button>,
+      <Button>Hamburger</Button>,
     ]
   },
   {
