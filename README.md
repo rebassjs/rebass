@@ -1,6 +1,6 @@
 # Rebass
 
-React UI components for Basscss
+Stateless React UI components built with Basscss
 
 http://jxnblk.com/rebass
 
@@ -9,20 +9,31 @@ http://jxnblk.com/rebass
 ### Install
 
 ```bash
-npm install --save rebass
+npm i rebass
 ```
 
-### Require
+### Import CSS
 
-```javascript
-var Rebass = require('rebass');
-var Button = Rebass.Button;
-var Badge = Rebass.Badge;
+In a CSS file using cssnext
+
+```css
+@import 'rebass';
 ```
+
+Or using cssnext-loader with webpack
+
+```js
+import css from 'rebass/rebass.css'
+```
+
+### Import Components
+
+```js
+import { Button, Badge } from 'rebass'
 
 ### Use
 
-```jsx
+```xml
 <App>
   <Button>Button</Button>
   <Badge>Badge</Badge>
