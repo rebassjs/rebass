@@ -10,8 +10,8 @@ import {
   Section,
   SectionHeader,
   Footer,
+  FlexRow,
   Flex,
-  FlexItem,
   Media,
   Link,
   LinkBtn,
@@ -39,7 +39,42 @@ import {
 
 export default [
   {
+    name: 'Container',
+    description: 'Sets max-width, left and right padding, and centers elements',
+    examples: [
+      <Container>
+        Hamburgers
+      </Container>
+    ]
+  },
+  {
+    name: 'Row',
+    description: 'Clearfix and negative-margin gutter compensation',
+    examples: [
+      <Row>
+        <Col sm={6}>Col 6</Col>
+        <Col sm={6}>Col 6</Col>
+      </Row>
+    ]
+  },
+  {
+    name: 'Col',
+    description: 'Responsive grid column with gutters',
+    examples: [
+      <Row>
+        <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
+        <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
+        <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
+        <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
+        <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
+        <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
+      </Row>
+    ]
+  },
+  /*
+  {
     name: 'Grid',
+    description: 'Responsive Container, Row, and Col components based on basscss-grid',
     examples: [
       <Container>
         <Row>
@@ -47,119 +82,137 @@ export default [
           <Col xs={6}>Col 6</Col>
         </Row>
       </Container>,
-      <Container>
-        <Row>
-          <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-          <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-          <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-          <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-          <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-          <Col sm={6} md={4} lg={3}>Col sm6 md4 lg3</Col>
-        </Row>
-      </Container>
     ]
   },
+  */
   {
     name: 'Media',
+    description: 'Media object with vertical alignment options',
     examples: [
       <Media
         image={<img src='//placehold.it/128' />}>
-        Media Object
+        Hamburger
       </Media>,
       <Media
         middle
         image={<img src='//placehold.it/128' />}>
-        Media Object
+        Hamburger
       </Media>,
       <Media
         bottom
         image={<img src='//placehold.it/128' />}>
-        Media Object
+        Hamburger
       </Media>,
     ]
   },
   {
-    name: 'Flex',
+    name: 'FlexRow',
+    description: 'Container set to display flex with gutters',
     examples: [
-      <Flex>
-        <FlexItem auto>FlexItem</FlexItem>
-        <FlexItem>FlexItem</FlexItem>
-        <FlexItem>FlexItem</FlexItem>
-      </Flex>
+      <FlexRow>
+        <Flex>Hamburger</Flex>
+        <Flex>Hamburger</Flex>
+      </FlexRow>,
+      <FlexRow wrap pad={false}>
+        <div>Hamburger</div>
+        <div>Hamburger</div>
+      </FlexRow>
+    ]
+  },
+  {
+    name: 'Flex',
+    description: 'Flexbox item container with default padding',
+    examples: [
+      <FlexRow>
+        <Flex auto>Hamburger</Flex>
+        <Flex pad={false}>Hamburger</Flex>
+        <Flex noshrink>Hamburger</Flex>
+      </FlexRow>
     ]
   },
   {
     name: 'PageHeader',
+    description: 'Heading and description for main page headers with border bottom. Child elements are displayed to the right.',
     examples: [
       <PageHeader
-        title='PageHeader'
-        description='For heading the top of the page'>
-        <div>Children go to the right</div>
+        title='Hamburger'
+        description='Fries, onion rings, and shakes'>
+        <div>Medium Rare</div>
       </PageHeader>
     ]
   },
   {
     name: 'Footer',
+    description: 'Footer with border top',
     examples: [
       <Footer>
-        <div>Footer</div>
+        <div>Hamburger</div>
       </Footer>
     ]
   },
   {
     name: 'Section',
+    description: 'Section element with vertical padding',
     examples: [
       <Section>
-        Section adds vertical padding
+        Hamburger
       </Section>
     ]
   },
   {
     name: 'SectionHeader',
+    description: 'Header for sections with id linked heading. Child elements display to the right',
     examples: [
       <Section>
-        <SectionHeader title='SectionHeader'>
-          Children to the right
+        <SectionHeader title='Hamburger'>
+          Medium rare
         </SectionHeader>
-        <p>Adds a linked heading and id to sections. This is some inception type nonsense happening here.</p>
+        <p>Section inception</p>
       </Section>
     ]
   },
-  {
-    name: 'Link',
-    examples: [
-      <Link href='#Link'>Link</Link>
-    ]
-  },
+  //{
+  //  name: 'Link',
+  //  description: 'Just a link tag',
+  //  examples: [
+  //    <Link href='#Link'>Link</Link>
+  //  ]
+  //},
   {
     name: 'LinkBtn',
+    description: 'Solid and outline button styled links',
     examples: [
-      <LinkBtn href='#Link'>LinkBtn</LinkBtn>,
-      <LinkBtn href='#Link' outline>LinkBtn</LinkBtn>
+      <LinkBtn href='#Link'>Hamburger</LinkBtn>,
+      <LinkBtn href='#Link' color='red'>Hamburger</LinkBtn>,
+      <LinkBtn href='#Link' outline>Hamburger</LinkBtn>,
+      <LinkBtn href='#Link' outline color='blue'>Hamburger</LinkBtn>,
     ]
   },
   {
     name: 'Button',
+    description: 'Solid and outline buttons with color prop',
     examples: [
-      <Button href='#Button'>Button</Button>,
-      <Button href='#Button' color='red'>Button</Button>,
-      <Button href='#Button' outline>Button</Button>,
-      <Button href='#Button' outline color='blue'>Button</Button>,
+      <Button href='#Button'>Hamburger</Button>,
+      <Button href='#Button' color='red'>Hamburger</Button>,
+      <Button href='#Button' outline>Hamburger</Button>,
+      <Button href='#Button' outline color='blue'>Hamburger</Button>,
     ]
   },
   {
     name: 'Input',
+    description: 'Wrapper for form label and input elements',
     examples: [
       <Input
-        label='Input'
+        label='Hamburger'
         name='demo-input' />
     ]
   },
   {
     name: 'Select',
+    description: 'Wrapper for form label and select elements',
     examples: [
       <Select
-        label='Select'
+        label='Hamburger'
         name='demo-select'
         options={[
           { value: 1, label: 'One' },
@@ -170,28 +223,29 @@ export default [
   },
   {
     name: 'Textarea',
+    description: 'Wrapper for form label and textarea elements',
     examples: [
       <Textarea
-        label='Textarea'
+        label='Hamburger'
         name='demo-textarea'
         rows={4} />
     ]
   },
   {
     name: 'Radio',
-    description: '',
+    description: 'Wrapper for form label and radio input elements',
     examples: [
       <Radio
-        label='Radio 1'
+        label='Hamburger 1'
         value='1'
         name='demo-radio' />,
       <div>
         <Radio
-          label='Radio 2'
+          label='Hamburger 2'
           value='2'
           name='demo-radio' />
         <Radio
-          label='Radio 3'
+          label='Hamburger 3'
           value='3'
           name='demo-radio' />
       </div>
@@ -199,24 +253,26 @@ export default [
   },
   {
     name: 'Checkbox',
-    description: '',
+    description: 'Wrapper for form label and checkbox input elements',
     examples: [
       <Checkbox
-        label='Checkbox'
+        label='Hamburger'
         value='checked'
         name='demo-checkbox' />
     ]
   },
   {
     name: 'Range',
+    description: 'Wrapper for form label and range input elements',
     examples: [
       <Range
-        label='Range'
+        label='Hamburger'
         name='demo-range' />
     ]
   },
   {
     name: 'Fieldset',
+    description: 'Wrapper for fieldset and legend elements',
     examples: [
       <Fieldset
         legend='Hamburger'>
@@ -241,6 +297,7 @@ export default [
   },
   {
     name: 'Progress',
+    description: 'Styled progress element',
     examples: [
       <Progress value={32} max={100} />,
       <Progress value={96} max={100} color='red' />,
@@ -248,73 +305,82 @@ export default [
   },
   {
     name: 'Toolbar',
+    description: 'Styled box with flexbox layout, padding, and reversed text on a color background',
     examples: [
       <Toolbar>
-        <FlexItem>Toolbar</FlexItem>
-        <NavItem href='#Toolbar'>NavItem</NavItem>
-        <NavItem href='#Toolbar'>NavItem</NavItem>
-        <FlexItem auto />
-        <Button>Button</Button>
+        <Flex>Hamburger</Flex>
+        <NavItem href='#Toolbar'>Hot Dog</NavItem>
+        <NavItem href='#Toolbar'>Fries</NavItem>
+        <Flex auto />
+        <Button>Shake</Button>
       </Toolbar>,
       <Toolbar color='blue'>
-        <FlexItem>Toolbar</FlexItem>
-        <NavItem href='#Toolbar'>NavItem</NavItem>
-        <NavItem href='#Toolbar'>NavItem</NavItem>
-        <FlexItem auto />
-        <Button color='darken-3'>Button</Button>
+        <Flex>Hamburger</Flex>
+        <NavItem href='#Toolbar'>Hot Dog</NavItem>
+        <NavItem href='#Toolbar'>Fries</NavItem>
+        <Flex auto />
+        <Button color='darken-3'>Shake</Button>
       </Toolbar>
     ]
   },
   {
     name: 'Menu',
+    description: 'Styled box with white background and rounded borders',
     examples: [
       <Menu>
         <MenuItem href='#Menu'
-          label='MenuItem' />
+          label='Hambuger' />
         <MenuItem href='#Menu'
-          label='MenuItem' />
+          label='Hot Dog' />
         <MenuItem href='#Menu'
-          label='MenuItem' />
+          label='Onion Rings' />
       </Menu>
     ]
   },
   {
     name: 'Message',
+    description: 'Styled box with padding and background color for application flash messages',
     examples: [
-      <Message>Flash Message</Message>,
-      <Message>Flash Message - Yay! Success always feels great</Message>,
-      <Message color='red'>Flash Message - this one’s probably an error</Message>,
-      <Message color='red' outline>Flash Message - this one’s probably a little less severe</Message>,
+      <Message>Sumbitted hamburger request</Message>,
+      <Message color='green'>Hamburger successfully acquired</Message>,
+      <Message color='red'>Warning! Pickles missing from hamburger</Message>,
+      <Message color='red' outline>Warning! Onion has been carmelized</Message>,
     ]
   },
   {
     name: 'Badge',
+    description: 'Styled inline-block element for displaying states',
     examples: [
-      <Badge>Badge</Badge>,
-      <Badge color='green'>Badge</Badge>,
-      <Badge color='red'>Badge</Badge>,
+      <Badge>Hamburger</Badge>,
+      <Badge color='green'>Hamburger</Badge>,
+      <Badge color='red'>Hamburger</Badge>,
     ]
   },
   {
     name: 'Arrow',
+    description: 'Up and down arrow for use with clickable UI elements',
     examples: [
       <Arrow />,
-      <Arrow up />
+      <Arrow up />,
+      <Button>
+        Hamburger <Arrow />
+      </Button>
     ]
   },
   {
     name: 'Panel',
+    description: 'Styled box with header and footer components',
     examples: [
       <Panel>
         <PanelHeader title='PanelHeader' />
         <PanelBody>
           <Input
-            label='Username'
+            label='Hamburger'
             name='demo-username' />
           <Input
-            label='Password'
+            label='Hot Dog'
             name='demo-password' />
-          <Button>Sign In</Button>
+          <Button>Shake</Button>
         </PanelBody>
         <PanelFooter text='PanelFooter' />
       </Panel>
@@ -322,15 +388,17 @@ export default [
   },
   {
     name: 'Card',
+    description: 'Styled box with image at the top',
     examples: [
       <Row>
         <Col sm={6} md={4}>
           <Card
             image={<img src='//placehold.it/512x384' />}>
             <Media
+              middle
               image={<img src='//placehold.it/48'
                 className='circle'/>}>
-              <h3 className='h4 m0'>Nested Media Object</h3>
+              <h3 className='h4 m0'>Nested Hamburger</h3>
             </Media>
           </Card>
         </Col>
@@ -339,20 +407,21 @@ export default [
   },
   {
     name: 'Banner',
+    description: 'Hero banner styled box with background image props',
     examples: [
       <Banner>
-        <h1 className='m0'>Default Banner</h1>
+        <h1 className='m0'>Hamburger</h1>
       </Banner>,
       <Banner
         header='BannerHeader'
         footer='BannerFooter'
         bgImage='url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)'>
-        <h1 className='m0'>Banner with Background Image</h1>
+        <h1 className='m0'>Hamburger with Background Image</h1>
       </Banner>,
       <Banner
         left
         bgImage='url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)'>
-        <h1 className='m0'>Left Aligned Banner</h1>
+        <h1 className='m0'>Left Aligned Hamburger</h1>
       </Banner>
     ]
   }

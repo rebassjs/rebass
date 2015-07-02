@@ -18,55 +18,75 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var Media = (function (_React$Component) {
-  function Media() {
-    _classCallCheck(this, Media);
+var _classnames = require('classnames');
 
-    _get(Object.getPrototypeOf(Media.prototype), 'constructor', this).apply(this, arguments);
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var FlexRow = (function (_React$Component) {
+  function FlexRow() {
+    _classCallCheck(this, FlexRow);
+
+    _get(Object.getPrototypeOf(FlexRow.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(Media, _React$Component);
+  _inherits(FlexRow, _React$Component);
 
-  _createClass(Media, [{
+  _createClass(FlexRow, [{
     key: 'render',
     value: function render() {
-      var middle = this.props.middle;
-      var bottom = this.props.bottom;
-      var alignClassName = 'align-top';
-      if (this.props.middle) {
-        alignClassName = 'align-middle';
-      } else if (this.props.bottom) {
-        alignClassName = 'align-bottom';
+      var flex = 'flex';
+      var align = 'flex-center';
+      var _props = this.props;
+      var top = _props.top;
+      var bottom = _props.bottom;
+      var sm = _props.sm;
+      var md = _props.md;
+      var lg = _props.lg;
+
+      if (top) {
+        align = 'flex-start';
+      } else if (bottom) {
+        align = 'flex-end';
       }
-      var images = _react2['default'].Children.map(this.props.image, function (child) {
-        var c = _react2['default'].cloneElement(child, { style: { maxWidth: 'none' } });
-        return c;
-      });
+      if (sm) {
+        flex = 'sm-flex';
+      } else if (md) {
+        flex = 'md-flex';
+      } else if (lg) {
+        flex = 'lg-flex';
+      }
       return _react2['default'].createElement(
         'div',
-        { className: 'overflow-hidden mxn1' },
-        _react2['default'].createElement(
-          'div',
-          { className: ['table-cell', 'px1', alignClassName].join(' ') },
-          images
-        ),
-        _react2['default'].createElement(
-          'div',
-          { className: ['table-cell', 'px1', 'col-12', alignClassName].join(' ') },
-          this.props.children
-        )
+        {
+          className: (0, _classnames2['default'])(flex, align, {
+            'flex-wrap': this.props.wrap,
+            'mxn2': this.props.pad
+          }) },
+        this.props.children
       );
     }
   }]);
 
-  return Media;
+  return FlexRow;
 })(_react2['default'].Component);
 
-Media.propTypes = {
-  image: _react2['default'].PropTypes.element,
-  middle: _react2['default'].PropTypes.bool,
-  bottom: _react2['default'].PropTypes.bool
+FlexRow.propTypes = {
+  wrap: _react2['default'].PropTypes.bool,
+  sm: _react2['default'].PropTypes.bool,
+  md: _react2['default'].PropTypes.bool,
+  lg: _react2['default'].PropTypes.bool,
+  top: _react2['default'].PropTypes.bool,
+  bottom: _react2['default'].PropTypes.bool,
+  center: _react2['default'].PropTypes.bool,
+  pad: _react2['default'].PropTypes.bool
 };
 
-exports['default'] = Media;
+FlexRow.defaultProps = {
+  top: false,
+  bottom: false,
+  center: true,
+  pad: true
+};
+
+exports['default'] = FlexRow;
 module.exports = exports['default'];

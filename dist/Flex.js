@@ -34,33 +34,12 @@ var Flex = (function (_React$Component) {
   _createClass(Flex, [{
     key: 'render',
     value: function render() {
-      var flex = 'flex';
-      var align = 'flex-center';
-      var _props = this.props;
-      var top = _props.top;
-      var bottom = _props.bottom;
-      var sm = _props.sm;
-      var md = _props.md;
-      var lg = _props.lg;
-
-      if (top) {
-        align = 'flex-start';
-      } else if (bottom) {
-        align = 'flex-end';
-      }
-      if (sm) {
-        flex = 'sm-flex';
-      } else if (md) {
-        flex = 'md-flex';
-      } else if (lg) {
-        flex = 'lg-flex';
-      }
       return _react2['default'].createElement(
         'div',
-        {
-          className: (0, _classnames2['default'])(flex, align, {
-            'flex-wrap': this.props.wrap,
-            'mxn2': this.props.pad
+        { className: (0, _classnames2['default'])({
+            'flex-auto': this.props.auto,
+            'flex-none': this.props.noshrink,
+            'px2': this.props.pad
           }) },
         this.props.children
       );
@@ -71,20 +50,12 @@ var Flex = (function (_React$Component) {
 })(_react2['default'].Component);
 
 Flex.propTypes = {
-  wrap: _react2['default'].PropTypes.bool,
-  sm: _react2['default'].PropTypes.bool,
-  md: _react2['default'].PropTypes.bool,
-  lg: _react2['default'].PropTypes.bool,
-  top: _react2['default'].PropTypes.bool,
-  bottom: _react2['default'].PropTypes.bool,
-  center: _react2['default'].PropTypes.bool,
+  auto: _react2['default'].PropTypes.bool,
+  noshrink: _react2['default'].PropTypes.bool,
   pad: _react2['default'].PropTypes.bool
 };
 
 Flex.defaultProps = {
-  top: false,
-  bottom: false,
-  center: true,
   pad: true
 };
 

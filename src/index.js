@@ -8,8 +8,8 @@ import PageHeader from './PageHeader'
 import Section from './Section'
 import SectionHeader from './SectionHeader'
 import Footer from './Footer'
+import FlexRow from './FlexRow'
 import Flex from './Flex'
-import FlexItem from './FlexItem'
 import Media from './Media'
 import Link from './Link'
 import LinkBtn from './LinkBtn'
@@ -46,8 +46,8 @@ export default {
   Section,
   SectionHeader,
   Footer,
+  FlexRow,
   Flex,
-  FlexItem,
   Media,
   Link,
   LinkBtn,

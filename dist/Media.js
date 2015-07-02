@@ -18,46 +18,60 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var Media = (function (_React$Component) {
+  function Media() {
+    _classCallCheck(this, Media);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var FlexItem = (function (_React$Component) {
-  function FlexItem() {
-    _classCallCheck(this, FlexItem);
-
-    _get(Object.getPrototypeOf(FlexItem.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Media.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _inherits(FlexItem, _React$Component);
+  _inherits(Media, _React$Component);
 
-  _createClass(FlexItem, [{
+  _createClass(Media, [{
     key: 'render',
     value: function render() {
+      var middle = this.props.middle;
+      var bottom = this.props.bottom;
+      var alignClassName = 'align-top';
+      if (this.props.middle) {
+        alignClassName = 'align-middle';
+      } else if (this.props.bottom) {
+        alignClassName = 'align-bottom';
+      }
+      var images = _react2['default'].Children.map(this.props.image, function (child) {
+        var c = _react2['default'].cloneElement(child, {
+          style: {
+            display: 'block',
+            maxWidth: 'none'
+          }
+        });
+        return c;
+      });
       return _react2['default'].createElement(
         'div',
-        { className: (0, _classnames2['default'])({
-            'flex-auto': this.props.auto,
-            'flex-none': this.props.noshrink,
-            'px2': this.props.pad
-          }) },
-        this.props.children
+        { className: 'overflow-hidden mxn1' },
+        _react2['default'].createElement(
+          'div',
+          { className: ['table-cell', 'px1', alignClassName].join(' ') },
+          images
+        ),
+        _react2['default'].createElement(
+          'div',
+          { className: ['table-cell', 'px1', 'col-12', alignClassName].join(' ') },
+          this.props.children
+        )
       );
     }
   }]);
 
-  return FlexItem;
+  return Media;
 })(_react2['default'].Component);
 
-FlexItem.propTypes = {
-  auto: _react2['default'].PropTypes.bool,
-  noshrink: _react2['default'].PropTypes.bool,
-  pad: _react2['default'].PropTypes.bool
+Media.propTypes = {
+  image: _react2['default'].PropTypes.element,
+  middle: _react2['default'].PropTypes.bool,
+  bottom: _react2['default'].PropTypes.bool
 };
 
-FlexItem.defaultProps = {
-  pad: true
-};
-
-exports['default'] = FlexItem;
+exports['default'] = Media;
 module.exports = exports['default'];

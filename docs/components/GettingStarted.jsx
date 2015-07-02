@@ -13,19 +13,10 @@ class GettingStarted extends React.Component {
         <h3>Install</h3>
         <pre>npm i rebass</pre>
         <h3>Import CSS</h3>
-        <Row>
-          <Col sm={5}>
-            <p>In a CSS file using cssnext</p>
-            <pre>@import 'rebass';</pre>
-          </Col>
-          <Col sm={2}>
-            <b className='h3 caps muted'>or</b>
-          </Col>
-          <Col sm={5}>
-            <p>Using cssnext-loader with webpack</p>
-            <pre>import css from 'rebass/rebass.css'</pre>
-          </Col>
-        </Row>
+        <p>In a CSS file using cssnext</p>
+        <pre>@import 'rebass';</pre>
+        <p><b>Or</b> using cssnext-loader with webpack</p>
+        <pre>import css from 'rebass/rebass.css'</pre>
         <h3>Import & Use Components</h3>
         <pre>{'import { Button } from \'rebass\''}</pre>
         <pre>{'<Button>Button</Button>'}</pre>

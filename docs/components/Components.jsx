@@ -5,51 +5,44 @@ import components from '../components-data.jsx'
 import {
   Section,
   SectionHeader,
-  Flex,
-  FlexItem,
   Row,
   Col
 } from '../..'
 import ScrollFix from './ScrollFix.jsx'
+import ComponentDocs from './ComponentDocs.jsx'
 
 class Components extends React.Component {
 
   render () {
     return (
-      <Flex sm top>
-        <FlexItem auto>
-          {components.map(function(comp, i) {
-            return (
-              <Section key={i}>
-                <SectionHeader title={comp.name} />
-                {comp.examples.map(function(example, i) {
+      <div>
+        <SectionHeader title='Components' />
+        <Row>
+          <Col sm={9} md={10}>
+            {components.map(function(comp, i) {
+              return (
+                <ComponentDocs key={i} {...comp} />
+              )
+            })}
+          </Col>
+          <Col sm={3} md={2}>
+            <ScrollFix bottom={64}>
+              <ul className='list-reset'>
+                {components.map(function(comp, i) {
                   return (
-                    <Example key={i}>
-                      {example}
-                    </Example>
+                    <li key={i}>
+                      <a href={'#' + comp.name}
+                        className='h5 bold color-inherit'>
+                        {comp.name}
+                      </a>
+                    </li>
                   )
                 })}
-              </Section>
-            )
-          })}
-        </FlexItem>
-        <FlexItem noshrink>
-          <ScrollFix>
-            <ul className='list-reset mt4'>
-              {components.map(function(comp, i) {
-                return (
-                  <li key={i}>
-                    <a href={'#' + comp.name}
-                      className='h5 bold'>
-                      {comp.name}
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
-          </ScrollFix>
-        </FlexItem>
-      </Flex>
+              </ul>
+            </ScrollFix>
+          </Col>
+        </Row>
+      </div>
     )
   }
 

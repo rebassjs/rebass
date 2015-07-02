@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { throttle } from 'lodash'
 
 let win = typeof window !== 'undefined' ? window : false
 let el = false
@@ -41,7 +42,7 @@ class ScrollFix extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     let el = React.findDOMNode(this)
     this.setState({
       width: el.offsetWidth,
@@ -49,12 +50,12 @@ class ScrollFix extends React.Component {
       offsetLeft: el.offsetLeft
     })
     if (win) {
-      win.addEventListener('scroll', this.onScroll)
-      win.addEventListener('resize', this.onResize)
+      win.addEventListener('scroll', throttle(this.onScroll, 100))
+      win.addEventListener('resize', throttle(this.onResize, 100))
     }
   }
 
-  componentWillUnMount() {
+  componentWillUnmount () {
     if (win) {
       win.removeEventListener('scroll', this.onScroll)
       win.removeEventListener('resize', this.onResize)
@@ -70,12 +71,12 @@ class ScrollFix extends React.Component {
       inner: {
         top: this.props.offset,
         left: this.state.offsetLeft,
-        bottom: 0,
+        bottom: this.props.bottom,
         overflow: 'auto'
       }
     }
     let className = [
-      (state.snap ? 'md-fixed' : '')
+      (state.snap ? 'sm-fixed' : '')
     ].join(' ')
     return (
       <div style={styles.outer}>
@@ -90,11 +91,13 @@ class ScrollFix extends React.Component {
 }
 
 ScrollFix.propTypes = {
-  offset: React.PropTypes.number
+  offset: React.PropTypes.number,
+  bottom: React.PropTypes.number
 }
 
 ScrollFix.defaultProps = {
-  offset: 16
+  offset: 16,
+  bottom: 0
 }
 
 export default ScrollFix

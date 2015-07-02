@@ -13,7 +13,12 @@ class Media extends React.Component {
       alignClassName = 'align-bottom'
     }
     let images = React.Children.map(this.props.image, function(child) {
-      let c = React.cloneElement(child, { style: { maxWidth: 'none' } })
+      let c = React.cloneElement(child, {
+        style: {
+          display: 'block',
+          maxWidth: 'none'
+        }
+      })
       return c
     })
     return (

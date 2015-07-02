@@ -2,46 +2,29 @@
 import React from 'react'
 import Logo from 'basscss-logo'
 import { TweetButton, GithubButton, CarbonAd } from 'blk'
-import { Banner, Flex, FlexItem, LinkBtn, Space, Pad } from '../..'
+import { Banner, FlexRow, Flex, LinkBtn, Space, Pad } from '../..'
+import Social from './Social.jsx'
 
 class Hero extends React.Component {
 
   render () {
-    let footer = (
-      <Flex wrap center pad={false}>
-        <FlexItem>
-          <Pad y={1}>
-            <TweetButton
-              text='Stateless React UI components for Basscss' />
-          </Pad>
-        </FlexItem>
-        <FlexItem>
-          <Pad y={1}>
-            <GithubButton
-              user='jxnblk'
-              repo='rebass' />
-          </Pad>
-        </FlexItem>
-        <FlexItem auto />
-        <FlexItem>
-          <CarbonAd />
-        </FlexItem>
-      </Flex>
-    )
     return (
       <Banner
-        footer={footer}
+        //bgImage='url(https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg)'
+        //footer={<Social />}
         left>
-        <Flex wrap>
-          <FlexItem auto>
+        <FlexRow md>
+          <Flex auto>
             <Logo />
             <h1 className='m0'>
               {this.props.title}
               <Space />
               <span className='h5'>v{this.props.version}</span>
             </h1>
-            <p>{this.props.description}</p>
-          </FlexItem>
+            {/*
+            <p className='h3 bold mb3'>{this.props.description}</p>
+            */}
+          </Flex>
           <LinkBtn
             href='//github.com/jxnblk/rebass'
             color='darken-4'>
@@ -53,7 +36,7 @@ class Hero extends React.Component {
             color='darken-4'>
             npm
           </LinkBtn>
-        </Flex>
+        </FlexRow>
       </Banner>
     )
   }

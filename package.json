@@ -1,14 +1,14 @@
 {
   "name": "rebass",
   "version": "0.1.0",
-  "description": "Stateless React UI components for Basscss",
+  "description": "Stateless React UI components built with Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "babel": "babel src --out-dir .",
-    "babel:watch": "babel src -w --out-dir .",
-    "docs": "webpack --progress --colors --config webpack.config.js",
-    "docs:dev": "webpack-dev-server --progress --colors --config webpack.config.js",
+    "babel": "babel src --out-dir dist",
+    "babel:watch": "babel src -w --out-dir dist",
+    "docs": "webpack -p --progress --colors",
+    "docs:dev": "webpack-dev-server --progress --colors",
     "start": "npm run babel:watch & npm run docs:dev"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "cssnext-loader": "^1.0.1",
     "highlight.js": "^8.6.0",
     "jsx-loader": "^0.12.2",
+    "lodash": "^3.10.0",
     "node-libs-browser": "^0.5.2",
     "react": "^0.13.3",
     "react-to-jsx": "^1.3.2",
@@ -45,7 +46,7 @@
     "react-component",
     "ui"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jxnblk/rebass.git"

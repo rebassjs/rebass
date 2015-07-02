@@ -5,17 +5,36 @@ import Logo from 'basscss-logo'
 import {
   Container,
   PageHeader,
+  FlexRow,
   Flex,
-  FlexItem,
   Footer
 } from '../..'
 import Hero from './Hero.jsx'
 import Intro from './Intro.jsx'
+import Social from './Social.jsx'
 import ValueProps from './ValueProps.jsx'
 import GettingStarted from './GettingStarted.jsx'
 import Components from './Components.jsx'
+import Cta from './Cta.jsx'
+import Related from './Related.jsx'
+
+//import ActiveId from './ActiveId.jsx'
 
 class Root extends React.Component {
+
+  constructor () {
+    super ()
+    this.state = {
+      activeSection: false
+    }
+    this.updateActiveSection = this.updateActiveSection.bind(this)
+  }
+
+  updateActiveSection (id) {
+    if (id) {
+      this.setState({ activeSection: id })
+    }
+  }
 
   render() {
     let initialProps = {
@@ -33,19 +52,22 @@ class Root extends React.Component {
           <Hero {...this.props} />
           <Container>
             <Intro />
+            <Social />
             <ValueProps />
             <GettingStarted {...this.props} />
             <Components />
+            <Cta />
+            <Related />
             <Footer>
-              <Flex>
-                <FlexItem auto>
+              <FlexRow>
+                <Flex auto>
                   {this.props.title} v{this.props.version}
-                </FlexItem>
+                </Flex>
                 <a href='//jxnblk.com'
                   className='btn'>
                   Made by Jxnblk
                 </a>
-              </Flex>
+              </FlexRow>
             </Footer>
           </Container>
           <script id='initial-props'
