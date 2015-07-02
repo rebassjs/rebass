@@ -2,8 +2,8 @@
 import React from 'react'
 import css from '../docs.css'
 import Logo from 'basscss-logo'
-import favicon from 'basscss-logo/images/basscss-32.png'
-import touchicon from 'basscss-logo/images/basscss-512.png'
+//import favicon from 'basscss-logo/images/basscss-32.png'
+//import touchicon from 'basscss-logo/images/basscss-512.png'
 import {
   Container,
   PageHeader,
@@ -50,8 +50,6 @@ class Root extends React.Component {
           <title>{this.props.title}</title>
           <meta name='description' content={this.props.description} />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <link rel='icon' href={favicon} />
-          <link rel='apple-touch-icon-precomposed' href={touchicon} />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>

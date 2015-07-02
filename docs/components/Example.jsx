@@ -4,8 +4,6 @@ import highlight from 'highlight.js'
 import cx from 'classnames'
 import react2jsx from 'react-to-jsx'
 
-const JS_COMMENT_REGEX = /(\/\*[\w\'\s\r\n\*]*\*\/)|(\/\/[\w\s\']*)|(\<![\-\-\s\w\>\/]*\>)/
-
 class Example extends React.Component {
 
   highlight (str) {
