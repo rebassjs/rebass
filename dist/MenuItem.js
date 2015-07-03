@@ -20,6 +20,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var MenuItem = (function (_React$Component) {
   function MenuItem() {
     _classCallCheck(this, MenuItem);
@@ -33,10 +37,23 @@ var MenuItem = (function (_React$Component) {
     key: 'render',
     value: function render() {
       var label = this.props.children || this.props.label;
+      var className = (0, _classnames2['default'])('MenuItem btn block', {
+        'p0 py1': !this.props.compact && this.props.flush,
+        'p0': this.props.compact && this.props.flush
+      });
+      var style = {};
+      if (this.props.compact) {
+        style.paddingTop = 4;
+        style.paddingBottom = 4;
+        style.paddingLeft = this.props.flush ? 0 : 8;
+        style.paddingRight = this.props.flush ? 0 : 8;
+      }
+
       return _react2['default'].createElement(
         'a',
         _extends({}, this.props, {
-          className: 'btn block' }),
+          className: className,
+          style: style }),
         label
       );
     }
@@ -44,6 +61,11 @@ var MenuItem = (function (_React$Component) {
 
   return MenuItem;
 })(_react2['default'].Component);
+
+MenuItem.propTypes = {
+  flush: _react2['default'].PropTypes.bool,
+  compact: _react2['default'].PropTypes.bool
+};
 
 exports['default'] = MenuItem;
 module.exports = exports['default'];

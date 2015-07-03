@@ -89,17 +89,17 @@ export default [
     description: 'Media object with vertical alignment options',
     examples: [
       <Media
-        image={<img src='//placehold.it/128' />}>
+        image={<img src='//placehold.it/128' width={128} height={128} />}>
         Hamburger
       </Media>,
       <Media
         middle
-        image={<img src='//placehold.it/128' />}>
+        image={<img src='//placehold.it/128' width={128} heigh={128} />}>
         Hamburger
       </Media>,
       <Media
         bottom
-        image={<img src='//placehold.it/128' />}>
+        image={<img src='//placehold.it/128' width={128} heigh={128} />}>
         Hamburger
       </Media>,
     ]
@@ -177,7 +177,7 @@ export default [
       <LinkBtn href='#Link'>Hamburger</LinkBtn>,
       <LinkBtn href='#Link' color='red'>Hamburger</LinkBtn>,
       <LinkBtn href='#Link' outline>Hamburger</LinkBtn>,
-      <LinkBtn href='#Link' outline color='blue'>Hamburger</LinkBtn>,
+      <LinkBtn href='#Link' outline color='blue'>Hamburger</LinkBtn>
     ]
   },
   {
@@ -316,6 +316,14 @@ export default [
     ]
   },
   {
+    name: 'NavItem',
+    description: 'Inline block padded link',
+    examples: [
+      <NavItem href='#NavItem'>Hamburger</NavItem>,
+      <NavItem href='#NavItem' flush>Hamburger</NavItem>
+    ]
+  },
+  {
     name: 'Menu',
     description: 'Styled box with white background and rounded borders',
     examples: [
@@ -327,6 +335,16 @@ export default [
         <MenuItem href='#Menu'
           label='Onion Rings' />
       </Menu>
+    ]
+  },
+  {
+    name: 'MenuItem',
+    description: 'Block-level padded link',
+    examples: [
+      <MenuItem href='#MenuItem'>Hamburger</MenuItem>,
+        <MenuItem href='#MenuItem' flush>Hamburger</MenuItem>,
+        <MenuItem href='#MenuItem' compact>Hamburger</MenuItem>,
+        <MenuItem href='#MenuItem' compact flush>Hamburger</MenuItem>
     ]
   },
   {
@@ -385,10 +403,12 @@ export default [
       <Row>
         <Col sm={6} md={4}>
           <Card
-            image={<img src='//placehold.it/512x384' />}>
+            image={<img src='//placehold.it/512x384' width={512} />}>
             <Media
               middle
               image={<img src='//placehold.it/48'
+                width={48}
+                height={48}
                 className='circle'/>}>
               <h3 className='h4 m0'>Nested Hamburger</h3>
             </Media>

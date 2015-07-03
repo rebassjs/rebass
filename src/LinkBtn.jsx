@@ -7,6 +7,7 @@ class LinkBtn extends React.Component {
 
   render () {
     let color = false
+    let btnClass = false
     if (this.props.color) {
       if (this.props.outline) {
         color = this.props.color
@@ -14,12 +15,15 @@ class LinkBtn extends React.Component {
         color = 'bg-' + this.props.color
       }
     }
+    if (this.props.outline) {
+      btnClass = 'btn-outline'
+    } else {
+      btnClass = 'btn-primary'
+    }
+
     return (
       <a {...this.props}
-        className={cx('btn', color, {
-          'btn-primary': !this.props.outline,
-          'btn-outline': this.props.outline,
-        })}>
+        className={cx('btn', color, btnClass)}>
         {this.props.children}
       </a>
     )

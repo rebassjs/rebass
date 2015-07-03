@@ -41,6 +41,7 @@ var LinkBtn = (function (_React$Component) {
     key: 'render',
     value: function render() {
       var color = false;
+      var btnClass = false;
       if (this.props.color) {
         if (this.props.outline) {
           color = this.props.color;
@@ -48,13 +49,16 @@ var LinkBtn = (function (_React$Component) {
           color = 'bg-' + this.props.color;
         }
       }
+      if (this.props.outline) {
+        btnClass = 'btn-outline';
+      } else {
+        btnClass = 'btn-primary';
+      }
+
       return _react2['default'].createElement(
         'a',
         _extends({}, this.props, {
-          className: (0, _classnames2['default'])('btn', color, {
-            'btn-primary': !this.props.outline,
-            'btn-outline': this.props.outline
-          }) }),
+          className: (0, _classnames2['default'])('btn', color, btnClass) }),
         this.props.children
       );
     }

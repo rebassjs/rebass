@@ -10,45 +10,43 @@ import {
 } from '../..'
 import Sticky from './Sticky.jsx'
 import ComponentDocs from './ComponentDocs.jsx'
+import ComponentNav from './ComponentNav.jsx'
 
 class Components extends React.Component {
+
+  constructor () {
+    super ()
+    this.state = {
+      height: 2048
+    }
+  }
+
+  componentDidMount () {
+    if (typeof window !== 'undefined') {
+      let container = React.findDOMNode(this.refs.container)
+      this.setState({
+        height: container.offsetHeight
+      })
+    }
+  }
 
   render () {
     let props = this.props
     return (
       <div>
         <SectionHeader title='Components' />
-        <Row>
-          <Col sm={9} md={10}>
+        <Row ref='container'>
+          <Col sm={9} md={9}>
             {components.map(function(comp, i) {
               return (
                 <ComponentDocs key={i} {...comp} />
               )
             })}
           </Col>
-          <Col sm={3} md={2}>
-            <Sticky bottom={64}>
-              <ul className='list-reset'>
-                {components.map(function(comp, i) {
-                  let active = comp.name === props.activeSection
-                  let styles = {
-                    li: {
-                      paddingLeft: 8,
-                      borderLeftWidth: 4,
-                      borderLeftStyle: 'solid',
-                      borderLeftColor: active ? 'rgba(0,0,0,.25)' : 'transparent'
-                    }
-                  }
-                  return (
-                    <li key={i} style={styles.li}>
-                      <a href={'#' + comp.name}
-                        className={'h5 bold color-inherit'}>
-                        {comp.name}
-                      </a>
-                    </li>
-                  )
-                })}
-              </ul>
+          <Col sm={3} md={3}>
+            <Sticky height={this.state.height}>
+              <ComponentNav {...this.props}
+                components={components} />
             </Sticky>
           </Col>
         </Row>

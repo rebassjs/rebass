@@ -20,6 +20,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var NavItem = (function (_React$Component) {
   function NavItem() {
     _classCallCheck(this, NavItem);
@@ -32,17 +36,24 @@ var NavItem = (function (_React$Component) {
   _createClass(NavItem, [{
     key: 'render',
     value: function render() {
+      var label = this.props.children || this.props.label;
       return _react2['default'].createElement(
         'a',
         _extends({}, this.props, {
-          className: 'btn' }),
-        this.props.children
+          className: (0, _classnames2['default'])('NavItem btn', {
+            'p0 py1': this.props.flush
+          }) }),
+        label
       );
     }
   }]);
 
   return NavItem;
 })(_react2['default'].Component);
+
+NavItem.propTypes = {
+  flush: _react2['default'].PropTypes.bool
+};
 
 exports['default'] = NavItem;
 module.exports = exports['default'];
