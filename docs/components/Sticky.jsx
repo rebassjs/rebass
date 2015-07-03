@@ -15,8 +15,8 @@ class Sticky extends React.Component {
     this.state = {
       snap: false,
       width: 'auto',
-      offsetTop: 0,
-      offsetLeft: 0
+      offsetTop: 16,
+      offsetLeft: 16
     }
   }
 
