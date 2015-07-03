@@ -5,13 +5,13 @@ import { throttle } from 'lodash'
 let win = typeof window !== 'undefined' ? window : false
 let el = false
 
-class ScrollFix extends React.Component {
+class Sticky extends React.Component {
 
   constructor () {
     super ()
     this.componentDidMount = this.componentDidMount.bind(this)
-    this.onScroll = this.onScroll.bind(this)
-    this.onResize = this.onResize.bind(this)
+    this.onScroll = throttle(this.onScroll.bind(this), 50)
+    this.onResize = throttle(this.onResize.bind(this), 50)
     this.state = {
       snap: false,
       width: 'auto',
@@ -50,8 +50,9 @@ class ScrollFix extends React.Component {
       offsetLeft: el.offsetLeft
     })
     if (win) {
-      win.addEventListener('scroll', throttle(this.onScroll, 100))
-      win.addEventListener('resize', throttle(this.onResize, 100))
+      this.onScroll()
+      win.addEventListener('scroll', this.onScroll)
+      win.addEventListener('resize', this.onResize)
     }
   }
 
@@ -90,15 +91,15 @@ class ScrollFix extends React.Component {
 
 }
 
-ScrollFix.propTypes = {
+Sticky.propTypes = {
   offset: React.PropTypes.number,
   bottom: React.PropTypes.number
 }
 
-ScrollFix.defaultProps = {
+Sticky.defaultProps = {
   offset: 16,
   bottom: 0
 }
 
-export default ScrollFix
+export default Sticky
 

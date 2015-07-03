@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { throttle } from 'lodash'
+import { debounce, throttle } from 'lodash'
 
 let win = typeof window !== 'undefined' ? window : false
 let els = []
@@ -9,35 +9,30 @@ class ActiveId extends React.Component {
 
   constructor () {
     super ()
-    this.onScroll = this.onScroll.bind(this)
-    this.handleScroll = this.handleScroll.bind(this)
+    this.onScroll = debounce(this.onScroll.bind(this), 20)
   }
 
   onScroll () {
     let active = false
-    let top = win.scrollY
-    let bottom = win.scrollY + win.innerHeight
+    let winHeight = win.innerHeight
     els.forEach(function(el, i) {
-      let next = els[i+1] || false
-      //if (next && next.offsetTop > bottom) {
-      //  active = el.id
-      //} else if (next && next.offsetTop < bottom) {
-      //  active = next.id
-      //  console.log('next el', next.id)
-      //} else if (!next && el.offsetTop > top) {
-      //  active = el.id
-      //}
+      let rect = el.getBoundingClientRect()
+      if (rect.height && rect.top > -1 && rect.top < (winHeight/2)) {
+        active = el.id
+      }
     })
-    console.log(active)
-    this.updateId(active)
-  }
-
-  handleScroll (e) {
-    throttle(this.onScroll, 100)
-  }
-
-  updateId (id) {
-    console.log('updateId', id)
+    // Handle when none are in viewport
+    if (!active) {
+      els.forEach(function(el, i) {
+        let rect = el.getBoundingClientRect()
+        if (rect.height && rect.top < winHeight) {
+          active = el.id
+        }
+      })
+    }
+    if (active) {
+      this.props.update(active)
+    }
   }
 
   componentDidMount () {
@@ -46,6 +41,7 @@ class ActiveId extends React.Component {
       for (var i = 0; i < nodes.length; i++) {
         els.push(nodes[i])
       }
+      this.onScroll()
       win.addEventListener('scroll', this.onScroll)
     }
   }

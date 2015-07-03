@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { capitalize } from 'lodash'
 import css from '../docs.css'
 import Logo from 'basscss-logo'
 import favicon from 'basscss-logo/images/basscss-32.png'
@@ -21,7 +22,7 @@ import Components from './Components.jsx'
 import Cta from './Cta.jsx'
 import Related from './Related.jsx'
 
-//import ActiveId from './ActiveId.jsx'
+import ActiveId from './ActiveId.jsx'
 
 class Root extends React.Component {
 
@@ -34,20 +35,20 @@ class Root extends React.Component {
   }
 
   updateActiveSection (id) {
-    if (id) {
-      this.setState({ activeSection: id })
-    }
+    this.setState({ activeSection: id })
   }
 
   render() {
     let initialProps = {
       __html: safeStringify(this.props)
     }
+    let activeId = this.state.activeSection
+    let title = activeId ? this.props.title + ' | ' + capitalize(activeId.replace(/\-/, ' ')) : this.props.title
     return (
       <html>
         <head>
           <meta charSet='utf-8' />
-          <title>{this.props.title}</title>
+          <title>{title}</title>
           <meta name='description' content={this.props.description} />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href={favicon} />
@@ -62,7 +63,7 @@ class Root extends React.Component {
             <Social />
             <ValueProps />
             <GettingStarted {...this.props} />
-            <Components />
+            <Components {...this.state} />
             <Cta />
             <Related />
             <Footer>
@@ -77,6 +78,7 @@ class Root extends React.Component {
               </FlexRow>
             </Footer>
           </Container>
+          <ActiveId update={this.updateActiveSection} />
           <script id='initial-props'
             type='application/json'
             dangerouslySetInnerHTML={initialProps} />

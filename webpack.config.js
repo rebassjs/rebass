@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: __dirname,
-    publicPath: '/rebass/',
+    //publicPath: '/rebass/',
     libraryTarget: 'umd'
   },
 

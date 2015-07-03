@@ -8,12 +8,13 @@ import {
   Row,
   Col
 } from '../..'
-import ScrollFix from './ScrollFix.jsx'
+import Sticky from './Sticky.jsx'
 import ComponentDocs from './ComponentDocs.jsx'
 
 class Components extends React.Component {
 
   render () {
+    let props = this.props
     return (
       <div>
         <SectionHeader title='Components' />
@@ -26,20 +27,29 @@ class Components extends React.Component {
             })}
           </Col>
           <Col sm={3} md={2}>
-            <ScrollFix bottom={64}>
+            <Sticky bottom={64}>
               <ul className='list-reset'>
                 {components.map(function(comp, i) {
+                  let active = comp.name === props.activeSection
+                  let styles = {
+                    li: {
+                      paddingLeft: 8,
+                      borderLeftWidth: 4,
+                      borderLeftStyle: 'solid',
+                      borderLeftColor: active ? 'rgba(0,0,0,.25)' : 'transparent'
+                    }
+                  }
                   return (
-                    <li key={i}>
+                    <li key={i} style={styles.li}>
                       <a href={'#' + comp.name}
-                        className='h5 bold color-inherit'>
+                        className={'h5 bold color-inherit'}>
                         {comp.name}
                       </a>
                     </li>
                   )
                 })}
               </ul>
-            </ScrollFix>
+            </Sticky>
           </Col>
         </Row>
       </div>

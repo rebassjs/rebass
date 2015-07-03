@@ -21,9 +21,6 @@ class Hero extends React.Component {
               <Space />
               <span className='h5'>v{this.props.version}</span>
             </h1>
-            {/*
-            <p className='h3 bold mb3'>{this.props.description}</p>
-            */}
           </Flex>
           <LinkBtn
             href='//github.com/jxnblk/rebass'
