@@ -15,8 +15,8 @@ class Sticky extends React.Component {
     this.state = {
       snap: false,
       width: 'auto',
-      offsetTop: 16,
-      offsetLeft: 16
+      offsetTop: 0,
+      offsetLeft: 0
     }
   }
 
@@ -34,23 +34,22 @@ class Sticky extends React.Component {
     let el = React.findDOMNode(this)
     let state = this.state
     if (state.offsetLeft !== el.offsetLeft) {
-      console.log('update offsetLeft')
       this.setState({ offsetLeft: el.offsetLeft })
     }
     if (state.width !== el.offsetWidth) {
       console.log('width change', state.width, el.offsetWidth)
+      this.setState({ width: el.offsetWidth })
     }
   }
 
   componentDidMount () {
     let el = React.findDOMNode(this)
-    this.setState({
-      width: el.offsetWidth,
-      offsetTop: el.offsetTop,
-      offsetLeft: el.offsetLeft
-    })
     if (win) {
-      this.onScroll()
+      this.setState({
+        width: el.offsetWidth,
+        offsetTop: el.offsetTop,
+        offsetLeft: el.offsetLeft
+      }, this.onScroll)
       win.addEventListener('scroll', this.onScroll)
       win.addEventListener('resize', this.onResize)
     }
