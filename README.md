@@ -30,6 +30,7 @@ import css from 'rebass/rebass.css'
 
 ```js
 import { Button, Badge } from 'rebass'
+```
 
 ### Use
 
