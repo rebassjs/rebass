@@ -19,7 +19,8 @@
     "basscss-input-range": "^1.1.5",
     "basscss-progress": "^1.0.5",
     "classnames": "^1.1.4",
-    "colorbass": "^1.0.0"
+    "colorbass": "^1.0.0",
+    "colors.css": "^2.3.0"
   },
   "devDependencies": {
     "babel": "^5.5.6",
