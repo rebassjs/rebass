@@ -19,7 +19,6 @@
     "basscss-input-range": "^1.1.5",
     "basscss-progress": "^1.0.5",
     "classnames": "^1.1.4",
-    "colorbass": "^1.0.0",
     "colors.css": "^2.3.0"
   },
   "devDependencies": {
@@ -33,7 +32,6 @@
     "cssnext-loader": "^1.0.1",
     "file-loader": "^0.8.4",
     "highlight.js": "^8.6.0",
-    "jsx-loader": "^0.12.2",
     "lodash": "^3.10.0",
     "node-libs-browser": "^0.5.2",
     "react": "^0.13.3",
