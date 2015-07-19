@@ -50,8 +50,8 @@ var Select = (function (_React$Component) {
           this.props.options.map(function (option, i) {
             return _react2['default'].createElement(
               'option',
-              { key: i,
-                value: option.value },
+              _extends({ key: i
+              }, option),
               option.label
             );
           })
