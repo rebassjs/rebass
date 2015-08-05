@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { capitalize } from 'lodash'
-import css from '../docs.css'
+import css from '!css-loader!cssnext-loader!../docs.css'
 import Logo from 'basscss-logo'
 import favicon from 'basscss-logo/images/basscss-32.png'
 import touchicon from 'basscss-logo/images/basscss-512.png'
