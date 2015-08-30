@@ -96,17 +96,22 @@ class Sticky extends React.Component {
         overflow: 'auto'
       }
     }
-    let className = ''
-    if (state.snap && !state.scrollBy) {
-      className = 'sm-fixed'
-    } else if (state.snap && state.scrollBy) {
-      className = 'sm-absolute'
+    if (typeof window !== 'undefined') {
+      if (window.matchMedia('(min-width: 40em)').matches) {
+        if (state.snap && !state.scrollBy) {
+          styles.inner.position = 'fixed'
+        } else if (state.snap && state.scrollBy) {
+          styles.inner.position = 'absolute'
+        }
+      } else {
+        styles.inner.position = 'static'
+      }
+
     }
 
     return (
       <div style={styles.outer}>
-        <div style={styles.inner}
-          className={className}>
+        <div style={styles.inner}>
           {this.props.children}
         </div>
       </div>
