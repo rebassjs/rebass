@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Stateless React UI components built with Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "start": "npm run babel:watch & npm run docs:dev"
   },
   "dependencies": {
-    "basscss": "^7.0.0",
+    "basscss": "^7.0.4",
     "basscss-color-input-range": "^1.0.0",
     "basscss-color-progress": "^1.0.0",
     "basscss-input-range": "^1.1.5",
@@ -25,8 +25,8 @@
     "babel": "^5.5.6",
     "babel-core": "^5.5.6",
     "babel-loader": "^5.1.4",
+    "basscss-highlight": "^0.1.0",
     "basscss-logo": "^1.0.0",
-    "basscss.github.io": "github:basscss/basscss.github.io",
     "css-loader": "^0.15.1",
     "cssnext": "^1.8.0",
     "cssnext-loader": "^1.0.1",

@@ -135,6 +135,7 @@ export default [
     examples: [
       <PageHeader
         title='Hamburger'
+        className='mb0 blue'
         description='Fries, onion rings, and shakes'>
         <div>Medium Rare</div>
       </PageHeader>

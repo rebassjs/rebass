@@ -14,20 +14,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
 var Select = (function (_React$Component) {
+  _inherits(Select, _React$Component);
+
   function Select() {
     _classCallCheck(this, Select);
 
     _get(Object.getPrototypeOf(Select.prototype), 'constructor', this).apply(this, arguments);
   }
-
-  _inherits(Select, _React$Component);
 
   _createClass(Select, [{
     key: 'render',
@@ -50,8 +50,8 @@ var Select = (function (_React$Component) {
           this.props.options.map(function (option, i) {
             return _react2['default'].createElement(
               'option',
-              { key: i,
-                value: option.value },
+              _extends({ key: i
+              }, option),
               option.label
             );
           })
