@@ -5,7 +5,8 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "start": "static-react docs/components/Root.js > index.html"
+    "start": "static-react docs/components/Root.js > index.html",
+    "test": "static-react docs/components/Root.js"
   },
   "dependencies": {
     "basscss": "^8.0.0",

@@ -29,9 +29,26 @@ class Root extends React.Component {
           <hr />
           <Button big children='Big Hello' />
           <hr />
-          <Button children='Hello' left />
-          <Button children='Button' middle />
-          <Button children='Group' right />
+          <h1>Examples</h1>
+          {data.examples.map(example => {
+            const name = example.component.name
+            const Component = example.component.Comp
+            return (
+              <div>
+                <h1>name: {name}</h1>
+                {example.variations.map((variation, i) => {
+                  return (
+                    <div key={name + i}>
+                      <pre>{JSON.stringify(variation, null, 2)}</pre>
+                      <Component {...variation} children='Hello' />
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          })}
+
+          <hr />
           <hr />
           <pre>{JSON.stringify(data, null, 2)}</pre>
         </body>

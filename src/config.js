@@ -1,15 +1,5 @@
 
-const defaults = {
-  colors: {
-    'blue': '#0cf',
-
-    'tomato': 'tomato'
-  },
-  borderColor: '#ccc',
-  buttonColor: '#0cf',
-  toolbar: {
-  }
-}
+import defaults from './defaults'
 
 class Config {
   constructor(init) {
