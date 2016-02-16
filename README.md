@@ -1,6 +1,6 @@
 # Rebass
 
-Stateless React UI components built with Basscss
+React Stateless Function UI Components Built with Basscss
 
 http://jxnblk.com/rebass
 
@@ -13,18 +13,6 @@ npm i rebass
 ```
 
 ### Import CSS
-
-In a CSS file using cssnext
-
-```css
-@import 'rebass';
-```
-
-Or using cssnext-loader with webpack
-
-```js
-import css from 'rebass/rebass.css'
-```
 
 ### Import Components
 
@@ -40,10 +28,6 @@ import { Button, Badge } from 'rebass'
   <Badge>Badge</Badge>
 </App>
 ```
-
-## Documentation
-
-http://jxnblk.com/rebass
 
 ---
 

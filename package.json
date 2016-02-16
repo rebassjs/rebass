@@ -1,44 +1,26 @@
 {
   "name": "rebass",
-  "version": "0.1.5",
-  "description": "Stateless React UI components built with Basscss",
+  "version": "0.2.0-beta1",
+  "description": "React Stateless Function UI Components Built with Basscss",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "babel": "babel src --out-dir dist",
-    "babel:watch": "babel src -w --out-dir dist",
-    "prod": "webpack -p --progress --colors",
-    "docs": "webpack --progress --colors",
-    "docs:dev": "webpack-dev-server --progress --colors",
-    "start": "npm run babel:watch & npm run docs:dev"
+    "start": "static-react docs/components/Root.js > index.html"
   },
   "dependencies": {
-    "basscss": "^7.0.4",
-    "basscss-color-input-range": "^1.0.0",
-    "basscss-color-progress": "^1.0.0",
-    "basscss-input-range": "^1.1.5",
-    "basscss-progress": "^1.0.5",
-    "classnames": "^1.1.4",
-    "colors.css": "^2.3.0"
+    "basscss": "^8.0.0",
+    "basscss-addons": "^1.0.0-beta1"
   },
   "devDependencies": {
-    "babel": "^5.5.6",
-    "babel-core": "^5.5.6",
-    "babel-loader": "^5.1.4",
-    "basscss-highlight": "^0.1.0",
-    "basscss-logo": "^1.0.0",
-    "css-loader": "^0.15.1",
-    "cssnext": "^1.8.0",
-    "cssnext-loader": "^1.0.1",
-    "file-loader": "^0.8.4",
-    "highlight.js": "^8.6.0",
-    "lodash": "^3.10.0",
-    "node-libs-browser": "^0.5.2",
-    "react": "^0.13.3",
-    "react-to-jsx": "^1.3.2",
-    "static-site-generator-webpack-plugin": "^1.0.0",
-    "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.9.0"
+    "babel": "^6.5.2",
+    "babel-cli": "^6.5.1",
+    "babel-plugin-transform-css-import-to-string": "0.0.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "react": "^0.14.7",
+    "react-docgen": "^2.7.0",
+    "static-react": "^3.1.0"
   },
   "keywords": [
     "basscss",
@@ -48,7 +30,6 @@
     "ui"
   ],
   "main": "dist/index.js",
-  "style": "rebass.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/jxnblk/rebass.git"
