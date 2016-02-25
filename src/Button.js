@@ -1,6 +1,6 @@
 
 import React from 'react'
-import config from './config'
+import theme from './theme'
 
 /** A general purpose button element with customizable colors */
 
@@ -10,14 +10,16 @@ const Button = ({
   middle,
   right,
   color,
-  bg,
+  backgroundColor,
   children,
   style,
   className,
   ...props
-}) => {
+}, context) => {
 
-  const { scale, colors, button, borderRadius } = config
+  const buttonConfig = Object.assign({}, theme.button, context.rebass.Button)
+  const config = Object.assign({}, theme, context.rebass)
+  const { scale, colors, borderRadius } = config
 
   let radius = borderRadius
   if (middle) {
@@ -39,10 +41,11 @@ const Button = ({
         display: 'inline-block',
         margin: 0,
         padding: big ? scale[2] : scale[1],
+        cursor: 'pointer',
         border: 0,
         borderRadius: radius,
-        // color: 'white',
-        // backgroundColor: color || button.bg
+        color: color || buttonConfig.color,
+        backgroundColor: backgroundColor || buttonConfig.backgroundColor
       }}>
       {children}
     </button>
@@ -62,6 +65,10 @@ Button.propTypes = {
   right: React.PropTypes.bool,
   /** Creates a larger button */
   big: React.PropTypes.bool,
+}
+
+Button.contextTypes = {
+  rebass: React.PropTypes.object
 }
 
 export default Button

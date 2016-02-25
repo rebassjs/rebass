@@ -13,7 +13,6 @@ const components = files
     const Component = require('../src/' + filename).default
     const name = filename.replace(/\.js$/, '')
 
-    Component.displayName = name
 
     let docs
     try {
@@ -21,6 +20,8 @@ const components = files
     } catch (e) {
       return false
     }
+
+    Component.displayName = name
 
     return {
       name,

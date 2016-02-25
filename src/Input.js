@@ -1,12 +1,13 @@
 
 import React from 'react'
 import Label from './Label'
+import { borderColor } from './theme'
 
 /**
  * Input element with label
  */
 
-const Input = ({ label, name, type, children, style, ...props }) => (
+const Input = ({ label, name, type, children, style, ...props }, context) => (
   <div className='Input'>
     <Label htmlFor={name} children={label} />
     <input
@@ -24,6 +25,7 @@ const Input = ({ label, name, type, children, style, ...props }) => (
         padding: 8,
         borderRadius: 2,
         borderWidth: 1,
+        borderColor: context.rebass.borderColor || borderColor,
         borderStyle: 'solid'
       }} />
   </div>
@@ -40,6 +42,10 @@ Input.propTypes = {
 
 Input.defaultProps = {
   type: 'text'
+}
+
+Input.contextTypes = {
+  rebass: React.PropTypes.object
 }
 
 export default Input

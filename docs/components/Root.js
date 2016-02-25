@@ -1,7 +1,6 @@
 
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
-import config from '../../src/config'
 import PropsTable from './PropsTable'
 
 import Button from '../../src/Button'
@@ -22,6 +21,29 @@ const css = `
 `
 
 class Root extends React.Component {
+
+  constructor () {
+    super()
+  }
+
+  static childContextTypes = {
+    rebass: React.PropTypes.object
+  }
+
+  getChildContext () {
+    return {
+      rebass: {
+        // borderColor: 'tomato',
+        Button: {
+          color: 'white',
+          backgroundColor: 'tomato'
+        },
+        Toolbar: {
+          backgroundColor: 'tomato'
+        }
+      }
+    }
+  }
 
   render () {
     const { components } = this.props
@@ -65,9 +87,9 @@ class Root extends React.Component {
                     <div className='mb2'>
                       <Component
                         name={`hello_${component.name}`}
-                        label='Hello'
+                        label={component.name}
                         value={0.25}
-                        children='Hello' />
+                        children={component.name} />
                     </div>
                     <PropsTable props={component.props} />
                   </section>

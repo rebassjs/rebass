@@ -1,25 +1,30 @@
 
 import React from 'react'
+import theme from './theme'
 
 /**
  * Menu component for navigation links and actions
  */
 
-const Menu = ({ backgroundColor, borderColor, style, ...props }) => (
-  <div
-    {...props}
-    className='Menu'
-    style={{
-      ...style,
-      display: 'flex',
-      flexDirection: 'column',
-      borderRadius: 2,
-      borderWidth: 1,
-      borderStyle: 'solid',
-      borderColor,
-      backgroundColor
-    }} />
-)
+const Menu = ({ backgroundColor, borderColor, style, ...props }, context) => {
+  const config = Object.assign({}, theme, context.rebass)
+
+  return (
+    <div
+      {...props}
+      className='Menu'
+      style={{
+        ...style,
+        display: 'flex',
+        flexDirection: 'column',
+        borderRadius: 2,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: borderColor || config.borderColor,
+        backgroundColor
+      }} />
+  )
+}
 
 Menu.propTypes = {
   /** Background color */
@@ -29,8 +34,7 @@ Menu.propTypes = {
 }
 
 Menu.defaultProps = {
-  backgroundColor: 'white',
-  borderColor: '#ccc',
+  backgroundColor: 'white'
 }
 
 export default Menu
