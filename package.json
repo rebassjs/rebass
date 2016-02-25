@@ -5,12 +5,13 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "start": "static-react docs/components/Root.js > index.html",
-    "test": "static-react docs/components/Root.js"
+    "prepublish": "mkdir -p dist && babel src --out-dir dist",
+    "start": "static-react docs/components/Root.js --props docs/data.js > index.html",
+    "watch": "onchange src/**/* -- npm run start",
+    "test": "static-react docs/components/Root.js --props docs/data.js"
   },
-  "dependencies": {
-    "basscss": "^8.0.0",
-    "basscss-addons": "^1.0.0-beta1"
+  "peerDependencies": {
+    "react": "^0.14.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -19,8 +20,11 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
+    "onchange": "^2.0.0",
     "react": "^0.14.7",
+    "react-component-permutations": "^1.0.0-beta1",
     "react-docgen": "^2.7.0",
+    "reflexbox": "^1.0.0",
     "static-react": "^3.1.0"
   },
   "keywords": [

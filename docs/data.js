@@ -4,38 +4,35 @@ import path from 'path'
 import React from 'react'
 import { parse } from 'react-docgen'
 
-const components = [
-  'Button'
-]
+const files = fs.readdirSync(path.join(__dirname, '../src'))
+  .filter(f => /\.js$/.test(f))
 
-const docs = components.map(name => {
-  const str = fs.readFileSync(path.join(__dirname, `../src/${name}.js`), 'utf8')
-  var Comp = require('../src/' + name).default
-  return { ...parse(str), name, Comp }
-})
+const components = files
+  .map(filename => {
+    const raw = fs.readFileSync(path.join(__dirname, `../src/${filename}`), 'utf8')
+    const Component = require('../src/' + filename).default
+    const name = filename.replace(/\.js$/, '')
 
-const examples = docs.map(c => {
-  // Generate all possible permutations
-  const props = Object.keys(c.props)
-  let variations = []
+    Component.displayName = name
 
-  props.forEach(key => {
-    const prop = c.props[key]
-    if (prop.type.name === 'bool') {
-      variations.push({ [key]: true })
-      // variations.push({ [key]: false })
+    let docs
+    try {
+      docs = parse(raw)
+    } catch (e) {
+      return false
+    }
+
+    return {
+      name,
+      filename,
+      Component,
+      raw,
+      ...docs
     }
   })
+  .filter(c => c)
 
-  return {
-    component: c,
-    variations
-  }
-})
-
-export default {
-  components,
-  examples,
-  docs
+module.exports = {
+  components
 }
 

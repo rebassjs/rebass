@@ -18,10 +18,12 @@ class Config {
   }
 
   setColors (colors) {
-    Object.assign(this.colors, colors)
+    colors = Object.assign(this.colors, colors)
+    this.set({ colors })
   }
 
   reset () {
+    this.set(defaults)
   }
 }
 
@@ -30,4 +32,10 @@ const createConfig = () => new Config(defaults)
 const config = createConfig()
 
 export default config
+
+export const colors = config.colors
+export const scale = config.scale
+export const typeScale = config.typeScale
+export const button = config.button
+export const borderRadius = config.borderRadius
 

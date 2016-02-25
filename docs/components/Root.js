@@ -1,18 +1,31 @@
 
 import React from 'react'
-import data from '../data'
-
+import { Flex, Box } from 'reflexbox'
 import config from '../../src/config'
-import Style from '../../src/Style'
-import Button from '../../src/Button'
+import PropsTable from './PropsTable'
 
-config.set({
-  // buttonColor: 'red'
-})
+import Button from '../../src/Button'
+import Label from '../../src/Label'
+
+const css = `
+.caps {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+/*
+  .Button {
+    color: white;
+    background-color: tomato;
+  }
+*/
+.tomato { color: tomato }
+`
 
 class Root extends React.Component {
 
   render () {
+    const { components } = this.props
+
     return (
       <html>
         <head>
@@ -20,37 +33,50 @@ class Root extends React.Component {
           <title>Rebass</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link href='https://npmcdn.com/basscss-basic@1.0.0/index.css' rel='stylesheet' />
-          <Style />
+          <link href='https://npmcdn.com/basscss@8.0.1/css/basscss.min.css' rel='stylesheet' />
+          <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
-        <body className='p3'>
-          <h1>Rebass</h1>
-          <hr />
-          <Button children='Hello' />
-          <hr />
-          <Button big children='Big Hello' />
-          <hr />
-          <h1>Examples</h1>
-          {data.examples.map(example => {
-            const name = example.component.name
-            const Component = example.component.Comp
-            return (
-              <div>
-                <h1>name: {name}</h1>
-                {example.variations.map((variation, i) => {
-                  return (
-                    <div key={name + i}>
-                      <pre>{JSON.stringify(variation, null, 2)}</pre>
-                      <Component {...variation} children='Hello' />
+        <body className='max-width-4'>
+          <Box p={3}>
+            <header>
+              <h1 className='caps'>Rebass</h1>
+              <p>
+                {components.length} React Stateless Function UI Components
+              </p>
+            </header>
+            <nav>
+              {components.map(c => (
+                <a key={c.name} href={`#${c.name}`}>{c.name}</a>
+              ))}
+            </nav>
+            <main>
+              {components.map(component => {
+                const { Component } = component
+                return (
+                  <section key={component.name}
+                    id={component.name}
+                    className='py3'>
+                    <h2>
+                      <a href={`#${component.name}`}>
+                        {component.name}
+                      </a>
+                    </h2>
+                    <p>{component.description}</p>
+                    <div className='mb2'>
+                      <Component
+                        name={`hello_${component.name}`}
+                        label='Hello'
+                        value={0.25}
+                        children='Hello' />
                     </div>
-                  )
-                })}
-              </div>
-            )
-          })}
-
-          <hr />
-          <hr />
-          <pre>{JSON.stringify(data, null, 2)}</pre>
+                    <PropsTable props={component.props} />
+                  </section>
+                )
+              })}
+            </main>
+            <hr />
+            <pre className='tomato'>{JSON.stringify(this.props, null, 2)}</pre>
+          </Box>
         </body>
       </html>
     )
