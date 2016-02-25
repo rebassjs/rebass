@@ -21,14 +21,14 @@ const Message = ({
       {...props}
       className='Message'
       style={{
-        ...style,
         fontWeight: 'bold',
         display: 'flex',
         alignItems: 'center',
         padding: config.scale[2],
         color: color || messageConfig.color,
         backgroundColor: backgroundColor || bg,
-        borderRadius: config.borderRadius
+        borderRadius: config.borderRadius,
+        ...style
       }} />
   )
 }

@@ -1,35 +1,37 @@
 
 import React from 'react'
 import Label from './Label'
-import { borderColor } from './theme'
+import theme from './theme'
 
 /**
  * Input element with label
  */
 
-const Input = ({ label, name, type, children, style, ...props }, context) => (
-  <div className='Input'>
-    <Label htmlFor={name} children={label} />
-    <input
-      {...props}
-      type={type}
-      name={name}
-      style={{
-        ...style,
-        fontFamily: 'inherit',
-        fontSize: 'inherit',
-        boxSizing: 'border-box',
-        display: 'block',
-        width: '100%',
-        height: 32,
-        padding: 8,
-        borderRadius: 2,
-        borderWidth: 1,
-        borderColor: context.rebass.borderColor || borderColor,
-        borderStyle: 'solid'
-      }} />
-  </div>
-)
+const Input = ({ label, name, type, children, style, ...props }, context) => {
+  const config = { ...theme, ...context.rebass }
+  return (
+    <div className='Input' style={style}>
+      <Label htmlFor={name} children={label} />
+      <input
+        {...props}
+        type={type}
+        name={name}
+        style={{
+          fontFamily: 'inherit',
+          fontSize: 'inherit',
+          boxSizing: 'border-box',
+          display: 'block',
+          width: '100%',
+          height: 32,
+          padding: 8,
+          borderRadius: 2,
+          borderWidth: 1,
+          borderColor: config.borderColor,
+          borderStyle: 'solid'
+        }} />
+    </div>
+  )
+}
 
 Input.propTypes = {
   /** Label for form element */

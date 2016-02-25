@@ -38,7 +38,7 @@ const css = `
 `
 
 const InputRange = ({ label, name, children, style, ...props }) => (
-  <div className='InputRange'>
+  <div className='InputRange' style={style}>
     <style dangerouslySetInnerHTML={{ __html: css }} />
     <Label htmlFor={name} children={label} />
     <input
@@ -47,7 +47,6 @@ const InputRange = ({ label, name, children, style, ...props }) => (
       name={name}
       className='InputRange-input'
       style={{
-        ...style,
         boxSizing: 'border-box',
         display: 'block',
         width: '100%',

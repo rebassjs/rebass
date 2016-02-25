@@ -7,7 +7,7 @@ import Label from './Label'
  */
 
 const Radio = ({ label, name, style, children, ...props }) => (
-  <div className='Radio'>
+  <div className='Radio' style={style}>
     <Label htmlFor={name}
       style={{
         display: 'flex',
@@ -17,7 +17,6 @@ const Radio = ({ label, name, style, children, ...props }) => (
         {...props}
         type='radio'
         style={{
-          ...style,
           marginRight: 8
         }} />
       {label}

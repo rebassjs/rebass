@@ -12,10 +12,11 @@ const Label = ({ style, ...props }, context) => {
 
   return <label
     {...props}
+    className='Label'
     style={{
-      ...style,
       fontSize: fontSizes[5],
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      ...style
     }} />
 }
 

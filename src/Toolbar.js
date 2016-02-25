@@ -14,14 +14,14 @@ const Toolbar = ({ color, backgroundColor, style, ...props }, context) => {
       {...props}
       className='Toolbar'
       style={{
-        ...style,
         display: 'flex',
         alignItems: 'center',
         minHeight: 48,
         paddingTop: 4,
         paddingBottom: 4,
         color: color || config.color,
-        backgroundColor: backgroundColor || config.backgroundColor
+        backgroundColor: backgroundColor || config.backgroundColor,
+        ...style
       }} />
   )
 }

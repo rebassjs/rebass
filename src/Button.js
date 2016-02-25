@@ -34,7 +34,6 @@ const Button = ({
     <button {...props}
       className='Button'
       style={{
-        ...style,
         fontFamily: 'inherit',
         fontSize: 'inherit',
         fontWeight: 'bold',
@@ -45,7 +44,8 @@ const Button = ({
         border: 0,
         borderRadius: radius,
         color: color || buttonConfig.color,
-        backgroundColor: backgroundColor || buttonConfig.backgroundColor
+        backgroundColor: backgroundColor || buttonConfig.backgroundColor,
+        ...style,
       }}>
       {children}
     </button>

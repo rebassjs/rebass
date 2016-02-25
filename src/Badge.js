@@ -21,7 +21,6 @@ const Badge = ({
       {...props}
       className='Badge'
       style={{
-        ...style,
         fontSize: config.fontSizes[5],
         fontWeight: 'bold',
         display: 'inline-block',
@@ -30,7 +29,8 @@ const Badge = ({
         paddingRight: config.scale[1],
         color: color || badgeConfig.color,
         backgroundColor: backgroundColor || bg,
-        borderRadius: config.borderRadius
+        borderRadius: config.borderRadius,
+        ...style
       }} />
   )
 }

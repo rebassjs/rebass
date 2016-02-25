@@ -10,13 +10,13 @@ const NavItem = ({ Component, style, ...props }) => (
     {...props}
     className='NavItem'
     style={{
-      ...style,
       fontWeight: 'bold',
       textDecoration: 'none',
       display: 'inline-block',
       padding: 8,
       color: 'inherit',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...style
     }} />
 )
 

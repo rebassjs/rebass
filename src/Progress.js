@@ -18,7 +18,7 @@ const css = `
  */
 
 const Progress = ({ value, style, ...props }) => (
-  <div className='Progress'>
+  <div className='Progress' style={style}>
     <style dangerouslySetInnerHTML={{ __html: css }} />
     <progress
       {...props}

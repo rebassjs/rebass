@@ -11,13 +11,12 @@ const Select = ({ label, name, options, children, style, ...props }, context) =>
   const config = Object.assign({}, theme, context.rebass)
 
   return (
-    <div className='Select'>
+    <div className='Select' style={style}>
       <Label htmlFor={name} children={label} />
       <select
         {...props}
         name={name}
         style={{
-          ...style,
           fontFamily: 'inherit',
           fontSize: 'inherit',
           boxSizing: 'border-box',

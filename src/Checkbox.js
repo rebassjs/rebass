@@ -7,7 +7,7 @@ import Label from './Label'
  */
 
 const Checkbox = ({ label, name, style, children, ...props }) => (
-  <div className='Checkbox'>
+  <div className='Checkbox' style={style}>
     <Label htmlFor={name}
       style={{
         display: 'flex',
@@ -17,7 +17,6 @@ const Checkbox = ({ label, name, style, children, ...props }) => (
         {...props}
         type='checkbox'
         style={{
-          ...style,
           marginRight: 8
         }} />
       {label}

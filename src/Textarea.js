@@ -9,14 +9,14 @@ import theme from './theme'
 
 const Textarea = ({ label, name, style, children, ...props }, context) => {
   const config = Object.assign({}, theme, context.rebass)
+
   return (
-    <div className='Textarea'>
+    <div className='Textarea' style={style}>
       <Label htmlFor={name} children={label} />
       <textarea
         {...props}
         name={name}
         style={{
-          ...style,
           fontFamily: 'inherit',
           fontSize: 'inherit',
           boxSizing: 'border-box',

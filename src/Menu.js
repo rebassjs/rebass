@@ -14,14 +14,14 @@ const Menu = ({ backgroundColor, borderColor, style, ...props }, context) => {
       {...props}
       className='Menu'
       style={{
-        ...style,
         display: 'flex',
         flexDirection: 'column',
         borderRadius: 2,
         borderWidth: 1,
         borderStyle: 'solid',
         borderColor: borderColor || config.borderColor,
-        backgroundColor
+        backgroundColor,
+        ...style
       }} />
   )
 }

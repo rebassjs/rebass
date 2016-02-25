@@ -2,9 +2,8 @@
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import PropsTable from './PropsTable'
+import Example from './Example'
 
-import Button from '../../src/Button'
-import Label from '../../src/Label'
 
 const css = `
 .caps {
@@ -85,11 +84,7 @@ class Root extends React.Component {
                     </h2>
                     <p>{component.description}</p>
                     <div className='mb2'>
-                      <Component
-                        name={`hello_${component.name}`}
-                        label={component.name}
-                        value={0.25}
-                        children={component.name} />
+                      <Example {...component} />
                     </div>
                     <PropsTable props={component.props} />
                   </section>
