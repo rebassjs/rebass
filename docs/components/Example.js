@@ -8,6 +8,16 @@ const Example = ({ name, Component, raw, ...props }) => {
     'info',
   ]
   const permutations = rcp(raw, {
+    options: [
+      [
+        { label: 'One', value: 'One' },
+        { label: 'Two', value: 'Two' },
+        { label: 'Three', value: 'Three' },
+      ]
+    ],
+    size: [], // Prevent multiple Heading permutations
+    title: [name],
+    description: ['Description for ' + name],
     label: [name],
     children: ['rcp-' + name]
   })

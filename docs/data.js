@@ -3,6 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import React from 'react'
 import { parse } from 'react-docgen'
+import pkg from '../package.json'
 
 const files = fs.readdirSync(path.join(__dirname, '../src'))
   .filter(f => /\.js$/.test(f))
@@ -34,6 +35,7 @@ const components = files
   .filter(c => c)
 
 module.exports = {
+  ...pkg,
   components
 }
 

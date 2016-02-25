@@ -1,7 +1,7 @@
 {
   "name": "rebass",
   "version": "0.2.0-beta1",
-  "description": "React Stateless Function UI Components Built with Basscss",
+  "description": "React Stateless Functional UI Components",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {

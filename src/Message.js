@@ -14,7 +14,7 @@ const Message = ({
   const config = { ...theme, ...rebass}
   const messageConfig = { ...theme.Message, ...rebass.Message }
 
-  const bg = messageConfig[type]
+  const bg = config.colorTypes[type]
 
   return (
     <div

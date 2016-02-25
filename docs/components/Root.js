@@ -3,7 +3,7 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import PropsTable from './PropsTable'
 import Example from './Example'
-
+import SectionHeader from '../../src/SectionHeader'
 
 const css = `
 .caps {
@@ -45,7 +45,7 @@ class Root extends React.Component {
   }
 
   render () {
-    const { components } = this.props
+    const { components, description, version } = this.props
 
     return (
       <html>
@@ -60,10 +60,8 @@ class Root extends React.Component {
         <body className='max-width-4'>
           <Box p={3}>
             <header>
-              <h1 className='caps'>Rebass</h1>
-              <p>
-                {components.length} React Stateless Function UI Components
-              </p>
+              <h1 className='caps'>Rebass <span className='h5'>{version}</span></h1>
+              <p>{components.length} {description}</p>
             </header>
             <nav>
               {components.map(c => (
@@ -77,12 +75,10 @@ class Root extends React.Component {
                   <section key={component.name}
                     id={component.name}
                     className='py3'>
-                    <h2>
-                      <a href={`#${component.name}`}>
-                        {component.name}
-                      </a>
-                    </h2>
-                    <p>{component.description}</p>
+                    <SectionHeader
+                      title={component.name}
+                      href={`#${component.name}`}
+                      description={component.description || '☞ NEEDS DESCRIPTION'} />
                     <div className='mb2'>
                       <Example {...component} />
                     </div>

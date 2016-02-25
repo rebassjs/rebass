@@ -14,7 +14,7 @@ const Badge = ({
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
   const badgeConfig = { ...theme.Badge, ...rebass.Badge }
-  const bg = badgeConfig[type]
+  const bg = config.colorTypes[type]
 
   return (
     <div

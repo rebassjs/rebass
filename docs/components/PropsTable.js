@@ -29,6 +29,7 @@ const PropsTable = ({ props, ...other }) => {
     return <div />
   }
 
+
   return (
     <div style={sx.root}>
       <table style={sx.table}>
@@ -42,10 +43,14 @@ const PropsTable = ({ props, ...other }) => {
         <tbody>
           {props && Object.keys(props).map(key => {
             const prop = props[key]
+            let type = prop.type.name
+            if (type === 'enum' && prop.type.value && Array.isArray(prop.type.value)) {
+              type = `oneOf([${prop.type.value.map(v => v.value).join(', ')}])`
+            }
             return (
               <tr key={key}>
                 <td style={sx.td}>{key} {prop.required && '*'}</td>
-                <td style={sx.td}>{prop.type.name}</td>
+                <td style={sx.td}>{type}</td>
                 <td style={sx.td}>{prop.description}</td>
               </tr>
             )

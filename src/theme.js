@@ -29,12 +29,21 @@ const fontSizes = [
   12
 ]
 
+const colorTypes = {
+  default: colors.midgray,
+  info: colors.blue,
+  success: colors.green,
+  warning: colors.orange,
+  error: colors.red
+}
+
 const theme = {
   scale,
   fontSizes,
   colors,
   borderRadius: 2,
   borderColor: colors.gray,
+  colorTypes,
   Button: {
     color: colors.white,
     backgroundColor: colors.blue,
@@ -45,19 +54,12 @@ const theme = {
   },
   Badge: {
     color: colors.white,
-    default: colors.midgray,
-    info: colors.blue,
-    success: colors.green,
-    warning: colors.orange,
-    error: colors.red
+  },
+  PanelHeader: {
+    color: colors.white,
   },
   Message: {
     color: colors.white,
-    default: colors.midgray,
-    info: colors.blue,
-    success: colors.green,
-    warning: colors.orange,
-    error: colors.red
   }
 }
 
