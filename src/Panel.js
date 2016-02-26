@@ -19,6 +19,7 @@ const Panel = ({ type, style, ...props }, { rebass }) => {
       className='Panel'
       style={{
         padding: scale[2],
+        marginBottom: scale[2],
         borderWidth: 1,
         borderStyle: 'solid',
         borderColor,

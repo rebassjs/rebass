@@ -33,11 +33,13 @@ const Block = ({
         margin: margin || blockConfig.margin,
         color: color || blockConfig.color,
         backgroundColor: backgroundColor || blockConfig.backgroundColor,
-
         borderColor: borderColor || blockConfig.borderColor,
         borderWidth: blockConfig.borderWidth,
-        borderStyle: 'solid',
-
+        borderStyle: border ? 'solid' : 'none',
+        borderTopStyle: borderTop ? 'solid' : null,
+        borderRightStyle: borderRight ? 'solid' : null,
+        borderBottomStyle: borderBottom ? 'solid' : null,
+        borderLeftStyle: borderLeft ? 'solid' : null,
         borderRadius: rounded ? config.borderRadius : 0,
         ...style
       }} />
@@ -62,32 +64,24 @@ Block.propTypes = {
   /** Border color */
   borderColor: React.PropTypes.string,
   /** Adds a border */
-  border: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.number
-  ]),
+  border: React.PropTypes.bool,
   /** Adds a border to the top side */
-  borderTop: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.number
-  ]),
+  borderTop: React.PropTypes.bool,
   /** Adds a border to the right side */
-  borderRight: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.number
-  ]),
+  borderRight: React.PropTypes.bool,
   /** Adds a border to the bottom side */
-  borderBottom: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.number
-  ]),
+  borderBottom: React.PropTypes.bool,
   /** Adds a border to the left side */
-  borderLeft: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.number
-  ]),
+  borderLeft: React.PropTypes.bool,
   /** Adds a border radius */
   rounded: React.PropTypes.bool
+}
+
+// <Block border />
+// <Block border='left' />
+// <Block border='right' />
+
+Block.defaultProps = {
 }
 
 Block.contextTypes = {

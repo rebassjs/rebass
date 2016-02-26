@@ -2,14 +2,19 @@
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
+  Block,
   Container,
-  PageHeader,
+  Divider,
   Heading,
+  NavItem,
+  PageHeader,
+  Panel,
+  PanelHeader,
   Section,
   SectionHeader,
-  NavItem,
-  Divider
+  Text
 } from '../../src'
+
 import PropsTable from './PropsTable'
 import Example from './Example'
 import Permutations from './Permutations'
@@ -77,8 +82,15 @@ class Root extends React.Component {
                       title={component.name}
                       href={`#${component.name}`}
                       description={component.description || '☞ NEEDS DESCRIPTION'} />
-                    {component.example && <Example example={component.example} />}
-                    <Permutations {...component} />
+                    <Panel>
+                      <PanelHeader>
+                        Example
+                      </PanelHeader>
+                      {component.example && <Example example={component.example} />}
+                      <Divider />
+                      <Text small children='Variations' />
+                      <Permutations {...component} />
+                    </Panel>
                     <PropsTable props={component.props} />
                   </section>
                 )

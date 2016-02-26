@@ -9,16 +9,20 @@ import theme from './theme'
 const PanelFooter = ({ type, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const borderTopColor = config.colorTypes[type]
-  const { scale, borderRadius } = config
+  const { scale, borderRadius, fontSizes } = config
 
   return (
     <div
       {...props}
       className='PanelFooter'
       style={{
+        fontSize: fontSizes[6],
         display: 'flex',
         alignItems: 'center',
-        margin: - scale[2],
+        marginTop: scale[2],
+        marginRight: - scale[2],
+        marginBottom: - scale[2],
+        marginLeft: - scale[2],
         padding: scale[2],
         borderTopWidth: 1,
         borderTopStyle: 'solid',

@@ -35,7 +35,7 @@ const Media = ({ img, right, align, style, children, ...props }, { rebass }) => 
           marginLeft: right ? scale[1] : 0,
           order: right ? 9999 : null
         }} />
-      {children}
+      <div children={children} />
     </div>
   )
 }

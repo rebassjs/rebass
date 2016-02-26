@@ -14,20 +14,23 @@ const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
     .Tooltip:hover::after {
       content: attr(title);
       white-space: nowrap;
-      font-size: ${fontSizes[5]};
+      font-size: ${fontSizes[6]}px;
+      box-sizing: border-box;
       display: block;
-      padding: 0 ${scale[1]}px;
+      padding: ${scale[1] / 2}px ${scale[1]}px;
       position: absolute;
-      bottom: calc(100% + ${scale[1]}px);
+      z-index: 4;
+      bottom: 100%;
       left: 50%;
       color: ${colors.white};
       background-color: ${colors.black};
       border-radius: ${borderRadius}px;
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateY(-${scale[1]}px);
     }
     .Tooltip:hover::before {
       content: '';
       position: absolute;
+      z-index: 4;
       bottom: calc(100% - 4px);
       left: 50%;
       border: 6px solid transparent;
@@ -43,6 +46,7 @@ const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
       title={title}
       style={{
         position: 'relative',
+        display: 'inline-block',
         cursor: 'pointer',
         ...style
       }}>

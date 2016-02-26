@@ -50,6 +50,12 @@ class App extends React.Component {
 - [ ] Input, etc, hideLabel prop
 - [ ] Form
 - [ ] SearchForm
+- [ ] Blockquote
+- [ ] Table
+- [ ] Pre
+
+- [ ] Test CSS :hover, :focus, :active, :disabled
+- [ ] Test without box-sizing: border-box
 
 ---
 

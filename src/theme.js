@@ -3,6 +3,8 @@ import clrs from 'colors.css'
 
 const { blue, red, orange, green } = clrs
 
+const monospace = `'Roboto Mono', Menlo, Consolas, monospace`
+
 const colors = {
   black: '#111',
   white: '#fff',
@@ -77,12 +79,18 @@ const theme = {
     color: colors.blue
   },
   Block: {
-    color: colors.white,
-    backgroundColor: colors.blue,
-    borderColor: 'tomato',
-    borderWidth: 2,
+    color: 'inherit',
+    backgroundColor: 'transparent',
+    borderColor: colors.blue,
+    borderWidth: 4,
     padding: scale[2],
     margin: 0
+  },
+  Pre: {
+    fontFamily: monospace,
+    paddingLeft: scale[2],
+    borderLeft: `4px solid ${colors.gray}`,
+    overflowX: 'scroll',
   }
 }
 

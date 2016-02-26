@@ -51,11 +51,15 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
         { href: '#!', children: name }
       ]
     ],
-    backgroundColor: [
-      null,
-      config.colors.red
-    ],
-    border: [true, false],
+    // backgroundColor: [
+    //   null,
+    //   config.colors.red
+    // ],
+    // Block component
+    border: [false],
+    borderTop: [false],
+    borderRight: [false],
+    borderBottom: [false],
     borderLeft: [true, false],
     open: [true] // DropdownMenu
   })
@@ -73,18 +77,14 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
         marginBottom: 16
       }}>
       {permutations &&
-        <div className=''>
+        <div>
           {permutations.map((p, i) => (
-            <div key={i}
-              style={{ margin: 8 }}>
-              <Component {...p}
-                style={{ margin: 0 }}
-                name={name}
-                children={name} />
-              <pre
-                style={{ fontSize: 12 }}
-                children={`<${name} ${propsString(p)} />`} />
-            </div>
+            <Component {...p}
+              key={i}
+              style={{ margin: 8 }}
+              title={`<${name} ${propsString(p)} />`}
+              name={name}
+              children={name} />
           ))}
         </div>
       }
