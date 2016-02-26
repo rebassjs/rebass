@@ -35,6 +35,12 @@ class App extends React.Component {
 - [ ] Tests
 - [ ] Site
   - [ ] Configurable context demo
+    - [ ] Colors from color lovers api ?
+    - [ ] Spacing Scale number or range inputs
+    - [ ] Border Radius
+    - [ ] Border color
+    - [ ] Font Sizes
+    - [ ] Base stylesheet controls (font, color, bg)
   - [ ] Ad
   - [ ] Travis Badge
   - [ ] Tweet
@@ -44,18 +50,31 @@ class App extends React.Component {
   - [ ] Footer
 
 - [ ] Close
-- [ ] Outline Button
 - [ ] PillButton
-- [ ] Block (color, backgroundColor, borderColor, border, borderLeft, ...)
-- [ ] Input, etc, hideLabel prop
+- [x] Block (color, backgroundColor, borderColor, border, borderLeft, ...)
+- [x] Input, etc, hideLabel prop
+- [x] Button rounded prop
+- [x] Button outline prop
+
+- [ ] theme component styles (e.g. Button, Heading)
+
 - [ ] Form
 - [ ] SearchForm
 - [ ] Blockquote
 - [ ] Table
-- [ ] Pre
+- [x] Pre
+- [ ] Embed
+- [ ] InputNumber ? + Stepper?
 
 - [ ] Test CSS :hover, :focus, :active, :disabled
 - [ ] Test without box-sizing: border-box
+
+- Fieldset
+- Form ?
+- AuthForm
+  - SignUpForm
+  - SignInForm
+- AddressForm
 
 ---
 
