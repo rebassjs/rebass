@@ -6,8 +6,13 @@ import theme from './theme'
  * Toolbar component that vertically centers children with display flex
  */
 
-const Toolbar = ({ color, backgroundColor, style, ...props }, context) => {
-  const config = Object.assign({}, theme.Toolbar, context.rebass.Toolbar)
+const Toolbar = ({ style, ...props }, { rebass }) => {
+  const config = { ...theme, ...rebass }
+  const toolbarStyle = {
+    ...theme.Toolbar,
+    ...(rebass ? rebass.Toolbar : {}),
+    ...style
+  }
 
   return (
     <div
@@ -19,18 +24,9 @@ const Toolbar = ({ color, backgroundColor, style, ...props }, context) => {
         minHeight: 48,
         paddingTop: 4,
         paddingBottom: 4,
-        color: color || config.color,
-        backgroundColor: backgroundColor || config.backgroundColor,
-        ...style
+        ...toolbarStyle
       }} />
   )
-}
-
-Toolbar.propTypes = {
-  /** Foreground color */
-  color: React.PropTypes.string,
-  /** Background color */
-  backgroundColor: React.PropTypes.string,
 }
 
 Toolbar.contextTypes = {

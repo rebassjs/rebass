@@ -30,6 +30,9 @@ class App extends React.Component {
 
 # Notes
 
+- Remove all duplicate/flattened style props?
+- theme config for all components?
+
 - [ ] propsString for permutations
 - [ ] toJsx code blocks
 - [ ] Tests
@@ -55,6 +58,7 @@ class App extends React.Component {
 - [x] Input, etc, hideLabel prop
 - [x] Button rounded prop
 - [x] Button outline prop
+- [ ] ToolbarSpace or <Space auto />
 
 - [ ] theme component styles (e.g. Button, Heading)
 

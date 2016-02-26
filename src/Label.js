@@ -6,8 +6,9 @@ import theme from './theme'
  * Label element for form controls
  */
 
-const Label = ({ hide, style, ...props }, context) => {
-  const config = Object.assign({}, theme, context.rebass)
+const Label = ({ hide, style, ...props }, { rebass }) => {
+  const config = { ...theme, ...rebass }
+  const labelConfig = { ...theme.Label, ...(rebass ? rebass.Label : {}) }
   const { fontSizes } = config
 
   const hideStyles = hide ? {
@@ -23,7 +24,7 @@ const Label = ({ hide, style, ...props }, context) => {
     className='Label'
     style={{
       fontSize: fontSizes[5],
-      fontWeight: 'bold',
+      ...labelConfig,
       ...hideStyles,
       ...style
     }} />

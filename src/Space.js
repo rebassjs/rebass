@@ -8,6 +8,7 @@ import theme from './theme'
 
 const Space = ({ x, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
+  const spaceConfig = { ...theme.Space, ...(rebass ? rebass.Space : {}) }
   const { scale } = config
 
   return (
@@ -16,6 +17,7 @@ const Space = ({ x, style, ...props }, { rebass }) => {
       style={{
         display: 'inline-block',
         width: scale[x],
+        ...spaceConfig,
         ...style
       }} />
   )

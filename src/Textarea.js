@@ -7,8 +7,10 @@ import theme from './theme'
  * Textarea form element with label
  */
 
-const Textarea = ({ label, name, style, hideLabel, children, ...props }, context) => {
-  const config = Object.assign({}, theme, context.rebass)
+const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebass }) => {
+  const config = { ...theme, ...rebass }
+  const textareaStyle = { ...theme.Textarea, ...(rebass ? rebass.Textarea : {}) }
+  const { borderColor } = config
 
   return (
     <div className='Textarea' style={style}>
@@ -29,7 +31,8 @@ const Textarea = ({ label, name, style, hideLabel, children, ...props }, context
           borderRadius: 2,
           borderWidth: 1,
           borderStyles: 'solid',
-          borderColor: config.borderColor
+          borderColor,
+          ...textareaStyle
         }} />
     </div>
   )

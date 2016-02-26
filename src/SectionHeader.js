@@ -10,6 +10,7 @@ import theme from './theme'
 const SectionHeader = ({ title, href, description, style, children, ...props }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
+  const sectionHeaderConfig = { ...theme.SectionHeader, ...(rebass ? rebass.SectionHeader : {}) }
   const { scale, borderColor } = config
 
   return (
@@ -23,6 +24,7 @@ const SectionHeader = ({ title, href, description, style, children, ...props }, 
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
         borderBottomColor: borderColor,
+        ...sectionHeaderConfig,
         ...style
       }}>
       <div style={{

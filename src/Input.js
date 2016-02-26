@@ -7,8 +7,10 @@ import theme from './theme'
  * Input element with label
  */
 
-const Input = ({ label, name, type, hideLabel, children, style, ...props }, context) => {
-  const config = { ...theme, ...context.rebass }
+const Input = ({ label, name, type, hideLabel, children, style, ...props }, { rebass }) => {
+  const config = { ...theme, ...rebass }
+  const { borderColor } = config
+
   return (
     <div className='Input' style={style}>
       <Label
@@ -29,7 +31,7 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, cont
           padding: 8,
           borderRadius: 2,
           borderWidth: 1,
-          borderColor: config.borderColor,
+          borderColor,
           borderStyle: 'solid'
         }} />
     </div>

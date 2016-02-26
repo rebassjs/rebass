@@ -7,7 +7,7 @@
   "scripts": {
     "prepublish": "mkdir -p dist && babel src --out-dir dist",
     "start": "static-react docs/components/Root.js --props docs/data.js > index.html",
-    "watch": "onchange src/**/* -- npm run start",
+    "watch": "onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "test": "static-react docs/components/Root.js --props docs/data.js"
   },
   "peerDependencies": {

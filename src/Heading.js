@@ -8,6 +8,7 @@ import theme from './theme'
 
 const Heading =({ level, size, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
+  const headingConfig = { ...theme.Heading, ...(rebass ? rebass.Heading : {}) }
   const Component = `h${level}`
   const fontSize = typeof size === 'number' ? theme.fontSizes[size] : theme.fontSizes[level]
 
@@ -18,6 +19,7 @@ const Heading =({ level, size, style, ...props }, { rebass }) => {
       style={{
         fontSize,
         margin: 0,
+        ...headingConfig,
         ...style
       }} />
   )

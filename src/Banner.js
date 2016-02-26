@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Banner = ({ align, minHeight, color, backgroundColor, backgroundImage, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const bannerConfig = { ...theme.Banner, ...rebass.Banner }
+  const bannerConfig = { ...theme.Banner, ...(rebass ? rebass.Banner : {}) }
   const { scale, fontSizes } = config
 
   const alignment = {

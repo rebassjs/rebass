@@ -23,6 +23,7 @@ import {
   Panel,
   PanelFooter,
   PanelHeader,
+  Progress,
   Space,
   Text,
   Toolbar
@@ -86,6 +87,16 @@ const examples = {
       </Text>
       <PanelFooter children='The footer is a good place for less important information' />
     </Panel>
+  ),
+  Progress: (
+    <Progress value={0.25} />
+  ),
+  Toolbar: (
+    <Toolbar>
+      <NavItem children='Toolbar' />
+      <NavItem children='NavItem' />
+      <NavItem children='NavItem' />
+    </Toolbar>
   )
 }
 

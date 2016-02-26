@@ -8,7 +8,7 @@ import theme from './theme'
 
 const PanelHeader = ({ type, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const panelHeaderConfig = { ...theme.PanelHeader, ...rebass.PanelHeader }
+  const panelHeaderConfig = { ...theme.PanelHeader, ...(rebass ? rebass.PanelHeader : {}) }
   const backgroundColor = config.colorTypes[type]
   const { scale, borderRadius } = config
 
@@ -25,9 +25,9 @@ const PanelHeader = ({ type, style, ...props }, { rebass }) => {
         marginLeft: - scale[2],
         marginBottom: scale[2],
         padding: scale[2],
-        color: panelHeaderConfig.color,
         backgroundColor,
         borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
+        ...panelHeaderConfig,
         ...style
       }} />
   )

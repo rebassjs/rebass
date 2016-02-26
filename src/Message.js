@@ -6,15 +6,14 @@ import theme from './theme'
 
 const Message = ({
   type,
-  color,
-  backgroundColor,
   style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const messageConfig = { ...theme.Message, ...rebass.Message }
+  const messageConfig = { ...theme.Message, ...(rebass ? rebass.Message : {}) }
 
-  const bg = config.colorTypes[type]
+  const { borderRadius } = config
+  const backgroundColor = config.colorTypes[type]
 
   return (
     <div
@@ -25,9 +24,9 @@ const Message = ({
         display: 'flex',
         alignItems: 'center',
         padding: config.scale[2],
-        color: color || messageConfig.color,
-        backgroundColor: backgroundColor || bg,
-        borderRadius: config.borderRadius,
+        backgroundColor,
+        borderRadius,
+        ...messageConfig,
         ...style
       }} />
   )
@@ -41,11 +40,7 @@ Message.propTypes = {
     'success',
     'warning',
     'error',
-  ]),
-  /** Text color */
-  color: React.PropTypes.string,
-  /** Background color - overrides the message type color */
-  backgroundColor: React.PropTypes.string,
+  ])
 }
 
 Message.defaultProps = {

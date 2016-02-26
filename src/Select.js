@@ -7,8 +7,10 @@ import theme from './theme'
  * Select form control with label
  */
 
-const Select = ({ label, name, options, hideLabel, children, style, ...props }, context) => {
-  const config = Object.assign({}, theme, context.rebass)
+const Select = ({ label, name, options, hideLabel, children, style, ...props }, { rebass }) => {
+  const config = { ...theme, ...rebass }
+  const selectConfig = { ...theme.Select, ...(rebass ? rebass.Select : {}) }
+  const { borderColor } = config
 
   return (
     <div className='Select' style={style}>
@@ -32,7 +34,7 @@ const Select = ({ label, name, options, hideLabel, children, style, ...props }, 
           borderRadius: 2,
           borderWidth: 1,
           borderStyle: 'solid',
-          borderColor: config.borderColor
+          borderColor
         }}>
         {options.map((option, i) => (
           <option key={i} {...option} />

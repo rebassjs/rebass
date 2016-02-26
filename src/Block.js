@@ -22,7 +22,7 @@ const Block = ({
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const blockConfig = { ...theme.Block, ...rebass.Block }
+  const blockConfig = { ...theme.Block, ...(rebass ? rebass.Block : {}) }
 
   return (
     <div {...props}

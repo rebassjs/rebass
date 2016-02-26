@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Container = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const containerConfig = { ...theme.Container, ...rebass.Container }
+  const containerConfig = { ...theme.Container, ...(rebass ? rebass.Container : {}) }
   const { maxWidth, padding } = containerConfig
 
   return (

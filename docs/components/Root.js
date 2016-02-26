@@ -75,9 +75,7 @@ class Root extends React.Component {
               {components.map(component => {
                 const { Component } = component
                 return (
-                  <section key={component.name}
-                    id={component.name}
-                    className='py3'>
+                  <Section key={component.name} id={component.name}>
                     <SectionHeader
                       title={component.name}
                       href={`#${component.name}`}
@@ -92,7 +90,8 @@ class Root extends React.Component {
                       <Permutations {...component} />
                     </Panel>
                     <PropsTable props={component.props} />
-                  </section>
+                    <NavItem small href='#' children='Back to Top' />
+                  </Section>
                 )
               })}
             </main>

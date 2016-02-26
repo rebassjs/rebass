@@ -8,6 +8,11 @@ import theme from './theme'
 
 const Text = ({ small, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
+  const textStyle = {
+    ...theme.Text,
+    ...(rebass ? rebass.Text : {}),
+    ...style
+  }
   const { fontSizes } = config
 
   return (
@@ -17,7 +22,7 @@ const Text = ({ small, style, ...props }, { rebass }) => {
       style={{
         fontSize: small ? fontSizes[6] : fontSizes[4],
         margin: 0,
-        ...style
+        ...textStyle
       }} />
   )
 }

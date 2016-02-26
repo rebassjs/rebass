@@ -9,7 +9,7 @@ import theme from './theme'
 
 const Pre = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const preConfig = { ...theme.Pre, ...rebass.Pre }
+  const preConfig = { ...theme.Pre, ...(rebass ? rebass.Pre : {}) }
 
   return (
     <pre

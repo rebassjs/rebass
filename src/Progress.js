@@ -6,19 +6,19 @@ import theme from './theme'
  * Progress element
  */
 
-const Progress = ({ value, color, style, ...props }, { rebass }) => {
+const Progress = ({ value, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const progressConfig = { ...theme.Progress, ...rebass.Progress }
+  const progressConfig = { ...theme.Progress, ...(rebass ? rebass.Progress : {}) }
 
   const css = `
     .Progress-progress::-webkit-progress-bar {
       background-color: rgba(0, 0, 0, .125);
     }
     .Progress-progress::-webkit-progress-value {
-      background-color: ${color || progressConfig.color};
+      background-color: currentcolor;
     }
     .Progress-progress::-moz-progress-bar {
-      background-color: ${color || progressConfig.color};
+      background-color: currentcolor;
     }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
@@ -39,7 +39,8 @@ const Progress = ({ value, color, style, ...props }, { rebass }) => {
           border: 0,
           borderRadius: 9999,
           WebkitAppearance: 'none',
-          appearance: 'none'
+          appearance: 'none',
+          ...progressConfig
         }} />
     </div>
   )
@@ -47,9 +48,7 @@ const Progress = ({ value, color, style, ...props }, { rebass }) => {
 
 Progress.propTypes = {
   /** Value for progress bar */
-  value: React.PropTypes.number,
-  /** Color of progress bar */
-  color: React.PropTypes.string
+  value: React.PropTypes.number
 }
 
 Progress.contextTypes = {
