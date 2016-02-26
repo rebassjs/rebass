@@ -7,7 +7,7 @@ const Arrow = ({ direction, style, ...props }) => (
   <div
     className='Arrow'
     style={{
-      ...style,
+      display: 'inline-block',
       width: 0,
       height: 0,
       marginLeft: '.1875em',
@@ -16,6 +16,7 @@ const Arrow = ({ direction, style, ...props }) => (
       borderLeft: '.3125em solid transparent',
       borderTop: direction === 'up' ? '.4375em solid' : null,
       borderBottom: direction === 'down' ? '.4375em solid' : null,
+      ...style
     }} />
 )
 

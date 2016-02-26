@@ -7,12 +7,15 @@ import theme from './theme'
  * Select form control with label
  */
 
-const Select = ({ label, name, options, children, style, ...props }, context) => {
+const Select = ({ label, name, options, hideLabel, children, style, ...props }, context) => {
   const config = Object.assign({}, theme, context.rebass)
 
   return (
     <div className='Select' style={style}>
-      <Label htmlFor={name} children={label} />
+      <Label
+        htmlFor={name}
+        hide={hideLabel}
+        children={label} />
       <select
         {...props}
         name={name}
@@ -45,7 +48,9 @@ Select.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Options for select */
-  options: React.PropTypes.array.isRequired
+  options: React.PropTypes.array.isRequired,
+  /** Hides the form element label */
+  hideLabel: React.PropTypes.bool
 }
 
 Select.defaultProps = {

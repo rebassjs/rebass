@@ -46,6 +46,8 @@ const PropsTable = ({ props, ...other }) => {
             let type = prop.type.name
             if (type === 'enum' && prop.type.value && Array.isArray(prop.type.value)) {
               type = `oneOf([${prop.type.value.map(v => v.value).join(', ')}])`
+            } else if (type === 'union' && prop.type.value && Array.isArray(prop.type.value)) {
+              type = `oneOfType([${prop.type.value.map(v => v.name).join(', ')}])`
             }
             return (
               <tr key={key}>

@@ -9,7 +9,7 @@ import theme from './theme'
 const Heading =({ level, size, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const Component = `h${level}`
-  const fontSize = size ? theme.fontSizes[size] : theme.fontSizes[level]
+  const fontSize = typeof size === 'number' ? theme.fontSizes[size] : theme.fontSizes[level]
 
   return (
     <Component
@@ -27,7 +27,7 @@ Heading.propTypes = {
   /** Heading level, e.g. level={1} for <h1> */
   level: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** Visual size of heading */
-  size: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
 }
 
 Heading.defaultProps = {

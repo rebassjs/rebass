@@ -1,21 +1,27 @@
 
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
+import {
+  Container,
+  PageHeader,
+  Heading,
+  Section,
+  SectionHeader,
+  NavItem,
+  Divider
+} from '../../src'
 import PropsTable from './PropsTable'
 import Example from './Example'
-import SectionHeader from '../../src/SectionHeader'
+import Permutations from './Permutations'
 
 const css = `
 .caps {
   text-transform: uppercase;
   letter-spacing: .2em;
 }
-/*
-  .Button {
-    color: white;
-    background-color: tomato;
-  }
-*/
+.Button:hover {
+  color: black;
+}
 .tomato { color: tomato }
 `
 
@@ -32,20 +38,12 @@ class Root extends React.Component {
   getChildContext () {
     return {
       rebass: {
-        // borderColor: 'tomato',
-        Button: {
-          color: 'white',
-          backgroundColor: 'tomato'
-        },
-        Toolbar: {
-          backgroundColor: 'tomato'
-        }
       }
     }
   }
 
   render () {
-    const { components, description, version } = this.props
+    const { components, examples, description, version } = this.props
 
     return (
       <html>
@@ -57,18 +55,18 @@ class Root extends React.Component {
           <link href='https://npmcdn.com/basscss@8.0.1/css/basscss.min.css' rel='stylesheet' />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
-        <body className='max-width-4'>
-          <Box p={3}>
-            <header>
-              <h1 className='caps'>Rebass <span className='h5'>{version}</span></h1>
-              <p>{components.length} {description}</p>
-            </header>
+        <body>
+          <Container>
+            <PageHeader
+              title='Rebass'
+              description={`${components.length} ${description} [v${version}]`} />
             <nav>
               {components.map(c => (
-                <a key={c.name} href={`#${c.name}`}>{c.name}</a>
+                <NavItem key={c.name} href={`#${c.name}`} children={c.name} />
               ))}
             </nav>
             <main>
+              <Divider />
               {components.map(component => {
                 const { Component } = component
                 return (
@@ -79,9 +77,8 @@ class Root extends React.Component {
                       title={component.name}
                       href={`#${component.name}`}
                       description={component.description || '☞ NEEDS DESCRIPTION'} />
-                    <div className='mb2'>
-                      <Example {...component} />
-                    </div>
+                    {component.example && <Example example={component.example} />}
+                    <Permutations {...component} />
                     <PropsTable props={component.props} />
                   </section>
                 )
@@ -89,7 +86,7 @@ class Root extends React.Component {
             </main>
             <hr />
             <pre className='tomato'>{JSON.stringify(this.props, null, 2)}</pre>
-          </Box>
+          </Container>
         </body>
       </html>
     )

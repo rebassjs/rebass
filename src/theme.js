@@ -1,14 +1,17 @@
 
+import clrs from 'colors.css'
+
+const { blue, red, orange, green } = clrs
+
 const colors = {
   black: '#111',
   white: '#fff',
   gray: '#ccc',
   midgray: '#777',
-  blue: '#0cf',
-  red: '#f30',
-  orange: '#f80',
-  yellow: '#fc0',
-  green: '#0f6',
+  blue,
+  red,
+  orange,
+  green
 }
 
 const scale = [
@@ -41,7 +44,7 @@ const theme = {
   scale,
   fontSizes,
   colors,
-  borderRadius: 2,
+  borderRadius: 4, // 2,
   borderColor: colors.gray,
   colorTypes,
   Button: {
@@ -60,6 +63,26 @@ const theme = {
   },
   Message: {
     color: colors.white,
+  },
+  Banner: {
+    color: colors.white,
+    backgroundColor: colors.black,
+    minHeight: '100vh'
+  },
+  Container: {
+    maxWidth: 1024,
+    padding: scale[2]
+  },
+  Progress: {
+    color: colors.blue
+  },
+  Block: {
+    color: colors.white,
+    backgroundColor: colors.blue,
+    borderColor: 'tomato',
+    borderWidth: 2,
+    padding: scale[2],
+    margin: 0
   }
 }
 

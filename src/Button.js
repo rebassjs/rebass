@@ -2,9 +2,12 @@
 import React from 'react'
 import theme from './theme'
 
-/** A general purpose button element with customizable colors */
+/**
+ * A general purpose button element with customizable colors
+ */
 
 const Button = ({
+  href,
   big,
   left,
   middle,
@@ -15,11 +18,13 @@ const Button = ({
   style,
   className,
   ...props
-}, context) => {
+}, { rebass }) => {
 
-  const buttonConfig = Object.assign({}, theme.button, context.rebass.Button)
-  const config = Object.assign({}, theme, context.rebass)
+  const config = { ...theme, ...rebass }
+  const buttonConfig = { ...theme.Button, ...rebass.Button }
   const { scale, colors, borderRadius } = config
+
+  const Component = href ? 'a' : 'button'
 
   let radius = borderRadius
   if (middle) {
@@ -31,7 +36,7 @@ const Button = ({
   }
 
   return (
-    <button {...props}
+    <Component {...props}
       className='Button'
       style={{
         fontFamily: 'inherit',
@@ -48,15 +53,17 @@ const Button = ({
         ...style,
       }}>
       {children}
-    </button>
+    </Component>
   )
 }
 
 Button.propTypes = {
+  /** Pass an href prop to make the Button and <a> tag instead of a Button*/
+  href: React.PropTypes.string,
   /** Button color */
   color: React.PropTypes.string,
   /** Button background color */
-  bg: React.PropTypes.string,
+  backgroundColor: React.PropTypes.string,
   /** For button groups when button is on the left */
   left: React.PropTypes.bool,
   /** For button groups when button is in the middle */

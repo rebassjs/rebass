@@ -16,6 +16,7 @@ const Menu = ({ backgroundColor, borderColor, style, ...props }, context) => {
       style={{
         display: 'flex',
         flexDirection: 'column',
+        minWidth: 128,
         borderRadius: 2,
         borderWidth: 1,
         borderStyle: 'solid',

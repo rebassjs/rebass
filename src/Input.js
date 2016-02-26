@@ -7,11 +7,14 @@ import theme from './theme'
  * Input element with label
  */
 
-const Input = ({ label, name, type, children, style, ...props }, context) => {
+const Input = ({ label, name, type, hideLabel, children, style, ...props }, context) => {
   const config = { ...theme, ...context.rebass }
   return (
     <div className='Input' style={style}>
-      <Label htmlFor={name} children={label} />
+      <Label
+        htmlFor={name}
+        hide={hideLabel}
+        children={label} />
       <input
         {...props}
         type={type}
@@ -39,7 +42,9 @@ Input.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Form element type */
-  type: React.PropTypes.string
+  type: React.PropTypes.string,
+  /** Hides the form element label */
+  hideLabel: React.PropTypes.bool
 }
 
 Input.defaultProps = {

@@ -7,12 +7,15 @@ import theme from './theme'
  * Textarea form element with label
  */
 
-const Textarea = ({ label, name, style, children, ...props }, context) => {
+const Textarea = ({ label, name, style, hideLabel, children, ...props }, context) => {
   const config = Object.assign({}, theme, context.rebass)
 
   return (
     <div className='Textarea' style={style}>
-      <Label htmlFor={name} children={label} />
+      <Label
+        htmlFor={name}
+        hide={hideLabel}
+        children={label} />
       <textarea
         {...props}
         name={name}
@@ -37,6 +40,8 @@ Textarea.propTypes = {
   label: React.PropTypes.string.isRequired,
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
+  /** Hides the form element label */
+  hideLabel: React.PropTypes.bool
 }
 
 Textarea.contextTypes = {
