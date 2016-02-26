@@ -20,7 +20,7 @@ const Button = ({
 }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const buttonConfig = { ...theme.Button, ...(rebass ? rebass.Button : {}) }
+  const buttonStyle = { ...theme.Button, ...(rebass ? rebass.Button : {}), ...style }
   const { scale, colors, borderRadius } = config
 
   const Component = href ? 'a' : 'button'
@@ -32,24 +32,22 @@ const Button = ({
     left: `${borderRadius}px 0 0 ${borderRadius}px`,
   }
 
+  const sx = {
+    fontFamily: 'inherit',
+    fontSize: 'inherit',
+    display: 'inline-block',
+    margin: 0,
+    padding: big ? scale[2] : scale[1],
+    cursor: 'pointer',
+    border: 0,
+    borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
+    ...buttonStyle
+  }
+
   return (
     <Component {...props}
       className='Button'
-      style={{
-        fontFamily: 'inherit',
-        fontSize: 'inherit',
-        // fontWeight: 'bold',
-        display: 'inline-block',
-        margin: 0,
-        padding: big ? scale[2] : scale[1],
-        cursor: 'pointer',
-        border: 0,
-        borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
-        color: outline ? (backgroundColor || buttonConfig.backgroundColor) : (color || buttonConfig.color),
-        backgroundColor: outline ? 'transparent' : (backgroundColor || buttonConfig.backgroundColor),
-        boxShadow: outline ? 'inset 0 0 0 2px' : null,
-        ...style,
-      }}>
+      style={sx}>
       {children}
     </Component>
   )
@@ -73,9 +71,7 @@ Button.propTypes = {
     ])
   ]),
   /** Creates a larger button */
-  big: React.PropTypes.bool,
-  /** Create an outline style button */
-  outline: React.PropTypes.bool
+  big: React.PropTypes.bool
 }
 
 Button.defaultProps = {
