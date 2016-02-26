@@ -6,9 +6,10 @@ import theme from './theme'
  * Menu component for navigation links and actions
  */
 
-const Menu = ({ backgroundColor, borderColor, style, ...props }, { rebass }) => {
+const Menu = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const menuConfig = { ...theme.Menu, ...(rebass ? rebass.Menu : {}) }
+  const menuConfig = rebass ? rebass.Menu : {}
+  const { colors, borderColor, borderRadius } = config
 
   return (
     <div
@@ -21,10 +22,17 @@ const Menu = ({ backgroundColor, borderColor, style, ...props }, { rebass }) => 
         borderRadius: 2,
         borderWidth: 1,
         borderStyle: 'solid',
+        backgroundColor: colors.white,
+        borderColor,
+        borderRadius,
         ...menuConfig,
         ...style
       }} />
   )
+}
+
+Menu.contextTypes = {
+  rebass: React.PropTypes.object
 }
 
 export default Menu

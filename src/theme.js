@@ -42,105 +42,19 @@ const colorTypes = {
   error: colors.red
 }
 
+const bold = 600
 const borderRadius = 4 // 2
 const borderColor = colors.gray
 
 const theme = {
   scale,
   fontSizes,
+  bold,
+  monospace,
   colors,
   borderRadius,
   borderColor,
-  colorTypes,
-  Arrow: {},
-  Badge: {
-    fontSize: fontSizes[6],
-    fontWeight: 600,
-    color: colors.white,
-    borderRadius
-  },
-  Banner: {
-    color: colors.white,
-    backgroundColor: colors.black,
-    minHeight: '100vh'
-  },
-  Block: {
-    color: 'inherit',
-    backgroundColor: 'transparent',
-    borderColor: colors.blue,
-    borderWidth: 4,
-    padding: scale[2],
-    margin: 0
-  },
-  Breadcrumbs: {},
-  Button: {
-    color: colors.white,
-    backgroundColor: colors.blue,
-  },
-  Card: {},
-  CardImage: {},
-  Checkbox: {},
-  Container: {
-    maxWidth: 1024,
-    padding: scale[2]
-  },
-  Divider: {},
-  Dropdown: {},
-  DropdownMenu: {},
-  Footer: {},
-  Heading: {
-    fontWeight: 600
-  },
-  HeadingLink: {},
-  Input: {},
-  InputRange: {},
-  Label: {
-    fontWeight: 600
-  },
-  Media: {},
-  Menu: {
-    backgroundColor: colors.white,
-    borderColor,
-    borderRadius
-  },
-  Message: {
-    color: colors.white,
-  },
-  NavItem: {
-    fontWeight: 600
-  },
-  PageHeader: {},
-  Panel: {},
-  PanelFooter: {},
-  PanelHeader: {
-    color: colors.white,
-  },
-  Pre: {
-    fontFamily: monospace,
-    paddingLeft: scale[2],
-    borderLeft: `4px solid ${colors.gray}`,
-    overflowX: 'scroll',
-  },
-  Progress: {
-    color: colors.blue
-  },
-  Radio: {},
-  Section: {},
-  SectionHeader: {},
-  Select: {},
-  Space: {},
-  Text: {},
-  Textarea: {},
-  Toolbar: {
-    color: colors.white,
-    backgroundColor: colors.blue
-  },
-  Tooltip: {
-    fontSize: fontSizes[6],
-    color: colors.white,
-    backgroundColor: colors.black,
-    borderRadius
-  },
+  colorTypes
 }
 
 /* Potential config objects:

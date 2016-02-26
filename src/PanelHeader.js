@@ -8,9 +8,9 @@ import theme from './theme'
 
 const PanelHeader = ({ type, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const panelHeaderConfig = { ...theme.PanelHeader, ...(rebass ? rebass.PanelHeader : {}) }
-  const backgroundColor = config.colorTypes[type]
-  const { scale, borderRadius } = config
+  const customStyle = rebass ? rebass.PanelHeader : {}
+  const { scale, colors, colorTypes, borderRadius } = config
+  const backgroundColor = colorTypes[type]
 
   return (
     <div
@@ -25,9 +25,10 @@ const PanelHeader = ({ type, style, ...props }, { rebass }) => {
         marginLeft: - scale[2],
         marginBottom: scale[2],
         padding: scale[2],
+        color: colors.white,
         backgroundColor,
         borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
-        ...panelHeaderConfig,
+        ...customStyle,
         ...style
       }} />
   )

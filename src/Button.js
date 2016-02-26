@@ -20,8 +20,8 @@ const Button = ({
 }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const buttonStyle = { ...theme.Button, ...(rebass ? rebass.Button : {}), ...style }
-  const { scale, colors, borderRadius } = config
+  const buttonStyle = rebass ? rebass.Button : {}
+  const { bold, scale, colors, borderRadius } = config
 
   const Component = href ? 'a' : 'button'
 
@@ -35,13 +35,17 @@ const Button = ({
   const sx = {
     fontFamily: 'inherit',
     fontSize: 'inherit',
+    fontWeight: bold,
     display: 'inline-block',
     margin: 0,
     padding: big ? scale[2] : scale[1],
     cursor: 'pointer',
     border: 0,
     borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
-    ...buttonStyle
+    color: colors.white,
+    backgroundColor: colors.blue,
+    ...buttonStyle,
+    ...style
   }
 
   return (

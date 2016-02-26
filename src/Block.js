@@ -17,13 +17,13 @@ const Block = ({
   borderRight,
   borderBottom,
   borderLeft,
-  rounded,
   style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
+  const { scale, colors } = config
+
   const blockStyle = {
-    ...theme.Block,
     ...(rebass ? rebass.Block : {}),
     ...(margin ? { margin } : {}),
     ...(padding ? { padding } : {}),
@@ -33,16 +33,19 @@ const Block = ({
     ...style
   }
 
-  // console.log('Block styles', blockStyle)
-
   const sx = {
     boxSizing: 'border-box',
+    padding: scale[2],
+    margin: 0,
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,
     borderBottomStyle: borderBottom ? 'solid' : null,
     borderLeftStyle: borderLeft ? 'solid' : null,
-    borderRadius: rounded ? config.borderRadius : 0,
+    color: 'inherit',
+    backgroundColor: 'transparent',
+    borderWidth: 4,
+    borderColor: colors.blue,
     ...blockStyle
   }
 
@@ -79,9 +82,7 @@ Block.propTypes = {
   /** Adds a border to the bottom side */
   borderBottom: React.PropTypes.bool,
   /** Adds a border to the left side */
-  borderLeft: React.PropTypes.bool,
-  /** Adds a border radius */
-  rounded: React.PropTypes.bool
+  borderLeft: React.PropTypes.bool
 }
 
 

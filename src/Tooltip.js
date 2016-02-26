@@ -8,19 +8,22 @@ import theme from './theme'
 
 const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const tooltipStyle = {
-    ...theme.Tooltip,
+  const { scale } = config
+  const customStyle = {
+    fontSize: config.fontSizes[6],
+    color: config.colors.white,
+    backgroundColor: config.colors.black,
+    borderRadius: config.borderRadius,
     ...(rebass ? rebass.Tooltip : {}),
     ...style
   }
-  const { scale } = config
 
   const {
     fontSize,
     color,
     backgroundColor,
     borderRadius
-  } = tooltipStyle
+  } = customStyle
 
   const css = `
     .Tooltip:hover::after {
@@ -60,7 +63,6 @@ const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
         position: 'relative',
         display: 'inline-block',
         cursor: 'pointer',
-        ...style
       }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       {children}

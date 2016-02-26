@@ -8,23 +8,26 @@ import theme from './theme'
 
 const Card = ({ width, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
+  const cardStyle = { ...theme.Card, ...(rebass ? rebass.Card : {}), ...style }
   const { scale, borderRadius, borderColor } = config
+
+  const sx = {
+    display: 'flex',
+    width,
+    flexDirection: 'column',
+    padding: scale[1],
+    borderRadius,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor,
+    ...cardStyle
+  }
 
   return (
     <div
       {...props}
       className='Card'
-      style={{
-        display: 'flex',
-        width,
-        flexDirection: 'column',
-        padding: scale[1],
-        borderRadius,
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor,
-        ...style
-      }} />
+      style={sx} />
   )
 }
 

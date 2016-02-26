@@ -32,6 +32,8 @@ class App extends React.Component {
 
 - Remove all duplicate/flattened style props?
 - theme config for all components?
+- borderRadius, borderColor in component configs...
+- abstracted color keys (primary, secondary, etc)
 
 - [ ] propsString for permutations
 - [ ] toJsx code blocks

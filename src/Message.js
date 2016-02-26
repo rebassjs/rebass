@@ -10,9 +10,8 @@ const Message = ({
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const messageConfig = { ...theme.Message, ...(rebass ? rebass.Message : {}) }
-
-  const { borderRadius } = config
+  const messageStyle = rebass ? rebass.Message : {}
+  const { bold, borderRadius, colors } = config
   const backgroundColor = config.colorTypes[type]
 
   return (
@@ -20,13 +19,14 @@ const Message = ({
       {...props}
       className='Message'
       style={{
-        fontWeight: 'bold',
+        fontWeight: bold,
         display: 'flex',
         alignItems: 'center',
         padding: config.scale[2],
+        color: colors.white,
         backgroundColor,
         borderRadius,
-        ...messageConfig,
+        ...messageStyle,
         ...style
       }} />
   )

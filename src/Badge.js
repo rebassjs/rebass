@@ -11,11 +11,8 @@ const Badge = ({
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const badgeStyle = {
-    ...theme.Badge,
-    ...(rebass ? rebass.Badge : {}),
-    ...style
-  }
+  const badgeStyle = rebass ? rebass.Badge : {}
+  const { fontSizes, bold, scale, colors, borderRadius } = config
   const backgroundColor = config.colorTypes[type]
 
   return (
@@ -23,12 +20,17 @@ const Badge = ({
       {...props}
       className='Badge'
       style={{
+        fontSize: fontSizes[6],
+        fontWeight: bold,
         display: 'inline-block',
         verticalAlign: 'center',
-        paddingLeft: config.scale[1],
-        paddingRight: config.scale[1],
+        paddingLeft: scale[1],
+        paddingRight: scale[1],
+        color: colors.white,
+        borderRadius,
         backgroundColor,
-        ...badgeStyle
+        ...badgeStyle,
+        ...style
       }} />
   )
 }

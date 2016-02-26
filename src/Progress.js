@@ -8,7 +8,8 @@ import theme from './theme'
 
 const Progress = ({ value, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const progressConfig = { ...theme.Progress, ...(rebass ? rebass.Progress : {}) }
+  const customStyle = rebass ? rebass.Progress : {}
+  const { colors } = config
 
   const css = `
     .Progress-progress::-webkit-progress-bar {
@@ -40,7 +41,9 @@ const Progress = ({ value, style, ...props }, { rebass }) => {
           borderRadius: 9999,
           WebkitAppearance: 'none',
           appearance: 'none',
-          ...progressConfig
+          color: colors.blue,
+          ...customStyle,
+          ...style
         }} />
     </div>
   )

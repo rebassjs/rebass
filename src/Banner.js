@@ -6,14 +6,10 @@ import theme from './theme'
  * Full-height banner with styling for background images
  */
 
-const Banner = ({ align, minHeight, backgroundImage, style, ...props }, { rebass }) => {
+const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const bannerStyle = {
-    ...theme.Banner,
-    ...(rebass ? rebass.Banner : {}),
-    ...style
-  }
-  const { scale, fontSizes } = config
+  const bannerStyle = rebass ? rebass.Banner : {}
+  const { scale, colors, fontSizes } = config
 
   const alignment = {
     left: 'flex-start',
@@ -23,34 +19,34 @@ const Banner = ({ align, minHeight, backgroundImage, style, ...props }, { rebass
 
   const alignItems = alignment[align]
 
+  const sx = {
+    fontSize: fontSizes[1],
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems,
+    justifyContent: 'center',
+    padding: scale[4],
+    color: colors.white,
+    backgroundColor: colors.black,
+    minHeight: '100vh',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
+    ...bannerStyle,
+    ...style
+  }
+
   return (
     <div
       {...props}
       className='Banner'
-      style={{
-        fontSize: fontSizes[1],
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems,
-        justifyContent: 'center',
-        padding: scale[4],
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
-        ...bannerStyle,
-        minHeight
-      }} />
+      style={sx} />
   )
 }
 
 Banner.propTypes = {
   /** Horizontal alignment */
   align: React.PropTypes.oneOf(['left', 'center', 'right']),
-  /** Min height */
-  minHeight: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string
-  ]),
   /** Background image source */
   backgroundImage: React.PropTypes.string
 }

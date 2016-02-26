@@ -9,14 +9,19 @@ import theme from './theme'
 
 const Pre = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const preConfig = { ...theme.Pre, ...(rebass ? rebass.Pre : {}) }
+  const customStyles = rebass ? rebass.Pre : {}
+  const { monospace, scale, colors } = config
 
   return (
     <pre
       {...props}
       className='Pre'
       style={{
-        ...preConfig,
+        fontFamily: monospace,
+        paddingLeft: scale[2],
+        borderLeft: `4px solid ${colors.gray}`,
+        overflowX: 'scroll',
+        ...customStyles,
         ...style
       }} />
   )

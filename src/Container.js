@@ -8,18 +8,19 @@ import theme from './theme'
 
 const Container = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const containerConfig = { ...theme.Container, ...(rebass ? rebass.Container : {}) }
-  const { maxWidth, padding } = containerConfig
+  const containerStyle = rebass ? rebass.Container : {}
+  const { scale } = config
 
   return (
     <div
       {...props}
       className='Container'
       style={{
-        maxWidth,
-        paddingLeft: padding,
-        paddingRight: padding,
+        maxWidth: 1024,
+        paddingLeft: scale[2],
+        paddingRight: scale[2],
         margin: 'auto',
+        ...containerStyle,
         ...style
       }} />
   )

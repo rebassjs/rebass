@@ -8,11 +8,8 @@ import theme from './theme'
 
 const Toolbar = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const toolbarStyle = {
-    ...theme.Toolbar,
-    ...(rebass ? rebass.Toolbar : {}),
-    ...style
-  }
+  const customStyle = rebass ? rebass.Toolbar : {}
+  const { colors } = config
 
   return (
     <div
@@ -24,7 +21,10 @@ const Toolbar = ({ style, ...props }, { rebass }) => {
         minHeight: 48,
         paddingTop: 4,
         paddingBottom: 4,
-        ...toolbarStyle
+        color: colors.white,
+        backgroundColor: colors.blue,
+        ...customStyle,
+        ...style
       }} />
   )
 }

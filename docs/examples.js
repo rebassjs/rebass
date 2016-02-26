@@ -40,22 +40,17 @@ const examples = {
     </div>
   ),
   Banner: (
-    <Banner
-      minHeight={512}
-      backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'>
+    <Banner backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'>
       <Heading size={0} children='Rebass' />
     </Banner>
   ),
   Block: (
-    <div>
-      <Block children='Default' />
-      <Block padding={48} borderLeft backgroundColor='#eee'>
-        <Media img='http://lorempixel.com/128/128/cats'>
-          <Heading size={0}>Block</Heading>
-          <Text>Generic box for containing things</Text>
-        </Media>
-      </Block>
-    </div>
+    <Block padding={48} borderLeft backgroundColor='#eee'>
+      <Media img='http://lorempixel.com/128/128/cats'>
+        <Heading size={0}>Block</Heading>
+        <Text>Generic box for containing things</Text>
+      </Media>
+    </Block>
   ),
   Button: (
     <div>
