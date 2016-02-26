@@ -7,30 +7,28 @@ import theme from './theme'
 
 const Badge = ({
   type,
-  color,
-  backgroundColor,
   style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const badgeConfig = { ...theme.Badge, ...(rebass ? rebass.Badge : {}) }
-  const bg = config.colorTypes[type]
+  const badgeStyle = {
+    ...theme.Badge,
+    ...(rebass ? rebass.Badge : {}),
+    ...style
+  }
+  const backgroundColor = config.colorTypes[type]
 
   return (
     <div
       {...props}
       className='Badge'
       style={{
-        fontSize: config.fontSizes[5],
-        fontWeight: 'bold',
         display: 'inline-block',
         verticalAlign: 'center',
         paddingLeft: config.scale[1],
         paddingRight: config.scale[1],
-        color: color || badgeConfig.color,
-        backgroundColor: backgroundColor || bg,
-        borderRadius: config.borderRadius,
-        ...style
+        backgroundColor,
+        ...badgeStyle
       }} />
   )
 }
@@ -44,10 +42,6 @@ Badge.propTypes = {
     'warning',
     'error',
   ]),
-  /** Text color */
-  color: React.PropTypes.string,
-  /** Background color - overrides the badge type color */
-  backgroundColor: React.PropTypes.string,
 }
 
 Badge.defaultProps = {

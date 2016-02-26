@@ -7,6 +7,8 @@ import theme from './theme'
  */
 
 const Block = ({
+  margin,
+  padding,
   color,
   backgroundColor,
   borderColor,
@@ -15,34 +17,39 @@ const Block = ({
   borderRight,
   borderBottom,
   borderLeft,
-  padding,
-  margin,
   rounded,
   style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const blockConfig = { ...theme.Block, ...(rebass ? rebass.Block : {}) }
+  const blockStyle = {
+    ...theme.Block,
+    ...(rebass ? rebass.Block : {}),
+    ...(margin ? { margin } : {}),
+    ...(padding ? { padding } : {}),
+    ...(color ? { color } : {}),
+    ...(backgroundColor ? { backgroundColor } : {}),
+    ...(borderColor ? { borderColor } : {}),
+    ...style
+  }
+
+  // console.log('Block styles', blockStyle)
+
+  const sx = {
+    boxSizing: 'border-box',
+    borderStyle: border ? 'solid' : 'none',
+    borderTopStyle: borderTop ? 'solid' : null,
+    borderRightStyle: borderRight ? 'solid' : null,
+    borderBottomStyle: borderBottom ? 'solid' : null,
+    borderLeftStyle: borderLeft ? 'solid' : null,
+    borderRadius: rounded ? config.borderRadius : 0,
+    ...blockStyle
+  }
 
   return (
     <div {...props}
       className='Block'
-      style={{
-        boxSizing: 'border-box',
-        padding: padding || blockConfig.padding,
-        margin: margin || blockConfig.margin,
-        color: color || blockConfig.color,
-        backgroundColor: backgroundColor || blockConfig.backgroundColor,
-        borderColor: borderColor || blockConfig.borderColor,
-        borderWidth: blockConfig.borderWidth,
-        borderStyle: border ? 'solid' : 'none',
-        borderTopStyle: borderTop ? 'solid' : null,
-        borderRightStyle: borderRight ? 'solid' : null,
-        borderBottomStyle: borderBottom ? 'solid' : null,
-        borderLeftStyle: borderLeft ? 'solid' : null,
-        borderRadius: rounded ? config.borderRadius : 0,
-        ...style
-      }} />
+      style={sx} />
   )
 }
 
@@ -77,12 +84,6 @@ Block.propTypes = {
   rounded: React.PropTypes.bool
 }
 
-// <Block border />
-// <Block border='left' />
-// <Block border='right' />
-
-Block.defaultProps = {
-}
 
 Block.contextTypes = {
   rebass: React.PropTypes.object

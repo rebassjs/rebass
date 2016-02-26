@@ -6,9 +6,13 @@ import theme from './theme'
  * Full-height banner with styling for background images
  */
 
-const Banner = ({ align, minHeight, color, backgroundColor, backgroundImage, style, ...props }, { rebass }) => {
+const Banner = ({ align, minHeight, backgroundImage, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const bannerConfig = { ...theme.Banner, ...(rebass ? rebass.Banner : {}) }
+  const bannerStyle = {
+    ...theme.Banner,
+    ...(rebass ? rebass.Banner : {}),
+    ...style
+  }
   const { scale, fontSizes } = config
 
   const alignment = {
@@ -29,14 +33,12 @@ const Banner = ({ align, minHeight, color, backgroundColor, backgroundImage, sty
         flexDirection: 'column',
         alignItems,
         justifyContent: 'center',
-        minHeight: minHeight || bannerConfig.minHeight,
         padding: scale[4],
-        color: color || bannerConfig.color,
-        backgroundColor: backgroundColor || bannerConfig.backgroundColor,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
-        ...style
+        ...bannerStyle,
+        minHeight
       }} />
   )
 }
@@ -49,10 +51,6 @@ Banner.propTypes = {
     React.PropTypes.number,
     React.PropTypes.string
   ]),
-  /** Text color */
-  color: React.PropTypes.string,
-  /** Background color */
-  backgroundColor: React.PropTypes.string,
   /** Background image source */
   backgroundImage: React.PropTypes.string
 }

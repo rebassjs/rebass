@@ -57,6 +57,8 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     //   config.colors.red
     // ],
     // Block component
+    margin: [32],
+    padding: [32],
     border: [false],
     borderTop: [false],
     borderRight: [false],

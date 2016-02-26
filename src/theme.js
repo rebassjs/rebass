@@ -54,7 +54,10 @@ const theme = {
   colorTypes,
   Arrow: {},
   Badge: {
+    fontSize: fontSizes[6],
+    fontWeight: 600,
     color: colors.white,
+    borderRadius
   },
   Banner: {
     color: colors.white,
