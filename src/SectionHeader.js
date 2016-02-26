@@ -7,7 +7,7 @@ import theme from './theme'
  * Header for section elements
  */
 
-const SectionHeader = ({ title, href, description, style, children, ...props }, { rebass }) => {
+const SectionHeader = ({ heading, href, description, style, children, ...props }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
   const sectionHeaderConfig = { ...theme.SectionHeader, ...(rebass ? rebass.SectionHeader : {}) }
@@ -30,7 +30,7 @@ const SectionHeader = ({ title, href, description, style, children, ...props }, 
       <div style={{
           flex: '1 1 auto'
         }}>
-        <HeadingLink href={href || `#${title}`} children={title} />
+        <HeadingLink href={href || `#${heading}`} children={heading} />
         <p style={{
             margin: 0
           }}
@@ -42,8 +42,8 @@ const SectionHeader = ({ title, href, description, style, children, ...props }, 
 }
 
 SectionHeader.propTypes = {
-  /** Title of section */
-  title: React.PropTypes.string,
+  /** Section heading */
+  heading: React.PropTypes.string,
   /** Link to section, used in HeadingLink */
   href: React.PropTypes.string,
   /** Description of section */

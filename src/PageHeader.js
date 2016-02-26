@@ -7,7 +7,7 @@ import theme from './theme'
  * Main page header with description
  */
 
-const PageHeader = ({ title, href, description, style, children, ...props }, { rebass }) => {
+const PageHeader = ({ heading, href, description, style, children, ...props }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
   const { scale, borderColor } = config
@@ -29,7 +29,7 @@ const PageHeader = ({ title, href, description, style, children, ...props }, { r
       <div style={{
           flex: '1 1 auto'
         }}>
-        <Heading level={1} children={title} />
+        <Heading level={1} children={heading} />
         <p style={{
             margin: 0
           }}
@@ -41,8 +41,8 @@ const PageHeader = ({ title, href, description, style, children, ...props }, { r
 }
 
 PageHeader.propTypes = {
-  /** Title of page */
-  title: React.PropTypes.string,
+  /** Page heading */
+  heading: React.PropTypes.string,
   /** Description of page */
   description: React.PropTypes.string,
 }

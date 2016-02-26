@@ -63,7 +63,7 @@ class Root extends React.Component {
         <body>
           <Container>
             <PageHeader
-              title='Rebass'
+              heading='Rebass'
               description={`${components.length} ${description} [v${version}]`} />
             <nav>
               {components.map(c => (
@@ -77,7 +77,7 @@ class Root extends React.Component {
                 return (
                   <Section key={component.name} id={component.name}>
                     <SectionHeader
-                      title={component.name}
+                      heading={component.name}
                       href={`#${component.name}`}
                       description={component.description || '☞ NEEDS DESCRIPTION'} />
                     <Panel>
@@ -85,8 +85,6 @@ class Root extends React.Component {
                         Example
                       </PanelHeader>
                       {component.example && <Example example={component.example} />}
-                      <Divider />
-                      <Text small children='Variations' />
                       <Permutations {...component} />
                     </Panel>
                     <PropsTable props={component.props} />

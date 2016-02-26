@@ -8,6 +8,7 @@ import {
   Block,
   Breadcrumbs,
   Button,
+  ButtonOutline,
   Card,
   CardImage,
   Divider,
@@ -30,6 +31,12 @@ import {
 } from '../src'
 
 const examples = {
+  Arrow: (
+    <Button>
+      Arrow
+      <Arrow />
+    </Button>
+  ),
   Badge: (
     <div>
       <Heading>
@@ -54,8 +61,13 @@ const examples = {
   ),
   Button: (
     <div>
-      <Button rounded='left' outline children='Button' />
-      <Button rounded={false} outline children='Group' />
+      <Button children='Button' />
+    </div>
+  ),
+  ButtonOutline: (
+    <div>
+      <ButtonOutline rounded='left' children='Button' />
+      <ButtonOutline rounded={false} children='Group' />
       <Button rounded='right' children='Button' />
     </div>
   ),
@@ -76,6 +88,13 @@ const examples = {
         <NavItem children='Hi' />
       </DropdownMenu>
     </Dropdown>
+  ),
+  Menu: (
+    <Menu>
+      <NavItem children='Menu' />
+      <NavItem children='NavItem' />
+      <NavItem children='NavItem' />
+    </Menu>
   ),
   Panel: (
     <Panel>

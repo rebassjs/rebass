@@ -14,12 +14,13 @@ const Arrow = ({ direction, style, ...props }, { rebass }) => {
         display: 'inline-block',
         width: 0,
         height: 0,
-        marginLeft: '.1875em',
+        //marginLeft: '.1875em',
+        marginLeft: '.5em',
         verticalAlign: 'middle',
         borderRight: '.3125em solid transparent',
         borderLeft: '.3125em solid transparent',
-        borderTop: direction === 'up' ? '.4375em solid' : null,
-        borderBottom: direction === 'down' ? '.4375em solid' : null,
+        borderTop: direction === 'down' ? '.4375em solid' : null,
+        borderBottom: direction === 'up' ? '.4375em solid' : null,
         ...arrowStyle
       }} />
   )
@@ -31,7 +32,7 @@ Arrow.propTypes = {
 }
 
 Arrow.defaultProps = {
-  direction: 'up'
+  direction: 'down'
 }
 
 Arrow.contextTypes = {

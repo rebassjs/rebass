@@ -1,7 +1,7 @@
 
 import React from 'react'
 import rcp from 'react-component-permutations'
-import { Text, theme } from '../../src'
+import { Divider, Text, theme } from '../../src'
 
 const propsString = (obj) => {
   let str = ''
@@ -67,30 +67,33 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     open: [true] // DropdownMenu
   })
 
-  if (!permutations) {
+  if (!permutations || permutations.length < 2) {
     return <div />
   }
 
   return (
-    <div className='Permutations'
-      style={{
-        position: 'relative',
-        marginLeft: -8,
-        marginRight: -8,
-        marginBottom: 16
-      }}>
-      {permutations &&
-        <div>
-          {permutations.map((p, i) => (
-            <Component {...p}
-              key={i}
-              style={{ margin: 8 }}
-              title={`<${name} ${propsString(p)} />`}
-              name={name}
-              children={name} />
-          ))}
-        </div>
-      }
+    <div className='Permutations'>
+      <Divider />
+      <Text small children='Variations' />
+      <div style={{
+          position: 'relative',
+          marginLeft: -8,
+          marginRight: -8,
+          marginBottom: 16
+        }}>
+        {permutations &&
+          <div>
+            {permutations.map((p, i) => (
+              <Component {...p}
+                key={i}
+                style={{ margin: 8 }}
+                title={`<${name} ${propsString(p)} />`}
+                  name={name}
+                  children={name} />
+            ))}
+          </div>
+        }
+      </div>
     </div>
   )
 }
