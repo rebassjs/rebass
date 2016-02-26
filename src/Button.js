@@ -9,9 +9,8 @@ import theme from './theme'
 const Button = ({
   href,
   big,
-  left,
-  middle,
-  right,
+  rounded,
+  outline,
   color,
   backgroundColor,
   children,
@@ -21,18 +20,16 @@ const Button = ({
 }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const buttonConfig = { ...theme.Button, ...rebass.Button }
+  const buttonConfig = { ...theme.Button, ...(rebass ? rebass.Button : {}) }
   const { scale, colors, borderRadius } = config
 
   const Component = href ? 'a' : 'button'
 
-  let radius = borderRadius
-  if (middle) {
-    radius = 0
-  } else if (left) {
-    radius = `${borderRadius}px 0 0 ${borderRadius}px`
-  } else if (right) {
-    radius = `0 ${borderRadius}px ${borderRadius}px 0`
+  const radii = {
+    top: `${borderRadius}px ${borderRadius}px 0 0`,
+    right: `0 ${borderRadius}px ${borderRadius}px 0`,
+    bottom: `0 0 ${borderRadius}px ${borderRadius}px`,
+    left: `${borderRadius}px 0 0 ${borderRadius}px`,
   }
 
   return (
@@ -41,15 +38,16 @@ const Button = ({
       style={{
         fontFamily: 'inherit',
         fontSize: 'inherit',
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         display: 'inline-block',
         margin: 0,
         padding: big ? scale[2] : scale[1],
         cursor: 'pointer',
         border: 0,
-        borderRadius: radius,
-        color: color || buttonConfig.color,
-        backgroundColor: backgroundColor || buttonConfig.backgroundColor,
+        borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
+        color: outline ? (backgroundColor || buttonConfig.backgroundColor) : (color || buttonConfig.color),
+        backgroundColor: outline ? 'transparent' : (backgroundColor || buttonConfig.backgroundColor),
+        boxShadow: outline ? 'inset 0 0 0 2px' : null,
         ...style,
       }}>
       {children}
@@ -64,14 +62,24 @@ Button.propTypes = {
   color: React.PropTypes.string,
   /** Button background color */
   backgroundColor: React.PropTypes.string,
-  /** For button groups when button is on the left */
-  left: React.PropTypes.bool,
-  /** For button groups when button is in the middle */
-  middle: React.PropTypes.bool,
-  /** For button groups when button is on the right */
-  right: React.PropTypes.bool,
+  /** Controls the border radius for creating button groups */
+  rounded: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.oneOf([
+      'top',
+      'right',
+      'bottom',
+      'left'
+    ])
+  ]),
   /** Creates a larger button */
   big: React.PropTypes.bool,
+  /** Create an outline style button */
+  outline: React.PropTypes.bool
+}
+
+Button.defaultProps = {
+  rounded: true
 }
 
 Button.contextTypes = {

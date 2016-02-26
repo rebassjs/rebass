@@ -43,7 +43,8 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     title: [name + ' Title'],
     description: ['Description for ' + name],
     label: [name],
-    children: ['rcp-' + name],
+    rounded: [true],
+    // rounded: [true, 'left', false, 'right'],
     links: [
       [
         { href: '#!', children: 'Jxnblk' },

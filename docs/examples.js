@@ -38,12 +38,12 @@ const examples = {
       </Heading>
     </div>
   ),
-  Card: (
-    <Card width={320}>
-      <CardImage src='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg' />
-      <Heading size={3} children='Card' />
-      <Text>Cats like cards too</Text>
-    </Card>
+  Banner: (
+    <Banner
+      minHeight={512}
+      backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'>
+      <Heading size={0} children='Rebass' />
+    </Banner>
   ),
   Block: (
     <Block padding={48} borderLeft backgroundColor='#eee'>
@@ -53,12 +53,19 @@ const examples = {
       </Media>
     </Block>
   ),
-  Banner: (
-    <Banner
-      minHeight={512}
-      backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'>
-      <Heading size={0} children='Rebass' />
-    </Banner>
+  Button: (
+    <div>
+      <Button rounded='left' outline children='Button' />
+      <Button rounded={false} outline children='Group' />
+      <Button rounded='right' children='Button' />
+    </div>
+  ),
+  Card: (
+    <Card width={320}>
+      <CardImage src='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg' />
+      <Heading size={3} children='Card' />
+      <Text>Cats like cards too</Text>
+    </Card>
   ),
   Dropdown: (
     <Dropdown>
