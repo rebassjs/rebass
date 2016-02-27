@@ -10,7 +10,7 @@ const Message = ({
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const messageStyle = rebass ? rebass.Message : {}
+  const customStyle = rebass ? rebass.Message : {}
   const { bold, scale, borderRadius, colors } = config
   const backgroundColor = colors[type]
 
@@ -27,7 +27,7 @@ const Message = ({
         color: colors.white,
         backgroundColor,
         borderRadius,
-        ...messageStyle,
+        ...customStyle,
         ...style
       }} />
   )
