@@ -8,11 +8,7 @@ import theme from './theme'
 
 const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const breadcrumbsStyle = {
-    ...theme.Breadcrumbs,
-    ...(rebass ? rebass.Breadcrumbs : {}),
-    ...style
-  }
+  const customStyle = rebass ? rebass.Breadcrumbs : {}
   const { fontSizes, scale } = config
 
   const sx = {
@@ -21,7 +17,8 @@ const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
       display: 'flex',
       marginBottom: scale[2],
       alignItems: 'center',
-      ...breadcrumbsStyle
+      ...customStyle,
+      ...style
     },
     spacer: {
       marginLeft: '.5em',
@@ -35,7 +32,7 @@ const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
       className='Breadcrumbs'
       style={sx.root}>
       {links.map((link, i) => (
-        <div key={i}>
+        <div key={i} ref={`link_${i}`}>
           <a {...link}
             style={{
               color: 'inherit',
