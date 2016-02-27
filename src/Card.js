@@ -16,10 +16,12 @@ const Card = ({ width, style, ...props }, { rebass }) => {
     width,
     flexDirection: 'column',
     padding: scale[1],
+    marginBottom: scale[2],
     borderRadius,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor,
+    overflow: 'hidden',
     ...cardStyle
   }
 

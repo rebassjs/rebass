@@ -20,12 +20,14 @@ const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
   const alignItems = alignment[align]
 
   const sx = {
+    boxSizing: 'border-box',
     fontSize: fontSizes[1],
     display: 'flex',
     flexDirection: 'column',
     alignItems,
     justifyContent: 'center',
     padding: scale[4],
+    marginBottom: scale[4],
     color: colors.white,
     backgroundColor: colors.black,
     minHeight: '100vh',

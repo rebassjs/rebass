@@ -9,7 +9,7 @@ import theme from './theme'
 const Menu = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const menuConfig = rebass ? rebass.Menu : {}
-  const { colors, borderColor, borderRadius } = config
+  const { scale, colors, borderColor, borderRadius } = config
 
   return (
     <div
@@ -19,6 +19,8 @@ const Menu = ({ style, ...props }, { rebass }) => {
         display: 'flex',
         flexDirection: 'column',
         minWidth: 128,
+        marginBottom: scale[2],
+        overflow: 'hidden',
         borderRadius: 2,
         borderWidth: 1,
         borderStyle: 'solid',

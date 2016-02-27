@@ -6,12 +6,19 @@ import theme from './theme'
  * Panel for containing small pieces of information
  */
 
-const Panel = ({ type, style, ...props }, { rebass }) => {
+const Panel = ({ type, style, children ,...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const panelConfig = { ...theme.Panel, ...(rebass ? rebass.Panel : {}) }
   const { scale, borderRadius } = config
 
   const borderColor = config.colorTypes[type]
+  const styledChildren = React.Children.map(children, (child) => {
+    if (child && child.props && child.props.type === 'default') {
+      return React.cloneElement(child, { type })
+    } else {
+      return child
+    }
+  })
 
   return (
     <div
@@ -27,7 +34,7 @@ const Panel = ({ type, style, ...props }, { rebass }) => {
         ...panelConfig,
         ...style
       }}
-    />
+      children={styledChildren} />
   )
 }
 

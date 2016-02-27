@@ -9,7 +9,7 @@ import theme from './theme'
 
 const Input = ({ label, name, type, hideLabel, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { borderColor } = config
+  const { scale, borderColor } = config
 
   return (
     <div className='Input' style={style}>
@@ -28,7 +28,9 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, { re
           display: 'block',
           width: '100%',
           height: 32,
-          padding: 8,
+          paddingLeft: 8,
+          paddingRight: 8,
+          marginBottom: scale[2],
           borderRadius: 2,
           borderWidth: 1,
           borderColor,

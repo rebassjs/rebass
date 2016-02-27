@@ -11,7 +11,7 @@ const Message = ({
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
   const messageStyle = rebass ? rebass.Message : {}
-  const { bold, borderRadius, colors } = config
+  const { bold, scale, borderRadius, colors } = config
   const backgroundColor = config.colorTypes[type]
 
   return (
@@ -22,7 +22,8 @@ const Message = ({
         fontWeight: bold,
         display: 'flex',
         alignItems: 'center',
-        padding: config.scale[2],
+        padding: scale[2],
+        marginBottom: scale[2],
         color: colors.white,
         backgroundColor,
         borderRadius,

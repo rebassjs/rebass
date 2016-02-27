@@ -9,18 +9,18 @@ import theme from './theme'
 const NavItem = ({ small, Component, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const navItemStyle = rebass ? rebass.NavItem : {}
-  const { fontSizes, bold } = config
+  const { fontSizes, scale, bold } = config
 
   return (
     <Component
       {...props}
       className='NavItem'
       style={{
-        fontSize: small ? fontSizes[5] : fontSizes[4],
+        fontSize: small ? fontSizes[6] : fontSizes[5],
         fontWeight: bold,
         textDecoration: 'none',
         display: 'inline-block',
-        padding: 8,
+        padding: `${scale[1] / 2}px ${scale[1]}px`,
         color: 'inherit',
         cursor: 'pointer',
         ...navItemStyle,

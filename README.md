@@ -30,6 +30,7 @@ class App extends React.Component {
 
 # Notes
 
+- Base styles component or recommendations (1.5 line-height, etc)
 - Remove all duplicate/flattened style props?
 - theme config for all components?
 - borderRadius, borderColor in component configs...

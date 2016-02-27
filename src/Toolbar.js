@@ -9,7 +9,7 @@ import theme from './theme'
 const Toolbar = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Toolbar : {}
-  const { colors } = config
+  const { scale, colors } = config
 
   return (
     <div
@@ -19,8 +19,9 @@ const Toolbar = ({ style, ...props }, { rebass }) => {
         display: 'flex',
         alignItems: 'center',
         minHeight: 48,
-        paddingTop: 4,
-        paddingBottom: 4,
+        paddingLeft: scale[1],
+        paddingRight: scale[1],
+        marginBottom: scale[2],
         color: colors.white,
         backgroundColor: colors.blue,
         ...customStyle,

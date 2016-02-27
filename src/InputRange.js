@@ -1,12 +1,17 @@
 
 import React from 'react'
+import theme from './theme'
 import Label from './Label'
 
 /**
  * Input type range with label
  */
 
-const InputRange = ({ label, name, hideLabel, children, style, ...props }) => {
+const InputRange = ({ label, name, hideLabel, children, style, ...props }, { rebass }) => {
+  const config = { ...theme, ...rebass }
+  const inputRangeStyle = rebass ? rebass.InputRange : {}
+  const { scale } = config
+
   const css = `
     .InputRange-input::-webkit-slider-thumb {
       width: 8px;
@@ -54,7 +59,8 @@ const InputRange = ({ label, name, hideLabel, children, style, ...props }) => {
           boxSizing: 'border-box',
           display: 'block',
           width: '100%',
-          margin: 0,
+          marginTop: 0,
+          marginBottom: scale[2],
           paddingTop: 8,
           paddingBottom: 8,
           cursor: 'pointer',
@@ -76,6 +82,9 @@ InputRange.propTypes = {
   hideLabel: React.PropTypes.bool
 }
 
+InputRange.contextTypes = {
+  rebass: React.PropTypes.object
+}
 
 export default InputRange
 

@@ -25,6 +25,7 @@ const Media = ({ img, right, align, style, children, ...props }, { rebass }) => 
       className='Media'
       style={{
         display: 'flex',
+        marginBottom: scale[2],
         alignItems,
         ...style
       }}>

@@ -10,7 +10,7 @@ import theme from './theme'
 const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const textareaStyle = { ...theme.Textarea, ...(rebass ? rebass.Textarea : {}) }
-  const { borderColor } = config
+  const { scale, borderColor } = config
 
   return (
     <div className='Textarea' style={style}>
@@ -28,6 +28,7 @@ const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebas
           display: 'block',
           width: '100%',
           padding: 8,
+          marginBottom: scale[2],
           borderRadius: 2,
           borderWidth: 1,
           borderStyles: 'solid',

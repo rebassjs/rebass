@@ -13,12 +13,13 @@ const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
     ...(rebass ? rebass.Breadcrumbs : {}),
     ...style
   }
-  const { fontSizes } = config
+  const { fontSizes, scale } = config
 
   const sx = {
     root: {
       fontSize: fontSizes[5],
       display: 'flex',
+      marginBottom: scale[2],
       alignItems: 'center',
       ...breadcrumbsStyle
     },

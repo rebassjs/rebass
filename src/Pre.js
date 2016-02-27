@@ -19,6 +19,7 @@ const Pre = ({ style, ...props }, { rebass }) => {
       style={{
         fontFamily: monospace,
         paddingLeft: scale[2],
+        marginBottom: scale[2],
         borderLeft: `4px solid ${colors.gray}`,
         overflowX: 'scroll',
         ...customStyles,

@@ -17,6 +17,8 @@ const CardImage = ({ src, style, children, ...props }, { rebass }) => {
       src={src}
       style={{
         display: 'block',
+        width: `calc(100% + ${2 * scale[1]}px)`,
+        height: 'auto',
         margin: - scale[1],
         marginBottom: scale[1],
         ...style

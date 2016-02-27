@@ -88,8 +88,8 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
                 key={i}
                 style={{ margin: 8 }}
                 title={`<${name} ${propsString(p)} />`}
-                  name={name}
-                  children={name} />
+                name={name}
+                children={name} />
             ))}
           </div>
         }

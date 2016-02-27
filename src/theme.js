@@ -42,6 +42,14 @@ const colorTypes = {
   error: colors.red
 }
 
+const zIndex = [
+  0,
+  2,
+  4,
+  8,
+  16
+]
+
 const bold = 600
 const borderRadius = 4 // 2
 const borderColor = colors.gray
@@ -51,6 +59,7 @@ const theme = {
   fontSizes,
   bold,
   monospace,
+  zIndex,
   colors,
   borderRadius,
   borderColor,

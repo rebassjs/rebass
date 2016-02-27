@@ -10,7 +10,7 @@ import theme from './theme'
 const Select = ({ label, name, options, hideLabel, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const selectConfig = { ...theme.Select, ...(rebass ? rebass.Select : {}) }
-  const { borderColor } = config
+  const { scale, borderColor } = config
 
   return (
     <div className='Select' style={style}>
@@ -29,6 +29,7 @@ const Select = ({ label, name, options, hideLabel, children, style, ...props }, 
           width: '100%',
           height: 32,
           padding: 8,
+          marginBottom: scale[2],
           backgroundColor: 'transparent',
           backgroundImage: 'none',
           borderRadius: 2,

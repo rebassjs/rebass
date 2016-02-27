@@ -9,7 +9,7 @@ import theme from './theme'
 const Progress = ({ value, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Progress : {}
-  const { colors } = config
+  const { scale, colors } = config
 
   const css = `
     .Progress-progress::-webkit-progress-bar {
@@ -34,6 +34,7 @@ const Progress = ({ value, style, ...props }, { rebass }) => {
         style={{
           display: 'block',
           width: '100%',
+          marginBottom: scale[2],
           height: 8,
           overflow: 'hidden',
           backgroundColor: 'rgba(0, 0, 0, .125)',
