@@ -14,7 +14,6 @@ const Arrow = ({ direction, style, ...props }, { rebass }) => {
         display: 'inline-block',
         width: 0,
         height: 0,
-        //marginLeft: '.1875em',
         marginLeft: '.5em',
         verticalAlign: 'middle',
         borderRight: '.3125em solid transparent',
