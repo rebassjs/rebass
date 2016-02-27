@@ -40,6 +40,29 @@ class ConfigForm extends React.Component {
       onChange({ borderColor: e.target.value })
     }
 
+    const handleHeadingFontChange = (e) => {
+      const obj = Object.assign({}, this.props.Heading, {
+        fontFamily: e.target.value
+      })
+      onChange({ Heading: obj })
+    }
+
+    const toggleHeadingCaps = (e) => {
+      let obj
+      if (this.props.Heading.textTransform === 'uppercase') {
+        obj = Object.assign({}, this.props.Heading, {
+          textTransform: null,
+          letterSpacing: null
+        })
+      } else {
+        obj = Object.assign({}, this.props.Heading, {
+          textTransform: 'uppercase',
+          letterSpacing: '.2em'
+        })
+      }
+      onChange({ Heading: obj })
+    }
+
     const handleThemeChange = (key) => {
       return (e) => {
         onChange({ [key]: e.target.value })
@@ -161,6 +184,26 @@ class ConfigForm extends React.Component {
             <Block backgroundColor={backgroundColor} />
           </Box>
         </Flex>
+        <Heading level={3} children='Heading styles' />
+          <Select
+            name='heading_font'
+            label='Heading Font'
+            value={this.props.Heading.fontFamily}
+            options={[
+              { value: 'inherit', label: 'Inherit' },
+              { value: '"Avenir Next", sans-serif', label: 'Avenir' },
+              { value: 'Helvetica, sans-serif', label: 'Helvetica' },
+              { value: '"Roboto Mono", monospace', label: 'Roboto Mono' },
+              { value: 'Georgia, serif', label: 'Georgia' },
+              { value: 'Palatino, serif', label: 'Palatino' },
+            ]}
+            onChange={handleHeadingFontChange}
+          />
+          <Checkbox
+            name='heading_caps'
+            label='All Caps'
+            checked={this.props.Heading.textTransform === 'uppercase'}
+            onChange={toggleHeadingCaps} />
       </Box>
     )
   }

@@ -18,6 +18,7 @@ const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
         }}>
         <input
           {...props}
+          name={name}
           type='radio'
           style={{
             marginRight: 8

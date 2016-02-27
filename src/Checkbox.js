@@ -8,10 +8,11 @@ import Label from './Label'
 
 const Checkbox = ({ label, name, style, children, ...props }) => (
   <div className='Checkbox' style={style}>
-    <Label htmlFor={name}
+    <Label
       style={{
         display: 'flex',
-        alignItems: 'baseline'
+        alignItems: 'baseline',
+        cursor: 'pointer'
       }}>
       <input
         {...props}

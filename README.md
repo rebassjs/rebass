@@ -95,6 +95,11 @@ This means that the default
   - SignInForm
 - AddressForm
 
+- [ ] Avatar
+- [ ] ProfileCard
+
+- Look into context style wrapper
+
 ---
 
 [MIT License](.github/LICENSE.md)

@@ -8,6 +8,9 @@ const demoTheme = {
   Toolbar: {
     backgroundColor: theme.colors.black
   },
+  Heading: {
+    fontFamily: 'inherit'
+  },
   Banner: {
     minHeight: '80vh',
     backgroundColor: theme.colors.blue

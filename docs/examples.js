@@ -14,6 +14,7 @@ import {
   Divider,
   Dropdown,
   DropdownMenu,
+  Embed,
   Footer,
   Heading,
   Media,
@@ -96,6 +97,13 @@ const examples = {
         <NavItem children='Hi' />
       </DropdownMenu>
     </Dropdown>
+  ),
+  Embed: (
+    <Embed ratio={9/16}>
+      <iframe
+        src='https://www.youtube.com/embed/658WsCFwm9A'
+        allowFullScreen />
+    </Embed>
   ),
   Menu: (
     <Menu>
