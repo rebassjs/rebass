@@ -45,7 +45,6 @@ describe('React context', () => {
       </Root>
     )
     tree = renderer.getRenderOutput()
-    console.log(tree.props.children)
     button = tree.props.children[0]
     panel = tree.props.children[1]
   })
