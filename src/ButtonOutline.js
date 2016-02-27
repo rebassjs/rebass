@@ -10,7 +10,6 @@ const ButtonOutline = ({
   href,
   big,
   rounded,
-  outline,
   color,
   children,
   style,
@@ -19,7 +18,7 @@ const ButtonOutline = ({
 }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const buttonStyle = rebass ? rebass.ButtonOutline : {}
+  const customStyle = rebass ? rebass.ButtonOutline : {}
   const { fontSizes, bold, scale, colors, borderRadius } = config
 
   const Component = href ? 'a' : 'button'
@@ -44,7 +43,7 @@ const ButtonOutline = ({
     color: color || colors.primary,
     backgroundColor: 'transparent',
     boxShadow: 'inset 0 0 0 1px',
-    ...buttonStyle,
+    ...customStyle,
     ...style
   }
 

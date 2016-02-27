@@ -10,7 +10,6 @@ const Button = ({
   href,
   big,
   rounded,
-  outline,
   color,
   backgroundColor,
   children,
