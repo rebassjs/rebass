@@ -23,29 +23,37 @@ const Progress = ({ value, style, ...props }, { rebass }) => {
     }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
+  const { margin, ...otherStyle } = { ...customStyle, ...style }
+
+  const sx = {
+    root: {
+      marginBottom: scale[2],
+      margin
+    },
+    progress: {
+      display: 'block',
+      width: '100%',
+      height: 8,
+      overflow: 'hidden',
+      backgroundColor: 'rgba(0, 0, 0, .125)',
+      border: 0,
+      borderRadius: 9999,
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      color: colors.blue,
+      ...otherStyle
+    }
+  }
+
   return (
-    <div className='Progress' style={style}>
+    <div className='Progress' style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <progress
         {...props}
         className='Progress-progress'
         value={value}
         children={value}
-        style={{
-          display: 'block',
-          width: '100%',
-          marginBottom: scale[2],
-          height: 8,
-          overflow: 'hidden',
-          backgroundColor: 'rgba(0, 0, 0, .125)',
-          border: 0,
-          borderRadius: 9999,
-          WebkitAppearance: 'none',
-          appearance: 'none',
-          color: colors.blue,
-          ...customStyle,
-          ...style
-        }} />
+        style={sx.progress} />
     </div>
   )
 }
