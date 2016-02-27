@@ -1,5 +1,4 @@
 
-
 import React from 'react'
 import Heading from './Heading'
 import theme from './theme'
@@ -10,21 +9,23 @@ import theme from './theme'
 
 const HeadingLink =({ level, size, href, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const headingLinkConfig = { ...theme.HeadingLink, ...(rebass ? rebass.HeadingLink : {}) }
+  const customStyles = rebass ? rebass.HeadingLink : {}
 
   // className isn't passed on
   return (
     <Heading className='HeadingLink'
       level={level}
-      size={size}>
+      size={size}
+      style={{
+        ...customStyles,
+        ...style
+      }}>
       <a
         {...props}
         href={href}
         style={{
           color: 'inherit',
-          textDecoration: 'none',
-          ...headingLinkConfig,
-          ...style
+          textDecoration: 'none'
         }} />
     </Heading>
   )
