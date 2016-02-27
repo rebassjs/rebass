@@ -7,9 +7,10 @@ import theme from './theme'
  * Main page header with description
  */
 
-const PageHeader = ({ heading, href, description, style, children, ...props }, { rebass }) => {
+const PageHeader = ({ heading, description, style, children, ...props }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
+  const customStyle = rebass ? rebass.PageHeader : {}
   const { scale, borderColor } = config
 
   return (
@@ -24,16 +25,19 @@ const PageHeader = ({ heading, href, description, style, children, ...props }, {
         borderBottomWidth: 2,
         borderBottomStyle: 'solid',
         borderBottomColor: borderColor,
+        ...customStyle,
         ...style
       }}>
       <div style={{
           flex: '1 1 auto'
         }}>
         <Heading level={1} children={heading} />
-        <p style={{
+        {description &&
+          <p style={{
             margin: 0
           }}
           children={description} />
+        }
       </div>
       {children}
     </header>
