@@ -27,7 +27,6 @@ describe('Close', () => {
   })
 
   it('should contain an ×', () => {
-    console.log(tree.props.children)
     expect(tree.props.children).toEqual('×')
   })
 })

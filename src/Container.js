@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Container = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const containerStyle = rebass ? rebass.Container : {}
+  const customStyle = rebass ? rebass.Container : {}
   const { scale } = config
 
   return (
@@ -20,7 +20,7 @@ const Container = ({ style, ...props }, { rebass }) => {
         paddingLeft: scale[2],
         paddingRight: scale[2],
         margin: 'auto',
-        ...containerStyle,
+        ...customStyle,
         ...style
       }} />
   )
