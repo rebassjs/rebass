@@ -27,7 +27,7 @@ const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
     alignItems,
     justifyContent: 'center',
     padding: scale[4],
-    marginBottom: scale[4],
+    marginBottom: scale[3],
     color: colors.white,
     backgroundColor: colors.black,
     minHeight: '100vh',

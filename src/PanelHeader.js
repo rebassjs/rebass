@@ -9,8 +9,8 @@ import theme from './theme'
 const PanelHeader = ({ type, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.PanelHeader : {}
-  const { scale, colors, colorTypes, borderRadius } = config
-  const backgroundColor = colorTypes[type]
+  const { scale, colors, borderRadius } = config
+  const backgroundColor = colors[type]
 
   return (
     <div

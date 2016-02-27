@@ -21,7 +21,6 @@ const Toolbar = ({ style, ...props }, { rebass }) => {
         minHeight: 48,
         paddingLeft: scale[1],
         paddingRight: scale[1],
-        marginBottom: scale[2],
         color: colors.white,
         backgroundColor: colors.blue,
         ...customStyle,

@@ -9,9 +9,9 @@ import theme from './theme'
 const Panel = ({ type, style, children ,...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const panelConfig = { ...theme.Panel, ...(rebass ? rebass.Panel : {}) }
-  const { scale, borderRadius } = config
+  const { scale, colors, borderRadius } = config
 
-  const borderColor = config.colorTypes[type]
+  const borderColor = colors[type]
   const styledChildren = React.Children.map(children, (child) => {
     if (child && child.props && child.props.type === 'default') {
       return React.cloneElement(child, { type })

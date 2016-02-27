@@ -43,7 +43,7 @@ const ButtonOutline = ({
     borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
     color: color || colors.blue,
     backgroundColor: 'transparent',
-    boxShadow: 'inset 0 0 0 2px',
+    boxShadow: 'inset 0 0 0 1px',
     ...buttonStyle,
     ...style
   }

@@ -12,7 +12,7 @@ const Message = ({
   const config = { ...theme, ...rebass}
   const messageStyle = rebass ? rebass.Message : {}
   const { bold, scale, borderRadius, colors } = config
-  const backgroundColor = config.colorTypes[type]
+  const backgroundColor = colors[type]
 
   return (
     <div

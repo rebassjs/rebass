@@ -13,7 +13,7 @@ const Badge = ({
   const config = { ...theme, ...rebass}
   const badgeStyle = rebass ? rebass.Badge : {}
   const { fontSizes, bold, scale, colors, borderRadius } = config
-  const backgroundColor = config.colorTypes[type]
+  const backgroundColor = colors[type]
 
   return (
     <div

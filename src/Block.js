@@ -36,7 +36,8 @@ const Block = ({
   const sx = {
     boxSizing: 'border-box',
     padding: scale[2],
-    margin: 0,
+    marginTop: scale[2],
+    marginBottom: scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,

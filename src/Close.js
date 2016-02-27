@@ -7,6 +7,7 @@ const Close = ({ style, ...props }, { rebass }) => {
   return (
     <button {...props}
       className='Close'
+      title='Close'
       style={{
         fontSize: '1.5em',
         lineHeight: 1,
@@ -17,6 +18,7 @@ const Close = ({ style, ...props }, { rebass }) => {
         color: 'inherit',
         backgroundColor: 'transparent',
         border: 0,
+        WebkitAppearance: 'none',
         ...customStyle,
         ...style
       }}

@@ -5,7 +5,7 @@ const { blue, red, orange, green } = clrs
 
 const monospace = `'Roboto Mono', Menlo, Consolas, monospace`
 
-const colors = {
+const baseColors = {
   black: '#111',
   white: '#fff',
   gray: '#ccc',
@@ -14,6 +14,16 @@ const colors = {
   red,
   orange,
   green
+}
+
+const colors = {
+  ...baseColors,
+  primary: baseColors.blue,
+  default: baseColors.midgray,
+  info: baseColors.blue,
+  success: baseColors.green,
+  warning: baseColors.orange,
+  error: baseColors.red
 }
 
 const scale = [
@@ -33,14 +43,6 @@ const fontSizes = [
   14,
   12
 ]
-
-const colorTypes = {
-  default: colors.midgray,
-  info: colors.blue,
-  success: colors.green,
-  warning: colors.orange,
-  error: colors.red
-}
 
 const zIndex = [
   0,
@@ -62,8 +64,7 @@ const theme = {
   zIndex,
   colors,
   borderRadius,
-  borderColor,
-  colorTypes
+  borderColor
 }
 
 /* Potential config objects:
