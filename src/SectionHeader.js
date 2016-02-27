@@ -10,7 +10,7 @@ import theme from './theme'
 const SectionHeader = ({ heading, href, description, style, children, ...props }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const sectionHeaderConfig = { ...theme.SectionHeader, ...(rebass ? rebass.SectionHeader : {}) }
+  const customStyle = rebass ? rebass.SectionHeader : {}
   const { scale, borderColor } = config
 
   return (
@@ -24,17 +24,19 @@ const SectionHeader = ({ heading, href, description, style, children, ...props }
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
         borderBottomColor: borderColor,
-        ...sectionHeaderConfig,
+        ...customStyle,
         ...style
       }}>
       <div style={{
           flex: '1 1 auto'
         }}>
-        <HeadingLink href={href || `#${heading}`} children={heading} />
-        <p style={{
-            margin: 0
-          }}
-          children={description} />
+        <HeadingLink href={href || `#${heading || ''}`} children={heading} />
+        {description &&
+          <p style={{
+              margin: 0
+            }}
+            children={description} />
+        }
       </div>
       {children}
     </header>
