@@ -12,6 +12,7 @@ import {
   Card,
   CardImage,
   Checkbox,
+  Close,
   Container,
   Divider,
   Dropdown,
@@ -98,12 +99,14 @@ const KitchenSink = () => (
         <Text children='This is the Panel body' />
         <PanelFooter children='PanelFooter is a good place for feet' />
       </Panel>
-      <Toolbar>
-        <NavItem children='Toolbar' />
-        <Space auto />
-        <NavItem children='NavItem' />
-        <NavItem children='NavItem' />
-      </Toolbar>
+      <Box py={3}>
+        <Toolbar>
+          <NavItem children='Toolbar' />
+          <Space auto />
+          <NavItem children='NavItem' />
+          <NavItem children='NavItem' />
+        </Toolbar>
+      </Box>
       <Menu>
         <NavItem children='This is a Menu' />
         <NavItem children='With a few' />
@@ -149,7 +152,11 @@ const KitchenSink = () => (
       <Media img='http://lorempixel.com/128/128/cats'>
         Media object loves cats
       </Media>
-      <Message type='error' children='This is a very important Message' />
+      <Message type='error'>
+        This is a very important message
+        <Space auto />
+        <Close />
+      </Message>
       <PageHeader
         heading='This is a PageHeader'
         description='It really should go at the top of the page, not way down here.' />

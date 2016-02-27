@@ -59,6 +59,14 @@ const examples = {
       </Media>
     </Block>
   ),
+  Breadcrumbs: (
+    <Breadcrumbs
+      links={[
+        { href: '#!', children: 'Jxnblk' },
+        { href: '#!', children: 'Rebass' },
+        { href: '#!', children: 'Breadcrumbs' }
+      ]} />
+  ),
   Button: (
     <div>
       <Button children='Button' />

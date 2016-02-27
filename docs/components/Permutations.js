@@ -3,6 +3,12 @@ import React from 'react'
 import rcp from 'react-component-permutations'
 import { Divider, Text, theme } from '../../src'
 
+const blacklist = [
+  'Banner',
+  'Block',
+  'Drawer'
+]
+
 const propsString = (obj) => {
   let str = ''
   Object.keys(obj).forEach(key => {
@@ -66,6 +72,10 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     borderLeft: [true, false],
     open: [true] // DropdownMenu
   })
+
+  if (blacklist.indexOf(name) > -1) {
+    return <div />
+  }
 
   if (!permutations || permutations.length < 2) {
     return <div />

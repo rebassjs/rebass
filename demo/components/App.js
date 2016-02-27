@@ -2,6 +2,9 @@
 import React from 'react'
 import {
   theme,
+  Toolbar,
+  Space,
+  NavItem,
   Banner,
   Close,
   Container,
@@ -18,8 +21,12 @@ class App extends React.Component {
     super()
     this.state = {
       ...theme,
+      Toolbar: {
+        backgroundColor: theme.colors.black
+      },
       Banner: {
-        minHeight: '80vh'
+        minHeight: '80vh',
+        backgroundColor: theme.colors.blue
       },
       drawerOpen: true
     }
@@ -52,6 +59,12 @@ class App extends React.Component {
 
     return (
       <div>
+        <Toolbar>
+          <NavItem children='Rebass' />
+          <NavItem
+            onClick={this.toggleDrawer}
+            children='Edit Configuration' />
+        </Toolbar>
         <Banner
           backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
           onClick={this.toggleDrawer}>
@@ -59,9 +72,9 @@ class App extends React.Component {
           <Text children='Configurable example page' />
         </Banner>
         <Container style={{
-            transition: 'transform .3s ease-out, margin .2s ease-out',
-            // marginRight: drawerOpen ? 0 : 'auto'
-            transform: drawerOpen ? 'translateX(192px)' : null
+            // transition: 'transform .3s ease-out, margin .2s ease-out',
+            // transform: drawerOpen ? 'translateX(192px)' : null,
+            marginRight: drawerOpen ? 0 : 'auto'
           }}>
           <KitchenSink />
         </Container>
