@@ -9,7 +9,7 @@ import Label from './Label'
 
 const InputRange = ({ label, name, hideLabel, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const inputRangeStyle = rebass ? rebass.InputRange : {}
+  const customStyle = rebass ? rebass.InputRange : {}
   const { scale } = config
 
   const css = `
@@ -44,7 +44,11 @@ const InputRange = ({ label, name, hideLabel, children, style, ...props }, { reb
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
   return (
-    <div className='InputRange' style={style}>
+    <div className='InputRange'
+      style={{
+        ...customStyle,
+        ...style
+      }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Label
         htmlFor={name}
