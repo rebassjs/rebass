@@ -9,6 +9,7 @@ import theme from './theme'
 const Media = ({ img, right, align, style, children, ...props }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
+  const customStyle = rebass ? rebass.Media : {}
   const { scale } = config
 
   const alignment = {
@@ -27,13 +28,14 @@ const Media = ({ img, right, align, style, children, ...props }, { rebass }) => 
         display: 'flex',
         marginBottom: scale[2],
         alignItems,
+        ...customStyle,
         ...style
       }}>
       <img src={img}
         style={{
           maxWidth: 'none',
-          marginRight: right ? 0 : scale[1],
-          marginLeft: right ? scale[1] : 0,
+          marginRight: right ? 0 : scale[2],
+          marginLeft: right ? scale[2] : 0,
           order: right ? 9999 : null
         }} />
       <div children={children} />

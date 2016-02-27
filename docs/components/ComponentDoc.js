@@ -30,7 +30,12 @@ const ComponentDoc = ({ name, description, example, Component, ...props }) => {
           {...props} />
       </Panel>
       <PropsTable props={props.props} />
-      <NavItem small href='#' children='Back to Top' />
+      <Box pt={2}>
+        <Flex gutter={1}>
+          <Box auto />
+          <NavItem small href='#' children='Back to Top' />
+        </Flex>
+      </Box>
     </Section>
   )
 }

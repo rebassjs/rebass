@@ -20,6 +20,8 @@ import {
   Embed,
   Footer,
   Heading,
+  Input,
+  Label,
   Media,
   Menu,
   Message,
@@ -28,10 +30,12 @@ import {
   Panel,
   PanelFooter,
   PanelHeader,
+  Pre,
   Progress,
   Radio,
   Section,
   SectionHeader,
+  Select,
   Space,
   Text,
   Toolbar,
@@ -82,9 +86,17 @@ const examples = {
   ),
   ButtonOutline: (
     <div>
-      <ButtonOutline rounded='left' children='Button' />
-      <ButtonOutline rounded={false} children='Group' />
-      <Button rounded='right' children='Button' />
+      <ButtonOutline
+        rounded='left'
+        children='Button' />
+      <ButtonOutline
+        rounded={false}
+        style={{ marginLeft: -1 }}
+        children='Group' />
+      <Button
+        rounded='right'
+        style={{ marginLeft: -1 }}
+        children='Button' />
     </div>
   ),
   Card: (
@@ -146,6 +158,23 @@ const examples = {
       Footer™ ©2016 Jxnblk
     </Footer>
   ),
+  Input: (
+    <Input
+      name='input_example'
+      placeholder='Placeholder'
+      label='Input' />
+  ),
+  Label: (
+    <Label>
+      Label for form elements
+    </Label>
+  ),
+  Media: (
+    <Media img='http://placehold.it/128' align='center'>
+      <Heading level={3} children='Media Object' />
+      <Text children='With alignment options' />
+    </Media>
+  ),
   Menu: (
     <Menu>
       <NavItem children='Menu' />
@@ -153,14 +182,22 @@ const examples = {
       <NavItem children='NavItem' />
     </Menu>
   ),
+  PageHeader: (
+    <PageHeader
+      heading='Page Header'
+      description='Description about the page' />
+  ),
   Panel: (
-    <Panel>
+    <Panel type='info'>
       <PanelHeader children='Panel' />
       <Text>
         Panels are great for visually separating UI, content, or data from the rest of the page.
       </Text>
       <PanelFooter children='The footer is a good place for less important information' />
     </Panel>
+  ),
+  Pre: (
+    <Pre children={`const pre = { preformatted: 'text' }`} />
   ),
   Progress: (
     <Progress value={0.25} />
@@ -182,6 +219,19 @@ const examples = {
         description='With linked header' />
       Section
     </Section>
+  ),
+  Select: (
+    <Select
+      name='select_example'
+      label='Select'
+      options={[
+        { value: 2, label: 'Two' },
+        { value: 4, label: 'Four' },
+        { value: 8, label: 'Eight' },
+        { value: 16, label: 'Sixteen' },
+        { value: 32, label: 'Thirty-Two' },
+        { value: 64, label: 'Sixty-Four' }
+      ]} />
   ),
   Space: (
     <div>

@@ -68,7 +68,8 @@ This means that the default
   - [ ] Footer
 
 - [x] Close
-- [ ] PillButton
+- [ ] ButtonPill
+- [ ] ButtonCircle
 - [x] Block (color, backgroundColor, borderColor, border, borderLeft, ...)
 - [x] Input, etc, hideLabel prop
 - [x] Button rounded prop
@@ -82,7 +83,7 @@ This means that the default
 - [ ] Blockquote
 - [ ] Table
 - [x] Pre
-- [ ] Embed
+- [x] Embed
 - [ ] InputNumber ? + Stepper?
 
 - [ ] Test CSS :hover, :focus, :active, :disabled
@@ -97,6 +98,8 @@ This means that the default
 
 - [ ] Avatar
 - [ ] ProfileCard
+- [ ] ButtonGroup ?
+- [ ] Input rounded prop
 
 - Look into context style wrapper
 

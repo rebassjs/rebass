@@ -12,6 +12,7 @@ const blacklist = [
   'Drawer',
   'Dropdown',
   'DropdownMenu',
+  'Label',
   'Space'
 ]
 
@@ -46,8 +47,8 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
         { label: 'Three', value: 'Three' },
       ]
     ],
-    img: ['http://lorempixel.com/96/96/cats'],
-    src: ['http://lorempixel.com/96/96/cats'],
+    img: ['http://placehold.it/96'],
+    src: ['http://placehold.it/96'],
     backgroundImage: ['https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'],
     minHeight: ['30vh'],
     width: [256, 320],
@@ -56,7 +57,6 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     description: ['Description for ' + name],
     label: [name],
     rounded: [true],
-    // rounded: [true, 'left', false, 'right'],
     links: [
       [
         { href: '#!', children: 'Jxnblk' },
@@ -64,18 +64,6 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
         { href: '#!', children: name }
       ]
     ],
-    // backgroundColor: [
-    //   null,
-    //   config.colors.red
-    // ],
-    // Block component
-    margin: [32],
-    padding: [32],
-    border: [false],
-    borderTop: [false],
-    borderRight: [false],
-    borderBottom: [false],
-    borderLeft: [true, false],
     open: [true] // DropdownMenu
   })
 
