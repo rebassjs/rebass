@@ -2,6 +2,8 @@
 
 React Stateless Functional UI Components
 
+[![Build Status](https://travis-ci.org/jxnblk/rebass.svg)](https://travis-ci.org/jxnblk/rebass)
+
 http://jxnblk.com/rebass
 
 ## Features
