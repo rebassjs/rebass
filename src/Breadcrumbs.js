@@ -32,7 +32,7 @@ const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
       className='Breadcrumbs'
       style={sx.root}>
       {links.map((link, i) => (
-        <div key={i} ref={`link_${i}`}>
+        <div key={i}>
           <a {...link}
             style={{
               color: 'inherit',

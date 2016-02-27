@@ -38,8 +38,15 @@ const Drawer = ({ open, size, position, style, ...props }, { rebass }) => {
     width = size
   }
 
+  const transforms = {
+    top: 'translateY(-100%)',
+    right: 'translateX(100%)',
+    bottom: 'translateY(100%)',
+    left: 'translateX(-100%)'
+  }
+
   if (!open) {
-    transform = `translateX(-100%)`
+    transform = transforms[position]
   }
 
   const sx = {
@@ -80,6 +87,7 @@ Drawer.propTypes = {
 }
 
 Drawer.defaultProps = {
+  open: false,
   size: 320,
   position: 'left'
 }
