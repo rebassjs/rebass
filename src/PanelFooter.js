@@ -8,7 +8,7 @@ import theme from './theme'
 
 const PanelFooter = ({ type, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const panelFooterConfig = { ...theme.PanelFooter, ...(rebass ? rebass.PanelFooter : {}) }
+  const customStyle = { ...theme.PanelFooter, ...(rebass ? rebass.PanelFooter : {}) }
   const { scale, colors, borderRadius, fontSizes } = config
   const borderTopColor = colors[type]
 
@@ -29,7 +29,7 @@ const PanelFooter = ({ type, style, ...props }, { rebass }) => {
         borderTopStyle: 'solid',
         borderTopColor,
         borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`,
-        ...panelFooterConfig,
+        ...customStyle,
         ...style
       }} />
   )
