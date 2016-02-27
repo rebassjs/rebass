@@ -8,10 +8,10 @@ import theme from './theme'
 
 const Label = ({ hide, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const labelStyle = rebass ? rebass.Label : {}
+  const customStyle = rebass ? rebass.Label : {}
   const { fontSizes, bold } = config
 
-  const hideStyles = hide ? {
+  const hideStyle = hide ? {
     position: 'absolute',
     height: 1,
     width: 1,
@@ -25,8 +25,8 @@ const Label = ({ hide, style, ...props }, { rebass }) => {
     style={{
       fontSize: fontSizes[5],
       fontWeight: bold,
-      ...labelStyle,
-      ...hideStyles,
+      ...customStyle,
+      ...hideStyle,
       ...style
     }} />
 }
