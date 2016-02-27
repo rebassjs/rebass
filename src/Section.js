@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Section = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const sectionConfig = { ...theme.Section, ...(rebass ? rebass.Section : {}) }
+  const customStyle = rebass ? rebass.Section : {}
   const { scale } = config
 
   return (
@@ -18,7 +18,7 @@ const Section = ({ style, ...props }, { rebass }) => {
       style={{
         paddingTop: scale[4],
         paddingBottom: scale[4],
-        ...sectionConfig,
+        ...customStyle,
         ...style
       }} />
   )
