@@ -67,5 +67,14 @@ describe('Breadcrumbs', () => {
     })
   })
 
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<Breadcrumbs style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 

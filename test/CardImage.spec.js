@@ -31,5 +31,15 @@ describe('CardImage', () => {
       expect(tree.props.src).toEqual('http://placehold.it/256')
     })
   })
+
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<CardImage style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 

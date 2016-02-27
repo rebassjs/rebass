@@ -29,5 +29,15 @@ describe('Container', () => {
   it('should have margin auto', () => {
     expect(tree.props.style.margin).toEqual('auto')
   })
+
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<Container style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 

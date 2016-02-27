@@ -29,5 +29,15 @@ describe('Close', () => {
   it('should contain an ×', () => {
     expect(tree.props.children).toEqual('×')
   })
+
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<Close style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 

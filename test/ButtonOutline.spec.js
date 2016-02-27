@@ -114,5 +114,15 @@ describe('ButtonOutline', () => {
       expect(tree.props.style.color).toEqual('#f00')
     })
   })
+
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<ButtonOutline style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 

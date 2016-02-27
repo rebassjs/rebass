@@ -38,5 +38,14 @@ describe('Divider', () => {
     })
   })
 
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<Divider style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 

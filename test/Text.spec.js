@@ -37,5 +37,15 @@ describe('Text', () => {
     })
   })
 
+  context('when custom styles are set', () => {
+    beforeEach(() => {
+      renderer.render(<Text style={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should have a custom color', () => {
+      expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
 })
 
