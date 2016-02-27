@@ -8,7 +8,7 @@ const renderer = TestUtils.createRenderer()
 
 describe('Input', () => {
   const { fontSizes } = theme
-  let tree, input
+  let tree, input, label
 
   beforeEach(() => {
     renderer.render(<Input name='test_input' label='Test' />)
@@ -43,9 +43,30 @@ describe('Input', () => {
     })
   })
 
+  context('when hideLabel is set', () => {
+    beforeEach(() => {
+      renderer.render(<Input hideLabel name='test_input' label='Test' />)
+      tree = renderer.getRenderOutput()
+      label = tree.props.children[0]
+    })
+
+    it('should have a label', () => {
+      expect(label).toExist()
+    })
+
+    it('should set the hide prop', () => {
+      expect(label.props.hide).toEqual(true)
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
-      renderer.render(<Input style={{ color: 'tomato' }} />)
+      renderer.render(
+        <Input
+          name='test_input'
+          label='Test'
+          style={{ color: 'tomato' }} />
+      )
       tree = renderer.getRenderOutput()
       input = tree.props.children[1]
     })
