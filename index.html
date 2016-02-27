@@ -208,7 +208,7 @@ E.g. ratio={9/16}</td></tr></tbody></table></div><div style="box-sizing:border-b
     &quot;prepublish&quot;: &quot;mkdir -p dist &amp;&amp; babel src --out-dir dist&quot;,
     &quot;start&quot;: &quot;static-react docs/components/Root.js --props docs/data.js &gt; index.html&quot;,
     &quot;watch&quot;: &quot;npm run start &amp;&amp; onchange &#x27;src/**/*&#x27; &#x27;docs/**/*&#x27; -- npm run start&quot;,
-    &quot;test&quot;: &quot;static-react docs/components/Root.js --props docs/data.js&quot;
+    &quot;test&quot;: &quot;mocha test --compilers js:babel-register&quot;
   },
   &quot;peerDependencies&quot;: {
     &quot;react&quot;: &quot;^0.14.0&quot;
@@ -219,8 +219,12 @@ E.g. ratio={9/16}</td></tr></tbody></table></div><div style="box-sizing:border-b
     &quot;babel-preset-es2015&quot;: &quot;^6.5.0&quot;,
     &quot;babel-preset-react&quot;: &quot;^6.5.0&quot;,
     &quot;babel-preset-stage-0&quot;: &quot;^6.5.0&quot;,
+    &quot;babel-register&quot;: &quot;^6.5.2&quot;,
+    &quot;expect&quot;: &quot;^1.14.0&quot;,
+    &quot;mocha&quot;: &quot;^2.4.5&quot;,
     &quot;onchange&quot;: &quot;^2.0.0&quot;,
     &quot;react&quot;: &quot;^0.14.7&quot;,
+    &quot;react-addons-test-utils&quot;: &quot;^0.14.7&quot;,
     &quot;react-component-permutations&quot;: &quot;^1.0.0-beta2&quot;,
     &quot;react-docgen&quot;: &quot;^2.7.0&quot;,
     &quot;react-element-to-jsx-string&quot;: &quot;^2.4.0&quot;,
