@@ -2,17 +2,17 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Input, Label } from '../src'
+import { Textarea, Label } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
-describe('Input', () => {
-  let tree, input, label
+describe('Textarea', () => {
+  let tree, textarea, label
 
   beforeEach(() => {
-    renderer.render(<Input name='test_input' label='Test' />)
+    renderer.render(<Textarea name='test_textarea' label='Test' />)
     tree = renderer.getRenderOutput()
-    input = tree.props.children[1]
+    textarea = tree.props.children[1]
   })
 
   it('should render', () => {
@@ -20,31 +20,20 @@ describe('Input', () => {
   })
 
   it('should have a className', () => {
-    expect(tree.props.className).toEqual('Input')
+    expect(tree.props.className).toEqual('Textarea')
   })
 
   it('should have a Label', () => {
     expect(tree.props.children[0].type).toEqual(Label)
   })
 
-  it('should have an input element', () => {
-    expect(input.type).toEqual('input')
-  })
-
-  context('when type is set', () => {
-    beforeEach(() => {
-      renderer.render(<Input type='number' name='test_input' label='Test' />)
-      tree = renderer.getRenderOutput()
-      input = tree.props.children[1]
-    })
-    it('should have a number type', () => {
-      expect(input.props.type).toEqual('number')
-    })
+  it('should have an textarea element', () => {
+    expect(textarea.type).toEqual('textarea')
   })
 
   context('when hideLabel is set', () => {
     beforeEach(() => {
-      renderer.render(<Input hideLabel name='test_input' label='Test' />)
+      renderer.render(<Textarea hideLabel name='test_textarea' label='Test' />)
       tree = renderer.getRenderOutput()
       label = tree.props.children[0]
     })
@@ -61,17 +50,17 @@ describe('Input', () => {
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(
-        <Input
-          name='test_input'
+        <Textarea
+          name='test_textarea'
           label='Test'
           style={{ color: 'tomato' }} />
       )
       tree = renderer.getRenderOutput()
-      input = tree.props.children[1]
+      textarea = tree.props.children[1]
     })
 
     it('should have a custom color', () => {
-      expect(input.props.style.color).toEqual('tomato')
+      expect(textarea.props.style.color).toEqual('tomato')
     })
   })
 })

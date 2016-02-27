@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Select, Label } from '../src'
+import { Select, Label } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Select', () => {
-  const { fontSizes } = theme
   let tree, select
 
   beforeEach(() => {
