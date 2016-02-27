@@ -2,15 +2,15 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Label, Checkbox } from '../src'
+import { theme, Label, Radio } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
-describe('Checkbox', () => {
+describe('Radio', () => {
   let tree, label
 
   beforeEach(() => {
-    renderer.render(<Checkbox name='test' label='Checkbox'/>)
+    renderer.render(<Radio name='test' label='Radio'/>)
     tree = renderer.getRenderOutput()
     label = tree.props.children
   })
@@ -20,7 +20,7 @@ describe('Checkbox', () => {
   })
 
   it('should have a className', () => {
-    expect(tree.props.className).toEqual('Checkbox')
+    expect(tree.props.className).toEqual('Radio')
   })
 
   it('should have a Label', () => {
@@ -29,12 +29,12 @@ describe('Checkbox', () => {
 
   it('should have an input', () => {
     expect(label.props.children[0].type).toEqual('input')
-    expect(label.props.children[0].props.type).toEqual('checkbox')
+    expect(label.props.children[0].props.type).toEqual('radio')
   })
 
   context('when custom styles are set', () => {
     beforeEach(() => {
-      renderer.render(<Checkbox name='test_checkbox' label='Test' style={{ color: 'tomato' }} />)
+      renderer.render(<Radio name='test_radio' label='Test' style={{ color: 'tomato' }} />)
       tree = renderer.getRenderOutput()
     })
     it('should have a custom color', () => {
