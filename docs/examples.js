@@ -11,6 +11,9 @@ import {
   ButtonOutline,
   Card,
   CardImage,
+  Checkbox,
+  Close,
+  Container,
   Divider,
   Dropdown,
   DropdownMenu,
@@ -26,9 +29,13 @@ import {
   PanelFooter,
   PanelHeader,
   Progress,
+  Radio,
+  Section,
+  SectionHeader,
   Space,
   Text,
-  Toolbar
+  Toolbar,
+  Tooltip
 } from '../src'
 
 const examples = {
@@ -81,22 +88,51 @@ const examples = {
     </div>
   ),
   Card: (
-    <Card width={320}>
-      <CardImage src='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg' />
+    <Card width={256}>
+      <CardImage src='http://placehold.it/320' />
       <Heading size={3} children='Card' />
       <Text>Cats like cards too</Text>
     </Card>
   ),
+  CardImage: (
+    <div style={{ maxWidth: 192 }}>
+      <CardImage src='http://placehold.it/320' />
+    </div>
+  ),
+  Checkbox: (
+    <Checkbox
+      name='checkbox_example'
+      label='Checkbox' />
+  ),
+  Close: (
+    <Close />
+  ),
+  Container: (
+    <Container>
+      Container
+    </Container>
+  ),
+  Divider: (
+    <Divider />
+  ),
+  Drawer: (
+    <a href='demo'>See Demo Page</a>
+  ),
   Dropdown: (
-    <Dropdown>
-      <Button>
-        Dropdown <Arrow />
-      </Button>
-      <DropdownMenu>
-        <NavItem children='Hello' />
-        <NavItem children='Hi' />
-      </DropdownMenu>
-    </Dropdown>
+    <Block padding={72}>
+      <Dropdown>
+        <Button>
+          Dropdown <Arrow />
+        </Button>
+        <DropdownMenu>
+          <NavItem children='Hello' />
+          <NavItem children='Hi' />
+        </DropdownMenu>
+      </Dropdown>
+    </Block>
+  ),
+  DropdownMenu: (
+    <a href='#Dropdown'>See Dropdown Example</a>
   ),
   Embed: (
     <Embed ratio={9/16}>
@@ -104,6 +140,11 @@ const examples = {
         src='https://www.youtube.com/embed/658WsCFwm9A'
         allowFullScreen />
     </Embed>
+  ),
+  Footer: (
+    <Footer>
+      Footer™ ©2016 Jxnblk
+    </Footer>
   ),
   Menu: (
     <Menu>
@@ -124,12 +165,45 @@ const examples = {
   Progress: (
     <Progress value={0.25} />
   ),
+  Radio: (
+    <Radio
+      name='radio_example'
+      label='Radio' />
+  ),
+  Section: (
+    <Section>
+      Section
+    </Section>
+  ),
+  SectionHeader: (
+    <Section>
+      <SectionHeader
+        heading='Section Header'
+        description='With linked header' />
+      Section
+    </Section>
+  ),
+  Space: (
+    <div>
+      <Button children='Button' />
+      <Space />
+      <Button children='With' />
+      <Space x={4} />
+      <Button children='Space' />
+    </div>
+  ),
   Toolbar: (
     <Toolbar>
       <NavItem children='Toolbar' />
       <NavItem children='NavItem' />
+      <Space auto />
       <NavItem children='NavItem' />
     </Toolbar>
+  ),
+  Tooltip: (
+    <Tooltip title='Hello!'>
+      <Heading level={3}>Tooltip</Heading>
+    </Tooltip>
   )
 }
 

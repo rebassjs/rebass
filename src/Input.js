@@ -12,8 +12,34 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, { re
   const customStyle = rebass ? rebass.Input : {}
   const { scale, borderRadius, borderColor } = config
 
+  const { margin, ...otherStyle } = { ...customStyle, ...style }
+
+  const sx = {
+    root: {
+      margin
+    },
+    input: {
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      boxSizing: 'border-box',
+      display: 'block',
+      width: '100%',
+      height: scale[3],
+      paddingLeft: scale[1],
+      paddingRight: scale[1],
+      marginBottom: scale[2],
+      color: 'inherit',
+      borderRadius,
+      borderWidth: 1,
+      borderColor,
+      borderStyle: 'solid',
+      ...otherStyle
+    }
+  }
+
   return (
-    <div className='Input'>
+    <div className='Input'
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -22,24 +48,7 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, { re
         {...props}
         type={type}
         name={name}
-        style={{
-          fontFamily: 'inherit',
-          fontSize: 'inherit',
-          boxSizing: 'border-box',
-          display: 'block',
-          width: '100%',
-          height: scale[3],
-          paddingLeft: scale[1],
-          paddingRight: scale[1],
-          marginBottom: scale[2],
-          color: 'inherit',
-          borderRadius,
-          borderWidth: 1,
-          borderColor,
-          borderStyle: 'solid',
-          ...customStyle,
-          ...style
-        }} />
+        style={sx.input} />
     </div>
   )
 }

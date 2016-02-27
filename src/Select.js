@@ -12,8 +12,35 @@ const Select = ({ label, name, options, hideLabel, children, style, ...props }, 
   const customStyle = rebass ? rebass.Select : {}
   const { scale, borderColor } = config
 
+  const { margin, ...otherStyle } = { ...customStyle, ...style }
+
+  const sx = {
+    root: {
+      margin
+    },
+    select: {
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      boxSizing: 'border-box',
+      display: 'block',
+      width: '100%',
+      height: 32,
+      padding: 8,
+      marginBottom: scale[2],
+      color: 'inherit',
+      backgroundColor: 'transparent',
+      backgroundImage: 'none',
+      borderRadius: 2,
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor,
+      ...otherStyle
+    }
+  }
+
   return (
-    <div className='Select'>
+    <div className='Select'
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -21,25 +48,7 @@ const Select = ({ label, name, options, hideLabel, children, style, ...props }, 
       <select
         {...props}
         name={name}
-        style={{
-          fontFamily: 'inherit',
-          fontSize: 'inherit',
-          boxSizing: 'border-box',
-          display: 'block',
-          width: '100%',
-          height: 32,
-          padding: 8,
-          marginBottom: scale[2],
-          color: 'inherit',
-          backgroundColor: 'transparent',
-          backgroundImage: 'none',
-          borderRadius: 2,
-          borderWidth: 1,
-          borderStyle: 'solid',
-          borderColor,
-          ...customStyle,
-          ...style
-        }}>
+        style={sx.select}>
         {options.map((option, i) => (
           <option key={i} {...option} />
         ))}

@@ -9,11 +9,34 @@ import theme from './theme'
 
 const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const textareaStyle = { ...theme.Textarea, ...(rebass ? rebass.Textarea : {}) }
+  const customStyle = rebass ? rebass.Textarea : {}
   const { scale, borderColor } = config
 
+  const { margin, ...otherStyle } = { ...customStyle, ...style }
+
+  const sx = {
+    root: {
+      margin
+    },
+    textarea: {
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      boxSizing: 'border-box',
+      display: 'block',
+      width: '100%',
+      padding: 8,
+      marginBottom: scale[2],
+      borderRadius: 2,
+      borderWidth: 1,
+      borderStyles: 'solid',
+      borderColor,
+      ...otherStyle
+    }
+  }
+
   return (
-    <div className='Textarea' style={style}>
+    <div className='Textarea'
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -21,20 +44,7 @@ const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebas
       <textarea
         {...props}
         name={name}
-        style={{
-          fontFamily: 'inherit',
-          fontSize: 'inherit',
-          boxSizing: 'border-box',
-          display: 'block',
-          width: '100%',
-          padding: 8,
-          marginBottom: scale[2],
-          borderRadius: 2,
-          borderWidth: 1,
-          borderStyles: 'solid',
-          borderColor,
-          ...textareaStyle
-        }} />
+        style={sx.textarea} />
     </div>
   )
 }

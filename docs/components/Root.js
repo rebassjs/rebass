@@ -15,6 +15,7 @@ import {
   Text
 } from '../../src'
 
+import ComponentDoc from './ComponentDoc'
 import PropsTable from './PropsTable'
 import Example from './Example'
 import Permutations from './Permutations'
@@ -71,27 +72,7 @@ class Root extends React.Component {
               ))}
             </nav>
             <main>
-              <Divider />
-              {components.map(component => {
-                const { Component } = component
-                return (
-                  <Section key={component.name} id={component.name}>
-                    <SectionHeader
-                      heading={component.name}
-                      href={`#${component.name}`}
-                      description={component.description || '☞ NEEDS DESCRIPTION'} />
-                    <Panel>
-                      <PanelHeader>
-                        Example
-                      </PanelHeader>
-                      {component.example && <Example example={component.example} />}
-                      <Permutations {...component} />
-                    </Panel>
-                    <PropsTable props={component.props} />
-                    <NavItem small href='#' children='Back to Top' />
-                  </Section>
-                )
-              })}
+              {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
             </main>
             <hr />
             <pre className='tomato'>{JSON.stringify(this.props, null, 2)}</pre>

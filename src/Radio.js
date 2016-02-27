@@ -8,21 +8,35 @@ import theme from './theme'
  */
 
 const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
-  const radioConfig = { ...theme.Radio, ...(rebass ? rebass.Radio : {}) }
+  const config = { ...theme, ...rebass }
+  const customStyle = rebass ? rebass.Radio : {}
+  const { scale } = config
+
+  const sx = {
+    root: {
+      ...customStyle,
+      ...style
+    },
+    label: {
+      display: 'flex',
+      alignItems: 'baseline',
+      cursor: 'pointer'
+    },
+    input: {
+      marginRight: scale[1]
+    }
+  }
+
   return (
-    <div className='Radio' style={style}>
+    <div className='Radio'
+      style={sx.root}>
       <Label htmlFor={name}
-        style={{
-          display: 'flex',
-          alignItems: 'baseline'
-        }}>
+        style={sx.label}>
         <input
           {...props}
           name={name}
           type='radio'
-          style={{
-            marginRight: 8
-          }} />
+          style={sx.input} />
         {label}
       </Label>
     </div>

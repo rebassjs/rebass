@@ -6,7 +6,13 @@ import { Divider, Text, theme } from '../../src'
 const blacklist = [
   'Banner',
   'Block',
-  'Drawer'
+  'Card',
+  'Container',
+  'Divider',
+  'Drawer',
+  'Dropdown',
+  'DropdownMenu',
+  'Space'
 ]
 
 const propsString = (obj) => {
@@ -83,7 +89,6 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
 
   return (
     <div className='Permutations'>
-      <Divider />
       <Text small children='Variations' />
       <div style={{
           position: 'relative',
