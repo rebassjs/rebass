@@ -35,7 +35,7 @@ DropdownMenu.propTypes = {
 }
 
 DropdownMenu.defaultProps = {
-  open: true
+  open: false
 }
 
 export default DropdownMenu

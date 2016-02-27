@@ -136,7 +136,7 @@ const examples = {
         <Button>
           Dropdown <Arrow />
         </Button>
-        <DropdownMenu>
+        <DropdownMenu open>
           <NavItem children='Hello' />
           <NavItem children='Hi' />
         </DropdownMenu>
