@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Space = ({ x, auto, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const spaceConfig = { ...theme.Space, ...(rebass ? rebass.Space : {}) }
+  const customStyle = rebass ? rebass.Space : {}
   const { scale } = config
 
   return (
@@ -18,7 +18,7 @@ const Space = ({ x, auto, style, ...props }, { rebass }) => {
         display: 'inline-block',
         flex: auto ? '1 1 auto' : null,
         width: scale[x],
-        ...spaceConfig,
+        ...customStyle,
         ...style
       }} />
   )
@@ -26,7 +26,7 @@ const Space = ({ x, auto, style, ...props }, { rebass }) => {
 
 Space.propTypes = {
   /** Width of space based on the spacing scale */
-  x: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  x: React.PropTypes.oneOf([1, 2, 3, 4]),
   /** Sets flex: 1 1 auto */
   auto: React.PropTypes.bool
 }
