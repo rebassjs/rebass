@@ -46,7 +46,7 @@ const Block = ({
     color: 'inherit',
     backgroundColor: 'transparent',
     borderWidth: 4,
-    borderColor: colors.blue,
+    borderColor: colors.primary,
     ...blockStyle
   }
 

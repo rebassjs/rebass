@@ -18,5 +18,9 @@ describe('Button', () => {
     expect(tree.type).toEqual('button')
   })
 
+  it('should have a className', () => {
+    expect(tree.props.className).toEqual('Button')
+  })
+
 })
 
