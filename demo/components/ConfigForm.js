@@ -1,14 +1,17 @@
 
 import React from 'react'
+import { Flex, Box } from 'reflexbox'
 import {
   Heading,
   Divider,
   Text,
+  Block,
   Input,
   InputRange,
   Select,
   Checkbox,
-  Radio
+  Radio,
+  Button
 } from '../../src'
 
 class ConfigForm extends React.Component {
@@ -22,7 +25,8 @@ class ConfigForm extends React.Component {
       colors,
       borderRadius,
       borderColor,
-      onChange
+      onChange,
+      reset
     } = this.props
 
     const handleBorderRadiusChange = (e) => {
@@ -34,8 +38,7 @@ class ConfigForm extends React.Component {
     }
 
     return (
-      <div>
-        <Heading children='Configuration' />
+      <Box py={2}>
         <Heading level={3} children='Spacing Scale' />
         {scale.map((s, i) => {
           const handleChange = (e) => {
@@ -81,12 +84,18 @@ class ConfigForm extends React.Component {
             onChange({ colors: obj })
           }
           return (
-            <Input
-              key={i}
-              name={key}
-              label={key}
-              value={value}
-              onChange={handleChange} />
+            <Flex key={i} align='flex-end' gutter={1}>
+              <Box auto px={1}>
+                <Input
+                  name={key}
+                  label={key}
+                  value={value}
+                  onChange={handleChange} />
+              </Box>
+              <Box px={1}>
+                <Block backgroundColor={value} />
+              </Box>
+            </Flex>
           )
         })}
         <Divider />
@@ -102,7 +111,7 @@ class ConfigForm extends React.Component {
           max={32}
           value={borderRadius}
           onChange={handleBorderRadiusChange} />
-      </div>
+      </Box>
     )
   }
 }

@@ -9,10 +9,11 @@ import theme from './theme'
 
 const Input = ({ label, name, type, hideLabel, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { scale, borderColor } = config
+  const customStyle = rebass ? rebass.Input : {}
+  const { scale, borderRadius, borderColor } = config
 
   return (
-    <div className='Input' style={style}>
+    <div className='Input'>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -27,14 +28,17 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, { re
           boxSizing: 'border-box',
           display: 'block',
           width: '100%',
-          height: 32,
-          paddingLeft: 8,
-          paddingRight: 8,
+          height: scale[3],
+          paddingLeft: scale[1],
+          paddingRight: scale[1],
           marginBottom: scale[2],
-          borderRadius: 2,
+          color: 'inherit',
+          borderRadius,
           borderWidth: 1,
           borderColor,
-          borderStyle: 'solid'
+          borderStyle: 'solid',
+          ...customStyle,
+          ...style
         }} />
     </div>
   )

@@ -2,6 +2,7 @@
 import React from 'react'
 import {
   theme,
+  Button,
   Toolbar,
   Space,
   NavItem,
@@ -10,28 +11,25 @@ import {
   Container,
   Drawer,
   Heading,
+  SectionHeader,
   Text,
 } from '../../src'
 
+import demoTheme from '../demo-theme'
 import KitchenSink from './KitchenSink'
 import ConfigForm from './ConfigForm'
+
+const initialTheme = Object.assign({}, theme)
 
 class App extends React.Component {
   constructor () {
     super()
-    this.state = {
-      ...theme,
-      Toolbar: {
-        backgroundColor: theme.colors.black
-      },
-      Banner: {
-        minHeight: '80vh',
-        backgroundColor: theme.colors.blue
-      },
+    this.state = Object.assign({}, theme, demoTheme, {
       drawerOpen: true
-    }
+    })
     this.toggleDrawer = this.toggleDrawer.bind(this)
     this.updateContext = this.updateContext.bind(this)
+    this.resetTheme = this.resetTheme.bind(this)
   }
 
   static childContextTypes = {
@@ -49,13 +47,17 @@ class App extends React.Component {
     this.setState({ drawerOpen })
   }
 
+  resetTheme () {
+    console.log('reset', initialTheme)
+    this.setState(initialTheme)
+  }
+
   updateContext (state) {
     this.setState(state)
   }
 
   render () {
     const { drawerOpen } = this.state
-    console.log(this.state)
 
     return (
       <div>
@@ -72,15 +74,19 @@ class App extends React.Component {
           <Text children='Configurable example page' />
         </Banner>
         <Container style={{
-            // transition: 'transform .3s ease-out, margin .2s ease-out',
-            // transform: drawerOpen ? 'translateX(192px)' : null,
             marginRight: drawerOpen ? 0 : 'auto'
           }}>
           <KitchenSink />
         </Container>
         <Drawer open={drawerOpen}>
-          <Close onClick={this.toggleDrawer} />
-          <ConfigForm {...this.state} onChange={this.updateContext} />
+          <SectionHeader
+            heading='Configuration'>
+            <Close onClick={this.toggleDrawer} />
+          </SectionHeader>
+          <ConfigForm
+            {...this.state}
+            onChange={this.updateContext}
+            reset={this.resetTheme} />
         </Drawer>
       </div>
     )

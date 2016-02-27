@@ -18,9 +18,10 @@ const NavItem = ({ small, Component, style, ...props }, { rebass }) => {
       style={{
         fontSize: small ? fontSizes[6] : fontSizes[5],
         fontWeight: bold,
+        lineHeight: '1rem',
         textDecoration: 'none',
         display: 'inline-block',
-        padding: `${scale[1] / 2}px ${scale[1]}px`,
+        padding: scale[1], // `${scale[1] / 2}px ${scale[1]}px`,
         color: 'inherit',
         cursor: 'pointer',
         ...navItemStyle,
