@@ -4,6 +4,12 @@ React Stateless Functional UI Components
 
 http://jxnblk.com/rebass
 
+## Features
+
+- Uses inline styles – no CSS dependencies
+- [Dumb components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
+- [Configurable](#configuration) with React Context
+
 ## Getting Started
 
 ```bash
@@ -26,6 +32,12 @@ class App extends React.Component {
 }
 ```
 
+## Configuration
+
+Global theme styles are set using
+[React Context](https://facebook.github.io/react/docs/context.html).
+This means that the default
+
 ---
 
 # Notes
@@ -36,8 +48,8 @@ class App extends React.Component {
 - borderRadius, borderColor in component configs...
 - abstracted color keys (primary, secondary, etc)
 
-- [ ] propsString for permutations
-- [ ] toJsx code blocks
+- [x] propsString for permutations
+- [x] toJsx code blocks
 - [ ] Tests
 - [ ] Site
   - [ ] Configurable context demo
@@ -55,15 +67,15 @@ class App extends React.Component {
   - [ ] CTA
   - [ ] Footer
 
-- [ ] Close
+- [x] Close
 - [ ] PillButton
 - [x] Block (color, backgroundColor, borderColor, border, borderLeft, ...)
 - [x] Input, etc, hideLabel prop
 - [x] Button rounded prop
 - [x] Button outline prop
-- [ ] ToolbarSpace or <Space auto />
+- [x] ~~ToolbarSpace~~ or <Space auto />
 
-- [ ] theme component styles (e.g. Button, Heading)
+- [x] theme component styles (e.g. Button, Heading)
 
 - [ ] Form
 - [ ] SearchForm
@@ -85,5 +97,5 @@ class App extends React.Component {
 
 ---
 
-MIT License
+[MIT License](.github/LICENSE.md)
 
