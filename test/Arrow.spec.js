@@ -18,6 +18,10 @@ describe('Arrow', () => {
     expect(tree.type).toEqual('div')
   })
 
+  it('should have a className', () => {
+    expect(tree.props.className).toEqual('Arrow')
+  })
+
   it('should have a border top by default', () => {
     expect(tree.props.style.borderTop).toEqual('.4375em solid')
   })

@@ -7,9 +7,14 @@ import { Button } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Button', () => {
-  it('should render', () => {
+  let tree
+
+  beforeEach(() => {
     renderer.render(<Button />)
-    const tree = renderer.getRenderOutput()
+    tree = renderer.getRenderOutput()
+  })
+
+  it('should render', () => {
     expect(tree.type).toEqual('button')
   })
 
