@@ -57,10 +57,19 @@ class App extends React.Component {
   }
 
   render () {
-    const { drawerOpen } = this.state
+    const { fontFamily, color, backgroundColor, drawerOpen } = this.state
+
+    const css = `
+      body {
+        font-family: ${fontFamily};
+        color: ${color};
+        background-color: ${backgroundColor};
+      }
+    `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
     return (
       <div>
+        <style dangerouslySetInnerHTML={{ __html: css }} />
         <Toolbar>
           <NavItem children='Rebass' />
           <NavItem

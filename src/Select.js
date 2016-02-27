@@ -9,11 +9,11 @@ import theme from './theme'
 
 const Select = ({ label, name, options, hideLabel, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const selectConfig = { ...theme.Select, ...(rebass ? rebass.Select : {}) }
+  const customStyle = rebass ? rebass.Select : {}
   const { scale, borderColor } = config
 
   return (
-    <div className='Select' style={style}>
+    <div className='Select'>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -30,12 +30,15 @@ const Select = ({ label, name, options, hideLabel, children, style, ...props }, 
           height: 32,
           padding: 8,
           marginBottom: scale[2],
+          color: 'inherit',
           backgroundColor: 'transparent',
           backgroundImage: 'none',
           borderRadius: 2,
           borderWidth: 1,
           borderStyle: 'solid',
-          borderColor
+          borderColor,
+          ...customStyle,
+          ...style
         }}>
         {options.map((option, i) => (
           <option key={i} {...option} />

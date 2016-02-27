@@ -41,7 +41,7 @@ const ButtonOutline = ({
     cursor: 'pointer',
     border: 0,
     borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
-    color: color || colors.blue,
+    color: color || colors.primary,
     backgroundColor: 'transparent',
     boxShadow: 'inset 0 0 0 1px',
     ...buttonStyle,

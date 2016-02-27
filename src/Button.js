@@ -43,7 +43,7 @@ const Button = ({
     border: 0,
     borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
     color: color || colors.white,
-    backgroundColor: backgroundColor || colors.blue,
+    backgroundColor: backgroundColor || colors.primary,
     ...buttonStyle,
     ...style
   }

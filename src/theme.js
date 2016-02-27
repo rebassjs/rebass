@@ -1,8 +1,4 @@
 
-import clrs from 'colors.css'
-
-const { blue, red, orange, green } = clrs
-
 const monospace = `'Roboto Mono', Menlo, Consolas, monospace`
 
 const baseColors = {
@@ -10,16 +6,17 @@ const baseColors = {
   white: '#fff',
   gray: '#ccc',
   midgray: '#777',
-  blue,
-  red,
-  orange,
-  green
+  blue: '#08e',
+  red: '#f52',
+  orange: '#f90',
+  green: '#1c7'
 }
 
 const colors = {
   ...baseColors,
   primary: baseColors.blue,
-  default: baseColors.midgray,
+  secondary: baseColors.midgray,
+  default: baseColors.black,
   info: baseColors.blue,
   success: baseColors.green,
   warning: baseColors.orange,
@@ -53,8 +50,8 @@ const zIndex = [
 ]
 
 const bold = 600
-const borderRadius = 4 // 2
-const borderColor = colors.gray
+const borderRadius = 2
+const borderColor = 'rgba(0, 0, 0, .25)'
 
 const theme = {
   scale,
@@ -66,11 +63,6 @@ const theme = {
   borderRadius,
   borderColor
 }
-
-/* Potential config objects:
- * - progress
- * - range
- */
 
 export default theme
 

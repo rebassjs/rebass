@@ -25,6 +25,9 @@ class ConfigForm extends React.Component {
       colors,
       borderRadius,
       borderColor,
+      fontFamily,
+      color,
+      backgroundColor,
       onChange,
       reset
     } = this.props
@@ -35,6 +38,12 @@ class ConfigForm extends React.Component {
 
     const handleBorderColorChange = (e) => {
       onChange({ borderColor: e.target.value })
+    }
+
+    const handleThemeChange = (key) => {
+      return (e) => {
+        onChange({ [key]: e.target.value })
+      }
     }
 
     return (
@@ -111,6 +120,47 @@ class ConfigForm extends React.Component {
           max={32}
           value={borderRadius}
           onChange={handleBorderRadiusChange} />
+        <Divider />
+        <Heading level={3} children='Base Styles' />
+        <Select
+          name='font_select'
+          label='Font Family'
+          value={fontFamily}
+          options={[
+            { value: '-apple-system, BlinkMacSystemFont, sans-serif', label: 'System' },
+            { value: '"Avenir Next", sans-serif', label: 'Avenir' },
+            { value: 'Helvetica, sans-serif', label: 'Helvetica' },
+            { value: 'Verdana, sans-serif', label: 'Verdana' },
+            { value: 'Roboto, sans-serif', label: 'Roboto' },
+            { value: '"Roboto Mono", monospace', label: 'Roboto Mono' },
+            { value: 'Georgia, serif', label: 'Georgia' },
+            { value: 'Palatino, Georgia, serif', label: 'Palatino' },
+          ]}
+          onChange={handleThemeChange('fontFamily')} />
+        <Flex align='flex-end' gutter={1}>
+          <Box auto px={1}>
+            <Input
+              name='color'
+              label='Color'
+              value={color}
+              onChange={handleThemeChange('color')} />
+          </Box>
+          <Box px={1}>
+            <Block backgroundColor={color} />
+          </Box>
+        </Flex>
+        <Flex align='flex-end' gutter={1}>
+          <Box auto px={1}>
+            <Input
+              name='background_color'
+              label='Background Color'
+              value={backgroundColor}
+              onChange={handleThemeChange('backgroundColor')} />
+          </Box>
+          <Box px={1}>
+            <Block backgroundColor={backgroundColor} />
+          </Box>
+        </Flex>
       </Box>
     )
   }

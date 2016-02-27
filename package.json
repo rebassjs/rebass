@@ -42,8 +42,5 @@
   "bugs": {
     "url": "https://github.com/jxnblk/rebass/issues"
   },
-  "homepage": "https://github.com/jxnblk/rebass",
-  "dependencies": {
-    "colors.css": "^3.0.0"
-  }
+  "homepage": "https://github.com/jxnblk/rebass"
 }
