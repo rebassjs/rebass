@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Menu = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const menuConfig = rebass ? rebass.Menu : {}
+  const customStyle = rebass ? rebass.Menu : {}
   const { scale, colors, borderColor, borderRadius } = config
 
   return (
@@ -27,7 +27,7 @@ const Menu = ({ style, ...props }, { rebass }) => {
         backgroundColor: colors.white,
         borderColor,
         borderRadius,
-        ...menuConfig,
+        ...customStyle,
         ...style
       }} />
   )
