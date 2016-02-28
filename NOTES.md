@@ -7,23 +7,24 @@
 - [ ] Site
   - [ ] Configurable context demo
     - [ ] Colors from color lovers api ?
-    - [ ] Spacing Scale number or range inputs
-    - [ ] Border Radius
-    - [ ] Border color
-    - [ ] Font Sizes
-    - [ ] Base stylesheet controls (font, color, bg)
+    - [x] Spacing Scale number or range inputs
+    - [x] Border Radius
+    - [x] Border color
+    - [x] Font Sizes
+    - [x] Base stylesheet controls (font, color, bg)
   - [ ] Ad
   - [ ] Travis Badge
   - [ ] Tweet
   - [ ] Star
   - [ ] Features
   - [ ] CTA
-  - [ ] Footer
+  - [x] Footer
 
 - [ ] ButtonPill
-- [ ] ButtonCircle
-- [x] Block (color, backgroundColor, borderColor, border, borderLeft, ...)
+- [ ] ButtonCircle + Icons
 
+
+- [ ] DotIndicator
 - [ ] Avatar
 - [ ] ProfileCard
 - [ ] ButtonGroup ?
