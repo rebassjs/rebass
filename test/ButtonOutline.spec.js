@@ -105,15 +105,26 @@ describe('ButtonOutline', () => {
     })
   })
 
-  context('when color is set', () => {
+  context('when a color from the colors object is set', () => {
+    beforeEach(() => {
+      renderer.render(<ButtonOutline color='red' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set a color from the theme', () => {
+      expect(tree.props.style.color).toEqual(colors.red)
+    })
+  })
+
+  context('when a generic color is set', () => {
     beforeEach(() => {
       renderer.render(<ButtonOutline color='#f00' />)
       tree = renderer.getRenderOutput()
     })
-    it('should change the color', () => {
+    it('should set the raw color value', () => {
       expect(tree.props.style.color).toEqual('#f00')
     })
   })
+
 
   context('when custom styles are set', () => {
     beforeEach(() => {

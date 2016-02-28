@@ -30,6 +30,8 @@ const ButtonOutline = ({
     left: `${borderRadius}px 0 0 ${borderRadius}px`,
   }
 
+  color = colors[color] || color || colors.primary
+
   const sx = {
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
@@ -40,7 +42,7 @@ const ButtonOutline = ({
     cursor: 'pointer',
     border: 0,
     borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
-    color: color || colors.primary,
+    color,
     backgroundColor: 'transparent',
     boxShadow: 'inset 0 0 0 1px',
     ...customStyle,
