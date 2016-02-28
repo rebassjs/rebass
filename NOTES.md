@@ -1,16 +1,9 @@
 
 # Notes
 
-- [ ] use color object keys or strings for color props
-
 - [ ] Site
   - [ ] Configurable context demo
     - [ ] Colors from color lovers api ?
-    - [x] Spacing Scale number or range inputs
-    - [x] Border Radius
-    - [x] Border color
-    - [x] Font Sizes
-    - [x] Base stylesheet controls (font, color, bg)
   - [ ] Ad
   - [ ] Travis Badge
   - [ ] Tweet
@@ -19,15 +12,18 @@
   - [ ] CTA
   - [x] Footer
 
+- [ ] Input rounded prop
+- [ ] Monkey test CSS :hover, :focus, :active, :disabled
+- [ ] Test without box-sizing: border-box
+
+## Components
+
 - [ ] ButtonPill
 - [ ] ButtonCircle + Icons
-
-
 - [ ] DotIndicator
 - [ ] Avatar
 - [ ] ProfileCard
 - [ ] ButtonGroup ?
-- [ ] Input rounded prop
 - [ ] Circle Badge
 - [ ] Stat
 - [ ] Circle Button
@@ -45,9 +41,8 @@
 - [ ] Table
 - [ ] InputNumber ? + Stepper?
 
-- [ ] Monkey test CSS :hover, :focus, :active, :disabled
-- [ ] Docs for CSS
-- [ ] Test without box-sizing: border-box
+---
 
 - Look into context style wrapper
+- Consider `color` and `backgroundColor` props for semantic color components (Message, Badge, Panel, etc)
 
