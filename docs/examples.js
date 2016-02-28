@@ -182,6 +182,13 @@ const examples = {
       <NavItem children='NavItem' />
     </Menu>
   ),
+  Message: (
+    <Message type='success'>
+      Hello Diana!
+      <Space auto />
+      <Close />
+    </Message>
+  ),
   PageHeader: (
     <PageHeader
       heading='Page Header'
