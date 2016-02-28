@@ -1,15 +1,9 @@
 
 # Notes
 
-- Base styles component or recommendations (1.5 line-height, etc)
-- Remove all duplicate/flattened style props?
-- theme config for all components?
-- borderRadius, borderColor in component configs...
-- abstracted color keys (primary, secondary, etc)
+- [ ] Base styles component or recommendations (box-sizing, 1.5 line-height, etc)
+- [ ] use color object keys or strings for color props
 
-- [x] propsString for permutations
-- [x] toJsx code blocks
-- [ ] Tests
 - [ ] Site
   - [ ] Configurable context demo
     - [ ] Colors from color lovers api ?
@@ -26,34 +20,9 @@
   - [ ] CTA
   - [ ] Footer
 
-- [x] Close
 - [ ] ButtonPill
 - [ ] ButtonCircle
 - [x] Block (color, backgroundColor, borderColor, border, borderLeft, ...)
-- [x] Input, etc, hideLabel prop
-- [x] Button rounded prop
-- [x] Button outline prop
-- [x] ~~ToolbarSpace~~ or <Space auto />
-
-- [x] theme component styles (e.g. Button, Heading)
-
-- [ ] Form
-- [ ] SearchForm
-- [ ] Blockquote
-- [ ] Table
-- [x] Pre
-- [x] Embed
-- [ ] InputNumber ? + Stepper?
-
-- [ ] Test CSS :hover, :focus, :active, :disabled
-- [ ] Test without box-sizing: border-box
-
-- Fieldset
-- Form ?
-- AuthForm
-  - SignUpForm
-  - SignInForm
-- AddressForm
 
 - [ ] Avatar
 - [ ] ProfileCard
@@ -65,4 +34,20 @@
 - [ ] Icon Button
 - [ ] Like mini stat
 
+- [ ] Form
+- [ ] SearchForm
+- [ ] AuthForm
+  - [ ] SignUpForm
+  - [ ] SignInForm
+- [ ] AddressForm
+- [ ] BillingForm
+- [ ] Blockquote
+- [ ] Table
+- [ ] InputNumber ? + Stepper?
+
+- [ ] Monkey test CSS :hover, :focus, :active, :disabled
+- [ ] Docs for CSS
+- [ ] Test without box-sizing: border-box
+
 - Look into context style wrapper
+
