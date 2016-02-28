@@ -186,7 +186,7 @@ const examples = {
   ),
   Message: (
     <Message type='success'>
-      Hello Diana!
+      Hello Message!
       <Space auto />
       <Close />
     </Message>

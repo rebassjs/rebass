@@ -101,12 +101,13 @@ like the `Button` object in the example above.
 ## Per-Instance Overrides
 
 Components accept overrides using the `style` prop to handle any one-off situations.
-For example, if the default Button color is blue,
-but you'd like to use an orange button in a particular situation,
-pass styles into the component instance.
+For example, to remove the margin bottom from an Input for a particular situation, do the following
 
 ```jsx
-<Button style={{ color: 'black', backgroundColor: 'orange' }}>Orange!</Button>
+<Input
+  name='input_name'
+  label='Input Label'
+  style={{ marginBottom: 0 }} />
 ```
 
 ## Base Styles
