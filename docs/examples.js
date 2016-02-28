@@ -4,6 +4,7 @@ import { Flex, Box } from 'reflexbox'
 
 import {
   Arrow,
+  Avatar,
   Badge,
   Banner,
   Block,
@@ -49,6 +50,9 @@ const examples = {
       Arrow
       <Arrow />
     </Button>
+  ),
+  Avatar: (
+    <Avatar src='http://lorempixel.com/64/64/cats' />
   ),
   Badge: (
     <div>

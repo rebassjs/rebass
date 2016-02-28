@@ -12,18 +12,14 @@
   - [ ] CTA
   - [x] Footer
 
-- Shortcuts util? m={1} mr={2} etc
-- [ ] General margin: 0 prop - `compact`, `flush`, `noMargin`
-  - `margin={false}`
-  - `m0`
-- [ ] Support directional margin with Block
+- [ ] Padding util
+- [ ] Rounded util
 
 ## Components
 
 - [ ] ButtonPill
 - [ ] ButtonCircle + Icons
 - [ ] DotIndicator
-- [ ] Avatar
 - [ ] ProfileCard
 - [ ] ButtonGroup ?
 - [ ] Circle Badge
