@@ -11,7 +11,7 @@ http://jxnblk.com/rebass
 - Uses inline styles
 - No CSS dependencies
 - No leaky global styles
-- [Dumb components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
+- [Presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
 - [Configurable](#configuration) with React Context
 - Great for prototyping
 - Production ready
@@ -50,7 +50,7 @@ Rebass is built around a component architectural approach inspired by Dan Abramo
 where presentational components are the only ones that encapsulate styles and contain no application logic,
 and container components do not contain any styles or DOM markup and handle all the application logic.
 
-Rebass only contains presentaional components,
+Rebass only contains presentational components,
 which means controlling things like progressive disclosure mechanisms
 or dropdown menus should be handled at a higher level in container components.
 Therefore, Rebass itself does not require any client-side JavaScript,
@@ -93,8 +93,10 @@ class App extends React.Component {
 ```
 
 After setting context in the root component, all instances of Rebass components will use these values throughout the app.
-
 For reference to the default values, see [`/src/theme.js`](src/theme.js).
+
+To alter per-component styles, pass a style object that matches the name of the component,
+like the `Button` object in the example above.
 
 ## Per-Instance Overrides
 
@@ -138,6 +140,8 @@ Note, that due to the use of inline styles, some properties may need to be overr
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.125);
 }
 ```
+
+---
 
 *Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
 but shares a similar approach to application-agnostic UI development.*
