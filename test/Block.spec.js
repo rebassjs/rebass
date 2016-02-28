@@ -136,6 +136,66 @@ describe('Block', () => {
     })
   })
 
+  context('when a color from colors object is set', () => {
+    beforeEach(() => {
+      renderer.render(<Block color='blue' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set a color from the theme', () => {
+      expect(tree.props.style.color).toEqual(colors.blue)
+    })
+  })
+
+  context('when a generic color value is set', () => {
+    beforeEach(() => {
+      renderer.render(<Block color='#0cf' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set the raw color', () => {
+      expect(tree.props.style.color).toEqual('#0cf')
+    })
+  })
+
+  context('when a background color from colors object is set', () => {
+    beforeEach(() => {
+      renderer.render(<Block backgroundColor='blue' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set a background color from the theme', () => {
+      expect(tree.props.style.backgroundColor).toEqual(colors.blue)
+    })
+  })
+
+  context('when a generic background color value is set', () => {
+    beforeEach(() => {
+      renderer.render(<Block backgroundColor='#0cf' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set the raw background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual('#0cf')
+    })
+  })
+
+  context('when a border color from colors object is set', () => {
+    beforeEach(() => {
+      renderer.render(<Block borderColor='blue' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set a border color from the theme', () => {
+      expect(tree.props.style.borderColor).toEqual(colors.blue)
+    })
+  })
+
+  context('when a generic border color value is set', () => {
+    beforeEach(() => {
+      renderer.render(<Block borderColor='#0cf' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set the raw border color', () => {
+      expect(tree.props.style.borderColor).toEqual('#0cf')
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Block style={{ color: 'tomato' }} />)

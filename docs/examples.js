@@ -64,7 +64,9 @@ const examples = {
     </Banner>
   ),
   Block: (
-    <Block padding={48} borderLeft backgroundColor='#eee'>
+    <Block padding={48}
+      borderLeft
+      color='blue'>
       <Media img='http://lorempixel.com/128/128/cats'>
         <Heading size={0}>Block</Heading>
         <Text>Generic box for containing things</Text>

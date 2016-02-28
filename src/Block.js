@@ -23,14 +23,24 @@ const Block = ({
   const config = { ...theme, ...rebass }
   const { scale, colors } = config
 
-  const blockStyle = {
-    ...(rebass ? rebass.Block : {}),
-    ...(margin ? { margin } : {}),
-    ...(padding ? { padding } : {}),
-    ...(color ? { color } : {}),
-    ...(backgroundColor ? { backgroundColor } : {}),
-    ...(borderColor ? { borderColor } : {}),
-    ...style
+  const customColor = colors[color] || color
+
+  const blockStyle = rebass && rebass.Block || {}
+
+  if (margin) {
+    blockStyle.margin = margin
+  }
+  if (padding) {
+    blockStyle.padding = padding
+  }
+  if (color) {
+    blockStyle.color = colors[color] || color
+  }
+  if (backgroundColor) {
+    blockStyle.backgroundColor = colors[backgroundColor] || backgroundColor
+  }
+  if (borderColor) {
+    blockStyle.borderColor = colors[borderColor] || borderColor
   }
 
   const sx = {
@@ -47,7 +57,8 @@ const Block = ({
     backgroundColor: 'transparent',
     borderWidth: 4,
     borderColor: colors.primary,
-    ...blockStyle
+    ...blockStyle,
+    ...style
   }
 
   return (
@@ -68,11 +79,11 @@ Block.propTypes = {
     React.PropTypes.number,
     React.PropTypes.string
   ]),
-  /** Text color */
+  /** Text color - can either be a key from the theme colors object or any value color value */
   color: React.PropTypes.string,
-  /** Background color */
+  /** Background color - can either be a key from the theme colors object or any value color value */
   backgroundColor: React.PropTypes.string,
-  /** Border color */
+  /** Border color - can either be a key from the theme colors object or any value color value */
   borderColor: React.PropTypes.string,
   /** Adds a border */
   border: React.PropTypes.bool,
@@ -85,7 +96,6 @@ Block.propTypes = {
   /** Adds a border to the left side */
   borderLeft: React.PropTypes.bool
 }
-
 
 Block.contextTypes = {
   rebass: React.PropTypes.object

@@ -1,7 +1,6 @@
 
 # Notes
 
-- [ ] Base styles component or recommendations (box-sizing, 1.5 line-height, etc)
 - [ ] use color object keys or strings for color props
 
 - [ ] Site
