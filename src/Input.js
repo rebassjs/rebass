@@ -13,6 +13,7 @@ const Input = ({
   type,
   hideLabel,
   rounded,
+  m0,
   children,
   style,
   ...props
@@ -43,7 +44,7 @@ const Input = ({
       height: scale[3],
       paddingLeft: scale[1],
       paddingRight: scale[1],
-      marginBottom: scale[2],
+      marginBottom: m0 ? 0 : scale[2],
       color: 'inherit',
       backgroundColor: 'rgba(255, 255, 255, .25)',
       borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
@@ -88,7 +89,9 @@ Input.propTypes = {
       'bottom',
       'left'
     ])
-  ])
+  ]),
+  /** Removes default margin */
+  m0: React.PropTypes.bool
 }
 
 Input.defaultProps = {

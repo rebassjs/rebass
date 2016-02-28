@@ -51,6 +51,17 @@ describe('Select', () => {
     })
   })
 
+  context('when m0 is true', () => {
+    beforeEach(() => {
+      renderer.render(<Select name='test' label='Test' m0 />)
+      tree = renderer.getRenderOutput()
+      select = tree.props.children[1]
+    })
+    it('should remove margin-bottom', () => {
+      expect(select.props.style.marginBottom).toEqual(0)
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Select name='test_select' label='Test' style={{ color: 'tomato' }} />)

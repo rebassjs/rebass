@@ -7,7 +7,7 @@ import theme from './theme'
  * Select form control with label
  */
 
-const Select = ({ label, name, options, hideLabel, children, style, ...props }, { rebass }) => {
+const Select = ({ label, name, options, hideLabel, m0, children, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Select : {}
   const { scale, borderColor } = config
@@ -25,8 +25,9 @@ const Select = ({ label, name, options, hideLabel, children, style, ...props }, 
       display: 'block',
       width: '100%',
       height: 32,
-      padding: 8,
-      marginBottom: scale[2],
+      paddingLeft: 8,
+      paddingRight: 8,
+      marginBottom: m0 ? 0 : scale[2],
       color: 'inherit',
       backgroundColor: 'transparent',
       backgroundImage: 'none',
@@ -65,7 +66,9 @@ Select.propTypes = {
   /** Options for select */
   options: React.PropTypes.array.isRequired,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Removes default margin */
+  m0: React.PropTypes.bool
 }
 
 Select.defaultProps = {

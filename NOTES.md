@@ -12,7 +12,9 @@
   - [ ] CTA
   - [x] Footer
 
-- [ ] Input rounded prop
+- [ ] General margin: 0 prop - `compact`, `flush`, `noMargin`
+  - `margin={false}`
+  - `m0`
 - [ ] Support directional margin with Block
 
 ## Components

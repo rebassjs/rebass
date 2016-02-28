@@ -196,6 +196,17 @@ describe('Block', () => {
     })
   })
 
+  context('when m0 is true', () => {
+    beforeEach(() => {
+      renderer.render(<Block name='test' label='Test' m0 />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should remove margin-bottom', () => {
+      expect(tree.props.style.marginTop).toEqual(0)
+      expect(tree.props.style.marginBottom).toEqual(0)
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Block style={{ color: 'tomato' }} />)

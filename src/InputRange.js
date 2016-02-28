@@ -7,7 +7,15 @@ import Label from './Label'
  * Input type range with label
  */
 
-const InputRange = ({ label, name, hideLabel, children, style, ...props }, { rebass }) => {
+const InputRange = ({
+  label,
+  name,
+  hideLabel,
+  m0,
+  children,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.InputRange : {}
   const { scale } = config
@@ -64,7 +72,7 @@ const InputRange = ({ label, name, hideLabel, children, style, ...props }, { reb
           display: 'block',
           width: '100%',
           marginTop: 0,
-          marginBottom: scale[2],
+          marginBottom: m0 ? 0 : scale[2],
           paddingTop: 8,
           paddingBottom: 8,
           cursor: 'pointer',
@@ -83,7 +91,9 @@ InputRange.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Removes default margin */
+  m0: React.PropTypes.bool
 }
 
 InputRange.contextTypes = {

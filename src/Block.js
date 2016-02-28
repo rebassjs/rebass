@@ -17,6 +17,7 @@ const Block = ({
   borderRight,
   borderBottom,
   borderLeft,
+  m0,
   style,
   ...props
 }, { rebass }) => {
@@ -41,8 +42,8 @@ const Block = ({
   const sx = {
     boxSizing: 'border-box',
     padding: scale[2],
-    marginTop: scale[2],
-    marginBottom: scale[2],
+    marginTop: m0 ? 0 : scale[2],
+    marginBottom: m0 ? 0 : scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,
@@ -89,7 +90,9 @@ Block.propTypes = {
   /** Adds a border to the bottom side */
   borderBottom: React.PropTypes.bool,
   /** Adds a border to the left side */
-  borderLeft: React.PropTypes.bool
+  borderLeft: React.PropTypes.bool,
+  /** Removes default margin */
+  m0: React.PropTypes.bool
 }
 
 Block.contextTypes = {

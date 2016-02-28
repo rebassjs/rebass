@@ -7,7 +7,15 @@ import theme from './theme'
  * Textarea form element with label
  */
 
-const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebass }) => {
+const Textarea = ({
+  label,
+  name,
+  style,
+  hideLabel,
+  m0,
+  children,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Textarea : {}
   const { scale, borderColor } = config
@@ -25,7 +33,7 @@ const Textarea = ({ label, name, style, hideLabel, children, ...props }, { rebas
       display: 'block',
       width: '100%',
       padding: 8,
-      marginBottom: scale[2],
+      marginBottom: m0 ? 0 : scale[2],
       borderRadius: 2,
       borderWidth: 1,
       borderStyles: 'solid',
@@ -55,7 +63,9 @@ Textarea.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Removes default margin */
+  m0: React.PropTypes.bool
 }
 
 Textarea.contextTypes = {
