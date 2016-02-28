@@ -22,7 +22,7 @@ const Toolbar = ({ style, ...props }, { rebass }) => {
         paddingLeft: scale[1],
         paddingRight: scale[1],
         color: colors.white,
-        backgroundColor: colors.blue,
+        backgroundColor: colors.primary,
         ...customStyle,
         ...style
       }} />

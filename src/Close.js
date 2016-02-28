@@ -1,6 +1,10 @@
 
 import React from 'react'
 
+/**
+ * A button with an × for close and dismiss actions
+ */
+
 const Close = ({ style, ...props }, { rebass }) => {
   const customStyle = rebass ? rebass.Close : {}
 

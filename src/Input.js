@@ -29,10 +29,11 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, { re
       paddingRight: scale[1],
       marginBottom: scale[2],
       color: 'inherit',
+      backgroundColor: 'rgba(255, 255, 255, .25)',
       borderRadius,
       borderWidth: 1,
-      borderColor,
       borderStyle: 'solid',
+      borderColor,
       ...otherStyle
     }
   }

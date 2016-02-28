@@ -10,7 +10,7 @@ import theme from './theme'
 const Pre = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyles = rebass ? rebass.Pre : {}
-  const { monospace, scale, colors } = config
+  const { monospace, scale, borderColor } = config
 
   return (
     <pre
@@ -20,7 +20,7 @@ const Pre = ({ style, ...props }, { rebass }) => {
         fontFamily: monospace,
         paddingLeft: scale[2],
         marginBottom: scale[2],
-        borderLeft: `4px solid ${colors.gray}`,
+        borderLeft: `4px solid ${borderColor}`,
         overflowX: 'scroll',
         ...customStyles,
         ...style

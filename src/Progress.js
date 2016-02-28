@@ -40,7 +40,7 @@ const Progress = ({ value, style, ...props }, { rebass }) => {
       borderRadius: 9999,
       WebkitAppearance: 'none',
       appearance: 'none',
-      color: colors.blue,
+      color: colors.primary,
       ...otherStyle
     }
   }

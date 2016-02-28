@@ -2,6 +2,10 @@
 import React from 'react'
 import theme from './theme'
 
+/**
+ * An off-canvas drawer component
+ */
+
 const Drawer = ({ open, size, position, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Drawer : {}
@@ -76,8 +80,11 @@ const Drawer = ({ open, size, position, style, ...props }, { rebass }) => {
 }
 
 Drawer.propTypes = {
+  /** Width or height of drawer, depending on placement */
   size: React.PropTypes.number,
+  /** Shows and hides the drawer */
   open: React.PropTypes.bool,
+  /** Position relative to the viewport */
   position: React.PropTypes.oneOf([
     'top',
     'right',

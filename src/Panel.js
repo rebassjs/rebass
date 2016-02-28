@@ -8,7 +8,7 @@ import theme from './theme'
 
 const Panel = ({ type, style, children ,...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const panelConfig = { ...theme.Panel, ...(rebass ? rebass.Panel : {}) }
+  const customStyle = rebass ? rebass.Panel : {}
   const { scale, colors, borderRadius } = config
 
   const borderColor = colors[type]
@@ -31,7 +31,7 @@ const Panel = ({ type, style, children ,...props }, { rebass }) => {
         borderStyle: 'solid',
         borderColor,
         borderRadius,
-        ...panelConfig,
+        ...customStyle,
         ...style
       }}
       children={styledChildren} />

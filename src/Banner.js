@@ -29,7 +29,7 @@ const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
     padding: scale[4],
     marginBottom: scale[3],
     color: colors.white,
-    backgroundColor: colors.black,
+    backgroundColor: colors.primary,
     minHeight: '100vh',
     backgroundPosition: 'center',
     backgroundSize: 'cover',

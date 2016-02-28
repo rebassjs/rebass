@@ -1,6 +1,7 @@
 
 import React from 'react'
 import HeadingLink from './HeadingLink'
+import Text from './Text'
 import theme from './theme'
 
 /**
@@ -32,10 +33,7 @@ const SectionHeader = ({ heading, href, description, style, children, ...props }
         }}>
         <HeadingLink href={href || `#${heading || ''}`} children={heading} />
         {description &&
-          <p style={{
-              margin: 0
-            }}
-            children={description} />
+          <Text children={description} />
         }
       </div>
       {children}
