@@ -2,17 +2,18 @@
 import React from 'react'
 import {
   theme,
-  Button,
-  Toolbar,
-  Space,
-  NavItem,
   Banner,
+  Block,
+  Button,
   Close,
   Container,
   Drawer,
   Heading,
+  NavItem,
   SectionHeader,
+  Space,
   Text,
+  Toolbar
 } from '../../src'
 
 import demoTheme from '../demo-theme'
@@ -25,7 +26,7 @@ class App extends React.Component {
   constructor () {
     super()
     this.state = Object.assign({}, theme, demoTheme, {
-      drawerOpen: true
+      drawerOpen: false
     })
     this.toggleDrawer = this.toggleDrawer.bind(this)
     this.updateContext = this.updateContext.bind(this)
@@ -72,6 +73,7 @@ class App extends React.Component {
         <style dangerouslySetInnerHTML={{ __html: css }} />
         <Toolbar>
           <NavItem children='Rebass' />
+          <Space auto />
           <NavItem
             onClick={this.toggleDrawer}
             children='Edit Configuration' />
@@ -83,11 +85,18 @@ class App extends React.Component {
           <Text children='Configurable example page' />
         </Banner>
         <Container style={{
-            marginRight: drawerOpen ? 0 : 'auto'
+            marginLeft: drawerOpen ? 0 : 'auto'
           }}>
+          <Block borderLeft padding={32}>
+            <Text>
+              To adjust the theme used on this page
+            </Text>
+            <Button onClick={this.toggleDrawer}
+              children='Edit the Configuration' />
+          </Block>
           <KitchenSink />
         </Container>
-        <Drawer open={drawerOpen}>
+        <Drawer open={drawerOpen} position='right'>
           <SectionHeader
             heading='Configuration'>
             <Close onClick={this.toggleDrawer} />

@@ -75,7 +75,9 @@ const KitchenSink = () => (
       </Box>
       <Box sm={6} p={2}>
         <Panel type='success'>
-          <PanelHeader children='PanelHeader' />
+          <PanelHeader>
+            PanelHeader
+          </PanelHeader>
           <Text children='This is the Panel body' />
           <PanelFooter children='PanelFooter is a good place for feet' />
         </Panel>
