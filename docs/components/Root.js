@@ -3,6 +3,7 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
   Block,
+  Button,
   Container,
   Divider,
   Footer,
@@ -27,14 +28,7 @@ const css = `
 .Button:hover {
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, .125);
 }
-/*
-.NavItem:hover {
-  background-size: 100% 8px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-image: linear-gradient(transparent, transparent 6px, tomato 6px, tomato);
-}
-*/
+.Button:disabled { opacity: .5 }
 `
 
 class Root extends React.Component {
@@ -64,7 +58,6 @@ class Root extends React.Component {
           <title>Rebass</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link href='https://npmcdn.com/basscss-basic@1.0.0/index.css' rel='stylesheet' />
-          <link href='https://npmcdn.com/basscss@8.0.1/css/basscss.min.css' rel='stylesheet' />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
@@ -82,6 +75,15 @@ class Root extends React.Component {
             <main>
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
             </main>
+            <Block borderLeft padding={48}
+              style={{ marginBottom: 48 }}>
+              <Flex align='center'>
+                <Heading size={1} children='Get Started' />
+                <Space auto />
+                <Button href='https://github.com/jxnblk/rebass'
+                  children='GitHub' />
+              </Flex>
+            </Block>
             <Text>
               Documentation generated with <a href='https://github.com/reactjs/react-docgen'>react-docgen</a> and <a href='https://github.com/jxnblk/react-component-permutations'>react-component-permutations</a>.
             </Text>

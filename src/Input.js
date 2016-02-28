@@ -7,12 +7,28 @@ import theme from './theme'
  * Input element with label
  */
 
-const Input = ({ label, name, type, hideLabel, children, style, ...props }, { rebass }) => {
+const Input = ({
+  label,
+  name,
+  type,
+  hideLabel,
+  rounded,
+  children,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Input : {}
   const { scale, borderRadius, borderColor } = config
 
   const { margin, ...otherStyle } = { ...customStyle, ...style }
+
+  const radii = {
+    top: `${borderRadius}px ${borderRadius}px 0 0`,
+    right: `0 ${borderRadius}px ${borderRadius}px 0`,
+    bottom: `0 0 ${borderRadius}px ${borderRadius}px`,
+    left: `${borderRadius}px 0 0 ${borderRadius}px`,
+  }
 
   const sx = {
     root: {
@@ -30,7 +46,7 @@ const Input = ({ label, name, type, hideLabel, children, style, ...props }, { re
       marginBottom: scale[2],
       color: 'inherit',
       backgroundColor: 'rgba(255, 255, 255, .25)',
-      borderRadius,
+      borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
       borderWidth: 1,
       borderStyle: 'solid',
       borderColor,
@@ -62,11 +78,22 @@ Input.propTypes = {
   /** Form element type */
   type: React.PropTypes.string,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Controls the border radius for creating grouped elements */
+  rounded: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.oneOf([
+      'top',
+      'right',
+      'bottom',
+      'left'
+    ])
+  ])
 }
 
 Input.defaultProps = {
-  type: 'text'
+  type: 'text',
+  rounded: true
 }
 
 Input.contextTypes = {

@@ -58,6 +58,61 @@ describe('Input', () => {
     })
   })
 
+  context('when rounded is false', () => {
+    beforeEach(() => {
+      renderer.render(<Input name='test' label='Test' rounded={false} />)
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[1]
+    })
+    it('should not have a border radius', () => {
+      expect(input.props.style.borderRadius).toEqual(0)
+    })
+  })
+
+  context('when rounded is top', () => {
+    beforeEach(() => {
+      renderer.render(<Input name='test' label='Test' rounded={'top'} />)
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[1]
+    })
+    it('should have top border radii', () => {
+      expect(input.props.style.borderRadius).toEqual('2px 2px 0 0')
+    })
+  })
+
+  context('when rounded is right', () => {
+    beforeEach(() => {
+      renderer.render(<Input name='test' label='Test' rounded={'right'} />)
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[1]
+    })
+    it('should have right border radii', () => {
+      expect(input.props.style.borderRadius).toEqual('0 2px 2px 0')
+    })
+  })
+
+  context('when rounded is bottom', () => {
+    beforeEach(() => {
+      renderer.render(<Input name='test' label='Test' rounded={'bottom'} />)
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[1]
+    })
+    it('should have bottom border radii', () => {
+      expect(input.props.style.borderRadius).toEqual('0 0 2px 2px')
+    })
+  })
+
+  context('when rounded is left', () => {
+    beforeEach(() => {
+      renderer.render(<Input name='test' label='Test' rounded={'left'} />)
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[1]
+    })
+    it('should have left border radii', () => {
+      expect(input.props.style.borderRadius).toEqual('2px 0 0 2px')
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(

@@ -13,8 +13,7 @@
   - [x] Footer
 
 - [ ] Input rounded prop
-- [ ] Monkey test CSS :hover, :focus, :active, :disabled
-- [ ] Test without box-sizing: border-box
+- [ ] Support directional margin with Block
 
 ## Components
 
