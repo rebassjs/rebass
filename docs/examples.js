@@ -69,7 +69,7 @@ const examples = {
     </Banner>
   ),
   Block: (
-    <Block padding={48}
+    <Block
       borderLeft
       color='blue'>
       <Media img='http://lorempixel.com/128/128/cats'>
@@ -138,7 +138,7 @@ const examples = {
     <a href='demo'>See Demo Page</a>
   ),
   Dropdown: (
-    <Block padding={72}>
+    <Block>
       <Dropdown>
         <Button>
           Dropdown <Arrow />

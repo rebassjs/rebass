@@ -80,8 +80,6 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
       <Text small children='Variations' />
       <div style={{
           position: 'relative',
-          marginLeft: -8,
-          marginRight: -8,
           marginBottom: 16
         }}>
         {permutations &&
@@ -89,7 +87,7 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
             {permutations.map((p, i) => (
               <Component {...p}
                 key={i}
-                style={{ margin: 8 }}
+                style={{ marginRight: 16 }}
                 title={`<${name} ${propsString(p)} />`}
                 name={name}
                 children={name} />

@@ -15,7 +15,8 @@ import {
   Section,
   SectionHeader,
   Space,
-  Text
+  Text,
+  Toolbar
 } from '../../src'
 
 import ComponentDoc from './ComponentDoc'
@@ -61,6 +62,13 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
+          <Toolbar style={{ backgroundColor: 'black' }}>
+            <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
+            <NavItem href='http://jxnblk.com/rebass/demo' children='Demo' />
+            <Space auto />
+            <NavItem href='https://github.com/jxnblk/rebass' children='GitHub' />
+            <NavItem href='https://npmjs.com/package/rebass' children='npm' />
+          </Toolbar>
           <Container>
             <PageHeader
               heading='Rebass'
@@ -75,13 +83,14 @@ class Root extends React.Component {
             <main>
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
             </main>
-            <Block borderLeft padding={48}
+            <Block borderLeft
               style={{ marginBottom: 48 }}>
               <Flex align='center'>
                 <Heading size={1} children='Get Started' />
                 <Space auto />
                 <Button href='https://github.com/jxnblk/rebass'
                   children='GitHub' />
+                <Space auto />
               </Flex>
             </Block>
             <Text>
