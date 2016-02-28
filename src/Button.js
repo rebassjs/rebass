@@ -19,7 +19,7 @@ const Button = ({
 }, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const buttonStyle = rebass ? rebass.Button : {}
+  const customStyle = rebass ? rebass.Button : {}
   const { fontSizes, bold, scale, colors, borderRadius } = config
 
   const Component = href ? 'a' : 'button'
@@ -31,6 +31,9 @@ const Button = ({
     left: `${borderRadius}px 0 0 ${borderRadius}px`,
   }
 
+  color  = colors[color] || color || colors.white
+  backgroundColor  = colors[backgroundColor] || backgroundColor || colors.primary
+
   const sx = {
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
@@ -41,9 +44,9 @@ const Button = ({
     cursor: 'pointer',
     border: 0,
     borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
-    color: color || colors.white,
-    backgroundColor: backgroundColor || colors.primary,
-    ...buttonStyle,
+    color,
+    backgroundColor,
+    ...customStyle,
     ...style
   }
 
@@ -59,9 +62,9 @@ const Button = ({
 Button.propTypes = {
   /** Pass an href prop to make the Button an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Button color */
+  /** Button color - can either be a key from the theme colors object or any color value */
   color: React.PropTypes.string,
-  /** Button background color */
+  /** Background color - can either be a key from the theme colors object or any color value */
   backgroundColor: React.PropTypes.string,
   /** Controls the border radius for creating button groups */
   rounded: React.PropTypes.oneOfType([

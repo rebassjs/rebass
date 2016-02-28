@@ -25,23 +25,18 @@ const Block = ({
 
   const customColor = colors[color] || color
 
-  const blockStyle = rebass && rebass.Block || {}
+  const customStyle = rebass && rebass.Block || {}
 
   if (margin) {
-    blockStyle.margin = margin
+    customStyle.margin = margin
   }
   if (padding) {
-    blockStyle.padding = padding
+    customStyle.padding = padding
   }
-  if (color) {
-    blockStyle.color = colors[color] || color
-  }
-  if (backgroundColor) {
-    blockStyle.backgroundColor = colors[backgroundColor] || backgroundColor
-  }
-  if (borderColor) {
-    blockStyle.borderColor = colors[borderColor] || borderColor
-  }
+
+  color = colors[color] || color || 'inherit'
+  backgroundColor = colors[backgroundColor] || backgroundColor || null
+  borderColor = colors[borderColor] || borderColor || colors.primary
 
   const sx = {
     boxSizing: 'border-box',
@@ -53,11 +48,11 @@ const Block = ({
     borderRightStyle: borderRight ? 'solid' : null,
     borderBottomStyle: borderBottom ? 'solid' : null,
     borderLeftStyle: borderLeft ? 'solid' : null,
-    color: 'inherit',
-    backgroundColor: 'transparent',
     borderWidth: 4,
-    borderColor: colors.primary,
-    ...blockStyle,
+    borderColor,
+    color,
+    backgroundColor,
+    ...customStyle,
     ...style
   }
 
@@ -79,11 +74,11 @@ Block.propTypes = {
     React.PropTypes.number,
     React.PropTypes.string
   ]),
-  /** Text color - can either be a key from the theme colors object or any value color value */
+  /** Text color - can either be a key from the theme colors object or any color value */
   color: React.PropTypes.string,
-  /** Background color - can either be a key from the theme colors object or any value color value */
+  /** Background color - can either be a key from the theme colors object or any color value */
   backgroundColor: React.PropTypes.string,
-  /** Border color - can either be a key from the theme colors object or any value color value */
+  /** Border color - can either be a key from the theme colors object or any color value */
   borderColor: React.PropTypes.string,
   /** Adds a border */
   border: React.PropTypes.bool,

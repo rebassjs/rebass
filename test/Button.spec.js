@@ -105,22 +105,42 @@ describe('Button', () => {
     })
   })
 
-  context('when color is set', () => {
+  context('when a color from the colors object is set', () => {
+    beforeEach(() => {
+      renderer.render(<Button color='red' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set a color from the theme', () => {
+      expect(tree.props.style.color).toEqual(colors.red)
+    })
+  })
+
+  context('when a generic color is set', () => {
     beforeEach(() => {
       renderer.render(<Button color='#f00' />)
       tree = renderer.getRenderOutput()
     })
-    it('should change the color', () => {
+    it('should set the raw color value', () => {
       expect(tree.props.style.color).toEqual('#f00')
     })
   })
 
-  context('when backgroundColor is set', () => {
+  context('when a background color from the colors object is set', () => {
+    beforeEach(() => {
+      renderer.render(<Button backgroundColor='red' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set a background color from the theme', () => {
+      expect(tree.props.style.backgroundColor).toEqual(colors.red)
+    })
+  })
+
+  context('when a generic backgroundColor is set', () => {
     beforeEach(() => {
       renderer.render(<Button backgroundColor='#f00' />)
       tree = renderer.getRenderOutput()
     })
-    it('should change the background color', () => {
+    it('should set the raw background color', () => {
       expect(tree.props.style.backgroundColor).toEqual('#f00')
     })
   })

@@ -148,11 +148,11 @@ describe('Block', () => {
 
   context('when a generic color value is set', () => {
     beforeEach(() => {
-      renderer.render(<Block color='#0cf' />)
+      renderer.render(<Block color='#f00' />)
       tree = renderer.getRenderOutput()
     })
     it('should set the raw color', () => {
-      expect(tree.props.style.color).toEqual('#0cf')
+      expect(tree.props.style.color).toEqual('#f00')
     })
   })
 
@@ -168,11 +168,11 @@ describe('Block', () => {
 
   context('when a generic background color value is set', () => {
     beforeEach(() => {
-      renderer.render(<Block backgroundColor='#0cf' />)
+      renderer.render(<Block backgroundColor='#f00' />)
       tree = renderer.getRenderOutput()
     })
     it('should set the raw background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual('#0cf')
+      expect(tree.props.style.backgroundColor).toEqual('#f00')
     })
   })
 
@@ -188,11 +188,11 @@ describe('Block', () => {
 
   context('when a generic border color value is set', () => {
     beforeEach(() => {
-      renderer.render(<Block borderColor='#0cf' />)
+      renderer.render(<Block borderColor='#f00' />)
       tree = renderer.getRenderOutput()
     })
     it('should set the raw border color', () => {
-      expect(tree.props.style.borderColor).toEqual('#0cf')
+      expect(tree.props.style.borderColor).toEqual('#f00')
     })
   })
 
