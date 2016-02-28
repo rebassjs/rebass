@@ -56,17 +56,6 @@ describe('InputRange', () => {
     })
   })
 
-  context('when m0 is true', () => {
-    beforeEach(() => {
-      renderer.render(<InputRange name='test' label='Test' m0 />)
-      tree = renderer.getRenderOutput()
-      input = tree.props.children[2]
-    })
-    it('should remove margin-bottom', () => {
-      expect(input.props.style.marginBottom).toEqual(0)
-    })
-  })
-
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(

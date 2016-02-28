@@ -1,14 +1,13 @@
 
 import React from 'react'
 import theme from './theme'
+import margins from './util/margins'
 
 /**
  * Generic box with visual styling
  */
 
 const Block = ({
-  margin,
-  padding,
   color,
   backgroundColor,
   borderColor,
@@ -17,23 +16,14 @@ const Block = ({
   borderRight,
   borderBottom,
   borderLeft,
-  m0,
   style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const { scale, colors } = config
-
+  const customStyle = rebass && rebass.Block || {}
   const customColor = colors[color] || color
 
-  const customStyle = rebass && rebass.Block || {}
-
-  if (margin) {
-    customStyle.margin = margin
-  }
-  if (padding) {
-    customStyle.padding = padding
-  }
 
   color = colors[color] || color || 'inherit'
   backgroundColor = colors[backgroundColor] || backgroundColor || null
@@ -42,8 +32,7 @@ const Block = ({
   const sx = {
     boxSizing: 'border-box',
     padding: scale[2],
-    marginTop: m0 ? 0 : scale[2],
-    marginBottom: m0 ? 0 : scale[2],
+    marginBottom: scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,
@@ -54,6 +43,7 @@ const Block = ({
     color,
     backgroundColor,
     ...customStyle,
+    ...margins(props, scale),
     ...style
   }
 
@@ -65,16 +55,6 @@ const Block = ({
 }
 
 Block.propTypes = {
-  /** Adds margin around component */
-  margin: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string
-  ]),
-  /** Adjust padding within component */
-  padding: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string
-  ]),
   /** Text color - can either be a key from the theme colors object or any color value */
   color: React.PropTypes.string,
   /** Background color - can either be a key from the theme colors object or any color value */
@@ -91,8 +71,20 @@ Block.propTypes = {
   borderBottom: React.PropTypes.bool,
   /** Adds a border to the left side */
   borderLeft: React.PropTypes.bool,
-  /** Removes default margin */
-  m0: React.PropTypes.bool
+  /** Applies margin based on the theme spacing scale */
+  m: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  /** Applies margin top based on the theme spacing scale */
+  mt: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  /** Applies margin right based on the theme spacing scale */
+  mr: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  /** Applies margin bottom based on the theme spacing scale */
+  mb: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  /** Applies margin left based on the theme spacing scale */
+  ml: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  /** Applies margin left and right based on the theme spacing scale */
+  mx: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  /** Applies margin top and bottom based on the theme spacing scale */
+  my: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
 }
 
 Block.contextTypes = {

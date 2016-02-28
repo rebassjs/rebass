@@ -2,21 +2,31 @@
 import React from 'react'
 import Label from './Label'
 import theme from './theme'
+import margins from './util/margins'
 
 /**
  * Select form control with label
  */
 
-const Select = ({ label, name, options, hideLabel, m0, children, style, ...props }, { rebass }) => {
+const Select = ({
+  label,
+  name,
+  options,
+  hideLabel,
+  children,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Select : {}
   const { scale, borderColor } = config
 
-  const { margin, ...otherStyle } = { ...customStyle, ...style }
+  const otherStyle = { ...customStyle, ...style }
 
   const sx = {
     root: {
-      margin
+      marginBottom: scale[2],
+      ...margins(props, scale)
     },
     select: {
       fontFamily: 'inherit',
@@ -27,7 +37,7 @@ const Select = ({ label, name, options, hideLabel, m0, children, style, ...props
       height: 32,
       paddingLeft: 8,
       paddingRight: 8,
-      marginBottom: m0 ? 0 : scale[2],
+      margin: 0,
       color: 'inherit',
       backgroundColor: 'transparent',
       backgroundImage: 'none',
@@ -66,9 +76,7 @@ Select.propTypes = {
   /** Options for select */
   options: React.PropTypes.array.isRequired,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool,
-  /** Removes default margin */
-  m0: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool
 }
 
 Select.defaultProps = {

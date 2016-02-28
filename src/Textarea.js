@@ -2,6 +2,7 @@
 import React from 'react'
 import Label from './Label'
 import theme from './theme'
+import margins from './util/margins'
 
 /**
  * Textarea form element with label
@@ -12,7 +13,6 @@ const Textarea = ({
   name,
   style,
   hideLabel,
-  m0,
   children,
   ...props
 }, { rebass }) => {
@@ -20,11 +20,12 @@ const Textarea = ({
   const customStyle = rebass ? rebass.Textarea : {}
   const { scale, borderColor } = config
 
-  const { margin, ...otherStyle } = { ...customStyle, ...style }
+  const otherStyle = { ...customStyle, ...style }
 
   const sx = {
     root: {
-      margin
+      marginBottom: scale[2],
+      ...margins(props, scale)
     },
     textarea: {
       fontFamily: 'inherit',
@@ -32,8 +33,8 @@ const Textarea = ({
       boxSizing: 'border-box',
       display: 'block',
       width: '100%',
+      margin: 0,
       padding: 8,
-      marginBottom: m0 ? 0 : scale[2],
       borderRadius: 2,
       borderWidth: 1,
       borderStyles: 'solid',
@@ -63,9 +64,7 @@ Textarea.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool,
-  /** Removes default margin */
-  m0: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool
 }
 
 Textarea.contextTypes = {

@@ -12,6 +12,7 @@
   - [ ] CTA
   - [x] Footer
 
+- Shortcuts util? m={1} mr={2} etc
 - [ ] General margin: 0 prop - `compact`, `flush`, `noMargin`
   - `margin={false}`
   - `m0`

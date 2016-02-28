@@ -28,7 +28,6 @@ describe('Block', () => {
   })
 
   it('should have default margins', () => {
-    expect(tree.props.style.marginTop).toEqual(scale[2])
     expect(tree.props.style.marginBottom).toEqual(scale[2])
   })
 
@@ -114,28 +113,6 @@ describe('Block', () => {
     })
   })
 
-  context('when margin is set', () => {
-    beforeEach(() => {
-      renderer.render(<Block margin={72} />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have custom margin', () => {
-      expect(tree.props.style.margin).toEqual(72)
-    })
-  })
-
-  context('when padding is set', () => {
-    beforeEach(() => {
-      renderer.render(<Block padding={72} />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have custom padding', () => {
-      expect(tree.props.style.padding).toEqual(72)
-    })
-  })
-
   context('when a color from colors object is set', () => {
     beforeEach(() => {
       renderer.render(<Block color='blue' />)
@@ -193,17 +170,6 @@ describe('Block', () => {
     })
     it('should set the raw border color', () => {
       expect(tree.props.style.borderColor).toEqual('#f00')
-    })
-  })
-
-  context('when m0 is true', () => {
-    beforeEach(() => {
-      renderer.render(<Block name='test' label='Test' m0 />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should remove margin-bottom', () => {
-      expect(tree.props.style.marginTop).toEqual(0)
-      expect(tree.props.style.marginBottom).toEqual(0)
     })
   })
 

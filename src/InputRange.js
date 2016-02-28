@@ -2,6 +2,7 @@
 import React from 'react'
 import theme from './theme'
 import Label from './Label'
+import margins from './util/margins'
 
 /**
  * Input type range with label
@@ -11,7 +12,6 @@ const InputRange = ({
   label,
   name,
   hideLabel,
-  m0,
   children,
   style,
   ...props
@@ -54,7 +54,9 @@ const InputRange = ({
   return (
     <div className='InputRange'
       style={{
+        marginBottom: scale[2],
         ...customStyle,
+        ...margins(props, scale),
         ...style
       }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
@@ -71,8 +73,7 @@ const InputRange = ({
           boxSizing: 'border-box',
           display: 'block',
           width: '100%',
-          marginTop: 0,
-          marginBottom: m0 ? 0 : scale[2],
+          margin: 0,
           paddingTop: 8,
           paddingBottom: 8,
           cursor: 'pointer',
@@ -91,9 +92,7 @@ InputRange.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool,
-  /** Removes default margin */
-  m0: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool
 }
 
 InputRange.contextTypes = {

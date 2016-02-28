@@ -2,6 +2,7 @@
 import React from 'react'
 import Label from './Label'
 import theme from './theme'
+import margins from './util/margins'
 
 /**
  * Input element with label
@@ -13,7 +14,6 @@ const Input = ({
   type,
   hideLabel,
   rounded,
-  m0,
   children,
   style,
   ...props
@@ -22,7 +22,7 @@ const Input = ({
   const customStyle = rebass ? rebass.Input : {}
   const { scale, borderRadius, borderColor } = config
 
-  const { margin, ...otherStyle } = { ...customStyle, ...style }
+  const otherStyle = { ...customStyle, ...style }
 
   const radii = {
     top: `${borderRadius}px ${borderRadius}px 0 0`,
@@ -33,7 +33,8 @@ const Input = ({
 
   const sx = {
     root: {
-      margin
+      marginBottom: scale[2],
+      ...margins(props, scale)
     },
     input: {
       fontFamily: 'inherit',
@@ -44,7 +45,7 @@ const Input = ({
       height: scale[3],
       paddingLeft: scale[1],
       paddingRight: scale[1],
-      marginBottom: m0 ? 0 : scale[2],
+      margin: 0,
       color: 'inherit',
       backgroundColor: 'rgba(255, 255, 255, .25)',
       borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
@@ -89,9 +90,7 @@ Input.propTypes = {
       'bottom',
       'left'
     ])
-  ]),
-  /** Removes default margin */
-  m0: React.PropTypes.bool
+  ])
 }
 
 Input.defaultProps = {
