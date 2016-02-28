@@ -139,5 +139,8 @@ Note, that due to the use of inline styles, some properties may need to be overr
 }
 ```
 
+*Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
+but shares a similar approach to application-agnostic UI development.*
+
 [MIT License](.github/LICENSE.md)
 
