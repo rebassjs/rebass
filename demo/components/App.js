@@ -72,7 +72,7 @@ class App extends React.Component {
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
         <Toolbar>
-          <NavItem children='Rebass' />
+          <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
           <Space auto />
           <NavItem
             onClick={this.toggleDrawer}
