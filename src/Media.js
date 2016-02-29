@@ -33,6 +33,7 @@ const Media = ({ img, right, align, style, children, ...props }, { rebass }) => 
       }}>
       <img src={img}
         style={{
+          flex: 'none',
           maxWidth: 'none',
           marginRight: right ? 0 : scale[2],
           marginLeft: right ? scale[2] : 0,

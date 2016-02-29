@@ -1,7 +1,7 @@
 {
   "name": "rebass",
   "version": "0.2.0-beta1",
-  "description": "React Stateless Functional UI Components",
+  "description": "Configurable React Stateless Functional UI Components",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
@@ -32,11 +32,13 @@
     "static-react": "^3.1.0"
   },
   "keywords": [
-    "basscss",
     "components",
     "react",
     "react-component",
-    "ui"
+    "ui",
+    "presentational",
+    "stateless",
+    "functional"
   ],
   "main": "dist/index.js",
   "repository": {

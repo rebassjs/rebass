@@ -17,6 +17,7 @@ const PageHeader = ({ heading, description, style, children, ...props }, { rebas
     <header className='PageHeader'
       style={{
         display: 'flex',
+        flexWrap: 'wrap',
         alignItems: 'center',
         paddingTop: scale[3],
         paddingBottom: scale[2],
@@ -29,7 +30,8 @@ const PageHeader = ({ heading, description, style, children, ...props }, { rebas
         ...style
       }}>
       <div style={{
-          flex: '1 1 auto'
+          flex: '1 1 auto',
+          marginBottom: scale[2]
         }}>
         <Heading level={1} children={heading} />
         {description &&

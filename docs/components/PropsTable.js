@@ -8,6 +8,9 @@ const PropsTable = ({ props, ...other }) => {
       overflowX: 'scroll'
     },
     table: {
+      fontSize: 14,
+      lineHeight: 1.125,
+      minWidth: 512,
       borderCollapse: 'separate',
       borderSpacing: 0,
       maxWidth: '100%',
@@ -15,13 +18,16 @@ const PropsTable = ({ props, ...other }) => {
     },
     th: {
       textAlign: 'left',
-      padding: '4px 0',
+      padding: '8px 8px 8px 0',
       verticalAlign: 'bottom',
-      borderBottom: '2px solid #ddd'
+      borderBottom: '2px solid rgba(0, 0, 0, .125)'
     },
     td: {
-      padding: '4px 0',
-      borderBottom: '1px solid #ddd'
+      padding: '8px 8px 8px 0',
+      borderBottom: '1px solid rgba(0, 0, 0, .125)'
+    },
+    mono: {
+      fontFamily: '"Roboto Mono", monospace'
     }
   }
 
@@ -47,12 +53,23 @@ const PropsTable = ({ props, ...other }) => {
             if (type === 'enum' && prop.type.value && Array.isArray(prop.type.value)) {
               type = `oneOf([${prop.type.value.map(v => v.value).join(', ')}])`
             } else if (type === 'union' && prop.type.value && Array.isArray(prop.type.value)) {
-              type = `oneOfType([${prop.type.value.map(v => v.name).join(', ')}])`
+              type = `oneOfType([${
+                prop.type.value.map(v => {
+                  if (v.name === 'enum' && v.value && Array.isArray(v.value)) {
+                    return 'oneOf([' + v.value.map(a => a.value).join(', ') + '])'
+                  } else {
+                    return v.name
+                  }
+                }).join(', ')
+              }])`
             }
             return (
               <tr key={key}>
-                <td style={sx.td}>{key} {prop.required && '*'}</td>
-                <td style={sx.td}>{type}</td>
+                <td style={{ ...sx.td, ...sx.mono }}
+                  title={prop.required && 'Required'}>
+                  {key} {prop.required && '*'}
+                </td>
+                <td style={{ ...sx.td, ...sx.mono }}>{type}</td>
                 <td style={sx.td}>{prop.description}</td>
               </tr>
             )

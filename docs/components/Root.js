@@ -19,6 +19,7 @@ import {
   Toolbar
 } from '../../src'
 
+import Header from './Header'
 import ComponentDoc from './ComponentDoc'
 import PropsTable from './PropsTable'
 import Example from './Example'
@@ -27,7 +28,7 @@ import Permutations from './Permutations'
 const css = `
 .NavItem:hover,
 .Button:hover {
-  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 0 0 9999px rgba(0, 128, 255, .125);
 }
 .Button:disabled { opacity: .5 }
 `
@@ -62,17 +63,8 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
-          <Toolbar style={{ backgroundColor: 'black' }}>
-            <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
-            <NavItem href='http://jxnblk.com/rebass/demo' children='Demo' />
-            <Space auto />
-            <NavItem href='https://github.com/jxnblk/rebass' children='GitHub' />
-            <NavItem href='https://npmjs.com/package/rebass' children='npm' />
-          </Toolbar>
+          <Header {...this.props} />
           <Container>
-            <PageHeader
-              heading='Rebass'
-              description={`${components.length} ${description} [v${version}]`} />
             <nav>
               <Flex wrap gutter={1}>
                 {components.map(c => (
@@ -83,8 +75,7 @@ class Root extends React.Component {
             <main>
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
             </main>
-            <Block borderLeft
-              style={{ marginBottom: 48 }}>
+            <Block borderLeft mb={4}>
               <Flex align='center'>
                 <Heading size={1} children='Get Started' />
                 <Space auto />
@@ -93,7 +84,7 @@ class Root extends React.Component {
                 <Space auto />
               </Flex>
             </Block>
-            <Text>
+            <Text small>
               Documentation generated with <a href='https://github.com/reactjs/react-docgen'>react-docgen</a> and <a href='https://github.com/jxnblk/react-component-permutations'>react-component-permutations</a>.
             </Text>
             <Footer>

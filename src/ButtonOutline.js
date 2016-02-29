@@ -36,6 +36,7 @@ const ButtonOutline = ({
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
     fontWeight: bold,
+    lineHeight: `${scale[2]}px`,
     display: 'inline-block',
     margin: 0,
     padding: big ? scale[2] : `${scale[1]}px ${scale[2]}px`,
