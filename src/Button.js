@@ -39,6 +39,7 @@ const Button = ({
     fontSize: fontSizes[5],
     fontWeight: bold,
     lineHeight: `${scale[2]}px`,
+    textDecoration: 'none',
     display: 'inline-block',
     margin: 0,
     padding: big ? scale[2] : `${scale[1]}px ${scale[2]}px`,
