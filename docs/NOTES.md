@@ -4,13 +4,7 @@
 - [ ] Site
   - [ ] Configurable context demo
     - [ ] Colors from color lovers api ?
-  - [ ] Ad
-  - [ ] Travis Badge
-  - [ ] Tweet
-  - [ ] Star
   - [ ] Features
-  - [ ] CTA
-  - [x] Footer
 
 - [ ] Padding util
 - [ ] Rounded util
