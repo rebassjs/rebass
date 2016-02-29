@@ -52,6 +52,7 @@ const ButtonOutline = ({
 
   return (
     <Component {...props}
+      href={href}
       className='ButtonOutline'
       style={sx}>
       {children}

@@ -53,6 +53,7 @@ const Button = ({
 
   return (
     <Component {...props}
+      href={href}
       className='Button'
       style={sx}>
       {children}
