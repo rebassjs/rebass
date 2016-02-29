@@ -13,7 +13,8 @@ const blacklist = [
   'Dropdown',
   'DropdownMenu',
   'Label',
-  'Space'
+  'Space',
+  'Stat'
 ]
 
 const propsString = (obj) => {

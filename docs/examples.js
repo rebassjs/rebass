@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Icon from 'react-geomicons'
 import { Flex, Box } from 'reflexbox'
 
 import {
@@ -10,6 +11,7 @@ import {
   Block,
   Breadcrumbs,
   Button,
+  ButtonCircle,
   ButtonOutline,
   Card,
   CardImage,
@@ -39,6 +41,7 @@ import {
   SectionHeader,
   Select,
   Space,
+  Stat,
   Text,
   Toolbar,
   Tooltip
@@ -90,6 +93,28 @@ const examples = {
     <div>
       <Button children='Button' />
     </div>
+  ),
+  ButtonCircle: (
+    <Flex
+      wrap
+      align='center'
+      justify='space-between'>
+      <ButtonCircle title='Like'>
+        <Icon name='heart' />
+      </ButtonCircle>
+      <ButtonCircle title='Comment'>
+        <Icon name='chat' />
+      </ButtonCircle>
+      <ButtonCircle title='Repost'>
+        <Icon name='repost' />
+      </ButtonCircle>
+      <ButtonCircle title='Bookmark'>
+        <Icon name='bookmark' />
+      </ButtonCircle>
+      <ButtonCircle title='Tag'>
+        <Icon name='tag' />
+      </ButtonCircle>
+    </Flex>
   ),
   ButtonOutline: (
     <div>
@@ -255,6 +280,14 @@ const examples = {
       <Space x={4} />
       <Button children='Space' />
     </div>
+  ),
+  Stat: (
+    <Flex wrap justify='space-between'>
+      <Stat value='512' unit='GB' label='Memory' />
+      <Stat value='32' label='PetaFLOPS' />
+      <Stat value='512' unit='Mbps' label='Upload' />
+      <Stat value='1,024' unit='Mbps' label='Download' />
+    </Flex>
   ),
   Toolbar: (
     <Toolbar>

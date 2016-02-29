@@ -20,6 +20,7 @@ import {
 } from '../../src'
 
 import Header from './Header'
+import Features from './Features'
 import ComponentDoc from './ComponentDoc'
 import PropsTable from './PropsTable'
 import Example from './Example'
@@ -73,6 +74,7 @@ class Root extends React.Component {
               </Flex>
             </nav>
             <main>
+              <Features />
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
             </main>
             <Block borderLeft mb={4}>

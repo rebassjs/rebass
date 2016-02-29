@@ -31,9 +31,8 @@ const Header = ({ version, description, components, ...props }) => {
           description={`${components.length} ${description} [v${version}]`}>
           <CarbonAd />
         </PageHeader>
-        <Pre children='npm i rebass' />
         <Box pb={3}>
-          <Flex>
+          <Flex align='center'>
             <TravisBadge />
             <Space />
             <TweetButton text={`Rebass: ${description}`} />

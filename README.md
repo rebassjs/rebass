@@ -17,6 +17,8 @@ http://jxnblk.com/rebass
 - Production ready
 - [Tested](https://travis-ci.org/jxnblk/rebass)
 
+Rebass is a React UI component library that uses inline styles to avoid CSS dependencies and prevent leaky global styles from affecting an application. Rebass components are built as stateless functional components and modeled as <a href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963'>presentational components</a>. With unit tests for each component, Rebass is great for prototyping and ready for production.
+
 ## Getting Started
 
 ```bash
