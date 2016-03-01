@@ -95,6 +95,16 @@ describe('ButtonOutline', () => {
     })
   })
 
+  context('when pill is true', () => {
+    beforeEach(() => {
+      renderer.render(<ButtonOutline pill />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have 99999 border radii', () => {
+      expect(tree.props.style.borderRadius).toEqual(99999)
+    })
+  })
+
   context('when href is set', () => {
     beforeEach(() => {
       renderer.render(<ButtonOutline href='#!' />)
