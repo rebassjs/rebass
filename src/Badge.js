@@ -7,11 +7,13 @@ import theme from './theme'
 
 const Badge = ({
   type,
+  pill,
+  circle,
   style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const badgeStyle = rebass ? rebass.Badge : {}
+  const customStyle = rebass ? rebass.Badge : {}
   const { fontSizes, bold, scale, colors, borderRadius } = config
   const backgroundColor = colors[type]
 
@@ -22,14 +24,21 @@ const Badge = ({
       style={{
         fontSize: fontSizes[6],
         fontWeight: bold,
-        display: 'inline-block',
-        verticalAlign: 'center',
-        paddingLeft: scale[1],
-        paddingRight: scale[1],
+        boxSizing: 'border-box',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: circle ? scale[2] : null,
+        height: scale[2],
+        paddingTop: 0,
+        paddingBottom: 0,
+        paddingLeft: circle ? 0 : scale[1],
+        paddingRight: circle ? 0 : scale[1],
+        overflow: 'hidden',
         color: colors.white,
-        borderRadius,
+        borderRadius: (circle || pill) ? 99999 : borderRadius,
         backgroundColor,
-        ...badgeStyle,
+        ...customStyle,
         ...style
       }} />
   )
@@ -44,6 +53,10 @@ Badge.propTypes = {
     'warning',
     'error',
   ]),
+  /** Sets pill style border radii */
+  pill: React.PropTypes.bool,
+  /** Sets width and border radius for circular badges */
+  circle: React.PropTypes.bool
 }
 
 Badge.defaultProps = {

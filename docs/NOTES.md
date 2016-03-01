@@ -13,11 +13,8 @@
 
 ## Components
 
-- [ ] DotIndicator
-- [ ] Circle Badge
 - [ ] ButtonPill
 - [ ] ProfileCard
-- [ ] ButtonGroup ?
 - [ ] Like mini stat
 
 - [ ] Form

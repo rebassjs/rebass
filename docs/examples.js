@@ -59,13 +59,22 @@ const examples = {
     <Avatar src='http://lorempixel.com/64/64/cats' />
   ),
   Badge: (
-    <div>
-      <Heading>
-        Rebass
-        <Space />
+    <Flex align='center'>
+      <Heading level={4}>
+        Rebass <Space />
         <Badge type='info' children='0.2.0' />
       </Heading>
-    </div>
+      <Space x={2} />
+      <Heading level={4}>
+        Pill <Space />
+        <Badge pill type='info' children='Pill' />
+      </Heading>
+      <Space x={2} />
+      <Heading level={4}>
+        Circular Things <Space />
+        <Badge circle type='error' children='4' />
+      </Heading>
+    </Flex>
   ),
   Banner: (
     <Banner backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'>
