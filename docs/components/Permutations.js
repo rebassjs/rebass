@@ -65,7 +65,10 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
         { href: '#!', children: name }
       ]
     ],
-    open: [true] // DropdownMenu
+    open: [true], // DropdownMenu
+    // Disable margins and padding utils (Block)
+    m: [], mx: [], my: [], mt: [], mr: [], mb: [], ml: [],
+    p: [], px: [], py: [], pt: [], pr: [], pb: [], pl: [],
   })
 
   if (blacklist.indexOf(name) > -1) {
