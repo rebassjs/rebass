@@ -28,13 +28,23 @@ describe('Divider', () => {
     expect(tree.props.style.marginBottom).toEqual(scale[2])
   })
 
-  context('when compact is true', () => {
+  context('when setting custom margins', () => {
     beforeEach(() => {
-      renderer.render(<Divider compact />)
+      renderer.render(<Divider my={0} />)
       tree = renderer.getRenderOutput()
     })
     it('should have no margin top or bottom', () => {
       expect(tree.props.style.marginTop).toEqual(0)
+    })
+  })
+
+  context('when setting width', () => {
+    beforeEach(() => {
+      renderer.render(<Divider width={256} />)
+      tree= renderer.getRenderOutput()
+    })
+    it('should have a fixed width', () => {
+      expect(tree.props.style.width).toEqual(256)
     })
   })
 

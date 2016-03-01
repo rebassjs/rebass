@@ -21,6 +21,8 @@ const Divider = ({
       className='Divider'
       style={{
         width,
+        marginTop: scale[2],
+        marginBottom: scale[2],
         border: 0,
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
