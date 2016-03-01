@@ -26,6 +26,7 @@ import {
   Embed,
   Footer,
   Heading,
+  InlineForm,
   Input,
   Label,
   LinkBlock,
@@ -221,6 +222,11 @@ const examples = {
     <Footer>
       Footer™ ©2016 Jxnblk
     </Footer>
+  ),
+  InlineForm: (
+    <InlineForm
+      name='inline_form'
+      label='InlineForm' />
   ),
   Input: (
     <Input

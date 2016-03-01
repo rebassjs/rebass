@@ -122,11 +122,10 @@ describe('Input', () => {
           style={{ color: 'tomato' }} />
       )
       tree = renderer.getRenderOutput()
-      input = tree.props.children[1]
     })
 
     it('should have a custom color', () => {
-      expect(input.props.style.color).toEqual('tomato')
+      expect(tree.props.style.color).toEqual('tomato')
     })
   })
 })

@@ -22,8 +22,6 @@ const Input = ({
   const customStyle = rebass ? rebass.Input : {}
   const { scale, borderRadius, borderColor } = config
 
-  const otherStyle = { ...customStyle, ...style }
-
   const radii = {
     top: `${borderRadius}px ${borderRadius}px 0 0`,
     right: `0 ${borderRadius}px ${borderRadius}px 0`,
@@ -34,6 +32,8 @@ const Input = ({
   const sx = {
     root: {
       marginBottom: scale[2],
+      ...customStyle,
+      ...style,
       ...margins(props, scale)
     },
     input: {
@@ -51,8 +51,7 @@ const Input = ({
       borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor,
-      ...otherStyle
+      borderColor
     }
   }
 
