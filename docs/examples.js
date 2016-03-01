@@ -19,6 +19,7 @@ import {
   Close,
   Container,
   Divider,
+  Donut,
   DotIndicator,
   Dropdown,
   DropdownMenu,
@@ -174,6 +175,14 @@ const examples = {
         ml={0}
         width={128} />
     </div>
+  ),
+  Donut: (
+    <Flex align='center' justify='space-between' wrap>
+      <Donut value={9/16} size={256} strokeWidth={32} />
+      <Donut value={9/16} children='9/16' />
+      <Donut value={5/8} />
+      <Donut value={1/8} />
+    </Flex>
   ),
   DotIndicator: (
     <div>

@@ -10,11 +10,9 @@
 
 ## Components
 
-- [ ] LinkBlock - unstyled display block link
 - [ ] Blockquote
 - [ ] Table
 
-- [ ] Donut - SimplePie - Percentage
 - [ ] ProfileCard
 - [ ] Like mini stat - just a small Button ?
 - [ ] Form
