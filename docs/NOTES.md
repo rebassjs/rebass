@@ -10,7 +10,7 @@
 
 ## Components
 
-- [ ] Button pill prop - via radii util
+- [ ] LinkBlock - unstyled display block link
 - [ ] Blockquote
 - [ ] Table
 

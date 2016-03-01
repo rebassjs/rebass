@@ -6,7 +6,12 @@ import theme from './theme'
  * Link for use in navigation. Inherits color
  */
 
-const NavItem = ({ small, Component, style, ...props }, { rebass }) => {
+const NavItem = ({
+  small,
+  Component,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const navItemStyle = rebass ? rebass.NavItem : {}
   const { fontSizes, scale, bold } = config

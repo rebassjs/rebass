@@ -27,6 +27,7 @@ import {
   Heading,
   Input,
   Label,
+  LinkBlock,
   Media,
   Menu,
   Message,
@@ -222,6 +223,13 @@ const examples = {
     <Label>
       Label for form elements
     </Label>
+  ),
+  LinkBlock: (
+    <LinkBlock href='#LinkBlock'>
+      <Media align='center' img='http://placehold.it/96'>
+        <Heading level={3} children='LinkBlock' />
+      </Media>
+    </LinkBlock>
   ),
   Media: (
     <Media img='http://placehold.it/128' align='center'>
