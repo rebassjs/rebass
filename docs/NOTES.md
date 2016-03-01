@@ -6,17 +6,17 @@
   - [ ] Configurable context demo
     - [ ] Colors from color lovers api ?
     - [ ] Make it look better
-
-- [ ] Padding util
-- [ ] Rounded util
 - [ ] Nested styles for deep style customization
 
 ## Components
 
-- [ ] Button pill prop
-- [ ] ProfileCard
-- [ ] Like mini stat
+- [ ] Button pill prop - via radii util
+- [ ] Blockquote
+- [ ] Table
 
+- [ ] Donut - SimplePie - Percentage
+- [ ] ProfileCard
+- [ ] Like mini stat - just a small Button ?
 - [ ] Form
 - [ ] SearchForm
 - [ ] AuthForm
@@ -24,8 +24,6 @@
   - [ ] SignInForm
 - [ ] AddressForm
 - [ ] BillingForm
-- [ ] Blockquote
-- [ ] Table
 - [ ] InputNumber ? + Stepper?
 
 ---
