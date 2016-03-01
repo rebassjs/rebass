@@ -1,33 +1,40 @@
 
 import React from 'react'
 import theme from './theme'
+import margins from './util/margins'
 
 /**
  * Styled hr element
  */
 
-const Divider = ({ compact, style, ...props }, { rebass }) => {
+const Divider = ({
+  width,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
+  const customStyle = rebass ? rebass.Divider : {}
   const { scale, borderColor } = config
 
   return (
     <hr
       className='Divider'
       style={{
-        marginTop: compact ? 0 : scale[2],
-        marginBottom: compact ? 0 : scale[2],
+        width,
         border: 0,
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
         borderBottomColor: borderColor,
+        ...customStyle,
+        ...margins(props, scale),
         ...style
       }} />
   )
 }
 
 Divider.propTypes = {
-  /** Removes margin top and bottom */
-  compact: React.PropTypes.bool
+  /** Sets a fixed width for stylistic options */
+  width: React.PropTypes.number
 }
 
 Divider.contextTypes = {

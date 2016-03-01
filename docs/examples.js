@@ -167,7 +167,12 @@ const examples = {
     </Container>
   ),
   Divider: (
-    <Divider />
+    <div>
+      <Divider />
+      <Divider
+        ml={0}
+        width={128} />
+    </div>
   ),
   DotIndicator: (
     <div>

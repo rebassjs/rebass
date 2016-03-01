@@ -1,6 +1,7 @@
 
 # Notes
 
+- [ ] Support primary, secondary color for type prop?
 - [ ] Site
   - [ ] Configurable context demo
     - [ ] Colors from color lovers api ?
@@ -8,12 +9,11 @@
 
 - [ ] Padding util
 - [ ] Rounded util
-
 - [ ] Nested styles for deep style customization
 
 ## Components
 
-- [ ] ButtonPill
+- [ ] Button pill prop
 - [ ] ProfileCard
 - [ ] Like mini stat
 

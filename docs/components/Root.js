@@ -12,6 +12,7 @@ import {
   PageHeader,
   Panel,
   PanelHeader,
+  Pre,
   Section,
   SectionHeader,
   Space,
@@ -47,6 +48,15 @@ class Root extends React.Component {
   getChildContext () {
     return {
       rebass: {
+        Divider: {
+          borderColor: 'inherit'
+        },
+        PageHeader: {
+          borderColor: 'inherit'
+        },
+        SectionHeader: {
+          borderColor: 'inherit'
+        }
       }
     }
   }
@@ -77,9 +87,10 @@ class Root extends React.Component {
               <Features />
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
             </main>
-            <Block borderLeft mb={4}>
+            <Block borderLeft padding={32} mb={4}>
               <Flex align='center'>
                 <Heading size={1} children='Get Started' />
+                <Pre children='npm i rebass' />
                 <Space auto />
                 <Button href='https://github.com/jxnblk/rebass'
                   children='GitHub' />
