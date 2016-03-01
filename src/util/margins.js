@@ -5,7 +5,7 @@
 
 const n = (x) => typeof x === 'number'
 
-function margins (props, scale) {
+function margins(props, scale) {
   const s = scale || []
   const {
     m,
