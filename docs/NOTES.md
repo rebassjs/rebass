@@ -15,13 +15,9 @@
 
 - [ ] DotIndicator
 - [ ] Circle Badge
-- [ ] Stat
-- [ ] ButtonCircle + Icons
 - [ ] ButtonPill
 - [ ] ProfileCard
 - [ ] ButtonGroup ?
-- [ ] Circle Button
-- [ ] Icon Button
 - [ ] Like mini stat
 
 - [ ] Form

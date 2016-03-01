@@ -19,6 +19,7 @@ import {
   Close,
   Container,
   Divider,
+  DotIndicator,
   Dropdown,
   DropdownMenu,
   Embed,
@@ -158,6 +159,13 @@ const examples = {
   ),
   Divider: (
     <Divider />
+  ),
+  DotIndicator: (
+    <div>
+      <DotIndicator
+        length={3}
+        active={0} />
+    </div>
   ),
   Drawer: (
     <a href='demo'>See Demo Page</a>
