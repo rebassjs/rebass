@@ -10,13 +10,14 @@
 
 ## Components
 
+- [ ] SequenceMap
 - [ ] Blockquote
 - [ ] Table
 
 - [ ] ProfileCard
 - [ ] Mini stat 'Like', 'Repost', etc. - just a small Button ?
 - [ ] Form
-- [ ] SearchForm
+- [x] InlineForm ~~SearchForm~~
 - [ ] AuthForm
   - [ ] SignUpForm
   - [ ] SignInForm
