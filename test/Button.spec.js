@@ -10,29 +10,31 @@ describe('Button', () => {
   const { scale, colors, borderRadius } = theme
   let tree
 
-  beforeEach(() => {
-    renderer.render(<Button />)
-    tree = renderer.getRenderOutput()
-  })
+  context('defaults', () => {
+    beforeEach(() => {
+      renderer.render(<Button />)
+      tree = renderer.getRenderOutput()
+    })
 
-  it('should render', () => {
-    expect(tree.type).toEqual('button')
-  })
+    it('should render', () => {
+      expect(tree.type).toEqual('button')
+    })
 
-  it('should have a className', () => {
-    expect(tree.props.className).toEqual('Button')
-  })
+    it('should have a className', () => {
+      expect(tree.props.className).toEqual('Button')
+    })
 
-  it('should have a primary background color', () => {
-    expect(tree.props.style.backgroundColor).toEqual(colors.primary)
-  })
+    it('should have a primary background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual(colors.primary)
+    })
 
-  it('should have a border radius', () => {
-    expect(tree.props.style.borderRadius).toEqual(borderRadius)
-  })
+    it('should have a border radius', () => {
+      expect(tree.props.style.borderRadius).toEqual(borderRadius)
+    })
 
-  it('should have default padding', () => {
-    expect(tree.props.style.padding).toEqual(`${scale[1]}px ${scale[2]}px`)
+    it('should have default padding', () => {
+      expect(tree.props.style.padding).toEqual(`${scale[1]}px ${scale[2]}px`)
+    })
   })
 
   context('when big prop is true', () => {
@@ -92,6 +94,16 @@ describe('Button', () => {
     })
     it('should have left border radii', () => {
       expect(tree.props.style.borderRadius).toEqual('2px 0 0 2px')
+    })
+  })
+
+  context('when pill is true', () => {
+    beforeEach(() => {
+      renderer.render(<Button pill />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have 99999 border radius', () => {
+      expect(tree.props.style.borderRadius).toEqual(99999)
     })
   })
 

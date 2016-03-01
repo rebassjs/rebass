@@ -34,7 +34,7 @@ function radii(props, r) {
     borderRadius = 99999
   }
 
-  return borderRadius
+  return { borderRadius }
 }
 
 export default radii
