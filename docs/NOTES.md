@@ -14,7 +14,7 @@
 - [ ] Table
 
 - [ ] ProfileCard
-- [ ] Like mini stat - just a small Button ?
+- [ ] Mini stat 'Like', 'Repost', etc. - just a small Button ?
 - [ ] Form
 - [ ] SearchForm
 - [ ] AuthForm

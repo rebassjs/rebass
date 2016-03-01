@@ -23,9 +23,7 @@ import {
 import Header from './Header'
 import Features from './Features'
 import ComponentDoc from './ComponentDoc'
-import PropsTable from './PropsTable'
-import Example from './Example'
-import Permutations from './Permutations'
+import Related from './Related'
 
 const css = `
 .NavItem:hover,
@@ -86,11 +84,14 @@ class Root extends React.Component {
             <main>
               <Features />
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
+              <Related />
             </main>
-            <Block borderLeft padding={32} mb={4}>
+            <Block borderLeft p={4} mb={4}>
               <Flex align='center'>
-                <Heading size={1} children='Get Started' />
-                <Pre children='npm i rebass' />
+                <div>
+                  <Heading size={1} children='Get Started' />
+                  <Pre children='npm i rebass' />
+                </div>
                 <Space auto />
                 <Button href='https://github.com/jxnblk/rebass'
                   children='GitHub' />
