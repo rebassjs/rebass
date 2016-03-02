@@ -6,15 +6,16 @@
     - [ ] Colors from color lovers api ?
     - [ ] Make it look better
 
-- [ ] message + error props for Input, Select, etc.
+- InputRange message + invalid, etc
+- Context tests per component
+- Heading big prop
 
 ## Components
 
-- [ ] onDismiss for Drawer
 - [ ] Blockquote
-- [ ] Table
 - [ ] Time
 
+- [ ] Bar chart list
 - [ ] ProfileCard
 - [ ] Mini stat 'Like', 'Repost', etc. - just a small Button ?
 - [ ] Form

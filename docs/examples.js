@@ -49,6 +49,7 @@ import {
   SequenceMap,
   Space,
   Stat,
+  Table,
   Text,
   Toolbar,
   Tooltip
@@ -352,6 +353,16 @@ const examples = {
       <Stat value='512' unit='Mbps' label='Upload' />
       <Stat value='1,024' unit='Mbps' label='Download' />
     </Flex>
+  ),
+  Table: (
+    <Table
+      headings={[ 'Name', 'Meat', 'Vegetable', 'Carb' ]}
+      data={[
+        ['Hamburger', 'Beef', 'Onion', 'Bun'],
+        ['Pizza', 'Pork', 'Tomato', 'Crust'],
+        ['Corndog', 'Pork', 'Corn', 'Cornbread'],
+        ['Hot Dog', 'Pork', 'Peppers', 'Bun'],
+      ]} />
   ),
   Toolbar: (
     <Toolbar>
