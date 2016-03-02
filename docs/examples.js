@@ -34,6 +34,7 @@ import {
   Menu,
   Message,
   NavItem,
+  Overlay,
   PageHeader,
   Panel,
   PanelFooter,
@@ -267,6 +268,9 @@ const examples = {
       <Space auto />
       <Close />
     </Message>
+  ),
+  Overlay: (
+    <a href='demo'>See demo</a>
   ),
   PageHeader: (
     <PageHeader

@@ -27,6 +27,7 @@ import {
   Menu,
   Message,
   NavItem,
+  Overlay,
   PageHeader,
   Panel,
   PanelFooter,
@@ -44,11 +45,42 @@ import {
   Tooltip
 } from '../../src'
 
-const KitchenSink = () => (
+const KitchenSink = ({ toggleOverlay }) => (
   <Section>
     <PageHeader
       heading='This is a PageHeader'
       description='This is where you should head the page' />
+    <Flex sm gutter={2}>
+      <Box sm={4} px={2}>
+        <Card>
+          <CardImage src='http://lorempixel.com/256/256/cats' />
+          <Heading children='Card' />
+          <Text children='Card with some text' />
+        </Card>
+      </Box>
+      <Box sm={4} px={2}>
+        <Card>
+          <CardImage src='http://lorempixel.com/256/256/cats' />
+          <Heading children='Card' />
+          <Text children='Card with some text' />
+        </Card>
+      </Box>
+      <Box sm={4} px={2}>
+        <Card>
+          <CardImage src='http://lorempixel.com/256/256/cats' />
+          <Heading children='Card' />
+          <Text children='Card with some text' />
+        </Card>
+      </Box>
+    </Flex>
+
+    <Block p={3} my={3} borderLeft>
+      <Heading level={3} children='Overlay' />
+      <Button big
+        children='Open Overlay'
+        onClick={toggleOverlay} />
+    </Block>
+
     <Flex sm gutter={2}>
       <Box sm={6} p={2}>
         <Heading level={3}>Forms</Heading>
@@ -85,29 +117,6 @@ const KitchenSink = () => (
     </Flex>
     <Divider />
     <div>
-      <Flex sm gutter={2}>
-        <Box sm={4} px={2}>
-          <Card>
-            <CardImage src='http://lorempixel.com/256/256/cats' />
-            <Heading children='Card' />
-            <Text children='Card with some text' />
-          </Card>
-        </Box>
-        <Box sm={4} px={2}>
-          <Card>
-            <CardImage src='http://lorempixel.com/256/256/cats' />
-            <Heading children='Card' />
-            <Text children='Card with some text' />
-          </Card>
-        </Box>
-        <Box sm={4} px={2}>
-          <Card>
-            <CardImage src='http://lorempixel.com/256/256/cats' />
-            <Heading children='Card' />
-            <Text children='Card with some text' />
-          </Card>
-        </Box>
-      </Flex>
       <Box py={3}>
         <Toolbar>
           <NavItem children='Toolbar' />

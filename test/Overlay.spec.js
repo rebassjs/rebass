@@ -30,7 +30,8 @@ describe('Overlay', () => {
   })
 
   it('should have a dark theme', () => {
-    expect(dismiss.props.style.backgroundColor).toEqual('rgba(0, 0, 0, .875)')
+    expect(dismiss.props.style.backgroundColor).toEqual(colors.black)
+    expect(dismiss.props.style.opacity).toEqual(.875)
   })
 
   it('should have not have content box styling', () => {
@@ -62,7 +63,7 @@ describe('Overlay', () => {
     })
 
     it('should set the background color to light theme', () => {
-      expect(dismiss.props.style.backgroundColor).toEqual('rgba(255, 255, 255, .875)')
+      expect(dismiss.props.style.backgroundColor).toEqual(colors.white)
     })
   })
 

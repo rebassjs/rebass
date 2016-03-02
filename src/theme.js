@@ -9,7 +9,9 @@ const baseColors = {
   blue: '#08e',
   red: '#f52',
   orange: '#f90',
-  green: '#1c7'
+  green: '#1c7',
+  // darken: 'rgba(0, 0, 0, .9375)',
+  // lighten: 'rgba(255, 255, 255, .9375)',
 }
 
 const colors = {

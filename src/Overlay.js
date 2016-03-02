@@ -47,8 +47,8 @@ const Overlay = ({
       right: 0,
       bottom: 0,
       left: 0,
-      backgroundColor: dark ? 'rgba(0, 0, 0, .875)' : 'rgba(255, 255, 255, .875)',
-      opacity: .5
+      backgroundColor: dark ? colors.black : colors.white,
+      opacity: .875
     },
     inner: {
       position: 'relative',

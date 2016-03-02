@@ -13,6 +13,7 @@ const blacklist = [
   'Dropdown',
   'DropdownMenu',
   'Label',
+  'Overlay',
   'Space',
   'Stat'
 ]

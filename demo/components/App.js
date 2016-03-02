@@ -1,7 +1,11 @@
 
 import React from 'react'
+import { Flex, Box } from 'reflexbox'
 import {
   theme,
+  Overlay,
+  Panel,
+  PanelHeader,
   Banner,
   Block,
   Button,
@@ -26,9 +30,11 @@ class App extends React.Component {
   constructor () {
     super()
     this.state = Object.assign({}, theme, demoTheme, {
-      drawerOpen: false
+      drawerOpen: false,
+      overlayOpen: false
     })
     this.toggleDrawer = this.toggleDrawer.bind(this)
+    this.toggleOverlay = this.toggleOverlay.bind(this)
     this.updateContext = this.updateContext.bind(this)
     this.resetTheme = this.resetTheme.bind(this)
   }
@@ -48,6 +54,11 @@ class App extends React.Component {
     this.setState({ drawerOpen })
   }
 
+  toggleOverlay () {
+    const overlayOpen = !this.state.overlayOpen
+    this.setState({ overlayOpen })
+  }
+
   resetTheme () {
     console.log('reset', initialTheme)
     this.setState(initialTheme)
@@ -58,7 +69,7 @@ class App extends React.Component {
   }
 
   render () {
-    const { fontFamily, color, backgroundColor, drawerOpen } = this.state
+    const { fontFamily, color, backgroundColor, drawerOpen, overlayOpen } = this.state
 
     const css = `
       body {
@@ -83,18 +94,17 @@ class App extends React.Component {
           onClick={this.toggleDrawer}>
           <Heading size={0} children='Rebass Demo' />
           <Text children='Configurable example page' />
+          <Box py={2}>
+            <Button
+              big
+              onClick={this.toggleDrawer}
+              children='Edit Configuration' />
+          </Box>
         </Banner>
         <Container style={{
             marginLeft: drawerOpen ? 0 : 'auto'
           }}>
-          <Block borderLeft padding={32}>
-            <Text>
-              To adjust the theme used on this page
-            </Text>
-            <Button onClick={this.toggleDrawer}
-              children='Edit the Configuration' />
-          </Block>
-          <KitchenSink />
+          <KitchenSink toggleOverlay={this.toggleOverlay} />
         </Container>
         <Drawer open={drawerOpen} position='right'>
           <SectionHeader
@@ -106,6 +116,18 @@ class App extends React.Component {
             onChange={this.updateContext}
             reset={this.resetTheme} />
         </Drawer>
+        <Overlay
+          open={overlayOpen}
+          onDismiss={this.toggleOverlay}>
+            <Panel type='info'>
+              <PanelHeader>
+                Hello Overlay
+                <Space auto />
+                <Close onClick={this.toggleOverlay} />
+              </PanelHeader>
+              This is a Panel inside an Overlay.
+            </Panel>
+        </Overlay>
       </div>
     )
   }
