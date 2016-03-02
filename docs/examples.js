@@ -89,7 +89,7 @@ const examples = {
     <Block
       borderLeft
       color='blue'>
-      <Media img='http://lorempixel.com/128/128/cats'>
+      <Media img='http://placehold.it/128/08e/fff'>
         <Heading size={0}>Block</Heading>
         <Text>Generic box for containing things</Text>
       </Media>
@@ -147,14 +147,14 @@ const examples = {
   ),
   Card: (
     <Card width={256}>
-      <CardImage src='http://placehold.it/320' />
+      <CardImage src='http://placehold.it/320/08e/fff' />
       <Heading size={3} children='Card' />
       <Text>Cats like cards too</Text>
     </Card>
   ),
   CardImage: (
     <div style={{ maxWidth: 192 }}>
-      <CardImage src='http://placehold.it/320' />
+      <CardImage src='http://placehold.it/320/08e/fff' />
     </div>
   ),
   Checkbox: (
@@ -215,8 +215,8 @@ const examples = {
   Embed: (
     <Embed ratio={9/16}>
       <iframe
-        src='https://www.youtube.com/embed/658WsCFwm9A'
-        allowFullScreen />
+        src='https://www.youtube.com/embed/KO_3Qgib6RQ'
+        allowfullscreen />
     </Embed>
   ),
   Footer: (
@@ -242,13 +242,13 @@ const examples = {
   ),
   LinkBlock: (
     <LinkBlock href='#LinkBlock'>
-      <Media align='center' img='http://placehold.it/96'>
+      <Media align='center' img='http://placehold.it/96/08e/fff'>
         <Heading level={3} children='LinkBlock' />
       </Media>
     </LinkBlock>
   ),
   Media: (
-    <Media img='http://placehold.it/128' align='center'>
+    <Media img='http://placehold.it/128/08e/fff' align='center'>
       <Heading level={3} children='Media Object' />
       <Text children='With alignment options' />
     </Media>
