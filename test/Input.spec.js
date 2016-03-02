@@ -2,17 +2,19 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Input, Label } from '../src'
+import { Input, Label, theme } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Input', () => {
-  let tree, input, label
+  const { colors } = theme
+  let tree, input, label, message
 
   beforeEach(() => {
     renderer.render(<Input name='test_input' label='Test' />)
     tree = renderer.getRenderOutput()
     input = tree.props.children[1]
+    message = tree.props.children[2]
   })
 
   it('should render', () => {
@@ -29,6 +31,14 @@ describe('Input', () => {
 
   it('should have an input element', () => {
     expect(input.type).toEqual('input')
+  })
+
+  it('should not have a message', () => {
+    expect(message).toNotExist()
+  })
+
+  it('should not set color', () => {
+    expect(tree.props.style.color).toNotExist()
   })
 
   context('when type is set', () => {
@@ -55,6 +65,55 @@ describe('Input', () => {
 
     it('should set the hide prop', () => {
       expect(label.props.hide).toEqual(true)
+    })
+  })
+
+  context('when message is set', () => {
+    beforeEach(() => {
+      renderer.render(<Input message='Hello' name='test_input' label='Test' />)
+      tree = renderer.getRenderOutput()
+      message = tree.props.children[2]
+    })
+
+    it('should have a message', () => {
+      expect(message.props.children).toEqual('Hello')
+    })
+  })
+
+  context('when aria-invalid is set', () => {
+    beforeEach(() => {
+      renderer.render(<Input aria-invalid name='test_input' label='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should add a className', () => {
+      expect(tree.props.className).toEqual('Input is-error')
+    })
+
+    it('should change the color', () => {
+      expect(tree.props.style.color).toEqual(colors.error)
+    })
+  })
+
+  context('when disabled is set', () => {
+    beforeEach(() => {
+      renderer.render(<Input disabled name='test_input' label='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should add a className', () => {
+      expect(tree.props.className).toEqual('Input is-disabled')
+    })
+  })
+
+  context('when readOnly is set', () => {
+    beforeEach(() => {
+      renderer.render(<Input readOnly name='test_input' label='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should add a className', () => {
+      expect(tree.props.className).toEqual('Input is-readonly')
     })
   })
 

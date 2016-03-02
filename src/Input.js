@@ -1,17 +1,20 @@
 
 import React from 'react'
+import classnames from 'classnames'
 import Label from './Label'
+import Text from './Text'
 import theme from './theme'
 import margins from './util/margins'
 
 /**
- * Input element with label
+ * Input element with label with support for aria-invalid, disabled, and readOnly HTML attributes
  */
 
 const Input = ({
   label,
   name,
   type,
+  message,
   hideLabel,
   rounded,
   children,
@@ -20,7 +23,7 @@ const Input = ({
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Input : {}
-  const { scale, borderRadius, borderColor } = config
+  const { scale, colors, borderRadius, borderColor } = config
 
   const radii = {
     top: `${borderRadius}px ${borderRadius}px 0 0`,
@@ -29,9 +32,12 @@ const Input = ({
     left: `${borderRadius}px 0 0 ${borderRadius}px`,
   }
 
+  const invalid = props.invalid || props['aria-invalid']
+
   const sx = {
     root: {
       marginBottom: scale[2],
+      color: invalid ? colors.error : null,
       ...customStyle,
       ...style,
       ...margins(props, scale)
@@ -51,12 +57,20 @@ const Input = ({
       borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor
+      borderColor: invalid ? colors.error : borderColor
     }
   }
 
+  const cx = classnames(
+    'Input', {
+      'is-error': invalid,
+      'is-disabled': props.disabled,
+      'is-readonly': props.readOnly
+    }
+  )
+
   return (
-    <div className='Input'
+    <div className={cx}
       style={sx.root}>
       <Label
         htmlFor={name}
@@ -67,6 +81,7 @@ const Input = ({
         type={type}
         name={name}
         style={sx.input} />
+      {message && <Text small children={message} />}
     </div>
   )
 }
@@ -78,6 +93,8 @@ Input.propTypes = {
   name: React.PropTypes.string.isRequired,
   /** Form element type */
   type: React.PropTypes.string,
+  /** Adds a helper or error message below the input */
+  message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
   /** Controls the border radius for creating grouped elements */

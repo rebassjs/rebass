@@ -51,6 +51,7 @@
   },
   "homepage": "https://github.com/jxnblk/rebass",
   "dependencies": {
+    "classnames": "^2.2.3",
     "color": "^0.11.1"
   }
 }
