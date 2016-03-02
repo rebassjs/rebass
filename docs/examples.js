@@ -44,6 +44,7 @@ import {
   Section,
   SectionHeader,
   Select,
+  SequenceMap,
   Space,
   Stat,
   Text,
@@ -316,6 +317,16 @@ const examples = {
         { value: 32, label: 'Thirty-Two' },
         { value: 64, label: 'Sixty-Four' }
       ]} />
+  ),
+  SequenceMap: (
+    <SequenceMap
+      steps={[
+        { href: '#!', children: 'Sign In' },
+        { href: '#!', children: 'Shipping Address' },
+        { href: '#!', children: 'Payment Method' },
+        { href: '#!', children: 'Place Order' }
+      ]}
+      active={1} />
   ),
   Space: (
     <div>
