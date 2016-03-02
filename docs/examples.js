@@ -50,6 +50,7 @@ import {
   SequenceMap,
   Space,
   Stat,
+  Switch,
   Table,
   Text,
   Toolbar,
@@ -357,6 +358,9 @@ const examples = {
       <Stat value='512' unit='Mbps' label='Upload' />
       <Stat value='1,024' unit='Mbps' label='Download' />
     </Flex>
+  ),
+  Switch: (
+    <Switch />
   ),
   Table: (
     <Table

@@ -10,13 +10,14 @@
 - Context tests per component
 - Heading big prop
 - Androidish TabNav
-- Switch/Toggle
+- border-box all components
 
 ## Components
 
 - [ ] Blockquote
 - [ ] Time
 
+- [ ] Combined Select/Input
 - [ ] Bar chart list
 - [ ] ProfileCard
 - [ ] Mini stat 'Like', 'Repost', etc. - just a small Button ?
