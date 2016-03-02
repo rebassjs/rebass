@@ -63,7 +63,7 @@ const Input = ({
 
   const cx = classnames(
     'Input', {
-      'is-error': invalid,
+      'is-invalid': invalid,
       'is-disabled': props.disabled,
       'is-readonly': props.readOnly
     }

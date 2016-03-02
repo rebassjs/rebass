@@ -87,7 +87,7 @@ describe('Input', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Input is-error')
+      expect(tree.props.className).toEqual('Input is-invalid')
     })
 
     it('should change the color', () => {
