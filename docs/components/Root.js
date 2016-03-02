@@ -99,7 +99,7 @@ class Root extends React.Component {
               </Flex>
             </Block>
             <Text small>
-              Documentation generated with <a href='https://github.com/reactjs/react-docgen'>react-docgen</a> and <a href='https://github.com/jxnblk/react-component-permutations'>react-component-permutations</a>.
+              Documentation generated with <a href='https://github.com/jxnblk/static-react'>static-react</a>, <a href='https://github.com/reactjs/react-docgen'>react-docgen</a>, and <a href='https://github.com/jxnblk/react-component-permutations'>react-component-permutations</a>.
             </Text>
             <Footer>
               <NavItem href='https://github.com/jxnblk/rebass' children='GitHub' />
