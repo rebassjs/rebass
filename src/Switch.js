@@ -2,6 +2,10 @@
 import React from 'react'
 import theme from './theme'
 
+/**
+ * Binary toggle switch component
+ */
+
 const Switch = ({
   checked,
   style,
