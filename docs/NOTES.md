@@ -6,6 +6,8 @@
     - [ ] Colors from color lovers api ?
     - [ ] Make it look better
 
+- [ ] message + error props for Input, Select, etc.
+
 ## Components
 
 - [ ] onDismiss for Drawer
