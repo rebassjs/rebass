@@ -217,7 +217,7 @@ const examples = {
     <Embed ratio={9/16}>
       <iframe
         src='https://www.youtube.com/embed/KO_3Qgib6RQ'
-        allowfullscreen />
+        allowFullScreen />
     </Embed>
   ),
   Footer: (
