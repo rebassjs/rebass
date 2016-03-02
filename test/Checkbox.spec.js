@@ -7,6 +7,7 @@ import { theme, Label, Checkbox } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Checkbox', () => {
+  const { colors } = theme
   let tree, label
 
   beforeEach(() => {
@@ -30,6 +31,47 @@ describe('Checkbox', () => {
   it('should have an input', () => {
     expect(label.props.children[0].type).toEqual('input')
     expect(label.props.children[0].props.type).toEqual('checkbox')
+  })
+
+  it('should not set a color', () => {
+    expect(tree.props.style.color).toNotExist()
+  })
+
+  context('when aria-invalid is set', () => {
+    beforeEach(() => {
+      renderer.render(<Checkbox aria-invalid name='test' label='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should add a className', () => {
+      expect(tree.props.className).toEqual('Checkbox is-invalid')
+    })
+
+    it('should change the color', () => {
+      expect(tree.props.style.color).toEqual(colors.error)
+    })
+  })
+
+  context('when disabled is set', () => {
+    beforeEach(() => {
+      renderer.render(<Checkbox disabled name='test' label='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should add a className', () => {
+      expect(tree.props.className).toEqual('Checkbox is-disabled')
+    })
+  })
+
+  context('when readOnly is set', () => {
+    beforeEach(() => {
+      renderer.render(<Checkbox readOnly name='test' label='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should add a className', () => {
+      expect(tree.props.className).toEqual('Checkbox is-readonly')
+    })
   })
 
   context('when custom styles are set', () => {
