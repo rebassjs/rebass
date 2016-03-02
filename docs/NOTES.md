@@ -10,6 +10,7 @@
 
 ## Components
 
+- [ ] onDismiss for Drawer
 - [ ] Blockquote
 - [ ] Table
 - [ ] Time
@@ -24,6 +25,10 @@
 - [ ] AddressForm
 - [ ] BillingForm
 - [ ] InputNumber ? + Stepper?
+
+## Theme
+- [ ] colors.darken
+- [ ] colors.lighten
 
 ---
 
