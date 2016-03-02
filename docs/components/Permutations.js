@@ -12,6 +12,7 @@ const blacklist = [
   'Drawer',
   'Dropdown',
   'DropdownMenu',
+  'Fixed',
   'Label',
   'Overlay',
   'Space',

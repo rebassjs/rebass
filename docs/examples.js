@@ -24,6 +24,7 @@ import {
   Dropdown,
   DropdownMenu,
   Embed,
+  Fixed,
   Footer,
   Heading,
   InlineForm,
@@ -197,7 +198,7 @@ const examples = {
     </div>
   ),
   Drawer: (
-    <a href='demo'>See Demo Page</a>
+    <a href='demo'>See demo</a>
   ),
   Dropdown: (
     <Block>
@@ -213,7 +214,7 @@ const examples = {
     </Block>
   ),
   DropdownMenu: (
-    <a href='#Dropdown'>See Dropdown Example</a>
+    <a href='#Dropdown'>See Dropdown example</a>
   ),
   Embed: (
     <Embed ratio={9/16}>
@@ -221,6 +222,9 @@ const examples = {
         src='https://www.youtube.com/embed/KO_3Qgib6RQ'
         allowFullScreen />
     </Embed>
+  ),
+  Fixed: (
+    <a href='demo'>See demo</a>
   ),
   Footer: (
     <Footer>

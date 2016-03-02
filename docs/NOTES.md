@@ -9,6 +9,8 @@
 - InputRange message + invalid, etc
 - Context tests per component
 - Heading big prop
+- Androidish TabNav
+- Switch/Toggle
 
 ## Components
 

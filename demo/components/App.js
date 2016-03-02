@@ -3,6 +3,7 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
   theme,
+  Fixed,
   Overlay,
   Panel,
   PanelHeader,
@@ -82,14 +83,17 @@ class App extends React.Component {
     return (
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
-        <Toolbar>
-          <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
-          <Space auto />
-          <NavItem
-            onClick={this.toggleDrawer}
-            children='Edit Configuration' />
-        </Toolbar>
+        <Fixed top left right>
+          <Toolbar>
+            <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
+            <Space auto />
+            <NavItem
+              onClick={this.toggleDrawer}
+              children='Edit Configuration' />
+          </Toolbar>
+        </Fixed>
         <Banner
+          style={{ marginTop: 48 }}
           backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
           onClick={this.toggleDrawer}>
           <Heading size={0} children='Rebass Demo' />
