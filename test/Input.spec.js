@@ -11,7 +11,7 @@ describe('Input', () => {
   let tree, input, label, message
 
   beforeEach(() => {
-    renderer.render(<Input name='test_input' label='Test' />)
+    renderer.render(<Input name='test' label='Test' />)
     tree = renderer.getRenderOutput()
     input = tree.props.children[1]
     message = tree.props.children[2]
@@ -43,7 +43,7 @@ describe('Input', () => {
 
   context('when type is set', () => {
     beforeEach(() => {
-      renderer.render(<Input type='number' name='test_input' label='Test' />)
+      renderer.render(<Input type='number' name='test' label='Test' />)
       tree = renderer.getRenderOutput()
       input = tree.props.children[1]
     })
@@ -54,7 +54,7 @@ describe('Input', () => {
 
   context('when hideLabel is set', () => {
     beforeEach(() => {
-      renderer.render(<Input hideLabel name='test_input' label='Test' />)
+      renderer.render(<Input hideLabel name='test' label='Test' />)
       tree = renderer.getRenderOutput()
       label = tree.props.children[0]
     })
@@ -70,7 +70,7 @@ describe('Input', () => {
 
   context('when message is set', () => {
     beforeEach(() => {
-      renderer.render(<Input message='Hello' name='test_input' label='Test' />)
+      renderer.render(<Input message='Hello' name='test' label='Test' />)
       tree = renderer.getRenderOutput()
       message = tree.props.children[2]
     })
@@ -82,7 +82,7 @@ describe('Input', () => {
 
   context('when aria-invalid is set', () => {
     beforeEach(() => {
-      renderer.render(<Input aria-invalid name='test_input' label='Test' />)
+      renderer.render(<Input aria-invalid name='test' label='Test' />)
       tree = renderer.getRenderOutput()
     })
 
@@ -97,7 +97,7 @@ describe('Input', () => {
 
   context('when disabled is set', () => {
     beforeEach(() => {
-      renderer.render(<Input disabled name='test_input' label='Test' />)
+      renderer.render(<Input disabled name='test' label='Test' />)
       tree = renderer.getRenderOutput()
     })
 
@@ -108,7 +108,7 @@ describe('Input', () => {
 
   context('when readOnly is set', () => {
     beforeEach(() => {
-      renderer.render(<Input readOnly name='test_input' label='Test' />)
+      renderer.render(<Input readOnly name='test' label='Test' />)
       tree = renderer.getRenderOutput()
     })
 
@@ -176,7 +176,7 @@ describe('Input', () => {
     beforeEach(() => {
       renderer.render(
         <Input
-          name='test_input'
+          name='test'
           label='Test'
           style={{ color: 'tomato' }} />
       )
