@@ -10,9 +10,9 @@
 
 ## Components
 
-- [ ] SequenceMap
 - [ ] Blockquote
 - [ ] Table
+- [ ] Time
 
 - [ ] ProfileCard
 - [ ] Mini stat 'Like', 'Repost', etc. - just a small Button ?

@@ -41,6 +41,7 @@ import {
   Pre,
   Progress,
   Radio,
+  Rating,
   Section,
   SectionHeader,
   Select,
@@ -291,6 +292,9 @@ const examples = {
     <Radio
       name='radio_example'
       label='Radio' />
+  ),
+  Rating: (
+    <Rating value={3.5} />
   ),
   Section: (
     <Section>
