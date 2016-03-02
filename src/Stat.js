@@ -7,7 +7,14 @@ import margins from './util/margins'
  * Styled number display for statistics
  */
 
-const Stat = ({ value, label, unit, topLabel, style, ...props }, { rebass }) => {
+const Stat = ({
+  value,
+  label,
+  unit,
+  topLabel,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Stat : {}
   const { fontSizes, bold, scale } = config
