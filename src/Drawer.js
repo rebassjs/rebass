@@ -6,7 +6,14 @@ import theme from './theme'
  * An off-canvas drawer component
  */
 
-const Drawer = ({ open, size, position, style, ...props }, { rebass }) => {
+const Drawer = ({
+  open,
+  size,
+  position,
+  onDismiss,
+  style,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Drawer : {}
   const { scale, zIndex, colors } = config
@@ -54,28 +61,44 @@ const Drawer = ({ open, size, position, style, ...props }, { rebass }) => {
   }
 
   const sx = {
-    boxSizing: 'border-box',
-    position: 'fixed',
-    ...placements[position],
-    zIndex: zIndex[4],
-    width,
-    height,
-    padding: scale[2],
-    transform,
-    transition: 'transform .2s ease-out',
-    overflowX: 'hidden',
-    overflowY: 'scroll',
-    color: colors.white,
-    backgroundColor: colors.black,
-    ...customStyle,
-    ...style
+    root: {
+    },
+    dismiss: {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      zIndex: zIndex[3],
+      display: open ? null : 'none'
+    },
+    content: {
+      boxSizing: 'border-box',
+      position: 'fixed',
+      ...placements[position],
+      zIndex: zIndex[4],
+      width,
+      height,
+      padding: scale[2],
+      transform,
+      transition: 'transform .2s ease-out',
+      overflowX: 'hidden',
+      overflowY: 'scroll',
+      color: colors.white,
+      backgroundColor: colors.black,
+      ...customStyle,
+      ...style
+    }
   }
 
   return (
-    <div
-      {...props}
-      className='Drawer'
-      style={sx} />
+    <div className='Drawer'
+      style={sx.root}>
+      <div style={sx.dismiss}
+        onClick={onDismiss} />
+      <div {...props}
+        style={sx.content} />
+    </div>
   )
 }
 
@@ -90,13 +113,16 @@ Drawer.propTypes = {
     'right',
     'bottom',
     'left'
-  ])
+  ]),
+  /** Click event callback for the background overlay */
+  onDismiss: React.PropTypes.func
 }
 
 Drawer.defaultProps = {
   open: false,
   size: 320,
-  position: 'left'
+  position: 'left',
+  onDismiss: function () {}
 }
 
 Drawer.contextTypes = {

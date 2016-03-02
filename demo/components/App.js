@@ -106,7 +106,10 @@ class App extends React.Component {
           }}>
           <KitchenSink toggleOverlay={this.toggleOverlay} />
         </Container>
-        <Drawer open={drawerOpen} position='right'>
+        <Drawer
+          open={drawerOpen}
+          onDismiss={this.toggleDrawer}
+          position='right'>
           <SectionHeader
             heading='Configuration'>
             <Close onClick={this.toggleDrawer} />
