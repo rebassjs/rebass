@@ -1,5 +1,6 @@
 
 import React from 'react'
+import classnames from 'classnames'
 import Label from './Label'
 import theme from './theme'
 
@@ -10,10 +11,13 @@ import theme from './theme'
 const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyle = rebass ? rebass.Radio : {}
-  const { scale } = config
+  const { scale, colors } = config
+
+  const invalid = props['aria-invalid'] || props.invalid
 
   const sx = {
     root: {
+      color: invalid ? colors.error : null,
       ...customStyle,
       ...style
     },
@@ -27,8 +31,14 @@ const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
     }
   }
 
+  const cx = classnames('Radio', {
+    'is-invalid': invalid,
+    'is-disabled': props.disabled,
+    'is-readonly': props.readOnly
+  })
+
   return (
-    <div className='Radio'
+    <div className={cx}
       style={sx.root}>
       <Label htmlFor={name}
         style={sx.label}>
