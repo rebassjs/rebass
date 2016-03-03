@@ -1,10 +1,10 @@
 
 import React from 'react'
 import classnames from 'classnames'
+import Base from './Base'
 import Label from './Label'
 import Text from './Text'
 import theme from './theme'
-import margins from './util/margins'
 
 /**
  * Input element with label with support for aria-invalid, disabled, and readOnly HTML attributes
@@ -18,11 +18,9 @@ const Input = ({
   hideLabel,
   rounded,
   children,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Input : {}
   const { scale, colors, borderRadius, borderColor } = config
 
   const radii = {
@@ -37,10 +35,7 @@ const Input = ({
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null,
-      ...customStyle,
-      ...style,
-      ...margins(props, scale)
+      color: invalid ? colors.error : null
     },
     input: {
       fontFamily: 'inherit',
@@ -68,8 +63,10 @@ const Input = ({
   })
 
   return (
-    <div className={cx}
-      style={sx.root}>
+    <Base
+      {...props}
+      className={cx}
+      baseStyle={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -80,7 +77,7 @@ const Input = ({
         name={name}
         style={sx.input} />
       {message && <Text small children={message} />}
-    </div>
+    </Base>
   )
 }
 
