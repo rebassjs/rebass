@@ -1,36 +1,37 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Menu component for navigation links and actions
  */
 
-const Menu = ({ style, ...props }, { rebass }) => {
+const Menu = ({ ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Menu : {}
   const { scale, colors, borderColor, borderRadius } = config
 
   return (
-    <div
+    <Base
       {...props}
       className='Menu'
-      style={{
+      baseStyle={{
         display: 'flex',
         flexDirection: 'column',
         minWidth: 128,
         marginBottom: scale[2],
         overflow: 'hidden',
-        borderRadius: 2,
         borderWidth: 1,
         borderStyle: 'solid',
-        backgroundColor: colors.white,
         borderColor,
-        borderRadius,
-        ...customStyle,
-        ...style
+        borderRadius
       }} />
   )
+}
+
+Menu.defaultProps = {
+  backgroundColor: 'white',
+  rounded: true
 }
 
 Menu.contextTypes = {
