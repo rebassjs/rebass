@@ -1,7 +1,7 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
-import margins from './util/margins'
 
 /**
  * Styled hr element
@@ -9,34 +9,35 @@ import margins from './util/margins'
 
 const Divider = ({
   width,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Divider : {}
-  const { scale, borderColor } = config
+  const { borderColor } = config
 
   return (
-    <hr
+    <Base
+      {...props}
+      tagName='hr'
       className='Divider'
-      style={{
+      baseStyle={{
         width,
-        marginTop: scale[2],
-        marginBottom: scale[2],
         border: 0,
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
-        borderBottomColor: borderColor,
-        ...customStyle,
-        ...margins(props, scale),
-        ...style
+        borderBottomColor: borderColor
       }} />
   )
 }
 
 Divider.propTypes = {
   /** Sets a fixed width for stylistic options */
-  width: React.PropTypes.number
+  width: React.PropTypes.number,
+  /** Applies margin top and bottom based on the theme spacing scale */
+  my: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+}
+
+Divider.defaultProps = {
+  my: 2
 }
 
 Divider.contextTypes = {
