@@ -1,18 +1,18 @@
 
 import React from 'react'
+import Base from './Base'
 
 /**
  * A button with an × for close and dismiss actions
  */
 
-const Close = ({ style, ...props }, { rebass }) => {
-  const customStyle = rebass ? rebass.Close : {}
-
+const Close = ({ ...props }, { rebass }) => {
   return (
-    <button {...props}
+    <Base {...props}
+      tagName='button'
       className='Close'
       title='Close'
-      style={{
+      baseStyle={{
         fontSize: '1.5em',
         lineHeight: 1,
         fontWeight: 'bold',
@@ -22,9 +22,7 @@ const Close = ({ style, ...props }, { rebass }) => {
         color: 'inherit',
         backgroundColor: 'transparent',
         border: 0,
-        WebkitAppearance: 'none',
-        ...customStyle,
-        ...style
+        WebkitAppearance: 'none'
       }}
       children='×' />
   )
