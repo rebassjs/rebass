@@ -4,6 +4,7 @@ import addContext from './util/add-context'
 import margins from './util/margins'
 import padding from './util/padding'
 import radii from './util/radii'
+import colorStyle from './util/color-style'
 import theme from './theme'
 
 // - Add color props
@@ -21,13 +22,14 @@ const Base = ({
   const contextStyle = rebass ? rebass[key] : {}
   const Component = tagName || 'div'
 
-  const { scale, borderRadius } = config
+  const { scale, colors, borderRadius } = config
 
   const sx = {
     ...baseStyle,
     ...contextStyle,
     ...margins(props, scale),
     ...padding(props, scale),
+    ...colorStyle(props, colors),
     ...radii(props, borderRadius),
     ...style
   }

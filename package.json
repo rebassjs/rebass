@@ -8,7 +8,7 @@
     "prepublish": "mkdir -p dist && babel src --out-dir dist",
     "start": "static-react docs/components/Root.js --props docs/data.js > index.html",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "test": "mocha test --watch --compilers js:babel-register"
+    "test": "mocha test --grep Base --watch --compilers js:babel-register"
   },
   "peerDependencies": {
     "react": "^0.14.0"

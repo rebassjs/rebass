@@ -7,7 +7,7 @@ import { theme, Base, Button } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Base', () => {
-  const { scale, fontSizes, borderRadius } = theme
+  const { scale, fontSizes, colors, borderRadius } = theme
   let tree
 
   beforeEach(() => {
@@ -304,6 +304,104 @@ describe('Base', () => {
       })
       it('should set padding based on style', () => {
         expect(tree.props.style.padding).toEqual(3)
+      })
+    })
+  })
+
+  describe('colors', () => {
+    context('when color is set to a key', () => {
+      beforeEach(() => {
+        renderer.render(<Base color='blue' />)
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set color from the theme', () => {
+        expect(tree.props.style.color).toEqual(colors.blue)
+      })
+    })
+
+    context('when a color string is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base color='tomato' />)
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set color from the string', () => {
+        expect(tree.props.style.color).toEqual('tomato')
+      })
+    })
+
+    context('when background color is set to a key', () => {
+      beforeEach(() => {
+        renderer.render(<Base backgroundColor='blue' />)
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set background color from the theme', () => {
+        expect(tree.props.style.backgroundColor).toEqual(colors.blue)
+      })
+    })
+
+    context('when a background color string is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base backgroundColor='tomato' />)
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set color from the string', () => {
+        expect(tree.props.style.backgroundColor).toEqual('tomato')
+      })
+    })
+
+    context('when context and color are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base className='Test' color='blue' />, {
+          rebass: {
+            Test: {
+              color: 'green',
+              backgroundColor: 'tomato'
+            }
+          }
+        })
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set color from the theme', () => {
+        expect(tree.props.style.color).toEqual(colors.blue)
+      })
+
+      it('should set background color from context', () => {
+        expect(tree.props.style.backgroundColor).toEqual('tomato')
+      })
+    })
+
+    context('when baseStyle and color are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base baseStyle={{ color: 'green', backgroundColor: 'tomato' }} color='blue' />)
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set color from the theme', () => {
+        expect(tree.props.style.color).toEqual(colors.blue)
+      })
+
+      it('should set background color from baseStyle', () => {
+        expect(tree.props.style.backgroundColor).toEqual('tomato')
+      })
+    })
+
+    context('when style and color are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base style={{ color: 'green', backgroundColor: 'tomato' }} color='blue' />)
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should set color from style', () => {
+        expect(tree.props.style.color).toEqual('green')
+      })
+
+      it('should set background color from baseStyle', () => {
+        expect(tree.props.style.backgroundColor).toEqual('tomato')
       })
     })
   })
