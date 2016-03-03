@@ -3,6 +3,7 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
   theme,
+  Btn,
   Fixed,
   Overlay,
   Panel,
@@ -111,6 +112,8 @@ class App extends React.Component {
         <Container style={{
             marginLeft: drawerOpen ? 0 : 'auto'
           }}>
+          <Btn children='Hello Btn' />
+
           <KitchenSink toggleOverlay={this.toggleOverlay} />
         </Container>
         <Drawer
