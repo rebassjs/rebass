@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -8,27 +9,24 @@ import theme from './theme'
 
 const Avatar = ({
   size,
-  style,
+  children,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Avatar : {}
   const { colors } = config
 
   return (
-    <img
+    <Base
       {...props}
+      tagName='img'
       className='Avatar'
       width={size}
       height={size}
-      style={{
+      baseStyle={{
         maxWidth: 'none',
         width: size,
         height: size,
-        borderRadius: 9999,
-        backgroundColor: colors.gray,
-        ...customStyle,
-        ...style
+        backgroundColor: colors.gray
       }}
     />
   )
@@ -36,11 +34,14 @@ const Avatar = ({
 
 Avatar.propTypes = {
   /** Width and height of image in pixels */
-  size: React.PropTypes.number
+  size: React.PropTypes.number,
+  /** Sets border radius for circular shape */
+  circle: React.PropTypes.bool
 }
 
 Avatar.defaultProps = {
-  size: 48
+  size: 48,
+  circle: true
 }
 
 Avatar.contextTypes = {

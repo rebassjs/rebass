@@ -39,8 +39,10 @@ const Base = ({
 
 Base.propTypes = {
   /** HTML element string or React component to render */
-  tagName: React.PropTypes.oneOfType(
-  ),
+  tagName: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.element
+  ]),
   /** Used to pull styles from the rebass context object */
   className: React.PropTypes.string,
   /** Base component styles */
@@ -87,7 +89,11 @@ Base.propTypes = {
       'bottom',
       'left'
     ])
-  ])
+  ]),
+  /** Sets border radius 99999 */
+  circle: React.PropTypes.bool,
+  /** Sets border radius 99999 */
+  pill: React.PropTypes.bool,
 }
 
 // This currently hides Base component from react-docgen

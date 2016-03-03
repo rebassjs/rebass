@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Avatar } from '../src'
+import { Avatar, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,11 @@ describe('Avatar', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('img')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName on Base', () => {
+    expect(tree.props.tagName).toEqual('img')
   })
 
   it('should have a className', () => {
