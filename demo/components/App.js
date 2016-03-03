@@ -84,7 +84,7 @@ class App extends React.Component {
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
         <Fixed top left right>
-          <Toolbar>
+          <Toolbar style={{ opacity: .875 }}>
             <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
             <Space auto />
             <NavItem
@@ -93,10 +93,13 @@ class App extends React.Component {
           </Toolbar>
         </Fixed>
         <Banner
-          style={{ marginTop: 48 }}
+          style={{
+            paddingTop: 48,
+            backgroundAttachment: 'fixed'
+          }}
           backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
           onClick={this.toggleDrawer}>
-          <Heading size={0} children='Rebass Demo' />
+          <Heading size={1} big children='Rebass Demo' />
           <Text children='Configurable example page' />
           <Box py={2}>
             <Button
@@ -114,10 +117,10 @@ class App extends React.Component {
           open={drawerOpen}
           onDismiss={this.toggleDrawer}
           position='right'>
-          <SectionHeader
-            heading='Configuration'>
+          <Flex align='center'>
+            <Space auto />
             <Close onClick={this.toggleDrawer} />
-          </SectionHeader>
+          </Flex>
           <ConfigForm
             {...this.state}
             onChange={this.updateContext}

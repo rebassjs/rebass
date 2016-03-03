@@ -27,6 +27,7 @@ const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
     flexDirection: 'column',
     alignItems,
     justifyContent: 'center',
+    textAlign: align === 'center' ? 'center' : null,
     padding: scale[4],
     marginBottom: scale[3],
     color: colors.white,

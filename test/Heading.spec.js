@@ -147,6 +147,21 @@ describe('Heading', () => {
     })
   })
 
+  context('when big is true', () => {
+    beforeEach(() => {
+      renderer.render(<Heading big />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should render an h2', () => {
+      expect(tree.type).toEqual('h2')
+    })
+
+    it('should have double the fontSize', () => {
+      expect(tree.props.style.fontSize).toEqual(fontSizes[2] * 2)
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Heading style={{ color: 'tomato' }} />)

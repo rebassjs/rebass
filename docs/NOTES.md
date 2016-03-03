@@ -8,7 +8,6 @@
 
 - InputRange message + invalid, etc
 - Context tests per component
-- Heading big prop
 - Androidish TabNav
 - border-box all components
 
@@ -16,6 +15,8 @@
 
 - [ ] Blockquote
 - [ ] Time
+- [ ] Date (calendar style)
+- [ ] Calendar month + highlighting
 
 - [ ] Combined Select/Input
 - [ ] Bar chart list
@@ -31,5 +32,6 @@
 
 ---
 
+- Input message height vs margin bottom
 - Look into context style wrapper or util
 
