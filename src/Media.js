@@ -1,15 +1,21 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Media object with vertical alignment using flexbox
  */
 
-const Media = ({ img, right, align, style, children, ...props }, { rebass }) => {
+const Media = ({
+  img,
+  right,
+  align,
+  children,
+  ...props
+}, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Media : {}
   const { scale } = config
 
   const alignment = {
@@ -21,15 +27,13 @@ const Media = ({ img, right, align, style, children, ...props }, { rebass }) => 
   const alignItems = alignment[align]
 
   return (
-    <div
+    <Base
       {...props}
       className='Media'
-      style={{
+      baseStyle={{
         display: 'flex',
         marginBottom: scale[2],
-        alignItems,
-        ...customStyle,
-        ...style
+        alignItems
       }}>
       <img src={img}
         style={{
@@ -40,7 +44,7 @@ const Media = ({ img, right, align, style, children, ...props }, { rebass }) => 
           order: right ? 9999 : null
         }} />
       <div children={children} />
-    </div>
+    </Base>
   )
 }
 
