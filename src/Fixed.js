@@ -1,8 +1,6 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
-import margins from './util/margins'
 
 /**
  * Layout container for fixed positioning children
