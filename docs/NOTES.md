@@ -11,6 +11,8 @@
 - Androidish TabNav
 - border-box all components
 
+- allow overriding default padding and margin props for different directions
+
 ## Components
 
 - [ ] Blockquote
