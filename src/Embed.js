@@ -1,15 +1,12 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
 
 /**
  * Responsive media embed wrapper
  */
 
-const Embed = ({ ratio, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Embed : {}
-  const { scale } = config
+const Embed = ({ ratio, children, ...props }, { rebass }) => {
 
   const childProps = {
     style: {
@@ -23,24 +20,21 @@ const Embed = ({ ratio, style, ...props }, { rebass }) => {
     }
   }
 
-  const children = React.Children.map(props.children, (child) => {
+  const styledChildren = React.Children.map(children, (child) => {
     return React.cloneElement(child, childProps)
   })
 
   return (
-    <div
+    <Base
       {...props}
       className='Embed'
-      children={children}
-      style={{
+      children={styledChildren}
+      baseStyle={{
         position: 'relative',
         height: 0,
         padding: 0,
         paddingBottom: `${ratio * 100}%`,
-        marginBottom: scale[2],
-        overflow: 'hidden',
-        ...customStyle,
-        ...style
+        overflow: 'hidden'
       }} />
   )
 }

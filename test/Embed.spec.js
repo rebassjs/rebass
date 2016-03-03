@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Embed } from '../src'
+import { theme, Embed, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -20,7 +20,7 @@ describe('Embed', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -28,7 +28,7 @@ describe('Embed', () => {
   })
 
   it('should have a default 16:9 aspect ratio', () => {
-    expect(tree.props.style.paddingBottom).toEqual(`${9/16 * 100}%`)
+    expect(tree.props.baseStyle.paddingBottom).toEqual(`${9/16 * 100}%`)
   })
 
   it('should add styles to children', () => {
@@ -48,7 +48,7 @@ describe('Embed', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have a padding bottom 75%', () => {
-      expect(tree.props.style.paddingBottom).toEqual('75%')
+      expect(tree.props.baseStyle.paddingBottom).toEqual('75%')
     })
   })
 
