@@ -2,18 +2,17 @@
 
 import React from 'react'
 import Base from './Base'
-import addContext from './util/add-context'
 import theme from './theme'
 
 /** Component for displaying small status indicators */
 
 const Badge = ({
-  type,
+  // type,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
   const { fontSizes, bold, scale, colors } = config
-  const backgroundColor = colors[type]
+  // const backgroundColor = colors[type]
 
   const sx = {
     fontSize: fontSizes[6],
@@ -30,7 +29,7 @@ const Badge = ({
     paddingRight: props.circle ? 0 : scale[1],
     overflow: 'hidden',
     color: colors.white,
-    backgroundColor
+    // backgroundColor
   }
 
   return (
@@ -71,5 +70,9 @@ Badge.defaultProps = {
   rounded: true
 }
 
-export default addContext(Badge)
+Badge.contextTypes = {
+  rebass: React.PropTypes.object
+}
+
+export default Badge
 

@@ -90,5 +90,6 @@ Base.propTypes = {
   ])
 }
 
+// This currently hides Base component from react-docgen
 export default addContext(Base)
 
