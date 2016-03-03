@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -10,20 +11,15 @@ const DotIndicator = ({
   length,
   active,
   onClick,
-  style,
   children,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.DotIndicator : {}
   const { scale } = config
 
   const sx = {
     root: {
-      display: 'inline-flex',
-      marginBottom: scale[2],
-      ...customStyle,
-      ...style
+      display: 'inline-flex'
     },
     button: {
       fontSize: 16,
@@ -58,10 +54,10 @@ const DotIndicator = ({
   const dots = Array.from({ length }, (a, b) => b)
 
   return (
-    <div
+    <Base
       {...props}
       className='DotIndicator'
-      style={sx.root}>
+      baseStyle={sx.root}>
       {dots.map(d => (
         <button
           key={d}
@@ -74,7 +70,7 @@ const DotIndicator = ({
           <div style={sx.dot} />
         </button>
       ))}
-    </div>
+    </Base>
   )
 }
 

@@ -6,8 +6,8 @@
     - [ ] Colors from color lovers api ?
     - [ ] Make it look better
 
+- [ ] m auto support in Base
 - InputRange message + invalid, etc
-- Context tests per component
 - Androidish TabNav
 - border-box all components
 
