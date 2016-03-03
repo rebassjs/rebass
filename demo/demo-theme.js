@@ -6,7 +6,7 @@ const demoTheme = {
   color: '#111',
   backgroundColor: '#fff',
   Btn: {
-    backgroundColor: 'tomato'
+    // backgroundColor: 'green'
   },
   Heading: {
     fontFamily: 'inherit'

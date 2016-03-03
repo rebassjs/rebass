@@ -112,8 +112,6 @@ class App extends React.Component {
         <Container style={{
             marginLeft: drawerOpen ? 0 : 'auto'
           }}>
-          <Btn children='Hello Btn' />
-
           <KitchenSink toggleOverlay={this.toggleOverlay} />
         </Container>
         <Drawer

@@ -3,26 +3,28 @@
 
 import React from 'react'
 import Base from './Base'
+import Button from './Button'
 import theme from './theme'
 import addContext from './util/add-context'
 
 const Btn = ({ style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { colors, borderRadius } = config
+  const { colors, fontSizes } = config
 
   const sx = {
+    fontFamily: 'inherit',
+    fontSize: fontSizes[5],
     display: 'inline-block',
     padding: 8,
     border: 0,
-    borderRadius,
     color: colors.white,
-    backgroundColor: colors.primary
+    backgroundColor: 'tomato'
   }
 
   return (
     <Base
       {...props}
-      tagName='button'
+      tagName={'button'}
       componentName='Btn'
       className='Btn'
       style={sx}
@@ -31,8 +33,26 @@ const Btn = ({ style, ...props }, { rebass }) => {
   )
 }
 
+Btn.propTypes = {
+  /** Controls border radius */
+  rounded: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.oneOf([
+      'top',
+      'right',
+      'bottom',
+      'left'
+    ])
+  ])
+}
+
+Btn.defaultProps = {
+  rounded: true
+}
+
 Btn.contextTypes = {
   rebass: React.PropTypes.object
 }
 
 export default Btn
+
