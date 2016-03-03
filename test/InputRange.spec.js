@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { InputRange, Label } from '../src'
+import { InputRange, Label, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -17,7 +17,7 @@ describe('InputRange', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
