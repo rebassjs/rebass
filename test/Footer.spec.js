@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Footer } from '../src'
+import { Footer, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,11 @@ describe('Footer', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('footer')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName', () => {
+    expect(tree.props.tagName).toEqual('footer')
   })
 
   it('should have a className', () => {
