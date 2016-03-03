@@ -1,7 +1,7 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
-import radii from './util/radii'
 
 /**
  * A general purpose button element with customizable colors
@@ -10,22 +10,12 @@ import radii from './util/radii'
 const Button = ({
   href,
   big,
-  color,
-  backgroundColor,
-  children,
-  style,
-  className,
   ...props
 }, { rebass }) => {
-
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Button : {}
-  const { fontSizes, bold, scale, colors, borderRadius } = config
+  const { fontSizes, bold, scale } = config
 
   const Component = href ? 'a' : 'button'
-
-  color  = colors[color] || color || colors.white
-  backgroundColor  = colors[backgroundColor] || backgroundColor || colors.primary
 
   const sx = {
     fontFamily: 'inherit',
@@ -37,21 +27,16 @@ const Button = ({
     margin: 0,
     padding: big ? scale[2] : `${scale[1]}px ${scale[2]}px`,
     cursor: 'pointer',
-    border: 0,
-    color,
-    backgroundColor,
-    ...customStyle,
-    ...radii(props, borderRadius),
-    ...style
+    border: 0
   }
 
   return (
-    <Component {...props}
-      href={href}
+    <Base
+      {...props}
+      tagName={Component}
       className='Button'
-      style={sx}>
-      {children}
-    </Component>
+      href={href}
+      baseStyle={sx}/>
   )
 }
 
@@ -79,6 +64,8 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
+  color: 'white',
+  backgroundColor: 'primary',
   rounded: true
 }
 
