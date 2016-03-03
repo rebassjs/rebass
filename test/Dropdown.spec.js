@@ -3,7 +3,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Dropdown } from '../src'
+import { Dropdown, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,7 @@ describe('Dropdown', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -24,7 +24,7 @@ describe('Dropdown', () => {
   })
 
   it('should have position relative', () => {
-    expect(tree.props.style.position).toEqual('relative')
+    expect(tree.props.baseStyle.position).toEqual('relative')
   })
 
   context('when custom styles are set', () => {

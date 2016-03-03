@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { DropdownMenu } from '../src'
+import { DropdownMenu, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,7 @@ describe('DropdownMenu', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -23,14 +23,14 @@ describe('DropdownMenu', () => {
   })
 
   it('should default to display none', () => {
-    expect(tree.props.style.display).toEqual('none')
+    expect(tree.props.baseStyle.display).toEqual('none')
   })
 
   it('should anchor to the bottom left', () => {
-    expect(tree.props.style.top).toEqual('100%')
-    expect(tree.props.style.bottom).toEqual('auto')
-    expect(tree.props.style.left).toEqual(0)
-    expect(tree.props.style.right).toEqual('auto')
+    expect(tree.props.baseStyle.top).toEqual('100%')
+    expect(tree.props.baseStyle.bottom).toEqual('auto')
+    expect(tree.props.baseStyle.left).toEqual(0)
+    expect(tree.props.baseStyle.right).toEqual('auto')
   })
 
   context('when open is true', () => {
@@ -39,7 +39,7 @@ describe('DropdownMenu', () => {
       tree = renderer.getRenderOutput()
     })
     it('should not have display set', () => {
-      expect(tree.props.style.display).toNotExist()
+      expect(tree.props.baseStyle.display).toNotExist()
     })
   })
 
@@ -49,8 +49,8 @@ describe('DropdownMenu', () => {
       tree = renderer.getRenderOutput()
     })
     it('should anchor to the top', () => {
-      expect(tree.props.style.top).toEqual('auto')
-      expect(tree.props.style.bottom).toEqual('100%')
+      expect(tree.props.baseStyle.top).toEqual('auto')
+      expect(tree.props.baseStyle.bottom).toEqual('100%')
     })
   })
 
@@ -60,8 +60,8 @@ describe('DropdownMenu', () => {
       tree = renderer.getRenderOutput()
     })
     it('should anchor to the right', () => {
-      expect(tree.props.style.left).toEqual('auto')
-      expect(tree.props.style.right).toEqual(0)
+      expect(tree.props.baseStyle.left).toEqual('auto')
+      expect(tree.props.baseStyle.right).toEqual(0)
     })
   })
 
