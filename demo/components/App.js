@@ -83,7 +83,7 @@ class App extends React.Component {
     return (
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
-        <Fixed top left right>
+        <Fixed top left right zIndex={1}>
           <Toolbar style={{ opacity: .875 }}>
             <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
             <Space auto />
