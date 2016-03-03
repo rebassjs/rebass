@@ -44,9 +44,9 @@ describe('Base', () => {
     })
   })
 
-  context('when componentName is set', () => {
+  context('when className is set', () => {
     beforeEach(() => {
-      renderer.render(<Base componentName='Button' />)
+      renderer.render(<Base className='Button' />)
       tree = renderer.getRenderOutput()
     })
     it('should render', () => {
@@ -56,7 +56,7 @@ describe('Base', () => {
 
   context('when context is set for theme', () => {
     beforeEach(() => {
-      renderer.render(<Base componentName='Button' />, {
+      renderer.render(<Base className='Button' />, {
         rebass: { colors: { primary: 'tomato' } }
       })
       tree = renderer.getRenderOutput()
@@ -66,9 +66,9 @@ describe('Base', () => {
     })
   })
 
-  context('when context is set for componentName', () => {
+  context('when context is set for className', () => {
     beforeEach(() => {
-      renderer.render(<Base componentName='Test' />, {
+      renderer.render(<Base className='Test' />, {
         rebass: { Test: { backgroundColor: 'tomato' } }
       })
       tree = renderer.getRenderOutput()
@@ -78,9 +78,11 @@ describe('Base', () => {
     })
   })
 
-  context('when style is set', () => {
+  context('when context is set and className has multiple classes', () => {
     beforeEach(() => {
-      renderer.render(<Base style={{ backgroundColor: 'tomato' }} />)
+      renderer.render(<Base className='Test foo bar-foo' />, {
+        rebass: { Test: { backgroundColor: 'tomato' } }
+      })
       tree = renderer.getRenderOutput()
     })
     it('should set background color', () => {
@@ -88,9 +90,19 @@ describe('Base', () => {
     })
   })
 
-  context('when context and style are set', () => {
+  context('when baseStyle is set', () => {
     beforeEach(() => {
-      renderer.render(<Base componentName='Test' style={{ backgroundColor: 'tomato' }} />, {
+      renderer.render(<Base baseStyle={{ backgroundColor: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  context('when context and baseStyle are set', () => {
+    beforeEach(() => {
+      renderer.render(<Base className='Test' baseStyle={{ backgroundColor: 'tomato' }} />, {
         rebass: {
           Test: {
             backgroundColor: 'green'
@@ -104,9 +116,9 @@ describe('Base', () => {
     })
   })
 
-  context('when context and customStyle are set', () => {
+  context('when context and style are set', () => {
     beforeEach(() => {
-      renderer.render(<Base componentName='Test' customStyle={{ backgroundColor: 'tomato' }} />, {
+      renderer.render(<Base className='Test' style={{ backgroundColor: 'tomato' }} />, {
         rebass: {
           Test: {
             backgroundColor: 'green'
@@ -115,24 +127,24 @@ describe('Base', () => {
       })
       tree = renderer.getRenderOutput()
     })
+    it('should set background color based on baseStyle', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  context('when baseStyle and style are set', () => {
+    beforeEach(() => {
+      renderer.render(<Base baseStyle={{ backgroundColor: 'green' }} style={{ backgroundColor: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
     it('should set background color based on style', () => {
       expect(tree.props.style.backgroundColor).toEqual('tomato')
     })
   })
 
-  context('when style and customStyle are set', () => {
+  context('when context, baseStyle, and style are set', () => {
     beforeEach(() => {
-      renderer.render(<Base style={{ backgroundColor: 'green' }} customStyle={{ backgroundColor: 'tomato' }} />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set background color based on customStyle', () => {
-      expect(tree.props.style.backgroundColor).toEqual('tomato')
-    })
-  })
-
-  context('when context, style, and customStyle are set', () => {
-    beforeEach(() => {
-      renderer.render(<Base componentName='Test' style={{ backgroundColor: 'green' }} customStyle={{ backgroundColor: 'tomato' }} />, {
+      renderer.render(<Base className='Test' baseStyle={{ backgroundColor: 'green' }} style={{ backgroundColor: 'tomato' }} />, {
         rebass: {
           Test: {
             backgroundColor: 'black'
@@ -141,7 +153,7 @@ describe('Base', () => {
       })
       tree = renderer.getRenderOutput()
     })
-    it('should set background color based on customStyle', () => {
+    it('should set background color based on style', () => {
       expect(tree.props.style.backgroundColor).toEqual('tomato')
     })
   })
@@ -200,9 +212,9 @@ describe('Base', () => {
       })
     })
 
-    context('when style and m are set', () => {
+    context('when baseStyle and m are set', () => {
       beforeEach(() => {
-        renderer.render(<Base style={{ margin: 3 }} m={1} />)
+        renderer.render(<Base baseStyle={{ margin: 3 }} m={1} />)
         tree = renderer.getRenderOutput()
       })
       it('should set margin based on m', () => {
@@ -210,12 +222,12 @@ describe('Base', () => {
       })
     })
 
-    context('when customStyle and m are set', () => {
+    context('when style and m are set', () => {
       beforeEach(() => {
-        renderer.render(<Base customStyle={{ margin: 3 }} m={1} />)
+        renderer.render(<Base style={{ margin: 3 }} m={1} />)
         tree = renderer.getRenderOutput()
       })
-      it('should set margin based on customStyle', () => {
+      it('should set margin based on style', () => {
         expect(tree.props.style.margin).toEqual(3)
       })
     })
@@ -275,9 +287,9 @@ describe('Base', () => {
       })
     })
 
-    context('when style and p are set', () => {
+    context('when baseStyle and p are set', () => {
       beforeEach(() => {
-        renderer.render(<Base style={{ padding: 3 }} p={1} />)
+        renderer.render(<Base baseStyle={{ padding: 3 }} p={1} />)
         tree = renderer.getRenderOutput()
       })
       it('should set padding based on p', () => {
@@ -285,12 +297,12 @@ describe('Base', () => {
       })
     })
 
-    context('when customStyle and p are set', () => {
+    context('when style and p are set', () => {
       beforeEach(() => {
-        renderer.render(<Base customStyle={{ padding: 3 }} p={1} />)
+        renderer.render(<Base style={{ padding: 3 }} p={1} />)
         tree = renderer.getRenderOutput()
       })
-      it('should set padding based on customStyle', () => {
+      it('should set padding based on style', () => {
         expect(tree.props.style.padding).toEqual(3)
       })
     })
@@ -377,9 +389,9 @@ describe('Base', () => {
       })
     })
 
-    context('when rounded and style are set', () => {
+    context('when rounded and baseStyle are set', () => {
       beforeEach(() => {
-        renderer.render(<Base rounded style={{ borderRadius: 5 }} />)
+        renderer.render(<Base rounded baseStyle={{ borderRadius: 5 }} />)
         tree = renderer.getRenderOutput()
       })
       it('should set border radius based on rounded prop', () => {
@@ -389,7 +401,7 @@ describe('Base', () => {
 
     context('when rounded and context are set', () => {
       beforeEach(() => {
-        renderer.render(<Base componentName='Test' rounded />, {
+        renderer.render(<Base className='Test' rounded />, {
           rebass: {
             Test: {
               borderRadius: 15
@@ -403,12 +415,12 @@ describe('Base', () => {
       })
     })
 
-    context('when rounded and customStyle are set', () => {
+    context('when rounded and style are set', () => {
       beforeEach(() => {
-        renderer.render(<Base rounded customStyle={{ borderRadius: 5 }} />)
+        renderer.render(<Base rounded style={{ borderRadius: 5 }} />)
         tree = renderer.getRenderOutput()
       })
-      it('should set border radius based on customStyle prop', () => {
+      it('should set border radius based on style prop', () => {
         expect(tree.props.style.borderRadius).toEqual(5)
       })
     })
@@ -416,7 +428,7 @@ describe('Base', () => {
 
   context('when context is set', () => {
     beforeEach(() => {
-      renderer.render(<Base componentName='Test' />, {
+      renderer.render(<Base className='Test' />, {
         rebass: {
           Test: {
             backgroundColor: 'tomato'

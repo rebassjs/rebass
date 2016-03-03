@@ -6,36 +6,45 @@ import padding from './util/padding'
 import radii from './util/radii'
 import theme from './theme'
 
+// - Add color props
+// - Add backgroundColor props
+
 const Base = ({
   tagName,
-  componentName,
+  baseStyle,
   style,
-  customStyle,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const contextStyle = rebass ? rebass[componentName] : {}
+  const name = props.className
+  const key = name ? name.split(' ', 1)[0] : ''
+  const contextStyle = rebass ? rebass[key] : {}
   const Component = tagName || 'div'
 
   const { scale, borderRadius } = config
 
   const sx = {
-    ...style,
+    ...baseStyle,
     ...contextStyle,
     ...margins(props, scale),
     ...padding(props, scale),
     ...radii(props, borderRadius),
-    ...customStyle
+    ...style
   }
 
   return <Component {...props} style={sx} />
 }
 
 Base.propTypes = {
-  tagName: React.PropTypes.string,
-  componentName: React.PropTypes.string,
+  /** HTML element string or React component to render */
+  tagName: React.PropTypes.oneOfType(
+  ),
+  /** Used to pull styles from the rebass context object */
+  className: React.PropTypes.string,
+  /** Base component styles */
+  baseStyle: React.PropTypes.object,
+  /** Styles from component instance - overrides base and context styles */
   style: React.PropTypes.object,
-  customStyle: React.PropTypes.object,
 
   /** Applies margin with the margin utility based on the theme spacing scale */
   m: React.PropTypes.oneOf([0, 1, 2, 3, 4]),

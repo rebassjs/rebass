@@ -1,3 +1,5 @@
+export { default as Base } from './Base'
+
 export { default as theme } from './theme'
 export { default as Arrow } from './Arrow'
 export { default as Avatar } from './Avatar'
@@ -5,10 +7,6 @@ export { default as Badge } from './Badge'
 export { default as Banner } from './Banner'
 export { default as Block } from './Block'
 export { default as Breadcrumbs } from './Breadcrumbs'
-
-export { default as Base } from './Base'
-export { default as Btn } from './Btn'
-
 export { default as Button } from './Button'
 export { default as ButtonCircle } from './ButtonCircle'
 export { default as ButtonOutline } from './ButtonOutline'

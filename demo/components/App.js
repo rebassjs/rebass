@@ -3,7 +3,6 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
   theme,
-  Btn,
   Fixed,
   Overlay,
   Panel,

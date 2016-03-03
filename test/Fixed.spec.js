@@ -3,7 +3,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Fixed } from '../src'
+import { theme, Base, Fixed } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -17,7 +17,7 @@ describe('Fixed', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -25,23 +25,23 @@ describe('Fixed', () => {
   })
 
   it('should not set top by default', () => {
-    expect(tree.props.style.top).toNotExist()
+    expect(tree.props.baseStyle.top).toNotExist()
   })
 
   it('should not set right by default', () => {
-    expect(tree.props.style.right).toNotExist()
+    expect(tree.props.baseStyle.right).toNotExist()
   })
 
   it('should not set bottom by default', () => {
-    expect(tree.props.style.bottom).toNotExist()
+    expect(tree.props.baseStyle.bottom).toNotExist()
   })
 
   it('should not set left by default', () => {
-    expect(tree.props.style.left).toNotExist()
+    expect(tree.props.baseStyle.left).toNotExist()
   })
 
   it('should not set z-index by default', () => {
-    expect(tree.props.style.zIndex).toNotExist()
+    expect(tree.props.baseStyle.zIndex).toNotExist()
   })
 
   context('when top is true', () => {
@@ -50,7 +50,7 @@ describe('Fixed', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set top: 0', () => {
-      expect(tree.props.style.top).toEqual(0)
+      expect(tree.props.baseStyle.top).toEqual(0)
     })
   })
 
@@ -60,7 +60,7 @@ describe('Fixed', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set right: 0', () => {
-      expect(tree.props.style.right).toEqual(0)
+      expect(tree.props.baseStyle.right).toEqual(0)
     })
   })
 
@@ -70,7 +70,7 @@ describe('Fixed', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set bottom: 0', () => {
-      expect(tree.props.style.bottom).toEqual(0)
+      expect(tree.props.baseStyle.bottom).toEqual(0)
     })
   })
 
@@ -80,7 +80,7 @@ describe('Fixed', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set left: 0', () => {
-      expect(tree.props.style.left).toEqual(0)
+      expect(tree.props.baseStyle.left).toEqual(0)
     })
   })
 
@@ -90,43 +90,17 @@ describe('Fixed', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set z-index: 4', () => {
-      expect(tree.props.style.zIndex).toEqual(4)
+      expect(tree.props.baseStyle.zIndex).toEqual(4)
     })
   })
 
-  context('when m is set', () => {
-    beforeEach(() => {
-      renderer.render(<Fixed m={2} />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set margin', () => {
-      expect(tree.props.style.margin).toEqual(scale[2])
-    })
-  })
-
-  context('when context is set', () => {
-    beforeEach(() => {
-      renderer.render(<Fixed />, {
-        rebass: {
-          Fixed: {
-            color: 'tomato'
-          }
-        }
-      })
-      tree = renderer.getRenderOutput()
-    })
-    it('should change the color', () => {
-      expect(tree.props.style.color).toEqual('tomato')
-    })
-  })
-
-  context('when custom styles are set', () => {
+  context('when custom style is set', () => {
     beforeEach(() => {
       renderer.render(<Fixed style={{ color: 'tomato' }} />)
       tree = renderer.getRenderOutput()
     })
 
-    it('should have a custom color', () => {
+    it('should pass style to the Base component', () => {
       expect(tree.props.style.color).toEqual('tomato')
     })
   })
