@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -11,11 +12,9 @@ const Drawer = ({
   size,
   position,
   onDismiss,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Drawer : {}
   const { scale, zIndex, colors } = config
 
   const placements = {
@@ -61,8 +60,6 @@ const Drawer = ({
   }
 
   const sx = {
-    root: {
-    },
     dismiss: {
       position: 'fixed',
       top: 0,
@@ -79,25 +76,21 @@ const Drawer = ({
       zIndex: zIndex[4],
       width,
       height,
-      padding: scale[2],
       transform,
       transition: 'transform .2s ease-out',
       overflowX: 'hidden',
-      overflowY: 'scroll',
-      color: colors.white,
-      backgroundColor: colors.black,
-      ...customStyle,
-      ...style
+      overflowY: 'scroll'
     }
   }
 
   return (
-    <div className='Drawer'
-      style={sx.root}>
+    <div className='Drawer'>
       <div style={sx.dismiss}
         onClick={onDismiss} />
-      <div {...props}
-        style={sx.content} />
+      <Base
+        {...props}
+        className='Drawer Drawer-content'
+        baseStyle={sx.content} />
     </div>
   )
 }
@@ -122,7 +115,10 @@ Drawer.defaultProps = {
   open: false,
   size: 320,
   position: 'left',
-  onDismiss: function () {}
+  onDismiss: function () {},
+  p: 2,
+  color: 'white',
+  backgroundColor: 'default'
 }
 
 Drawer.contextTypes = {
