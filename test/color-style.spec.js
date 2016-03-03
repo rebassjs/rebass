@@ -37,6 +37,16 @@ describe('colorStyle util', () => {
     expect(c).toEqual({ backgroundColor: '#f00' })
   })
 
+   it('should return background color when type is set to a key', () => {
+    const c = colorStyle({ type: 'blue' }, colors)
+    expect(c).toEqual({ backgroundColor: colors.blue })
+  })
+
+  it('should not return background color when type is set to a string', () => {
+    const c = colorStyle({ type: '#f00' }, colors)
+    expect(c).toEqual({ })
+  })
+
   it('should return color and background color when set', () => {
     const c = colorStyle({ backgroundColor: '#f00', color: 'primary' }, colors)
     expect(c).toEqual({ backgroundColor: '#f00', color: colors.primary })
