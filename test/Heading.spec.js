@@ -166,6 +166,17 @@ describe('Heading', () => {
     })
   })
 
+  context('when cx is set', () => {
+    beforeEach(() => {
+      renderer.render(<Heading cx='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should set className', () => {
+      expect(tree.props.className).toEqual('Test')
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Heading style={{ color: 'tomato' }} />)

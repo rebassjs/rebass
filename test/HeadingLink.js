@@ -20,8 +20,7 @@ describe('HeadingLink', () => {
   })
 
   it('should have a className', () => {
-    // This doesn't actually test rendered output
-    expect(tree.props.className).toEqual('HeadingLink')
+    expect(tree.props.cx).toEqual('HeadingLink')
   })
 
   it('should pass level and size', () => {

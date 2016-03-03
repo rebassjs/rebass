@@ -11,15 +11,12 @@ const HeadingLink =({ level, size, href, style, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const customStyles = rebass ? rebass.HeadingLink : {}
 
-  // className isn't passed on
   return (
-    <Heading className='HeadingLink'
+    <Heading
+      cx='HeadingLink'
       level={level}
       size={size}
-      style={{
-        ...customStyles,
-        ...style
-      }}>
+      style={style}>
       <a
         {...props}
         href={href}

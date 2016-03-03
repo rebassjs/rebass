@@ -11,6 +11,7 @@ const Heading =({
   level,
   size,
   big,
+  cx,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
@@ -22,7 +23,7 @@ const Heading =({
     <Base
       {...props}
       tagName={Component}
-      className='Heading'
+      className={cx || 'Heading'}
       baseStyle={{
         fontSize,
         fontWeight: bold,
