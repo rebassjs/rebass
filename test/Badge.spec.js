@@ -80,50 +80,6 @@ describe('Badge', () => {
     })
   })
 
-  context('when type is info', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='info' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the info background color', () => {
-      expect(tree.props.baseStyle.backgroundColor).toEqual(colors.info)
-    })
-  })
-
-  context('when type is success', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='success' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the success background color', () => {
-      expect(tree.props.baseStyle.backgroundColor).toEqual(colors.success)
-    })
-  })
-
-  context('when type is warning', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='warning' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the warning background color', () => {
-      expect(tree.props.baseStyle.backgroundColor).toEqual(colors.warning)
-    })
-  })
-
-  context('when type is error', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='error' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the error background color', () => {
-      expect(tree.props.baseStyle.backgroundColor).toEqual(colors.error)
-    })
-  })
-
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Badge style={{ color: 'tomato' }} />)

@@ -6,13 +6,9 @@ import theme from './theme'
 
 /** Component for displaying small status indicators */
 
-const Badge = ({
-  // type,
-  ...props
-}, { rebass }) => {
+const Badge = ({ ...props }, { rebass }) => {
   const config = { ...theme, ...rebass}
   const { fontSizes, bold, scale, colors } = config
-  // const backgroundColor = colors[type]
 
   const sx = {
     fontSize: fontSizes[6],
@@ -29,7 +25,7 @@ const Badge = ({
     paddingRight: props.circle ? 0 : scale[1],
     overflow: 'hidden',
     color: colors.white,
-    // backgroundColor
+    backgroundColor: colors.default
   }
 
   return (
