@@ -1,29 +1,31 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
 
 /**
  * Div with max-width and margin auto for centering content
  */
 
-const Container = ({ style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Container : {}
-  const { scale } = config
+const Container = ({ ...props }, { rebass }) => {
 
   return (
-    <div
+    <Base
       {...props}
       className='Container'
-      style={{
+      baseStyle={{
         maxWidth: 1024,
-        paddingLeft: scale[2],
-        paddingRight: scale[2],
-        margin: 'auto',
-        ...customStyle,
-        ...style
+        margin: 'auto'
       }} />
   )
+}
+
+Container.propTypes = {
+  /** Applies padding left and right based on the theme spacing scale */
+  px: React.PropTypes.oneOf([0, 1, 2, 3, 4])
+}
+
+Container.defaultProps = {
+  px: 2
 }
 
 Container.contextTypes = {
