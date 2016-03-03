@@ -3,7 +3,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Card } from '../src'
+import { Card, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,7 @@ describe('Card', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -24,7 +24,7 @@ describe('Card', () => {
   })
 
   it('should not have a width', () => {
-    expect(tree.props.style.width).toNotExist()
+    expect(tree.props.baseStyle.width).toNotExist()
   })
 
   context('when width is set', () => {
@@ -33,7 +33,7 @@ describe('Card', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have a width', () => {
-      expect(tree.props.style.width).toEqual(256)
+      expect(tree.props.baseStyle.width).toEqual(256)
     })
   })
 
