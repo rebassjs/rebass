@@ -67,7 +67,8 @@ const PropsTable = ({ props, ...other }) => {
               <tr key={key}>
                 <td style={{ ...sx.td, ...sx.mono }}
                   title={prop.required && 'Required'}>
-                  {key} {prop.required && '*'}
+                  {key}{prop.required && '*'}
+                  {prop.defaultValue && ` (${prop.defaultValue.value})`}
                 </td>
                 <td style={{ ...sx.td, ...sx.mono }}>{type}</td>
                 <td style={sx.td}>{prop.description}</td>
