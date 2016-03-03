@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Block } from '../src'
+import { theme, Block, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,31 +16,35 @@ describe('Block', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
     expect(tree.props.className).toEqual('Block')
   })
 
-  it('should have default padding', () => {
-    expect(tree.props.style.padding).toEqual(scale[2])
+  it('should have default p', () => {
+    expect(tree.props.p).toEqual(2)
   })
 
-  it('should have default margins', () => {
-    expect(tree.props.style.marginBottom).toEqual(scale[2])
+  it('should have default mt', () => {
+    expect(tree.props.mt).toEqual(2)
+  })
+
+  it('should have default mb', () => {
+    expect(tree.props.mb).toEqual(2)
   })
 
   it('should not have borders', () => {
-    expect(tree.props.style.borderStyle).toEqual('none')
-    expect(tree.props.style.borderTopStyle).toEqual(null)
-    expect(tree.props.style.borderRightStyle).toEqual(null)
-    expect(tree.props.style.borderBottomStyle).toEqual(null)
-    expect(tree.props.style.borderLeftStyle).toEqual(null)
+    expect(tree.props.baseStyle.borderStyle).toEqual('none')
+    expect(tree.props.baseStyle.borderTopStyle).toEqual(null)
+    expect(tree.props.baseStyle.borderRightStyle).toEqual(null)
+    expect(tree.props.baseStyle.borderBottomStyle).toEqual(null)
+    expect(tree.props.baseStyle.borderLeftStyle).toEqual(null)
   })
 
   it('should have a default border color', () => {
-    expect(tree.props.style.borderColor).toEqual(colors.primary)
+    expect(tree.props.baseStyle.borderColor).toEqual(colors.primary)
   })
 
   context('when border is set', () => {
@@ -49,7 +53,7 @@ describe('Block', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have a border', () => {
-      expect(tree.props.style.borderStyle).toEqual('solid')
+      expect(tree.props.baseStyle.borderStyle).toEqual('solid')
     })
   })
 
@@ -60,11 +64,11 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.style.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual('none')
     })
 
     it('should have a border top', () => {
-      expect(tree.props.style.borderTopStyle).toEqual('solid')
+      expect(tree.props.baseStyle.borderTopStyle).toEqual('solid')
     })
   })
 
@@ -75,11 +79,11 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.style.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual('none')
     })
 
     it('should have a border right', () => {
-      expect(tree.props.style.borderRightStyle).toEqual('solid')
+      expect(tree.props.baseStyle.borderRightStyle).toEqual('solid')
     })
   })
 
@@ -90,11 +94,11 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.style.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual('none')
     })
 
     it('should have a border bottom', () => {
-      expect(tree.props.style.borderBottomStyle).toEqual('solid')
+      expect(tree.props.baseStyle.borderBottomStyle).toEqual('solid')
     })
   })
 
@@ -105,51 +109,11 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.style.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual('none')
     })
 
     it('should have a border left', () => {
-      expect(tree.props.style.borderLeftStyle).toEqual('solid')
-    })
-  })
-
-  context('when a color from colors object is set', () => {
-    beforeEach(() => {
-      renderer.render(<Block color='blue' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set a color from the theme', () => {
-      expect(tree.props.style.color).toEqual(colors.blue)
-    })
-  })
-
-  context('when a generic color value is set', () => {
-    beforeEach(() => {
-      renderer.render(<Block color='#f00' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set the raw color', () => {
-      expect(tree.props.style.color).toEqual('#f00')
-    })
-  })
-
-  context('when a background color from colors object is set', () => {
-    beforeEach(() => {
-      renderer.render(<Block backgroundColor='blue' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set a background color from the theme', () => {
-      expect(tree.props.style.backgroundColor).toEqual(colors.blue)
-    })
-  })
-
-  context('when a generic background color value is set', () => {
-    beforeEach(() => {
-      renderer.render(<Block backgroundColor='#f00' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set the raw background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual('#f00')
+      expect(tree.props.baseStyle.borderLeftStyle).toEqual('solid')
     })
   })
 
@@ -159,7 +123,7 @@ describe('Block', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set a border color from the theme', () => {
-      expect(tree.props.style.borderColor).toEqual(colors.blue)
+      expect(tree.props.baseStyle.borderColor).toEqual(colors.blue)
     })
   })
 
@@ -169,7 +133,7 @@ describe('Block', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set the raw border color', () => {
-      expect(tree.props.style.borderColor).toEqual('#f00')
+      expect(tree.props.baseStyle.borderColor).toEqual('#f00')
     })
   })
 

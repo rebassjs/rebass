@@ -1,6 +1,8 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
+
 import margins from './util/margins'
 import padding from './util/padding'
 import radii from './util/radii'
@@ -10,51 +12,34 @@ import radii from './util/radii'
  */
 
 const Block = ({
-  color,
-  backgroundColor,
   borderColor,
   border,
   borderTop,
   borderRight,
   borderBottom,
   borderLeft,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { scale, colors, borderRadius } = config
-  const customStyle = rebass && rebass.Block || {}
-  const customColor = colors[color] || color
+  const { scale, colors } = config
 
-
-  color = colors[color] || color || 'inherit'
-  backgroundColor = colors[backgroundColor] || backgroundColor || null
   borderColor = colors[borderColor] || borderColor || colors.primary
 
   const sx = {
     boxSizing: 'border-box',
-    padding: scale[2],
-    marginBottom: scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,
     borderBottomStyle: borderBottom ? 'solid' : null,
     borderLeftStyle: borderLeft ? 'solid' : null,
     borderWidth: 4,
-    borderColor,
-    color,
-    backgroundColor,
-    ...customStyle,
-    ...margins(props, scale),
-    ...padding(props, scale),
-    ...radii(props, borderRadius),
-    ...style
+    borderColor
   }
 
   return (
-    <div {...props}
+    <Base {...props}
       className='Block'
-      style={sx} />
+      baseStyle={sx} />
   )
 }
 
@@ -116,6 +101,12 @@ Block.propTypes = {
       'left'
     ])
   ])
+}
+
+Block.defaultProps = {
+  p: 2,
+  mb: 2,
+  mt: 2,
 }
 
 Block.contextTypes = {
