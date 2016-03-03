@@ -4,7 +4,7 @@ import Base from './Base'
 
 /** Arrow for use in dropdowns and other UI elements */
 
-const Arrow = ({ direction, ...props }, { rebass }) => {
+const Arrow = ({ direction, children, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
