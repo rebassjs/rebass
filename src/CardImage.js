@@ -1,28 +1,33 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Image for use within the Card component
  */
 
-const CardImage = ({ src, style, children, ...props }, { rebass }) => {
+const CardImage = ({
+  src,
+  children,
+  ...props
+}, { rebass }) => {
   const config = { ...theme, ...rebass }
   const { scale } = config
 
   return (
-    <img
+    <Base
       {...props}
+      tagName='img'
       className='CardImage'
       src={src}
-      style={{
+      baseStyle={{
         display: 'block',
         width: `calc(100% + ${2 * scale[1]}px)`,
         maxWidth: 'none',
         height: 'auto',
         margin: - scale[1],
-        marginBottom: scale[1],
-        ...style
+        marginBottom: scale[1]
       }} />
   )
 }
