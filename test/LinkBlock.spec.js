@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, LinkBlock } from '../src'
+import { theme, LinkBlock, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,11 @@ describe('LinkBlock', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('a')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName', () => {
+    expect(tree.props.tagName).toEqual('a')
   })
 
   it('should have a className', () => {
@@ -28,8 +32,8 @@ describe('LinkBlock', () => {
       renderer.render(<LinkBlock Component='button' />)
       tree = renderer.getRenderOutput()
     })
-    it('should have a button root element', () => {
-      expect(tree.type).toEqual('button')
+    it('should set tagName button', () => {
+      expect(tree.props.tagName).toEqual('button')
     })
   })
 
