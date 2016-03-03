@@ -61,6 +61,7 @@ describe('DotIndicator', () => {
     })
   })
 
+  /* Look into if TestUtils.Simulate works in shallow rendering
   context('when clicking a dot', () => {
     beforeEach(() => {
       renderer.render(
@@ -76,6 +77,7 @@ describe('DotIndicator', () => {
     it('should fire the onChange callback')
     it('should pass the index to the callback')
   })
+  */
 
   context('when custom styles are set', () => {
     beforeEach(() => {
