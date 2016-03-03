@@ -11,6 +11,7 @@
 - Androidish TabNav
 - border-box all components
 - href prop on Heading instead of HeadingLink component
+- support props object in context Component object (e.g. `rebass.Button.props`)
 
 - allow overriding default padding and margin props for different directions
   - dont set defaults for Base props?
