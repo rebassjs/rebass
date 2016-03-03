@@ -1,46 +1,42 @@
 
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
-/** Component for displaying flash and error messages */
+/** Component for displaying small status indicators */
 
 const Badge = ({
   type,
-  pill,
-  circle,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const customStyle = rebass ? rebass.Badge : {}
-  const { fontSizes, bold, scale, colors, borderRadius } = config
+  const { fontSizes, bold, scale, colors } = config
   const backgroundColor = colors[type]
 
+  const sx = {
+    fontSize: fontSizes[6],
+    fontWeight: bold,
+    boxSizing: 'border-box',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: props.circle ? scale[2] : null,
+    height: scale[2],
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingLeft: props.circle ? 0 : scale[1],
+    paddingRight: props.circle ? 0 : scale[1],
+    overflow: 'hidden',
+    color: colors.white,
+    backgroundColor
+  }
+
   return (
-    <div
+    <Base
       {...props}
       className='Badge'
-      style={{
-        fontSize: fontSizes[6],
-        fontWeight: bold,
-        boxSizing: 'border-box',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: circle ? scale[2] : null,
-        height: scale[2],
-        paddingTop: 0,
-        paddingBottom: 0,
-        paddingLeft: circle ? 0 : scale[1],
-        paddingRight: circle ? 0 : scale[1],
-        overflow: 'hidden',
-        color: colors.white,
-        borderRadius: (circle || pill) ? 99999 : borderRadius,
-        backgroundColor,
-        ...customStyle,
-        ...style
-      }} />
+      baseStyle={sx} />
   )
 }
 
