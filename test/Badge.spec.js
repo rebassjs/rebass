@@ -23,6 +23,10 @@ describe('Badge', () => {
     expect(tree.props.className).toEqual('Badge')
   })
 
+  it('should have a default rounded prop', () => {
+    expect(tree.props.rounded).toEqual(true)
+  })
+
   it('should have a default background color', () => {
     expect(tree.props.baseStyle.backgroundColor).toEqual(colors.default)
   })

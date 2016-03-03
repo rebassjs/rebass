@@ -88,9 +88,5 @@ Base.propTypes = {
   ])
 }
 
-Base.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Base
+export default addContext(Base)
 

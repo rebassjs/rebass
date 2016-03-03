@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Base from './Base'
+import addContext from './util/add-context'
 import theme from './theme'
 
 /** Component for displaying small status indicators */
@@ -49,6 +50,16 @@ Badge.propTypes = {
     'warning',
     'error',
   ]),
+  /** Controls border radius */
+  rounded: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.oneOf([
+      'top',
+      'right',
+      'bottom',
+      'left'
+    ])
+  ]),
   /** Sets pill style border radii */
   pill: React.PropTypes.bool,
   /** Sets width and border radius for circular badges */
@@ -56,12 +67,9 @@ Badge.propTypes = {
 }
 
 Badge.defaultProps = {
-  type: 'default'
+  type: 'default',
+  rounded: true
 }
 
-Badge.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Badge
+export default addContext(Badge)
 
