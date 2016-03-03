@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Base } from '../src'
+import { theme, Base, Button } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Base', () => {
-  const { fontSizes } = theme
+  const { scale, fontSizes, borderRadius } = theme
   let tree
 
   beforeEach(() => {
@@ -23,32 +23,396 @@ describe('Base', () => {
     expect(tree.props.className).toNotExist()
   })
 
-  context('when tagName is an HTML element string')
-  context('when tagName is a component')
-  context('when componentName is set')
-  context('when context is set for theme')
-  context('when context is set for componentName')
-  context('when style is set')
-  context('when context and style is set')
+  context('when tagName is an HTML element string', () => {
+    beforeEach(() => {
+      renderer.render(<Base tagName='button' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should render a button', () => {
+      expect(tree.type).toEqual('button')
+    })
+  })
 
-  context('when m is set')
-  context('when mx is set')
-  context('when my is set')
-  context('when mt is set')
-  context('when my and mt is set')
+  context('when tagName is a component', () => {
+    beforeEach(() => {
+      renderer.render(<Base tagName={Button} />)
+      tree = renderer.getRenderOutput()
+    })
 
-  context('when p is set')
-  context('when px is set')
-  context('when py is set')
-  context('when pt is set')
-  context('when py and pt is set')
+    it('should render a Button component', () => {
+      expect(tree.type).toEqual(Button)
+    })
+  })
 
-  context('when rounded is true')
-  context('when rounded is false')
-  context('when rounded top is set')
-  context('when rounded right is set')
-  context('when rounded bottom is set')
-  context('when rounded left is set')
+  context('when componentName is set', () => {
+    beforeEach(() => {
+      renderer.render(<Base componentName='Button' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should render', () => {
+      expect(tree.type).toEqual('div')
+    })
+  })
+
+  context('when context is set for theme', () => {
+    beforeEach(() => {
+      renderer.render(<Base componentName='Button' />, {
+        rebass: { colors: { primary: 'tomato' } }
+      })
+      tree = renderer.getRenderOutput()
+    })
+    it('should render', () => {
+      expect(tree.type).toEqual('div')
+    })
+  })
+
+  context('when context is set for componentName', () => {
+    beforeEach(() => {
+      renderer.render(<Base componentName='Test' />, {
+        rebass: { Test: { backgroundColor: 'tomato' } }
+      })
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  context('when style is set', () => {
+    beforeEach(() => {
+      renderer.render(<Base style={{ backgroundColor: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  context('when context and style are set', () => {
+    beforeEach(() => {
+      renderer.render(<Base componentName='Test' style={{ backgroundColor: 'tomato' }} />, {
+        rebass: {
+          Test: {
+            backgroundColor: 'green'
+          }
+        }
+      })
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color based on context', () => {
+      expect(tree.props.style.backgroundColor).toEqual('green')
+    })
+  })
+
+  context('when context and customStyle are set', () => {
+    beforeEach(() => {
+      renderer.render(<Base componentName='Test' customStyle={{ backgroundColor: 'tomato' }} />, {
+        rebass: {
+          Test: {
+            backgroundColor: 'green'
+          }
+        }
+      })
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color based on style', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  context('when style and customStyle are set', () => {
+    beforeEach(() => {
+      renderer.render(<Base style={{ backgroundColor: 'green' }} customStyle={{ backgroundColor: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color based on customStyle', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  context('when context, style, and customStyle are set', () => {
+    beforeEach(() => {
+      renderer.render(<Base componentName='Test' style={{ backgroundColor: 'green' }} customStyle={{ backgroundColor: 'tomato' }} />, {
+        rebass: {
+          Test: {
+            backgroundColor: 'black'
+          }
+        }
+      })
+      tree = renderer.getRenderOutput()
+    })
+    it('should set background color based on customStyle', () => {
+      expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+  })
+
+  describe('margins', () => {
+    context('when m is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base m={1} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin', () => {
+        expect(tree.props.style.margin).toEqual(scale[1])
+      })
+    })
+
+    context('when mt is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base mt={2} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin top', () => {
+        expect(tree.props.style.marginTop).toEqual(scale[2])
+      })
+    })
+
+    context('when mx is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base mx={3} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin left and right', () => {
+        expect(tree.props.style.marginLeft).toEqual(scale[3])
+        expect(tree.props.style.marginRight).toEqual(scale[3])
+      })
+    })
+
+    context('when my is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base my={3} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin top and bottom', () => {
+        expect(tree.props.style.marginTop).toEqual(scale[3])
+        expect(tree.props.style.marginBottom).toEqual(scale[3])
+      })
+    })
+
+    context('when my and mt are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base mt={1} my={3} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin top and bottom based on my', () => {
+        expect(tree.props.style.marginTop).toEqual(scale[3])
+        expect(tree.props.style.marginBottom).toEqual(scale[3])
+      })
+    })
+
+    context('when style and m are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base style={{ margin: 3 }} m={1} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin based on m', () => {
+        expect(tree.props.style.margin).toEqual(scale[1])
+      })
+    })
+
+    context('when customStyle and m are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base customStyle={{ margin: 3 }} m={1} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set margin based on customStyle', () => {
+        expect(tree.props.style.margin).toEqual(3)
+      })
+    })
+  })
+
+  describe('padding', () => {
+    context('when p is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base p={1} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding', () => {
+        expect(tree.props.style.padding).toEqual(scale[1])
+      })
+    })
+
+    context('when pt is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base pt={2} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding top', () => {
+        expect(tree.props.style.paddingTop).toEqual(scale[2])
+      })
+    })
+
+    context('when px is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base px={3} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding left and right', () => {
+        expect(tree.props.style.paddingLeft).toEqual(scale[3])
+        expect(tree.props.style.paddingRight).toEqual(scale[3])
+      })
+    })
+
+    context('when py is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base py={3} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding top and bottom', () => {
+        expect(tree.props.style.paddingTop).toEqual(scale[3])
+        expect(tree.props.style.paddingBottom).toEqual(scale[3])
+      })
+    })
+
+    context('when py and pt are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base pt={1} py={3} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding top and bottom based on py', () => {
+        expect(tree.props.style.paddingTop).toEqual(scale[3])
+        expect(tree.props.style.paddingBottom).toEqual(scale[3])
+      })
+    })
+
+    context('when style and p are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base style={{ padding: 3 }} p={1} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding based on p', () => {
+        expect(tree.props.style.padding).toEqual(scale[1])
+      })
+    })
+
+    context('when customStyle and p are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base customStyle={{ padding: 3 }} p={1} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set padding based on customStyle', () => {
+        expect(tree.props.style.padding).toEqual(3)
+      })
+    })
+  })
+
+  describe('border radii', () => {
+    context('when rounded is true', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius', () => {
+        expect(tree.props.style.borderRadius).toEqual(borderRadius)
+      })
+    })
+
+    context('when rounded is false', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded={false} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius 0', () => {
+        expect(tree.props.style.borderRadius).toEqual(0)
+      })
+    })
+
+    context('when rounded is top', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded='top' />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set top border radii', () => {
+        expect(tree.props.style.borderRadius).toEqual(`${borderRadius}px ${borderRadius}px 0 0`)
+      })
+    })
+
+    context('when rounded is right', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded='right' />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set right border radii', () => {
+        expect(tree.props.style.borderRadius).toEqual(`0 ${borderRadius}px ${borderRadius}px 0`)
+      })
+    })
+
+    context('when rounded is bottom', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded='bottom' />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set bottom border radii', () => {
+        expect(tree.props.style.borderRadius).toEqual(`0 0 ${borderRadius}px ${borderRadius}px`)
+      })
+    })
+
+    context('when rounded is left', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded='left' />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set left border radii', () => {
+        expect(tree.props.style.borderRadius).toEqual(`${borderRadius}px 0 0 ${borderRadius}px`)
+      })
+    })
+
+    context('when pill is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base pill />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius 99999', () => {
+        expect(tree.props.style.borderRadius).toEqual(99999)
+      })
+    })
+
+    context('when circle is set', () => {
+      beforeEach(() => {
+        renderer.render(<Base circle />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius 99999', () => {
+        expect(tree.props.style.borderRadius).toEqual(99999)
+      })
+    })
+
+    context('when rounded and style are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded style={{ borderRadius: 5 }} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius based on rounded prop', () => {
+        expect(tree.props.style.borderRadius).toEqual(borderRadius)
+      })
+    })
+
+    context('when rounded and context are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base componentName='Test' rounded />, {
+          rebass: {
+            Test: {
+              borderRadius: 15
+            }
+          }
+        })
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius based on rounded prop', () => {
+        expect(tree.props.style.borderRadius).toEqual(borderRadius)
+      })
+    })
+
+    context('when rounded and customStyle are set', () => {
+      beforeEach(() => {
+        renderer.render(<Base rounded customStyle={{ borderRadius: 5 }} />)
+        tree = renderer.getRenderOutput()
+      })
+      it('should set border radius based on customStyle prop', () => {
+        expect(tree.props.style.borderRadius).toEqual(5)
+      })
+    })
+  })
 
   context('when context is set', () => {
     beforeEach(() => {
@@ -67,15 +431,5 @@ describe('Base', () => {
     })
   })
 
-  context('when custom styles are set', () => {
-    beforeEach(() => {
-      renderer.render(<Base style={{ color: 'tomato' }} />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have a custom color', () => {
-      expect(tree.props.style.color).toEqual('tomato')
-    })
-  })
 })
 
