@@ -1,56 +1,27 @@
 
 import React from 'react'
-import theme from './theme'
-import radii from './util/radii'
+import Button from './Button'
 
 /**
  * A general purpose outline style button element with customizable colors
  */
 
 const ButtonOutline = ({
-  href,
-  big,
-  color,
-  children,
   style,
-  className,
   ...props
 }, { rebass }) => {
 
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.ButtonOutline : {}
-  const { fontSizes, bold, scale, colors, borderRadius } = config
-
-  const Component = href ? 'a' : 'button'
-
-  color = colors[color] || color || colors.primary
-
   const sx = {
-    fontFamily: 'inherit',
-    fontSize: fontSizes[5],
-    fontWeight: bold,
-    lineHeight: `${scale[2]}px`,
-    textDecoration: 'none',
-    display: 'inline-block',
-    margin: 0,
-    padding: big ? scale[2] : `${scale[1]}px ${scale[2]}px`,
-    cursor: 'pointer',
-    border: 0,
-    color,
     backgroundColor: 'transparent',
     boxShadow: 'inset 0 0 0 1px',
-    ...customStyle,
-    ...radii(props, borderRadius),
     ...style
   }
 
   return (
-    <Component {...props}
-      href={href}
-      className='ButtonOutline'
-      style={sx}>
-      {children}
-    </Component>
+    <Button
+      {...props}
+      cx='ButtonOutline'
+      style={sx} />
   )
 }
 
@@ -76,6 +47,7 @@ ButtonOutline.propTypes = {
 }
 
 ButtonOutline.defaultProps = {
+  color: 'primary',
   rounded: true
 }
 

@@ -10,6 +10,7 @@ import theme from './theme'
 const Button = ({
   href,
   big,
+  cx,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
@@ -34,7 +35,7 @@ const Button = ({
     <Base
       {...props}
       tagName={Component}
-      className='Button'
+      className={cx || 'Button'}
       href={href}
       baseStyle={sx}/>
   )

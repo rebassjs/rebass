@@ -65,6 +65,16 @@ describe('Button', () => {
     })
   })
 
+  context('when cx is set', () => {
+    beforeEach(() => {
+      renderer.render(<Button cx='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should set className', () => {
+      expect(tree.props.className).toEqual('Test')
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Button style={{ color: 'tomato' }} />)
