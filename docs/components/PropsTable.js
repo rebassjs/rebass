@@ -49,10 +49,10 @@ const PropsTable = ({ props, ...other }) => {
         <tbody>
           {props && Object.keys(props).map(key => {
             const prop = props[key]
-            if (!props.type) {
+            let type = prop.type && prop.type.name
+            if (!type) {
               return false
             }
-            let type = prop.type.name
             if (type === 'enum' && prop.type.value && Array.isArray(prop.type.value)) {
               type = `oneOf([${prop.type.value.map(v => v.value).join(', ')}])`
             } else if (type === 'union' && prop.type.value && Array.isArray(prop.type.value)) {
