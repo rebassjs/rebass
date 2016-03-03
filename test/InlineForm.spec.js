@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, InlineForm, Input, ButtonOutline } from '../src'
+import { theme, InlineForm, Input, ButtonOutline, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -17,7 +17,11 @@ describe('InlineForm', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('form')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName', () => {
+    expect(tree.props.tagName).toEqual('form')
   })
 
   it('should have a className', () => {
