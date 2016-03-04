@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import Menu from './Menu'
+import config from './config'
 
 /**
  * Absolutely positioned Menu component for use within Dropdown component
@@ -11,24 +12,47 @@ const DropdownMenu = ({
   open,
   right,
   top,
+  onDismiss,
   ...props
-}) => {
+}, { rebass }) => {
+  const { zIndex } = { ...config, ...rebass }
   const { children, ...baseProps } = props
+
+  const sx = {
+    root: {
+      display: open ? null : 'none',
+      position: 'absolute',
+      left: right ? 'auto' : 0,
+      right: right ? 0 : 'auto',
+      top: top ? 'auto' : '100%',
+      bottom: top ? '100%' : 'auto',
+      zIndex: 4
+    },
+    overlay: {
+      position: 'fixed',
+      display: open ? null : 'none',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0
+    },
+    content: {
+      position: 'relative',
+      zIndex: zIndex[1]
+    }
+  }
 
   return (
     <Base
       {...baseProps}
       className='DropdownMenu'
-      baseStyle={{
-        display: open ? null : 'none',
-        position: 'absolute',
-        left: right ? 'auto' : 0,
-        right: right ? 0 : 'auto',
-        top: top ? 'auto' : '100%',
-        bottom: top ? '100%' : 'auto',
-        zIndex: 4
-      }}>
-      <Menu {...props} />
+      baseStyle={sx.root}>
+      <div style={sx.overlay}
+        onClick={onDismiss}
+        children='DropdownMenu overlay' />
+      <div style={sx.content}>
+        <Menu {...props} />
+      </div>
     </Base>
   )
 }
@@ -39,11 +63,18 @@ DropdownMenu.propTypes = {
   /** Anchors menu to the right */
   right: React.PropTypes.bool,
   /** Anchors menu to the top */
-  top: React.PropTypes.bool
+  top: React.PropTypes.bool,
+  /** Click event callback for the background overlay */
+  onDismiss: React.PropTypes.func
 }
 
 DropdownMenu.defaultProps = {
-  open: false
+  open: false,
+  onDimiss: function () {}
+}
+
+DropdownMenu.contextTypes = {
+  rebass: React.PropTypes.object
 }
 
 export default DropdownMenu

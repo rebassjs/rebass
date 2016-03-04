@@ -205,7 +205,7 @@ const examples = {
         <Button>
           Dropdown <Arrow />
         </Button>
-        <DropdownMenu open>
+        <DropdownMenu open={false}>
           <NavItem children='Hello' />
           <NavItem children='Hi' />
         </DropdownMenu>
