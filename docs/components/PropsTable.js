@@ -49,7 +49,10 @@ const PropsTable = ({ props, ...other }) => {
         <tbody>
           {props && Object.keys(props).map(key => {
             const prop = props[key]
-            let type = prop.type.name
+            let type = prop.type && prop.type.name
+            if (!type) {
+              return false
+            }
             if (type === 'enum' && prop.type.value && Array.isArray(prop.type.value)) {
               type = `oneOf([${prop.type.value.map(v => v.value).join(', ')}])`
             } else if (type === 'union' && prop.type.value && Array.isArray(prop.type.value)) {
@@ -67,7 +70,8 @@ const PropsTable = ({ props, ...other }) => {
               <tr key={key}>
                 <td style={{ ...sx.td, ...sx.mono }}
                   title={prop.required && 'Required'}>
-                  {key} {prop.required && '*'}
+                  {key}{prop.required && '*'}
+                  {prop.defaultValue && ` (${prop.defaultValue.value})`}
                 </td>
                 <td style={{ ...sx.td, ...sx.mono }}>{type}</td>
                 <td style={sx.td}>{prop.description}</td>

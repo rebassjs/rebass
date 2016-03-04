@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Donut } from '../src'
+import { config, Donut, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Donut', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree, svg, children, percentage
 
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('Donut', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -44,12 +44,12 @@ describe('Donut', () => {
   })
 
   it('should have a default size', () => {
-    expect(tree.props.style.width).toEqual(128)
-    expect(tree.props.style.height).toEqual(128)
+    expect(tree.props.baseStyle.width).toEqual(128)
+    expect(tree.props.baseStyle.height).toEqual(128)
   })
 
   it('should have a default font size', () => {
-    expect(tree.props.style.fontSize).toEqual(128 / 4)
+    expect(tree.props.baseStyle.fontSize).toEqual(128 / 4)
   })
 
   context('when value is set', () => {
@@ -75,11 +75,11 @@ describe('Donut', () => {
       percentage = tree.props.children[2]
     })
     it('should change the width and height', () => {
-      expect(tree.props.style.width).toEqual(256)
-      expect(tree.props.style.height).toEqual(256)
+      expect(tree.props.baseStyle.width).toEqual(256)
+      expect(tree.props.baseStyle.height).toEqual(256)
     })
     it('should change the font size', () => {
-      expect(tree.props.style.fontSize).toEqual(256 / 4)
+      expect(tree.props.baseStyle.fontSize).toEqual(256 / 4)
     })
   })
 

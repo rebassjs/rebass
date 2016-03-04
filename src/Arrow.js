@@ -1,16 +1,15 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
 
 /** Arrow for use in dropdowns and other UI elements */
 
-const Arrow = ({ direction, style, ...props }, { rebass }) => {
-  const arrowStyle = { ...theme.Arrow, ...(rebass ? rebass.Arrow : {}), ...style }
-
+const Arrow = ({ direction, children, ...props }, { rebass }) => {
   return (
-    <div
+    <Base
+      {...props}
       className='Arrow'
-      style={{
+      baseStyle={{
         display: 'inline-block',
         width: 0,
         height: 0,
@@ -19,8 +18,7 @@ const Arrow = ({ direction, style, ...props }, { rebass }) => {
         borderRight: '.3125em solid transparent',
         borderLeft: '.3125em solid transparent',
         borderTop: direction === 'down' ? '.4375em solid' : null,
-        borderBottom: direction === 'up' ? '.4375em solid' : null,
-        ...arrowStyle
+        borderBottom: direction === 'up' ? '.4375em solid' : null
       }} />
   )
 }

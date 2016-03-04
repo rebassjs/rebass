@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { CardImage } from '../src'
+import { CardImage, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,11 @@ describe('CardImage', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('img')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName', () => {
+    expect(tree.props.tagName).toEqual('img')
   })
 
   it('should have a className', () => {

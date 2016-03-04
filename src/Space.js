@@ -1,25 +1,23 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Inline-block element for adding space between elements
  */
 
-const Space = ({ x, auto, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Space : {}
-  const { scale } = config
+const Space = ({ x, auto, children, ...props }, { rebass }) => {
+  const { scale } = { ...config, ...rebass }
 
   return (
-    <div
+    <Base
+      {...props}
       className='Space'
-      style={{
+      baseStyle={{
         display: 'inline-block',
         flex: auto ? '1 1 auto' : null,
-        width: scale[x],
-        ...customStyle,
-        ...style
+        width: scale[x]
       }} />
   )
 }

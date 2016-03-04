@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Label, Checkbox } from '../src'
+import { config, Label, Checkbox, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Checkbox', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree, label
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('Checkbox', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -34,7 +34,7 @@ describe('Checkbox', () => {
   })
 
   it('should not set a color', () => {
-    expect(tree.props.style.color).toNotExist()
+    expect(tree.props.baseStyle.color).toNotExist()
   })
 
   context('when aria-invalid is set', () => {
@@ -48,7 +48,7 @@ describe('Checkbox', () => {
     })
 
     it('should change the color', () => {
-      expect(tree.props.style.color).toEqual(colors.error)
+      expect(tree.props.baseStyle.color).toEqual(colors.error)
     })
   })
 

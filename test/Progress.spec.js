@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Progress } from '../src'
+import { Progress, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,7 @@ describe('Progress', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -31,11 +31,10 @@ describe('Progress', () => {
     beforeEach(() => {
       renderer.render(<Progress style={{ color: 'tomato' }} />)
       tree = renderer.getRenderOutput()
-      progress = tree.props.children[1]
     })
 
     it('should have a custom color', () => {
-      expect(progress.props.style.color).toEqual('tomato')
+      expect(tree.props.style.color).toEqual('tomato')
     })
   })
 })

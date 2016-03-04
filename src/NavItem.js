@@ -1,6 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Link for use in navigation. Inherits color
@@ -9,18 +10,16 @@ import theme from './theme'
 const NavItem = ({
   small,
   Component,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const navItemStyle = rebass ? rebass.NavItem : {}
-  const { fontSizes, scale, bold } = config
+  const { fontSizes, scale, bold } = { ...config, ...rebass }
 
   return (
-    <Component
+    <Base
       {...props}
+      tagName={Component}
       className='NavItem'
-      style={{
+      baseStyle={{
         fontSize: small ? fontSizes[6] : fontSizes[5],
         fontWeight: bold,
         lineHeight: '1rem',
@@ -30,9 +29,7 @@ const NavItem = ({
         alignSelf: 'stretch',
         padding: small ? `${scale[1] / 2}px ${scale[1]}px` : scale[1],
         color: 'inherit',
-        cursor: 'pointer',
-        ...navItemStyle,
-        ...style
+        cursor: 'pointer'
       }} />
   )
 }

@@ -3,7 +3,7 @@
  * Utility for extracting padding props from components
  */
 
-const n = (x) => typeof x === 'number'
+const n = (key, x, s) => typeof x === 'number' ? { [key]: s[x] } : null
 
 function padding(props, scale) {
   const s = scale || []
@@ -16,35 +16,18 @@ function padding(props, scale) {
     pb,
     pl
   } = props || {}
-  const result = {}
 
-  if(n(p)) {
-    result.padding = s[p]
-  }
-
-  if (n(py)) {
-    result.paddingTop = s[py]
-    result.paddingBottom = s[py]
-  } else {
-    if (n(pt)) {
-      result.paddingTop = s[pt]
-    }
-    if (n(pb)) {
-      result.paddingBottom = s[pb]
-    }
-  }
-
-  if (n(px)) {
-    result.paddingLeft = s[px]
-    result.paddingRight = s[px]
-  } else {
-    if (n(pl)) {
-      result.paddingLeft = s[pl]
-    }
-    if (n(pr)) {
-      result.paddingRight = s[pr]
-    }
-  }
+  const result = Object.assign({},
+    n('padding', p, s),
+    n('paddingTop', pt, s),
+    n('paddingBottom', pb, s),
+    n('paddingTop', py, s),
+    n('paddingBottom', py, s),
+    n('paddingLeft', pl, s),
+    n('paddingRight', pr, s),
+    n('paddingLeft', px, s),
+    n('paddingRight', px, s)
+  )
 
   return result
 }

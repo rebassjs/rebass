@@ -1,25 +1,27 @@
 
 import React from 'react'
 import classnames from 'classnames'
+import Base from './Base'
 import Label from './Label'
-import theme from './theme'
+import config from './config'
 
 /**
  * Checkbox input with label
  */
 
-const Checkbox = ({ label, name, style, children, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Checkbox : {}
-  const { scale, colors } = config
+const Checkbox = ({
+  label,
+  name,
+  children,
+  ...props
+}, { rebass }) => {
+  const { scale, colors } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
   const sx = {
     root: {
-      color: invalid ? colors.error : null,
-      ...customStyle,
-      ...style
+      color: invalid ? colors.error : null
     },
     label: {
       display: 'flex',
@@ -38,17 +40,20 @@ const Checkbox = ({ label, name, style, children, ...props }, { rebass }) => {
   })
 
   return (
-    <div className={cx}
-      style={sx.root}>
+    <Base
+      {...props}
+      className={cx}
+      baseStyle={sx.root}>
       <Label
         style={sx.label}>
         <input
           {...props}
+          name={name}
           type='checkbox'
           style={sx.input} />
         {label}
       </Label>
-    </div>
+    </Base>
   )
 }
 

@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Input, Label, theme } from '../src'
+import { Input, Label, Base, config } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Input', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree, input, label, message
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('Input', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -38,7 +38,7 @@ describe('Input', () => {
   })
 
   it('should not set color', () => {
-    expect(tree.props.style.color).toNotExist()
+    expect(tree.props.baseStyle.color).toNotExist()
   })
 
   context('when type is set', () => {
@@ -91,7 +91,7 @@ describe('Input', () => {
     })
 
     it('should change the color', () => {
-      expect(tree.props.style.color).toEqual(colors.error)
+      expect(tree.props.baseStyle.color).toEqual(colors.error)
     })
   })
 

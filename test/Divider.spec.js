@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Divider } from '../src'
+import { config, Divider, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Divider', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree
 
   beforeEach(() => {
@@ -16,26 +16,15 @@ describe('Divider', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('hr')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName', () => {
+    expect(tree.props.tagName).toEqual('hr')
   })
 
   it('should have a className', () => {
     expect(tree.props.className).toEqual('Divider')
-  })
-
-  it('should have default margin top and bottom', () => {
-    expect(tree.props.style.marginTop).toEqual(scale[2])
-    expect(tree.props.style.marginBottom).toEqual(scale[2])
-  })
-
-  context('when setting custom margins', () => {
-    beforeEach(() => {
-      renderer.render(<Divider my={0} />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should have no margin top or bottom', () => {
-      expect(tree.props.style.marginTop).toEqual(0)
-    })
   })
 
   context('when setting width', () => {
@@ -44,7 +33,7 @@ describe('Divider', () => {
       tree= renderer.getRenderOutput()
     })
     it('should have a fixed width', () => {
-      expect(tree.props.style.width).toEqual(256)
+      expect(tree.props.baseStyle.width).toEqual(256)
     })
   })
 

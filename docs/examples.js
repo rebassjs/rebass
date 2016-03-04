@@ -54,7 +54,8 @@ import {
   Table,
   Text,
   Toolbar,
-  Tooltip
+  Tooltip,
+  Base
 } from '../src'
 
 const examples = {
@@ -69,20 +70,17 @@ const examples = {
   ),
   Badge: (
     <Flex align='center'>
-      <Heading level={4}>
-        Rebass <Space />
-        <Badge type='info' children='0.2.0' />
-      </Heading>
+      <Heading level={4} children='Rebass' />
+      <Space />
+      <Badge theme='info' children='0.2.0' />
       <Space x={2} />
-      <Heading level={4}>
-        Pill <Space />
-        <Badge pill type='info' children='Pill' />
-      </Heading>
+      <Heading level={4} children='Pill' />
+      <Space />
+      <Badge pill theme='info' children='Pill' />
       <Space x={2} />
-      <Heading level={4}>
-        Circular Things <Space />
-        <Badge circle type='error' children='4' />
-      </Heading>
+      <Heading level={4} children='Circular' />
+      <Space />
+      <Badge circle theme='error' children='4' />
     </Flex>
   ),
   Banner: (
@@ -269,7 +267,7 @@ const examples = {
     </Menu>
   ),
   Message: (
-    <Message type='success'>
+    <Message theme='success'>
       Hello Message!
       <Space auto />
       <Close />
@@ -284,7 +282,7 @@ const examples = {
       description='Description about the page' />
   ),
   Panel: (
-    <Panel type='info'>
+    <Panel theme='info'>
       <PanelHeader children='Panel' />
       <Text>
         Panels are great for visually separating UI, content, or data from the rest of the page.
@@ -384,6 +382,15 @@ const examples = {
     <Tooltip title='Hello!'>
       <Heading level={3}>Tooltip</Heading>
     </Tooltip>
+  ),
+  Base: (
+    <Base
+      p={2}
+      mb={3}
+      color='blue'
+      backgroundColor='black'
+      rounded
+      children='Base' />
   )
 }
 

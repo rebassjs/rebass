@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Drawer } from '../src'
+import { Drawer, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -24,16 +24,24 @@ describe('Drawer', () => {
     expect(tree.props.className).toEqual('Drawer')
   })
 
+  it('should use Base component for content', () => {
+    expect(content.type).toEqual(Base)
+  })
+
+  it('should set className on content', () => {
+    expect(content.props.className).toMatch(/^Drawer\s/)
+  })
+
   it('should have default width', () => {
-    expect(content.props.style.width).toEqual(320)
+    expect(content.props.baseStyle.width).toEqual(320)
   })
 
   it('should not have default height', () => {
-    expect(content.props.style.height).toNotExist()
+    expect(content.props.baseStyle.height).toNotExist()
   })
 
   it('should have transform set', () => {
-    expect(content.props.style.transform).toEqual('translateX(-100%)')
+    expect(content.props.baseStyle.transform).toEqual('translateX(-100%)')
   })
 
   it('should hide the dismiss overlay', () => {
@@ -41,10 +49,10 @@ describe('Drawer', () => {
   })
 
   it('should be anchored to the left', () => {
-    expect(content.props.style.top).toEqual(0)
-    expect(content.props.style.right).toNotExist()
-    expect(content.props.style.bottom).toEqual(0)
-    expect(content.props.style.left).toEqual(0)
+    expect(content.props.baseStyle.top).toEqual(0)
+    expect(content.props.baseStyle.right).toNotExist()
+    expect(content.props.baseStyle.bottom).toEqual(0)
+    expect(content.props.baseStyle.left).toEqual(0)
   })
 
   context('when open is true', () => {
@@ -60,7 +68,7 @@ describe('Drawer', () => {
     })
 
     it('should not have transform set', () => {
-      expect(content.props.style.transform).toNotExist()
+      expect(content.props.baseStyle.transform).toNotExist()
     })
   })
 
@@ -71,7 +79,7 @@ describe('Drawer', () => {
       content = tree.props.children[1]
     })
     it('should have a custom width', () => {
-      expect(content.props.style.width).toEqual(512)
+      expect(content.props.baseStyle.width).toEqual(512)
     })
   })
 
@@ -83,22 +91,22 @@ describe('Drawer', () => {
     })
 
     it('should be anchored to the top', () => {
-      expect(content.props.style.top).toEqual(0)
-      expect(content.props.style.right).toEqual(0)
-      expect(content.props.style.bottom).toNotExist()
-      expect(content.props.style.left).toEqual(0)
+      expect(content.props.baseStyle.top).toEqual(0)
+      expect(content.props.baseStyle.right).toEqual(0)
+      expect(content.props.baseStyle.bottom).toNotExist()
+      expect(content.props.baseStyle.left).toEqual(0)
     })
 
     it('should not have a width', () => {
-      expect(content.props.style.width).toNotExist()
+      expect(content.props.baseStyle.width).toNotExist()
     })
 
     it('should have a height', () => {
-      expect(content.props.style.height).toEqual(320)
+      expect(content.props.baseStyle.height).toEqual(320)
     })
 
     it('should have a transform', () => {
-      expect(content.props.style.transform).toEqual('translateY(-100%)')
+      expect(content.props.baseStyle.transform).toEqual('translateY(-100%)')
     })
   })
 
@@ -110,22 +118,22 @@ describe('Drawer', () => {
     })
 
     it('should be anchored to the bottom', () => {
-      expect(content.props.style.top).toNotExist()
-      expect(content.props.style.right).toEqual(0)
-      expect(content.props.style.bottom).toEqual(0)
-      expect(content.props.style.left).toEqual(0)
+      expect(content.props.baseStyle.top).toNotExist()
+      expect(content.props.baseStyle.right).toEqual(0)
+      expect(content.props.baseStyle.bottom).toEqual(0)
+      expect(content.props.baseStyle.left).toEqual(0)
     })
 
     it('should not have a width', () => {
-      expect(content.props.style.width).toNotExist()
+      expect(content.props.baseStyle.width).toNotExist()
     })
 
     it('should have a height', () => {
-      expect(content.props.style.height).toEqual(320)
+      expect(content.props.baseStyle.height).toEqual(320)
     })
 
     it('should have a transform', () => {
-      expect(content.props.style.transform).toEqual('translateY(100%)')
+      expect(content.props.baseStyle.transform).toEqual('translateY(100%)')
     })
   })
 
@@ -137,22 +145,22 @@ describe('Drawer', () => {
     })
 
     it('should be anchored to the left', () => {
-      expect(content.props.style.top).toEqual(0)
-      expect(content.props.style.right).toNotExist()
-      expect(content.props.style.bottom).toEqual(0)
-      expect(content.props.style.left).toEqual(0)
+      expect(content.props.baseStyle.top).toEqual(0)
+      expect(content.props.baseStyle.right).toNotExist()
+      expect(content.props.baseStyle.bottom).toEqual(0)
+      expect(content.props.baseStyle.left).toEqual(0)
     })
 
     it('should have a width', () => {
-      expect(content.props.style.width).toEqual(320)
+      expect(content.props.baseStyle.width).toEqual(320)
     })
 
     it('should not have a height', () => {
-      expect(content.props.style.height).toNotExist()
+      expect(content.props.baseStyle.height).toNotExist()
     })
 
     it('should have a transform', () => {
-      expect(content.props.style.transform).toEqual('translateX(-100%)')
+      expect(content.props.baseStyle.transform).toEqual('translateX(-100%)')
     })
   })
 
@@ -164,22 +172,22 @@ describe('Drawer', () => {
     })
 
     it('should be anchored to the right', () => {
-      expect(content.props.style.top).toEqual(0)
-      expect(content.props.style.right).toEqual(0)
-      expect(content.props.style.bottom).toEqual(0)
-      expect(content.props.style.left).toNotExist()
+      expect(content.props.baseStyle.top).toEqual(0)
+      expect(content.props.baseStyle.right).toEqual(0)
+      expect(content.props.baseStyle.bottom).toEqual(0)
+      expect(content.props.baseStyle.left).toNotExist()
     })
 
     it('should have a width', () => {
-      expect(content.props.style.width).toEqual(320)
+      expect(content.props.baseStyle.width).toEqual(320)
     })
 
     it('should not have a height', () => {
-      expect(content.props.style.height).toNotExist()
+      expect(content.props.baseStyle.height).toNotExist()
     })
 
     it('should have a transform', () => {
-      expect(content.props.style.transform).toEqual('translateX(100%)')
+      expect(content.props.baseStyle.transform).toEqual('translateX(100%)')
     })
   })
 
@@ -191,11 +199,11 @@ describe('Drawer', () => {
     })
 
     it('should have a custom height', () => {
-      expect(content.props.style.height).toEqual(512)
+      expect(content.props.baseStyle.height).toEqual(512)
     })
 
     it('should not have a width', () => {
-      expect(content.props.style.width).toNotExist()
+      expect(content.props.baseStyle.width).toNotExist()
     })
   })
 

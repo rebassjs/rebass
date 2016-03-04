@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Badge } from '../src'
+import { config, Base, Badge } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Badge', () => {
-  const { scale, colors, borderRadius } = theme
+  const { scale, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {
@@ -16,28 +16,28 @@ describe('Badge', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
     expect(tree.props.className).toEqual('Badge')
   })
 
-  it('should have a default background color', () => {
-    expect(tree.props.style.backgroundColor).toEqual(colors.default)
+  it('should have a default rounded prop', () => {
+    expect(tree.props.rounded).toEqual(true)
   })
 
-  it('should have a default border radius', () => {
-    expect(tree.props.style.borderRadius).toEqual(borderRadius)
+  it('should have a default background color', () => {
+    expect(tree.props.baseStyle.backgroundColor).toEqual(colors.default)
   })
 
   it('should have default padding', () => {
-    expect(tree.props.style.paddingLeft).toEqual(scale[1])
-    expect(tree.props.style.paddingRight).toEqual(scale[1])
+    expect(tree.props.baseStyle.paddingLeft).toEqual(scale[1])
+    expect(tree.props.baseStyle.paddingRight).toEqual(scale[1])
   })
 
   it('should not have a set width', () => {
-    expect(tree.props.style.width).toNotExist()
+    expect(tree.props.baseStyle.width).toNotExist()
   })
 
   context('when pill is set', () => {
@@ -46,17 +46,17 @@ describe('Badge', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should have full border radius', () => {
-      expect(tree.props.style.borderRadius).toEqual(99999)
+    it('should pass the pill prop', () => {
+      expect(tree.props.pill).toEqual(true)
     })
 
     it('should have padding', () => {
-      expect(tree.props.style.paddingLeft).toEqual(scale[1])
-      expect(tree.props.style.paddingRight).toEqual(scale[1])
+      expect(tree.props.baseStyle.paddingLeft).toEqual(scale[1])
+      expect(tree.props.baseStyle.paddingRight).toEqual(scale[1])
     })
 
     it('should not have a set width', () => {
-      expect(tree.props.style.width).toNotExist()
+      expect(tree.props.baseStyle.width).toNotExist()
     })
   })
 
@@ -66,61 +66,17 @@ describe('Badge', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should have full border radius', () => {
-      expect(tree.props.style.borderRadius).toEqual(99999)
+    it('should pass circle as a prop', () => {
+      expect(tree.props.circle).toEqual(true)
     })
 
     it('should have padding', () => {
-      expect(tree.props.style.paddingLeft).toEqual(0)
-      expect(tree.props.style.paddingRight).toEqual(0)
+      expect(tree.props.baseStyle.paddingLeft).toEqual(0)
+      expect(tree.props.baseStyle.paddingRight).toEqual(0)
     })
 
     it('should have a set width', () => {
-      expect(tree.props.style.width).toEqual(scale[2])
-    })
-  })
-
-  context('when type is info', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='info' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the info background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual(colors.info)
-    })
-  })
-
-  context('when type is success', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='success' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the success background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual(colors.success)
-    })
-  })
-
-  context('when type is warning', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='warning' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the warning background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual(colors.warning)
-    })
-  })
-
-  context('when type is error', () => {
-    beforeEach(() => {
-      renderer.render(<Badge type='error' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should have the error background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual(colors.error)
+      expect(tree.props.baseStyle.width).toEqual(scale[2])
     })
   })
 

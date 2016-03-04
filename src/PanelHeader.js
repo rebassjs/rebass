@@ -1,42 +1,39 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Header for Panel component with vertical centering using flexbox
  */
 
-const PanelHeader = ({ type, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.PanelHeader : {}
-  const { scale, colors, borderRadius } = config
-  const backgroundColor = colors[type]
+const PanelHeader = ({ ...props }, { rebass }) => {
+  const { bold, scale, colors, borderRadius } = { ...config, ...rebass }
 
   return (
-    <div
+    <Base
       {...props}
       className='PanelHeader'
-      style={{
+      inverted
+      baseStyle={{
         display: 'flex',
         alignItems: 'center',
-        fontWeight: 'bold',
+        fontWeight: bold,
         marginTop: - scale[2] - 1,
         marginRight: - scale[2] - 1,
         marginLeft: - scale[2] - 1,
         marginBottom: scale[2],
         padding: scale[2],
-        color: colors.white,
-        backgroundColor,
-        borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
-        ...customStyle,
-        ...style
+        borderRadius: `${borderRadius}px ${borderRadius}px 0 0`
       }} />
   )
 }
 
 PanelHeader.propTypes = {
-  /** Sets background color based on the type of panel */
-  type: React.PropTypes.oneOf([
+  /** Sets color from config */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
@@ -46,7 +43,8 @@ PanelHeader.propTypes = {
 }
 
 PanelHeader.defaultProps = {
-  type: 'default'
+  theme: 'default',
+  color: 'white'
 }
 
 PanelHeader.contextTypes = {

@@ -1,25 +1,23 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Section element with vertical padding
  */
 
-const Section = ({ style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Section : {}
-  const { scale } = config
+const Section = ({ ...props }, { rebass }) => {
+  const { scale } = { ...config, ...rebass }
 
   return (
-    <section
+    <Base
       {...props}
+      tagName='section'
       className='Section'
-      style={{
+      baseStyle={{
         paddingTop: scale[4],
-        paddingBottom: scale[4],
-        ...customStyle,
-        ...style
+        paddingBottom: scale[4]
       }} />
   )
 }

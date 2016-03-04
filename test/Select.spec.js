@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Select, Label, theme } from '../src'
+import { Select, Label, Base, config } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Select', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree, select, message
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('Select', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -38,7 +38,7 @@ describe('Select', () => {
   })
 
   it('should not set a color', () => {
-    expect(tree.props.style.color).toNotExist()
+    expect(tree.props.baseStyle.color).toNotExist()
   })
 
   context('when options are set', () => {
@@ -84,7 +84,7 @@ describe('Select', () => {
     })
 
     it('should change the color', () => {
-      expect(tree.props.style.color).toEqual(colors.error)
+      expect(tree.props.baseStyle.color).toEqual(colors.error)
     })
   })
 
@@ -115,11 +115,10 @@ describe('Select', () => {
     beforeEach(() => {
       renderer.render(<Select name='test_select' label='Test' style={{ color: 'tomato' }} />)
       tree = renderer.getRenderOutput()
-      select = tree.props.children[1]
     })
 
     it('should have a custom color', () => {
-      expect(select.props.style.color).toEqual('tomato')
+      expect(tree.props.style.color).toEqual('tomato')
     })
   })
 })

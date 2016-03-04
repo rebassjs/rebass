@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Switch } from '../src'
+import { Switch, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,7 @@ describe('Switch', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {

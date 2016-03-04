@@ -3,12 +3,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, SequenceMap } from '../src'
+import { config, SequenceMap, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('SequenceMap', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('SequenceMap', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {

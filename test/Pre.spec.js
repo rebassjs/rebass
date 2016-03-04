@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Pre } from '../src'
+import { Pre, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,11 @@ describe('Pre', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('pre')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName pre', () => {
+    expect(tree.props.tagName).toEqual('pre')
   })
 
   it('should have a className', () => {

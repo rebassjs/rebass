@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, DotIndicator } from '../src'
+import { config, DotIndicator, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('DotIndicator', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree, dots
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('DotIndicator', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -61,6 +61,7 @@ describe('DotIndicator', () => {
     })
   })
 
+  /* Look into if TestUtils.Simulate works in shallow rendering
   context('when clicking a dot', () => {
     beforeEach(() => {
       renderer.render(
@@ -76,6 +77,7 @@ describe('DotIndicator', () => {
     it('should fire the onChange callback')
     it('should pass the index to the callback')
   })
+  */
 
   context('when custom styles are set', () => {
     beforeEach(() => {

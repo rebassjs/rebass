@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Heading } from '../src'
+import { config, Heading, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Heading', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {
@@ -16,7 +16,11 @@ describe('Heading', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('h2')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName h2', () => {
+    expect(tree.props.tagName).toEqual('h2')
   })
 
   it('should have a className', () => {
@@ -24,7 +28,7 @@ describe('Heading', () => {
   })
 
   it('should have default font size', () => {
-    expect(tree.props.style.fontSize).toEqual(fontSizes[2])
+    expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[2])
   })
 
   context('when level is 1', () => {
@@ -33,12 +37,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h1', () => {
-      expect(tree.type).toEqual('h1')
+    it('should set tagName h1', () => {
+      expect(tree.props.tagName).toEqual('h1')
     })
 
     it('should have h1 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[1])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[1])
     })
   })
 
@@ -48,12 +52,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h2', () => {
-      expect(tree.type).toEqual('h2')
+    it('should set tagName h2', () => {
+      expect(tree.props.tagName).toEqual('h2')
     })
 
     it('should have h2 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[2])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[2])
     })
   })
 
@@ -63,12 +67,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h3', () => {
-      expect(tree.type).toEqual('h3')
+    it('should set tagName h3', () => {
+      expect(tree.props.tagName).toEqual('h3')
     })
 
     it('should have h3 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[3])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[3])
     })
   })
 
@@ -78,12 +82,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h4', () => {
-      expect(tree.type).toEqual('h4')
+    it('should set tagName h4', () => {
+      expect(tree.props.tagName).toEqual('h4')
     })
 
     it('should have h4 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[4])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[4])
     })
   })
 
@@ -93,12 +97,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h5', () => {
-      expect(tree.type).toEqual('h5')
+    it('should set tagName h5', () => {
+      expect(tree.props.tagName).toEqual('h5')
     })
 
     it('should have h5 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[5])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[5])
     })
   })
 
@@ -108,12 +112,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h6', () => {
-      expect(tree.type).toEqual('h6')
+    it('should set tagName h6', () => {
+      expect(tree.props.tagName).toEqual('h6')
     })
 
     it('should have h6 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[6])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[6])
     })
   })
 
@@ -123,12 +127,12 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h2', () => {
-      expect(tree.type).toEqual('h2')
+    it('should set tagName h2', () => {
+      expect(tree.props.tagName).toEqual('h2')
     })
 
     it('should have h0 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[0])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[0])
     })
   })
 
@@ -138,12 +142,38 @@ describe('Heading', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render an h4', () => {
-      expect(tree.type).toEqual('h4')
+    it('should set tagName h4', () => {
+      expect(tree.props.tagName).toEqual('h4')
     })
 
     it('should have h0 font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[0])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[0])
+    })
+  })
+
+  context('when big is true', () => {
+    beforeEach(() => {
+      renderer.render(<Heading big />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should set tagName h2', () => {
+      expect(tree.props.tagName).toEqual('h2')
+    })
+
+    it('should have double the fontSize', () => {
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[2] * 2)
+    })
+  })
+
+  context('when cx is set', () => {
+    beforeEach(() => {
+      renderer.render(<Heading cx='Test' />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should set className', () => {
+      expect(tree.props.className).toEqual('Test')
     })
   })
 

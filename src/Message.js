@@ -1,41 +1,32 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /** Component for displaying flash and error messages */
 
-const Message = ({
-  type,
-  style,
-  ...props
-}, { rebass }) => {
-  const config = { ...theme, ...rebass}
-  const customStyle = rebass ? rebass.Message : {}
-  const { bold, scale, borderRadius, colors } = config
-  const backgroundColor = colors[type]
+const Message = ({ ...props }, { rebass }) => {
+  const { bold, scale } = { ...config, ...rebass}
 
   return (
-    <div
+    <Base
       {...props}
       className='Message'
-      style={{
+      baseStyle={{
         fontWeight: bold,
         display: 'flex',
         alignItems: 'center',
         padding: scale[2],
-        marginBottom: scale[2],
-        color: colors.white,
-        backgroundColor,
-        borderRadius,
-        ...customStyle,
-        ...style
+        marginBottom: scale[2]
       }} />
   )
 }
 
 Message.propTypes = {
-  /** Sets color based on type of message */
-  type: React.PropTypes.oneOf([
+  /** Sets color from config */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
@@ -45,7 +36,10 @@ Message.propTypes = {
 }
 
 Message.defaultProps = {
-  type: 'default'
+  theme: 'default',
+  color: 'white',
+  inverted: true,
+  rounded: true
 }
 
 Message.contextTypes = {

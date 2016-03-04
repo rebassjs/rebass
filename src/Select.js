@@ -1,9 +1,10 @@
 
 import React from 'react'
 import classnames from 'classnames'
+import Base from './Base'
 import Label from './Label'
 import Text from './Text'
-import theme from './theme'
+import config from './config'
 import margins from './util/margins'
 
 /**
@@ -17,22 +18,16 @@ const Select = ({
   message,
   hideLabel,
   children,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Select : {}
-  const { scale, colors, borderColor } = config
-
-  const otherStyle = { ...customStyle, ...style }
+  const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null,
-      ...margins(props, scale)
+      color: invalid ? colors.error : null
     },
     select: {
       fontFamily: 'inherit',
@@ -50,8 +45,7 @@ const Select = ({
       borderRadius: 2,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor,
-      ...otherStyle
+      borderColor
     }
   }
 
@@ -62,8 +56,10 @@ const Select = ({
   })
 
   return (
-    <div className={cx}
-      style={sx.root}>
+    <Base
+      {...props}
+      className={cx}
+      baseStyle={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -77,7 +73,7 @@ const Select = ({
         ))}
       </select>
       {message && <Text small children={message} />}
-    </div>
+    </Base>
   )
 }
 

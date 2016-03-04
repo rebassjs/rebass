@@ -1,16 +1,18 @@
 
 import React from 'react'
-import theme from './theme'
-import margins from './util/margins'
+import Base from './Base'
+import config from './config'
 
 /**
  * Full-height banner with styling for background images
  */
 
-const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Banner : {}
-  const { scale, colors, fontSizes } = config
+const Banner = ({
+  align,
+  backgroundImage,
+  ...props
+}, { rebass }) => {
+  const { scale, colors, fontSizes } = { ...config, ...rebass }
 
   const alignment = {
     left: 'flex-start',
@@ -21,12 +23,12 @@ const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
   const alignItems = alignment[align]
 
   const sx = {
-    boxSizing: 'border-box',
     fontSize: fontSizes[1],
     display: 'flex',
     flexDirection: 'column',
     alignItems,
     justifyContent: 'center',
+    textAlign: align === 'center' ? 'center' : null,
     padding: scale[4],
     marginBottom: scale[3],
     color: colors.white,
@@ -35,16 +37,13 @@ const Banner = ({ align, backgroundImage, style, ...props }, { rebass }) => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
-    ...customStyle,
-    ...margins(props, scale),
-    ...style
   }
 
   return (
-    <div
+    <Base
       {...props}
       className='Banner'
-      style={sx} />
+      baseStyle={sx} />
   )
 }
 

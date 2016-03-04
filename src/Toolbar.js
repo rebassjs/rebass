@@ -1,32 +1,32 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Toolbar component that vertically centers children with display flex
  */
 
-const Toolbar = ({ style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Toolbar : {}
-  const { scale, colors } = config
+const Toolbar = ({ ...props }, { rebass }) => {
+  const { scale } = { ...config, ...rebass }
 
   return (
-    <div
+    <Base
       {...props}
       className='Toolbar'
-      style={{
+      baseStyle={{
         display: 'flex',
         alignItems: 'center',
         minHeight: 48,
         paddingLeft: scale[1],
-        paddingRight: scale[1],
-        color: colors.white,
-        backgroundColor: colors.primary,
-        ...customStyle,
-        ...style
+        paddingRight: scale[1]
       }} />
   )
+}
+
+Toolbar.defaultProps = {
+  theme: 'primary',
+  inverted: true
 }
 
 Toolbar.contextTypes = {
@@ -34,3 +34,4 @@ Toolbar.contextTypes = {
 }
 
 export default Toolbar
+

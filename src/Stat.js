@@ -1,7 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
-import margins from './util/margins'
+import Base from './Base'
+import config from './config'
 
 /**
  * Styled number display for statistics
@@ -12,19 +12,13 @@ const Stat = ({
   label,
   unit,
   topLabel,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Stat : {}
-  const { fontSizes, bold, scale } = config
+  const { fontSizes, bold, scale } = { ...config, ...rebass }
 
   const sx = {
     root: {
-      display: 'inline-block',
-      ...margins(props, scale),
-      ...customStyle,
-      ...style
+      display: 'inline-block'
     },
     value: {
       fontSize: fontSizes[0],
@@ -45,16 +39,17 @@ const Stat = ({
   }
 
   return (
-    <div {...props}
+    <Base
+      {...props}
       className='Stat'
-      style={sx.root}>
+      baseStyle={sx.root}>
       {topLabel && <div style={sx.label}>{label}</div>}
       <div style={sx.value}>
         {value}
         {unit && <span style={sx.unit}>{unit}</span>}
       </div>
       {!topLabel && <div style={sx.label}>{label}</div>}
-    </div>
+    </Base>
   )
 }
 

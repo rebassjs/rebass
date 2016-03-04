@@ -66,7 +66,7 @@ describe('margins util', () => {
     })
   })
 
-  it('should return margin left and right when my is 0', () => {
+  it('should return margin top and bottom when my is 0', () => {
     const m = margins({ my: 0 }, scale)
     expect(m).toEqual({
       marginTop: 0,

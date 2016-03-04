@@ -1,15 +1,17 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Label element for form controls
  */
 
-const Label = ({ hide, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Label : {}
-  const { fontSizes, bold } = config
+const Label = ({
+  hide,
+  ...props
+}, { rebass }) => {
+  const { fontSizes, bold } = { ...config, ...rebass }
 
   const hideStyle = hide ? {
     position: 'absolute',
@@ -19,16 +21,17 @@ const Label = ({ hide, style, ...props }, { rebass }) => {
     clip: 'rect(1px, 1px, 1px, 1px)'
   } : {}
 
-  return <label
-    {...props}
-    className='Label'
-    style={{
-      fontSize: fontSizes[5],
-      fontWeight: bold,
-      ...customStyle,
-      ...hideStyle,
-      ...style
-    }} />
+  return (
+    <Base
+      {...props}
+      tagName='label'
+      className='Label'
+      baseStyle={{
+        fontSize: fontSizes[5],
+        fontWeight: bold,
+        ...hideStyle
+      }} />
+  )
 }
 
 Label.propTypes = {

@@ -2,7 +2,7 @@
 import React from 'react'
 import Input from './Input'
 import ButtonOutline from './ButtonOutline'
-import theme from './theme'
+import Base from './Base'
 
 /**
  * Inline grouped form for search or other simple forms
@@ -16,19 +16,13 @@ const InlineForm =({
   onChange,
   buttonLabel,
   onClick,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.InlineForm : {}
-  const { scale } = config
 
   const sx = {
     root: {
       display: 'flex',
-      alignItems: 'center',
-      ...customStyle,
-      ...style
+      alignItems: 'center'
     },
     input: {
       flex: '1 1 auto'
@@ -39,9 +33,10 @@ const InlineForm =({
   }
 
   return (
-    <form {...props}
+    <Base {...props}
+      tagName='form'
       className='InlineForm'
-      style={sx.root}>
+      baseStyle={sx.root}>
       <Input
         name={name}
         label={label}
@@ -58,7 +53,7 @@ const InlineForm =({
         onClick={onClick}
         style={sx.button}
         rounded='right' />
-    </form>
+    </Base>
   )
 }
 

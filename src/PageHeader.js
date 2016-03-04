@@ -1,21 +1,28 @@
 
 import React from 'react'
+import Base from './Base'
 import Heading from './Heading'
-import theme from './theme'
+import config from './config'
 
 /**
  * Main page header with description
  */
 
-const PageHeader = ({ heading, description, style, children, ...props }, { rebass }) => {
+const PageHeader = ({
+  heading,
+  description,
+  children,
+  ...props
+}, { rebass }) => {
 
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.PageHeader : {}
-  const { scale, borderColor } = config
+  const { scale, borderColor } = { ...config, ...rebass }
 
   return (
-    <header className='PageHeader'
-      style={{
+    <Base
+      {...props}
+      tagName='header'
+      className='PageHeader'
+      baseStyle={{
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
@@ -25,9 +32,7 @@ const PageHeader = ({ heading, description, style, children, ...props }, { rebas
         marginBottom: scale[4],
         borderBottomWidth: 2,
         borderBottomStyle: 'solid',
-        borderBottomColor: borderColor,
-        ...customStyle,
-        ...style
+        borderColor
       }}>
       <div style={{
           flex: '1 1 auto',
@@ -42,7 +47,7 @@ const PageHeader = ({ heading, description, style, children, ...props }, { rebas
         }
       </div>
       {children}
-    </header>
+    </Base>
   )
 }
 

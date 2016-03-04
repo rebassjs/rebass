@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Section } from '../src'
+import { Section, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,11 @@ describe('Section', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('section')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName section', () => {
+    expect(tree.props.tagName).toEqual('section')
   })
 
   it('should have a className', () => {

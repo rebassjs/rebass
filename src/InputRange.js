@@ -1,8 +1,8 @@
 
 import React from 'react'
-import theme from './theme'
 import Label from './Label'
-import margins from './util/margins'
+import Base from './Base'
+import config from './config'
 
 /**
  * Input type range with label
@@ -13,12 +13,9 @@ const InputRange = ({
   name,
   hideLabel,
   children,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.InputRange : {}
-  const { scale } = config
+  const { scale } = { ...config, ...rebass }
 
   const css = `
     .InputRange-input::-webkit-slider-thumb {
@@ -52,12 +49,11 @@ const InputRange = ({
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
   return (
-    <div className='InputRange'
-      style={{
-        marginBottom: scale[2],
-        ...customStyle,
-        ...margins(props, scale),
-        ...style
+    <Base
+      {...props}
+      className='InputRange'
+      baseStyle={{
+        marginBottom: scale[2]
       }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Label
@@ -82,7 +78,7 @@ const InputRange = ({
           WebkitAppearance: 'none',
           appearance: 'none',
         }} />
-    </div>
+    </Base>
   )
 }
 

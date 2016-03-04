@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, ButtonCircle } from '../src'
+import { config, ButtonCircle, Button } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('ButtonCircle', () => {
-  const { scale, colors, borderRadius } = theme
+  const { scale, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {
@@ -16,15 +16,11 @@ describe('ButtonCircle', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('button')
+    expect(tree.type).toEqual(Button)
   })
 
-  it('should have a className', () => {
-    expect(tree.props.className).toEqual('ButtonCircle')
-  })
-
-  it('should have a primary background color', () => {
-    expect(tree.props.style.backgroundColor).toEqual(colors.primary)
+  it('should set cx', () => {
+    expect(tree.props.cx).toEqual('ButtonCircle')
   })
 
   it('should have a border radius', () => {
@@ -39,56 +35,6 @@ describe('ButtonCircle', () => {
     it('should set width and height', () => {
       expect(tree.props.style.width).toEqual(64)
       expect(tree.props.style.height).toEqual(64)
-    })
-  })
-
-  context('when href is set', () => {
-    beforeEach(() => {
-      renderer.render(<ButtonCircle href='#!' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should be an <a> tag', () => {
-      expect(tree.type).toEqual('a')
-    })
-  })
-
-  context('when a color from the colors object is set', () => {
-    beforeEach(() => {
-      renderer.render(<ButtonCircle color='red' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set a color from the theme', () => {
-      expect(tree.props.style.color).toEqual(colors.red)
-    })
-  })
-
-  context('when a generic color is set', () => {
-    beforeEach(() => {
-      renderer.render(<ButtonCircle color='#f00' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set the raw color value', () => {
-      expect(tree.props.style.color).toEqual('#f00')
-    })
-  })
-
-  context('when a background color from the colors object is set', () => {
-    beforeEach(() => {
-      renderer.render(<ButtonCircle backgroundColor='red' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set a background color from the theme', () => {
-      expect(tree.props.style.backgroundColor).toEqual(colors.red)
-    })
-  })
-
-  context('when a generic backgroundColor is set', () => {
-    beforeEach(() => {
-      renderer.render(<ButtonCircle backgroundColor='#f00' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set the raw background color', () => {
-      expect(tree.props.style.backgroundColor).toEqual('#f00')
     })
   })
 

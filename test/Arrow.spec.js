@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Arrow } from '../src'
+import { Arrow, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,7 @@ describe('Arrow', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -23,11 +23,11 @@ describe('Arrow', () => {
   })
 
   it('should have a border top by default', () => {
-    expect(tree.props.style.borderTop).toEqual('.4375em solid')
+    expect(tree.props.baseStyle.borderTop).toEqual('.4375em solid')
   })
 
   it('should not have a border bottom by default', () => {
-    expect(tree.props.style.borderBottom).toNotExist()
+    expect(tree.props.baseStyle.borderBottom).toNotExist()
   })
 
   context('when direction prop is up', () => {
@@ -37,11 +37,11 @@ describe('Arrow', () => {
     })
 
     it('should have a border bottom', () => {
-      expect(tree.props.style.borderBottom).toEqual('.4375em solid')
+      expect(tree.props.baseStyle.borderBottom).toEqual('.4375em solid')
     })
 
     it('should not have a border top', () => {
-      expect(tree.props.style.borderTop).toNotExist()
+      expect(tree.props.baseStyle.borderTop).toNotExist()
     })
   })
 

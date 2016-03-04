@@ -1,7 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
-import radii from './util/radii'
+import Base from './Base'
+import config from './config'
 
 /**
  * A general purpose button element with customizable colors
@@ -10,22 +10,12 @@ import radii from './util/radii'
 const Button = ({
   href,
   big,
-  color,
-  backgroundColor,
-  children,
-  style,
-  className,
+  cx,
   ...props
 }, { rebass }) => {
-
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Button : {}
-  const { fontSizes, bold, scale, colors, borderRadius } = config
+  const { fontSizes, bold, scale } = { ...config, ...rebass }
 
   const Component = href ? 'a' : 'button'
-
-  color  = colors[color] || color || colors.white
-  backgroundColor  = colors[backgroundColor] || backgroundColor || colors.primary
 
   const sx = {
     fontFamily: 'inherit',
@@ -37,30 +27,25 @@ const Button = ({
     margin: 0,
     padding: big ? scale[2] : `${scale[1]}px ${scale[2]}px`,
     cursor: 'pointer',
-    border: 0,
-    color,
-    backgroundColor,
-    ...customStyle,
-    ...radii(props, borderRadius),
-    ...style
+    border: 0
   }
 
   return (
-    <Component {...props}
+    <Base
+      {...props}
+      tagName={Component}
+      className={cx || 'Button'}
       href={href}
-      className='Button'
-      style={sx}>
-      {children}
-    </Component>
+      baseStyle={sx}/>
   )
 }
 
 Button.propTypes = {
   /** Pass an href prop to make the Button an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Button color - can either be a key from the theme colors object or any color value */
+  /** Button color - can either be a key from the config colors object or any color value */
   color: React.PropTypes.string,
-  /** Background color - can either be a key from the theme colors object or any color value */
+  /** Background color - can either be a key from the config colors object or any color value */
   backgroundColor: React.PropTypes.string,
   /** Controls the border radius for creating button groups */
   rounded: React.PropTypes.oneOfType([
@@ -75,10 +60,23 @@ Button.propTypes = {
   /** Creates a pill style button */
   pill: React.PropTypes.bool,
   /** Creates a larger button */
-  big: React.PropTypes.bool
+  big: React.PropTypes.bool,
+  /** Sets color from config */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'default',
+    'info',
+    'success',
+    'warning',
+    'error',
+  ])
 }
 
 Button.defaultProps = {
+  color: 'white',
+  backgroundColor: 'primary',
+  inverted: true,
   rounded: true
 }
 

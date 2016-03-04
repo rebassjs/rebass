@@ -1,29 +1,26 @@
 
 import React from 'react'
-import theme from './theme'
-// highlight?
+import Base from './Base'
+import config from './config'
 
 /**
  * Pre element for displaying code examples
  */
 
-const Pre = ({ style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyles = rebass ? rebass.Pre : {}
-  const { monospace, scale, borderColor } = config
+const Pre = ({ ...props }, { rebass }) => {
+  const { monospace, scale, borderColor } = { ...config, ...rebass }
 
   return (
-    <pre
+    <Base
       {...props}
+      tagName='pre'
       className='Pre'
-      style={{
+      baseStyle={{
         fontFamily: monospace,
         paddingLeft: scale[2],
         marginBottom: scale[2],
         borderLeft: `4px solid ${borderColor}`,
-        overflowX: 'scroll',
-        ...customStyles,
-        ...style
+        overflowX: 'scroll'
       }} />
   )
 }

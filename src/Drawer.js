@@ -1,6 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * An off-canvas drawer component
@@ -11,12 +12,9 @@ const Drawer = ({
   size,
   position,
   onDismiss,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Drawer : {}
-  const { scale, zIndex, colors } = config
+  const { scale, zIndex, colors } = { ...config, ...rebass }
 
   const placements = {
     top: {
@@ -61,8 +59,6 @@ const Drawer = ({
   }
 
   const sx = {
-    root: {
-    },
     dismiss: {
       position: 'fixed',
       top: 0,
@@ -73,7 +69,6 @@ const Drawer = ({
       display: open ? null : 'none'
     },
     content: {
-      boxSizing: 'border-box',
       position: 'fixed',
       ...placements[position],
       zIndex: zIndex[4],
@@ -83,21 +78,18 @@ const Drawer = ({
       transform,
       transition: 'transform .2s ease-out',
       overflowX: 'hidden',
-      overflowY: 'scroll',
-      color: colors.white,
-      backgroundColor: colors.black,
-      ...customStyle,
-      ...style
+      overflowY: 'scroll'
     }
   }
 
   return (
-    <div className='Drawer'
-      style={sx.root}>
+    <div className='Drawer'>
       <div style={sx.dismiss}
         onClick={onDismiss} />
-      <div {...props}
-        style={sx.content} />
+      <Base
+        {...props}
+        className='Drawer Drawer-content'
+        baseStyle={sx.content} />
     </div>
   )
 }
@@ -122,7 +114,9 @@ Drawer.defaultProps = {
   open: false,
   size: 320,
   position: 'left',
-  onDismiss: function () {}
+  onDismiss: function () {},
+  color: 'white',
+  backgroundColor: 'default'
 }
 
 Drawer.contextTypes = {

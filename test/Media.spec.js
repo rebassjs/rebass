@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Media } from '../src'
+import { config, Media, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Media', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree, img, body
 
   beforeEach(() => {
@@ -22,7 +22,7 @@ describe('Media', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -46,7 +46,7 @@ describe('Media', () => {
   })
 
   it('should not have a default align-items value', () => {
-    expect(tree.props.style.alignItems).toNotExist()
+    expect(tree.props.baseStyle.alignItems).toNotExist()
   })
 
   context('when right is true', () => {
@@ -84,7 +84,7 @@ describe('Media', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set align-items flex-start', () => {
-      expect(tree.props.style.alignItems).toEqual('flex-start')
+      expect(tree.props.baseStyle.alignItems).toEqual('flex-start')
     })
   })
 
@@ -98,7 +98,7 @@ describe('Media', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set align-items center', () => {
-      expect(tree.props.style.alignItems).toEqual('center')
+      expect(tree.props.baseStyle.alignItems).toEqual('center')
     })
   })
 
@@ -112,7 +112,7 @@ describe('Media', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set align-items flex-end', () => {
-      expect(tree.props.style.alignItems).toEqual('flex-end')
+      expect(tree.props.baseStyle.alignItems).toEqual('flex-end')
     })
   })
 

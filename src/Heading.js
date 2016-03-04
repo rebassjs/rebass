@@ -1,33 +1,40 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Heading element with no margin and size based on fontSizes scale
  */
 
-const Heading =({ level, size, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const headingStyle = rebass ? rebass.Heading : {}
-  const { bold } = config
+const Heading =({
+  level,
+  size,
+  big,
+  cx,
+  ...props
+}, { rebass }) => {
+  const { fontSizes, bold } = { ...config, ...rebass }
   const Component = `h${level}`
-  const fontSize = typeof size === 'number' ? theme.fontSizes[size] : theme.fontSizes[level]
+  const fontSize = (typeof size === 'number' ? fontSizes[size] : fontSizes[level]) * (big ? 2 : 1)
 
   return (
-    <Component
+    <Base
       {...props}
-      className='Heading'
-      style={{
+      tagName={Component}
+      className={cx || 'Heading'}
+      baseStyle={{
         fontSize,
         fontWeight: bold,
-        margin: 0,
-        ...headingStyle,
-        ...style
+        lineHeight: 1.25,
+        margin: 0
       }} />
   )
 }
 
 Heading.propTypes = {
+  /** Doubles the visual size - useful for marketing pages */
+  big: React.PropTypes.bool,
   /** Heading level, e.g. level={1} for <h1> */
   level: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** Visual size of heading */

@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 
 /**
  * Unstyled display block link
@@ -7,23 +8,21 @@ import React from 'react'
 
 const LinkBlock = ({
   Component,
-  style,
   ...props
 }, { rebass }) => {
-  const customStyle = rebass ? rebass.LinkBlock : {}
 
   const sx = {
     display: 'block',
     textDecoration: 'none',
-    color: 'inherit',
-    ...customStyle,
-    ...style
+    color: 'inherit'
   }
 
   return (
-    <Component {...props}
+    <Base
+      {...props}
+      tagName={Component}
       className='LinkBlock'
-      style={sx} />
+      baseStyle={sx} />
   )
 }
 

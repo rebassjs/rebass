@@ -1,6 +1,8 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
+
 import margins from './util/margins'
 import padding from './util/padding'
 import radii from './util/radii'
@@ -10,30 +12,21 @@ import radii from './util/radii'
  */
 
 const Block = ({
-  color,
-  backgroundColor,
   borderColor,
   border,
   borderTop,
   borderRight,
   borderBottom,
   borderLeft,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors, borderRadius } = config
-  const customStyle = rebass && rebass.Block || {}
-  const customColor = colors[color] || color
+  const { scale, colors } = { ...config, ...rebass }
 
-
-  color = colors[color] || color || 'inherit'
-  backgroundColor = colors[backgroundColor] || backgroundColor || null
   borderColor = colors[borderColor] || borderColor || colors.primary
 
   const sx = {
-    boxSizing: 'border-box',
     padding: scale[2],
+    marginTop: scale[2],
     marginBottom: scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
@@ -41,29 +34,22 @@ const Block = ({
     borderBottomStyle: borderBottom ? 'solid' : null,
     borderLeftStyle: borderLeft ? 'solid' : null,
     borderWidth: 4,
-    borderColor,
-    color,
-    backgroundColor,
-    ...customStyle,
-    ...margins(props, scale),
-    ...padding(props, scale),
-    ...radii(props, borderRadius),
-    ...style
+    borderColor
   }
 
   return (
-    <div {...props}
+    <Base {...props}
       className='Block'
-      style={sx} />
+      baseStyle={sx} />
   )
 }
 
 Block.propTypes = {
-  /** Text color - can either be a key from the theme colors object or any color value */
+  /** Text color - can either be a key from the config colors object or any color value */
   color: React.PropTypes.string,
-  /** Background color - can either be a key from the theme colors object or any color value */
+  /** Background color - can either be a key from the config colors object or any color value */
   backgroundColor: React.PropTypes.string,
-  /** Border color - can either be a key from the theme colors object or any color value */
+  /** Border color - can either be a key from the config colors object or any color value */
   borderColor: React.PropTypes.string,
   /** Adds a border */
   border: React.PropTypes.bool,
@@ -76,34 +62,34 @@ Block.propTypes = {
   /** Adds a border to the left side */
   borderLeft: React.PropTypes.bool,
 
-  /** Applies margin with the margin utility based on the theme spacing scale */
+  /** Applies margin with the margin utility based on the spacing scale */
   m: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin top based on the theme spacing scale */
+  /** Applies margin top based on the spacing scale */
   mt: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin right based on the theme spacing scale */
+  /** Applies margin right based on the spacing scale */
   mr: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin bottom based on the theme spacing scale */
+  /** Applies margin bottom based on the spacing scale */
   mb: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin left based on the theme spacing scale */
+  /** Applies margin left based on the spacing scale */
   ml: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin left and right based on the theme spacing scale */
+  /** Applies margin left and right based on the spacing scale */
   mx: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin top and bottom based on the theme spacing scale */
+  /** Applies margin top and bottom based on the spacing scale */
   my: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
 
-  /** Applies padding with the padding utility based on the theme spacing scale */
+  /** Applies padding with the padding utility based on the spacing scale */
   p: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies padding top based on the theme spacing scale */
+  /** Applies padding top based on the spacing scale */
   pt: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies padding right based on the theme spacing scale */
+  /** Applies padding right based on the spacing scale */
   pr: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies padding bottom based on the theme spacing scale */
+  /** Applies padding bottom based on the spacing scale */
   pb: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies padding left based on the theme spacing scale */
+  /** Applies padding left based on the spacing scale */
   pl: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies padding left and right based on the theme spacing scale */
+  /** Applies padding left and right based on the spacing scale */
   px: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies padding top and bottom based on the theme spacing scale */
+  /** Applies padding top and bottom based on the spacing scale */
   py: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
 
   /** Controls border radius */

@@ -1,35 +1,35 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Styled box with border
  */
 
-const Card = ({ width, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const cardStyle = { ...theme.Card, ...(rebass ? rebass.Card : {}), ...style }
-  const { scale, borderRadius, borderColor } = config
+const Card = ({
+  width,
+  ...props
+}, { rebass }) => {
+  const { scale, borderColor } = { ...config, ...rebass }
 
   const sx = {
     display: 'flex',
     width,
-    flexDirection: 'column',
     padding: scale[1],
     marginBottom: scale[2],
-    borderRadius,
+    flexDirection: 'column',
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor,
-    overflow: 'hidden',
-    ...cardStyle
+    overflow: 'hidden'
   }
 
   return (
-    <div
+    <Base
       {...props}
       className='Card'
-      style={sx} />
+      baseStyle={sx} />
   )
 }
 
@@ -39,6 +39,10 @@ Card.propTypes = {
     React.PropTypes.number,
     React.PropTypes.string
   ])
+}
+
+Card.defaultProps = {
+  rounded: true
 }
 
 Card.contextTypes = {

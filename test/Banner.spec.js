@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Banner } from '../src'
+import { Banner, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -15,7 +15,7 @@ describe('Banner', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -23,11 +23,11 @@ describe('Banner', () => {
   })
 
   it('should set align-items center by default', () => {
-    expect(tree.props.style.alignItems).toEqual('center')
+    expect(tree.props.baseStyle.alignItems).toEqual('center')
   })
 
   it('should not have a background image', () => {
-    expect(tree.props.style.backgroundImage).toEqual(null)
+    expect(tree.props.baseStyle.backgroundImage).toEqual(null)
   })
 
   context('when align is left', () => {
@@ -37,7 +37,7 @@ describe('Banner', () => {
     })
 
     it('should set align-items flex-start', () => {
-      expect(tree.props.style.alignItems).toEqual('flex-start')
+      expect(tree.props.baseStyle.alignItems).toEqual('flex-start')
     })
   })
 
@@ -48,7 +48,7 @@ describe('Banner', () => {
     })
 
     it('should set align-items center', () => {
-      expect(tree.props.style.alignItems).toEqual('center')
+      expect(tree.props.baseStyle.alignItems).toEqual('center')
     })
   })
 
@@ -59,7 +59,7 @@ describe('Banner', () => {
     })
 
     it('should set align-items flex-end', () => {
-      expect(tree.props.style.alignItems).toEqual('flex-end')
+      expect(tree.props.baseStyle.alignItems).toEqual('flex-end')
     })
   })
 
@@ -70,7 +70,7 @@ describe('Banner', () => {
     })
 
     it('should have a background image', () => {
-      expect(tree.props.style.backgroundImage).toBeA('string')
+      expect(tree.props.baseStyle.backgroundImage).toBeA('string')
     })
   })
 

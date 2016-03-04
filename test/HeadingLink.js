@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, HeadingLink, Heading } from '../src'
+import { config, HeadingLink, Heading } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('HeadingLink', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {
@@ -20,8 +20,7 @@ describe('HeadingLink', () => {
   })
 
   it('should have a className', () => {
-    // This doesn't actually test rendered output
-    expect(tree.props.className).toEqual('HeadingLink')
+    expect(tree.props.cx).toEqual('HeadingLink')
   })
 
   it('should pass level and size', () => {

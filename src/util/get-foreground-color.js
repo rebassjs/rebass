@@ -1,9 +1,9 @@
 
 import Color from 'color'
-import theme from '../theme'
+import config from '../config'
 
 function getForegroundColor (backgroundColor) {
-  const { colors } = theme
+  const { colors } = config
 
   if (arguments.length > 1) {
     for (var i = 1; i < arguments.length; i++) {

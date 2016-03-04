@@ -1,6 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 const M = 'M'
 const A = 'A'
@@ -51,12 +52,9 @@ const Donut = ({
   size,
   strokeWidth,
   children,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Donut : {}
-  const { bold, colors } = config
+  const { bold, colors } = { ...config, ...rebass }
 
   const viewBox = `0 0 ${size} ${size}`
 
@@ -70,10 +68,7 @@ const Donut = ({
       fontWeight: bold,
       lineHeight: 1,
       width: size,
-      height: size,
-      color: colors.primary,
-      ...customStyle,
-      ...style
+      height: size
     },
     svg: {
       position: 'absolute',
@@ -96,9 +91,9 @@ const Donut = ({
   }
 
   return (
-    <div {...props}
+    <Base {...props}
       className='Donut'
-      style={sx.root}>
+      baseStyle={sx.root}>
       <svg
         xmlns='http://www.w3.org/svg/2000'
         viewBox={viewBox}
@@ -115,7 +110,7 @@ const Donut = ({
           <span style={sx.unit}>%</span>
         </span>
       }
-    </div>
+    </Base>
   )
 }
 
@@ -125,13 +120,16 @@ Donut.propTypes = {
   /** Sets width and height */
   size: React.PropTypes.number,
   /** Sets width of stroke */
-  strokeWidth: React.PropTypes.number
+  strokeWidth: React.PropTypes.number,
+  /** Text color - can either be a key from the config colors object or any color value */
+  color: React.PropTypes.string,
 }
 
 Donut.defaultProps = {
   value: 0,
   size: 128,
-  strokeWidth: 8
+  strokeWidth: 8,
+  color: 'primary'
 }
 
 Donut.contextTypes = {

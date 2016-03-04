@@ -1,25 +1,27 @@
 
 import React from 'react'
 import classnames from 'classnames'
+import Base from './Base'
 import Label from './Label'
-import theme from './theme'
+import config from './config'
 
 /**
  * Radio input with label
  */
 
-const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Radio : {}
-  const { scale, colors } = config
+const Radio = ({
+  label,
+  name,
+  children,
+  ...props
+}, { rebass }) => {
+  const { scale, colors } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
   const sx = {
     root: {
-      color: invalid ? colors.error : null,
-      ...customStyle,
-      ...style
+      color: invalid ? colors.error : null
     },
     label: {
       display: 'flex',
@@ -38,9 +40,11 @@ const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
   })
 
   return (
-    <div className={cx}
-      style={sx.root}>
-      <Label htmlFor={name}
+    <Base
+      {...props}
+      className={cx}
+      baseStyle={sx.root}>
+      <Label
         style={sx.label}>
         <input
           {...props}
@@ -49,7 +53,7 @@ const Radio = ({ label, name, style, children, ...props }, { rebass }) => {
           style={sx.input} />
         {label}
       </Label>
-    </div>
+    </Base>
   )
 }
 

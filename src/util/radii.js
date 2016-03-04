@@ -12,7 +12,7 @@ function radii(props, r) {
     circle
   } = props || {}
 
-  let borderRadius = null
+  let borderRadius
 
   if (rounded === true) {
     borderRadius = r
@@ -34,7 +34,11 @@ function radii(props, r) {
     borderRadius = 99999
   }
 
-  return { borderRadius }
+  if (typeof borderRadius === 'undefined') {
+    return {}
+  } else {
+    return { borderRadius }
+  }
 }
 
 export default radii

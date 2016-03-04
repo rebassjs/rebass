@@ -1,7 +1,8 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
 import LinkBlock from './LinkBlock'
+import config from './config'
 
 /**
  * Sequence map pattern for use in multi-step forms
@@ -10,12 +11,9 @@ import LinkBlock from './LinkBlock'
 const SequenceMap = ({
   steps,
   active,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.SequenceMap : {}
-  const { fontSizes, bold, scale, colors } = config
+  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
 
   const sx = {
     root: {
@@ -24,9 +22,7 @@ const SequenceMap = ({
       justifyContent: 'space-between',
       fontSize: fontSizes[5],
       fontWeight: bold,
-      color: colors.gray,
-      ...customStyle,
-      ...style
+      color: colors.gray
     },
     link: {
       position: 'relative',
@@ -65,10 +61,10 @@ const SequenceMap = ({
   }
 
   return (
-    <div
+    <Base
       {...props}
       className='SequenceMap'
-      style={sx.root}>
+      baseStyle={sx.root}>
       {steps.map((step, i) => (
         <LinkBlock
           key={i}
@@ -84,7 +80,7 @@ const SequenceMap = ({
           </div>
         </LinkBlock>
       ))}
-    </div>
+    </Base>
   )
 }
 

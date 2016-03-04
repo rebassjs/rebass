@@ -1,10 +1,11 @@
 
-import { theme } from '../src'
-
 const demoTheme = {
   fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
   color: '#111',
   backgroundColor: '#fff',
+  Btn: {
+    // backgroundColor: 'green'
+  },
   Heading: {
     fontFamily: 'inherit'
   },

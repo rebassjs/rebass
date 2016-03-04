@@ -2,7 +2,7 @@
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
-  theme,
+  config,
   Fixed,
   Overlay,
   Panel,
@@ -25,12 +25,12 @@ import demoTheme from '../demo-theme'
 import KitchenSink from './KitchenSink'
 import ConfigForm from './ConfigForm'
 
-const initialTheme = Object.assign({}, theme)
+const initialTheme = Object.assign({}, config)
 
 class App extends React.Component {
   constructor () {
     super()
-    this.state = Object.assign({}, theme, demoTheme, {
+    this.state = Object.assign({}, config, demoTheme, {
       drawerOpen: false,
       overlayOpen: false
     })
@@ -83,8 +83,8 @@ class App extends React.Component {
     return (
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
-        <Fixed top left right>
-          <Toolbar>
+        <Fixed top left right zIndex={1}>
+          <Toolbar style={{ opacity: .875 }}>
             <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
             <Space auto />
             <NavItem
@@ -93,10 +93,13 @@ class App extends React.Component {
           </Toolbar>
         </Fixed>
         <Banner
-          style={{ marginTop: 48 }}
+          style={{
+            paddingTop: 48,
+            backgroundAttachment: 'fixed'
+          }}
           backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
           onClick={this.toggleDrawer}>
-          <Heading size={0} children='Rebass Demo' />
+          <Heading size={1} big children='Rebass Demo' />
           <Text children='Configurable example page' />
           <Box py={2}>
             <Button
@@ -114,10 +117,10 @@ class App extends React.Component {
           open={drawerOpen}
           onDismiss={this.toggleDrawer}
           position='right'>
-          <SectionHeader
-            heading='Configuration'>
+          <Flex align='center'>
+            <Space auto />
             <Close onClick={this.toggleDrawer} />
-          </SectionHeader>
+          </Flex>
           <ConfigForm
             {...this.state}
             onChange={this.updateContext}
@@ -126,7 +129,7 @@ class App extends React.Component {
         <Overlay
           open={overlayOpen}
           onDismiss={this.toggleOverlay}>
-            <Panel type='info'>
+            <Panel theme='info'>
               <PanelHeader>
                 Hello Overlay
                 <Space auto />

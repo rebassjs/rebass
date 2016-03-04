@@ -60,7 +60,14 @@ class Root extends React.Component {
   }
 
   render () {
-    const { components, examples, description, version } = this.props
+    const {
+      components,
+      base,
+      examples,
+      description,
+      version,
+      ga
+    } = this.props
 
     return (
       <html>
@@ -84,6 +91,7 @@ class Root extends React.Component {
             <main>
               <Features />
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
+              <ComponentDoc {...base} />
               <Related />
             </main>
             <Block borderLeft p={4} mb={4}>
@@ -102,11 +110,12 @@ class Root extends React.Component {
               Documentation generated with <a href='https://github.com/jxnblk/static-react'>static-react</a>, <a href='https://github.com/reactjs/react-docgen'>react-docgen</a>, and <a href='https://github.com/jxnblk/react-component-permutations'>react-component-permutations</a>.
             </Text>
             <Footer>
-              <NavItem href='https://github.com/jxnblk/rebass' children='GitHub' />
+              <NavItem px={0} href='https://github.com/jxnblk/rebass' children='GitHub' />
               <Space auto />
-              <NavItem href='http://jxnblk.com' children='Made by Jxnblk' />
+              <NavItem px={0} href='http://jxnblk.com' children='Made by Jxnblk' />
             </Footer>
           </Container>
+          <script dangerouslySetInnerHTML={{ __html: ga }} />
         </body>
       </html>
     )

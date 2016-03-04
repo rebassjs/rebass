@@ -1,6 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * A circular image for displaying user avatars
@@ -8,27 +9,23 @@ import theme from './theme'
 
 const Avatar = ({
   size,
-  style,
+  children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Avatar : {}
-  const { colors } = config
+  const { colors } = { ...config, ...rebass }
 
   return (
-    <img
+    <Base
       {...props}
+      tagName='img'
       className='Avatar'
       width={size}
       height={size}
-      style={{
+      baseStyle={{
         maxWidth: 'none',
         width: size,
         height: size,
-        borderRadius: 9999,
-        backgroundColor: colors.gray,
-        ...customStyle,
-        ...style
+        backgroundColor: colors.gray
       }}
     />
   )
@@ -40,7 +37,8 @@ Avatar.propTypes = {
 }
 
 Avatar.defaultProps = {
-  size: 48
+  size: 48,
+  circle: true
 }
 
 Avatar.contextTypes = {

@@ -1,17 +1,17 @@
 
 import React from 'react'
+import Base from './Base'
 
 /**
  * Position relative container for positioning DropdownMenu component
  */
 
-const Dropdown = ({ style, ...props }) => (
-  <div
+const Dropdown = ({ ...props }) => (
+  <Base
     {...props}
     className='Dropdown'
-    style={{
-      position: 'relative',
-      ...style
+    baseStyle={{
+      position: 'relative'
     }} />
 )
 

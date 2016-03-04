@@ -1,27 +1,35 @@
 
 import React from 'react'
+import Base from './Base'
 import Menu from './Menu'
 
 /**
  * Absolutely positioned Menu component for use within Dropdown component
  */
 
-const DropdownMenu = ({ open, right, top, style, ...props }) => {
+const DropdownMenu = ({
+  open,
+  right,
+  top,
+  ...props
+}) => {
+  const { children, ...baseProps } = props
+
   return (
-    <div
+    <Base
+      {...baseProps}
       className='DropdownMenu'
-      style={{
+      baseStyle={{
         display: open ? null : 'none',
         position: 'absolute',
         left: right ? 'auto' : 0,
         right: right ? 0 : 'auto',
         top: top ? 'auto' : '100%',
         bottom: top ? '100%' : 'auto',
-        zIndex: 4,
-        ...style
+        zIndex: 4
       }}>
       <Menu {...props} />
-    </div>
+    </Base>
   )
 }
 

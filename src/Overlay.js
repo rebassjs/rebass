@@ -1,6 +1,7 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Fixed positioned overlay for use with modal dialogs
@@ -13,12 +14,9 @@ const Overlay = ({
   box,
   onDismiss,
   children,
-  style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Overlay : {}
-  const { zIndex, scale, colors, borderRadius } = config
+  const { zIndex, scale, colors, borderRadius } = { ...config, ...rebass }
 
   const innerStyle = {
     padding: scale[3],
@@ -37,9 +35,7 @@ const Overlay = ({
       display: open ? 'flex' : 'none',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      ...customStyle,
-      ...style
+      justifyContent: 'center'
     },
     dismiss: {
       position: 'fixed',
@@ -53,7 +49,6 @@ const Overlay = ({
     inner: {
       position: 'relative',
       zindex: zIndex[1],
-      boxSizing: 'border-box',
       minWidth: 320,
       width: fullWidth ? '100%' : null,
       ...(box ? innerStyle : {})
@@ -66,10 +61,9 @@ const Overlay = ({
       style={sx.root}>
       <div style={sx.dismiss}
         onClick={onDismiss} />
-      <div {...props}
-        style={sx.inner}>
-        {children}
-      </div>
+      <Base {...props}
+        baseStyle={sx.inner}
+        children={children} />
     </div>
   )
 }

@@ -1,24 +1,25 @@
 
 import React from 'react'
-import theme from './theme'
+import Base from './Base'
+import config from './config'
 
 /**
  * Breadcrumb navigation links
  */
 
-const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Breadcrumbs : {}
-  const { fontSizes, scale } = config
+const Breadcrumbs = ({
+  links,
+  children,
+  ...props
+}, { rebass }) => {
+  const { fontSizes, scale } = { ...config, ...rebass }
 
   const sx = {
     root: {
       fontSize: fontSizes[5],
       display: 'flex',
       marginBottom: scale[2],
-      alignItems: 'center',
-      ...customStyle,
-      ...style
+      alignItems: 'center'
     },
     spacer: {
       marginLeft: '.5em',
@@ -27,10 +28,10 @@ const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
   }
 
   return (
-    <div
+    <Base
       {...props}
       className='Breadcrumbs'
-      style={sx.root}>
+      baseStyle={sx.root}>
       {links.map((link, i) => (
         <div key={i}>
           <a {...link}
@@ -43,7 +44,7 @@ const Breadcrumbs = ({ links, style, ...props }, { rebass }) => {
           }
         </div>
       ))}
-    </div>
+    </Base>
   )
 }
 

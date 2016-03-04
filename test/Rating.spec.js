@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Rating } from '../src'
+import { config, Rating, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Rating', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree, stars
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('Rating', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {

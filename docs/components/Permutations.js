@@ -1,9 +1,10 @@
 
 import React from 'react'
 import rcp from 'react-component-permutations'
-import { Divider, Text, theme } from '../../src'
+import { Divider, Text } from '../../src'
 
 const blacklist = [
+  'Base',
   'Banner',
   'Block',
   'Card',
@@ -39,8 +40,6 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     'default',
     'info',
   ]
-
-  const config = { ...theme, ...rebass }
 
   const permutations = rcp(raw, {
     options: [
@@ -93,7 +92,7 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
             {permutations.map((p, i) => (
               <Component {...p}
                 key={i}
-                style={{ marginRight: 16 }}
+                m={1}
                 title={`<${name} ${propsString(p)} />`}
                 name={name}
                 children={name} />
