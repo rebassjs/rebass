@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Styled tooltip that shows on hover
  */
 
 const Tooltip = ({ title, children, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale } = config
+  const { scale } = { ...config, ...rebass }
 
   const customStyle = {
     fontSize: config.fontSizes[6],

@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Progress element
  */
 
 const Progress = ({ value, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors } = config
+  const { scale, colors } = { ...config, ...rebass }
 
   const css = `
     .Progress-progress::-webkit-progress-bar {
@@ -60,7 +59,7 @@ const Progress = ({ value, ...props }, { rebass }) => {
 Progress.propTypes = {
   /** Value for progress bar */
   value: React.PropTypes.number,
-  /** Bar color - can either be a key from the theme colors object or any color value */
+  /** Bar color - can either be a key from the config colors object or any color value */
   color: React.PropTypes.string
 }
 

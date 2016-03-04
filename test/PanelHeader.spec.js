@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, PanelHeader, Base } from '../src'
+import { config, PanelHeader, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('PanelHeader', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree
 
   beforeEach(() => {

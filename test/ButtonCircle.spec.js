@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, ButtonCircle, Button } from '../src'
+import { config, ButtonCircle, Button } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('ButtonCircle', () => {
-  const { scale, colors, borderRadius } = theme
+  const { scale, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {

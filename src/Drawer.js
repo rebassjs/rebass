@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * An off-canvas drawer component
@@ -14,8 +14,7 @@ const Drawer = ({
   onDismiss,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, zIndex, colors } = config
+  const { scale, zIndex, colors } = { ...config, ...rebass }
 
   const placements = {
     top: {

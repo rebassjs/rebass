@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Fixed positioned overlay for use with modal dialogs
@@ -16,8 +16,7 @@ const Overlay = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { zIndex, scale, colors, borderRadius } = config
+  const { zIndex, scale, colors, borderRadius } = { ...config, ...rebass }
 
   const innerStyle = {
     padding: scale[3],

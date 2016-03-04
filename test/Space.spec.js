@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Space, Base } from '../src'
+import { config, Space, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Space', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree
 
   beforeEach(() => {

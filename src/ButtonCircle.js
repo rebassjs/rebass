@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Button from './Button'
-import theme from './theme'
+import config from './config'
 
 /**
  * A circular button suited for use with icons
@@ -13,8 +13,7 @@ const ButtonCircle = ({
   style,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors } = config
+  const { scale } = { ...config, ...rebass }
 
   const sx = {
     root: {
@@ -49,9 +48,9 @@ const ButtonCircle = ({
 ButtonCircle.propTypes = {
   /** Pass an href prop to make the ButtonCircle an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Text color - can either be a key from the theme colors object or any color value */
+  /** Text color - can either be a key from the config colors object or any color value */
   color: React.PropTypes.string,
-  /** Background color - can either be a key from the theme colors object or any color value */
+  /** Background color - can either be a key from the config colors object or any color value */
   backgroundColor: React.PropTypes.string,
   /** Sets width and height of button */
   size: React.PropTypes.number

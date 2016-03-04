@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Media, Base } from '../src'
+import { config, Media, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Media', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree, img, body
 
   beforeEach(() => {

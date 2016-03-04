@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Star rating component with clickable buttons
@@ -12,8 +12,7 @@ const Rating = ({
   onClick,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, scale, colors } = config
+  const { fontSizes, scale, colors } = { ...config, ...rebass }
 
   const stars = Array.from({ length: 5 }, (a, b) => b)
 

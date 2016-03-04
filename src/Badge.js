@@ -1,13 +1,12 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /** Component for displaying small status indicators */
 
 const Badge = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass}
-  const { fontSizes, bold, scale, colors } = config
+  const { fontSizes, bold, scale, colors } = { ...config, ...rebass}
 
   const sx = {
     fontSize: fontSizes[6],

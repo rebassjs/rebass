@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Breadcrumb navigation links
@@ -12,8 +12,7 @@ const Breadcrumbs = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, scale } = config
+  const { fontSizes, scale } = { ...config, ...rebass }
 
   const sx = {
     root: {

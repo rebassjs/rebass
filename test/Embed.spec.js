@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Embed, Base } from '../src'
+import { config, Embed, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Embed', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {

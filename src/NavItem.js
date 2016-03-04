@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Link for use in navigation. Inherits color
@@ -12,8 +12,7 @@ const NavItem = ({
   Component,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, scale, bold } = config
+  const { fontSizes, scale, bold } = { ...config, ...rebass }
 
   return (
     <Base

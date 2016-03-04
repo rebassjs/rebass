@@ -3,7 +3,7 @@ import React from 'react'
 import Base from './Base'
 import HeadingLink from './HeadingLink'
 import Text from './Text'
-import theme from './theme'
+import config from './config'
 
 /**
  * Header for section elements
@@ -17,8 +17,7 @@ const SectionHeader = ({
   ...props
 }, { rebass }) => {
 
-  const config = { ...theme, ...rebass }
-  const { scale, borderColor } = config
+  const { scale, borderColor } = { ...config, ...rebass }
 
   return (
     <Base

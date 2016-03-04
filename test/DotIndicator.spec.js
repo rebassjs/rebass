@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, DotIndicator, Base } from '../src'
+import { config, DotIndicator, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('DotIndicator', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree, dots
 
   beforeEach(() => {

@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Base, Button } from '../src'
+import { config, Base, Button } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Base', () => {
-  const { scale, fontSizes, colors, borderRadius } = theme
+  const { scale, fontSizes, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {
@@ -54,7 +54,7 @@ describe('Base', () => {
     })
   })
 
-  context('when context is set for theme', () => {
+  context('when context is set for config', () => {
     beforeEach(() => {
       renderer.render(<Base className='Button' />, {
         rebass: { colors: { primary: 'tomato' } }
@@ -315,7 +315,7 @@ describe('Base', () => {
         tree = renderer.getRenderOutput()
       })
 
-      it('should set color from the theme', () => {
+      it('should set color from the config', () => {
         expect(tree.props.style.color).toEqual(colors.blue)
       })
     })
@@ -337,7 +337,7 @@ describe('Base', () => {
         tree = renderer.getRenderOutput()
       })
 
-      it('should set background color from the theme', () => {
+      it('should set background color from the config', () => {
         expect(tree.props.style.backgroundColor).toEqual(colors.blue)
       })
     })
@@ -366,7 +366,7 @@ describe('Base', () => {
         tree = renderer.getRenderOutput()
       })
 
-      it('should set color from the theme', () => {
+      it('should set color from the config', () => {
         expect(tree.props.style.color).toEqual(colors.blue)
       })
 
@@ -381,7 +381,7 @@ describe('Base', () => {
         tree = renderer.getRenderOutput()
       })
 
-      it('should set color from the theme', () => {
+      it('should set color from the config', () => {
         expect(tree.props.style.color).toEqual(colors.blue)
       })
 

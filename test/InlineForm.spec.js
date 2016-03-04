@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, InlineForm, Input, ButtonOutline, Base } from '../src'
+import { InlineForm, Input, ButtonOutline, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 

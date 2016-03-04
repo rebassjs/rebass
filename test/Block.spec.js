@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Block, Base } from '../src'
+import { config, Block, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Block', () => {
-  const { scale, colors } = theme
+  const { scale, colors } = config
   let tree
 
   beforeEach(() => {
@@ -110,7 +110,7 @@ describe('Block', () => {
       renderer.render(<Block borderColor='blue' />)
       tree = renderer.getRenderOutput()
     })
-    it('should set a border color from the theme', () => {
+    it('should set a border color from the config', () => {
       expect(tree.props.baseStyle.borderColor).toEqual(colors.blue)
     })
   })

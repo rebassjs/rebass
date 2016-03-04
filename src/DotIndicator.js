@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Dot indicator buttons for use in carousels
@@ -14,8 +14,7 @@ const DotIndicator = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale } = config
+  const { scale } = { ...config, ...rebass }
 
   const sx = {
     root: {

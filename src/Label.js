@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Label element for form controls
@@ -11,8 +11,7 @@ const Label = ({
   hide,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, bold } = config
+  const { fontSizes, bold } = { ...config, ...rebass }
 
   const hideStyle = hide ? {
     position: 'absolute',

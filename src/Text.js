@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Component for displaying text in UI
  */
 
 const Text = ({ small, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes } = config
+  const { fontSizes } = { ...config, ...rebass }
 
   return (
     <Base

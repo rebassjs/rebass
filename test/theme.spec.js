@@ -1,70 +1,70 @@
 
 import expect from 'expect'
-import { theme } from '../src'
+import { config } from '../src'
 
-describe('theme', () => {
+describe('config', () => {
   it('should be an object', () => {
-    expect(theme).toBeAn('object')
+    expect(config).toBeAn('object')
   })
 
   it('should have a spacing scale', () => {
-    expect(theme.scale).toBeAn('array')
+    expect(config.scale).toBeAn('array')
   })
 
   it('should have a font size scale', () => {
-    expect(theme.fontSizes).toBeAn('array')
+    expect(config.fontSizes).toBeAn('array')
   })
 
   it('should have a z-index scale', () => {
-    expect(theme.zIndex).toBeAn('array')
+    expect(config.zIndex).toBeAn('array')
   })
 
   it('should have a colors object', () => {
-    expect(theme.colors).toBeAn('object')
+    expect(config.colors).toBeAn('object')
   })
 
   it('should have a primary color', () => {
-    expect(theme.colors.primary).toExist()
+    expect(config.colors.primary).toExist()
   })
 
   it('should have a secondary color', () => {
-    expect(theme.colors.secondary).toExist()
+    expect(config.colors.secondary).toExist()
   })
 
   it('should have a default color', () => {
-    expect(theme.colors.default).toExist()
+    expect(config.colors.default).toExist()
   })
 
   it('should have an info color', () => {
-    expect(theme.colors.info).toExist()
+    expect(config.colors.info).toExist()
   })
 
   it('should have a success color', () => {
-    expect(theme.colors.success).toExist()
+    expect(config.colors.success).toExist()
   })
 
   it('should have a warning color', () => {
-    expect(theme.colors.warning).toExist()
+    expect(config.colors.warning).toExist()
   })
 
   it('should have an error color', () => {
-    expect(theme.colors.error).toExist()
+    expect(config.colors.error).toExist()
   })
 
   it('should have a bold property', () => {
-    expect(theme.bold).toEqual(600)
+    expect(config.bold).toEqual(600)
   })
 
   it('should have a monospace property', () => {
-    expect(theme.monospace).toBeA('string')
+    expect(config.monospace).toBeA('string')
   })
 
   it('should have a border radius property', () => {
-    expect(theme.borderRadius).toBeA('number')
+    expect(config.borderRadius).toBeA('number')
   })
 
   it('should have a border color property', () => {
-    expect(theme.borderColor).toBeA('string')
+    expect(config.borderColor).toBeA('string')
   })
 })
 

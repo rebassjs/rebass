@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Input, Label, Base, theme } from '../src'
+import { Input, Label, Base, config } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Input', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree, input, label, message
 
   beforeEach(() => {

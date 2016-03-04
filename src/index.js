@@ -1,6 +1,6 @@
 export { default as Base } from './Base'
 
-export { default as theme } from './theme'
+export { default as config } from './config'
 export { default as Arrow } from './Arrow'
 export { default as Avatar } from './Avatar'
 export { default as Badge } from './Badge'

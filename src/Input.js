@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import Base from './Base'
 import Label from './Label'
 import Text from './Text'
-import theme from './theme'
+import config from './config'
 
 /**
  * Input element with label with support for aria-invalid, disabled, and readOnly HTML attributes
@@ -20,8 +20,7 @@ const Input = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors, borderRadius, borderColor } = config
+  const { scale, colors, borderRadius, borderColor } = { ...config, ...rebass }
 
   const radii = {
     top: `${borderRadius}px ${borderRadius}px 0 0`,

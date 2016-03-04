@@ -55,7 +55,7 @@ const bold = 600
 const borderRadius = 2
 const borderColor = 'rgba(0, 0, 0, .25)'
 
-const theme = {
+const config = {
   scale,
   fontSizes,
   bold,
@@ -66,5 +66,5 @@ const theme = {
   borderColor
 }
 
-export default theme
+export default config
 

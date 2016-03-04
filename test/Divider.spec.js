@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Divider, Base } from '../src'
+import { config, Divider, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Divider', () => {
-  const { scale } = theme
+  const { scale } = config
   let tree
 
   beforeEach(() => {

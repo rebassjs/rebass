@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * A circular image for displaying user avatars
@@ -12,8 +12,7 @@ const Avatar = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { colors } = config
+  const { colors } = { ...config, ...rebass }
 
   return (
     <Base

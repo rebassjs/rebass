@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, NavItem, Base } from '../src'
+import { config, NavItem, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('NavItem', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {

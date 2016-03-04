@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Heading, Base } from '../src'
+import { config, Heading, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Heading', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {

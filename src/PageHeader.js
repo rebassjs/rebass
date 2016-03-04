@@ -2,7 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import Heading from './Heading'
-import theme from './theme'
+import config from './config'
 
 /**
  * Main page header with description
@@ -15,8 +15,7 @@ const PageHeader = ({
   ...props
 }, { rebass }) => {
 
-  const config = { ...theme, ...rebass }
-  const { scale, borderColor } = config
+  const { scale, borderColor } = { ...config, ...rebass }
 
   return (
     <Base

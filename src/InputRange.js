@@ -1,8 +1,8 @@
 
 import React from 'react'
-import theme from './theme'
 import Label from './Label'
 import Base from './Base'
+import config from './config'
 
 /**
  * Input type range with label
@@ -15,8 +15,7 @@ const InputRange = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale } = config
+  const { scale } = { ...config, ...rebass }
 
   const css = `
     .InputRange-input::-webkit-slider-thumb {

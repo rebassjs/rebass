@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Full-height banner with styling for background images
@@ -12,8 +12,7 @@ const Banner = ({
   backgroundImage,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors, fontSizes } = config
+  const { scale, colors, fontSizes } = { ...config, ...rebass }
 
   const alignment = {
     left: 'flex-start',

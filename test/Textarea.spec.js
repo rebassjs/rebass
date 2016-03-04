@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Textarea, Label, Base, theme } from '../src'
+import { Textarea, Label, Base, config } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Textarea', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree, textarea, label, message
 
   beforeEach(() => {

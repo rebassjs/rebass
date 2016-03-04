@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import _theme from './theme'
+import config from './config'
 
 /**
  * Panel for containing small pieces of information
  */
 
 const Panel = ({ theme, children, ...props }, { rebass }) => {
-  const config = { ..._theme, ...rebass }
-  const { scale, colors, borderRadius } = config
+  const { scale, colors, borderRadius } = { ...config, ...rebass }
 
   const borderColor = colors[theme]
   const styledChildren = React.Children.map(children, (child) => {
@@ -37,7 +36,7 @@ const Panel = ({ theme, children, ...props }, { rebass }) => {
 }
 
 Panel.propTypes = {
-  /** Sets color based on theme */
+  /** Sets color from config */
   theme: React.PropTypes.oneOf([
     'primary',
     'secondary',

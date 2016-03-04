@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Section element with vertical padding
  */
 
 const Section = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale } = config
+  const { scale } = { ...config, ...rebass }
 
   return (
     <Base

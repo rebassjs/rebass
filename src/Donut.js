@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 const M = 'M'
 const A = 'A'
@@ -54,8 +54,7 @@ const Donut = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { bold, colors } = config
+  const { bold, colors } = { ...config, ...rebass }
 
   const viewBox = `0 0 ${size} ${size}`
 
@@ -122,7 +121,7 @@ Donut.propTypes = {
   size: React.PropTypes.number,
   /** Sets width of stroke */
   strokeWidth: React.PropTypes.number,
-  /** Text color - can either be a key from the theme colors object or any color value */
+  /** Text color - can either be a key from the config colors object or any color value */
   color: React.PropTypes.string,
 }
 

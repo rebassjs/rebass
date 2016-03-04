@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * A general purpose button element with customizable colors
@@ -13,8 +13,7 @@ const Button = ({
   cx,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, bold, scale } = config
+  const { fontSizes, bold, scale } = { ...config, ...rebass }
 
   const Component = href ? 'a' : 'button'
 
@@ -44,9 +43,9 @@ const Button = ({
 Button.propTypes = {
   /** Pass an href prop to make the Button an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Button color - can either be a key from the theme colors object or any color value */
+  /** Button color - can either be a key from the config colors object or any color value */
   color: React.PropTypes.string,
-  /** Background color - can either be a key from the theme colors object or any color value */
+  /** Background color - can either be a key from the config colors object or any color value */
   backgroundColor: React.PropTypes.string,
   /** Controls the border radius for creating button groups */
   rounded: React.PropTypes.oneOfType([
@@ -62,7 +61,7 @@ Button.propTypes = {
   pill: React.PropTypes.bool,
   /** Creates a larger button */
   big: React.PropTypes.bool,
-  /** Sets color based on theme */
+  /** Sets color from config */
   theme: React.PropTypes.oneOf([
     'primary',
     'secondary',

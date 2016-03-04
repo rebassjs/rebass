@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Styled number display for statistics
@@ -14,8 +14,7 @@ const Stat = ({
   topLabel,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, bold, scale } = config
+  const { fontSizes, bold, scale } = { ...config, ...rebass }
 
   const sx = {
     root: {

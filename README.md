@@ -95,7 +95,7 @@ class App extends React.Component {
 ```
 
 After setting context in the root component, all instances of Rebass components will use these values throughout the app.
-For reference to the default values, see [`/src/theme.js`](src/theme.js).
+For reference to the default values, see [`/src/config.js`](src/config.js).
 
 To alter per-component styles, pass a style object that matches the name of the component,
 like the `Button` object in the example above.

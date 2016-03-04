@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import _theme from './theme'
+import config from './config'
 
 /**
  * Footer for Panel component with vertical centering using flexbox
  */
 
 const PanelFooter = ({ theme, ...props }, { rebass }) => {
-  const config = { ..._theme, ...rebass }
-  const { scale, colors, borderRadius, fontSizes } = config
+  const { scale, colors, borderRadius, fontSizes } = { ...config, ...rebass }
   const borderColor = colors[theme]
 
   return (

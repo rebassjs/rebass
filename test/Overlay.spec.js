@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Overlay, Base } from '../src'
+import { config, Overlay, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Overlay', () => {
-  const { scale, colors, borderRadius } = theme
+  const { scale, colors, borderRadius } = config
   let tree, dismiss, content
 
   beforeEach(() => {

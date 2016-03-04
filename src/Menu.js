@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Menu component for navigation links and actions
  */
 
 const Menu = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors, borderColor, borderRadius } = config
+  const { scale, colors, borderColor, borderRadius } = { ...config, ...rebass }
 
   return (
     <Base

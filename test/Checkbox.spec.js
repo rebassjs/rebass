@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Label, Checkbox, Base } from '../src'
+import { config, Label, Checkbox, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Checkbox', () => {
-  const { colors } = theme
+  const { colors } = config
   let tree, label
 
   beforeEach(() => {

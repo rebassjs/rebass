@@ -1,11 +1,11 @@
 
 import expect from 'expect'
-import { theme } from '../src'
+import { config } from '../src'
 import colorStyle from '../src/util/color-style'
 
 describe('colorStyle util', () => {
   const props = {}
-  const { colors } = theme
+  const { colors } = config
 
   it('should return an object', () => {
     const c = colorStyle()

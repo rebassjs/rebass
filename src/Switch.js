@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Binary toggle switch component
@@ -11,8 +11,7 @@ const Switch = ({
   checked,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors, borderColor } = config
+  const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const width = scale[3] * 1.5
   const color = checked ? colors.success : borderColor

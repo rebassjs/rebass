@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Donut, Base } from '../src'
+import { config, Donut, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Donut', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree, svg, children, percentage
 
   beforeEach(() => {

@@ -1,7 +1,7 @@
 
 import React from 'react'
 import rcp from 'react-component-permutations'
-import { Divider, Text, theme } from '../../src'
+import { Divider, Text } from '../../src'
 
 const blacklist = [
   'Base',
@@ -40,8 +40,6 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
     'default',
     'info',
   ]
-
-  const config = { ...theme, ...rebass }
 
   const permutations = rcp(raw, {
     options: [

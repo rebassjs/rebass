@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, PageHeader, Heading, Base } from '../src'
+import { PageHeader, Heading, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 

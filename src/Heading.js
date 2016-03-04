@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Heading element with no margin and size based on fontSizes scale
@@ -14,10 +14,9 @@ const Heading =({
   cx,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { bold } = config
+  const { fontSizes, bold } = { ...config, ...rebass }
   const Component = `h${level}`
-  const fontSize = (typeof size === 'number' ? theme.fontSizes[size] : theme.fontSizes[level]) * (big ? 2 : 1)
+  const fontSize = (typeof size === 'number' ? fontSizes[size] : fontSizes[level]) * (big ? 2 : 1)
 
   return (
     <Base

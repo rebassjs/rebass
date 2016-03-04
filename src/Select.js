@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import Base from './Base'
 import Label from './Label'
 import Text from './Text'
-import theme from './theme'
+import config from './config'
 import margins from './util/margins'
 
 /**
@@ -20,8 +20,7 @@ const Select = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors, borderColor } = config
+  const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 

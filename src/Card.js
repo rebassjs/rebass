@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Styled box with border
@@ -11,8 +11,7 @@ const Card = ({
   width,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, borderColor } = config
+  const { scale, borderColor } = { ...config, ...rebass }
 
   const sx = {
     display: 'flex',

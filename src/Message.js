@@ -1,13 +1,12 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /** Component for displaying flash and error messages */
 
 const Message = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass}
-  const { bold, scale } = config
+  const { bold, scale } = { ...config, ...rebass}
 
   return (
     <Base
@@ -24,7 +23,7 @@ const Message = ({ ...props }, { rebass }) => {
 }
 
 Message.propTypes = {
-  /** Sets color based on theme */
+  /** Sets color from config */
   theme: React.PropTypes.oneOf([
     'primary',
     'secondary',

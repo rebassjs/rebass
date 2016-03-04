@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, LinkBlock, Base } from '../src'
+import { config, LinkBlock, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('LinkBlock', () => {
-  const { fontSizes } = theme
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {

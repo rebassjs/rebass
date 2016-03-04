@@ -2,7 +2,7 @@
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
-  theme,
+  config,
   Fixed,
   Overlay,
   Panel,
@@ -25,12 +25,12 @@ import demoTheme from '../demo-theme'
 import KitchenSink from './KitchenSink'
 import ConfigForm from './ConfigForm'
 
-const initialTheme = Object.assign({}, theme)
+const initialTheme = Object.assign({}, config)
 
 class App extends React.Component {
   constructor () {
     super()
-    this.state = Object.assign({}, theme, demoTheme, {
+    this.state = Object.assign({}, config, demoTheme, {
       drawerOpen: false,
       overlayOpen: false
     })

@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Button, Base } from '../src'
+import { config, Button, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Button', () => {
-  const { scale, colors, borderRadius } = theme
+  const { scale, colors, borderRadius } = config
   let tree
 
   context('defaults', () => {

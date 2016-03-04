@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Header for Panel component with vertical centering using flexbox
  */
 
 const PanelHeader = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { bold, scale, colors, borderRadius } = config
+  const { bold, scale, colors, borderRadius } = { ...config, ...rebass }
 
   return (
     <Base
@@ -31,7 +30,7 @@ const PanelHeader = ({ ...props }, { rebass }) => {
 }
 
 PanelHeader.propTypes = {
-  /** Sets color based on theme */
+  /** Sets color from config */
   theme: React.PropTypes.oneOf([
     'primary',
     'secondary',

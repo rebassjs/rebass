@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Toolbar component that vertically centers children with display flex
  */
 
 const Toolbar = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale } = config
+  const { scale } = { ...config, ...rebass }
 
   return (
     <Base

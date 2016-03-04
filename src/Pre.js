@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Pre element for displaying code examples
  */
 
 const Pre = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { monospace, scale, borderColor } = config
+  const { monospace, scale, borderColor } = { ...config, ...rebass }
 
   return (
     <Base

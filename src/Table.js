@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Table element with simplified props
@@ -12,8 +12,7 @@ const Table = ({
   data,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, scale, borderColor } = config
+  const { fontSizes, scale, borderColor } = { ...config, ...rebass }
 
   const sx = {
     root: {

@@ -1,16 +1,12 @@
 
 import React from 'react'
 import Heading from './Heading'
-import theme from './theme'
 
 /**
  * Heading element with unstyled link. Useful for in-page navigation
  */
 
 const HeadingLink =({ level, size, href, style, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const customStyles = rebass ? rebass.HeadingLink : {}
-
   return (
     <Heading
       cx='HeadingLink'

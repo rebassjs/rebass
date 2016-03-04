@@ -2,12 +2,12 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Base, Badge } from '../src'
+import { config, Base, Badge } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Badge', () => {
-  const { scale, colors, borderRadius } = theme
+  const { scale, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {

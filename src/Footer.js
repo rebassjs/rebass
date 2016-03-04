@@ -1,15 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import config from './config'
 
 /**
  * Minimal footer component with top border
  */
 
 const Footer = ({ ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, fontSizes, borderColor } = config
+  const { scale, fontSizes, borderColor } = { ...config, ...rebass }
 
   return (
     <Base

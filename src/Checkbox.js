@@ -3,7 +3,7 @@ import React from 'react'
 import classnames from 'classnames'
 import Base from './Base'
 import Label from './Label'
-import theme from './theme'
+import config from './config'
 
 /**
  * Checkbox input with label
@@ -15,8 +15,7 @@ const Checkbox = ({
   children,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { scale, colors } = config
+  const { scale, colors } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 

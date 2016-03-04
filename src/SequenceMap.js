@@ -2,7 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import LinkBlock from './LinkBlock'
-import theme from './theme'
+import config from './config'
 
 /**
  * Sequence map pattern for use in multi-step forms
@@ -13,8 +13,7 @@ const SequenceMap = ({
   active,
   ...props
 }, { rebass }) => {
-  const config = { ...theme, ...rebass }
-  const { fontSizes, bold, scale, colors } = config
+  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
 
   const sx = {
     root: {
