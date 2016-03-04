@@ -2,6 +2,7 @@
 import { config } from '../../src'
 
 const dark = {
+  name: 'Dark',
   fontFamily: 'Helvetica, sans-serif',
   color: '#eee',
   backgroundColor: '#111',
@@ -36,10 +37,10 @@ const dark = {
   },
   Label: { opacity: 5/8 },
   DropdownMenu: {
-    backgroundColor: '#000'
+    // backgroundColor: '#000'
   },
   Menu: {
-    backgroundColor: '#000'
+    // backgroundColor: '#000'
   },
   Text: {
     opacity: 7/8

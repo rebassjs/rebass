@@ -10,29 +10,41 @@ import {
   Toolbar
 } from '../../src'
 
-const Navbar = ({ toggleDrawer }) => (
+const Navbar = ({
+  config,
+  configurations,
+  dropdownOpen,
+  switchConfig,
+  toggle
+}) => (
   <Fixed top left right zIndex={1}>
     <Toolbar>
       <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
       <Space auto />
       <Dropdown>
-        <NavItem>
+        <NavItem onClick={toggle('dropdownOpen')}>
           Config
           <Arrow />
         </NavItem>
         <DropdownMenu
           right
           color='primary'
-          open>
-          <NavItem children='Basic' />
-          <NavItem children='Mono' />
-          <NavItem children='Dark' />
-          <NavItem children='Dense' />
-          <NavItem children='Fancy' />
+          onDismiss={toggle('dropdownOpen')}
+          open={dropdownOpen}>
+          {Object.keys(configurations).map((key, i) => {
+            const { name } = configurations[key]
+            return (
+              <NavItem
+                key={i}
+                onClick={switchConfig(key)}
+                active={name === config}
+                children={name} />
+            )
+          })}
         </DropdownMenu>
       </Dropdown>
       <NavItem
-        onClick={toggleDrawer}
+        onClick={toggle('drawerOpen')}
         children='Edit' />
     </Toolbar>
   </Fixed>

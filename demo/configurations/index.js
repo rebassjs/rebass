@@ -1,10 +1,10 @@
 
-import init from './init'
+import basic from './basic'
 import mono from './mono'
 import dark from './dark'
 
 const configurations = {
-  init,
+  basic,
   mono,
   dark
 }

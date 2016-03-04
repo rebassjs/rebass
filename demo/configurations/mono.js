@@ -7,6 +7,7 @@ const caps = {
 }
 
 const mono = {
+  name: 'Mono',
   fontFamily: 'Roboto, sans-serif',
   color: '#111',
   backgroundColor: '#fff',

@@ -20,8 +20,8 @@ import {
   Text,
 } from '../../src'
 
+import init from '../configurations/init'
 import configurations from '../configurations'
-  import KitchenSink from './KitchenSink'
 
 import Navbar from './Navbar'
 import Header from './Header'
@@ -34,11 +34,15 @@ import Modal from './Modal'
 class App extends React.Component {
   constructor () {
     super()
-    this.state = Object.assign({}, config, configurations.init, {
+    this.state = Object.assign({}, config, configurations.basic, {
       drawerOpen: false,
+      dropdownOpen: false,
       modalOpen: false,
+      config: 'Basic',
       repo: {}
     })
+    this.toggle = this.toggle.bind(this)
+    this.switchConfig = this.switchConfig.bind(this)
     this.toggleDrawer = this.toggleDrawer.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
     this.updateContext = this.updateContext.bind(this)
@@ -55,6 +59,26 @@ class App extends React.Component {
     }
   }
 
+  toggle (key) {
+    return (e) => {
+      const val = !this.state[key]
+      this.setState({ [key]: val })
+    }
+  }
+
+  switchConfig (key) {
+    return (e) => {
+      const theme = Object.assign({}, config, configurations[key])
+      this.resetTheme(() => {
+        this.setState({
+          ...theme,
+          config: config.name,
+          dropdownOpen: false
+        })
+      })
+    }
+  }
+
   toggleDrawer () {
     const drawerOpen = !this.state.drawerOpen
     this.setState({ drawerOpen })
@@ -65,9 +89,9 @@ class App extends React.Component {
     this.setState({ modalOpen })
   }
 
-  resetTheme () {
-    console.log('reset', initialTheme)
-    this.setState(initialTheme)
+  resetTheme (cb) {
+    console.log('reset')
+    this.setState(init, cb)
   }
 
   updateContext (state) {
@@ -95,8 +119,10 @@ class App extends React.Component {
     return (
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
-        <Navbar
-          toggleDrawer={this.toggleDrawer} />
+        <Navbar {...this.state}
+          configurations={configurations}
+          switchConfig={this.switchConfig}
+          toggle={this.toggle} />
         <Header toggleDrawer={this.toggleDrawer} />
         <Container style={{
             marginLeft: drawerOpen ? 0 : 'auto'
@@ -106,9 +132,6 @@ class App extends React.Component {
           <DataDemo
             {...this.state}
             {...this.props} />
-          <KitchenSink
-            {...this.props}
-            toggleOverlay={this.toggleModal} />
         </Container>
 
         <Pre children={JSON.stringify(this.state, null, 2)} />

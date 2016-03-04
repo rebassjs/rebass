@@ -1,22 +1,15 @@
 
-const init = {
-  fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-  color: '#111',
-  backgroundColor: '#fff',
+import Rebass, { config } from '../../src'
 
-  Heading: {
-    fontFamily: 'inherit'
-  },
-  Banner: {
-    minHeight: '80vh',
-  },
-  Label: {
-    opacity: .875
-  },
-  Toolbar: {
-    opacity: .875
-  }
+const componentConfigs = {}
+
+Object.keys(Rebass).forEach(key => {
+  componentConfigs[key] = {}
+})
+
+const init = {
+  ...config,
+  ...componentConfigs
 }
 
 export default init
-
