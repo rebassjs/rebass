@@ -54,7 +54,8 @@ import {
   Table,
   Text,
   Toolbar,
-  Tooltip
+  Tooltip,
+  Base
 } from '../src'
 
 const examples = {
@@ -381,6 +382,15 @@ const examples = {
     <Tooltip title='Hello!'>
       <Heading level={3}>Tooltip</Heading>
     </Tooltip>
+  ),
+  Base: (
+    <Base
+      p={2}
+      mb={3}
+      color='blue'
+      backgroundColor='black'
+      rounded
+      children='Base' />
   )
 }
 
