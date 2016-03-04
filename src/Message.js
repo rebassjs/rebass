@@ -7,7 +7,7 @@ import theme from './theme'
 
 const Message = ({ ...props }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const { bold, scale, borderRadius, colors } = config
+  const { bold, scale } = config
 
   return (
     <Base
