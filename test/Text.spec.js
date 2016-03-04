@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Text } from '../src'
+import { theme, Text, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,11 @@ describe('Text', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('p')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName p', () => {
+    expect(tree.props.tagName).toEqual('p')
   })
 
   it('should have a className', () => {
@@ -24,7 +28,7 @@ describe('Text', () => {
   })
 
   it('should have default font size', () => {
-    expect(tree.props.style.fontSize).toEqual(fontSizes[4])
+    expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[4])
   })
 
   context('when small is true', () => {
@@ -33,7 +37,7 @@ describe('Text', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have small font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[6])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[6])
     })
   })
 

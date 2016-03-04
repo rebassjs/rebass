@@ -1,28 +1,24 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Component for displaying text in UI
  */
 
-const Text = ({ small, style, ...props }, { rebass }) => {
+const Text = ({ small, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const textStyle = {
-    ...theme.Text,
-    ...(rebass ? rebass.Text : {}),
-    ...style
-  }
   const { fontSizes } = config
 
   return (
-    <p
+    <Base
       {...props}
+      tagName='p'
       className='Text'
-      style={{
+      baseStyle={{
         fontSize: small ? fontSizes[6] : fontSizes[4],
-        margin: 0,
-        ...textStyle
+        margin: 0
       }} />
   )
 }
