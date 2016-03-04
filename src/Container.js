@@ -19,11 +19,6 @@ const Container = ({ ...props }, { rebass }) => {
   )
 }
 
-Container.propTypes = {
-  /** Applies padding left and right based on the theme spacing scale */
-  px: React.PropTypes.oneOf([0, 1, 2, 3, 4])
-}
-
 Container.defaultProps = {
   px: 2
 }

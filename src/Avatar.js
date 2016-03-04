@@ -34,9 +34,7 @@ const Avatar = ({
 
 Avatar.propTypes = {
   /** Width and height of image in pixels */
-  size: React.PropTypes.number,
-  /** Sets border radius for circular shape */
-  circle: React.PropTypes.bool
+  size: React.PropTypes.number
 }
 
 Avatar.defaultProps = {

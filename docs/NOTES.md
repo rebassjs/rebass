@@ -6,6 +6,8 @@
     - [ ] Colors from color lovers api ?
     - [ ] Make it look better
 
+- [ ] rename theme to config
+- [ ] Standardize cx in Base
 - [ ] m auto support in Base
 - [ ] Simplify CSS used in tooltip + better Base support
 - [ ] InputRange message + invalid, etc

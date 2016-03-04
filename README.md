@@ -109,7 +109,7 @@ For example, to remove the margin bottom from an Input for a particular situatio
 <Input
   name='input_name'
   label='Input Label'
-  style={{ marginBottom: 0 }} />
+  style={{ border: 0 }} />
 ```
 
 ## Base Styles
