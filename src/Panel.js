@@ -29,7 +29,8 @@ const Panel = ({ theme, children, ...props }, { rebass }) => {
         borderWidth: 1,
         borderStyle: 'solid',
         borderColor,
-        borderRadius
+        borderRadius,
+        backgroundColor: colors.white
       }}
       children={styledChildren} />
   )
@@ -49,8 +50,7 @@ Panel.propTypes = {
 }
 
 Panel.defaultProps = {
-  theme: 'default',
-  backgroundColor: 'white'
+  theme: 'default'
 }
 
 Panel.contextTypes = {

@@ -23,13 +23,13 @@ const Menu = ({ ...props }, { rebass }) => {
         borderWidth: 1,
         borderStyle: 'solid',
         borderColor,
-        borderRadius
+        borderRadius,
+        backgroundColor: colors.white
       }} />
   )
 }
 
 Menu.defaultProps = {
-  backgroundColor: 'white',
   rounded: true
 }
 

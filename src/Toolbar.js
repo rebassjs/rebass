@@ -8,7 +8,7 @@ import config from './config'
  */
 
 const Toolbar = ({ ...props }, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+  const { scale, colors } = { ...config, ...rebass }
 
   return (
     <Base
@@ -19,14 +19,11 @@ const Toolbar = ({ ...props }, { rebass }) => {
         alignItems: 'center',
         minHeight: 48,
         paddingLeft: scale[1],
-        paddingRight: scale[1]
+        paddingRight: scale[1],
+        color: colors.white,
+        backgroundColor: colors.primary
       }} />
   )
-}
-
-Toolbar.defaultProps = {
-  theme: 'primary',
-  inverted: true
 }
 
 Toolbar.contextTypes = {
