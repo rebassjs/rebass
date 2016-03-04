@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -9,11 +10,9 @@ import theme from './theme'
 const Table = ({
   headings,
   data,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Table : {}
   const { fontSizes, scale, borderColor } = config
 
   const sx = {
@@ -21,9 +20,7 @@ const Table = ({
       maxWidth: '100%',
       overflowX: 'scroll',
       marginBottom: scale[2],
-      borderColor,
-      ...customStyle,
-      ...style
+      borderColor
     },
     table: {
       fontSize: fontSizes[5],
@@ -54,8 +51,10 @@ const Table = ({
   }
 
   return (
-    <div className='Table'
-      style={sx.root}>
+    <Base
+      {...props}
+      className='Table'
+      baseStyle={sx.root}>
       <table style={sx.table}>
         <thead style={sx.thead}>
           <tr style={sx.tr}>
@@ -79,7 +78,7 @@ const Table = ({
           ))}
         </tbody>
       </table>
-    </div>
+    </Base>
   )
 }
 

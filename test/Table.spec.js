@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Table } from '../src'
+import { theme, Table, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -19,7 +19,7 @@ describe('Table', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
