@@ -61,7 +61,17 @@ Button.propTypes = {
   /** Creates a pill style button */
   pill: React.PropTypes.bool,
   /** Creates a larger button */
-  big: React.PropTypes.bool
+  big: React.PropTypes.bool,
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'default',
+    'info',
+    'success',
+    'warning',
+    'error',
+  ])
 }
 
 Button.defaultProps = {

@@ -36,8 +36,10 @@ const Badge = ({ ...props }, { rebass }) => {
 }
 
 Badge.propTypes = {
-  /** Sets color based on type of badge */
-  type: React.PropTypes.oneOf([
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
@@ -61,7 +63,7 @@ Badge.propTypes = {
 }
 
 Badge.defaultProps = {
-  type: 'default',
+  theme: 'default',
   rounded: true
 }
 

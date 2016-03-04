@@ -24,8 +24,10 @@ const Message = ({ ...props }, { rebass }) => {
 }
 
 Message.propTypes = {
-  /** Sets color based on type of message */
-  type: React.PropTypes.oneOf([
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
@@ -35,7 +37,7 @@ Message.propTypes = {
 }
 
 Message.defaultProps = {
-  type: 'default',
+  theme: 'default',
   color: 'white',
   rounded: true
 }

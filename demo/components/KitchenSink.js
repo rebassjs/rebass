@@ -106,7 +106,7 @@ const KitchenSink = ({ toggleOverlay }) => (
         <ButtonOutline children='ButtonOutline' />
       </Box>
       <Box sm={6} p={2}>
-        <Panel type='success'>
+        <Panel theme='success'>
           <PanelHeader>
             PanelHeader
           </PanelHeader>
@@ -125,7 +125,7 @@ const KitchenSink = ({ toggleOverlay }) => (
           <NavItem children='NavItem' />
         </Toolbar>
       </Box>
-      <Message type='error'>
+      <Message theme='error'>
         This is a very important message
         <Space auto />
         <Close />

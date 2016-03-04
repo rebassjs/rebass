@@ -30,8 +30,10 @@ const PanelHeader = ({ ...props }, { rebass }) => {
 }
 
 PanelHeader.propTypes = {
-  /** Sets background color based on the type of panel */
-  type: React.PropTypes.oneOf([
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
@@ -41,7 +43,7 @@ PanelHeader.propTypes = {
 }
 
 PanelHeader.defaultProps = {
-  type: 'default',
+  theme: 'default',
   color: 'white'
 }
 

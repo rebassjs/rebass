@@ -71,15 +71,15 @@ const examples = {
     <Flex align='center'>
       <Heading level={4} children='Rebass' />
       <Space />
-      <Badge type='info' children='0.2.0' />
+      <Badge theme='info' children='0.2.0' />
       <Space x={2} />
       <Heading level={4} children='Pill' />
       <Space />
-      <Badge pill type='info' children='Pill' />
+      <Badge pill theme='info' children='Pill' />
       <Space x={2} />
       <Heading level={4} children='Circular' />
       <Space />
-      <Badge circle type='error' children='4' />
+      <Badge circle theme='error' children='4' />
     </Flex>
   ),
   Banner: (
@@ -266,7 +266,7 @@ const examples = {
     </Menu>
   ),
   Message: (
-    <Message type='success'>
+    <Message theme='success'>
       Hello Message!
       <Space auto />
       <Close />
@@ -281,7 +281,7 @@ const examples = {
       description='Description about the page' />
   ),
   Panel: (
-    <Panel type='info'>
+    <Panel theme='info'>
       <PanelHeader children='Panel' />
       <Text>
         Panels are great for visually separating UI, content, or data from the rest of the page.

@@ -23,8 +23,8 @@ describe('PanelHeader', () => {
     expect(tree.props.className).toEqual('PanelHeader')
   })
 
-  it('should have default type', () => {
-    expect(tree.props.type).toEqual('default')
+  it('should have default theme', () => {
+    expect(tree.props.theme).toEqual('default')
   })
 
   context('when custom styles are set', () => {

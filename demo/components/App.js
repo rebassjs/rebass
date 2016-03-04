@@ -129,7 +129,7 @@ class App extends React.Component {
         <Overlay
           open={overlayOpen}
           onDismiss={this.toggleOverlay}>
-            <Panel type='info'>
+            <Panel theme='info'>
               <PanelHeader>
                 Hello Overlay
                 <Space auto />

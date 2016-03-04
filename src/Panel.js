@@ -1,20 +1,20 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import _theme from './theme'
 
 /**
  * Panel for containing small pieces of information
  */
 
-const Panel = ({ type, children, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
+const Panel = ({ theme, children, ...props }, { rebass }) => {
+  const config = { ..._theme, ...rebass }
   const { scale, colors, borderRadius } = config
 
-  const borderColor = colors[type]
+  const borderColor = colors[theme]
   const styledChildren = React.Children.map(children, (child) => {
-    if (child && child.props && child.props.type === 'default') {
-      return React.cloneElement(child, { type })
+    if (child && child.props && child.props.theme === 'default') {
+      return React.cloneElement(child, { theme })
     } else {
       return child
     }
@@ -37,18 +37,20 @@ const Panel = ({ type, children, ...props }, { rebass }) => {
 }
 
 Panel.propTypes = {
-  /** Sets border color based on type of panel */
-  type: React.PropTypes.oneOf([
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
     'warning',
-    'error'
+    'error',
   ])
 }
 
 Panel.defaultProps = {
-  type: 'default',
+  theme: 'default',
   backgroundColor: 'white'
 }
 

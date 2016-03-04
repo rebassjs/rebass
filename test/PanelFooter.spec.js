@@ -27,9 +27,9 @@ describe('PanelFooter', () => {
     expect(tree.props.baseStyle.borderColor).toEqual(colors.default)
   })
 
-  context('when type is default', () => {
+  context('when theme is default', () => {
     beforeEach(() => {
-      renderer.render(<PanelFooter type='default' />)
+      renderer.render(<PanelFooter theme='default' />)
       tree = renderer.getRenderOutput()
     })
     it('should have default border color', () => {
@@ -37,9 +37,9 @@ describe('PanelFooter', () => {
     })
   })
 
-  context('when type is info', () => {
+  context('when theme is info', () => {
     beforeEach(() => {
-      renderer.render(<PanelFooter type='info' />)
+      renderer.render(<PanelFooter theme='info' />)
       tree = renderer.getRenderOutput()
     })
     it('should have info border color', () => {
@@ -47,9 +47,9 @@ describe('PanelFooter', () => {
     })
   })
 
-  context('when type is success', () => {
+  context('when theme is success', () => {
     beforeEach(() => {
-      renderer.render(<PanelFooter type='success' />)
+      renderer.render(<PanelFooter theme='success' />)
       tree = renderer.getRenderOutput()
     })
     it('should have success border color', () => {
@@ -57,9 +57,9 @@ describe('PanelFooter', () => {
     })
   })
 
-  context('when type is warning', () => {
+  context('when theme is warning', () => {
     beforeEach(() => {
-      renderer.render(<PanelFooter type='warning' />)
+      renderer.render(<PanelFooter theme='warning' />)
       tree = renderer.getRenderOutput()
     })
     it('should have warning border color', () => {
@@ -67,9 +67,9 @@ describe('PanelFooter', () => {
     })
   })
 
-  context('when type is error', () => {
+  context('when theme is error', () => {
     beforeEach(() => {
-      renderer.render(<PanelFooter type='error' />)
+      renderer.render(<PanelFooter theme='error' />)
       tree = renderer.getRenderOutput()
     })
     it('should have error border color', () => {

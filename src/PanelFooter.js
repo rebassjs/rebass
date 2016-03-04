@@ -1,16 +1,16 @@
 
 import React from 'react'
 import Base from './Base'
-import theme from './theme'
+import _theme from './theme'
 
 /**
  * Footer for Panel component with vertical centering using flexbox
  */
 
-const PanelFooter = ({ type, ...props }, { rebass }) => {
-  const config = { ...theme, ...rebass }
+const PanelFooter = ({ theme, ...props }, { rebass }) => {
+  const config = { ..._theme, ...rebass }
   const { scale, colors, borderRadius, fontSizes } = config
-  const borderColor = colors[type]
+  const borderColor = colors[theme]
 
   return (
     <Base
@@ -34,8 +34,10 @@ const PanelFooter = ({ type, ...props }, { rebass }) => {
 }
 
 PanelFooter.propTypes = {
-  /** Sets background color based on the type of panel */
-  type: React.PropTypes.oneOf([
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
     'default',
     'info',
     'success',
@@ -45,7 +47,7 @@ PanelFooter.propTypes = {
 }
 
 PanelFooter.defaultProps = {
-  type: 'default'
+  theme: 'default'
 }
 
 PanelFooter.contextTypes = {

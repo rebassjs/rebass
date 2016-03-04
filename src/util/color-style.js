@@ -8,7 +8,7 @@ function colorStyle(props, colors) {
   const {
     color,
     backgroundColor,
-    type
+    theme
   } = props || {}
   const result = {}
 
@@ -24,8 +24,8 @@ function colorStyle(props, colors) {
     result.backgroundColor = backgroundColor
   }
 
-  if (type && colors[type]) {
-    result.backgroundColor = colors[type]
+  if (theme && colors[theme]) {
+    result.backgroundColor = colors[theme]
   }
 
   return result

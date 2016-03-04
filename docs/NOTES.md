@@ -16,6 +16,10 @@
 - allow overriding default padding and margin props for different directions
   - dont set defaults for Base props?
 
+- type
+- theme --- src/theme needs renamed
+- mode
+
 ## Components
 
 - Base
