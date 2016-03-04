@@ -188,7 +188,7 @@ class ConfigForm extends React.Component {
           <Select
             name='heading_font'
             label='Heading Font'
-            value={this.props.Heading.fontFamily}
+            value={this.props.heading ? this.props.Heading.fontFamily : 'inherit'}
             options={[
               { value: 'inherit', label: 'Inherit' },
               { value: '"Avenir Next", sans-serif', label: 'Avenir' },
@@ -202,7 +202,7 @@ class ConfigForm extends React.Component {
           <Checkbox
             name='heading_caps'
             label='All Caps'
-            checked={this.props.Heading.textTransform === 'uppercase'}
+            checked={this.props.Heading && this.props.Heading.textTransform === 'uppercase'}
             onChange={toggleHeadingCaps} />
       </Box>
     )

@@ -15,6 +15,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "gx": "^1.0.0-rc1",
+    "json-loader": "^0.5.4",
+    "jsonp": "^0.2.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "reflexbox": "^1.0.0",

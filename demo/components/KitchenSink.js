@@ -39,13 +39,18 @@ import {
   SectionHeader,
   Select,
   Space,
+  Stat,
   Text,
   Textarea,
   Toolbar,
   Tooltip
 } from '../../src'
 
-const KitchenSink = ({ toggleOverlay }) => (
+const KitchenSink = ({
+  components,
+  version,
+  toggleOverlay
+}) => (
   <Section>
     <PageHeader
       heading='This is a PageHeader'
@@ -72,6 +77,11 @@ const KitchenSink = ({ toggleOverlay }) => (
           <Text children='Card with some text' />
         </Card>
       </Box>
+    </Flex>
+
+    <Flex justify='space-between' align='center'>
+      <Stat m={2} label='Version' value={version} />
+      <Stat m={2} label='Components' value={components} />
     </Flex>
 
     <Block p={3} my={3} borderLeft>
@@ -111,7 +121,9 @@ const KitchenSink = ({ toggleOverlay }) => (
             PanelHeader
           </PanelHeader>
           <Text children='This is the Panel body' />
-          <PanelFooter children='PanelFooter is a good place for feet' />
+          <PanelFooter>
+            <Text small children='PanelFooter is a good place for feet' />
+          </PanelFooter>
         </Panel>
       </Box>
     </Flex>

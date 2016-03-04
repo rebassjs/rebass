@@ -1,12 +1,9 @@
 
 import React from 'react'
+import jsonp from 'jsonp'
 import { Flex, Box } from 'reflexbox'
 import {
   config,
-  Fixed,
-  Overlay,
-  Panel,
-  PanelHeader,
   Banner,
   Block,
   Button,
@@ -15,27 +12,35 @@ import {
   Drawer,
   Heading,
   NavItem,
+  Panel,
+  PanelHeader,
+  Pre,
   SectionHeader,
   Space,
   Text,
-  Toolbar
 } from '../../src'
 
-import demoTheme from '../demo-theme'
-import KitchenSink from './KitchenSink'
-import ConfigForm from './ConfigForm'
+import configurations from '../configurations'
+  import KitchenSink from './KitchenSink'
 
-const initialTheme = Object.assign({}, config)
+import Navbar from './Navbar'
+import Header from './Header'
+import Intro from './Intro'
+import Cards from './Cards'
+import DataDemo from './DataDemo'
+import ConfigForm from './ConfigForm'
+import Modal from './Modal'
 
 class App extends React.Component {
   constructor () {
     super()
-    this.state = Object.assign({}, config, demoTheme, {
+    this.state = Object.assign({}, config, configurations.init, {
       drawerOpen: false,
-      overlayOpen: false
+      modalOpen: false,
+      repo: {}
     })
     this.toggleDrawer = this.toggleDrawer.bind(this)
-    this.toggleOverlay = this.toggleOverlay.bind(this)
+    this.toggleModal = this.toggleModal.bind(this)
     this.updateContext = this.updateContext.bind(this)
     this.resetTheme = this.resetTheme.bind(this)
   }
@@ -55,9 +60,9 @@ class App extends React.Component {
     this.setState({ drawerOpen })
   }
 
-  toggleOverlay () {
-    const overlayOpen = !this.state.overlayOpen
-    this.setState({ overlayOpen })
+  toggleModal () {
+    const modalOpen = !this.state.modalOpen
+    this.setState({ modalOpen })
   }
 
   resetTheme () {
@@ -67,6 +72,13 @@ class App extends React.Component {
 
   updateContext (state) {
     this.setState(state)
+  }
+
+  componentDidMount () {
+    console.log('mounted')
+    jsonp('https://api.github.com/repos/jxnblk/rebass?callback=callback', (err, response) => {
+      this.setState({ repo: response.data })
+    }).bind(this)
   }
 
   render () {
@@ -83,36 +95,24 @@ class App extends React.Component {
     return (
       <div>
         <style dangerouslySetInnerHTML={{ __html: css }} />
-        <Fixed top left right zIndex={1}>
-          <Toolbar style={{ opacity: .875 }}>
-            <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
-            <Space auto />
-            <NavItem
-              onClick={this.toggleDrawer}
-              children='Edit Configuration' />
-          </Toolbar>
-        </Fixed>
-        <Banner
-          style={{
-            paddingTop: 48,
-            backgroundAttachment: 'fixed'
-          }}
-          backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
-          onClick={this.toggleDrawer}>
-          <Heading size={1} big children='Rebass Demo' />
-          <Text children='Configurable example page' />
-          <Box py={2}>
-            <Button
-              big
-              onClick={this.toggleDrawer}
-              children='Edit Configuration' />
-          </Box>
-        </Banner>
+        <Navbar
+          toggleDrawer={this.toggleDrawer} />
+        <Header toggleDrawer={this.toggleDrawer} />
         <Container style={{
             marginLeft: drawerOpen ? 0 : 'auto'
           }}>
-          <KitchenSink toggleOverlay={this.toggleOverlay} />
+          <Intro />
+          <Cards {...this.state} />
+          <DataDemo
+            {...this.state}
+            {...this.props} />
+          <KitchenSink
+            {...this.props}
+            toggleOverlay={this.toggleModal} />
         </Container>
+
+        <Pre children={JSON.stringify(this.state, null, 2)} />
+
         <Drawer
           open={drawerOpen}
           onDismiss={this.toggleDrawer}
@@ -126,18 +126,8 @@ class App extends React.Component {
             onChange={this.updateContext}
             reset={this.resetTheme} />
         </Drawer>
-        <Overlay
-          open={overlayOpen}
-          onDismiss={this.toggleOverlay}>
-            <Panel theme='info'>
-              <PanelHeader>
-                Hello Overlay
-                <Space auto />
-                <Close onClick={this.toggleOverlay} />
-              </PanelHeader>
-              This is a Panel inside an Overlay.
-            </Panel>
-        </Overlay>
+        <Modal {...this.state}
+          toggleModal={this.toggleModal} />
       </div>
     )
   }
