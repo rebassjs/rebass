@@ -1,3 +1,4 @@
+
 export { default as Base } from './Base'
 
 export { default as config } from './config'
@@ -56,4 +57,7 @@ export { default as Text } from './Text'
 export { default as Textarea } from './Textarea'
 export { default as Toolbar } from './Toolbar'
 export { default as Tooltip } from './Tooltip'
+
+import * as Rebass from '.'
+export default Rebass
 
