@@ -1,6 +1,7 @@
 
 import React from 'react'
 import classnames from 'classnames'
+import Base from './Base'
 import Label from './Label'
 import Text from './Text'
 import theme from './theme'
@@ -13,25 +14,20 @@ import margins from './util/margins'
 const Textarea = ({
   label,
   name,
-  style,
   message,
   hideLabel,
   children,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Textarea : {}
   const { scale, colors, borderColor } = config
-
-  const otherStyle = { ...customStyle, ...style }
 
   const invalid = props['aria-invalid'] || props.invalid
 
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null,
-      ...margins(props, scale)
+      color: invalid ? colors.error : null
     },
     textarea: {
       fontFamily: 'inherit',
@@ -44,8 +40,7 @@ const Textarea = ({
       borderRadius: 2,
       borderWidth: 1,
       borderStyles: 'solid',
-      borderColor,
-      ...otherStyle
+      borderColor
     }
   }
 
@@ -56,8 +51,10 @@ const Textarea = ({
   })
 
   return (
-    <div className={cx}
-      style={sx.root}>
+    <Base
+      {...props}
+      className={cx}
+      baseStyle={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
@@ -67,7 +64,7 @@ const Textarea = ({
         name={name}
         style={sx.textarea} />
       {message && <Text small children={message} />}
-    </div>
+    </Base>
   )
 }
 

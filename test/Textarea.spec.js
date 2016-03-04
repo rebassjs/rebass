@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { Textarea, Label, theme } from '../src'
+import { Textarea, Label, Base, theme } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -18,7 +18,7 @@ describe('Textarea', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -38,7 +38,7 @@ describe('Textarea', () => {
   })
 
   it('should not set a color', () => {
-    expect(tree.props.style.color).toNotExist()
+    expect(tree.props.baseStyle.color).toNotExist()
   })
 
   context('when hideLabel is set', () => {
@@ -80,7 +80,7 @@ describe('Textarea', () => {
     })
 
     it('should change the color', () => {
-      expect(tree.props.style.color).toEqual(colors.error)
+      expect(tree.props.baseStyle.color).toEqual(colors.error)
     })
   })
 
@@ -116,11 +116,10 @@ describe('Textarea', () => {
           style={{ color: 'tomato' }} />
       )
       tree = renderer.getRenderOutput()
-      textarea = tree.props.children[1]
     })
 
     it('should have a custom color', () => {
-      expect(textarea.props.style.color).toEqual('tomato')
+      expect(tree.props.style.color).toEqual('tomato')
     })
   })
 })
