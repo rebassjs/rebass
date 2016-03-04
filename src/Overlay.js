@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -13,11 +14,9 @@ const Overlay = ({
   box,
   onDismiss,
   children,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Overlay : {}
   const { zIndex, scale, colors, borderRadius } = config
 
   const innerStyle = {
@@ -37,9 +36,7 @@ const Overlay = ({
       display: open ? 'flex' : 'none',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      ...customStyle,
-      ...style
+      justifyContent: 'center'
     },
     dismiss: {
       position: 'fixed',
@@ -66,10 +63,9 @@ const Overlay = ({
       style={sx.root}>
       <div style={sx.dismiss}
         onClick={onDismiss} />
-      <div {...props}
-        style={sx.inner}>
-        {children}
-      </div>
+      <Base {...props}
+        baseStyle={sx.inner}
+        children={children} />
     </div>
   )
 }

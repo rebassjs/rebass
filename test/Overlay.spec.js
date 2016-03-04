@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Overlay } from '../src'
+import { theme, Overlay, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -21,6 +21,10 @@ describe('Overlay', () => {
     expect(tree.type).toEqual('div')
   })
 
+  it('should use Base for content', () => {
+    expect(content.type).toEqual(Base)
+  })
+
   it('should have a className', () => {
     expect(tree.props.className).toEqual('Overlay')
   })
@@ -35,13 +39,13 @@ describe('Overlay', () => {
   })
 
   it('should have not have content box styling', () => {
-    expect(content.props.style.padding).toNotExist()
-    expect(content.props.style.backgroundColor).toNotExist()
-    expect(content.props.style.borderRadius).toNotExist()
+    expect(content.props.baseStyle.padding).toNotExist()
+    expect(content.props.baseStyle.backgroundColor).toNotExist()
+    expect(content.props.baseStyle.borderRadius).toNotExist()
   })
 
   it('should have not be full width', () => {
-    expect(content.props.style.width).toNotExist()
+    expect(content.props.baseStyle.width).toNotExist()
   })
 
   context('when open is true', () => {
@@ -74,9 +78,9 @@ describe('Overlay', () => {
       content = tree.props.children[1]
     })
     it('should add styles to the content box', () => {
-      expect(content.props.style.padding).toEqual(scale[3])
-      expect(content.props.style.backgroundColor).toEqual(colors.white)
-      expect(content.props.style.borderRadius).toEqual(borderRadius)
+      expect(content.props.baseStyle.padding).toEqual(scale[3])
+      expect(content.props.baseStyle.backgroundColor).toEqual(colors.white)
+      expect(content.props.baseStyle.borderRadius).toEqual(borderRadius)
     })
   })
 
@@ -88,7 +92,7 @@ describe('Overlay', () => {
     })
 
     it('should set 100% width on the content box', () => {
-      expect(content.props.style.width).toEqual('100%')
+      expect(content.props.baseStyle.width).toEqual('100%')
     })
   })
 
@@ -96,10 +100,11 @@ describe('Overlay', () => {
     beforeEach(() => {
       renderer.render(<Overlay style={{ color: 'tomato' }} />)
       tree = renderer.getRenderOutput()
+      content = tree.props.children[1]
     })
 
     it('should have a custom color', () => {
-      expect(tree.props.style.color).toEqual('tomato')
+      expect(content.props.style.color).toEqual('tomato')
     })
   })
 })
