@@ -77,6 +77,7 @@ Button.propTypes = {
 Button.defaultProps = {
   color: 'white',
   backgroundColor: 'primary',
+  inverted: true,
   rounded: true
 }
 

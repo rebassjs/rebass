@@ -94,7 +94,7 @@ const Permutations = ({ name, Component, raw, ...props }, { rebass }) => {
             {permutations.map((p, i) => (
               <Component {...p}
                 key={i}
-                style={{ marginRight: 16 }}
+                m={1}
                 title={`<${name} ${propsString(p)} />`}
                 name={name}
                 children={name} />

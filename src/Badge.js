@@ -31,6 +31,7 @@ const Badge = ({ ...props }, { rebass }) => {
     <Base
       {...props}
       className='Badge'
+      inverted
       baseStyle={sx} />
   )
 }

@@ -8,7 +8,8 @@ function colorStyle(props, colors) {
   const {
     color,
     backgroundColor,
-    theme
+    theme,
+    inverted
   } = props || {}
   const result = {}
 
@@ -25,7 +26,12 @@ function colorStyle(props, colors) {
   }
 
   if (theme && colors[theme]) {
-    result.backgroundColor = colors[theme]
+    if (inverted) {
+      result.color = colors.white
+      result.backgroundColor = colors[theme]
+    } else {
+      result.color = colors[theme]
+    }
   }
 
   return result

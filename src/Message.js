@@ -39,6 +39,7 @@ Message.propTypes = {
 Message.defaultProps = {
   theme: 'default',
   color: 'white',
+  inverted: true,
   rounded: true
 }
 

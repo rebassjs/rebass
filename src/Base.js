@@ -84,6 +84,22 @@ Base.propTypes = {
   /** Applies padding top and bottom based on the theme spacing scale */
   py: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
 
+  /** Text color - can either be a key from the theme colors object or any color value */
+  color: React.PropTypes.string,
+  /** Background color - can either be a key from the theme colors object or any color value */
+  backgroundColor: React.PropTypes.string,
+  /** Sets color based on theme */
+  theme: React.PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'default',
+    'info',
+    'success',
+    'warning',
+    'error',
+  ]),
+  /** Inverts colors from theme */
+  inverted: React.PropTypes.bool,
   /** Controls border radius */
   rounded: React.PropTypes.oneOfType([
     React.PropTypes.bool,

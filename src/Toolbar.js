@@ -26,8 +26,8 @@ const Toolbar = ({ ...props }, { rebass }) => {
 }
 
 Toolbar.defaultProps = {
-  color: 'white',
-  backgroundColor: 'primary'
+  theme: 'primary',
+  inverted: true
 }
 
 Toolbar.contextTypes = {

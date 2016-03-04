@@ -48,6 +48,7 @@ ButtonOutline.propTypes = {
 
 ButtonOutline.defaultProps = {
   color: 'primary',
+  inverted: false,
   rounded: true
 }
 

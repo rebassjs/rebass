@@ -37,13 +37,23 @@ describe('colorStyle util', () => {
     expect(c).toEqual({ backgroundColor: '#f00' })
   })
 
-   it('should return background color when theme is set to a key', () => {
+   it('should return color when theme is set to a key', () => {
     const c = colorStyle({ theme: 'blue' }, colors)
-    expect(c).toEqual({ backgroundColor: colors.blue })
+    expect(c).toEqual({ color: colors.blue })
   })
 
-  it('should not return background color when theme is set to a string', () => {
+  it('should not return color when theme is set to a string', () => {
     const c = colorStyle({ theme: '#f00' }, colors)
+    expect(c).toEqual({ })
+  })
+
+   it('should return color and background color when theme is set to a key and inverted is true', () => {
+    const c = colorStyle({ inverted: true, theme: 'blue' }, colors)
+    expect(c).toEqual({ color: colors.white, backgroundColor: colors.blue })
+  })
+
+  it('should not return color when theme is set to a string and inverted is true', () => {
+    const c = colorStyle({ inverted: true, theme: '#f00' }, colors)
     expect(c).toEqual({ })
   })
 

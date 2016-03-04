@@ -7,6 +7,7 @@
     - [ ] Make it look better
 
 - [ ] m auto support in Base
+- [ ] Simplify CSS used in tooltip + better Base support
 - InputRange message + invalid, etc
 - Androidish TabNav
 - border-box all components
