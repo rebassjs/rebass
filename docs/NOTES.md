@@ -18,6 +18,11 @@
 
 ## Components
 
+- Base
+  - [ ] border + borderColor util
+  - [ ] inverted prop for color-style util
+  - [ ] Docs
+
 - [ ] Blockquote
 - [ ] Time
 - [ ] Date (calendar style)

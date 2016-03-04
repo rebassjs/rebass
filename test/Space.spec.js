@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Space } from '../src'
+import { theme, Space, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,7 @@ describe('Space', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -24,11 +24,11 @@ describe('Space', () => {
   })
 
   it('should have default width', () => {
-    expect(tree.props.style.width).toEqual(scale[1])
+    expect(tree.props.baseStyle.width).toEqual(scale[1])
   })
 
   it('should not set flex', () => {
-    expect(tree.props.style.flex).toNotExist()
+    expect(tree.props.baseStyle.flex).toNotExist()
   })
 
   context('when auto true', () => {
@@ -37,7 +37,7 @@ describe('Space', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set flex: 1 1 auto', () => {
-      expect(tree.props.style.flex).toEqual('1 1 auto')
+      expect(tree.props.baseStyle.flex).toEqual('1 1 auto')
     })
   })
 
@@ -47,7 +47,7 @@ describe('Space', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set width', () => {
-      expect(tree.props.style.width).toEqual(scale[1])
+      expect(tree.props.baseStyle.width).toEqual(scale[1])
     })
   })
 
@@ -57,7 +57,7 @@ describe('Space', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set width', () => {
-      expect(tree.props.style.width).toEqual(scale[2])
+      expect(tree.props.baseStyle.width).toEqual(scale[2])
     })
   })
 
@@ -67,7 +67,7 @@ describe('Space', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set width', () => {
-      expect(tree.props.style.width).toEqual(scale[3])
+      expect(tree.props.baseStyle.width).toEqual(scale[3])
     })
   })
 
@@ -77,7 +77,7 @@ describe('Space', () => {
       tree = renderer.getRenderOutput()
     })
     it('should set width', () => {
-      expect(tree.props.style.width).toEqual(scale[4])
+      expect(tree.props.baseStyle.width).toEqual(scale[4])
     })
   })
 
