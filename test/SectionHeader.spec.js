@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { SectionHeader, HeadingLink } from '../src'
+import { SectionHeader, HeadingLink, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -17,7 +17,11 @@ describe('SectionHeader', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('header')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName header', () => {
+    expect(tree.props.tagName).toEqual('header')
   })
 
   it('should have a className', () => {

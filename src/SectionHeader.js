@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import HeadingLink from './HeadingLink'
 import Text from './Text'
 import theme from './theme'
@@ -8,15 +9,23 @@ import theme from './theme'
  * Header for section elements
  */
 
-const SectionHeader = ({ heading, href, description, style, children, ...props }, { rebass }) => {
+const SectionHeader = ({
+  heading,
+  href,
+  description,
+  children,
+  ...props
+}, { rebass }) => {
 
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.SectionHeader : {}
   const { scale, borderColor } = config
 
   return (
-    <header className='SectionHeader'
-      style={{
+    <Base
+      {...props}
+      tagName='header'
+      className='SectionHeader'
+      baseStyle={{
         display: 'flex',
         alignItems: 'center',
         paddingBottom: scale[1],
@@ -25,8 +34,6 @@ const SectionHeader = ({ heading, href, description, style, children, ...props }
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
         borderBottomColor: borderColor,
-        ...customStyle,
-        ...style
       }}>
       <div style={{
           flex: '1 1 auto'
@@ -37,7 +44,7 @@ const SectionHeader = ({ heading, href, description, style, children, ...props }
         }
       </div>
       {children}
-    </header>
+    </Base>
   )
 }
 
