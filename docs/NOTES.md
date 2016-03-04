@@ -8,18 +8,9 @@
 
 - [ ] m auto support in Base
 - [ ] Simplify CSS used in tooltip + better Base support
-- InputRange message + invalid, etc
-- Androidish TabNav
-- border-box all components
-- href prop on Heading instead of HeadingLink component
-- support props object in context Component object (e.g. `rebass.Button.props`)
-
-- allow overriding default padding and margin props for different directions
-  - dont set defaults for Base props?
-
-- type
-- theme --- src/theme needs renamed
-- mode
+- [ ] InputRange message + invalid, etc
+- [ ] href prop on Heading instead of HeadingLink component
+- [ ] support props object in context Component object (e.g. `rebass.Button.props`)
 
 ## Components
 
@@ -28,6 +19,7 @@
   - [ ] inverted prop for color-style util
   - [ ] Docs
 
+- [ ] Androidish TabNav
 - [ ] Blockquote
 - [ ] Time
 - [ ] Date (calendar style)

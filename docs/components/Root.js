@@ -110,9 +110,9 @@ class Root extends React.Component {
               Documentation generated with <a href='https://github.com/jxnblk/static-react'>static-react</a>, <a href='https://github.com/reactjs/react-docgen'>react-docgen</a>, and <a href='https://github.com/jxnblk/react-component-permutations'>react-component-permutations</a>.
             </Text>
             <Footer>
-              <NavItem href='https://github.com/jxnblk/rebass' children='GitHub' />
+              <NavItem px={0} href='https://github.com/jxnblk/rebass' children='GitHub' />
               <Space auto />
-              <NavItem href='http://jxnblk.com' children='Made by Jxnblk' />
+              <NavItem px={0} href='http://jxnblk.com' children='Made by Jxnblk' />
             </Footer>
           </Container>
           <script dangerouslySetInnerHTML={{ __html: ga }} />
