@@ -3,7 +3,7 @@
  * Utility for extracting margin props from components
  */
 
-const n = (x) => typeof x === 'number'
+const n = (key, x, s) => typeof x === 'number' ? { [key]: s[x] } : null
 
 function margins(props, scale) {
   const s = scale || []
@@ -16,35 +16,18 @@ function margins(props, scale) {
     mb,
     ml
   } = props || {}
-  const result = {}
 
-  if(n(m)) {
-    result.margin = s[m]
-  }
-
-  if (n(my)) {
-    result.marginTop = s[my]
-    result.marginBottom = s[my]
-  } else {
-    if (n(mt)) {
-      result.marginTop = s[mt]
-    }
-    if (n(mb)) {
-      result.marginBottom = s[mb]
-    }
-  }
-
-  if (n(mx)) {
-    result.marginLeft = s[mx]
-    result.marginRight = s[mx]
-  } else {
-    if (n(ml)) {
-      result.marginLeft = s[ml]
-    }
-    if (n(mr)) {
-      result.marginRight = s[mr]
-    }
-  }
+  const result = Object.assign({},
+    n('margin', m, s),
+    n('marginTop', mt, s),
+    n('marginBottom', mb, s),
+    n('marginTop', my, s),
+    n('marginBottom', my, s),
+    n('marginLeft', ml, s),
+    n('marginRight', mr, s),
+    n('marginLeft', mx, s),
+    n('marginRight', mx, s)
+  )
 
   return result
 }
