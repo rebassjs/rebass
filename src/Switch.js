@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -8,11 +9,9 @@ import theme from './theme'
 
 const Switch = ({
   checked,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Switch : {}
   const { scale, colors, borderColor } = config
 
   const width = scale[3] * 1.5
@@ -22,7 +21,6 @@ const Switch = ({
   const sx = {
     root: {
       boxSizing: 'border-box',
-      // display: 'inline-block',
       display: 'inline-flex',
       width: scale[3] * 1.5,
       height: scale[3],
@@ -30,9 +28,7 @@ const Switch = ({
       backgroundColor: checked ? 'currentcolor' : null,
       borderRadius: 99999,
       boxShadow: 'inset 0 0 0 2px',
-      cursor: 'pointer',
-      ...customStyle,
-      ...style
+      cursor: 'pointer'
     },
     dot: {
       width: scale[3],
@@ -49,14 +45,14 @@ const Switch = ({
   }
 
   return (
-    <div
+    <Base
       {...props}
       className='Switch'
       role='checkbox'
       aria-checked={checked}
-      style={sx.root}>
+      baseStyle={sx.root}>
       <div style={sx.dot} />
-    </div>
+    </Base>
   )
 }
 
