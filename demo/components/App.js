@@ -28,6 +28,7 @@ import Intro from './Intro'
 import Cards from './Cards'
 import DataDemo from './DataDemo'
 import BlockPanel from './BlockPanel'
+import Checkout from './Checkout'
 import ConfigForm from './ConfigForm'
 import Modal from './Modal'
 
@@ -134,6 +135,7 @@ class App extends React.Component {
             {...this.state}
             {...this.props} />
           <BlockPanel />
+          <Checkout />
         </Container>
         <ConfigForm
           {...this.state}

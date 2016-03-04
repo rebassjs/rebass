@@ -5,7 +5,9 @@ import {
   Card,
   CardImage,
   Heading,
-  Text
+  Text,
+  Space,
+  Rating
 } from '../../src'
 
 
@@ -24,8 +26,12 @@ const Cards = ({ colors }) => {
       {cards.map(({ image, heading, text }, i) => (
         <Card key={i} m={2}>
           <CardImage src={image} />
-          <Heading children={heading} />
-          <Text children={text} />
+          <Flex align='center'>
+            <Heading children={heading} />
+            <Space auto />
+            <Rating ml={1} value={4} />
+          </Flex>
+          <Text small children={text} />
         </Card>
       ))}
     </Flex>
