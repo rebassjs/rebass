@@ -14,7 +14,6 @@ import {
   NavItem,
   Panel,
   PanelHeader,
-  Pre,
   SectionHeader,
   Space,
   Text,
@@ -125,7 +124,8 @@ class App extends React.Component {
           toggle={this.toggle} />
         <Header toggleDrawer={this.toggleDrawer} />
         <Container style={{
-            marginLeft: drawerOpen ? 0 : 'auto'
+            transition: 'transform .3s ease-out',
+            transform: drawerOpen ? 'translateX(-20%)' : 'translateX(0)'
           }}>
           <Intro />
           <Cards {...this.state} />
@@ -133,22 +133,11 @@ class App extends React.Component {
             {...this.state}
             {...this.props} />
         </Container>
-
-        <Pre children={JSON.stringify(this.state, null, 2)} />
-
-        <Drawer
-          open={drawerOpen}
-          onDismiss={this.toggleDrawer}
-          position='right'>
-          <Flex align='center'>
-            <Space auto />
-            <Close onClick={this.toggleDrawer} />
-          </Flex>
-          <ConfigForm
-            {...this.state}
-            onChange={this.updateContext}
-            reset={this.resetTheme} />
-        </Drawer>
+        <ConfigForm
+          {...this.state}
+          toggle={this.toggle}
+          onChange={this.updateContext}
+          reset={this.resetTheme} />
         <Modal {...this.state}
           toggleModal={this.toggleModal} />
       </div>
