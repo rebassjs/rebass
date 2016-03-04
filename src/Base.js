@@ -1,14 +1,18 @@
 
 import React from 'react'
-import addContext from './util/add-context'
 import margins from './util/margins'
 import padding from './util/padding'
 import radii from './util/radii'
 import colorStyle from './util/color-style'
 import theme from './theme'
 
-// - Add color props
-// - Add backgroundColor props
+/**
+ * The Base component is internally used by all other Rebass components
+ * and provides an API to apply padding, margin, color, background-color,
+ * border-radius and other styles to any component.
+ * All props for the Base component are available to other Rebass components to help with contextual styling.
+ * It is not intended for use directly, but it can be used to create other custom components.
+ */
 
 const Base = ({
   tagName,
@@ -96,6 +100,9 @@ Base.propTypes = {
   pill: React.PropTypes.bool,
 }
 
-// This currently hides Base component from react-docgen
-export default addContext(Base)
+Base.contextTypes = {
+  rebass: React.PropTypes.object
+}
+
+export default Base
 

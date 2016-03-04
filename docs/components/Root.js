@@ -60,7 +60,13 @@ class Root extends React.Component {
   }
 
   render () {
-    const { components, examples, description, version } = this.props
+    const {
+      components,
+      base,
+      examples,
+      description,
+      version
+    } = this.props
 
     return (
       <html>
@@ -84,6 +90,7 @@ class Root extends React.Component {
             <main>
               <Features />
               {components.map((c, i) => <ComponentDoc key={i} {...c} />)}
+              <ComponentDoc {...base} />
               <Related />
             </main>
             <Block borderLeft p={4} mb={4}>

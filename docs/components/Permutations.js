@@ -4,6 +4,7 @@ import rcp from 'react-component-permutations'
 import { Divider, Text, theme } from '../../src'
 
 const blacklist = [
+  'Base',
   'Banner',
   'Block',
   'Card',
