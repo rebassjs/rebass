@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Panel } from '../src'
+import { theme, Panel, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,7 @@ describe('Panel', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('div')
+    expect(tree.type).toEqual(Base)
   })
 
   it('should have a className', () => {
@@ -24,7 +24,7 @@ describe('Panel', () => {
   })
 
   it('should have default border color', () => {
-    expect(tree.props.style.borderColor).toEqual(colors.default)
+    expect(tree.props.baseStyle.borderColor).toEqual(colors.default)
   })
 
   context('when type is default', () => {
@@ -33,7 +33,7 @@ describe('Panel', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have default border color', () => {
-      expect(tree.props.style.borderColor).toEqual(colors.default)
+      expect(tree.props.baseStyle.borderColor).toEqual(colors.default)
     })
   })
 
@@ -43,7 +43,7 @@ describe('Panel', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have info border color', () => {
-      expect(tree.props.style.borderColor).toEqual(colors.info)
+      expect(tree.props.baseStyle.borderColor).toEqual(colors.info)
     })
   })
 
@@ -53,7 +53,7 @@ describe('Panel', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have success border color', () => {
-      expect(tree.props.style.borderColor).toEqual(colors.success)
+      expect(tree.props.baseStyle.borderColor).toEqual(colors.success)
     })
   })
 
@@ -63,7 +63,7 @@ describe('Panel', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have warning border color', () => {
-      expect(tree.props.style.borderColor).toEqual(colors.warning)
+      expect(tree.props.baseStyle.borderColor).toEqual(colors.warning)
     })
   })
 
@@ -73,7 +73,7 @@ describe('Panel', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have error border color', () => {
-      expect(tree.props.style.borderColor).toEqual(colors.error)
+      expect(tree.props.baseStyle.borderColor).toEqual(colors.error)
     })
   })
 

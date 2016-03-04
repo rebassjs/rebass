@@ -1,22 +1,22 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Footer for Panel component with vertical centering using flexbox
  */
 
-const PanelFooter = ({ type, style, ...props }, { rebass }) => {
+const PanelFooter = ({ type, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = { ...theme.PanelFooter, ...(rebass ? rebass.PanelFooter : {}) }
   const { scale, colors, borderRadius, fontSizes } = config
-  const borderTopColor = colors[type]
+  const borderColor = colors[type]
 
   return (
-    <div
+    <Base
       {...props}
       className='PanelFooter'
-      style={{
+      baseStyle={{
         fontSize: fontSizes[6],
         display: 'flex',
         alignItems: 'center',
@@ -27,10 +27,8 @@ const PanelFooter = ({ type, style, ...props }, { rebass }) => {
         padding: scale[2],
         borderTopWidth: 1,
         borderTopStyle: 'solid',
-        borderTopColor,
-        borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`,
-        ...customStyle,
-        ...style
+        borderColor,
+        borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`
       }} />
   )
 }

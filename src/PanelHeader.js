@@ -1,35 +1,30 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Header for Panel component with vertical centering using flexbox
  */
 
-const PanelHeader = ({ type, style, ...props }, { rebass }) => {
+const PanelHeader = ({ ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.PanelHeader : {}
-  const { scale, colors, borderRadius } = config
-  const backgroundColor = colors[type]
+  const { bold, scale, colors, borderRadius } = config
 
   return (
-    <div
+    <Base
       {...props}
       className='PanelHeader'
-      style={{
+      baseStyle={{
         display: 'flex',
         alignItems: 'center',
-        fontWeight: 'bold',
+        fontWeight: bold,
         marginTop: - scale[2] - 1,
         marginRight: - scale[2] - 1,
         marginLeft: - scale[2] - 1,
         marginBottom: scale[2],
         padding: scale[2],
-        color: colors.white,
-        backgroundColor,
-        borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
-        ...customStyle,
-        ...style
+        borderRadius: `${borderRadius}px ${borderRadius}px 0 0`
       }} />
   )
 }
@@ -46,7 +41,8 @@ PanelHeader.propTypes = {
 }
 
 PanelHeader.defaultProps = {
-  type: 'default'
+  type: 'default',
+  color: 'white'
 }
 
 PanelHeader.contextTypes = {
