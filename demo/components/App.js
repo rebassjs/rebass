@@ -27,6 +27,7 @@ import Header from './Header'
 import Intro from './Intro'
 import Cards from './Cards'
 import DataDemo from './DataDemo'
+import BlockPanel from './BlockPanel'
 import ConfigForm from './ConfigForm'
 import Modal from './Modal'
 
@@ -132,6 +133,7 @@ class App extends React.Component {
           <DataDemo
             {...this.state}
             {...this.props} />
+          <BlockPanel />
         </Container>
         <ConfigForm
           {...this.state}
