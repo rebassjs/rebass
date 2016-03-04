@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
@@ -9,11 +10,9 @@ import theme from './theme'
 const Rating = ({
   value,
   onClick,
-  style,
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const customStyle = rebass ? rebass.Rating : {}
   const { fontSizes, scale, colors } = config
 
   const stars = Array.from({ length: 5 }, (a, b) => b)
@@ -21,10 +20,7 @@ const Rating = ({
   const sx = {
     root: {
       display: 'inline-flex',
-      fontSize: fontSizes[4],
-      color: colors.orange,
-      ...customStyle,
-      ...style
+      fontSize: fontSizes[4]
     },
     star: {
       position: 'relative',
@@ -70,10 +66,10 @@ const Rating = ({
   }
 
   return (
-    <div
+    <Base
       {...props}
       className='Rating'
-      style={sx.root}>
+      baseStyle={sx.root}>
       {stars.map(s => (
         <button
           key={s}
@@ -83,7 +79,7 @@ const Rating = ({
           <span style={getActiveStyle(s)}>★</span>
         </button>
       ))}
-    </div>
+    </Base>
   )
 }
 
@@ -95,7 +91,8 @@ Rating.propTypes = {
 }
 
 Rating.defaultProps = {
-  value: 0
+  value: 0,
+  color: 'orange'
 }
 
 Rating.contextTypes = {
