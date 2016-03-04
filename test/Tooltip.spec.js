@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, Tooltip } from '../src'
+import { theme, Tooltip, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,11 @@ describe('Tooltip', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('span')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName span', () => {
+    expect(tree.props.tagName).toEqual('span')
   })
 
   it('should have a className', () => {

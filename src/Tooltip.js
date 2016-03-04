@@ -1,21 +1,21 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /**
  * Styled tooltip that shows on hover
  */
 
-const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
+const Tooltip = ({ title, children, ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
   const { scale } = config
+
   const customStyle = {
     fontSize: config.fontSizes[6],
     color: config.colors.white,
     backgroundColor: config.colors.black,
-    borderRadius: config.borderRadius,
-    ...(rebass ? rebass.Tooltip : {}),
-    ...style
+    borderRadius: config.borderRadius
   }
 
   const {
@@ -55,8 +55,9 @@ const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
   return (
-    <span
+    <Base
       {...props}
+      tagName='span'
       className='Tooltip'
       title={title}
       style={{
@@ -66,7 +67,7 @@ const Tooltip = ({ title, children, style, ...props }, { rebass }) => {
       }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       {children}
-    </span>
+    </Base>
   )
 }
 
