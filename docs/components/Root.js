@@ -65,7 +65,8 @@ class Root extends React.Component {
       base,
       examples,
       description,
-      version
+      version,
+      ga
     } = this.props
 
     return (
@@ -114,6 +115,7 @@ class Root extends React.Component {
               <NavItem href='http://jxnblk.com' children='Made by Jxnblk' />
             </Footer>
           </Container>
+          <script dangerouslySetInnerHTML={{ __html: ga }} />
         </body>
       </html>
     )
