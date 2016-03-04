@@ -2,7 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { theme, NavItem } from '../src'
+import { theme, NavItem, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
@@ -16,7 +16,11 @@ describe('NavItem', () => {
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual('a')
+    expect(tree.type).toEqual(Base)
+  })
+
+  it('should set tagName a', () => {
+    expect(tree.props.tagName).toEqual('a')
   })
 
   it('should have a className', () => {
@@ -24,11 +28,11 @@ describe('NavItem', () => {
   })
 
   it('should have default font size', () => {
-    expect(tree.props.style.fontSize).toEqual(fontSizes[5])
+    expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[5])
   })
 
   it('should have default padding', () => {
-    expect(tree.props.style.padding).toEqual(8)
+    expect(tree.props.baseStyle.padding).toEqual(8)
   })
 
   context('when small is true', () => {
@@ -38,11 +42,11 @@ describe('NavItem', () => {
     })
 
     it('should have smaller padding', () => {
-      expect(tree.props.style.padding).toEqual('4px 8px')
+      expect(tree.props.baseStyle.padding).toEqual('4px 8px')
     })
 
     it('should have small font size', () => {
-      expect(tree.props.style.fontSize).toEqual(fontSizes[6])
+      expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[6])
     })
   })
 
@@ -52,8 +56,8 @@ describe('NavItem', () => {
       tree = renderer.getRenderOutput()
     })
 
-    it('should render as a <button>', () => {
-      expect(tree.type).toEqual('button')
+    it('should set tagName button', () => {
+      expect(tree.props.tagName).toEqual('button')
     })
   })
 
