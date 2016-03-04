@@ -49,6 +49,7 @@ const Checkbox = ({
         style={sx.label}>
         <input
           {...props}
+          name={name}
           type='checkbox'
           style={sx.input} />
         {label}
