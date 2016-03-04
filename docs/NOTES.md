@@ -6,7 +6,7 @@
     - [ ] Colors from color lovers api ?
     - [ ] Make it look better
 
-- [ ] rename theme to config
+- [ ] test color obj get/set
 - [ ] Standardize cx in Base
 - [ ] m auto support in Base
 - [ ] Simplify CSS used in tooltip + better Base support
