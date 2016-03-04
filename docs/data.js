@@ -9,6 +9,7 @@ import examples from './examples'
 const files = fs.readdirSync(path.join(__dirname, '../src'))
   .filter(f => /\.js$/.test(f))
 
+
 const components = files
   .map(filename => {
     const raw = fs.readFileSync(path.join(__dirname, `../src/${filename}`), 'utf8')
@@ -37,6 +38,7 @@ const components = files
     }
   })
   .filter(c => c)
+  .filter(c => c.name !== 'Base') // Grab base from array first
 
 module.exports = {
   ...pkg,
