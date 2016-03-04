@@ -1,34 +1,24 @@
 
 import React from 'react'
+import Base from './Base'
 import theme from './theme'
 
 /** Component for displaying flash and error messages */
 
-const Message = ({
-  type,
-  style,
-  ...props
-}, { rebass }) => {
+const Message = ({ ...props }, { rebass }) => {
   const config = { ...theme, ...rebass}
-  const customStyle = rebass ? rebass.Message : {}
   const { bold, scale, borderRadius, colors } = config
-  const backgroundColor = colors[type]
 
   return (
-    <div
+    <Base
       {...props}
       className='Message'
-      style={{
+      baseStyle={{
         fontWeight: bold,
         display: 'flex',
         alignItems: 'center',
         padding: scale[2],
-        marginBottom: scale[2],
-        color: colors.white,
-        backgroundColor,
-        borderRadius,
-        ...customStyle,
-        ...style
+        marginBottom: scale[2]
       }} />
   )
 }
@@ -45,7 +35,9 @@ Message.propTypes = {
 }
 
 Message.defaultProps = {
-  type: 'default'
+  type: 'default',
+  color: 'white',
+  rounded: true
 }
 
 Message.contextTypes = {
