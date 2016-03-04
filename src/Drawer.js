@@ -70,7 +70,6 @@ const Drawer = ({
       display: open ? null : 'none'
     },
     content: {
-      boxSizing: 'border-box',
       position: 'fixed',
       ...placements[position],
       zIndex: zIndex[4],

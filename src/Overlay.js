@@ -50,7 +50,6 @@ const Overlay = ({
     inner: {
       position: 'relative',
       zindex: zIndex[1],
-      boxSizing: 'border-box',
       minWidth: 320,
       width: fullWidth ? '100%' : null,
       ...(box ? innerStyle : {})

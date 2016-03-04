@@ -29,6 +29,7 @@ const Base = ({
   const { scale, colors, borderRadius } = config
 
   const sx = {
+    boxSizing: 'border-box',
     ...baseStyle,
     ...contextStyle,
     ...margins(props, scale),

@@ -12,7 +12,6 @@ const Badge = ({ ...props }, { rebass }) => {
   const sx = {
     fontSize: fontSizes[6],
     fontWeight: bold,
-    boxSizing: 'border-box',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',

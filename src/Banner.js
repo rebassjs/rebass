@@ -24,7 +24,6 @@ const Banner = ({
   const alignItems = alignment[align]
 
   const sx = {
-    boxSizing: 'border-box',
     fontSize: fontSizes[1],
     display: 'flex',
     flexDirection: 'column',

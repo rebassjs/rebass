@@ -20,7 +20,6 @@ const Switch = ({
 
   const sx = {
     root: {
-      boxSizing: 'border-box',
       display: 'inline-flex',
       width: scale[3] * 1.5,
       height: scale[3],

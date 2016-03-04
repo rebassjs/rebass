@@ -26,7 +26,6 @@ const Block = ({
   borderColor = colors[borderColor] || borderColor || colors.primary
 
   const sx = {
-    boxSizing: 'border-box',
     padding: scale[2],
     marginTop: scale[2],
     marginBottom: scale[2],

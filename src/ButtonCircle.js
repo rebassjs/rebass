@@ -19,7 +19,6 @@ const ButtonCircle = ({
   const sx = {
     root: {
       fontSize: 'inherit',
-      boxSizing: 'border-box',
       width: size || scale[3],
       height: size || scale[3],
       padding: 0,
