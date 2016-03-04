@@ -12,11 +12,13 @@ const Card = ({
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { borderColor } = config
+  const { scale, borderColor } = config
 
   const sx = {
     display: 'flex',
     width,
+    padding: scale[1],
+    marginBottom: scale[2],
     flexDirection: 'column',
     borderWidth: 1,
     borderStyle: 'solid',
@@ -37,26 +39,10 @@ Card.propTypes = {
   width: React.PropTypes.oneOfType([
     React.PropTypes.number,
     React.PropTypes.string
-  ]),
-  /** Controls border radius */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
-      'top',
-      'right',
-      'bottom',
-      'left'
-    ])
-  ]),
-  /** Applies padding with the padding utility based on the theme spacing scale */
-  p: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-  /** Applies margin bottom based on the theme spacing scale */
-  mb: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
+  ])
 }
 
 Card.defaultProps = {
-  p: 1,
-  mb: 2,
   rounded: true
 }
 

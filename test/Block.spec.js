@@ -23,18 +23,6 @@ describe('Block', () => {
     expect(tree.props.className).toEqual('Block')
   })
 
-  it('should have default p', () => {
-    expect(tree.props.p).toEqual(2)
-  })
-
-  it('should have default mt', () => {
-    expect(tree.props.mt).toEqual(2)
-  })
-
-  it('should have default mb', () => {
-    expect(tree.props.mb).toEqual(2)
-  })
-
   it('should not have borders', () => {
     expect(tree.props.baseStyle.borderStyle).toEqual('none')
     expect(tree.props.baseStyle.borderTopStyle).toEqual(null)

@@ -27,10 +27,6 @@ describe('Divider', () => {
     expect(tree.props.className).toEqual('Divider')
   })
 
-  it('should have default my', () => {
-    expect(tree.props.my).toEqual(2)
-  })
-
   context('when setting width', () => {
     beforeEach(() => {
       renderer.render(<Divider width={256} />)

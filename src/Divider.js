@@ -12,7 +12,7 @@ const Divider = ({
   ...props
 }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { borderColor } = config
+  const { scale, borderColor } = config
 
   return (
     <Base
@@ -21,6 +21,8 @@ const Divider = ({
       className='Divider'
       baseStyle={{
         width,
+        marginTop: scale[2],
+        marginBottom: scale[2],
         border: 0,
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
@@ -31,13 +33,7 @@ const Divider = ({
 
 Divider.propTypes = {
   /** Sets a fixed width for stylistic options */
-  width: React.PropTypes.number,
-  /** Applies margin top and bottom based on the theme spacing scale */
-  my: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
-}
-
-Divider.defaultProps = {
-  my: 2
+  width: React.PropTypes.number
 }
 
 Divider.contextTypes = {

@@ -76,6 +76,7 @@ const Drawer = ({
       zIndex: zIndex[4],
       width,
       height,
+      padding: scale[2],
       transform,
       transition: 'transform .2s ease-out',
       overflowX: 'hidden',
@@ -116,7 +117,6 @@ Drawer.defaultProps = {
   size: 320,
   position: 'left',
   onDismiss: function () {},
-  p: 2,
   color: 'white',
   backgroundColor: 'default'
 }

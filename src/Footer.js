@@ -9,7 +9,7 @@ import theme from './theme'
 
 const Footer = ({ ...props }, { rebass }) => {
   const config = { ...theme, ...rebass }
-  const { fontSizes, borderColor } = config
+  const { scale, fontSizes, borderColor } = config
 
   return (
     <Base
@@ -20,17 +20,15 @@ const Footer = ({ ...props }, { rebass }) => {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
+        marginTop: scale[3],
+        paddingTop: scale[3],
+        paddingBottom: scale[3],
         fontSize: fontSizes[5],
         borderTopWidth: 1,
         borderTopStyle: 'solid',
         borderTopColor: borderColor
       }} />
   )
-}
-
-Footer.defaultProps = {
-  mt: 3,
-  py: 3,
 }
 
 Footer.contextTypes = {

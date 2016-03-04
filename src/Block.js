@@ -27,6 +27,9 @@ const Block = ({
 
   const sx = {
     boxSizing: 'border-box',
+    padding: scale[2],
+    marginTop: scale[2],
+    marginBottom: scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,
@@ -101,12 +104,6 @@ Block.propTypes = {
       'left'
     ])
   ])
-}
-
-Block.defaultProps = {
-  p: 2,
-  mb: 2,
-  mt: 2,
 }
 
 Block.contextTypes = {

@@ -69,20 +69,17 @@ const examples = {
   ),
   Badge: (
     <Flex align='center'>
-      <Heading level={4}>
-        Rebass <Space />
-        <Badge type='info' children='0.2.0' />
-      </Heading>
+      <Heading level={4} children='Rebass' />
+      <Space />
+      <Badge type='info' children='0.2.0' />
       <Space x={2} />
-      <Heading level={4}>
-        Pill <Space />
-        <Badge pill type='info' children='Pill' />
-      </Heading>
+      <Heading level={4} children='Pill' />
+      <Space />
+      <Badge pill type='info' children='Pill' />
       <Space x={2} />
-      <Heading level={4}>
-        Circular Things <Space />
-        <Badge circle type='error' children='4' />
-      </Heading>
+      <Heading level={4} children='Circular' />
+      <Space />
+      <Badge circle type='error' children='4' />
     </Flex>
   ),
   Banner: (
