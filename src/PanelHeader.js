@@ -44,7 +44,7 @@ PanelHeader.propTypes = {
 
 PanelHeader.defaultProps = {
   theme: 'default',
-  color: 'white'
+  inverted: true
 }
 
 PanelHeader.contextTypes = {

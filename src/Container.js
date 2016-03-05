@@ -1,12 +1,14 @@
 
 import React from 'react'
 import Base from './Base'
+import config from './config'
 
 /**
  * Div with max-width and margin auto for centering content
  */
 
 const Container = ({ ...props }, { rebass }) => {
+  const { scale } = { ...config, ...rebass }
 
   return (
     <Base
@@ -14,13 +16,11 @@ const Container = ({ ...props }, { rebass }) => {
       className='Container'
       baseStyle={{
         maxWidth: 1024,
+        paddingLeft: scale[2],
+        paddingRight: scale[2],
         margin: 'auto'
       }} />
   )
-}
-
-Container.defaultProps = {
-  px: 2
 }
 
 Container.contextTypes = {
