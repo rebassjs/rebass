@@ -16,6 +16,7 @@ const blacklist = [
   'Fixed',
   'Label',
   'Overlay',
+  'Slider',
   'Space',
   'Stat'
 ]

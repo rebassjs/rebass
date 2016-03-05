@@ -21,7 +21,7 @@ import {
   Heading,
   HeadingLink,
   Input,
-  InputRange,
+  Slider,
   Label,
   Media,
   Menu,
@@ -110,7 +110,7 @@ const KitchenSink = ({
           <Radio name='radio_demo' label='Radio' />
           <Checkbox name='checkbox_demo' label='Checkbox' />
         </Box>
-        <InputRange name='inputrange_demo' label='InputRange' defaultValue={.25} />
+        <Slider name='inputrange_demo' label='Slider' defaultValue={.25} />
         <Button children='Button' />
         <Space />
         <ButtonOutline children='ButtonOutline' />

@@ -41,7 +41,8 @@ describe('Button', () => {
     })
 
     it('should have default padding', () => {
-      expect(tree.props.baseStyle.padding).toEqual(`${scale[1]}px ${scale[2]}px`)
+      expect(tree.props.baseStyle.paddingTop).toEqual(scale[1])
+      expect(tree.props.baseStyle.paddingBottom).toEqual(scale[1])
     })
   })
 
@@ -51,7 +52,8 @@ describe('Button', () => {
       tree = renderer.getRenderOutput()
     })
     it('should have more padding', () => {
-      expect(tree.props.baseStyle.padding).toEqual(scale[2])
+      expect(tree.props.baseStyle.paddingTop).toEqual(scale[2])
+      expect(tree.props.baseStyle.paddingBottom).toEqual(scale[2])
     })
   })
 

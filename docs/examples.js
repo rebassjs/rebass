@@ -48,6 +48,7 @@ import {
   SectionHeader,
   Select,
   SequenceMap,
+  Slider,
   Space,
   Stat,
   Switch,
@@ -339,6 +340,21 @@ const examples = {
         { href: '#!', children: 'Place Order' }
       ]}
       active={1} />
+  ),
+  Slider: (
+    <div>
+      <Slider
+        name='slider_1'
+        label='Slider'
+        defaultValue={3/8 * 100} />
+      <Slider
+        fill
+        color='blue'
+        name='slider_2'
+        label='Slider with color and fill'
+        readOnly
+        value={5/8 * 100} />
+    </div>
   ),
   Space: (
     <div>

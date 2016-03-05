@@ -2,15 +2,15 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { InputRange, Label, Base } from '../src'
+import { Slider, Label, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
-describe('InputRange', () => {
+describe('Slider', () => {
   let tree, input, label
 
   beforeEach(() => {
-    renderer.render(<InputRange name='test_input' label='Test' />)
+    renderer.render(<Slider name='test' label='Test' />)
     tree = renderer.getRenderOutput()
     label = tree.props.children[1]
     input = tree.props.children[2]
@@ -21,7 +21,7 @@ describe('InputRange', () => {
   })
 
   it('should have a className', () => {
-    expect(tree.props.className).toEqual('InputRange')
+    expect(tree.props.className).toEqual('Slider')
   })
 
   it('should have a style tag', () => {
@@ -40,9 +40,13 @@ describe('InputRange', () => {
     expect(input.props.type).toEqual('range')
   })
 
+  it('should not have a background gradient', () => {
+    expect(input.props.style.backgroundImage).toNotExist()
+  })
+
   context('when hideLabel is set', () => {
     beforeEach(() => {
-      renderer.render(<InputRange hideLabel name='test_input' label='Test' />)
+      renderer.render(<Slider hideLabel name='test' label='Test' />)
       tree = renderer.getRenderOutput()
       label = tree.props.children[1]
     })
@@ -56,11 +60,23 @@ describe('InputRange', () => {
     })
   })
 
+  context('when fill is true', () => {
+    beforeEach(() => {
+      renderer.render(<Slider fill value={25} name='test' label='Test' />)
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[2]
+    })
+
+    it('should have a background gradient', () => {
+      expect(input.props.style.backgroundImage).toMatch(/^linear\-gradient/)
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(
-        <InputRange
-          name='test_input'
+        <Slider
+          name='test'
           label='Test'
           style={{ color: 'tomato' }} />
       )

@@ -10,8 +10,8 @@ import {
   Text,
   Block,
   Input,
-  InputRange,
   Select,
+  Slider,
   Checkbox,
   Radio,
   Button
@@ -92,8 +92,9 @@ class ConfigForm extends React.Component {
               onChange({ scale: arr })
             }
             return (
-              <InputRange
+              <Slider
                 key={i}
+                fill
                 name={`scale_${i}`}
                 label={`Step ${i}: ${s}px`}
                 min={0}
@@ -110,8 +111,9 @@ class ConfigForm extends React.Component {
               onChange({ fontSizes: arr })
             }
             return (
-              <InputRange
+              <Slider
                 key={i}
+                fill
                 name={`font_size_${i}`}
                 label={`Font Size ${i}: ${s}px`}
                 min={6}
@@ -149,7 +151,8 @@ class ConfigForm extends React.Component {
             label='Border Color'
             value={borderColor}
             onChange={handleBorderColorChange} />
-          <InputRange
+          <Slider
+            fill
             name='border_radius'
             label={`Border Radius: ${borderRadius}px`}
             min={0}
