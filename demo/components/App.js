@@ -42,7 +42,7 @@ class App extends React.Component {
     this.state = Object.assign(
       {},
       config,
-      configurations.dark, {
+      configurations.basic, {
         drawerOpen: false,
         dropdownOpen: false,
         modalOpen: false,
