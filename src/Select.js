@@ -83,8 +83,8 @@ const Select = ({
         children={label} />
       <div style={sx.wrapper}>
         <Base
-          tagName='select'
           {...props}
+          tagName='select'
           name={name}
           rounded={rounded}
           backgroundColor={backgroundColor}
