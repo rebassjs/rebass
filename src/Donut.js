@@ -18,13 +18,26 @@ const createPath = (size, value, strokeWidth) => {
 
   const largeArc = value > .5 ? 1 : 0
 
-  return [
-    M, c, c - r1,
+  const arc1 = value === 1 ? [
+    A, r1, r1, 0, 0, 1, c, c + r1,
+    A, r1, r1, 0, 0, 1, c, c - r1
+  ] : [
     A, r1, r1, 0, largeArc, 1,
     rx(c, r1, angle), ry(c, r1, angle),
+  ]
+
+  const arc2 = value === 1 ? [
+    A, r2, r2, 0, 0, 0, c, c + r2,
+    A, r2, r2, 0, 0, 0, c, c - r2,
+  ] : [
+    A, r2, r2, 0, largeArc, 0, c, c - r2
+  ]
+
+  return [
+    M, c, c - r1,
+    ...arc1,
     L, rx(c, r2, angle), ry(c, r2, angle),
-    A, r2, r2, 0, largeArc, 0,
-    c, c - r2
+    ...arc2,
   ].join(' ')
 }
 
