@@ -23,7 +23,7 @@ class DataDemo extends React.Component {
     super()
     this.state = {
       angle: 60,
-      radius: 128,
+      radius: 192,
     }
     this.handleChange = this.handleChange.bind(this)
   }
