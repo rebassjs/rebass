@@ -9,9 +9,7 @@ const baseColors = {
   blue: '#08e',
   red: '#f52',
   orange: '#f90',
-  green: '#1c7',
-  // darken: 'rgba(0, 0, 0, .9375)',
-  // lighten: 'rgba(255, 255, 255, .9375)',
+  green: '#1c7'
 }
 
 const colors = {
@@ -24,6 +22,8 @@ const colors = {
   warning: baseColors.orange,
   error: baseColors.red
 }
+
+const inverted = colors.white
 
 const scale = [
   0,
@@ -62,6 +62,7 @@ const config = {
   monospace,
   zIndex,
   colors,
+  inverted,
   borderRadius,
   borderColor
 }
