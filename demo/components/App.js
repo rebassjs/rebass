@@ -54,6 +54,7 @@ class App extends React.Component {
     this.toggle = this.toggle.bind(this)
     this.switchConfig = this.switchConfig.bind(this)
     this.updateContext = this.updateContext.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.resetTheme = this.resetTheme.bind(this)
   }
 
@@ -96,6 +97,10 @@ class App extends React.Component {
     this.setState(state)
   }
 
+  handleChange (e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   componentDidMount () {
     jsonp('https://api.github.com/repos/jxnblk/rebass?callback=callback', (err, response) => {
       this.setState({ repo: response.data })
@@ -119,7 +124,6 @@ class App extends React.Component {
           color,
           backgroundColor
         }}>
-
         <Navbar {...this.state}
           configurations={configurations}
           switchConfig={this.switchConfig}
