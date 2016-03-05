@@ -24,6 +24,7 @@ const Menu = ({ ...props }, { rebass }) => {
         borderStyle: 'solid',
         borderColor,
         borderRadius,
+        color: colors.black,
         backgroundColor: colors.white
       }} />
   )
