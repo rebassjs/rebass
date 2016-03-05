@@ -95,7 +95,6 @@ describe('Radio', () => {
     })
   })
 
-
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Radio name='test_radio' label='Test' style={{ color: 'tomato' }} />)

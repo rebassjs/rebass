@@ -12,24 +12,55 @@ import config from './config'
 const Checkbox = ({
   label,
   name,
+  checked,
   children,
   ...props
 }, { rebass }) => {
-  const { scale, colors } = { ...config, ...rebass }
+  const { scale, colors, borderRadius } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
+  const {
+    backgroundColor,
+    theme,
+    inverted,
+    rounded,
+    ...rootProps
+  } = props
+
   const sx = {
     root: {
-      color: invalid ? colors.error : null
-    },
-    label: {
+      position: 'relative',
       display: 'flex',
-      alignItems: 'baseline',
+      alignItems: 'center',
+      paddingBottom: scale[1],
+      color: invalid ? colors.error : null,
       cursor: 'pointer'
     },
     input: {
-      marginRight: scale[1]
+      position: 'absolute',
+      zIndex: -1,
+      opacity: 0
+    },
+    box: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: scale[2],
+      height: scale[2],
+      backgroundColor: checked ? 'currentcolor' : 'transparent',
+      borderRadius,
+      borderStyle: 'solid',
+      borderWidth: 2,
+      borderColor: checked ? null : colors.gray,
+      transition: 'background-color .1s ease-out'
+    },
+    icon: {
+      display: checked ? null : 'none',
+      width: '75%',
+      height: '75%',
+      marginTop: 1,
+      fill: colors.white
     }
   }
 
@@ -41,18 +72,33 @@ const Checkbox = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
+      tagName={Label}
       className={cx}
       baseStyle={sx.root}>
-      <Label
-        style={sx.label}>
-        <input
-          {...props}
-          name={name}
-          type='checkbox'
-          style={sx.input} />
-        {label}
-      </Label>
+      <input
+        {...props}
+        name={name}
+        type='checkbox'
+        checked={checked}
+        style={sx.input} />
+      <Base
+        {...props}
+        className='Checkbox-box'
+        m={0}
+        ml={0}
+        mr={1}
+        p={0}
+        px={0}
+        py={0}
+        baseStyle={sx.box}>
+        <svg
+          viewBox='0 0 32 32'
+          style={sx.icon}>
+          <path d='M1 14 L5 10 L13 18 L27 4 L31 8 L13 26 z' />
+        </svg>
+      </Base>
+      {label}
     </Base>
   )
 }

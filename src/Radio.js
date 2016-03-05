@@ -31,9 +31,9 @@ const Radio = ({
   const sx = {
     root: {
       position: 'relative',
-      paddingBottom: scale[1],
       display: 'flex',
       alignItems: 'center',
+      paddingBottom: scale[1],
       color: invalid ? colors.error : null,
       cursor: 'pointer'
     },

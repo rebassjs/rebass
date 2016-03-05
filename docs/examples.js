@@ -162,9 +162,17 @@ const examples = {
     </div>
   ),
   Checkbox: (
-    <Checkbox
-      name='checkbox_example'
-      label='Checkbox' />
+    <div>
+      <Checkbox
+        name='checkbox_1'
+        label='Checkbox' />
+      <Checkbox
+        checked
+        readOnly
+        theme='success'
+        name='checkbox_1'
+        label='Checkbox' />
+    </div>
   ),
   Close: (
     <Close />
