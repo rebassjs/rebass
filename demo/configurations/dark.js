@@ -1,6 +1,12 @@
 
 import { config } from '../../src'
 
+const caps = {
+  fontSize: 12,
+  textTransform: 'uppercase',
+  letterSpacing: '.2em'
+}
+
 const dark = {
   name: 'Dark',
   fontFamily: 'Helvetica, sans-serif',
@@ -27,7 +33,11 @@ const dark = {
   Panel: {
     backgroundColor: 'transparent'
   },
+  NavItem: {
+    ...caps
+  },
   Button: {
+    ...caps,
     color: '#00d9f7',
     opacity: 7/8
   },

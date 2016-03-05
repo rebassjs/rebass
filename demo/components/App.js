@@ -15,6 +15,7 @@ import {
   Panel,
   PanelHeader,
   SectionHeader,
+  Footer,
   Space,
   Text,
 } from '../../src'
@@ -29,6 +30,8 @@ import Cards from './Cards'
 import DataDemo from './DataDemo'
 import BlockPanel from './BlockPanel'
 import Checkout from './Checkout'
+import Headings from './Headings'
+import Comments from './Comments'
 import ConfigForm from './ConfigForm'
 import Modal from './Modal'
 
@@ -136,6 +139,18 @@ class App extends React.Component {
             {...this.props} />
           <BlockPanel />
           <Checkout />
+          <Headings {...this.state} />
+          <Comments />
+          <Footer mt={4}>
+            <NavItem
+              href='http://jxnblk.com/rebass'
+              children='Rebass' />
+            <Space auto />
+            <NavItem
+              small
+              href='http://jxnblk.com'
+              children='Made by Jxnblk' />
+          </Footer>
         </Container>
         <ConfigForm
           {...this.state}
