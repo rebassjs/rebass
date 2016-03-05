@@ -6,7 +6,7 @@ import config from './config'
 /** Component for displaying flash and error messages */
 
 const Message = ({ ...props }, { rebass }) => {
-  const { bold, scale } = { ...config, ...rebass}
+  const { bold, scale, colors } = { ...config, ...rebass}
 
   return (
     <Base
@@ -37,7 +37,6 @@ Message.propTypes = {
 
 Message.defaultProps = {
   theme: 'default',
-  color: 'white',
   inverted: true,
   rounded: true
 }
