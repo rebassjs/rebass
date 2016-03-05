@@ -13,7 +13,6 @@ const ButtonOutline = ({
 
   const sx = {
     backgroundColor: 'transparent',
-    boxShadow: 'inset 0 0 0 1px',
     ...style
   }
 
@@ -21,7 +20,9 @@ const ButtonOutline = ({
     <Button
       {...props}
       cx='ButtonOutline'
-      baseStyle={{ }}
+      baseStyle={{
+        boxShadow: 'inset 0 0 0 1px',
+      }}
       style={sx} />
   )
 }
