@@ -11,6 +11,7 @@ const Button = ({
   href,
   big,
   cx,
+  baseStyle,
   ...props
 }, { rebass }) => {
   const { fontSizes, bold, scale } = { ...config, ...rebass }
@@ -18,6 +19,7 @@ const Button = ({
   const Component = href ? 'a' : 'button'
 
   const sx = {
+    ...baseStyle,
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
     fontWeight: bold,
