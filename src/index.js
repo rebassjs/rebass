@@ -1,9 +1,6 @@
 
 export { default as Base } from './Base'
 
-// Prototyping
-// export { default as Slider } from './Slider'
-
 export { default as config } from './config'
 export { default as Arrow } from './Arrow'
 export { default as Avatar } from './Avatar'
@@ -52,6 +49,7 @@ export { default as Section } from './Section'
 export { default as SectionHeader } from './SectionHeader'
 export { default as Select } from './Select'
 export { default as SequenceMap } from './SequenceMap'
+export { default as Slider } from './Slider'
 export { default as Space } from './Space'
 export { default as Stat } from './Stat'
 export { default as Switch } from './Switch'
