@@ -32,7 +32,7 @@ const Base = ({
     ...contextStyle,
     ...margins(props, scale),
     ...padding(props, scale),
-    ...colorStyle(props, colors),
+    ...colorStyle(props, colors, rebass),
     ...radii(props, borderRadius),
     ...style
   }
