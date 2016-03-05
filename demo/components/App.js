@@ -33,6 +33,7 @@ import Checkout from './Checkout'
 import Headings from './Headings'
 import Colors from './Colors'
 import Comments from './Comments'
+import MegaFooter from './MegaFooter'
 import ConfigForm from './ConfigForm'
 import Modal from './Modal'
 
@@ -147,20 +148,8 @@ class App extends React.Component {
           <Headings {...this.state} />
           <Colors {...this.state} />
           <Comments />
-          <Footer mt={4}>
-            <NavItem
-              small
-              px={0}
-              href='http://jxnblk.com/rebass'
-              children='Rebass' />
-            <Space auto />
-            <NavItem
-              small
-              px={0}
-              href='http://jxnblk.com'
-              children='Made by Jxnblk' />
-          </Footer>
         </Container>
+        <MegaFooter />
         <ConfigForm
           {...this.state}
           toggle={this.toggle}

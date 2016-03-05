@@ -35,7 +35,7 @@ const hello = {
   inverted: colors.black,
 
   scale: [
-    0, 16, 24, 64, 128
+    0, 16, 20, 64, 128
   ],
 
   bold: 700,
@@ -52,6 +52,12 @@ const hello = {
     fontSize: 20,
     backgroundColor: '#346',
     boxShadow: 'inset 0 0 0 4px'
+  },
+  ButtonCircle: {
+    fontSize: 16,
+    lineHeight: '16px',
+    width: 48,
+    height: 48,
   },
   Message: {
     color: colors.black

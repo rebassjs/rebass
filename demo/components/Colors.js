@@ -10,17 +10,17 @@ import {
 const Colors = ({ colors }) => (
   <Section>
     <SectionHeader heading='Colors' />
-    <Flex wrap gutter={2}>
+    <Flex wrap justify='space-between' gutter={2}>
       {Object.keys(colors).map(key => {
         const color = colors[key]
         return (
-          <Box key={key} col={4} sm={3} md={2}>
-            <Block
-              m={2}
-              py={3}
-              backgroundColor={color}>
-              {key}
-            </Block>
+          <Box key={key} p={2}>
+            <div style={{
+              width: 128,
+              height: 128,
+              backgroundColor: color,
+              borderRadius: 99999
+            }} />
           </Box>
         )
       })}

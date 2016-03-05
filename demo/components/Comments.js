@@ -12,6 +12,7 @@ import {
   ButtonCircle,
   Media,
   Menu,
+  Card,
   Section,
   Panel,
   PanelHeader,
@@ -43,7 +44,7 @@ const Comments = () => (
   <Section>
     <Flex sm gutter={3}>
       <Box sm={6} p={3}>
-        <Menu>
+        <Card p={0}>
           <img src='https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e15/10349615_405116952959537_1120267905_n.jpg?ig_cache_key=NzI4MzI1NTg3NTk4MzA1NjQ3.2'
             style={{
               maxWidth: '100%',
@@ -57,7 +58,7 @@ const Comments = () => (
             <Space auto />
             <ButtonOutline m={2} children='Follow' />
           </Flex>
-          <Divider m={0} />
+          <Divider my={0} />
           <Flex align='center'>
             <ButtonCircle m={2}
               title='Like'
@@ -75,10 +76,10 @@ const Comments = () => (
             <Text small m={2} children='256 Likes' />
             <Text small m={2} children='32 Reposts' />
           </Flex>
-        </Menu>
+        </Card>
       </Box>
       <Box sm={6} p={3}>
-        <Menu>
+        <Card p={0}>
           <Box p={2}>
             <Heading level={3} children={`${comments.length} Comments`} />
           </Box>
@@ -98,7 +99,7 @@ const Comments = () => (
               </Flex>
             </Block>
           ))}
-          <Divider m={0} />
+          <Divider my={0} />
           <Box p={2}>
             <Flex>
               <Box auto>
@@ -115,7 +116,7 @@ const Comments = () => (
                 children='Post' />
             </Flex>
           </Box>
-        </Menu>
+        </Card>
       </Box>
     </Flex>
   </Section>

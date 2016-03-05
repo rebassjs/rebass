@@ -30,6 +30,7 @@ const dark = {
     red: '#f04',
     error: '#f04'
   },
+  inverted: '#222',
 
   scale: [
     0, 10, 20, 40, 80
@@ -61,7 +62,8 @@ const dark = {
     backgroundColor: '#000'
   },
   Message: {
-    color: '#111'
+    color: '#111',
+    opacity: 15/16
   },
   Text: {
     opacity: 7/8
