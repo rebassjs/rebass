@@ -8,7 +8,7 @@ const renderer = TestUtils.createRenderer()
 
 describe('Radio', () => {
   const { colors } = config
-  let tree, label
+  let tree, label, input
 
   beforeEach(() => {
     renderer.render(<Radio name='test' label='Radio'/>)
@@ -20,17 +20,17 @@ describe('Radio', () => {
     expect(tree.type).toEqual(Base)
   })
 
+  it('should set tagName Label', () => {
+    expect(tree.props.tagName).toEqual(Label)
+  })
+
   it('should have a className', () => {
     expect(tree.props.className).toEqual('Radio')
   })
 
-  it('should have a Label', () => {
-    expect(label.type).toEqual(Label)
-  })
-
   it('should have an input', () => {
-    expect(label.props.children[0].type).toEqual('input')
-    expect(label.props.children[0].props.type).toEqual('radio')
+    expect(tree.props.children[0].type).toEqual('input')
+    expect(tree.props.children[0].props.type).toEqual('radio')
   })
 
   it('should not set a color', () => {
@@ -73,6 +73,28 @@ describe('Radio', () => {
       expect(tree.props.className).toEqual('Radio is-readonly')
     })
   })
+
+  context('when form props are set', () => {
+    beforeEach(() => {
+      renderer.render(
+        <Radio
+          name='test'
+          label='Test'
+          checked
+          value={'Hello'}
+          onChange={function() {}} />
+      )
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[0]
+    })
+
+    it('should pass props to input', () => {
+      expect(input.props.checked).toEqual(true)
+      expect(input.props.onChange).toBeA('function')
+      expect(input.props.value).toEqual('Hello')
+    })
+  })
+
 
   context('when custom styles are set', () => {
     beforeEach(() => {

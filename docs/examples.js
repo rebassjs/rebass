@@ -298,9 +298,17 @@ const examples = {
     <Progress value={0.25} />
   ),
   Radio: (
-    <Radio
-      name='radio_example'
-      label='Radio' />
+    <div>
+      <Radio
+        checked
+        group='radios'
+        name='radio_1'
+        label='Radio' />
+      <Radio
+        group='radios'
+        name='radio_2'
+        label='Radio' />
+    </div>
   ),
   Rating: (
     <Rating value={3.5} />

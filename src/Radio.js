@@ -6,12 +6,13 @@ import Label from './Label'
 import config from './config'
 
 /**
- * Radio input with label
+ * Styled custom radio input with label
  */
 
 const Radio = ({
   label,
   name,
+  checked,
   children,
   ...props
 }, { rebass }) => {
@@ -19,17 +20,37 @@ const Radio = ({
 
   const invalid = props['aria-invalid'] || props.invalid
 
+  const {
+    backgroundColor,
+    theme,
+    circle,
+    inverted,
+    ...rootProps
+  } = props
+
   const sx = {
     root: {
-      color: invalid ? colors.error : null
-    },
-    label: {
+      position: 'relative',
+      paddingBottom: scale[1],
       display: 'flex',
-      alignItems: 'baseline',
+      alignItems: 'center',
+      color: invalid ? colors.error : null,
       cursor: 'pointer'
     },
     input: {
-      marginRight: scale[1]
+      position: 'absolute',
+      zIndex: -1,
+      opacity: 0,
+    },
+    dot: {
+      width: scale[2],
+      height: scale[2],
+      backgroundColor: checked ? colors.white : 'currentcolor',
+      borderWidth: 5,
+      borderStyle: checked ? 'solid' : null,
+      borderColor: checked ? 'currentcolor' : null,
+      opacity: checked ? null : 1/4,
+      transition: 'border .1s ease-out'
     }
   }
 
@@ -41,18 +62,28 @@ const Radio = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
+      tagName={Label}
       className={cx}
       baseStyle={sx.root}>
-      <Label
-        style={sx.label}>
-        <input
-          {...props}
-          name={name}
-          type='radio'
-          style={sx.input} />
-        {label}
-      </Label>
+      <input
+        {...props}
+        name={name}
+        checked={checked}
+        type='radio'
+        style={sx.input} />
+      <Base
+        {...props}
+        className='Radio-dot'
+        m={0}
+        ml={0}
+        mr={1}
+        my={0}
+        p={0}
+        px={0}
+        py={0}
+        baseStyle={sx.dot} />
+      {label}
     </Base>
   )
 }
@@ -62,6 +93,10 @@ Radio.propTypes = {
   label: React.PropTypes.string.isRequired,
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired
+}
+
+Radio.defaultProps = {
+  circle: true
 }
 
 Radio.contextTypes = {
