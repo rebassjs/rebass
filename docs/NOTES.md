@@ -1,9 +1,11 @@
 
 # Notes
 
+- [ ] Update default colors
+- [ ] Remove Base default props
+
 - [ ] Standardize cx in Base
 - [ ] m auto support in Base
-- [ ] Simplify CSS used in tooltip + better Base support
 - [ ] href prop on Heading instead of HeadingLink component
 - [ ] support props object in context Component object (e.g. `rebass.Button.props`)
 
@@ -11,6 +13,14 @@
 
 - Base
   - [ ] border + borderColor util
+
+- [ ] Base props splitting
+  - [ ] Input
+  - [ ] Textarea
+  - [ ] Radio
+  - [ ] Checkbox
+- [ ] Custom Radio
+- [ ] Custom Checkbox
 
 - [ ] Androidish TabNav
 - [ ] Blockquote
