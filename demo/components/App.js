@@ -103,7 +103,14 @@ class App extends React.Component {
   }
 
   render () {
-    const { fontFamily, color, backgroundColor, drawerOpen, overlayOpen } = this.state
+    const {
+      fontFamily,
+      letterSpacing,
+      color,
+      backgroundColor,
+      drawerOpen,
+      overlayOpen
+    } = this.state
 
     const css = `
       body {
@@ -114,8 +121,13 @@ class App extends React.Component {
     `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
     return (
-      <div>
-        <style dangerouslySetInnerHTML={{ __html: css }} />
+      <div style={{
+          fontFamily,
+          letterSpacing,
+          color,
+          backgroundColor
+        }}>
+
         <Navbar {...this.state}
           configurations={configurations}
           switchConfig={this.switchConfig}

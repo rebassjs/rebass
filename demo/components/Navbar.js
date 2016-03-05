@@ -28,7 +28,6 @@ const Navbar = ({
         </NavItem>
         <DropdownMenu
           right
-          color='primary'
           onDismiss={toggle('dropdownOpen')}
           open={dropdownOpen}>
           {Object.keys(configurations).map((key, i) => {

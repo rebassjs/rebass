@@ -61,6 +61,11 @@ const biblio = {
     ...caps,
     fontSize: 12
   },
+  ButtonOutline: {
+    ...sans,
+    ...caps,
+    fontSize: 12
+  },
   NavItem: {
     ...sans,
     ...caps,

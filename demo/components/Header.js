@@ -11,6 +11,7 @@ import {
 const Header = ({ toggle }) => (
   <Banner
     style={{
+      minHeight: '75vh',
       paddingTop: 48,
       backgroundAttachment: 'fixed'
     }}

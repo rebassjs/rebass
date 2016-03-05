@@ -56,11 +56,12 @@ const dark = {
     backgroundColor: `rgba(0, 0, 0, ${7/8})`
   },
   Label: { opacity: 5/8 },
-  DropdownMenu: {
-    // backgroundColor: '#000'
-  },
   Menu: {
+    color: '#00d9f7',
     backgroundColor: '#000'
+  },
+  Message: {
+    color: '#111'
   },
   Text: {
     opacity: 7/8

@@ -17,7 +17,7 @@ const Colors = ({ colors }) => (
           <Box key={key} col={4} sm={3} md={2}>
             <Block
               m={2}
-              py={4}
+              py={3}
               backgroundColor={color}>
               {key}
             </Block>

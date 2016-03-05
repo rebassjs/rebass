@@ -107,7 +107,7 @@ const Comments = () => (
                   label='Comment'
                   placeholder='Add comment...'
                   hideLabel
-                  m={0}
+                  mb={0}
                   rounded='left' />
               </Box>
               <ButtonOutline
