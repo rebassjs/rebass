@@ -16,20 +16,20 @@ const Input = ({
   type,
   message,
   hideLabel,
-  rounded,
   children,
   ...props
 }, { rebass }) => {
-  const { scale, colors, borderRadius, borderColor } = { ...config, ...rebass }
-
-  const radii = {
-    top: `${borderRadius}px ${borderRadius}px 0 0`,
-    right: `0 ${borderRadius}px ${borderRadius}px 0`,
-    bottom: `0 0 ${borderRadius}px ${borderRadius}px`,
-    left: `${borderRadius}px 0 0 ${borderRadius}px`,
-  }
+  const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const invalid = props.invalid || props['aria-invalid']
+
+  const {
+    rounded,
+    backgroundColor,
+    theme,
+    inverted,
+    ...rootProps
+  } = props
 
   const sx = {
     root: {
@@ -43,12 +43,9 @@ const Input = ({
       display: 'block',
       width: '100%',
       height: scale[3],
-      paddingLeft: scale[1],
-      paddingRight: scale[1],
       margin: 0,
       color: 'inherit',
       backgroundColor: 'rgba(255, 255, 255, .25)',
-      borderRadius: rounded ? (radii[rounded] || borderRadius) : 0,
       borderWidth: 1,
       borderStyle: 'solid',
       borderColor: invalid ? colors.error : borderColor
@@ -63,18 +60,29 @@ const Input = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
       className={cx}
       baseStyle={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
         children={label} />
-      <input
+      <Base
         {...props}
+        tagName='input'
         type={type}
         name={name}
-        style={sx.input} />
+        rounded={rounded}
+        backgroundColor={backgroundColor}
+        theme={theme}
+        inverted={inverted}
+        m={0}
+        mx={0}
+        my={0}
+        p={0}
+        px={1}
+        py={0}
+        baseStyle={sx.input} />
       {message && <Text small children={message} />}
     </Base>
   )

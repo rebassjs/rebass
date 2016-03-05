@@ -30,7 +30,11 @@ describe('Input', () => {
   })
 
   it('should have an input element', () => {
-    expect(input.type).toEqual('input')
+    expect(input.type).toEqual(Base)
+  })
+
+  it('should set tagName input', () => {
+    expect(input.props.tagName).toEqual('input')
   })
 
   it('should not have a message', () => {
@@ -117,58 +121,52 @@ describe('Input', () => {
     })
   })
 
-  context('when rounded is false', () => {
+  context('when form props are set', () => {
     beforeEach(() => {
-      renderer.render(<Input name='test' label='Test' rounded={false} />)
+      renderer.render(
+        <Input
+          name='test'
+          label='Test'
+          value={'Hello'}
+          onChange={function() {}} />
+      )
       tree = renderer.getRenderOutput()
       input = tree.props.children[1]
     })
-    it('should not have a border radius', () => {
-      expect(input.props.style.borderRadius).toEqual(0)
+
+    it('should pass props to input', () => {
+      expect(input.props.onChange).toBeA('function')
+      expect(input.props.value).toEqual('Hello')
     })
   })
 
-  context('when rounded is top', () => {
+  context('when Rebass props are set', () => {
     beforeEach(() => {
-      renderer.render(<Input name='test' label='Test' rounded={'top'} />)
+      renderer.render(
+        <Input
+          name='test'
+          label='Test'
+          rounded='left'
+          backgroundColor='blue'
+          theme='primary'
+          inverted={true} />
+      )
       tree = renderer.getRenderOutput()
       input = tree.props.children[1]
     })
-    it('should have top border radii', () => {
-      expect(input.props.style.borderRadius).toEqual('2px 2px 0 0')
-    })
-  })
 
-  context('when rounded is right', () => {
-    beforeEach(() => {
-      renderer.render(<Input name='test' label='Test' rounded={'right'} />)
-      tree = renderer.getRenderOutput()
-      input = tree.props.children[1]
+    it('should not pass props to root', () => {
+      expect(tree.props.rounded).toNotExist()
+      expect(tree.props.backgroundColor).toNotExist()
+      expect(tree.props.theme).toNotExist()
+      expect(tree.props.inverted).toNotExist()
     })
-    it('should have right border radii', () => {
-      expect(input.props.style.borderRadius).toEqual('0 2px 2px 0')
-    })
-  })
 
-  context('when rounded is bottom', () => {
-    beforeEach(() => {
-      renderer.render(<Input name='test' label='Test' rounded={'bottom'} />)
-      tree = renderer.getRenderOutput()
-      input = tree.props.children[1]
-    })
-    it('should have bottom border radii', () => {
-      expect(input.props.style.borderRadius).toEqual('0 0 2px 2px')
-    })
-  })
-
-  context('when rounded is left', () => {
-    beforeEach(() => {
-      renderer.render(<Input name='test' label='Test' rounded={'left'} />)
-      tree = renderer.getRenderOutput()
-      input = tree.props.children[1]
-    })
-    it('should have left border radii', () => {
-      expect(input.props.style.borderRadius).toEqual('2px 0 0 2px')
+    it('should pass props to input', () => {
+      expect(input.props.rounded).toEqual('left')
+      expect(input.props.backgroundColor).toEqual('blue')
+      expect(input.props.theme).toEqual('primary')
+      expect(input.props.inverted).toEqual(true)
     })
   })
 
