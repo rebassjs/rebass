@@ -2,7 +2,6 @@
 # Notes
 
 - [ ] Update default colors
-- [ ] Remove Base default props
 
 - [ ] Standardize cx in Base
 - [ ] m auto support in Base
@@ -13,6 +12,18 @@
 
 - Base
   - [ ] border + borderColor util
+```
+<Base
+  border
+  border={false}
+  border={3} // border width
+  borderTop
+  borderRight
+  borderBottom
+  borderLeft
+  borderColor
+  />
+```
 
 - [ ] Base props splitting
   - [ ] Input
