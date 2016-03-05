@@ -25,12 +25,6 @@
   />
 ```
 
-- [ ] Base props splitting
-  - [ ] Input
-  - [ ] Textarea
-  - [ ] Radio
-  - [ ] Checkbox
-- [ ] Custom Radio
 - [ ] Custom Checkbox
 
 - [ ] Androidish TabNav
