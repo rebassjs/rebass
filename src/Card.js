@@ -14,11 +14,9 @@ const Card = ({
   const { scale, borderColor } = { ...config, ...rebass }
 
   const sx = {
-    display: 'flex',
     width,
     padding: scale[1],
     marginBottom: scale[2],
-    flexDirection: 'column',
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor,
