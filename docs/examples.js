@@ -323,12 +323,12 @@ const examples = {
       name='select_example'
       label='Select'
       options={[
-        { value: 2, label: 'Two' },
-        { value: 4, label: 'Four' },
-        { value: 8, label: 'Eight' },
-        { value: 16, label: 'Sixteen' },
-        { value: 32, label: 'Thirty-Two' },
-        { value: 64, label: 'Sixty-Four' }
+        { value: 2, children: 'Two' },
+        { value: 4, children: 'Four' },
+        { value: 8, children: 'Eight' },
+        { value: 16, children: 'Sixteen' },
+        { value: 32, children: 'Thirty-Two' },
+        { value: 64, children: 'Sixty-Four' }
       ]} />
   ),
   SequenceMap: (

@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import Base from './Base'
 import Label from './Label'
 import Text from './Text'
+import Arrow from './Arrow'
 import config from './config'
 import margins from './util/margins'
 
@@ -24,6 +25,14 @@ const Select = ({
 
   const invalid = props['aria-invalid'] || props.invalid
 
+  const {
+    rounded,
+    backgroundColor,
+    theme,
+    inverted,
+    ...rootProps
+  } = props
+
   const sx = {
     root: {
       marginBottom: scale[2],
@@ -36,15 +45,24 @@ const Select = ({
       display: 'block',
       width: '100%',
       height: scale[3],
-      paddingLeft: scale[1],
-      paddingRight: scale[1],
-      margin: 0,
       color: 'inherit',
       backgroundColor: 'transparent',
       backgroundImage: 'none',
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor: invalid ? colors.error : borderColor
+      borderColor: invalid ? colors.error : borderColor,
+      MozAppearance: 'none',
+      WebkitAppearance: 'none'
+    },
+    wrapper: {
+      position: 'relative'
+    },
+    arrow: {
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      margin: scale[3] / 2,
+      transform: 'translate(50%, -50%)'
     }
   }
 
@@ -56,21 +74,39 @@ const Select = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
       className={cx}
       baseStyle={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
         children={label} />
-      <select
-        {...props}
-        name={name}
-        style={sx.select}>
-        {options.map((option, i) => (
-          <option key={i} {...option} />
-        ))}
-      </select>
+      <div style={sx.wrapper}>
+        <Base
+          tagName='select'
+          {...props}
+          name={name}
+          rounded={rounded}
+          backgroundColor={backgroundColor}
+          theme={theme}
+          inverted={inverted}
+          m={0}
+          mx={0}
+          my={0}
+          p={0}
+          pl={1}
+          pr={3}
+          py={0}
+          baseStyle={sx.select}>
+          {options.map((option, i) => (
+            <option key={i} {...option} />
+          ))}
+        </Base>
+        <Arrow
+          theme={theme}
+          inverted={inverted}
+          style={sx.arrow} />
+      </div>
       {message && <Text small children={message} />}
     </Base>
   )

@@ -13,7 +13,7 @@ describe('Select', () => {
   beforeEach(() => {
     renderer.render(<Select name='test_select' label='Test' />)
     tree = renderer.getRenderOutput()
-    select = tree.props.children[1]
+    select = tree.props.children[1].props.children[0]
     message = tree.props.children[2]
   })
 
@@ -29,8 +29,12 @@ describe('Select', () => {
     expect(tree.props.children[0].type).toEqual(Label)
   })
 
-  it('should have an select element', () => {
-    expect(select.type).toEqual('select')
+  it('should have a Base component for select element', () => {
+    expect(select.type).toEqual(Base)
+  })
+
+  it('should have tagName select', () => {
+    expect(select.props.tagName).toEqual('select')
   })
 
   it('should not have a message', () => {
@@ -53,7 +57,7 @@ describe('Select', () => {
           ]} />
       )
       tree = renderer.getRenderOutput()
-      select = tree.props.children[1]
+      select = tree.props.children[1].props.children[0]
     })
     it('should have child <option> elements', () => {
       expect(select.props.children.length).toEqual(2)
@@ -110,6 +114,36 @@ describe('Select', () => {
     })
   })
 
+  context('when Rebass props are set', () => {
+    beforeEach(() => {
+      renderer.render(
+        <Select
+          name='test'
+          label='Test'
+          rounded='left'
+          backgroundColor='blue'
+          theme='primary'
+          inverted={true}
+          />
+      )
+      tree = renderer.getRenderOutput()
+      select = tree.props.children[1].props.children[0]
+    })
+
+    it('should not pass props to root', () => {
+      expect(tree.props.rounded).toNotExist()
+      expect(tree.props.backgroundColor).toNotExist()
+      expect(tree.props.theme).toNotExist()
+      expect(tree.props.inverted).toNotExist()
+    })
+
+    it('should pass props to select', () => {
+      expect(select.props.rounded).toEqual('left')
+      expect(select.props.backgroundColor).toEqual('blue')
+      expect(select.props.theme).toEqual('primary')
+      expect(select.props.inverted).toEqual(true)
+    })
+  })
 
   context('when custom styles are set', () => {
     beforeEach(() => {

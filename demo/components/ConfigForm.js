@@ -166,14 +166,14 @@ class ConfigForm extends React.Component {
             label='Font Family'
             value={fontFamily}
             options={[
-              { value: '-apple-system, BlinkMacSystemFont, sans-serif', label: 'System' },
-              { value: '"Avenir Next", sans-serif', label: 'Avenir' },
-              { value: 'Helvetica, sans-serif', label: 'Helvetica' },
-              { value: 'Verdana, sans-serif', label: 'Verdana' },
-              { value: 'Roboto, sans-serif', label: 'Roboto' },
-              { value: '"Roboto Mono", monospace', label: 'Roboto Mono' },
-              { value: 'Georgia, serif', label: 'Georgia' },
-              { value: 'Palatino, Georgia, serif', label: 'Palatino' },
+              { value: '-apple-system, BlinkMacSystemFont, sans-serif', children: 'System' },
+              { value: '"Avenir Next", sans-serif', children: 'Avenir' },
+              { value: 'Helvetica, sans-serif', children: 'Helvetica' },
+              { value: 'Verdana, sans-serif', children: 'Verdana' },
+              { value: 'Roboto, sans-serif', children: 'Roboto' },
+              { value: '"Roboto Mono", monospace', children: 'Roboto Mono' },
+              { value: 'Georgia, serif', children: 'Georgia' },
+              { value: 'Palatino, Georgia, serif', children: 'Palatino' },
             ]}
             onChange={handleThemeChange('fontFamily')} />
           <Flex align='flex-end' gutter={1}>
