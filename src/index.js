@@ -1,6 +1,9 @@
 
 export { default as Base } from './Base'
 
+// Prototyping
+export { default as Slider } from './Slider'
+
 export { default as config } from './config'
 export { default as Arrow } from './Arrow'
 export { default as Avatar } from './Avatar'
