@@ -48,8 +48,7 @@ const DropdownMenu = ({
       className='DropdownMenu'
       baseStyle={sx.root}>
       <div style={sx.overlay}
-        onClick={onDismiss}
-        children='DropdownMenu overlay' />
+        onClick={onDismiss} />
       <div style={sx.content}>
         <Menu {...props} />
       </div>
