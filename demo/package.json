@@ -19,6 +19,7 @@
     "jsonp": "^0.2.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "react-geomicons": "^2.0.4",
     "reflexbox": "^1.0.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

@@ -31,6 +31,7 @@ import DataDemo from './DataDemo'
 import BlockPanel from './BlockPanel'
 import Checkout from './Checkout'
 import Headings from './Headings'
+import Colors from './Colors'
 import Comments from './Comments'
 import ConfigForm from './ConfigForm'
 import Modal from './Modal'
@@ -47,8 +48,6 @@ class App extends React.Component {
     })
     this.toggle = this.toggle.bind(this)
     this.switchConfig = this.switchConfig.bind(this)
-    this.toggleDrawer = this.toggleDrawer.bind(this)
-    this.toggleModal = this.toggleModal.bind(this)
     this.updateContext = this.updateContext.bind(this)
     this.resetTheme = this.resetTheme.bind(this)
   }
@@ -81,16 +80,6 @@ class App extends React.Component {
         })
       })
     }
-  }
-
-  toggleDrawer () {
-    const drawerOpen = !this.state.drawerOpen
-    this.setState({ drawerOpen })
-  }
-
-  toggleModal () {
-    const modalOpen = !this.state.modalOpen
-    this.setState({ modalOpen })
   }
 
   resetTheme (cb) {
@@ -127,7 +116,7 @@ class App extends React.Component {
           configurations={configurations}
           switchConfig={this.switchConfig}
           toggle={this.toggle} />
-        <Header toggleDrawer={this.toggleDrawer} />
+        <Header toggle={this.toggle} />
         <Container style={{
             transition: 'transform .3s ease-out',
             transform: drawerOpen ? 'translateX(-20%)' : 'translateX(0)'
@@ -137,9 +126,10 @@ class App extends React.Component {
           <DataDemo
             {...this.state}
             {...this.props} />
-          <BlockPanel />
+          <BlockPanel toggle={this.toggle} />
           <Checkout />
           <Headings {...this.state} />
+          <Colors {...this.state} />
           <Comments />
           <Footer mt={4}>
             <NavItem
@@ -158,7 +148,7 @@ class App extends React.Component {
           onChange={this.updateContext}
           reset={this.resetTheme} />
         <Modal {...this.state}
-          toggleModal={this.toggleModal} />
+          toggle={this.toggle} />
       </div>
     )
   }

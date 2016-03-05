@@ -6,11 +6,12 @@ import {
   Block,
   Heading,
   Text,
+  Button,
   Panel,
   PanelHeader
 } from '../../src'
 
-const BlockPanel = () => (
+const BlockPanel = ({ toggle }) => (
   <Section>
     <Flex
       align='center'
@@ -38,6 +39,11 @@ const BlockPanel = () => (
           <Text>
             A flat or curved component, typically rectangular, that forms or is set into the surface of a door, wall, or ceiling
           </Text>
+          <Button
+            big
+            my={2}
+            onClick={toggle('modalOpen')}
+            children='Open Overlay' />
         </Panel>
       </Box>
     </Flex>

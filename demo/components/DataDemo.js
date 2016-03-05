@@ -45,6 +45,7 @@ const DataDemo = ({ repo, version, ...props }) => (
       <Stat
         m={2}
         label='Stars'
+        color='orange'
         value={repo.stargazers_count || '...'} />
       <Stat
         m={2}

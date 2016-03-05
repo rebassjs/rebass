@@ -20,7 +20,7 @@ const Headings = ({ fontSizes }) => (
             key={i}
             level={4}
             size={i}
-            children={`Heading ${1} (${size}px)`} />
+            children={`Heading ${i} (${size}px)`} />
         ))}
       </Box>
       <Box sm={5} px={3}>

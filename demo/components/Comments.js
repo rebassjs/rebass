@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
+import Icon from 'react-geomicons'
 import {
   Avatar,
   Divider,
@@ -8,6 +9,7 @@ import {
   Input,
   Button,
   ButtonOutline,
+  ButtonCircle,
   Media,
   Menu,
   Section,
@@ -15,23 +17,24 @@ import {
   PanelHeader,
   PanelFooter,
   Heading,
-  Text
+  Text,
+  Space
 } from '../../src'
 
 const comments = [
   {
-    avatar: 'http://lorempixel.com/96/96/people',
-    user: 'Bob',
+    avatar: 'https://pbs.twimg.com/profile_images/666139404210081792/ef2KOClR_bigger.png',
+    user: 'mrmrs',
     text: 'Hello. Can you please explain what Rebass is?'
   },
   {
-    avatar: 'http://lorempixel.com/72/72/people',
-    user: 'Rob',
+    avatar: 'http://jxnblk.com/avatar/avatar-640.png',
+    user: 'Jxnblk',
     text: 'Sure! It’s a library of React stateless functional UI components.'
   },
   {
-    avatar: 'http://lorempixel.com/96/96/people',
-    user: 'Bob',
+    avatar: 'https://pbs.twimg.com/profile_images/666139404210081792/ef2KOClR_bigger.png',
+    user: 'mrmrs',
     text: 'wtf does that mean?'
   }
 ]
@@ -39,7 +42,42 @@ const comments = [
 const Comments = () => (
   <Section>
     <Flex sm gutter={3}>
-      <Box p={3}>
+      <Box sm={6} p={3}>
+        <Menu>
+          <img src='https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e15/10349615_405116952959537_1120267905_n.jpg?ig_cache_key=NzI4MzI1NTg3NTk4MzA1NjQ3.2'
+            style={{
+              maxWidth: '100%',
+              height: 'auto'
+            }} />
+          <Flex align='center'>
+            <Box p={2}>
+              <Avatar src='https://pbs.twimg.com/profile_images/666139404210081792/ef2KOClR_bigger.png' />
+            </Box>
+            <Text bold children='mrmrs' />
+            <Space auto />
+            <ButtonOutline m={2} children='Follow' />
+          </Flex>
+          <Divider m={0} />
+          <Flex align='center'>
+            <ButtonCircle m={2}
+              title='Like'
+              color='red'
+              backgroundColor='gray'>
+              <Icon name='heart' />
+            </ButtonCircle>
+            <ButtonCircle m={2}
+              title='Repost'
+              color='inherit'
+              backgroundColor='gray'>
+              <Icon name='repost' />
+            </ButtonCircle>
+            <Space auto />
+            <Text small m={2} children='256 Likes' />
+            <Text small m={2} children='32 Reposts' />
+          </Flex>
+        </Menu>
+      </Box>
+      <Box sm={6} p={3}>
         <Menu>
           <Box p={2}>
             <Heading level={3} children={`${comments.length} Comments`} />
@@ -47,14 +85,16 @@ const Comments = () => (
           {comments.map( ({ avatar, user, text }, i) => (
             <Block borderLeft key={i}>
               <Flex align='center'>
-                <Avatar mr={2} src={avatar} />
-                <div>
+                <Box>
+                  <Avatar mr={2} src={avatar} />
+                </Box>
+                <Box>
                   <Text
                     small
                     color='midgray'
                     children={user} />
                   <Text children={text} />
-                </div>
+                </Box>
               </Flex>
             </Block>
           ))}

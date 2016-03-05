@@ -8,20 +8,20 @@ import {
   Button
 } from '../../src'
 
-const Header = ({ toggleDrawer }) => (
+const Header = ({ toggle }) => (
   <Banner
     style={{
       paddingTop: 48,
       backgroundAttachment: 'fixed'
     }}
     backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
-    onClick={toggleDrawer}>
+    onClick={toggle('drawerOpen')}>
     <Heading size={1} big children='Rebass Demo' />
     <Text children='Configurable example page' />
     <Box py={2}>
       <Button
         big
-        onClick={toggleDrawer}
+        onClick={toggle('drawerOpen')}
         children='Edit Configuration' />
     </Box>
   </Banner>
