@@ -44,7 +44,7 @@ const InlineForm =({
         placeholder={placeholder}
         onChange={onChange}
         style={sx.input}
-        m={0}
+        mb={0}
         hideLabel
         rounded='left' />
       <ButtonOutline

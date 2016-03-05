@@ -35,17 +35,16 @@ const Select = ({
       boxSizing: 'border-box',
       display: 'block',
       width: '100%',
-      height: 32,
-      paddingLeft: 8,
-      paddingRight: 8,
+      height: scale[3],
+      paddingLeft: scale[1],
+      paddingRight: scale[1],
       margin: 0,
       color: 'inherit',
       backgroundColor: 'transparent',
       backgroundImage: 'none',
-      borderRadius: 2,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor
+      borderColor: invalid ? colors.error : borderColor
     }
   }
 
@@ -91,7 +90,8 @@ Select.propTypes = {
 }
 
 Select.defaultProps = {
-  options: []
+  options: [],
+  rounded: true
 }
 
 Select.contextTypes = {

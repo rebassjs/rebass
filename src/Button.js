@@ -18,16 +18,23 @@ const Button = ({
 
   const Component = href ? 'a' : 'button'
 
+  // scale[3] also used in form elements
+  const minHeight = scale[3]
+
   const sx = {
     ...baseStyle,
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
     fontWeight: bold,
     lineHeight: `${scale[2]}px`,
+    minHeight,
     textDecoration: 'none',
     display: 'inline-block',
     margin: 0,
-    padding: big ? scale[2] : `${scale[1]}px ${scale[2]}px`,
+    paddingTop: big ? scale[2] : scale[1],
+    paddingBottom: big ? scale[2] : scale[1],
+    paddingLeft: scale[2],
+    paddingRight: scale[2],
     cursor: 'pointer',
     border: 0
   }
