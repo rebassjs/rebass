@@ -149,11 +149,14 @@ class App extends React.Component {
           <Comments />
           <Footer mt={4}>
             <NavItem
+              small
+              px={0}
               href='http://jxnblk.com/rebass'
               children='Rebass' />
             <Space auto />
             <NavItem
               small
+              px={0}
               href='http://jxnblk.com'
               children='Made by Jxnblk' />
           </Footer>
