@@ -30,7 +30,11 @@ describe('Textarea', () => {
   })
 
   it('should have an textarea element', () => {
-    expect(textarea.type).toEqual('textarea')
+    expect(textarea.type).toEqual(Base)
+  })
+
+  it('should set tagName textarea', () => {
+    expect(textarea.props.tagName).toEqual('textarea')
   })
 
   it('should not have a message', () => {
@@ -105,6 +109,56 @@ describe('Textarea', () => {
       expect(tree.props.className).toEqual('Textarea is-readonly')
     })
   })
+
+  context('when form props are set', () => {
+    beforeEach(() => {
+      renderer.render(
+        <Textarea
+          name='test'
+          label='Test'
+          value={'Hello'}
+          onChange={function() {}} />
+      )
+      tree = renderer.getRenderOutput()
+      textarea = tree.props.children[1]
+    })
+
+    it('should pass props to textarea', () => {
+      expect(textarea.props.onChange).toBeA('function')
+      expect(textarea.props.value).toEqual('Hello')
+    })
+  })
+
+  context('when Rebass props are set', () => {
+    beforeEach(() => {
+      renderer.render(
+        <Textarea
+          name='test'
+          label='Test'
+          rounded='left'
+          backgroundColor='blue'
+          theme='primary'
+          inverted={true} />
+      )
+      tree = renderer.getRenderOutput()
+      textarea = tree.props.children[1]
+    })
+
+    it('should not pass props to root', () => {
+      expect(tree.props.rounded).toNotExist()
+      expect(tree.props.backgroundColor).toNotExist()
+      expect(tree.props.theme).toNotExist()
+      expect(tree.props.inverted).toNotExist()
+    })
+
+    it('should pass props to textarea', () => {
+      expect(textarea.props.rounded).toEqual('left')
+      expect(textarea.props.backgroundColor).toEqual('blue')
+      expect(textarea.props.theme).toEqual('primary')
+      expect(textarea.props.inverted).toEqual(true)
+    })
+  })
+
 
 
   context('when custom styles are set', () => {

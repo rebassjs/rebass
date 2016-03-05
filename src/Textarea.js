@@ -23,6 +23,14 @@ const Textarea = ({
 
   const invalid = props['aria-invalid'] || props.invalid
 
+  const {
+    rounded,
+    backgroundColor,
+    theme,
+    inverted,
+    ...rootProps
+  } = props
+
   const sx = {
     root: {
       marginBottom: scale[2],
@@ -34,9 +42,6 @@ const Textarea = ({
       boxSizing: 'border-box',
       display: 'block',
       width: '100%',
-      margin: 0,
-      padding: 8,
-      borderRadius: 2,
       borderWidth: 1,
       borderStyles: 'solid',
       borderColor
@@ -51,17 +56,26 @@ const Textarea = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
       className={cx}
       baseStyle={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
         children={label} />
-      <textarea
+      <Base
         {...props}
+        tagName='textarea'
         name={name}
-        style={sx.textarea} />
+        rounded={rounded}
+        backgroundColor={backgroundColor}
+        theme={theme}
+        inverted={inverted}
+        m={0}
+        mx={0}
+        my={0}
+        p={1}
+        baseStyle={sx.textarea} />
       {message && <Text small children={message} />}
     </Base>
   )
@@ -76,6 +90,10 @@ Textarea.propTypes = {
   message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool
+}
+
+Textarea.defaultProps = {
+  rounded: true
 }
 
 Textarea.contextTypes = {
