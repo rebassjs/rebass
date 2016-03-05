@@ -8,23 +8,28 @@ const renderer = TestUtils.createRenderer()
 
 describe('Tooltip', () => {
   const { fontSizes } = config
-  let tree
+  let tree, tooltip
 
   beforeEach(() => {
     renderer.render(<Tooltip />)
     tree = renderer.getRenderOutput()
+    tooltip = tree.props.children[1]
   })
 
   it('should render', () => {
-    expect(tree.type).toEqual(Base)
-  })
-
-  it('should set tagName span', () => {
-    expect(tree.props.tagName).toEqual('span')
+    expect(tree.type).toEqual('span')
   })
 
   it('should have a className', () => {
     expect(tree.props.className).toEqual('Tooltip')
+  })
+
+  it('should have a Base component', () => {
+    expect(tooltip.type).toEqual(Base)
+  })
+
+  it('should have a className on the tooltip', () => {
+    expect(tooltip.props.className).toMatch(/^Tooltip/)
   })
 
   context('when custom styles are set', () => {

@@ -74,7 +74,8 @@ const Checkout = () => (
             <NavItem small children='Edit' />
           </PanelHeader>
           <Flex align='baseline'>
-            <Tooltip title='Oh hello! You found the Tooltip!'>
+            <Tooltip
+              title='Oh hello! You found the Tooltip!'>
               <Text small children='Panel Component' />
             </Tooltip>
             <Space auto />
