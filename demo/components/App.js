@@ -77,10 +77,11 @@ class App extends React.Component {
   switchConfig (key) {
     return (e) => {
       const theme = Object.assign({}, config, configurations[key])
+      console.log(theme.name)
       this.resetTheme(() => {
         this.setState({
           ...theme,
-          config: config.name,
+          config: theme.name,
           dropdownOpen: false
         })
       })
@@ -88,7 +89,6 @@ class App extends React.Component {
   }
 
   resetTheme (cb) {
-    console.log('reset')
     this.setState(init, cb)
   }
 
@@ -97,7 +97,6 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    console.log('mounted')
     jsonp('https://api.github.com/repos/jxnblk/rebass?callback=callback', (err, response) => {
       this.setState({ repo: response.data })
     }).bind(this)
@@ -112,14 +111,6 @@ class App extends React.Component {
       drawerOpen,
       overlayOpen
     } = this.state
-
-    const css = `
-      body {
-        font-family: ${fontFamily};
-        color: ${color};
-        background-color: ${backgroundColor};
-      }
-    `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
     return (
       <div style={{
@@ -149,7 +140,7 @@ class App extends React.Component {
           <Colors {...this.state} />
           <Comments />
         </Container>
-        <MegaFooter />
+        <MegaFooter {...this.state} />
         <ConfigForm
           {...this.state}
           toggle={this.toggle}
