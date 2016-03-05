@@ -44,6 +44,7 @@ Base.propTypes = {
   /** HTML element string or React component to render */
   tagName: React.PropTypes.oneOfType([
     React.PropTypes.string,
+    React.PropTypes.func,
     React.PropTypes.element
   ]),
   /** Used to pull styles from the rebass context object */

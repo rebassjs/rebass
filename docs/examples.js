@@ -301,6 +301,7 @@ const examples = {
     <div>
       <Radio
         checked
+        readOnly
         group='radios'
         name='radio_1'
         label='Radio' />

@@ -5,7 +5,8 @@ import {
   Block,
   Pre,
   Section,
-  SectionHeader
+  SectionHeader,
+  Text
 } from '../../src'
 
 const Features = () => (
@@ -21,6 +22,9 @@ const Features = () => (
     <p style={{ fontSize: config.fontSizes[3] }}>
       <a href='demo'>View the demo</a> or read the component documentation below to get started.
     </p>
+    <Text small>
+      Note: this page is statically rendered and does not have client-side JavaScript. To see interactive examples, <a href='demo'>View the demo</a>.
+    </Text>
     <Pre children='npm i rebass' />
   </Section>
 )
