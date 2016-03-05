@@ -17,9 +17,18 @@ const dark = {
 
   colors: {
     ...config.colors,
-    primary: '#333',
-    error: '#f04',
-    // primary: '#ff00c3'
+    blue: '#00d9f7',
+    info: '#00d9f7',
+    green: '#0f8',
+    success: '#0f8',
+    orange: '#fb3',
+    warning: '#fb3',
+    primary: '#778',
+    midgray: '#778',
+    gray: '#333339',
+    secondary: '#333339',
+    red: '#f04',
+    error: '#f04'
   },
 
   scale: [
@@ -31,7 +40,8 @@ const dark = {
     border: 0,
   },
   Panel: {
-    backgroundColor: 'transparent'
+    borderWidth: 2,
+    backgroundColor: '#000'
   },
   NavItem: {
     ...caps
@@ -50,7 +60,7 @@ const dark = {
     // backgroundColor: '#000'
   },
   Menu: {
-    // backgroundColor: '#000'
+    backgroundColor: '#000'
   },
   Text: {
     opacity: 7/8

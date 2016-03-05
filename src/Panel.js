@@ -58,3 +58,4 @@ Panel.contextTypes = {
 }
 
 export default Panel
+

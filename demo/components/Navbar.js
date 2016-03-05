@@ -43,6 +43,7 @@ const Navbar = ({
           })}
         </DropdownMenu>
       </Dropdown>
+      <Space />
       <NavItem
         onClick={toggle('drawerOpen')}
         children='Edit' />

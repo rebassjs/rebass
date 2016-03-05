@@ -39,13 +39,17 @@ import Modal from './Modal'
 class App extends React.Component {
   constructor () {
     super()
-    this.state = Object.assign({}, config, configurations.basic, {
-      drawerOpen: false,
-      dropdownOpen: false,
-      modalOpen: false,
-      config: 'Basic',
-      repo: {}
-    })
+    this.state = Object.assign(
+      {},
+      config,
+      configurations.dark, {
+        drawerOpen: false,
+        dropdownOpen: false,
+        modalOpen: false,
+        config: 'Basic',
+        repo: {}
+      }
+    )
     this.toggle = this.toggle.bind(this)
     this.switchConfig = this.switchConfig.bind(this)
     this.updateContext = this.updateContext.bind(this)
