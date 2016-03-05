@@ -26,9 +26,8 @@ const ButtonCircle = ({
     },
     inner: {
       display: 'flex',
-      width: size || scale[3],
-      height: size || scale[3],
       alignItems: 'center',
+      height: '100%',
       justifyContent: 'center'
     }
   }
