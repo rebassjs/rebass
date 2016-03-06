@@ -3,7 +3,7 @@
 
 - [ ] Update default colors
 
-- [ ] Standardize cx in Base
+- [ ] Standardize \_className in Base
 - [ ] m auto support in Base
 - [ ] href prop on Heading instead of HeadingLink component
 - [ ] support props object in context Component object (e.g. `rebass.Button.props`)

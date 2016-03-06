@@ -20,3 +20,10 @@ Please **be nice** and read the following before contributing.
 - Delegate client-size JS to higher-order container components
 - Prefer not to use external dependencies
 
+## Component className
+
+- The root className should match the component name
+- Stateful classNames should be camelCased - e.g. `isInvalid`
+- Child element and modifier classNames should be separated with an underscore - e.g. `Heading_alt`
+- End-user should not be able to set className on a component
+
