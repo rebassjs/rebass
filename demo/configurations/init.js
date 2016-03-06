@@ -14,7 +14,8 @@ const init = {
   color: 'inherit',
   backgroundColor: 'inherit',
   ...config,
-  ...componentConfigs
+  ...componentConfigs,
+  Heading_alt: {} // Need a better way to handle sub configs
 }
 
 export default init

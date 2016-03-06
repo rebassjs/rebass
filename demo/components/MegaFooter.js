@@ -57,10 +57,13 @@ const MegaFooter = () => (
     <Box col={12} px={3} py={4}>
       <Flex wrap gutter={3}>
         {cols.map(({heading, links}, i) => (
-          <Box key={i} px={3} sm={12 / cols.length}>
-            <Heading level={4}
+          <Box key={i}
+            px={3}
+            sm={12 / cols.length}>
+            <Heading
+              level={4}
               size={3}
-              color='secondary'
+              alt
               children={heading} />
             <Block borderTop px={0}>
               {links.map((link, i) => (

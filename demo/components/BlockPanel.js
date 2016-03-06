@@ -21,7 +21,12 @@ const BlockPanel = ({ toggle }) => (
         <Block
           borderLeft
           color='primary'>
-          <Heading level={3}
+          <Heading
+            level={3}
+            alt
+            children='Alt Heading' />
+          <Heading
+            level={3}
             size={1}
             big>
             Block

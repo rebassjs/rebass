@@ -9,6 +9,14 @@ const caps = {
   letterSpacing: '.1em'
 }
 
+const colors = {
+    red: '#e54',
+    blue: '#059',
+    green: '#0b7',
+    midgray: '#444',
+    gray: '#eee'
+}
+
 const biblio = {
   name: 'Biblio',
   fontFamily: 'Palatino, Georgia, serif',
@@ -17,16 +25,12 @@ const biblio = {
 
   colors: {
     ...config.colors,
-    primary: '#e54',
-    red: '#e54',
-    error: '#e54',
-    blue: '#059',
-    info: '#059',
-    green: '#0b7',
-    success: '#0b7',
-    midgray: '#444',
-    secondary: '#444',
-    gray: '#eee',
+    ...colors,
+    primary: colors.red,
+    error: colors.red,
+    info: colors.blue,
+    success: colors.green,
+    secondary: colors.midgray
   },
 
   borderColor: `rgba(0, 0, 0, ${1/8})`,
@@ -41,7 +45,12 @@ const biblio = {
 
   bold: 500,
 
-  Heading: {
+  Heading_alt: {
+    opacity: 1,
+    ...sans,
+    ...caps,
+    fontSize: 14,
+    color: colors.red
   },
 
   Banner: {
