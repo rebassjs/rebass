@@ -16,7 +16,7 @@ const Heading = ({
   _className,
   ...props
 }, { rebass }) => {
-  const { fontSizes, bold, colors } = { ...config, ...rebass }
+  const { fontSizes, bold } = { ...config, ...rebass }
   const Component = `h${level}`
 
   const h = (n) => fontSizes[n]
@@ -43,7 +43,7 @@ const Heading = ({
         fontWeight: bold,
         lineHeight: 1.25,
         margin: 0,
-        color: alt ? colors.secondary : null
+        opacity: alt ? 0.5 : null
       }} />
   )
 }

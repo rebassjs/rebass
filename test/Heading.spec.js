@@ -7,7 +7,7 @@ import { config, Heading, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Heading', () => {
-  const { fontSizes, colors } = config
+  const { fontSizes } = config
   let tree
 
   beforeEach(() => {
@@ -177,7 +177,7 @@ describe('Heading', () => {
     })
 
     it('should apply alt styles', () => {
-      expect(tree.props.baseStyle.color).toEqual(colors.midgray)
+      expect(tree.props.baseStyle.opacity).toEqual(0.5)
     })
   })
 
