@@ -8,6 +8,11 @@ Object.keys(Rebass).forEach(key => {
 })
 
 const init = {
+  fontFamily: 'inherit',
+  fontWeight: 'inherit',
+  letterSpacing: 'inherit',
+  color: 'inherit',
+  backgroundColor: 'inherit',
   ...config,
   ...componentConfigs
 }

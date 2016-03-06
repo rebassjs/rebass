@@ -111,6 +111,7 @@ class App extends React.Component {
   render () {
     const {
       fontFamily,
+      fontWeight,
       letterSpacing,
       color,
       backgroundColor,
@@ -121,6 +122,7 @@ class App extends React.Component {
     return (
       <div style={{
           fontFamily,
+          fontWeight,
           letterSpacing,
           color,
           backgroundColor

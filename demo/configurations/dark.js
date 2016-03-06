@@ -63,6 +63,7 @@ const dark = {
     opacity: 7/8
   },
   Toolbar: {
+    minHeight: 64,
     color: '#00d9f7',
     backgroundColor: `rgba(0, 0, 0, ${7/8})`
   },

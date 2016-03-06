@@ -41,6 +41,7 @@ const hello = {
   bold: 700,
 
   Toolbar: {
+    minHeight: 64,
     color: colors.black,
     backgroundColor: '#fff',
     borderBottom: '4px solid'
