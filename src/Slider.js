@@ -47,7 +47,7 @@ const Slider = ({
       {...props}
       className='Slider'
       baseStyle={{
-        paddingBottom: scale[1]
+        paddingBottom: scale[2]
       }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Label

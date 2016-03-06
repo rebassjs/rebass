@@ -16,22 +16,19 @@
 <Base
   border
   border={false}
-  border={3} // border width
+  border={3} // non-default border width
   borderTop
   borderRight
   borderBottom
   borderLeft
-  borderColor
+  borderColor='blue' // non-default border color
   />
 ```
-
-- [ ] Custom Checkbox
 
 - [ ] Androidish TabNav
 - [ ] Blockquote
 - [ ] Time
 - [ ] Date (calendar style)
-- [ ] Calendar month + highlighting
 
 - [ ] Combined Select/Input
 - [ ] Bar chart list
