@@ -2,14 +2,13 @@
 import { config } from '../../src'
 
 const caps = {
-  fontSize: 12,
   textTransform: 'uppercase',
   letterSpacing: '.2em'
 }
 
 const dark = {
   name: 'Dark',
-  fontFamily: 'Helvetica, sans-serif',
+  fontFamily: '"Avenir Next", Helvetica, sans-serif',
   color: '#eee',
   backgroundColor: '#111',
   borderRadius: 5,
@@ -45,10 +44,21 @@ const dark = {
     backgroundColor: '#000'
   },
   NavItem: {
+    fontSize: 12,
+    ...caps
+  },
+  Heading: {
     ...caps
   },
   Button: {
     ...caps,
+    fontSize: 12,
+    color: '#00d9f7',
+    opacity: 7/8
+  },
+  ButtonOutline: {
+    ...caps,
+    fontSize: 12,
     color: '#00d9f7',
     opacity: 7/8
   },
