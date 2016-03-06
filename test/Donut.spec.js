@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Donut, Base } from '../src'
+import { Donut, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Donut', () => {
-  const { fontSizes } = config
   let tree, svg, children, percentage
 
   beforeEach(() => {
@@ -54,7 +53,7 @@ describe('Donut', () => {
 
   context('when value is set', () => {
     beforeEach(() => {
-      renderer.render(<Donut value={1/4} />)
+      renderer.render(<Donut value={1 / 4} />)
       tree = renderer.getRenderOutput()
       children = tree.props.children[1]
       percentage = tree.props.children[2]
@@ -69,7 +68,7 @@ describe('Donut', () => {
 
   context('when size is set', () => {
     beforeEach(() => {
-      renderer.render(<Donut value={1/4} size={256} />)
+      renderer.render(<Donut value={1 / 4} size={256} />)
       tree = renderer.getRenderOutput()
       children = tree.props.children[1]
       percentage = tree.props.children[2]
@@ -85,7 +84,7 @@ describe('Donut', () => {
 
   context('when strokeWidth is set', () => {
     beforeEach(() => {
-      renderer.render(<Donut value={1/4} strokeWidth={16} />)
+      renderer.render(<Donut value={1 / 4} strokeWidth={16} />)
       tree = renderer.getRenderOutput()
       svg = tree.props.children[0]
     })
@@ -96,7 +95,7 @@ describe('Donut', () => {
 
   context('when children are passed in', () => {
     beforeEach(() => {
-      renderer.render(<Donut value={1/4} children='1/4' />)
+      renderer.render(<Donut value={1 / 4} children='1/4' />)
       tree = renderer.getRenderOutput()
       children = tree.props.children[1]
       percentage = tree.props.children[2]

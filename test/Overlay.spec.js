@@ -35,7 +35,7 @@ describe('Overlay', () => {
 
   it('should have a dark theme', () => {
     expect(dismiss.props.style.backgroundColor).toEqual(colors.black)
-    expect(dismiss.props.style.opacity).toEqual(.875)
+    expect(dismiss.props.style.opacity).toEqual(0.875)
   })
 
   it('should have not have content box styling', () => {

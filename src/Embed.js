@@ -7,7 +7,6 @@ import Base from './Base'
  */
 
 const Embed = ({ ratio, children, ...props }, { rebass }) => {
-
   const childProps = {
     style: {
       position: 'absolute',
@@ -49,7 +48,7 @@ Embed.propTypes = {
 }
 
 Embed.defaultProps = {
-  ratio: 9/16
+  ratio: 9 / 16
 }
 
 Embed.contextTypes = {

@@ -39,7 +39,7 @@ const DotIndicator = ({
       height: scale[1],
       margin: 'auto',
       backgroundColor: 'currentcolor',
-      borderRadius: 99999,
+      borderRadius: 99999
     }
   }
 
@@ -57,13 +57,12 @@ const DotIndicator = ({
       {...props}
       className='DotIndicator'
       baseStyle={sx.root}>
-      {dots.map(d => (
+      {dots.map((d) => (
         <button
           key={d}
-          title={``}
           style={{
             ...sx.button,
-            opacity: d !== active ? .375 : .875
+            opacity: d !== active ? 0.375 : 0.875
           }}
           onClick={handleClick(d)}>
           <div style={sx.dot} />

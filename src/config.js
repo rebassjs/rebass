@@ -1,5 +1,5 @@
 
-const monospace = `'Roboto Mono', Menlo, Consolas, monospace`
+const monospace = '"Roboto Mono", Menlo, Consolas, monospace'
 
 const baseColors = {
   black: '#111',

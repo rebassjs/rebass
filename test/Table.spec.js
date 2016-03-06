@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Table, Base } from '../src'
+import { Table, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Table', () => {
-  const { fontSizes } = config
   let tree, table, headings, body
 
   beforeEach(() => {

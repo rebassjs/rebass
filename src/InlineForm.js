@@ -8,7 +8,7 @@ import Base from './Base'
  * Inline grouped form for search or other simple forms
  */
 
-const InlineForm =({
+const InlineForm = ({
   label,
   name,
   value,
@@ -18,7 +18,6 @@ const InlineForm =({
   onClick,
   ...props
 }, { rebass }) => {
-
   const sx = {
     root: {
       display: 'flex',
@@ -29,7 +28,7 @@ const InlineForm =({
     },
     button: {
       marginLeft: -1
-    },
+    }
   }
 
   return (
@@ -78,7 +77,7 @@ InlineForm.propTypes = {
   /** Text for button */
   buttonLabel: React.PropTypes.string,
   /** onClick handler for button */
-  onClick: React.PropTypes.func,
+  onClick: React.PropTypes.func
 }
 
 InlineForm.defaultProps = {

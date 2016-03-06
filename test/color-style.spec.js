@@ -4,7 +4,6 @@ import { config } from '../src'
 import colorStyle from '../src/util/color-style'
 
 describe('colorStyle util', () => {
-  const props = {}
   const { colors } = config
 
   it('should return an object', () => {
@@ -37,7 +36,7 @@ describe('colorStyle util', () => {
     expect(c).toEqual({ backgroundColor: '#f00' })
   })
 
-   it('should return color when theme is set to a key', () => {
+  it('should return color when theme is set to a key', () => {
     const c = colorStyle({ theme: 'blue' }, colors)
     expect(c).toEqual({ color: colors.blue })
   })
@@ -47,7 +46,7 @@ describe('colorStyle util', () => {
     expect(c).toEqual({ })
   })
 
-   it('should return color and background color when theme is set to a key and inverted is true', () => {
+  it('should return color and background color when theme is set to a key and inverted is true', () => {
     const c = colorStyle({ inverted: true, theme: 'blue' }, colors)
     expect(c).toEqual({ color: colors.white, backgroundColor: colors.blue })
   })

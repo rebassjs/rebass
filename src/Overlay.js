@@ -44,7 +44,7 @@ const Overlay = ({
       bottom: 0,
       left: 0,
       backgroundColor: dark ? colors.black : colors.white,
-      opacity: .875
+      opacity: 0.875
     },
     inner: {
       position: 'relative',

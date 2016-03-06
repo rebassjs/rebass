@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, DotIndicator, Base } from '../src'
+import { DotIndicator, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('DotIndicator', () => {
-  const { scale } = config
   let tree, dots
 
   beforeEach(() => {
@@ -38,9 +37,9 @@ describe('DotIndicator', () => {
       expect(dots.length).toEqual(3)
     })
     it('should not have active dots', () => {
-      expect(dots[0].props.style.opacity).toEqual(.375)
-      expect(dots[1].props.style.opacity).toEqual(.375)
-      expect(dots[2].props.style.opacity).toEqual(.375)
+      expect(dots[0].props.style.opacity).toEqual(0.375)
+      expect(dots[1].props.style.opacity).toEqual(0.375)
+      expect(dots[2].props.style.opacity).toEqual(0.375)
     })
   })
 
@@ -52,12 +51,12 @@ describe('DotIndicator', () => {
     })
 
     it('should change opacity on the last dot', () => {
-      expect(dots[2].props.style.opacity).toEqual(.875)
+      expect(dots[2].props.style.opacity).toEqual(0.875)
     })
 
     it('should not change opacity on the other dots', () => {
-      expect(dots[0].props.style.opacity).toEqual(.375)
-      expect(dots[1].props.style.opacity).toEqual(.375)
+      expect(dots[0].props.style.opacity).toEqual(0.375)
+      expect(dots[1].props.style.opacity).toEqual(0.375)
     })
   })
 

@@ -3,7 +3,6 @@ import expect from 'expect'
 import padding from '../src/util/padding'
 
 describe('padding util', () => {
-  const props = {}
   const scale = [
     0, 8, 16, 32, 64
   ]

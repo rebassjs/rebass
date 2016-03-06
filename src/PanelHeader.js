@@ -8,7 +8,7 @@ import config from './config'
  */
 
 const PanelHeader = ({ ...props }, { rebass }) => {
-  const { bold, scale, colors, borderRadius } = { ...config, ...rebass }
+  const { bold, scale, borderRadius } = { ...config, ...rebass }
 
   return (
     <Base
@@ -19,9 +19,9 @@ const PanelHeader = ({ ...props }, { rebass }) => {
         display: 'flex',
         alignItems: 'center',
         fontWeight: bold,
-        marginTop: - scale[2] - 1,
-        marginRight: - scale[2] - 1,
-        marginLeft: - scale[2] - 1,
+        marginTop: -scale[2] - 1,
+        marginRight: -scale[2] - 1,
+        marginLeft: -scale[2] - 1,
         marginBottom: scale[2],
         padding: scale[2],
         borderRadius: `${borderRadius}px ${borderRadius}px 0 0`
@@ -38,7 +38,7 @@ PanelHeader.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ])
 }
 

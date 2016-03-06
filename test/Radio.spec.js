@@ -8,12 +8,11 @@ const renderer = TestUtils.createRenderer()
 
 describe('Radio', () => {
   const { colors } = config
-  let tree, label, input
+  let tree, input
 
   beforeEach(() => {
     renderer.render(<Radio name='test' label='Radio'/>)
     tree = renderer.getRenderOutput()
-    label = tree.props.children
   })
 
   it('should render', () => {
@@ -82,7 +81,7 @@ describe('Radio', () => {
           label='Test'
           checked
           value={'Hello'}
-          onChange={function() {}} />
+          onChange={function () {}} />
       )
       tree = renderer.getRenderOutput()
       input = tree.props.children[0]

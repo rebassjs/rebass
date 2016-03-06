@@ -36,7 +36,7 @@ const Banner = ({
     minHeight: '100vh',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : null
   }
 
   return (

@@ -10,7 +10,6 @@ const LinkBlock = ({
   Component,
   ...props
 }, { rebass }) => {
-
   const sx = {
     display: 'block',
     textDecoration: 'none',

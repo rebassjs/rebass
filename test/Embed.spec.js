@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Embed, Base } from '../src'
+import { Embed, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Embed', () => {
-  const { fontSizes } = config
   let tree
 
   beforeEach(() => {
@@ -28,7 +27,7 @@ describe('Embed', () => {
   })
 
   it('should have a default 16:9 aspect ratio', () => {
-    expect(tree.props.baseStyle.paddingBottom).toEqual(`${9/16 * 100}%`)
+    expect(tree.props.baseStyle.paddingBottom).toEqual(`${9 / 16 * 100}%`)
   })
 
   it('should add styles to children', () => {
@@ -44,7 +43,7 @@ describe('Embed', () => {
 
   context('when a custom ratio is set', () => {
     beforeEach(() => {
-      renderer.render(<Embed ratio={3/4} />)
+      renderer.render(<Embed ratio={3 / 4} />)
       tree = renderer.getRenderOutput()
     })
     it('should have a padding bottom 75%', () => {

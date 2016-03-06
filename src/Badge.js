@@ -6,7 +6,7 @@ import config from './config'
 /** Component for displaying small status indicators */
 
 const Badge = ({ ...props }, { rebass }) => {
-  const { fontSizes, bold, scale, colors } = { ...config, ...rebass}
+  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
 
   const sx = {
     fontSize: fontSizes[6],
@@ -43,7 +43,7 @@ Badge.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ]),
   /** Controls border radius */
   rounded: React.PropTypes.oneOfType([

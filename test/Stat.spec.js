@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Stat, Base } from '../src'
+import { Stat, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Stat', () => {
-  const { fontSizes } = config
   let tree, value, label
 
   beforeEach(() => {

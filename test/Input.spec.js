@@ -128,7 +128,7 @@ describe('Input', () => {
           name='test'
           label='Test'
           value={'Hello'}
-          onChange={function() {}} />
+          onChange={function () {}} />
       )
       tree = renderer.getRenderOutput()
       input = tree.props.children[1]
@@ -149,7 +149,7 @@ describe('Input', () => {
           rounded='left'
           backgroundColor='blue'
           theme='primary'
-          inverted={true} />
+          inverted />
       )
       tree = renderer.getRenderOutput()
       input = tree.props.children[1]

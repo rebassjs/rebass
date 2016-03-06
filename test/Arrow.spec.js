@@ -7,8 +7,8 @@ import { Arrow, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Arrow', () => {
-
   let tree
+
   beforeEach(() => {
     renderer.render(<Arrow />)
     tree = renderer.getRenderOutput()

@@ -7,7 +7,7 @@ import { config, Block, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Block', () => {
-  const { scale, colors } = config
+  const { colors } = config
   let tree
 
   beforeEach(() => {

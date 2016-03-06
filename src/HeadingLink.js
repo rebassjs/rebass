@@ -6,7 +6,7 @@ import Heading from './Heading'
  * Heading element with unstyled link. Useful for in-page navigation
  */
 
-const HeadingLink =({ level, size, href, style, ...props }, { rebass }) => {
+const HeadingLink = ({ level, size, href, style, ...props }, { rebass }) => {
   return (
     <Heading
       cx='HeadingLink'

@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Divider, Base } from '../src'
+import { Divider, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Divider', () => {
-  const { scale } = config
   let tree
 
   beforeEach(() => {
@@ -30,7 +29,7 @@ describe('Divider', () => {
   context('when setting width', () => {
     beforeEach(() => {
       renderer.render(<Divider width={256} />)
-      tree= renderer.getRenderOutput()
+      tree = renderer.getRenderOutput()
     })
     it('should have a fixed width', () => {
       expect(tree.props.baseStyle.width).toEqual(256)

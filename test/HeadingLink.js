@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, HeadingLink, Heading } from '../src'
+import { HeadingLink, Heading } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('HeadingLink', () => {
-  const { fontSizes } = config
   let tree
 
   beforeEach(() => {

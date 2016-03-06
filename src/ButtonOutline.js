@@ -10,7 +10,6 @@ const ButtonOutline = ({
   style,
   ...props
 }, { rebass }) => {
-
   const sx = {
     backgroundColor: 'transparent',
     ...style
@@ -21,7 +20,7 @@ const ButtonOutline = ({
       {...props}
       cx='ButtonOutline'
       baseStyle={{
-        boxShadow: 'inset 0 0 0 1px',
+        boxShadow: 'inset 0 0 0 1px'
       }}
       style={sx} />
   )

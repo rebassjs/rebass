@@ -13,8 +13,7 @@ const Fixed = ({
   left,
   zIndex,
   ...props
-}, {}) => {
-
+}) => {
   const sx = {
     position: 'fixed',
     top: top ? 0 : null,

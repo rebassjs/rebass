@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Tooltip, Base } from '../src'
+import { Tooltip, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Tooltip', () => {
-  const { fontSizes } = config
   let tree, tooltip
 
   beforeEach(() => {

@@ -78,7 +78,7 @@ Button.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ])
 }
 

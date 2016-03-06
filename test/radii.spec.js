@@ -3,8 +3,6 @@ import expect from 'expect'
 import radii from '../src/util/radii'
 
 describe('radii util', () => {
-  const props = {}
-
   it('should return an object', () => {
     const r = radii()
     expect(r).toBeAn('object')

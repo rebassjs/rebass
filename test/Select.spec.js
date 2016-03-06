@@ -123,7 +123,7 @@ describe('Select', () => {
           rounded='left'
           backgroundColor='blue'
           theme='primary'
-          inverted={true}
+          inverted
           />
       )
       tree = renderer.getRenderOutput()

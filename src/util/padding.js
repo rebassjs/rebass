@@ -5,7 +5,7 @@
 
 const n = (key, x, s) => typeof x === 'number' ? { [key]: s[x] } : null
 
-function padding(props, scale) {
+function padding (props, scale) {
   const s = scale || []
   const {
     p,

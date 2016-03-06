@@ -7,7 +7,7 @@ import { config, Base, Button } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Base', () => {
-  const { scale, fontSizes, colors, borderRadius } = config
+  const { scale, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {
@@ -540,6 +540,5 @@ describe('Base', () => {
       expect(tree.props.style.backgroundColor).toEqual('tomato')
     })
   })
-
 })
 

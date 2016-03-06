@@ -20,9 +20,9 @@ const PanelFooter = ({ theme, ...props }, { rebass }) => {
         display: 'flex',
         alignItems: 'center',
         marginTop: scale[2],
-        marginRight: - scale[2],
-        marginBottom: - scale[2],
-        marginLeft: - scale[2],
+        marginRight: -scale[2],
+        marginBottom: -scale[2],
+        marginLeft: -scale[2],
         padding: scale[2],
         borderTopWidth: 1,
         borderTopStyle: 'solid',
@@ -41,7 +41,7 @@ PanelFooter.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ])
 }
 

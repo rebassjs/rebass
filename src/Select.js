@@ -6,7 +6,6 @@ import Label from './Label'
 import Text from './Text'
 import Arrow from './Arrow'
 import config from './config'
-import margins from './util/margins'
 
 /**
  * Select form control with label

@@ -33,7 +33,7 @@ const SequenceMap = ({
       lineHeight: 1.25,
       flex: `1 1 ${100 / steps.length}%`,
       paddingLeft: scale[1],
-      paddingRight: scale[1],
+      paddingRight: scale[1]
     },
     dot: {
       position: 'relative',
@@ -48,7 +48,7 @@ const SequenceMap = ({
     line: {
       position: 'absolute',
       top: scale[2] / 2,
-      transform: `translate(-50%, -50%)`,
+      transform: 'translate(-50%, -50%)',
       left: 0,
       right: 0,
       height: 4,
@@ -92,7 +92,7 @@ SequenceMap.propTypes = {
   /** Array of links for each step in the sequence */
   steps: React.PropTypes.array,
   /** Index of current step */
-  active: React.PropTypes.number,
+  active: React.PropTypes.number
 }
 
 SequenceMap.defaultProps = {

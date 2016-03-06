@@ -14,7 +14,6 @@ const PageHeader = ({
   children,
   ...props
 }, { rebass }) => {
-
   const { scale, borderColor } = { ...config, ...rebass }
 
   return (
@@ -35,16 +34,13 @@ const PageHeader = ({
         borderColor
       }}>
       <div style={{
-          flex: '1 1 auto',
-          marginBottom: scale[2]
-        }}>
+        flex: '1 1 auto',
+        marginBottom: scale[2] }}>
         <Heading level={1} children={heading} />
-        {description &&
-          <p style={{
-            margin: 0
-          }}
-          children={description} />
-        }
+        {description && (
+          <p style={{ margin: 0 }}
+            children={description} />
+        )}
       </div>
       {children}
     </Base>
@@ -55,7 +51,7 @@ PageHeader.propTypes = {
   /** Page heading */
   heading: React.PropTypes.string,
   /** Description of page */
-  description: React.PropTypes.string,
+  description: React.PropTypes.string
 }
 
 PageHeader.contextTypes = {

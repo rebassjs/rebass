@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Message, Base } from '../src'
+import { Message, Base } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Message', () => {
-  const { colors } = config
   let tree
 
   beforeEach(() => {

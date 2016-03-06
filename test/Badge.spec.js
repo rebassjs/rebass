@@ -7,7 +7,7 @@ import { config, Base, Badge } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Badge', () => {
-  const { scale, colors, borderRadius } = config
+  const { scale, colors } = config
   let tree
 
   beforeEach(() => {

@@ -67,13 +67,13 @@ const Slider = ({
           marginTop: scale[1],
           cursor: 'pointer',
           color: 'inherit',
-          backgroundColor: `rgba(0, 0, 0, ${1/8})`,
+          backgroundColor: `rgba(0, 0, 0, ${1 / 8})`,
           backgroundImage,
           backgroundClip: 'content-box',
           height: 6,
           borderRadius: 999,
           WebkitAppearance: 'none',
-          appearance: 'none',
+          appearance: 'none'
         }} />
     </Base>
   )

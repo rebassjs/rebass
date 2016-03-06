@@ -45,7 +45,7 @@ Panel.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ])
 }
 

@@ -8,7 +8,7 @@ const renderer = TestUtils.createRenderer()
 
 describe('Checkbox', () => {
   const { colors } = config
-  let tree, label, input
+  let tree, input
 
   beforeEach(() => {
     renderer.render(<Checkbox name='test' label='Checkbox'/>)
@@ -84,7 +84,7 @@ describe('Checkbox', () => {
           name='test'
           label='Test'
           checked
-          onChange={function() {}} />
+          onChange={function () {}} />
       )
       tree = renderer.getRenderOutput()
       input = tree.props.children[0]

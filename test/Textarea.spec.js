@@ -117,7 +117,7 @@ describe('Textarea', () => {
           name='test'
           label='Test'
           value={'Hello'}
-          onChange={function() {}} />
+          onChange={function () {}} />
       )
       tree = renderer.getRenderOutput()
       textarea = tree.props.children[1]
@@ -138,7 +138,7 @@ describe('Textarea', () => {
           rounded='left'
           backgroundColor='blue'
           theme='primary'
-          inverted={true} />
+          inverted />
       )
       tree = renderer.getRenderOutput()
       textarea = tree.props.children[1]
@@ -158,8 +158,6 @@ describe('Textarea', () => {
       expect(textarea.props.inverted).toEqual(true)
     })
   })
-
-
 
   context('when custom styles are set', () => {
     beforeEach(() => {

@@ -38,14 +38,14 @@ const Table = ({
       paddingLeft: 0,
       borderBottomStyle: 'solid',
       borderBottomWidth: 2,
-      borderColor: 'inherit',
+      borderColor: 'inherit'
     },
     td: {
       padding: scale[1],
       paddingLeft: 0,
       borderBottomStyle: 'solid',
       borderBottomWidth: 1,
-      borderColor: 'inherit',
+      borderColor: 'inherit'
     }
   }
 

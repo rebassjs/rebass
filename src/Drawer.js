@@ -14,7 +14,7 @@ const Drawer = ({
   onDismiss,
   ...props
 }, { rebass }) => {
-  const { scale, zIndex, colors } = { ...config, ...rebass }
+  const { scale, zIndex } = { ...config, ...rebass }
 
   const placements = {
     top: {

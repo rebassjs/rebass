@@ -1,14 +1,12 @@
 
-
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, Base, Fixed } from '../src'
+import { Base, Fixed } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('Fixed', () => {
-  const { scale } = config
   let tree
 
   beforeEach(() => {

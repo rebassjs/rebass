@@ -5,7 +5,7 @@
 
 const n = (key, x, s) => typeof x === 'number' ? { [key]: s[x] } : null
 
-function margins(props, scale) {
+function margins (props, scale) {
   const s = scale || []
   const {
     m,

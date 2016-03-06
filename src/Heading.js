@@ -7,7 +7,7 @@ import config from './config'
  * Heading element with no margin and size based on fontSizes scale
  */
 
-const Heading =({
+const Heading = ({
   level,
   size,
   big,
@@ -38,7 +38,7 @@ Heading.propTypes = {
   /** Heading level, e.g. level={1} for <h1> */
   level: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** Visual size of heading */
-  size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6])
 }
 
 Heading.defaultProps = {

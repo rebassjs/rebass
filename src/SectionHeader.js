@@ -16,7 +16,6 @@ const SectionHeader = ({
   children,
   ...props
 }, { rebass }) => {
-
   const { scale, borderColor } = { ...config, ...rebass }
 
   return (
@@ -32,15 +31,14 @@ const SectionHeader = ({
         marginBottom: scale[3],
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
-        borderBottomColor: borderColor,
+        borderBottomColor: borderColor
       }}>
       <div style={{
-          flex: '1 1 auto'
-        }}>
+        flex: '1 1 auto' }}>
         <HeadingLink href={href || `#${heading || ''}`} children={heading} />
-        {description &&
+        {description && (
           <Text children={description} />
-        }
+        )}
       </div>
       {children}
     </Base>
@@ -53,7 +51,7 @@ SectionHeader.propTypes = {
   /** Link to section, used in HeadingLink */
   href: React.PropTypes.string,
   /** Description of section */
-  description: React.PropTypes.string,
+  description: React.PropTypes.string
 }
 
 SectionHeader.contextTypes = {

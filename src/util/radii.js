@@ -3,7 +3,7 @@
  * Utility for extracting border radii props from components
  */
 
-function radii(props, r) {
+function radii (props, r) {
   r = r || 2 // borderRadius
 
   const {
@@ -25,7 +25,7 @@ function radii(props, r) {
       top: `${r}px ${r}px 0 0`,
       right: `0 ${r}px ${r}px 0`,
       bottom: `0 0 ${r}px ${r}px`,
-      left: `${r}px 0 0 ${r}px`,
+      left: `${r}px 0 0 ${r}px`
     }
     borderRadius = obj[rounded] || null
   }

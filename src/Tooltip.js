@@ -72,7 +72,7 @@ Tooltip.propTypes = {
 
 Tooltip.defaultProps = {
   inverted: true,
-  rounded: true,
+  rounded: true
 }
 
 Tooltip.contextTypes = {

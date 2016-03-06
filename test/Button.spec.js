@@ -7,7 +7,7 @@ import { config, Button, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Button', () => {
-  const { scale, colors, borderRadius } = config
+  const { scale } = config
   let tree
 
   context('defaults', () => {

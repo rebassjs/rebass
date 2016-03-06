@@ -8,7 +8,7 @@ import config from './config'
  */
 
 const Progress = ({ value, ...props }, { rebass }) => {
-  const { scale, colors } = { ...config, ...rebass }
+  const { scale } = { ...config, ...rebass }
 
   const css = `
     .Progress-progress::-webkit-progress-bar {
@@ -27,7 +27,7 @@ const Progress = ({ value, ...props }, { rebass }) => {
       marginBottom: scale[2],
       overflow: 'hidden',
       backgroundColor: 'rgba(0, 0, 0, .125)',
-      borderRadius: 9999,
+      borderRadius: 9999
     },
     progress: {
       display: 'block',
@@ -64,7 +64,7 @@ Progress.propTypes = {
 }
 
 Progress.defaultProps = {
-  color: 'primary',
+  color: 'primary'
 }
 
 Progress.contextTypes = {

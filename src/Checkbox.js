@@ -14,19 +14,22 @@ const Checkbox = ({
   name,
   checked,
   children,
+  backgroundColor,
+  theme,
+  inverted,
+  rounded,
   ...props
 }, { rebass }) => {
   const { scale, colors, borderRadius } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const {
+  const baseProps = {
     backgroundColor,
     theme,
     inverted,
-    rounded,
-    ...rootProps
-  } = props
+    rounded
+  }
 
   const sx = {
     root: {
@@ -72,7 +75,7 @@ const Checkbox = ({
 
   return (
     <Base
-      {...rootProps}
+      {...props}
       tagName={Label}
       className={cx}
       baseStyle={sx.root}>
@@ -84,6 +87,7 @@ const Checkbox = ({
         style={sx.input} />
       <Base
         {...props}
+        {...baseProps}
         className='Checkbox-box'
         m={0}
         ml={0}

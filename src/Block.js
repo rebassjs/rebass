@@ -3,10 +3,6 @@ import React from 'react'
 import Base from './Base'
 import config from './config'
 
-import margins from './util/margins'
-import padding from './util/padding'
-import radii from './util/radii'
-
 /**
  * Generic box with visual styling
  */

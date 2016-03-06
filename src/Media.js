@@ -14,7 +14,6 @@ const Media = ({
   children,
   ...props
 }, { rebass }) => {
-
   const { scale } = { ...config, ...rebass }
 
   const alignment = {
@@ -53,7 +52,7 @@ Media.propTypes = {
   /** Displays image to the right */
   right: React.PropTypes.bool,
   /** Vertical alignment */
-  align: React.PropTypes.oneOf(['top', 'center', 'bottom']),
+  align: React.PropTypes.oneOf(['top', 'center', 'bottom'])
 }
 
 Media.contextTypes = {

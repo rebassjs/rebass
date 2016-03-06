@@ -13,9 +13,8 @@ const Switch = ({
 }, { rebass }) => {
   const { scale, colors, borderColor } = { ...config, ...rebass }
 
-  const width = scale[3] * 1.5
   const color = checked ? colors.success : borderColor
-  const transform = checked ? `translateX(${scale[3] * .5}px)` : `translateX(0)`
+  const transform = checked ? `translateX(${scale[3] * 0.5}px)` : 'translateX(0)'
 
   const sx = {
     root: {
@@ -38,7 +37,7 @@ const Switch = ({
       boxShadow: 'inset 0 0 0 2px',
       borderRadius: 99999,
       color,
-      backgroundColor: colors.white,
+      backgroundColor: colors.white
     }
   }
 

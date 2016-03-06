@@ -25,7 +25,7 @@ const CardImage = ({
         width: `calc(100% + ${2 * scale[1]}px)`,
         maxWidth: 'none',
         height: 'auto',
-        margin: - scale[1],
+        margin: -scale[1],
         marginBottom: scale[1]
       }} />
   )

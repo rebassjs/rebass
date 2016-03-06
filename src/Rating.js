@@ -12,7 +12,7 @@ const Rating = ({
   onClick,
   ...props
 }, { rebass }) => {
-  const { fontSizes, scale, colors } = { ...config, ...rebass }
+  const { fontSizes, colors } = { ...config, ...rebass }
 
   const stars = Array.from({ length: 5 }, (a, b) => b)
 
@@ -31,7 +31,7 @@ const Rating = ({
       border: 0,
       color: 'inherit',
       backgroundColor: 'transparent',
-      cursor: onClick ? 'pointer' : null,
+      cursor: onClick ? 'pointer' : null
     }
   }
 
@@ -44,7 +44,7 @@ const Rating = ({
   const getActiveStyle = (i) => {
     const active = i < value
     const display = active ? null : 'none'
-    const clip = value > i && value < i + 1 ? `rect(0, .5em, 1em, 0)` : null
+    const clip = value > i && value < i + 1 ? 'rect(0, .5em, 1em, 0)' : null
 
     return {
       position: 'absolute',
@@ -54,7 +54,6 @@ const Rating = ({
       clip
     }
   }
-
 
   const handleClick = (i) => {
     return (e) => {
@@ -69,7 +68,7 @@ const Rating = ({
       {...props}
       className='Rating'
       baseStyle={sx.root}>
-      {stars.map(s => (
+      {stars.map((s) => (
         <button
           key={s}
           style={sx.star}

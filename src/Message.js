@@ -6,7 +6,7 @@ import config from './config'
 /** Component for displaying flash and error messages */
 
 const Message = ({ ...props }, { rebass }) => {
-  const { bold, scale, colors } = { ...config, ...rebass}
+  const { bold, scale } = { ...config, ...rebass }
 
   return (
     <Base
@@ -31,7 +31,7 @@ Message.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ])
 }
 

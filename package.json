@@ -9,7 +9,7 @@
     "start": "static-react docs/components/Root.js --props docs/data.js > index.html",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "test:watch": "mocha test --watch --compilers js:babel-register",
-    "test": "mocha test --compilers js:babel-register"
+    "test": "standard && mocha test --compilers js:babel-register"
   },
   "peerDependencies": {
     "react": "^0.14.0"
@@ -31,6 +31,7 @@
     "react-element-to-jsx-string": "^2.4.0",
     "react-geomicons": "^2.0.4",
     "reflexbox": "^1.0.0",
+    "standard": "^6.0.7",
     "static-react": "^3.1.0"
   },
   "keywords": [
@@ -54,5 +55,17 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "color": "^0.11.1"
+  },
+  "standard": {
+    "ignore": [
+      "docs/**/*",
+      "demo/**/*"
+    ],
+    "globals": [
+      "beforeEach",
+      "context",
+      "describe",
+      "it"
+    ]
   }
 }

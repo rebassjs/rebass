@@ -2,12 +2,11 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
-import { config, ButtonOutline, Button } from '../src'
+import { ButtonOutline, Button } from '../src'
 
 const renderer = TestUtils.createRenderer()
 
 describe('ButtonOutline', () => {
-  const { scale, colors, borderRadius } = config
   let tree
 
   beforeEach(() => {

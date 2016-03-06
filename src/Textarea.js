@@ -5,7 +5,6 @@ import Base from './Base'
 import Label from './Label'
 import Text from './Text'
 import config from './config'
-import margins from './util/margins'
 
 /**
  * Textarea form element with label
@@ -51,7 +50,7 @@ const Textarea = ({
   const cx = classnames('Textarea', {
     'is-invalid': invalid,
     'is-disabled': props.disabled,
-    'is-readonly': props.readOnly,
+    'is-readonly': props.readOnly
   })
 
   return (

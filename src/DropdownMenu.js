@@ -12,11 +12,11 @@ const DropdownMenu = ({
   open,
   right,
   top,
+  children,
   onDismiss,
   ...props
 }, { rebass }) => {
   const { zIndex } = { ...config, ...rebass }
-  const { children, ...baseProps } = props
 
   const sx = {
     root: {
@@ -44,13 +44,14 @@ const DropdownMenu = ({
 
   return (
     <Base
-      {...baseProps}
+      {...props}
       className='DropdownMenu'
       baseStyle={sx.root}>
       <div style={sx.overlay}
         onClick={onDismiss} />
       <div style={sx.content}>
-        <Menu {...props} />
+        <Menu {...props}
+          children={children} />
       </div>
     </Base>
   )

@@ -3,7 +3,6 @@ import expect from 'expect'
 import margins from '../src/util/margins'
 
 describe('margins util', () => {
-  const props = {}
   const scale = [
     0, 8, 16, 32, 64
   ]
@@ -153,6 +152,5 @@ describe('margins util', () => {
       marginBottom: scale[2]
     })
   })
-
 })
 

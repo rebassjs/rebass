@@ -96,7 +96,7 @@ Base.propTypes = {
     'info',
     'success',
     'warning',
-    'error',
+    'error'
   ]),
   /** Inverts colors from theme */
   inverted: React.PropTypes.bool,
@@ -113,7 +113,7 @@ Base.propTypes = {
   /** Sets border radius 99999 */
   circle: React.PropTypes.bool,
   /** Sets border radius 99999 */
-  pill: React.PropTypes.bool,
+  pill: React.PropTypes.bool
 }
 
 Base.contextTypes = {
