@@ -8,7 +8,7 @@ const baseColors = {
   midgray: '#888',
   blue: '#08e',
   red: '#f52',
-  orange: '#f90',
+  orange: '#f70',
   green: '#1c7'
 }
 
