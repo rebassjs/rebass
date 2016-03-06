@@ -18,8 +18,8 @@ describe('ButtonCircle', () => {
     expect(tree.type).toEqual(Button)
   })
 
-  it('should set cx', () => {
-    expect(tree.props.cx).toEqual('ButtonCircle')
+  it('should set _className', () => {
+    expect(tree.props._className).toEqual('ButtonCircle')
   })
 
   it('should have a border radius', () => {

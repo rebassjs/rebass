@@ -67,9 +67,9 @@ describe('Button', () => {
     })
   })
 
-  context('when cx is set', () => {
+  context('when _className is set', () => {
     beforeEach(() => {
-      renderer.render(<Button cx='Test' />)
+      renderer.render(<Button _className='Test' />)
       tree = renderer.getRenderOutput()
     })
     it('should set className', () => {

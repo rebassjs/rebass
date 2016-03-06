@@ -19,7 +19,7 @@ describe('ButtonOutline', () => {
   })
 
   it('should have a className', () => {
-    expect(tree.props.cx).toEqual('ButtonOutline')
+    expect(tree.props._className).toEqual('ButtonOutline')
   })
 
   it('should have a default color', () => {

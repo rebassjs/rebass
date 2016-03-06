@@ -35,7 +35,7 @@ const ButtonCircle = ({
   return (
     <Button
       {...props}
-      cx='ButtonCircle'
+      _className='ButtonCircle'
       style={sx.root}>
       <div style={sx.inner}>
         {children}

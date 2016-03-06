@@ -10,8 +10,8 @@ import config from './config'
 const Button = ({
   href,
   big,
-  cx,
   baseStyle,
+  _className,
   ...props
 }, { rebass }) => {
   const { fontSizes, bold, scale } = { ...config, ...rebass }
@@ -43,7 +43,7 @@ const Button = ({
     <Base
       {...props}
       tagName={Component}
-      className={cx || 'Button'}
+      className={_className || 'Button'}
       href={href}
       baseStyle={sx}/>
   )

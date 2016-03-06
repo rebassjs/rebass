@@ -18,7 +18,7 @@ const ButtonOutline = ({
   return (
     <Button
       {...props}
-      cx='ButtonOutline'
+      _className='ButtonOutline'
       baseStyle={{
         boxShadow: 'inset 0 0 0 1px'
       }}
