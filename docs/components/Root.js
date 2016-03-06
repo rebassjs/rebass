@@ -26,6 +26,7 @@ import ComponentDoc from './ComponentDoc'
 import Related from './Related'
 
 const css = `
+html { -webkit-text-size-adjust: 100% }
 .NavItem:hover,
 .Button:hover {
   box-shadow: inset 0 0 0 9999px rgba(0, 128, 255, .125);

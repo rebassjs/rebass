@@ -25,7 +25,7 @@ const Features = () => (
     <Text small>
       Note: this page is statically rendered and does not have client-side JavaScript. To see interactive examples, <a href='demo'>View the demo</a>.
     </Text>
-    <Pre children='npm i rebass' />
+    <Pre mt={3} children='npm i rebass' />
   </Section>
 )
 

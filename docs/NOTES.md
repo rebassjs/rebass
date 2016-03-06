@@ -27,9 +27,8 @@
 
 - [ ] Androidish TabNav
 - [ ] Accordion
-- [ ] Blockquote
 - [ ] Time
-- [ ] Date (calendar style)
+- [ ] Date (mini calendar style)
 
 - [ ] Combined Select/Input
 - [ ] Bar chart list
