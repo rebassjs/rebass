@@ -49,3 +49,9 @@
 - Look into context style wrapper or util
 - Look into matchMedia/breakpoint contexts
 
+---
+
+### Demo configurations
+- Script font
+- Chunky Merriweather + monochrome
+
