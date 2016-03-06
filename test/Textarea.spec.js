@@ -80,7 +80,7 @@ describe('Textarea', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Textarea is-invalid')
+      expect(tree.props.className).toEqual('Textarea isInvalid')
     })
 
     it('should change the color', () => {
@@ -95,7 +95,7 @@ describe('Textarea', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Textarea is-disabled')
+      expect(tree.props.className).toEqual('Textarea isDisabled')
     })
   })
 
@@ -106,7 +106,7 @@ describe('Textarea', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Textarea is-readonly')
+      expect(tree.props.className).toEqual('Textarea isReadonly')
     })
   })
 

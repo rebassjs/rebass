@@ -23,13 +23,13 @@ class Forms extends React.Component {
       Label: {
         fontSize: 14
       },
-      'Radio-dot': {
+      Radio_dot: {
         width: scale[2],
         height: scale[2],
         color: colors.blue,
         borderWidth: 5
       },
-      'Checkbox-box': {
+      Checkbox_box: {
         width: scale[2],
         height: scale[2],
         color: colors.green
@@ -85,18 +85,18 @@ class Forms extends React.Component {
     return (e) => {
       const comp = this.state[key]
       const val = e.target.value
-      const checkboxBox = this.state['Checkbox-box']
+      const checkboxBox = this.state.Checkbox_box
       comp[e.target.name] = val
       if (e.target.name === 'width') {
         comp.height = val
-        if (key === 'Radio-dot') {
+        if (key === 'Radio_dot') {
           checkboxBox.width = val
           checkboxBox.height = val
         }
       }
       this.setState({
         [key]: comp,
-        ['Checkbox-box']: checkboxBox
+        Checkbox_box: checkboxBox
       })
     }
   }
@@ -180,26 +180,26 @@ class Forms extends React.Component {
               fill
               mb={0}
               name='width'
-              label={`Radio and Checkbox size (${this.state['Radio-dot'].width})`}
-              value={this.state['Radio-dot'].width}
+              label={`Radio and Checkbox size (${this.state.Radio_dot.width})`}
+              value={this.state.Radio_dot.width}
               min={16}
               max={48}
               step={2}
-              onChange={this.handleComponentChange('Radio-dot')} />
+              onChange={this.handleComponentChange('Radio_dot')} />
             <Slider
               fill
               mb={0}
               name='borderWidth'
-              label={`Radio dot border width (${this.state['Radio-dot'].borderWidth})`}
-              value={this.state['Radio-dot'].borderWidth}
+              label={`Radio dot border width (${this.state.Radio_dot.borderWidth})`}
+              value={this.state.Radio_dot.borderWidth}
               min={2}
-              max={this.state['Radio-dot'].width / 2}
-              onChange={this.handleComponentChange('Radio-dot')} />
+              max={this.state.Radio_dot.width / 2}
+              onChange={this.handleComponentChange('Radio_dot')} />
             <Select
               name='color'
               label='Radio dot color'
-              value={this.state['Radio-dot'].color}
-              onChange={this.handleComponentChange('Radio-dot')}
+              value={this.state.Radio_dot.color}
+              onChange={this.handleComponentChange('Radio_dot')}
               options={Object.keys(colors).map(key => { return { value: colors[key], children: key } })} />
           </Box>
           <Box sm={7} px={2}>

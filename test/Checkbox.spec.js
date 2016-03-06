@@ -47,7 +47,7 @@ describe('Checkbox', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Checkbox is-invalid')
+      expect(tree.props.className).toEqual('Checkbox isInvalid')
     })
 
     it('should change the color', () => {
@@ -62,7 +62,7 @@ describe('Checkbox', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Checkbox is-disabled')
+      expect(tree.props.className).toEqual('Checkbox isDisabled')
     })
   })
 
@@ -73,7 +73,7 @@ describe('Checkbox', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Checkbox is-readonly')
+      expect(tree.props.className).toEqual('Checkbox isReadonly')
     })
   })
 

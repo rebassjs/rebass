@@ -43,7 +43,7 @@ describe('Radio', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Radio is-invalid')
+      expect(tree.props.className).toEqual('Radio isInvalid')
     })
 
     it('should change the color', () => {
@@ -58,7 +58,7 @@ describe('Radio', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Radio is-disabled')
+      expect(tree.props.className).toEqual('Radio isDisabled')
     })
   })
 
@@ -69,7 +69,7 @@ describe('Radio', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Radio is-readonly')
+      expect(tree.props.className).toEqual('Radio isReadonly')
     })
   })
 

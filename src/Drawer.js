@@ -88,7 +88,7 @@ const Drawer = ({
         onClick={onDismiss} />
       <Base
         {...props}
-        className='Drawer Drawer-content'
+        className='Drawer Drawer_content'
         baseStyle={sx.content} />
     </div>
   )

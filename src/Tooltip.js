@@ -15,7 +15,7 @@ const Tooltip = ({
   const { fontSizes, scale, colors } = { ...config, ...rebass }
 
   const css = `
-    .Tooltip-box { display: none }
+    .Tooltip_box { display: none }
     .Tooltip:hover .Tooltip-box { display: block }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
@@ -41,7 +41,7 @@ const Tooltip = ({
     },
     arrow: {
       position: 'absolute',
-      bottom: '100%',
+      top: '100%',
       left: '50%',
       border: '6px solid transparent',
       borderTopColor: colors.black,
@@ -57,9 +57,10 @@ const Tooltip = ({
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Base {...props}
         baseStyle={sx.box}
-        className='Tooltip Tooltip-box'
-        children={title} />
-      <div className='Tooltip-box' style={sx.arrow} />
+        className='Tooltip Tooltip_box'>
+        {title}
+        <div className='Tooltip_arrow' style={sx.arrow} />
+      </Base>
       {children}
     </span>
   )

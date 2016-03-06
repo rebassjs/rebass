@@ -68,9 +68,9 @@ const Checkbox = ({
   }
 
   const cx = classnames('Checkbox', {
-    'is-invalid': invalid,
-    'is-disabled': props.disabled,
-    'is-readonly': props.readOnly
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
   })
 
   return (
@@ -88,7 +88,7 @@ const Checkbox = ({
       <Base
         {...props}
         {...baseProps}
-        className='Checkbox-box'
+        className='Checkbox_box'
         m={0}
         ml={0}
         mr={1}

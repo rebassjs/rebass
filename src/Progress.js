@@ -11,13 +11,13 @@ const Progress = ({ value, ...props }, { rebass }) => {
   const { scale } = { ...config, ...rebass }
 
   const css = `
-    .Progress-progress::-webkit-progress-bar {
+    .Progress_progress::-webkit-progress-bar {
       background-color: rgba(0, 0, 0, .125);
     }
-    .Progress-progress::-webkit-progress-value {
+    .Progress_progress::-webkit-progress-value {
       background-color: currentcolor;
     }
-    .Progress-progress::-moz-progress-bar {
+    .Progress_progress::-moz-progress-bar {
       background-color: currentcolor;
     }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
@@ -48,7 +48,7 @@ const Progress = ({ value, ...props }, { rebass }) => {
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <progress
         {...props}
-        className='Progress-progress'
+        className='Progress_progress'
         value={value}
         children={value}
         style={sx.progress} />

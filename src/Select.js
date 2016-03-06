@@ -66,9 +66,9 @@ const Select = ({
   }
 
   const cx = classnames('Select', {
-    'is-invalid': invalid,
-    'is-disabled': props.disabled,
-    'is-readonly': props.readOnly
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
   })
 
   return (

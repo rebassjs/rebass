@@ -84,7 +84,7 @@ describe('Select', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Select is-invalid')
+      expect(tree.props.className).toEqual('Select isInvalid')
     })
 
     it('should change the color', () => {
@@ -99,7 +99,7 @@ describe('Select', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Select is-disabled')
+      expect(tree.props.className).toEqual('Select isDisabled')
     })
   })
 
@@ -110,7 +110,7 @@ describe('Select', () => {
     })
 
     it('should add a className', () => {
-      expect(tree.props.className).toEqual('Select is-readonly')
+      expect(tree.props.className).toEqual('Select isReadonly')
     })
   })
 

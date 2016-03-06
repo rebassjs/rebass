@@ -23,7 +23,7 @@ const Slider = ({
   const p = (props.value - min) / (max - min) * 100
 
   const css = `
-    .Slider-input::-webkit-slider-thumb {
+    .Slider_input::-webkit-slider-thumb {
       width: 24px;
       height: 24px;
       background-color: currentcolor;
@@ -31,7 +31,7 @@ const Slider = ({
       border-radius: 999px;
       -webkit-appearance: none;
     }
-    .Slider-input::-moz-range-thumb {
+    .Slider_input::-moz-range-thumb {
       width: 24px;
       height: 24px;
       background-color: currentcolor;
@@ -58,7 +58,7 @@ const Slider = ({
         {...props}
         type='range'
         name={name}
-        className='Slider-input'
+        className='Slider_input'
         style={{
           boxSizing: 'border-box',
           display: 'block',

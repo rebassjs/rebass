@@ -58,9 +58,9 @@ const Radio = ({
   }
 
   const cx = classnames('Radio', {
-    'is-invalid': invalid,
-    'is-disabled': props.disabled,
-    'is-readonly': props.readOnly
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
   })
 
   return (
@@ -78,7 +78,7 @@ const Radio = ({
       <Base
         {...props}
         {...baseProps}
-        className='Radio-dot'
+        className='Radio_dot'
         m={0}
         ml={0}
         mr={1}
