@@ -7,8 +7,12 @@ import config from './config'
  * Component for displaying text in UI
  */
 
-const Text = ({ small, ...props }, { rebass }) => {
-  const { fontSizes } = { ...config, ...rebass }
+const Text = ({
+  small,
+  bold,
+  ...props
+}, { rebass }) => {
+  const { fontSizes, bold: b } = { ...config, ...rebass }
 
   return (
     <Base
@@ -17,6 +21,7 @@ const Text = ({ small, ...props }, { rebass }) => {
       className='Text'
       baseStyle={{
         fontSize: small ? fontSizes[6] : fontSizes[4],
+        fontWeight: bold ? b : null,
         margin: 0
       }} />
   )
@@ -24,7 +29,9 @@ const Text = ({ small, ...props }, { rebass }) => {
 
 Text.propTypes = {
   /** Sets a smaller font size */
-  small: React.PropTypes.bool
+  small: React.PropTypes.bool,
+  /** Sets bold font weight */
+  bold: React.PropTypes.bool
 }
 
 Text.contextTypes = {

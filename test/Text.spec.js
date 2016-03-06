@@ -7,7 +7,7 @@ import { config, Text, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Text', () => {
-  const { fontSizes } = config
+  const { fontSizes, bold } = config
   let tree
 
   beforeEach(() => {
@@ -38,6 +38,16 @@ describe('Text', () => {
     })
     it('should have small font size', () => {
       expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[6])
+    })
+  })
+
+  context('when bold is true', () => {
+    beforeEach(() => {
+      renderer.render(<Text bold />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should have bold font weight', () => {
+      expect(tree.props.baseStyle.fontWeight).toEqual(bold)
     })
   })
 

@@ -92,6 +92,7 @@ const Comments = () => (
                 <Box>
                   <Text
                     small
+                    bold
                     color='midgray'
                     children={user} />
                   <Text children={text} />
