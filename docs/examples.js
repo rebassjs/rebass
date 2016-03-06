@@ -9,6 +9,7 @@ import {
   Badge,
   Banner,
   Block,
+  Blockquote,
   Breadcrumbs,
   Button,
   ButtonCircle,
@@ -98,6 +99,13 @@ const examples = {
         <Text>Generic box for containing things</Text>
       </Media>
     </Block>
+  ),
+  Blockquote: (
+    <Blockquote
+      href='http://webtypography.net/3.1.1'
+      source='Robert Bringhurst'>
+      In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years. […] Use the old familiar scale, or use new scales of your own devising, but limit yourself, at first, to a modest set of distinct and related intervals.
+    </Blockquote>
   ),
   Breadcrumbs: (
     <Breadcrumbs
