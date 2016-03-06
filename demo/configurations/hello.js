@@ -46,6 +46,11 @@ const hello = {
     backgroundColor: '#fff',
     borderBottom: '4px solid'
   },
+  Banner: {
+    backgroundImage: 'none',
+    color: colors.black,
+    backgroundColor: colors.blue
+  },
   Button: {
     fontSize: 20
   },

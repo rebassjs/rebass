@@ -17,7 +17,7 @@ const Header = ({ toggle }) => (
     }}
     backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'
     onClick={toggle('drawerOpen')}>
-    <Heading size={1} big children='Rebass Demo' />
+    <Heading size={1} big children='Rebass' />
     <Text children='Configurable example page' />
     <Box py={2}>
       <Button

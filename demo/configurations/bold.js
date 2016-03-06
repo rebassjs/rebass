@@ -46,6 +46,12 @@ const bold = {
     backgroundColor: colors.gray
   },
 
+  Banner: {
+    backgroundImage: 'none',
+    backgroundBlendMode: 'hard-light',
+    backgroundColor: colors.midgray
+  },
+
   Button: {
     color: colors.black,
     backgroundColor: colors.blue

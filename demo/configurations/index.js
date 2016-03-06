@@ -6,6 +6,7 @@ import biblio from './biblio'
 import hello from './hello'
 import pink from './pink'
 import bold from './bold'
+import err from './err'
 
 import dense from './dense'
 
@@ -17,6 +18,7 @@ const configurations = {
   hello,
   pink,
   bold,
+  err,
 }
 
 export default configurations

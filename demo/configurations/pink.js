@@ -56,6 +56,12 @@ const pink = {
     borderBottom: '1px solid #fcc'
   },
 
+  Banner: {
+    backgroundImage: 'none',
+    backgroundBlendMode: 'overlay',
+    color: colors.black,
+    backgroundColor: colors.pink
+  },
   Heading: {
     fontStyle: 'italic',
   },
