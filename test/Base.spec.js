@@ -80,13 +80,26 @@ describe('Base', () => {
 
   context('when context is set and className has multiple classes', () => {
     beforeEach(() => {
-      renderer.render(<Base className='Test foo bar-foo' />, {
-        rebass: { Test: { backgroundColor: 'tomato' } }
+      renderer.render(<Base className='Test Test_foo isBar' />, {
+        rebass: {
+          Test: { backgroundColor: 'tomato' },
+          Test_foo: { color: 'white' },
+          isBar: { outline: '2px solid red' }
+        }
       })
       tree = renderer.getRenderOutput()
     })
+
     it('should set background color', () => {
       expect(tree.props.style.backgroundColor).toEqual('tomato')
+    })
+
+    it('should set color', () => {
+      expect(tree.props.style.color).toEqual('white')
+    })
+
+    it('should set outline', () => {
+      expect(tree.props.style.outline).toEqual('2px solid red')
     })
   })
 

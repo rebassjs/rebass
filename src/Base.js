@@ -22,8 +22,9 @@ const Base = ({
 }, { rebass }) => {
   const { scale, colors, borderRadius } = { ...config, ...rebass }
   const name = props.className
-  const key = name ? name.split(' ', 1)[0] : ''
-  const contextStyle = rebass ? rebass[key] : {}
+  const keys = name ? name.split(' ') : []
+  const contextStyle = keys.reduce((a, key) => ({ ...a, ...(rebass ? rebass[key] : {}) }), {})
+
   const Component = tagName || 'div'
 
   const sx = {
