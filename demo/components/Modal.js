@@ -34,7 +34,7 @@ const Modal = ({ modalOpen, toggle }) => (
       <PanelFooter>
         <Space auto />
         <Button
-          theme='green'
+          theme='success'
           onClick={toggle('modalOpen')}
           children='Meow!' />
       </PanelFooter>

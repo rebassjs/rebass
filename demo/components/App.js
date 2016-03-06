@@ -30,6 +30,7 @@ import Cards from './Cards'
 import DataDemo from './DataDemo'
 import BlockPanel from './BlockPanel'
 import Checkout from './Checkout'
+import Forms from './Forms'
 import Headings from './Headings'
 import Colors from './Colors'
 import Comments from './Comments'
@@ -140,6 +141,7 @@ class App extends React.Component {
             {...this.props} />
           <BlockPanel toggle={this.toggle} />
           <Checkout />
+          <Forms />
           <Headings {...this.state} />
           <Colors {...this.state} />
           <Comments />
