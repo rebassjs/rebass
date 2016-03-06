@@ -47,8 +47,7 @@ const Slider = ({
       {...props}
       className='Slider'
       baseStyle={{
-        marginBottom: scale[2],
-        paddingBottom: scale[2]
+        paddingBottom: scale[1]
       }}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Label
@@ -65,7 +64,7 @@ const Slider = ({
           display: 'block',
           width: '100%',
           margin: 0,
-          marginTop: scale[2],
+          marginTop: scale[1],
           cursor: 'pointer',
           color: 'inherit',
           backgroundColor: `rgba(0, 0, 0, ${1/8})`,

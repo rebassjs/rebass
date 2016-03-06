@@ -29,6 +29,7 @@ const Label = ({
       baseStyle={{
         fontSize: fontSizes[5],
         fontWeight: bold,
+        lineHeight: 1,
         ...hideStyle
       }} />
   )

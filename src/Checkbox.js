@@ -88,6 +88,7 @@ const Checkbox = ({
         m={0}
         ml={0}
         mr={1}
+        my={0}
         p={0}
         px={0}
         py={0}
