@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import Heading from './Heading'
+import Text from './Text'
 import config from './config'
 
 /**
@@ -33,13 +34,10 @@ const PageHeader = ({
         borderBottomStyle: 'solid',
         borderColor
       }}>
-      <div style={{
-        flex: '1 1 auto',
-        marginBottom: scale[2] }}>
+      <div style={{ flex: '1 1 auto' }}>
         <Heading level={1} children={heading} />
         {description && (
-          <p style={{ margin: 0 }}
-            children={description} />
+          <Text children={description} />
         )}
       </div>
       {children}
