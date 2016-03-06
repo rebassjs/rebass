@@ -106,15 +106,15 @@ class DataDemo extends React.Component {
                 <Stat
                   m={2}
                   topLabel
-                  label='X'
-                  value={`${Math.round(x)}px`} />
+                  unit='px'
+                  value={Math.round(x)} />
               </div>
               <div>
                 <Stat
                   m={2}
                   topLabel
-                  label='Y'
-                  value={`${Math.round(y)}px`} />
+                  unit='px'
+                  value={Math.round(y)} />
               </div>
             </Block>
           </Box>

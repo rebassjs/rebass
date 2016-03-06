@@ -10,7 +10,8 @@ const colors = {
   black: '#111',
   blue: '#5cf',
   //green: '#5fc',
-  green: '#5fa',
+  // green: '#5fa',
+  green: '#9f9',
   orange: '#fc7',
   red: '#f87',
   pink: '#fcc'

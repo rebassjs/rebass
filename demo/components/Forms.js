@@ -59,6 +59,10 @@ class Forms extends React.Component {
     }
   }
 
+  componentWillReceiveProps (props, { rebass }) {
+    this.setState(rebass)
+  }
+
   handleChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }

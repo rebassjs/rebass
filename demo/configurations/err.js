@@ -34,6 +34,7 @@ const err = {
 
   borderColor: colors.darken,
   borderRadius: 0,
+  bold: 500,
 
   fontSizes: [
     64, 64, 32, 16, 16, 12, 12

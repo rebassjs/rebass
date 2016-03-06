@@ -7,10 +7,14 @@ const colors = {
   gray: '#f6f6f6',
   midgray: '#aaa',
 
-  blue: '#0cf',
-  green: '#0fc',
-  red: '#f05',
-  orange: '#fa4',
+  // blue: '#0cf',
+  //green: '#0fc',
+  // red: '#f05',
+  // orange: '#fa4',
+  blue: '#99b',
+  green: '#9b9',
+  red: '#b99',
+  orange: '#ba8',
 }
 
 const bold = {
