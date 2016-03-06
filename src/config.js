@@ -4,8 +4,8 @@ const monospace = '"Roboto Mono", Menlo, Consolas, monospace'
 const baseColors = {
   black: '#111',
   white: '#fff',
-  gray: '#ccc',
-  midgray: '#777',
+  gray: '#ddd',
+  midgray: '#888',
   blue: '#08e',
   red: '#f52',
   orange: '#f90',
