@@ -7,7 +7,7 @@ import { config, Heading, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Heading', () => {
-  const { fontSizes } = config
+  const { fontSizes, colors } = config
   let tree
 
   beforeEach(() => {
@@ -166,9 +166,24 @@ describe('Heading', () => {
     })
   })
 
-  context('when cx is set', () => {
+  context('when alt is true', () => {
     beforeEach(() => {
-      renderer.render(<Heading cx='Test' />)
+      renderer.render(<Heading alt />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should set className', () => {
+      expect(tree.props.className).toEqual('Heading Heading_alt')
+    })
+
+    it('should apply alt styles', () => {
+      expect(tree.props.baseStyle.color).toEqual(colors.midgray)
+    })
+  })
+
+  context('when _className is set', () => {
+    beforeEach(() => {
+      renderer.render(<Heading _className='Test' />)
       tree = renderer.getRenderOutput()
     })
 

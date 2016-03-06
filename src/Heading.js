@@ -1,5 +1,6 @@
 
 import React from 'react'
+import classnames from 'classnames'
 import Base from './Base'
 import config from './config'
 
@@ -11,23 +12,38 @@ const Heading = ({
   level,
   size,
   big,
-  cx,
+  alt,
+  _className,
   ...props
 }, { rebass }) => {
-  const { fontSizes, bold } = { ...config, ...rebass }
+  const { fontSizes, bold, colors } = { ...config, ...rebass }
   const Component = `h${level}`
-  const fontSize = (typeof size === 'number' ? fontSizes[size] : fontSizes[level]) * (big ? 2 : 1)
+
+  const h = (n) => fontSizes[n]
+
+  let fontSize = typeof size === 'number' ? h(size) : h(level)
+  if (alt) {
+    fontSize = h(4)
+  }
+  if (big) {
+    fontSize *= 2
+  }
+
+  const cx = classnames(_className || 'Heading', {
+    'Heading_alt': alt
+  })
 
   return (
     <Base
       {...props}
       tagName={Component}
-      className={cx || 'Heading'}
+      className={cx}
       baseStyle={{
         fontSize,
         fontWeight: bold,
         lineHeight: 1.25,
-        margin: 0
+        margin: 0,
+        color: alt ? colors.secondary : null
       }} />
   )
 }
@@ -38,7 +54,9 @@ Heading.propTypes = {
   /** Heading level, e.g. level={1} for <h1> */
   level: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** Visual size of heading */
-  size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6])
+  size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  /** Applies alternate styling - useful for slugs and subheadings */
+  alt: React.PropTypes.bool
 }
 
 Heading.defaultProps = {

@@ -9,7 +9,7 @@ import Heading from './Heading'
 const HeadingLink = ({ level, size, href, style, ...props }, { rebass }) => {
   return (
     <Heading
-      cx='HeadingLink'
+      _className='HeadingLink'
       level={level}
       size={size}
       style={style}>
