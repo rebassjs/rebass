@@ -95,8 +95,8 @@ class Root extends React.Component {
               <ComponentDoc {...base} />
               <Related />
             </main>
-            <Block borderLeft p={4} mb={4}>
-              <Flex align='center'>
+            <Block borderLeft p={3} mb={4}>
+              <Flex wrap align='center'>
                 <div>
                   <Heading size={1} children='Get Started' />
                   <Pre children='npm i rebass' />
