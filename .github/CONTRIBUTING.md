@@ -12,6 +12,7 @@ Please **be nice** and read the following before contributing.
 
 - Follow code style based on src components
 - All components should use the Base component as the root, unless it is an extension of another component
+- Component props should be extracted using destructuring, and other props should be passed to the root Base component
 - Components should pass `baseStyle` to the Base component and `style` should be reserved for the end user
 - All functionality in a component should be tested
 - All components should have propTypes set for all custom props
