@@ -32,17 +32,21 @@ const Header = ({ version, description, components, ...props }) => {
       </Toolbar>
       <Banner
         mb={4}
-        p={2}
+        p={0}
         align='left'
-        style={{ fontSize: 'inherit', minHeight: '60vh' }}
+        style={{ fontSize: 'inherit', minHeight: '60vh', overflow: 'hidden' }}
         backgroundColor='midgray'>
         <Container style={{ width: '100%', maxWidth: 1280 }}>
           <Flex wrap
-            style={{ overflow: 'hidden' }}
+            style={{ }}
             gutter={2}
             align='center'>
             <Box px={2}>
-              <Heading level={1} size={0} big children='Rebass' />
+              <Heading
+                level={1}
+                size={0}
+                big
+                children='Rebass' />
               <Heading children={`v${version}`} />
               <Text children={`${components.length} ${description}`} />
               <Divider style={{ borderWidth: 4 }} />
