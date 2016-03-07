@@ -203,7 +203,7 @@ class Forms extends React.Component {
               options={Object.keys(colors).map(key => { return { value: colors[key], children: key } })} />
           </Box>
           <Box sm={7} px={2}>
-            <Panel theme='midgray'>
+            <Panel theme='default'>
               <PanelHeader children='Result' />
               <FormDemo
                 {...this.state}
