@@ -70,7 +70,7 @@ DropdownMenu.propTypes = {
 
 DropdownMenu.defaultProps = {
   open: false,
-  onDimiss: function () {}
+  onDismiss: function () {}
 }
 
 DropdownMenu.contextTypes = {
