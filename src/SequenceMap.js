@@ -16,14 +16,55 @@ const SequenceMap = ({
   const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
 
   const sx = {
-    root: {
-      display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'space-between',
-      fontSize: fontSizes[5],
-      fontWeight: bold,
-      color: colors.gray
-    },
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    fontSize: fontSizes[5],
+    fontWeight: bold,
+    color: colors.gray
+  }
+
+  return (
+    <Base
+      {...props}
+      className='SequenceMap'
+      baseStyle={sx}>
+      {steps.map((step, i) => (
+        <SequenceMap.Step
+          key={i}
+          width={`${100 / steps.length}%`}
+          active={i <= active}
+          {...step} />
+      ))}
+    </Base>
+  )
+}
+
+SequenceMap.contextTypes = {
+  rebass: React.PropTypes.object
+}
+
+SequenceMap.propTypes = {
+  /** Array of links for each step in the sequence */
+  steps: React.PropTypes.array,
+  /** Index of current step */
+  active: React.PropTypes.number
+}
+
+SequenceMap.defaultProps = {
+  steps: []
+}
+
+// Subcomponent
+export const Step = ({
+  width,
+  active,
+  children,
+  ...props
+}, { rebass }) => {
+  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
+
+  const sx = {
     link: {
       position: 'relative',
       display: 'flex',
@@ -31,7 +72,7 @@ const SequenceMap = ({
       alignItems: 'center',
       textAlign: 'center',
       lineHeight: 1.25,
-      flex: `1 1 ${100 / steps.length}%`,
+      flex: `1 1 ${width}`,
       paddingLeft: scale[1],
       paddingRight: scale[1]
     },
@@ -61,43 +102,22 @@ const SequenceMap = ({
   }
 
   return (
-    <Base
-      {...props}
-      className='SequenceMap'
-      baseStyle={sx.root}>
-      {steps.map((step, i) => (
-        <LinkBlock
-          key={i}
-          style={{
-            ...sx.link,
-            ...(i <= active ? sx.active : {})
-          }}
-          {...step}>
-          <div style={sx.dot} />
-          {i !== 0 && <div style={sx.line} />}
-          <div style={sx.label}>
-            {step.children}
-          </div>
-        </LinkBlock>
-      ))}
-    </Base>
+    <LinkBlock
+      style={{
+        ...sx.link,
+        ...(active ? sx.active : {})
+      }}
+      {...props}>
+      <div style={sx.dot} />
+      {i !== 0 && <div style={sx.line} />}
+      <div style={sx.label}>
+        {children}
+      </div>
+    </LinkBlock>
   )
 }
 
-SequenceMap.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-SequenceMap.propTypes = {
-  /** Array of links for each step in the sequence */
-  steps: React.PropTypes.array,
-  /** Index of current step */
-  active: React.PropTypes.number
-}
-
-SequenceMap.defaultProps = {
-  steps: []
-}
+SequenceMap.Step = Step
 
 export default SequenceMap
 
