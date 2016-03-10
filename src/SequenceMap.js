@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import LinkBlock from './LinkBlock'
+import SequenceMapStep from './SequenceMapStep'
 import config from './config'
 
 /**
@@ -11,19 +11,71 @@ import config from './config'
 const SequenceMap = ({
   steps,
   active,
+  children,
   ...props
 }, { rebass }) => {
-  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
+  const { fontSizes, bold, colors } = { ...config, ...rebass }
+
+  const chx = React.Children.map(children, (child, i) => {
+    return React.cloneElement(child, {
+      width: `${1 / children.length * 100}%`,
+      first: i === 0
+    })
+  })
 
   const sx = {
-    root: {
-      display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'space-between',
-      fontSize: fontSizes[5],
-      fontWeight: bold,
-      color: colors.gray
-    },
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    fontSize: fontSizes[5],
+    fontWeight: bold,
+    color: colors.gray
+  }
+  const schx = steps.map((step, i) => (
+    <SequenceMapStep
+      key={i}
+      first={i === 0}
+      width={`${100 / steps.length}%`}
+      active={i <= active}
+      {...step} />
+  ))
+
+  return (
+    <Base
+      {...props}
+      children={chx || schx}
+      className='SequenceMap'
+      baseStyle={sx} />
+  )
+}
+
+SequenceMap.contextTypes = {
+  rebass: React.PropTypes.object
+}
+
+SequenceMap.propTypes = {
+  /** Array of links for each step in the sequence */
+  steps: React.PropTypes.array,
+  /** Index of current step */
+  active: React.PropTypes.number
+}
+
+SequenceMap.defaultProps = {
+  steps: []
+}
+
+// Subcomponent
+/*
+export const Step = ({
+  width,
+  first,
+  active,
+  children,
+  ...props
+}, { rebass }) => {
+  const { scale, colors } = { ...config, ...rebass }
+
+  const sx = {
     link: {
       position: 'relative',
       display: 'flex',
@@ -31,7 +83,7 @@ const SequenceMap = ({
       alignItems: 'center',
       textAlign: 'center',
       lineHeight: 1.25,
-      flex: `1 1 ${100 / steps.length}%`,
+      flex: `1 1 ${width}`,
       paddingLeft: scale[1],
       paddingRight: scale[1]
     },
@@ -61,43 +113,24 @@ const SequenceMap = ({
   }
 
   return (
-    <Base
-      {...props}
-      className='SequenceMap'
-      baseStyle={sx.root}>
-      {steps.map((step, i) => (
-        <LinkBlock
-          key={i}
-          style={{
-            ...sx.link,
-            ...(i <= active ? sx.active : {})
-          }}
-          {...step}>
-          <div style={sx.dot} />
-          {i !== 0 && <div style={sx.line} />}
-          <div style={sx.label}>
-            {step.children}
-          </div>
-        </LinkBlock>
-      ))}
-    </Base>
+    <LinkBlock
+      _className='SequenceMap_Step'
+      style={{
+        ...sx.link,
+        ...(active ? sx.active : {})
+      }}
+      {...props}>
+      <div style={sx.dot} />
+      {!first && <div style={sx.line} />}
+      <div style={sx.label}>
+        {children}
+      </div>
+    </LinkBlock>
   )
 }
+*/
 
-SequenceMap.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-SequenceMap.propTypes = {
-  /** Array of links for each step in the sequence */
-  steps: React.PropTypes.array,
-  /** Index of current step */
-  active: React.PropTypes.number
-}
-
-SequenceMap.defaultProps = {
-  steps: []
-}
+SequenceMap.Step = SequenceMapStep
 
 export default SequenceMap
 
