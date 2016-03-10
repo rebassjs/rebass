@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
-import LinkBlock from './LinkBlock'
+import SequenceMapStep from './SequenceMapStep'
 import config from './config'
 
 /**
@@ -14,7 +14,7 @@ const SequenceMap = ({
   children,
   ...props
 }, { rebass }) => {
-  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
+  const { fontSizes, bold, colors } = { ...config, ...rebass }
 
   const chx = React.Children.map(children, (child, i) => {
     return React.cloneElement(child, {
@@ -31,22 +31,21 @@ const SequenceMap = ({
     fontWeight: bold,
     color: colors.gray
   }
+  const schx = steps.map((step, i) => (
+    <SequenceMapStep
+      key={i}
+      first={i === 0}
+      width={`${100 / steps.length}%`}
+      active={i <= active}
+      {...step} />
+  ))
 
   return (
     <Base
       {...props}
-      children={chx}
+      children={chx || schx}
       className='SequenceMap'
-      baseStyle={sx}>
-      {steps.map((step, i) => (
-        <SequenceMap.Step
-          key={i}
-          first={i === 0}
-          width={`${100 / steps.length}%`}
-          active={i <= active}
-          {...step} />
-      ))}
-    </Base>
+      baseStyle={sx} />
   )
 }
 
@@ -66,6 +65,7 @@ SequenceMap.defaultProps = {
 }
 
 // Subcomponent
+/*
 export const Step = ({
   width,
   first,
@@ -73,7 +73,7 @@ export const Step = ({
   children,
   ...props
 }, { rebass }) => {
-  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
+  const { scale, colors } = { ...config, ...rebass }
 
   const sx = {
     link: {
@@ -114,6 +114,7 @@ export const Step = ({
 
   return (
     <LinkBlock
+      _className='SequenceMap_Step'
       style={{
         ...sx.link,
         ...(active ? sx.active : {})
@@ -127,8 +128,9 @@ export const Step = ({
     </LinkBlock>
   )
 }
+*/
 
-SequenceMap.Step = Step
+SequenceMap.Step = SequenceMapStep
 
 export default SequenceMap
 
