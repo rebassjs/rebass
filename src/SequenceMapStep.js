@@ -7,7 +7,7 @@ import config from './config'
  * Subcomponent for use in SequenceMap
  */
 
-export const SequenceMapStep = ({
+const SequenceMapStep = ({
   width,
   first,
   active,

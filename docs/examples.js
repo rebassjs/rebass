@@ -367,6 +367,9 @@ const examples = {
       ]}
       active={1} />
   ),
+  SequenceMapStep: (
+    <a href='#SequenceMap' children='See SequenceMap' />
+  ),
   Slider: (
     <div>
       <Slider
