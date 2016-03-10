@@ -11,9 +11,17 @@ import config from './config'
 const SequenceMap = ({
   steps,
   active,
+  children,
   ...props
 }, { rebass }) => {
   const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
+
+  const chx = React.Children.map(children, (child, i) => {
+    return React.cloneElement(child, {
+      width: `${1 / children.length * 100}%`,
+      first: i === 0
+    })
+  })
 
   const sx = {
     display: 'flex',
@@ -27,11 +35,13 @@ const SequenceMap = ({
   return (
     <Base
       {...props}
+      children={chx}
       className='SequenceMap'
       baseStyle={sx}>
       {steps.map((step, i) => (
         <SequenceMap.Step
           key={i}
+          first={i === 0}
           width={`${100 / steps.length}%`}
           active={i <= active}
           {...step} />
@@ -58,6 +68,7 @@ SequenceMap.defaultProps = {
 // Subcomponent
 export const Step = ({
   width,
+  first,
   active,
   children,
   ...props
@@ -109,7 +120,7 @@ export const Step = ({
       }}
       {...props}>
       <div style={sx.dot} />
-      {i !== 0 && <div style={sx.line} />}
+      {!first && <div style={sx.line} />}
       <div style={sx.label}>
         {children}
       </div>

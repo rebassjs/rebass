@@ -45,7 +45,7 @@ describe('SequenceMap', () => {
     })
 
     it('should not show active steps', () => {
-      expect(tree.props.children[0].props.style.color).toNotExist()
+      expect(tree.props.children[0].props.active).toNotExist()
     })
   })
 
@@ -72,8 +72,8 @@ describe('SequenceMap', () => {
     })
 
     it('should show active steps', () => {
-      expect(tree.props.children[0].props.style.color).toEqual(colors.primary)
-      expect(tree.props.children[1].props.style.color).toEqual(colors.primary)
+      expect(tree.props.children[0].props.active).toEqual(true)
+      expect(tree.props.children[1].props.active).toEqual(true)
     })
   })
 
