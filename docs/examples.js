@@ -140,6 +140,7 @@ const examples = {
       <ButtonCircle title='Tag'>
         <Icon name='tag' />
       </ButtonCircle>
+      <Text small children='Example Icon component from react-geomicons' />
     </Flex>
   ),
   ButtonOutline: (
