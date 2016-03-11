@@ -15,7 +15,7 @@ const Headings = ({ fontSizes }) => (
     <SectionHeader
       heading='Type Scale' />
     <Flex gutter={3} md>
-      <Box md={6} p={3}>
+      <Box md={6} px={3} py={3}>
         {fontSizes.map((size, i) => (
           <Heading
             key={i}
@@ -24,7 +24,7 @@ const Headings = ({ fontSizes }) => (
             children={`Heading ${i} (${size}px)`} />
         ))}
       </Box>
-      <Box md={6} p={3}>
+      <Box md={6} px={3} py={3}>
         <Heading level={3}>
           Don’t compose without a scale
         </Heading>

@@ -43,7 +43,7 @@ const comments = [
 const Comments = () => (
   <Section>
     <Flex sm gutter={3}>
-      <Box sm={6} p={3}>
+      <Box sm={6} px={3} py={3}>
         <Card p={0}>
           <img src='https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e15/10349615_405116952959537_1120267905_n.jpg?ig_cache_key=NzI4MzI1NTg3NTk4MzA1NjQ3.2'
             style={{
@@ -51,7 +51,7 @@ const Comments = () => (
               height: 'auto'
             }} />
           <Flex align='center'>
-            <Box p={2}>
+            <Box px={2} py={2}>
               <Avatar src='https://pbs.twimg.com/profile_images/666139404210081792/ef2KOClR_bigger.png' />
             </Box>
             <Text bold children='mrmrs' />
@@ -78,9 +78,9 @@ const Comments = () => (
           </Flex>
         </Card>
       </Box>
-      <Box sm={6} p={3}>
+      <Box sm={6} px={3} py={3}>
         <Card p={0}>
-          <Box p={2}>
+          <Box px={2} py={2}>
             <Heading level={3} children={`${comments.length} Comments`} />
           </Box>
           {comments.map( ({ avatar, user, text }, i) => (
@@ -101,7 +101,7 @@ const Comments = () => (
             </Block>
           ))}
           <Divider my={0} />
-          <Box p={2}>
+          <Box px={2} py={2}>
             <Flex>
               <Box auto>
                 <Input
