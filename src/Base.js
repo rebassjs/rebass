@@ -1,5 +1,6 @@
 
 import React from 'react'
+import assign from 'object-assign'
 import margins from './util/margins'
 import padding from './util/padding'
 import radii from './util/radii'
@@ -23,20 +24,20 @@ const Base = ({
   const { scale, colors, borderRadius } = { ...config, ...rebass }
   const name = props.className
   const keys = name ? name.split(' ') : []
-  const contextStyle = keys.reduce((a, key) => ({ ...a, ...(rebass ? rebass[key] : {}) }), {})
+  const contextStyle = keys.reduce((a, key) => (assign(a, (rebass ? rebass[key] : {}))), {})
 
   const Component = tagName || 'div'
 
-  const sx = {
-    boxSizing: 'border-box',
-    ...baseStyle,
-    ...contextStyle,
-    ...margins(props, scale),
-    ...padding(props, scale),
-    ...colorStyle(props, colors, rebass),
-    ...radii(props, borderRadius),
-    ...style
-  }
+  const sx = assign(
+    { boxSizing: 'border-box' },
+    baseStyle,
+    contextStyle,
+    margins(props, scale),
+    padding(props, scale),
+    colorStyle(props, colors, rebass),
+    radii(props, borderRadius),
+    style
+  )
 
   return <Component {...props} style={sx} />
 }
