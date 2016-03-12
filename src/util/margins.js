@@ -1,4 +1,6 @@
 
+import assign from 'object-assign'
+
 /**
  * Utility for extracting margin props from components
  */
@@ -17,7 +19,7 @@ function margins (props, scale) {
     ml
   } = props || {}
 
-  const result = Object.assign({},
+  const result = assign({},
     n('margin', m, s),
     n('marginTop', mt, s),
     n('marginBottom', mb, s),

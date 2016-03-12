@@ -1,4 +1,6 @@
 
+import assign from 'object-assign'
+
 /**
  * Utility for extracting padding props from components
  */
@@ -17,7 +19,7 @@ function padding (props, scale) {
     pl
   } = props || {}
 
-  const result = Object.assign({},
+  const result = assign({},
     n('padding', p, s),
     n('paddingTop', pt, s),
     n('paddingBottom', pb, s),
