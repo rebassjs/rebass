@@ -27,7 +27,10 @@ const NavItem = ({
         display: 'flex',
         alignItems: 'center',
         alignSelf: 'stretch',
-        padding: small ? `${scale[1] / 2}px ${scale[1]}px` : scale[1],
+        paddingTop: small ? scale[1] / 2 : scale[1],
+        paddingBottom: small ? scale[1] / 2 : scale[1],
+        paddingLeft: scale[1],
+        paddingRight: scale[1],
         color: 'inherit',
         cursor: 'pointer'
       }} />
