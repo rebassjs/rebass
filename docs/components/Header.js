@@ -47,7 +47,9 @@ const Header = ({ version, description, components, ...props }) => {
             gutter={2}
             align='center'>
             <Box p={2}>
-              <Logo size={96} strokeWidth={12} />
+              <Logo size={96}
+                style={{ marginLeft: -18 }}
+                strokeWidth={12} />
               <Heading
                 level={1}
                 size={0}
