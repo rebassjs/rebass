@@ -67,5 +67,8 @@
       "describe",
       "it"
     ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint"
   }
 }

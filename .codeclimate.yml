@@ -1,7 +1,6 @@
 engines:
   eslint:
     enabled: true
-    parser: 'babel-eslint'
 ratings:
   paths:
   - src/**
