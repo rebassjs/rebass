@@ -65,9 +65,13 @@ const MegaFooter = () => (
               size={3}
               alt
               children={heading} />
-            <Block borderTop px={0}>
+            <Block borderTop py={2}>
               {links.map((link, i) => (
                 <NavItem key={i}
+                  style={{
+                    paddingLeft: 0,
+                    paddingRight: 0,
+                  }}
                   px={0}
                   {...link} />
               ))}

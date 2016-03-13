@@ -30,7 +30,7 @@
     "react-docgen": "^2.7.0",
     "react-element-to-jsx-string": "^2.4.0",
     "react-geomicons": "^2.0.4",
-    "reflexbox": "^1.0.0",
+    "reflexbox": "^1.1.0",
     "standard": "^6.0.7",
     "static-react": "^3.1.0"
   },

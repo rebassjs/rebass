@@ -1,5 +1,6 @@
 
 import React from 'react'
+import assign from 'object-assign'
 import { Flex, Box } from 'reflexbox'
 import {
   Heading,
@@ -46,7 +47,7 @@ class ConfigForm extends React.Component {
     }
 
     const handleHeadingFontChange = (e) => {
-      const obj = Object.assign({}, this.props.Heading, {
+      const obj = assign({}, this.props.Heading, {
         fontFamily: e.target.value
       })
       onChange({ Heading: obj })
@@ -55,12 +56,12 @@ class ConfigForm extends React.Component {
     const toggleHeadingCaps = (e) => {
       let obj
       if (this.props.Heading.textTransform === 'uppercase') {
-        obj = Object.assign({}, this.props.Heading, {
+        obj = assign({}, this.props.Heading, {
           textTransform: null,
           letterSpacing: null
         })
       } else {
-        obj = Object.assign({}, this.props.Heading, {
+        obj = assign({}, this.props.Heading, {
           textTransform: 'uppercase',
           letterSpacing: '.2em'
         })

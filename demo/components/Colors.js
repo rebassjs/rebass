@@ -14,7 +14,7 @@ const Colors = ({ colors }) => (
       {Object.keys(colors).map(key => {
         const color = colors[key]
         return (
-          <Box key={key} px={2} py={2}>
+          <Box key={key} p={2}>
             <div style={{
               width: 128,
               height: 128,

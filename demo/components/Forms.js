@@ -1,5 +1,6 @@
 
 import React from 'react'
+import assign from 'object-assign'
 import { Flex, Box } from 'reflexbox'
 import {
   Section,
@@ -19,7 +20,7 @@ class Forms extends React.Component {
   constructor(props, { rebass }) {
     super()
     const { scale, colors } = rebass
-    this.state = Object.assign({}, rebass, {
+    this.state = assign({}, rebass, {
       Label: {
         fontSize: 14
       },

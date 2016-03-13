@@ -84,7 +84,7 @@ const Comments = () => (
             <Heading level={3} children={`${comments.length} Comments`} />
           </Box>
           {comments.map( ({ avatar, user, text }, i) => (
-            <Block borderLeft key={i}>
+            <Block p={2} borderLeft key={i}>
               <Flex align='center'>
                 <Box>
                   <Avatar mr={2} src={avatar} />

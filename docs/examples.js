@@ -92,6 +92,7 @@ const examples = {
   ),
   Block: (
     <Block
+      px={2}
       borderLeft
       color='blue'>
       <Media img='http://placehold.it/128/08e/fff'>
@@ -218,17 +219,15 @@ const examples = {
     <a href='demo'>See demo</a>
   ),
   Dropdown: (
-    <Block>
-      <Dropdown>
-        <Button>
-          Dropdown <Arrow />
-        </Button>
-        <DropdownMenu open={false}>
-          <NavItem children='Hello' />
-          <NavItem children='Hi' />
-        </DropdownMenu>
-      </Dropdown>
-    </Block>
+    <Dropdown>
+      <Button>
+        Dropdown <Arrow />
+      </Button>
+      <DropdownMenu open={false}>
+        <NavItem children='Hello' />
+        <NavItem children='Hi' />
+      </DropdownMenu>
+    </Dropdown>
   ),
   DropdownMenu: (
     <a href='#Dropdown'>See Dropdown example</a>

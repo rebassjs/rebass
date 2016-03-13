@@ -20,6 +20,7 @@ const BlockPanel = ({ toggle }) => (
       <Box px={2} sm={6}>
         <Block
           borderLeft
+          px={3}
           color='primary'>
           <Heading
             level={3}

@@ -17,10 +17,11 @@
     "gx": "^1.0.0-rc1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
+    "object-assign": "^4.0.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-geomicons": "^2.0.4",
-    "reflexbox": "^1.0.0",
+    "reflexbox": "^1.1.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },

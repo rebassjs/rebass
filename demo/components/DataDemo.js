@@ -95,7 +95,8 @@ class DataDemo extends React.Component {
           <Box sm={3}>
             <Block
               style={{ textAlign: 'right' }}
-              pr={0}
+              py={2}
+              pl={2}
               color='red'
               borderColor='red'
               borderLeft>

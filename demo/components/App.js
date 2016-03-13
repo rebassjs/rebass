@@ -1,6 +1,7 @@
 
 import React from 'react'
 import jsonp from 'jsonp'
+import assign from 'object-assign'
 import { Flex, Box } from 'reflexbox'
 import {
   config,
@@ -41,7 +42,7 @@ import Modal from './Modal'
 class App extends React.Component {
   constructor () {
     super()
-    this.state = Object.assign(
+    this.state = assign(
       {},
       config,
       configurations.basic, {
@@ -78,7 +79,7 @@ class App extends React.Component {
 
   switchConfig (key) {
     return (e) => {
-      const theme = Object.assign({}, config, configurations[key])
+      const theme = assign({}, config, configurations[key])
       console.log(theme.name)
       this.resetTheme(() => {
         this.setState({
