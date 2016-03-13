@@ -32,7 +32,7 @@ describe('NavItem', () => {
   })
 
   it('should have default padding', () => {
-    expect(tree.props.baseStyle.padding).toEqual(8)
+    expect(tree.props.baseStyle.paddingTop).toEqual(8)
   })
 
   context('when small is true', () => {
@@ -42,7 +42,8 @@ describe('NavItem', () => {
     })
 
     it('should have smaller padding', () => {
-      expect(tree.props.baseStyle.padding).toEqual('4px 8px')
+      expect(tree.props.baseStyle.paddingTop).toEqual(4)
+      expect(tree.props.baseStyle.paddingRight).toEqual(8)
     })
 
     it('should have small font size', () => {
