@@ -52,11 +52,12 @@ const Header = ({ version, description, components, ...props }) => {
                 level={1}
                 size={0}
                 big
+                style={{ lineHeight: 1 }}
                 children='Rebass' />
               <Heading children={`v${version}`} />
               <Text children={`${components.length} ${description}`} />
               <Divider style={{ borderWidth: 4 }} />
-              <Flex wrap align='center'>
+              <Flex wrap align='center' py={1}>
                 <TravisBadge />
                 <Space />
                 <TweetButton text={`Rebass: ${description}`} />
