@@ -15,6 +15,7 @@ import {
   Toolbar
 } from '../../src'
 
+import Logo from './Logo'
 import CarbonAd from './CarbonAd'
 import TweetButton from './TweetButton'
 import GithubButton from './GithubButton'
@@ -23,7 +24,7 @@ import TravisBadge from './TravisBadge'
 const Header = ({ version, description, components, ...props }) => {
   return (
     <div>
-      <Toolbar style={{ backgroundColor: 'black' }}>
+      <Toolbar backgroundColor='gray2'>
         <NavItem href='http://jxnblk.com/rebass' children='Rebass' />
         <NavItem href='http://jxnblk.com/rebass/demo' children='Demo' />
         <Space auto />
@@ -34,14 +35,19 @@ const Header = ({ version, description, components, ...props }) => {
         mb={4}
         p={0}
         align='left'
-        style={{ fontSize: 'inherit', minHeight: '60vh', overflow: 'hidden' }}
+        style={{
+          fontSize: 'inherit',
+          minHeight: '80vh',
+          overflow: 'hidden'
+        }}
         backgroundColor='midgray'>
         <Container style={{ width: '100%', maxWidth: 1280 }}>
           <Flex wrap
-            style={{ }}
+            py={3}
             gutter={2}
             align='center'>
-            <Box px={2}>
+            <Box p={2}>
+              <Logo size={96} strokeWidth={12} />
               <Heading
                 level={1}
                 size={0}
@@ -60,7 +66,8 @@ const Header = ({ version, description, components, ...props }) => {
               <Button
                 big
                 mt={3}
-                backgroundColor='black'
+                color='blue'
+                backgroundColor='white'
                 href='demo'
                 children='View Demo' />
             </Box>

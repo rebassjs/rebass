@@ -2,6 +2,7 @@
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
+  config,
   Block,
   Button,
   Container,
@@ -47,6 +48,12 @@ class Root extends React.Component {
   getChildContext () {
     return {
       rebass: {
+        colors: {
+          ...config.colors,
+          gray2: '#666',
+          darken: 'rgba(0, 0, 0, .9375)',
+          d1: 'rgba(0, 0, 0, .125)'
+        },
         Divider: {
           borderColor: 'inherit'
         },
