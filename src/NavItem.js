@@ -9,10 +9,13 @@ import config from './config'
 
 const NavItem = ({
   small,
+  is,
   Component,
   ...props
 }, { rebass }) => {
   const { fontSizes, scale, bold } = { ...config, ...rebass }
+
+  Component = Component || is
 
   return (
     <Base
@@ -41,11 +44,21 @@ NavItem.propTypes = {
   /** Sets a smaller font size for compact UI */
   small: React.PropTypes.bool,
   /** Root component - useful for use with react-router's Link component */
-  Component: React.PropTypes.node
+  is: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.object,
+    React.PropTypes.func
+  ]),
+  /** Alias for `is` prop */
+  Component: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.object,
+    React.PropTypes.func
+  ])
 }
 
 NavItem.defaultProps = {
-  Component: 'a'
+  is: 'a'
 }
 
 NavItem.contextTypes = {
