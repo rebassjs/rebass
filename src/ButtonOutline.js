@@ -7,6 +7,7 @@ import Button from './Button'
  */
 
 const ButtonOutline = ({
+  baseStyle,
   style,
   ...props
 }, { rebass }) => {
@@ -20,7 +21,8 @@ const ButtonOutline = ({
       {...props}
       _className='ButtonOutline'
       baseStyle={{
-        boxShadow: 'inset 0 0 0 1px'
+        boxShadow: 'inset 0 0 0 1px',
+        ...baseStyle
       }}
       style={sx} />
   )
