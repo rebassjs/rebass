@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import classnames from 'classnames'
 
 /**
  * A general purpose button element with customizable colors
@@ -39,11 +40,15 @@ const Button = ({
     border: 0
   }
 
+  const cx = classnames(_className || 'Button', {
+    'isDisabled': props.disabled
+  })
+
   return (
     <Base
       {...props}
       tagName={Component}
-      className={_className || 'Button'}
+      className={cx}
       href={href}
       baseStyle={sx}/>
   )
