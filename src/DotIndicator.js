@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Dot indicator buttons for use in carousels
@@ -55,7 +56,7 @@ const DotIndicator = ({
   return (
     <Base
       {...props}
-      className='DotIndicator'
+      className={mergeClassName(props, 'DotIndicator')}
       baseStyle={sx.root}>
       {dots.map((d) => (
         <button

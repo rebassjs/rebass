@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Star rating component with clickable buttons
@@ -66,7 +67,7 @@ const Rating = ({
   return (
     <Base
       {...props}
-      className='Rating'
+      className={mergeClassName(props, 'Rating')}
       baseStyle={sx.root}>
       {stars.map((s) => (
         <button

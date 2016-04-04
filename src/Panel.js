@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Panel for containing small pieces of information
@@ -22,7 +23,7 @@ const Panel = ({ theme, children, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Panel'
+      className={mergeClassName(props, 'Panel')}
       baseStyle={{
         padding: scale[2],
         marginBottom: scale[2],

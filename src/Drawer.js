@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * An off-canvas drawer component
@@ -83,12 +84,12 @@ const Drawer = ({
   }
 
   return (
-    <div className='Drawer'>
+    <div className={mergeClassName(props, 'Drawer')}>
       <div style={sx.dismiss}
         onClick={onDismiss} />
       <Base
         {...props}
-        className='Drawer Drawer_content'
+        className={mergeClassName(props, 'Drawer Drawer_content')}
         baseStyle={sx.content} />
     </div>
   )

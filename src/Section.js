@@ -2,6 +2,8 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import classNames from 'classnames/dedupe'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Section element with vertical padding
@@ -14,7 +16,7 @@ const Section = ({ ...props }, { rebass }) => {
     <Base
       {...props}
       tagName='section'
-      className='Section'
+      className={mergeClassName(props, 'Section')}
       baseStyle={{
         paddingTop: scale[4],
         paddingBottom: scale[4]

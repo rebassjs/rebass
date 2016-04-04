@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /** Component for displaying small status indicators */
 
@@ -28,7 +29,7 @@ const Badge = ({ ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Badge'
+      className={mergeClassName(props, 'Badge')}
       inverted
       baseStyle={sx} />
   )

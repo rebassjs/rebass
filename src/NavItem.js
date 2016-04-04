@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Link for use in navigation. Inherits color
@@ -21,7 +22,7 @@ const NavItem = ({
     <Base
       {...props}
       tagName={Component}
-      className='NavItem'
+      className={mergeClassName(props, 'NavItem')}
       baseStyle={{
         fontSize: small ? fontSizes[6] : fontSizes[5],
         fontWeight: bold,

@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Generic box with visual styling
@@ -34,7 +35,7 @@ const Block = ({
 
   return (
     <Base {...props}
-      className='Block'
+      className={mergeClassName(props, 'Block')}
       baseStyle={sx} />
   )
 }

@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Pre element for displaying code examples
@@ -14,7 +15,7 @@ const Pre = ({ ...props }, { rebass }) => {
     <Base
       {...props}
       tagName='pre'
-      className='Pre'
+      className={mergeClassName(props, 'Pre')}
       baseStyle={{
         fontFamily: monospace,
         paddingLeft: scale[2],

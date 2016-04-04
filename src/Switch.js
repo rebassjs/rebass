@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Binary toggle switch component
@@ -44,7 +45,7 @@ const Switch = ({
   return (
     <Base
       {...props}
-      className='Switch'
+      className={mergeClassName(props, 'Switch')}
       role='checkbox'
       aria-checked={checked}
       baseStyle={sx.root}>

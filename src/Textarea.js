@@ -5,6 +5,7 @@ import Base from './Base'
 import Label from './Label'
 import Text from './Text'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Textarea form element with label
@@ -56,7 +57,7 @@ const Textarea = ({
   return (
     <Base
       {...rootProps}
-      className={cx}
+      className={mergeClassName(props, cx)}
       baseStyle={sx.root}>
       <Label
         htmlFor={name}

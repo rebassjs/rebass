@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Styled box with border
@@ -26,7 +27,7 @@ const Card = ({
   return (
     <Base
       {...props}
-      className='Card'
+      className={mergeClassName(props, 'Card')}
       baseStyle={sx} />
   )
 }

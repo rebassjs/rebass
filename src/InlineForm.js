@@ -3,6 +3,7 @@ import React from 'react'
 import Input from './Input'
 import ButtonOutline from './ButtonOutline'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Inline grouped form for search or other simple forms
@@ -34,7 +35,7 @@ const InlineForm = ({
   return (
     <Base {...props}
       tagName='form'
-      className='InlineForm'
+      className={mergeClassName(props, 'InlineForm')}
       baseStyle={sx.root}>
       <Input
         name={name}

@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Stylized blockquote element with citation link
@@ -39,7 +40,7 @@ const Blockquote = ({
     <Base
       {...props}
       tagName='blockquote'
-      className='Blockquote'
+      className={mergeClassName(props, 'Blockquote')}
       baseStyle={sx.root}>
       <p style={sx.p}>
         {children}

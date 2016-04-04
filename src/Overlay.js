@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Fixed positioned overlay for use with modal dialogs
@@ -57,7 +58,7 @@ const Overlay = ({
 
   return (
     <div
-      className='Overlay'
+      className={mergeClassName(props, 'Overlay')}
       style={sx.root}>
       <div style={sx.dismiss}
         onClick={onDismiss} />

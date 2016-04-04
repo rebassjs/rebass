@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Responsive media embed wrapper
@@ -26,7 +27,7 @@ const Embed = ({ ratio, children, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Embed'
+      className={mergeClassName(props, 'Embed')}
       children={styledChildren}
       baseStyle={{
         position: 'relative',

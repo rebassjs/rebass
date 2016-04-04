@@ -3,6 +3,7 @@ import React from 'react'
 import classnames from 'classnames'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Heading element with no margin and size based on fontSizes scale
@@ -37,7 +38,7 @@ const Heading = ({
     <Base
       {...props}
       tagName={Component}
-      className={cx}
+      className={mergeClassName(props, cx)}
       baseStyle={{
         fontSize,
         fontWeight: bold,

@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Minimal footer component with top border
@@ -14,7 +15,7 @@ const Footer = ({ ...props }, { rebass }) => {
     <Base
       {...props}
       tagName='footer'
-      className='Footer'
+      className={mergeClassName(props, 'Footer')}
       baseStyle={{
         display: 'flex',
         flexWrap: 'wrap',

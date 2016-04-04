@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Styled number display for statistics
@@ -41,7 +42,7 @@ const Stat = ({
   return (
     <Base
       {...props}
-      className='Stat'
+      className={mergeClassName(props, 'Stat')}
       baseStyle={sx.root}>
       {topLabel && <div style={sx.label}>{label}</div>}
       <div style={sx.value}>

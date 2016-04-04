@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Progress element
@@ -43,7 +44,7 @@ const Progress = ({ value, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Progress'
+      className={mergeClassName(props, 'Progress')}
       baseStyle={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <progress

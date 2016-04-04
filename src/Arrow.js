@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /** Arrow for use in dropdowns and other UI elements */
 
@@ -8,7 +9,7 @@ const Arrow = ({ direction, children, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Arrow'
+      className={mergeClassName(props, 'Arrow')}
       baseStyle={{
         display: 'inline-block',
         width: 0,

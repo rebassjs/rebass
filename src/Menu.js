@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Menu component for navigation links and actions
@@ -13,7 +14,7 @@ const Menu = ({ ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Menu'
+      className={mergeClassName(props, 'Menu')}
       baseStyle={{
         display: 'flex',
         flexDirection: 'column',

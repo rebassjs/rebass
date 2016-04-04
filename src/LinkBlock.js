@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Unstyled display block link
@@ -20,7 +21,7 @@ const LinkBlock = ({
     <Base
       {...props}
       tagName={Component}
-      className='LinkBlock'
+      className={mergeClassName(props, 'LinkBlock')}
       baseStyle={sx} />
   )
 }

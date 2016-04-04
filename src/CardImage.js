@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Image for use within the Card component
@@ -18,7 +19,7 @@ const CardImage = ({
     <Base
       {...props}
       tagName='img'
-      className='CardImage'
+      className={mergeClassName(props, 'CardImage')}
       src={src}
       baseStyle={{
         display: 'block',

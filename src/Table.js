@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Table element with simplified props
@@ -52,7 +53,7 @@ const Table = ({
   return (
     <Base
       {...props}
-      className='Table'
+      className={mergeClassName(props, 'Table')}
       baseStyle={sx.root}>
       <table style={sx.table}>
         <thead style={sx.thead}>

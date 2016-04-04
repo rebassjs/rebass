@@ -2,7 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
-
+import mergeClassName from './util/mergeClassName'
 /**
  * Full-height banner with styling for background images
  */
@@ -42,7 +42,7 @@ const Banner = ({
   return (
     <Base
       {...props}
-      className='Banner'
+      className={mergeClassName(props, 'Banner')}
       baseStyle={sx} />
   )
 }

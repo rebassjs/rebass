@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Label element for form controls
@@ -25,7 +26,7 @@ const Label = ({
     <Base
       {...props}
       tagName='label'
-      className='Label'
+      className={mergeClassName(props, 'Label')}
       baseStyle={{
         fontSize: fontSizes[5],
         fontWeight: bold,
