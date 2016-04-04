@@ -3,7 +3,7 @@
  */
 
 function merge (props, className) {
-  return [props, className].join(' ').trim()
+  return [props.className, className].join(' ').trim()
 }
 
 export default merge
