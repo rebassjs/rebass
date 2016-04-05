@@ -70,6 +70,10 @@ const SequenceMapStep = ({
   )
 }
 
+SequenceMapStep.contextTypes = {
+  rebass: React.PropTypes.object
+}
+
 SequenceMapStep.propTypes = {
   /** Width of step */
   width: React.PropTypes.string,
