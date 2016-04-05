@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Media object with vertical alignment using flexbox
@@ -27,7 +28,7 @@ const Media = ({
   return (
     <Base
       {...props}
-      className='Media'
+      className={mergeClassName(props, 'Media')}
       baseStyle={{
         display: 'flex',
         marginBottom: scale[2],

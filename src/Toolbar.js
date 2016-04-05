@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Toolbar component that vertically centers children with display flex
@@ -13,7 +14,7 @@ const Toolbar = ({ ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Toolbar'
+      className={mergeClassName(props, 'Toolbar')}
       baseStyle={{
         display: 'flex',
         alignItems: 'center',

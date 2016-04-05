@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import Base from './Base'
 import Label from './Label'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Checkbox input with label
@@ -77,7 +78,7 @@ const Checkbox = ({
     <Base
       {...props}
       tagName={Label}
-      className={cx}
+      className={mergeClassName(props, cx)}
       baseStyle={sx.root}>
       <input
         {...props}

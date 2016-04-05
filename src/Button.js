@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * A general purpose button element with customizable colors
@@ -43,7 +44,7 @@ const Button = ({
     <Base
       {...props}
       tagName={Component}
-      className={_className || 'Button'}
+      className={mergeClassName(props, _className || 'Button')}
       href={href}
       baseStyle={sx}/>
   )

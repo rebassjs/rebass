@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Component for displaying text in UI
@@ -18,7 +19,7 @@ const Text = ({
     <Base
       {...props}
       tagName='p'
-      className='Text'
+      className={mergeClassName(props, 'Text')}
       baseStyle={{
         fontSize: small ? fontSizes[6] : fontSizes[4],
         fontWeight: bold ? b : null,

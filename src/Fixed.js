@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Layout container for fixed positioning children
@@ -25,7 +26,7 @@ const Fixed = ({
 
   return (
     <Base {...props}
-      className='Fixed'
+      className={mergeClassName(props, 'Fixed')}
       baseStyle={sx} />
   )
 }

@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Breadcrumb navigation links
@@ -30,7 +31,7 @@ const Breadcrumbs = ({
   return (
     <Base
       {...props}
-      className='Breadcrumbs'
+      className={mergeClassName(props, 'Breadcrumbs')}
       baseStyle={sx.root}>
       {links.map((link, i) => (
         <div key={i}>

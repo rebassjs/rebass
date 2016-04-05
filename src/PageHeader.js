@@ -4,6 +4,7 @@ import Base from './Base'
 import Heading from './Heading'
 import Text from './Text'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Main page header with description
@@ -21,7 +22,7 @@ const PageHeader = ({
     <Base
       {...props}
       tagName='header'
-      className='PageHeader'
+      className={mergeClassName(props, 'PageHeader')}
       baseStyle={{
         display: 'flex',
         flexWrap: 'wrap',

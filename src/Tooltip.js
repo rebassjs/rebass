@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Styled tooltip that shows on hover
@@ -51,7 +52,7 @@ const Tooltip = ({
 
   return (
     <span
-      className='Tooltip'
+      className={mergeClassName(props, 'Tooltip')}
       title={title}
       style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />

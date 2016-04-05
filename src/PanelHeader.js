@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Header for Panel component with vertical centering using flexbox
@@ -13,7 +14,7 @@ const PanelHeader = ({ ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='PanelHeader'
+      className={mergeClassName(props, 'PanelHeader')}
       inverted
       baseStyle={{
         display: 'flex',

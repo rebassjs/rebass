@@ -3,6 +3,7 @@ import React from 'react'
 import Base from './Base'
 import Menu from './Menu'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Absolutely positioned Menu component for use within Dropdown component
@@ -45,7 +46,7 @@ const DropdownMenu = ({
   return (
     <Base
       {...props}
-      className='DropdownMenu'
+      className={mergeClassName(props, 'DropdownMenu')}
       baseStyle={sx.root}>
       <div style={sx.overlay}
         onClick={onDismiss} />

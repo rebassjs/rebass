@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /** Component for displaying flash and error messages */
 
@@ -11,7 +12,7 @@ const Message = ({ ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Message'
+      className={mergeClassName(props, 'Message')}
       baseStyle={{
         fontWeight: bold,
         display: 'flex',

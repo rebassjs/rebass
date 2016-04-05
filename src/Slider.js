@@ -3,6 +3,7 @@ import React from 'react'
 import Label from './Label'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Stylized range input with label
@@ -45,7 +46,7 @@ const Slider = ({
   return (
     <Base
       {...props}
-      className='Slider'
+      className={mergeClassName(props, 'Slider')}
       baseStyle={{
         paddingBottom: scale[2]
       }}>

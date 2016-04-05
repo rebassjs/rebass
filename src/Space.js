@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Inline-block element for adding space between elements
@@ -13,7 +14,7 @@ const Space = ({ x, auto, children, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='Space'
+      className={mergeClassName(props, 'Space')}
       baseStyle={{
         display: 'inline-block',
         flex: auto ? '1 1 auto' : null,

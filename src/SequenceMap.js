@@ -3,6 +3,7 @@ import React from 'react'
 import Base from './Base'
 import SequenceMapStep from './SequenceMapStep'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Sequence map pattern for use in multi-step forms
@@ -44,7 +45,7 @@ const SequenceMap = ({
     <Base
       {...props}
       children={chx || schx}
-      className='SequenceMap'
+      className={mergeClassName(props, 'SequenceMap')}
       baseStyle={sx} />
   )
 }

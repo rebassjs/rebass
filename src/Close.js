@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * A button with an × for close and dismiss actions
@@ -10,7 +11,7 @@ const Close = ({ ...props }, { rebass }) => {
   return (
     <Base {...props}
       tagName='button'
-      className='Close'
+      className={mergeClassName(props, 'Close')}
       title='Close'
       baseStyle={{
         fontSize: '1.5em',

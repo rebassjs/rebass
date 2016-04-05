@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Base from './Base'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Position relative container for positioning DropdownMenu component
@@ -9,7 +10,7 @@ import Base from './Base'
 const Dropdown = ({ ...props }) => (
   <Base
     {...props}
-    className='Dropdown'
+    className={mergeClassName(props, 'Dropdown')}
     baseStyle={{
       position: 'relative'
     }} />

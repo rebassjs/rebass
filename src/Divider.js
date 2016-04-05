@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Styled hr element
@@ -17,7 +18,7 @@ const Divider = ({
     <Base
       {...props}
       tagName='hr'
-      className='Divider'
+      className={mergeClassName(props, 'Divider')}
       baseStyle={{
         width,
         marginTop: scale[2],

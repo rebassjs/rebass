@@ -6,6 +6,7 @@ import Label from './Label'
 import Text from './Text'
 import Arrow from './Arrow'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Select form control with label
@@ -74,7 +75,7 @@ const Select = ({
   return (
     <Base
       {...rootProps}
-      className={cx}
+      className={mergeClassName(props, cx)}
       baseStyle={sx.root}>
       <Label
         htmlFor={name}

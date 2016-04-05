@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Footer for Panel component with vertical centering using flexbox
@@ -14,7 +15,7 @@ const PanelFooter = ({ theme, ...props }, { rebass }) => {
   return (
     <Base
       {...props}
-      className='PanelFooter'
+      className={mergeClassName(props, 'PanelFooter')}
       baseStyle={{
         fontSize: fontSizes[6],
         display: 'flex',

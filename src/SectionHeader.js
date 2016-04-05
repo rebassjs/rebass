@@ -4,6 +4,7 @@ import Base from './Base'
 import HeadingLink from './HeadingLink'
 import Text from './Text'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Header for section elements
@@ -22,7 +23,7 @@ const SectionHeader = ({
     <Base
       {...props}
       tagName='header'
-      className='SectionHeader'
+      className={mergeClassName(props, 'SectionHeader')}
       baseStyle={{
         display: 'flex',
         alignItems: 'center',

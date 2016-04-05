@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import Base from './Base'
 import Label from './Label'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Styled custom radio input with label
@@ -67,7 +68,7 @@ const Radio = ({
     <Base
       {...props}
       tagName={Label}
-      className={cx}
+      className={mergeClassName(props, cx)}
       baseStyle={sx.root}>
       <input
         {...props}

@@ -2,7 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
-
+import mergeClassName from './util/mergeClassName'
 /**
  * A circular image for displaying user avatars
  */
@@ -18,7 +18,7 @@ const Avatar = ({
     <Base
       {...props}
       tagName='img'
-      className='Avatar'
+      className={mergeClassName(props, 'Avatar')}
       width={size}
       height={size}
       baseStyle={{

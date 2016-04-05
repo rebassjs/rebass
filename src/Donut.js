@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 const M = 'M'
 const A = 'A'
@@ -105,7 +106,7 @@ const Donut = ({
 
   return (
     <Base {...props}
-      className='Donut'
+      className={mergeClassName(props, 'Donut')}
       baseStyle={sx.root}>
       <svg
         xmlns='http://www.w3.org/svg/2000'

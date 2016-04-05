@@ -5,6 +5,7 @@ import Base from './Base'
 import Label from './Label'
 import Text from './Text'
 import config from './config'
+import mergeClassName from './util/mergeClassName'
 
 /**
  * Input element with label with support for aria-invalid, disabled, and readOnly HTML attributes
@@ -61,7 +62,7 @@ const Input = ({
   return (
     <Base
       {...rootProps}
-      className={cx}
+      className={mergeClassName(props, cx)}
       baseStyle={sx.root}>
       <Label
         htmlFor={name}
