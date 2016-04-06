@@ -1,5 +1,6 @@
 
 import React from 'react'
+import autoprefix from 'auto-prefixer'
 import LinkBlock from './LinkBlock'
 import config from './config'
 
@@ -62,7 +63,7 @@ const SequenceMapStep = ({
       }}
       {...props}>
       <div style={sx.dot} />
-      {!first && <div style={sx.line} />}
+      {!first && <div style={autoprefix(sx.line)} />}
       <div style={sx.label}>
         {children}
       </div>

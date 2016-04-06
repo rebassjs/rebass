@@ -53,6 +53,7 @@
   },
   "homepage": "https://github.com/jxnblk/rebass",
   "dependencies": {
+    "auto-prefixer": "^0.4.2",
     "classnames": "^2.2.3",
     "object-assign": "^4.0.1"
   },
