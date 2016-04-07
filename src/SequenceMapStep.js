@@ -12,6 +12,7 @@ const SequenceMapStep = ({
   first,
   active,
   children,
+  activeColor,
   ...props
 }, { rebass }) => {
   const { scale, colors } = { ...config, ...rebass }
@@ -49,7 +50,7 @@ const SequenceMapStep = ({
     },
     label: {},
     active: {
-      color: colors.primary
+      color: activeColor || colors.primary
     }
   }
 
