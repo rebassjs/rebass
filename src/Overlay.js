@@ -31,7 +31,7 @@ const Overlay = ({
       right: 0,
       bottom: 0,
       left: 0,
-      zindex: zIndex[2],
+      zIndex: zIndex[2],
       display: open ? 'flex' : 'none',
       flexDirection: 'column',
       alignItems: 'center',
@@ -48,7 +48,7 @@ const Overlay = ({
     },
     inner: {
       position: 'relative',
-      zindex: zIndex[1],
+      zIndex: zIndex[1],
       minWidth: 320,
       width: fullWidth ? '100%' : null,
       ...(box ? innerStyle : {})
