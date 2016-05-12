@@ -7,11 +7,12 @@ import { Slider, Label, Base } from '../src'
 const renderer = TestUtils.createRenderer()
 
 describe('Slider', () => {
-  let tree, input, label
+  let tree, input, label, style
 
   beforeEach(() => {
     renderer.render(<Slider name='test' label='Test' />)
     tree = renderer.getRenderOutput()
+    style = tree.props.children[0]
     label = tree.props.children[1]
     input = tree.props.children[2]
   })
@@ -25,7 +26,12 @@ describe('Slider', () => {
   })
 
   it('should have a style tag', () => {
-    expect(tree.props.children[0].type).toEqual('style')
+    expect(style.type).toEqual('style')
+  })
+
+  it('should have a slider thumb default height & width', () => {
+    expect(style.props.dangerouslySetInnerHTML.__html).toInclude('width: 24px;')
+    expect(style.props.dangerouslySetInnerHTML.__html).toInclude('height: 24px;')
   })
 
   it('should have a Label', () => {
@@ -86,6 +92,23 @@ describe('Slider', () => {
 
     it('should have a custom color', () => {
       expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
+
+  context('when thumbSize is set', () => {
+    beforeEach(() => {
+      renderer.render(<Slider thumbSize={10} />)
+      tree = renderer.getRenderOutput()
+      style = tree.props.children[0]
+    })
+
+    it('should have a style tag', () => {
+      expect(style.type).toEqual('style')
+    })
+
+    it('should set the slider height & width correctly', () => {
+      expect(style.props.dangerouslySetInnerHTML.__html).toInclude('width: 10px;')
+      expect(style.props.dangerouslySetInnerHTML.__html).toInclude('height: 10px;')
     })
   })
 })

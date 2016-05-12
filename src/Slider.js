@@ -13,6 +13,7 @@ const Slider = ({
   name,
   fill,
   hideLabel,
+  thumbSize,
   children,
   ...props
 }, { rebass }) => {
@@ -24,16 +25,16 @@ const Slider = ({
 
   const css = `
     .Slider_input::-webkit-slider-thumb {
-      width: 24px;
-      height: 24px;
+      width: ${thumbSize}px;
+      height: ${thumbSize}px;
       background-color: currentcolor;
       border: 0;
       border-radius: 999px;
       -webkit-appearance: none;
     }
     .Slider_input::-moz-range-thumb {
-      width: 24px;
-      height: 24px;
+      width: ${thumbSize}px;
+      height: ${thumbSize}px;
       background-color: currentcolor;
       border: 0;
       border-radius: 999px;
@@ -87,7 +88,13 @@ Slider.propTypes = {
   /** Adds a fill color to the track - requires client-side JavaScript*/
   fill: React.PropTypes.bool,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Sizes the slider thumb */
+  thumbSize: React.PropTypes.number
+}
+
+Slider.defaultProps = {
+  thumbSize: 24
 }
 
 Slider.contextTypes = {
