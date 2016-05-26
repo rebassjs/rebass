@@ -2,6 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
+import { Link } from 'react-router'
 import { config, Base, Button } from '../src'
 
 const renderer = TestUtils.createRenderer()
@@ -41,6 +42,16 @@ describe('Base', () => {
 
     it('should render a Button component', () => {
       expect(tree.type).toEqual(Button)
+    })
+  })
+
+  context('when is prop is set to Link', () => {
+    beforeEach(() => {
+      renderer.render(<Base is={Link} />)
+      tree = renderer.getRenderOutput()
+    })
+    it('should render a Link', () => {
+      expect(tree.type).toEqual(Link)
     })
   })
 

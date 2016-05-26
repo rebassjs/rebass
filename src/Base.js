@@ -17,6 +17,7 @@ import config from './config'
 
 const Base = ({
   tagName,
+  is,
   baseStyle,
   style,
   ...props
@@ -26,7 +27,7 @@ const Base = ({
   const keys = name ? name.split(' ') : []
   const contextStyle = keys.reduce((a, key) => (assign(a, (rebass ? rebass[key] : {}))), {})
 
-  const Component = tagName || 'div'
+  const Component = is || tagName || 'div'
 
   const sx = assign(
     { boxSizing: 'border-box' },
@@ -44,6 +45,11 @@ const Base = ({
 
 Base.propTypes = {
   /** HTML element string or React component to render */
+  is: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.func,
+    React.PropTypes.element
+  ]),
   tagName: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.func,
