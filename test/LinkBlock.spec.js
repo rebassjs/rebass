@@ -18,22 +18,12 @@ describe('LinkBlock', () => {
     expect(tree.type).toEqual(Base)
   })
 
-  it('should set tagName', () => {
-    expect(tree.props.tagName).toEqual('a')
+  it('should have a default is props', () => {
+    expect(tree.props.is).toEqual('a')
   })
 
   it('should have a className', () => {
     expect(tree.props.className).toEqual('LinkBlock')
-  })
-
-  context('when Component is set', () => {
-    beforeEach(() => {
-      renderer.render(<LinkBlock Component='button' />)
-      tree = renderer.getRenderOutput()
-    })
-    it('should set tagName button', () => {
-      expect(tree.props.tagName).toEqual('button')
-    })
   })
 
   context('when custom styles are set', () => {

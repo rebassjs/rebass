@@ -27,7 +27,9 @@ const Base = ({
   const keys = name ? name.split(' ') : []
   const contextStyle = keys.reduce((a, key) => (assign(a, (rebass ? rebass[key] : {}))), {})
 
-  const Component = is || tagName || 'div'
+  // Backwards compatibility for Component prop
+  // This will be deprecated in the next version
+  const Component = is || props.Component || tagName || 'div'
 
   const sx = assign(
     { boxSizing: 'border-box' },
