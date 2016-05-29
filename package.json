@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "prepublish": "mkdir -p dist && babel src --out-dir dist",
-    "start": "static-react docs/components/Root.js --props docs/data.js > index.html",
+    "build": "mkdir -p build && mkdir -p build/demo && static-react docs/components/Root.js --props docs/data.js > build/index.html",
+    "_deploy": "gh-pages -d build",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "test:watch": "mocha test --watch --compilers js:babel-register",
     "test": "standard && mocha test --compilers js:babel-register"
@@ -22,6 +23,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.5.2",
     "expect": "^1.14.0",
+    "gh-pages": "^0.11.0",
     "mocha": "^2.4.5",
     "onchange": "^2.0.0",
     "react": "^15.0.1",
