@@ -1,4 +1,6 @@
 engines:
+  eslint:
+    enabled: true
   duplication:
     enabled: true
     checks:
@@ -7,8 +9,11 @@ engines:
     config:
       languages:
         - javascript
-  eslint:
+  fixme:
     enabled: true
+    config:
+      strings:
+        - console
 ratings:
   paths:
   - src/**
