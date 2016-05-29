@@ -16,19 +16,44 @@ const Textarea = ({
   message,
   hideLabel,
   children,
+  style,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
   ...props
 }, { rebass }) => {
   const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const {
-    rounded,
-    backgroundColor,
-    theme,
-    inverted,
-    ...rootProps
-  } = props
+  const rootProps = {
+    style,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    mx,
+    my,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    px,
+    py
+  }
 
   const sx = {
     root: {
@@ -41,6 +66,7 @@ const Textarea = ({
       boxSizing: 'border-box',
       display: 'block',
       width: '100%',
+      padding: scale[1],
       borderWidth: 1,
       borderStyles: 'solid',
       borderColor
@@ -66,14 +92,6 @@ const Textarea = ({
         {...props}
         tagName='textarea'
         name={name}
-        rounded={rounded}
-        backgroundColor={backgroundColor}
-        theme={theme}
-        inverted={inverted}
-        m={0}
-        mx={0}
-        my={0}
-        p={1}
         baseStyle={sx.textarea} />
       {message && <Text small children={message} />}
     </Base>

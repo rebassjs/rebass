@@ -2,6 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
+import jsdom from 'mocha-jsdom'
 import { Textarea, Label, Base, config } from '../src'
 
 const renderer = TestUtils.createRenderer()
@@ -172,6 +173,34 @@ describe('Textarea', () => {
 
     it('should have a custom color', () => {
       expect(tree.props.style.color).toEqual('tomato')
+    })
+  })
+
+  describe('events', () => {
+    jsdom()
+
+    context('when change event is fired', () => {
+      const spy = expect.createSpy()
+      const render = TestUtils.renderIntoDocument
+      class Root extends React.Component { render () { return this.props.children } }
+      let node
+
+      before(() => {
+        tree = render(
+          <Root>
+            <Textarea
+              name='test'
+              label='Test'
+              onChange={spy} />
+          </Root>
+        )
+        node = TestUtils.findRenderedDOMComponentWithTag(tree, 'textarea')
+        TestUtils.Simulate.change(node)
+      })
+
+      it('should call onChange once', () => {
+        expect(spy.calls.length).toEqual(1)
+      })
     })
   })
 })
