@@ -65,7 +65,10 @@
       "demo/**/*"
     ],
     "globals": [
+      "before",
+      "after",
       "beforeEach",
+      "afterEach",
       "context",
       "describe",
       "it"
