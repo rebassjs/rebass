@@ -5,8 +5,8 @@ addons:
   code_climate:
     repo_token: 69e71defe787d76faad8efbba8d92639404ada7a1320f4af8fad3b0d979c823d
 script:
-  - npm run test
-  - npm run deploy
+  - npm test
+  - bash ./deploy.sh
 env:
   global:
     - GH_REF: github.com/jxnblk/rebass.git
