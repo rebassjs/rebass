@@ -19,7 +19,8 @@ import config from './config'
 class Base extends React.Component {
   constructor (props, { rebass }) {
     super()
-    if (rebass.pureRender) {
+    const { pureRender } = { ...config, ...rebass }
+    if (pureRender) {
       this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
   }
