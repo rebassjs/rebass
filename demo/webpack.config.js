@@ -1,6 +1,8 @@
 
+var path = require('path')
+
 module.exports = {
-  entry: './entry.js',
+  entry: path.join(__dirname, './entry.js'),
 
   output: {
     path: __dirname,
@@ -26,6 +28,7 @@ module.exports = {
   },
 
   devServer: {
+    contentBase: 'demo'
   }
 }
 

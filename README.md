@@ -2,7 +2,7 @@
 
 Configurable React Stateless Functional UI Components
 
-[![Build Status](https://travis-ci.org/jxnblk/rebass.svg)](https://travis-ci.org/jxnblk/rebass)
+[![Build Status](https://travis-ci.org/jxnblk/rebass.svg?branch=master)](https://travis-ci.org/jxnblk/rebass)
 [![Code Climate](https://codeclimate.com/github/jxnblk/rebass/badges/gpa.svg)](https://codeclimate.com/github/jxnblk/rebass)
 
 http://jxnblk.com/rebass

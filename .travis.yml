@@ -4,3 +4,10 @@ node_js:
 addons:
   code_climate:
     repo_token: 69e71defe787d76faad8efbba8d92639404ada7a1320f4af8fad3b0d979c823d
+script:
+  - npm test
+  - bash ./deploy.sh
+env:
+  global:
+    - GH_REF: github.com/jxnblk/rebass.git
+    - secure: 'k57cPpwXy+yzYM4mBQwR9pYlQMs4k/I+yl8N7XAKZjFUYr7xO37r1E8oJHzNu7g+JOAskjoQU22AOmyMdPH8QqsQpo9U9Ovv4XhGN8CZZ916P62+/G0QinuxJ3u6SDSCPfwfkzRyeS85qRNdArzIPZIvkTXxtW5w4eAIgbD71R8='
