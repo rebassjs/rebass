@@ -28,6 +28,7 @@ module.exports = {
   },
 
   devServer: {
+    contentBase: 'demo'
   }
 }
 
