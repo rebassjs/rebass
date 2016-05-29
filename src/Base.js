@@ -29,6 +29,10 @@ class Base extends React.Component {
     rebass: React.PropTypes.object
   }
 
+  static defaultProps = {
+    baseRef: x => x
+  }
+
   static propTypes = {
     /** HTML element string or React component to render */
     tagName: React.PropTypes.oneOfType([
@@ -42,6 +46,8 @@ class Base extends React.Component {
     baseStyle: React.PropTypes.object,
     /** Styles from component instance - overrides base and context styles */
     style: React.PropTypes.object,
+    /** Function to obtain refs for the underlying Base component */
+    baseRef: React.PropTypes.func,
 
     /** Applies margin with the margin utility based on the spacing scale */
     m: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
@@ -111,6 +117,7 @@ class Base extends React.Component {
       tagName,
       baseStyle,
       style,
+      baseRef,
       ...props
     } = this.props
 
@@ -133,7 +140,11 @@ class Base extends React.Component {
       style
     )
 
-    return <Component {...props} style={sx} />
+    return (
+      <Component {...props}
+        ref={ref => baseRef(ref)}
+        style={sx} />
+    )
   }
 }
 
