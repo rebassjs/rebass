@@ -45,7 +45,7 @@ const Button = ({
       tagName={Component}
       className={_className || 'Button'}
       href={href}
-      baseStyle={sx}/>
+      baseStyle={sx} />
   )
 }
 
