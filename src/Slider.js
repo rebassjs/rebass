@@ -14,13 +14,46 @@ const Slider = ({
   fill,
   hideLabel,
   children,
+  style,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
   ...props
 }, { rebass }) => {
   const { scale } = { ...config, ...rebass }
 
   const max = props.max || 100
   const min = props.min || 0
-  const p = (props.value - min) / (max - min) * 100
+  const percent = (props.value - min) / (max - min) * 100
+
+  const rootProps = {
+    style,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    mx,
+    my,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    px,
+    py
+  }
 
   const css = `
     .Slider_input::-webkit-slider-thumb {
@@ -40,15 +73,35 @@ const Slider = ({
     }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
-  const backgroundImage = fill ? `linear-gradient(90deg, currentcolor, currentcolor ${p}%, transparent ${p}%)` : null
+  const backgroundImage = fill ? `linear-gradient(90deg, currentcolor, currentcolor ${percent}%, transparent ${percent}%)` : null
+
+  const sx = {
+    root: {
+      paddingBottom: scale[2]
+    },
+    input: {
+      boxSizing: 'border-box',
+      display: 'block',
+      width: '100%',
+      margin: 0,
+      marginTop: scale[1],
+      cursor: 'pointer',
+      color: 'inherit',
+      backgroundColor: `rgba(0, 0, 0, ${1 / 8})`,
+      backgroundImage,
+      backgroundClip: 'content-box',
+      height: 6,
+      borderRadius: 999,
+      WebkitAppearance: 'none',
+      appearance: 'none'
+    }
+  }
 
   return (
     <Base
-      {...props}
+      {...rootProps}
       className='Slider'
-      baseStyle={{
-        paddingBottom: scale[2]
-      }}>
+      baseStyle={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Label
         htmlFor={name}
@@ -59,22 +112,7 @@ const Slider = ({
         type='range'
         name={name}
         className='Slider_input'
-        style={{
-          boxSizing: 'border-box',
-          display: 'block',
-          width: '100%',
-          margin: 0,
-          marginTop: scale[1],
-          cursor: 'pointer',
-          color: 'inherit',
-          backgroundColor: `rgba(0, 0, 0, ${1 / 8})`,
-          backgroundImage,
-          backgroundClip: 'content-box',
-          height: 6,
-          borderRadius: 999,
-          WebkitAppearance: 'none',
-          appearance: 'none'
-        }} />
+        style={sx.input} />
     </Base>
   )
 }
