@@ -7,6 +7,7 @@
   "scripts": {
     "prepublish": "mkdir -p dist && babel src --out-dir dist",
     "build": "mkdir -p build && mkdir -p build/demo && static-react docs/components/Root.js --props docs/data.js > build/index.html",
+    "deploy": "./deploy.sh",
     "_deploy": "gh-pages -d build",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "test:watch": "mocha test --watch --compilers js:babel-register",
