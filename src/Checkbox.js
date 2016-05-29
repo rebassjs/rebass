@@ -18,13 +18,46 @@ const Checkbox = ({
   theme,
   inverted,
   rounded,
+  style,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
   ...props
 }, { rebass }) => {
   const { scale, colors, borderRadius } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const baseProps = {
+  const rootProps = {
+    style,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    mx,
+    my,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    px,
+    py
+  }
+
+  const boxProps = {
     backgroundColor,
     theme,
     inverted,
@@ -51,6 +84,7 @@ const Checkbox = ({
       justifyContent: 'center',
       width: scale[2],
       height: scale[2],
+      marginRight: scale[1],
       backgroundColor: checked ? 'currentcolor' : 'transparent',
       borderRadius,
       borderStyle: 'solid',
@@ -75,7 +109,7 @@ const Checkbox = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
       tagName={Label}
       className={cx}
       baseStyle={sx.root}>
@@ -86,16 +120,8 @@ const Checkbox = ({
         checked={checked}
         style={sx.input} />
       <Base
-        {...props}
-        {...baseProps}
+        {...boxProps}
         className='Checkbox_box'
-        m={0}
-        ml={0}
-        mr={1}
-        my={0}
-        p={0}
-        px={0}
-        py={0}
         baseStyle={sx.box}>
         <svg
           viewBox='0 0 32 32'
