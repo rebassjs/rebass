@@ -9,14 +9,6 @@ engines:
     config:
       languages:
         - javascript
-  fixme:
-    enabled: true
-    exclude_paths:
-      - .codeclimate.yml
-    config:
-      strings:
-        - TODO
-        - console
 ratings:
   paths:
   - src/**
