@@ -29,10 +29,11 @@
     "react-addons-test-utils": "^15.0.1",
     "react-component-permutations": "^1.0.0-beta2",
     "react-docgen": "^2.7.0",
-    "react-element-to-jsx-string": "^2.4.0",
+    "react-element-to-jsx-string": "^3.0.0",
     "react-geomicons": "^2.0.4",
+    "react-router": "^2.4.1",
     "reflexbox": "^1.1.0",
-    "standard": "^6.0.7",
+    "standard": "^7.1.1",
     "static-react": "^3.1.0"
   },
   "keywords": [

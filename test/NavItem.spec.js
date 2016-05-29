@@ -19,8 +19,8 @@ describe('NavItem', () => {
     expect(tree.type).toEqual(Base)
   })
 
-  it('should set tagName a', () => {
-    expect(tree.props.tagName).toEqual('a')
+  it('should have a default is props', () => {
+    expect(tree.props.is).toEqual('a')
   })
 
   it('should have a className', () => {
@@ -48,17 +48,6 @@ describe('NavItem', () => {
 
     it('should have small font size', () => {
       expect(tree.props.baseStyle.fontSize).toEqual(fontSizes[6])
-    })
-  })
-
-  context('when setting a custom Component', () => {
-    beforeEach(() => {
-      renderer.render(<NavItem Component='button' />)
-      tree = renderer.getRenderOutput()
-    })
-
-    it('should set tagName button', () => {
-      expect(tree.props.tagName).toEqual('button')
     })
   })
 

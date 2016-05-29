@@ -7,8 +7,6 @@ import Base from './Base'
  */
 
 const LinkBlock = ({
-  Component,
-  is,
   ...props
 }, { rebass }) => {
   const sx = {
@@ -16,12 +14,10 @@ const LinkBlock = ({
     textDecoration: 'none',
     color: 'inherit'
   }
-  Component = Component || is
 
   return (
     <Base
       {...props}
-      tagName={Component}
       className='LinkBlock'
       baseStyle={sx} />
   )
@@ -30,12 +26,6 @@ const LinkBlock = ({
 LinkBlock.propTypes = {
   /** Root component - useful for use with react-router's Link component */
   is: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-    React.PropTypes.func
-  ]),
-  /** Alias for `is` prop */
-  Component: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.object,
     React.PropTypes.func

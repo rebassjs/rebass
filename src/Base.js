@@ -26,7 +26,7 @@ class Base extends React.Component {
 
   static contextTypes = {
     rebass: React.PropTypes.object
-  };
+  }
 
   static propTypes = {
     /** HTML element string or React component to render */
@@ -102,10 +102,11 @@ class Base extends React.Component {
     circle: React.PropTypes.bool,
     /** Sets border radius 99999 */
     pill: React.PropTypes.bool
-  };
+  }
 
   render () {
     const {
+      is,
       tagName,
       baseStyle,
       style,
@@ -118,7 +119,7 @@ class Base extends React.Component {
     const keys = name ? name.split(' ') : []
     const contextStyle = keys.reduce((a, key) => (assign(a, (rebass ? rebass[key] : {}))), {})
 
-    const Component = tagName || 'div'
+    const Component = is || props.Component || tagName || 'div'
 
     const sx = assign(
       { boxSizing: 'border-box' },
