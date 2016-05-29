@@ -18,13 +18,46 @@ const Radio = ({
   theme,
   circle,
   inverted,
+  style,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
   ...props
 }, { rebass }) => {
   const { scale, colors } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const baseProps = {
+  const rootProps = {
+    style,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    mx,
+    my,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    px,
+    py
+  }
+
+  const dotProps = {
     backgroundColor,
     theme,
     circle,
@@ -48,6 +81,7 @@ const Radio = ({
     dot: {
       width: scale[2],
       height: scale[2],
+      marginRight: scale[1],
       backgroundColor: checked ? colors.white : 'currentcolor',
       borderWidth: 5,
       borderStyle: checked ? 'solid' : null,
@@ -65,7 +99,7 @@ const Radio = ({
 
   return (
     <Base
-      {...props}
+      {...rootProps}
       tagName={Label}
       className={cx}
       baseStyle={sx.root}>
@@ -76,16 +110,8 @@ const Radio = ({
         type='radio'
         style={sx.input} />
       <Base
-        {...props}
-        {...baseProps}
+        {...dotProps}
         className='Radio_dot'
-        m={0}
-        ml={0}
-        mr={1}
-        my={0}
-        p={0}
-        px={0}
-        py={0}
         baseStyle={sx.dot} />
       {label}
     </Base>
