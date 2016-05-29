@@ -11,7 +11,7 @@ describe('Radio', () => {
   let tree, input
 
   beforeEach(() => {
-    renderer.render(<Radio name='test' label='Radio'/>)
+    renderer.render(<Radio name='test' label='Radio' />)
     tree = renderer.getRenderOutput()
   })
 

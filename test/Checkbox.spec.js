@@ -11,7 +11,7 @@ describe('Checkbox', () => {
   let tree, input
 
   beforeEach(() => {
-    renderer.render(<Checkbox name='test' label='Checkbox'/>)
+    renderer.render(<Checkbox name='test' label='Checkbox' />)
     tree = renderer.getRenderOutput()
   })
 
