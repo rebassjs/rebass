@@ -25,6 +25,7 @@
     "mocha": "^2.4.5",
     "onchange": "^2.0.0",
     "react": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.1.0",
     "react-addons-test-utils": "^15.0.1",
     "react-component-permutations": "^1.0.0-beta2",
     "react-docgen": "^2.7.0",
