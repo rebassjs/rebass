@@ -573,7 +573,7 @@ describe('Base', () => {
     jsdom()
 
     before(() => {
-      tree = TestUtils.renderIntoDocument(<Base  baseRef={ref => el = ref } />)
+      tree = TestUtils.renderIntoDocument(<Base baseRef={ref => { el = ref }} />)
     })
 
     it('should render', () => {
@@ -581,7 +581,7 @@ describe('Base', () => {
     })
 
     it('should return the element with baseRef', () => {
-      expect(el).toBeAn(Element)
+      expect(el).toBeAn(window.Element)
     })
   })
 })
