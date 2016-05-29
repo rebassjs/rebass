@@ -209,13 +209,8 @@ describe('Input', () => {
         TestUtils.Simulate.change(node)
       })
 
-      it('should call the onChange callback', () => {
-        expect(spy).toHaveBeenCalled()
+      it('should call onChange once', () => {
         expect(spy.calls.length).toEqual(1)
-      })
-
-      it('should not call the onChange twice', () => {
-        expect(spy.calls.length).toNotEqual(2)
       })
     })
   })
