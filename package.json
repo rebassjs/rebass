@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "0.3.0-beta.0",
+  "version": "0.3.0-beta.1",
   "description": "Configurable React Stateless Functional UI Components",
   "author": "Brent Jackson",
   "license": "MIT",
@@ -40,7 +40,6 @@
     "object-assign": "^4.1.0",
     "onchange": "^2.0.0",
     "react": "^15.0.1",
-    "react-addons-pure-render-mixin": "^15.1.0",
     "react-addons-test-utils": "^15.0.1",
     "react-component-permutations": "^1.0.0-beta2",
     "react-docgen": "^2.7.0",
@@ -53,6 +52,11 @@
     "static-react": "^3.1.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "object-assign": "^4.0.1",
+    "react-addons-pure-render-mixin": "^15.1.0"
   },
   "keywords": [
     "components",
@@ -72,10 +76,6 @@
     "url": "https://github.com/jxnblk/rebass/issues"
   },
   "homepage": "https://github.com/jxnblk/rebass",
-  "dependencies": {
-    "classnames": "^2.2.3",
-    "object-assign": "^4.0.1"
-  },
   "standard": {
     "parser": "babel-eslint",
     "ignore": [
