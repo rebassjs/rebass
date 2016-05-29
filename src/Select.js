@@ -18,19 +18,44 @@ const Select = ({
   message,
   hideLabel,
   children,
+  style,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
   ...props
 }, { rebass }) => {
   const { scale, colors, borderColor } = { ...config, ...rebass }
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const {
-    rounded,
-    backgroundColor,
-    theme,
-    inverted,
-    ...rootProps
-  } = props
+  const rootProps = {
+    style,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    mx,
+    my,
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    px,
+    py
+  }
 
   const sx = {
     root: {
@@ -43,6 +68,8 @@ const Select = ({
       boxSizing: 'border-box',
       display: 'block',
       width: '100%',
+      paddingLeft: scale[1],
+      paddingRight: scale[1],
       height: scale[3],
       color: 'inherit',
       backgroundColor: 'transparent',
@@ -85,26 +112,12 @@ const Select = ({
           {...props}
           tagName='select'
           name={name}
-          rounded={rounded}
-          backgroundColor={backgroundColor}
-          theme={theme}
-          inverted={inverted}
-          m={0}
-          mx={0}
-          my={0}
-          p={0}
-          pl={1}
-          pr={3}
-          py={0}
           baseStyle={sx.select}>
           {options.map((option, i) => (
             <option key={i} {...option} />
           ))}
         </Base>
-        <Arrow
-          theme={theme}
-          inverted={inverted}
-          style={sx.arrow} />
+        <Arrow style={sx.arrow} />
       </div>
       {message && <Text small children={message} />}
     </Base>
