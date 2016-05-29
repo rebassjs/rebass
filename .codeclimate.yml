@@ -18,6 +18,7 @@ ratings:
   paths:
   - src/**
 exclude_paths:
+- .codeclimate.yml
 - test/**/*
 - docs/**/*
 - demo/**/*
