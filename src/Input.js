@@ -18,6 +18,7 @@ const Input = ({
   hideLabel,
   children,
   style,
+  autoOff,
   m,
   mt,
   mr,
@@ -85,6 +86,13 @@ const Input = ({
     'isReadonly': props.readOnly
   })
 
+  const autoProps = autoOff ? {
+    autoComplete: 'off',
+    autoCorrect: 'off',
+    autoCapitalize: 'off',
+    spellCheck: 'off'
+  } : {}
+
   return (
     <Base
       {...rootProps}
@@ -95,6 +103,7 @@ const Input = ({
         hide={hideLabel}
         children={label} />
       <Base
+        {...autoProps}
         {...props}
         tagName='input'
         type={type}
@@ -116,6 +125,8 @@ Input.propTypes = {
   message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
+  /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
+  autoOff: React.PropTypes.bool,
   /** Controls the border radius for creating grouped elements */
   rounded: React.PropTypes.oneOfType([
     React.PropTypes.bool,
