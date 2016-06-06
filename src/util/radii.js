@@ -3,9 +3,7 @@
  * Utility for extracting border radii props from components
  */
 
-function radii (props, r) {
-  r = r || 2 // borderRadius
-
+function radii (props, r = 2) {
   const {
     rounded,
     pill,
