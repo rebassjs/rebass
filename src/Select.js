@@ -60,7 +60,8 @@ const Select = ({
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null
+      color: invalid ? colors.error : null,
+      rounded: props.rounded
     },
     select: {
       fontFamily: 'inherit',
