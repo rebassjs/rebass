@@ -1,6 +1,7 @@
 
 import React from 'react'
 import assign from 'object-assign'
+import autoprefix from 'auto-prefixer'
 import margins from './util/margins'
 import padding from './util/padding'
 import radii from './util/radii'
@@ -42,7 +43,7 @@ const Base = ({
     style
   )
 
-  return <Component {...props} style={sx} />
+  return <Component {...props} style={autoprefix(sx)} />
 }
 
 Base.propTypes = {
