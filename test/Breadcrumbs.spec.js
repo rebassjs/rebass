@@ -34,7 +34,8 @@ describe('Breadcrumbs', () => {
 
     it('should have one link', () => {
       expect(tree.props.children.length).toEqual(1)
-      expect(tree.props.children[0].props.children[0].type).toEqual('a')
+      expect(tree.props.children[0].props.children[0].type).toEqual(Base)
+      expect(tree.props.children[0].props.children[0].props.is).toEqual('a')
     })
 
     it('should not have a separator', () => {
