@@ -247,6 +247,12 @@ const examples = {
       Footer™ ©2016 Jxnblk
     </Footer>
   ),
+  Heading: (
+    <Heading children='Heading' />
+  ),
+  HeadingLink: (
+    <Heading href='#HeadingLink' children='HeadingLink' />
+  ),
   InlineForm: (
     <InlineForm
       name='inline_form'
@@ -318,12 +324,10 @@ const examples = {
       <Radio
         checked
         readOnly
-        group='radios'
         name='radio_1'
         label='Radio' />
       <Radio
-        group='radios'
-        name='radio_2'
+        name='radio_1'
         label='Radio' />
     </div>
   ),

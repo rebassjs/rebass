@@ -36,6 +36,7 @@ const Base = ({
     m, mt, mr, mb, ml, mx, my,
     rounded, pill, circle,
     theme, color, backgroundColor, inverted,
+    _className,
     ...elementProps
   } = props
 
