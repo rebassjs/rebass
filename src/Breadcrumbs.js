@@ -34,7 +34,9 @@ const Breadcrumbs = ({
       baseStyle={sx.root}>
       {links.map((link, i) => (
         <div key={i}>
-          <a {...link}
+          <Base
+            is='a'
+            {...link}
             style={{
               color: 'inherit',
               textDecoration: i === links.length - 1 ? 'none' : null
