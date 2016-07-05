@@ -2,6 +2,7 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import expect from 'expect'
+import jsdom from 'mocha-jsdom'
 import { Link } from 'react-router'
 import { config, Base, Button } from '../src'
 
@@ -622,6 +623,25 @@ describe('Base', () => {
         expect(tree.props.backgroundColor).toNotExist()
         expect(tree.props.inverted).toNotExist()
       })
+    })
+  })
+
+  describe('baseRef', () => {
+    let tree
+    let el
+
+    jsdom()
+
+    before(() => {
+      tree = TestUtils.renderIntoDocument(<Base baseRef={ref => { el = ref }} />)
+    })
+
+    it('should render', () => {
+      expect(tree).toExist()
+    })
+
+    it('should return the element with baseRef', () => {
+      expect(el).toBeAn(window.Element)
     })
   })
 })

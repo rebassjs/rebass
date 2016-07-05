@@ -7,6 +7,7 @@ import Base from './Base'
  */
 
 const LinkBlock = ({
+  _className,
   ...props
 }, { rebass }) => {
   const sx = {
@@ -18,7 +19,7 @@ const LinkBlock = ({
   return (
     <Base
       {...props}
-      className='LinkBlock'
+      className={_className || 'LinkBlock'}
       baseStyle={sx} />
   )
 }
