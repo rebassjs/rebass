@@ -64,7 +64,8 @@ const config = {
   colors,
   inverted,
   borderRadius,
-  borderColor
+  borderColor,
+  pureRender: true
 }
 
 export default config
