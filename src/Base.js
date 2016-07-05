@@ -129,19 +129,27 @@ class Base extends React.Component {
 
     const Component = is || props.Component || tagName || 'div'
 
+    const {
+      p, pt, pr, pb, pl, px, py,
+      m, mt, mr, mb, ml, mx, my,
+      rounded, pill, circle,
+      theme, color, backgroundColor, inverted,
+      ...elementProps
+    } = props
+
     const sx = assign(
       { boxSizing: 'border-box' },
       baseStyle,
       contextStyle,
-      margins(props, scale),
-      padding(props, scale),
-      colorStyle(props, colors, rebass),
-      radii(props, borderRadius),
+      margins({ m, mt, mr, mb, ml, mx, my }, scale),
+      padding({ p, pt, pr, pb, pl, px, py }, scale),
+      colorStyle({ theme, color, backgroundColor, inverted }, colors, rebass),
+      radii({ rounded, pill, circle }, borderRadius),
       style
     )
 
     return (
-      <Component {...props}
+      <Component {...elementProps}
         ref={ref => baseRef(ref)}
         style={sx} />
     )

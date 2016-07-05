@@ -58,14 +58,12 @@ class FormDemo extends React.Component {
           ]} />
         <Radio
           name='radio1'
-          group='radio'
           value='radio1'
           checked={radio === 'radio1'}
           onChange={handleRadioChange}
           label='Radio 1' />
         <Radio
-          name='radio2'
-          group='radio'
+          name='radio1'
           value='radio2'
           checked={radio === 'radio2'}
           onChange={handleRadioChange}

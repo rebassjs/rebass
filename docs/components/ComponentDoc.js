@@ -23,13 +23,6 @@ const ComponentDoc = ({ name, description, example, Component, ...props }) => {
           Example
         </PanelHeader>
         {example && <Example example={example} />}
-        {/*
-        <Permutations
-          name={name}
-          description={description}
-          Component={Component}
-          {...props} />
-        */}
       </Panel>
       <PropsTable props={props.props} />
       <Box pt={2}>

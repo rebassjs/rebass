@@ -566,6 +566,66 @@ describe('Base', () => {
     })
   })
 
+  describe('Rebass props', () => {
+    context('when custom props are set', () => {
+      beforeEach(() => {
+        renderer.render(
+          <Base
+            tagName='h1'
+            is='h1'
+            baseStyle={{ color: 'black' }}
+            m={1} mt={1} mr={1} mb={1} ml={1} mx={1} my={1}
+            p={1} pt={1} pr={1} pb={1} pl={1} px={1} py={1}
+            rounded pill circle
+            theme='info'
+            color='black'
+            backgroundColor='cyan'
+            inverted />
+        )
+        tree = renderer.getRenderOutput()
+      })
+
+      it('should not pass Base props to DOM elements', () => {
+        expect(tree.props.tagName).toNotExist()
+        expect(tree.props.is).toNotExist()
+        expect(tree.props.baseStyle).toNotExist()
+      })
+
+      it('should not pass margin props to DOM elements', () => {
+        expect(tree.props.m).toNotExist()
+        expect(tree.props.mt).toNotExist()
+        expect(tree.props.mr).toNotExist()
+        expect(tree.props.mb).toNotExist()
+        expect(tree.props.ml).toNotExist()
+        expect(tree.props.mx).toNotExist()
+        expect(tree.props.my).toNotExist()
+      })
+
+      it('should not pass padding props to DOM elements', () => {
+        expect(tree.props.p).toNotExist()
+        expect(tree.props.pt).toNotExist()
+        expect(tree.props.pr).toNotExist()
+        expect(tree.props.pb).toNotExist()
+        expect(tree.props.pl).toNotExist()
+        expect(tree.props.px).toNotExist()
+        expect(tree.props.py).toNotExist()
+      })
+
+      it('should not pass border radius props to DOM elements', () => {
+        expect(tree.props.rounded).toNotExist()
+        expect(tree.props.pill).toNotExist()
+        expect(tree.props.circle).toNotExist()
+      })
+
+      it('should not pass color props to DOM elements', () => {
+        expect(tree.props.theme).toNotExist()
+        expect(tree.props.color).toNotExist()
+        expect(tree.props.backgroundColor).toNotExist()
+        expect(tree.props.inverted).toNotExist()
+      })
+    })
+  })
+
   describe('baseRef', () => {
     let tree
     let el

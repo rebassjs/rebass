@@ -108,7 +108,6 @@ const Donut = ({
       className='Donut'
       baseStyle={sx.root}>
       <svg
-        xmlns='http://www.w3.org/svg/2000'
         viewBox={viewBox}
         width={size}
         height={size}
