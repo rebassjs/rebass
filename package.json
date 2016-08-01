@@ -35,7 +35,7 @@
     "jsdom": "^9.2.1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
-    "mocha": "^2.4.5",
+    "mocha": "^3.0.0",
     "mocha-jsdom": "^1.1.0",
     "object-assign": "^4.1.0",
     "onchange": "^2.0.0",
