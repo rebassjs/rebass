@@ -141,6 +141,26 @@ describe('Input', () => {
     })
   })
 
+  context('when autoOff props is set', () => {
+    beforeEach(() => {
+      renderer.render(
+        <Input
+          name='test'
+          label='Test'
+          autoOff />
+      )
+      tree = renderer.getRenderOutput()
+      input = tree.props.children[1]
+    })
+
+    it('should pass props to input', () => {
+      expect(input.props.autoComplete).toEqual('off')
+      expect(input.props.autoCorrect).toEqual('off')
+      expect(input.props.autoCapitalize).toEqual('off')
+      expect(input.props.spellCheck).toEqual('off')
+    })
+  })
+
   context('when Rebass props are set', () => {
     beforeEach(() => {
       renderer.render(
