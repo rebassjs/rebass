@@ -65,14 +65,14 @@ const Comments = () => (
               color='red'
               backgroundColor='gray'>
               {/* This causes warnings in the console
-               <Icon name='repost' /> */}
+               <Icon name='heart' /> */}
             </ButtonCircle>
             <ButtonCircle m={2}
               title='Repost'
               color='inherit'
               backgroundColor='gray'>
               {/* This causes warnings in the console
-               <Icon name='heart' /> */}
+               <Icon name='repost' /> */}
             </ButtonCircle>
             <Space auto />
             <Text small m={2} children='256 Likes' />
