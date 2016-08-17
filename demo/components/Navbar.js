@@ -36,7 +36,8 @@ const Navbar = ({
               <NavItem
                 key={i}
                 onClick={switchConfig(key)}
-                active={name === config}
+                /* This causes warnings in the console
+                active={name === config} */
                 children={name} />
             )
           })}

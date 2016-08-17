@@ -42,7 +42,7 @@ const comments = [
 
 const Comments = () => (
   <Section>
-    <Flex sm gutter={3}>
+    <Flex gutter={3}>
       <Box sm={6} px={3} py={3}>
         <Card p={0}>
           <img src='https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e15/10349615_405116952959537_1120267905_n.jpg?ig_cache_key=NzI4MzI1NTg3NTk4MzA1NjQ3.2'
@@ -64,13 +64,15 @@ const Comments = () => (
               title='Like'
               color='red'
               backgroundColor='gray'>
-              <Icon name='heart' />
+              {/* This causes warnings in the console
+               <Icon name='repost' /> */}
             </ButtonCircle>
             <ButtonCircle m={2}
               title='Repost'
               color='inherit'
               backgroundColor='gray'>
-              <Icon name='repost' />
+              {/* This causes warnings in the console
+               <Icon name='heart' /> */}
             </ButtonCircle>
             <Space auto />
             <Text small m={2} children='256 Likes' />

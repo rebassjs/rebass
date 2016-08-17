@@ -22,7 +22,7 @@ const Cards = ({ colors }) => {
   const cards = Array.from({ length: 3 }, (c) => card)
 
   return (
-    <Flex sm gutter={2}>
+    <Flex gutter={2}>
       {cards.map(({ image, heading, text }, i) => (
         <Card key={i} m={2}>
           <CardImage src={image} />
