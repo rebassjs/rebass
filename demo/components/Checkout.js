@@ -29,7 +29,7 @@ const Checkout = () => (
         { href: '#checkout', children: 'Billing Info' },
         { href: '#checkout', children: 'Place Order' }
       ]} />
-    <Flex align='center' sm gutter={3}>
+    <Flex align='center' gutter={3}>
       <Box sm={8} p={3}>
         <Input
           name='full_name'

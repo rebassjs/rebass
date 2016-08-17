@@ -39,7 +39,7 @@ class Forms extends React.Component {
       input: 'Hello!',
       select: 128,
       radio: 'radio1',
-      textarea: null,
+      textarea: '',
       checkbox: true
     })
     this.handleChange = this.handleChange.bind(this)
@@ -119,7 +119,7 @@ class Forms extends React.Component {
         <SectionHeader
           heading='Form Configuration'
           description='A demonstration of some of the options available for configuring form elements' />
-        <Flex sm gutter={2}>
+        <Flex gutter={2}>
           <Box sm={5} px={2}>
             <Select
               name='fontFamily'
@@ -146,16 +146,17 @@ class Forms extends React.Component {
               max={64}
               step={2}
               onChange={this.handleScaleChange} />
-            <Slider
-              fill
-              mb={0}
-              name='fontSize'
-              label={`Label font size (${this.state.Label.fontSize})`}
-              value={this.state.Label.fontSize}
-              min={10}
-              max={32}
-              step={2}
-              onChange={this.handleComponentChange('Label')} />
+            {/* This causes warnings in the console
+             <Slider
+             fill
+             mb={0}
+             name='fontSize'
+             label={`Label font size (${this.state.Label.fontSize})`}
+             value={this.state.Label.fontSize}
+             min={10}
+             max={32}
+             step={2}
+             onChange={this.handleComponentChange('Label')} /> */}
             <Slider
               fill
               mb={0}
