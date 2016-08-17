@@ -80,7 +80,8 @@ const Input = ({
     }
   }
 
-  const cx = classnames('Input', {
+  const className = 'Input'
+  const cx = classnames(className, {
     'isInvalid': invalid,
     'isDisabled': props.disabled,
     'isReadonly': props.readOnly
@@ -100,16 +101,18 @@ const Input = ({
       baseStyle={sx.root}>
       <Label
         htmlFor={name}
+        parentName={className}
         hide={hideLabel}
         children={label} />
       <Base
         {...autoProps}
         {...props}
+        parentName={className}
         tagName='input'
         type={type}
         name={name}
         baseStyle={sx.input} />
-      {message && <Text small children={message} />}
+      {message && <Text small children={message} parentName={className} />}
     </Base>
   )
 }
@@ -149,4 +152,3 @@ Input.contextTypes = {
 }
 
 export default Input
-

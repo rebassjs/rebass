@@ -115,6 +115,66 @@ describe('Base', () => {
     })
   })
 
+  context('when context, className and parentName is set', () => {
+    beforeEach(() => {
+      renderer.render(<Base className='Test' parentName='Parent' />, {
+        rebass: {
+          Test: {
+            color: 'red',
+            backgroundColor: 'tomato'
+          },
+          Parent: {
+            Test: { backgroundColor: 'white' }
+          }
+        }
+      })
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should set background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual('white')
+    })
+
+    it('should set color', () => {
+      expect(tree.props.style.color).toEqual('red')
+    })
+  })
+
+  context('when context, tagName and parentName is set and className is not set', () => {
+    beforeEach(() => {
+      renderer.render(<Base tagName='Test' parentName='Parent' />, {
+        rebass: {
+          Parent: {
+            Test: { backgroundColor: 'white' }
+          }
+        }
+      })
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should set background color', () => {
+      expect(tree.props.style.backgroundColor).toEqual('white')
+    })
+  })
+
+  context('when context, tagName, className and parentName is set', () => {
+    beforeEach(() => {
+      renderer.render(<Base className='Test' tagName='tag' parentName='Parent' />, {
+        rebass: {
+          Parent: {
+            Test: { backgroundColor: 'white' },
+            tag: {backgroundColor: 'blue'}
+          }
+        }
+      })
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should prioritise className value over tagName', () => {
+      expect(tree.props.style.backgroundColor).toEqual('white')
+    })
+  })
+
   context('when baseStyle is set', () => {
     beforeEach(() => {
       renderer.render(<Base baseStyle={{ backgroundColor: 'tomato' }} />)
@@ -645,4 +705,3 @@ describe('Base', () => {
     })
   })
 })
-
