@@ -75,5 +75,30 @@ describe('DropdownMenu', () => {
       expect(tree.props.style.color).toEqual('tomato')
     })
   })
-})
 
+  context('when custom styles for DropdownMenu are set', () => {
+    beforeEach(() => {
+      renderer.render(<DropdownMenu dropdownMenuStyle={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should have a custom color only for the top component', () => {
+      expect(tree.props.baseStyle.color).toEqual('tomato')
+      expect(tree.props.children[1].props.children.props.baseStyle)
+        .toNotExist()
+    })
+  })
+
+  context('when custom styles for Menu are set', () => {
+    beforeEach(() => {
+      renderer.render(<DropdownMenu menuStyle={{ color: 'tomato' }} />)
+      tree = renderer.getRenderOutput()
+    })
+
+    it('should have a custom color only for the menu component', () => {
+      expect(tree.props.children[1].props.children.props.baseStyle.color)
+        .toEqual('tomato')
+      expect(tree.props.baseStyle.color).toNotExist()
+    })
+  })
+})

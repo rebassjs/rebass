@@ -14,6 +14,8 @@ const DropdownMenu = ({
   top,
   children,
   onDismiss,
+  dropdownMenuStyle,
+  menuStyle,
   ...props
 }, { rebass }) => {
   const { zIndex } = { ...config, ...rebass }
@@ -46,11 +48,13 @@ const DropdownMenu = ({
     <Base
       {...props}
       className='DropdownMenu'
-      baseStyle={sx.root}>
+      baseStyle={{...dropdownMenuStyle, ...sx.root}}>
       <div style={sx.overlay}
         onClick={onDismiss} />
       <div style={sx.content}>
-        <Menu {...props}
+        <Menu
+          {...props}
+          baseStyle={menuStyle}
           children={children} />
       </div>
     </Base>
@@ -65,7 +69,11 @@ DropdownMenu.propTypes = {
   /** Anchors menu to the top */
   top: React.PropTypes.bool,
   /** Click event callback for the background overlay */
-  onDismiss: React.PropTypes.func
+  onDismiss: React.PropTypes.func,
+  /** Styles specific to the dropdown menu <Base> component */
+  dropdownMenuStyle: React.PropTypes.object,
+  /** Styles specific to the <Menu> component */
+  menuStyle: React.PropTypes.object
 }
 
 DropdownMenu.defaultProps = {
@@ -78,4 +86,3 @@ DropdownMenu.contextTypes = {
 }
 
 export default DropdownMenu
-
