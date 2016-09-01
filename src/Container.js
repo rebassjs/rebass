@@ -7,7 +7,7 @@ import config from './config'
  * Div with max-width and margin auto for centering content
  */
 
-const Container = ({ ...props }, { rebass }) => {
+const Container = (props, { rebass }) => {
   const { scale } = { ...config, ...rebass }
 
   return (

@@ -6,7 +6,7 @@ import Base from './Base'
  * A button with an × for close and dismiss actions
  */
 
-const Close = ({ ...props }, { rebass }) => {
+const Close = (props, { rebass }) => {
   return (
     <Base {...props}
       tagName='button'

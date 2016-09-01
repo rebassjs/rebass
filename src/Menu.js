@@ -7,7 +7,7 @@ import config from './config'
  * Menu component for navigation links and actions
  */
 
-const Menu = ({ ...props }, { rebass }) => {
+const Menu = (props, { rebass }) => {
   const { scale, colors, borderColor, borderRadius } = { ...config, ...rebass }
 
   return (
