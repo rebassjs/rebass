@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import borderStyle from './util/border-style'
 
 /**
  * Generic box with visual styling
@@ -20,16 +21,20 @@ const Block = ({
 
   borderColor = colors[borderColor] || borderColor || colors.primary
 
+  const borderStyles = borderStyle({
+    border,
+    borderTop,
+    borderRight,
+    borderBottom,
+    borderLeft
+  })
+
   const sx = {
     marginTop: scale[2],
     marginBottom: scale[2],
-    borderStyle: border ? 'solid' : 'none',
-    borderTopStyle: borderTop ? 'solid' : null,
-    borderRightStyle: borderRight ? 'solid' : null,
-    borderBottomStyle: borderBottom ? 'solid' : null,
-    borderLeftStyle: borderLeft ? 'solid' : null,
     borderWidth: 4,
-    borderColor
+    borderColor,
+    ...borderStyles
   }
 
   return (
