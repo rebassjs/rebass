@@ -22,17 +22,23 @@ const Cards = ({ colors }) => {
   const cards = Array.from({ length: 3 }, (c) => card)
 
   return (
-    <Flex sm gutter={2}>
+    <Flex wrap gutter={2}>
       {cards.map(({ image, heading, text }, i) => (
-        <Card key={i} m={2}>
-          <CardImage src={image} />
-          <Flex align='center'>
-            <Heading children={heading} />
-            <Space auto />
-            <Rating ml={1} value={4} />
-          </Flex>
-          <Text small children={text} />
-        </Card>
+        <Box
+          key={i}
+          col={12}
+          sm={4}
+          p={2}>
+          <Card>
+            <CardImage src={image} />
+            <Flex align='center'>
+              <Heading children={heading} />
+              <Space auto />
+              <Rating ml={1} value={4} />
+            </Flex>
+            <Text small children={text} />
+          </Card>
+        </Box>
       ))}
     </Flex>
   )

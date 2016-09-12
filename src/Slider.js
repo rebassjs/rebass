@@ -122,7 +122,7 @@ Slider.propTypes = {
   label: React.PropTypes.string.isRequired,
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
-  /** Adds a fill color to the track - requires client-side JavaScript*/
+  /** Adds a fill color to the track - requires client-side JavaScript */
   fill: React.PropTypes.bool,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool

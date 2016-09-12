@@ -55,7 +55,7 @@ const KitchenSink = ({
     <PageHeader
       heading='This is a PageHeader'
       description='This is where you should head the page' />
-    <Flex sm gutter={2}>
+    <Flex wrap gutter={2}>
       <Box sm={4} px={2}>
         <Card>
           <CardImage src='http://lorempixel.com/256/256/cats' />
@@ -91,7 +91,7 @@ const KitchenSink = ({
         onClick={toggleOverlay} />
     </Block>
 
-    <Flex sm gutter={2}>
+    <Flex wrap gutter={2}>
       <Box sm={6} p={2}>
         <Heading level={3}>Forms</Heading>
         <Label children='Label' />

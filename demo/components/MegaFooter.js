@@ -59,6 +59,7 @@ const MegaFooter = () => (
         {cols.map(({heading, links}, i) => (
           <Box key={i}
             px={3}
+            col={12}
             sm={12 / cols.length}>
             <Heading
               level={4}

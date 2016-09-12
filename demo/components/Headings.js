@@ -14,7 +14,7 @@ const Headings = ({ fontSizes }) => (
   <Section>
     <SectionHeader
       heading='Type Scale' />
-    <Flex gutter={3} md>
+    <Flex gutter={3} wrap>
       <Box md={6} p={3}>
         {fontSizes.map((size, i) => (
           <Heading

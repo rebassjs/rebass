@@ -29,8 +29,8 @@ const Checkout = () => (
         { href: '#checkout', children: 'Billing Info' },
         { href: '#checkout', children: 'Place Order' }
       ]} />
-    <Flex align='center' sm gutter={3}>
-      <Box sm={8} p={3}>
+    <Flex align='center' wrap gutter={3}>
+      <Box col={12} sm={8} p={3}>
         <Input
           name='full_name'
           label='Full Name' />
@@ -66,7 +66,7 @@ const Checkout = () => (
           big
           children='Continue' />
       </Box>
-      <Box sm={4} p={3}>
+      <Box col={12} sm={4} p={3}>
         <Panel m={0} theme='secondary'>
           <PanelHeader>
             Your Cart

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Flex, Box } from 'reflexbox'
+import { Box } from 'reflexbox'
 import {
   Banner,
   Heading,
