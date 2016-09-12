@@ -38,7 +38,7 @@
     "mocha": "^3.0.0",
     "mocha-jsdom": "^1.1.0",
     "object-assign": "^4.1.0",
-    "onchange": "^2.0.0",
+    "onchange": "^3.0.2",
     "react": "^15.2.0",
     "react-addons-test-utils": "^15.2.0",
     "react-component-permutations": "^1.0.0-beta2",
