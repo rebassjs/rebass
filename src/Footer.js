@@ -7,7 +7,7 @@ import config from './config'
  * Minimal footer component with top border
  */
 
-const Footer = ({ ...props }, { rebass }) => {
+const Footer = (props, { rebass }) => {
   const { scale, fontSizes, borderColor } = { ...config, ...rebass }
 
   return (

@@ -83,7 +83,7 @@ class Root extends React.Component {
           <meta charSet='utf-8' />
           <title>Rebass</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <link href='https://npmcdn.com/basscss-basic@1.0.0/index.css' rel='stylesheet' />
+          <link href='https://unpkg.com/basscss-basic@1.0.0/index.css' rel='stylesheet' />
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>

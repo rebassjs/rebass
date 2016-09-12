@@ -5,7 +5,7 @@ import config from './config'
 
 /** Component for displaying flash and error messages */
 
-const Message = ({ ...props }, { rebass }) => {
+const Message = (props, { rebass }) => {
   const { bold, scale } = { ...config, ...rebass }
 
   return (

@@ -7,7 +7,7 @@ import config from './config'
  * Section element with vertical padding
  */
 
-const Section = ({ ...props }, { rebass }) => {
+const Section = (props, { rebass }) => {
   const { scale } = { ...config, ...rebass }
 
   return (
