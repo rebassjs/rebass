@@ -25,7 +25,7 @@ const Cards = ({ colors }) => {
     <Flex wrap gutter={2}>
       {cards.map(({ image, heading, text }, i) => (
         <Box
-          kye={i}
+          key={i}
           col={12}
           sm={4}
           p={2}>
