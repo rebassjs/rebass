@@ -52,7 +52,7 @@ const Tooltip = ({
   return (
     <span
       className='Tooltip'
-      title={title}
+      aria-label={title}
       style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Base {...props}
