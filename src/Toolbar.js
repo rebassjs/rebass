@@ -7,7 +7,7 @@ import config from './config'
  * Toolbar component that vertically centers children with display flex
  */
 
-const Toolbar = ({ ...props }, { rebass }) => {
+const Toolbar = (props, { rebass }) => {
   const { scale, colors } = { ...config, ...rebass }
 
   return (

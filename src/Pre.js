@@ -7,7 +7,7 @@ import config from './config'
  * Pre element for displaying code examples
  */
 
-const Pre = ({ ...props }, { rebass }) => {
+const Pre = (props, { rebass }) => {
   const { monospace, scale, borderColor } = { ...config, ...rebass }
 
   return (

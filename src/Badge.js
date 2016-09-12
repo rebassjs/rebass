@@ -5,7 +5,7 @@ import config from './config'
 
 /** Component for displaying small status indicators */
 
-const Badge = ({ ...props }, { rebass }) => {
+const Badge = (props, { rebass }) => {
   const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
 
   const sx = {

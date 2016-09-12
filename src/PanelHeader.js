@@ -7,7 +7,7 @@ import config from './config'
  * Header for Panel component with vertical centering using flexbox
  */
 
-const PanelHeader = ({ ...props }, { rebass }) => {
+const PanelHeader = (props, { rebass }) => {
   const { bold, scale, borderRadius } = { ...config, ...rebass }
 
   return (
