@@ -47,7 +47,7 @@
     "react-element-to-jsx-string": "^4.1.0",
     "react-geomicons": "^2.0.5",
     "react-router": "^2.8.0",
-    "reflexbox": "^1.1.0",
+    "reflexbox": "^2.1.0",
     "standard": "^8.0.0",
     "static-react": "^3.1.0",
     "webpack": "^1.13.2",

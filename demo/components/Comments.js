@@ -42,7 +42,7 @@ const comments = [
 
 const Comments = () => (
   <Section>
-    <Flex sm gutter={3}>
+    <Flex wrap gutter={3}>
       <Box sm={6} px={3} py={3}>
         <Card p={0}>
           <img src='https://scontent-lga3-1.cdninstagram.com/t51.2885-15/e15/10349615_405116952959537_1120267905_n.jpg?ig_cache_key=NzI4MzI1NTg3NTk4MzA1NjQ3.2'

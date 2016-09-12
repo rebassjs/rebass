@@ -15,7 +15,7 @@ const BlockPanel = ({ toggle }) => (
   <Section>
     <Flex
       align='center'
-      sm
+      wrap
       gutter={2}>
       <Box px={2} sm={6}>
         <Block

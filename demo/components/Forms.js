@@ -119,8 +119,8 @@ class Forms extends React.Component {
         <SectionHeader
           heading='Form Configuration'
           description='A demonstration of some of the options available for configuring form elements' />
-        <Flex sm gutter={2}>
-          <Box sm={5} px={2}>
+        <Flex wrap gutter={2}>
+          <Box col={12} sm={5} px={2}>
             <Select
               name='fontFamily'
               label='Font Family'
@@ -203,7 +203,7 @@ class Forms extends React.Component {
               onChange={this.handleComponentChange('Radio_dot')}
               options={Object.keys(colors).map(key => { return { value: colors[key], children: key } })} />
           </Box>
-          <Box sm={7} px={2}>
+          <Box col={12} sm={7} px={2}>
             <Panel theme='default'>
               <PanelHeader children='Result' />
               <FormDemo
