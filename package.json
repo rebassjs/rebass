@@ -56,7 +56,8 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "object-assign": "^4.0.1",
-    "react-addons-pure-render-mixin": "^15.3.1"
+    "react-addons-pure-render-mixin": "^15.3.1",
+    "understyle": "^1.2.0"
   },
   "keywords": [
     "components",

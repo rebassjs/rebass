@@ -1,8 +1,9 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
-import config from './config'
+import withRebass from './withRebass'
+
+// import Base from './Base'
 
 /**
  * Heading element with no margin and size based on fontSizes scale
@@ -14,17 +15,22 @@ const Heading = ({
   big,
   alt,
   _className,
+  theme,
+  subComponentStyles,
+  style,
   ...props
-}, { rebass }) => {
-  const { fontSizes, bold } = { ...config, ...rebass }
-  const Component = `h${level}`
+}) => {
+  const { fontSizes, bold } = theme
+  const Comp = `h${level}`
 
   const h = (n) => fontSizes[n]
 
   let fontSize = typeof size === 'number' ? h(size) : h(level)
+
   if (alt) {
     fontSize = h(4)
   }
+
   if (big) {
     fontSize *= 2
   }
@@ -33,18 +39,20 @@ const Heading = ({
     'Heading_alt': alt
   })
 
+  const sx = {
+    fontSize,
+    fontWeight: bold,
+    lineHeight: 1.25,
+    margin: 0,
+    opacity: alt ? 0.5 : null
+  }
+
   return (
-    <Base
+    <Comp
       {...props}
-      tagName={Component}
+      tagName={Comp}
       className={cx}
-      baseStyle={{
-        fontSize,
-        fontWeight: bold,
-        lineHeight: 1.25,
-        margin: 0,
-        opacity: alt ? 0.5 : null
-      }} />
+      style={sx} />
   )
 }
 
@@ -63,9 +71,5 @@ Heading.defaultProps = {
   level: 2
 }
 
-Heading.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Heading
+export default withRebass(Heading)
 
