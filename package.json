@@ -15,12 +15,14 @@
     "_deploy": "gh-pages -d build",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "test:watch": "mocha test --watch --compilers js:babel-register",
-    "test": "standard && mocha test --compilers js:babel-register"
+    "test": "standard && mocha test --compilers js:babel-register",
+    "ava": "ava atest -wv"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
@@ -29,6 +31,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
+    "enzyme": "^2.4.1",
     "expect": "^1.14.0",
     "gh-pages": "^0.11.0",
     "gx": "^1.0.0-rc3",
@@ -92,6 +95,12 @@
       "describe",
       "it"
     ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   },
   "eslintConfig": {
     "parser": "babel-eslint"
