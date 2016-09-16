@@ -1,4 +1,6 @@
 
+export { default as withRebass } from './withRebass'
+
 export { default as Base } from './Base'
 
 export { default as config } from './config'

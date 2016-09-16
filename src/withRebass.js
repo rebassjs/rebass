@@ -13,7 +13,7 @@ const withRebass = Comp => {
 
       const theme = { ...defaultTheme, ...rebass }
       const { scale, colors, borderRadius } = theme
-      const themeStyle = rebass[Comp.name] || {}
+      const themeStyle = theme[Comp.name] || {}
 
       const subComponentStyles = Object.keys(themeStyle)
         .reduce((style, key) => {
@@ -46,7 +46,8 @@ const withRebass = Comp => {
       const sx = {
         boxSizing: 'border-box',
         ...themeStyle,
-        ...margin({ m, mt, mr, mb, ml, mx, my }, scale),
+        // handle gutter prop with negative numbers instead
+        ...margin({ m, mt, mr, mb, ml, mx, my, gutter }, scale),
         ...padding({ p, pt, pr, pb, pl, px, py }, scale),
         ...colorStyle({
           theme,
