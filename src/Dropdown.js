@@ -1,19 +1,33 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Position relative container for positioning DropdownMenu component
  */
 
-const Dropdown = (props) => (
-  <Base
-    {...props}
-    className='Dropdown'
-    baseStyle={{
-      position: 'relative'
-    }} />
-)
+const Dropdown = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const cx = classnames('Dropdown', className)
 
-export default Dropdown
+  const sx = {
+    position: 'relative',
+    ...style
+  }
+
+  return (
+    <div
+      {...props}
+      className={cx}
+      style={sx} />
+  )
+}
+
+export default withRebass(Dropdown)
 

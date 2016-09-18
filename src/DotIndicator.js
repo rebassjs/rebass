@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Dot indicator buttons for use in carousels
@@ -12,13 +12,18 @@ const DotIndicator = ({
   active,
   onClick,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+}) => {
+  const { scale } = theme
 
   const sx = {
     root: {
-      display: 'inline-flex'
+      display: 'inline-flex',
+      ...style
     },
     button: {
       fontSize: 16,
@@ -32,14 +37,16 @@ const DotIndicator = ({
       color: 'inherit',
       backgroundColor: 'transparent',
       border: 0,
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...subComponentStyles.button
     },
     dot: {
       width: scale[1],
       height: scale[1],
       margin: 'auto',
       backgroundColor: 'currentcolor',
-      borderRadius: 99999
+      borderRadius: 99999,
+      ...subComponentStyles.dot
     }
   }
 
@@ -53,10 +60,10 @@ const DotIndicator = ({
   const dots = Array.from({ length }, (a, b) => b)
 
   return (
-    <Base
+    <div
       {...props}
       className='DotIndicator'
-      baseStyle={sx.root}>
+      style={sx.root}>
       {dots.map((d) => (
         <button
           key={d}
@@ -68,7 +75,7 @@ const DotIndicator = ({
           <div style={sx.dot} />
         </button>
       ))}
-    </Base>
+    </div>
   )
 }
 
@@ -85,9 +92,5 @@ DotIndicator.defaultProps = {
   onClick: function () {}
 }
 
-DotIndicator.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default DotIndicator
+export default withRebass(DotIndicator)
 

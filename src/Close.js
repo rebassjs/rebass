@@ -1,36 +1,44 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * A button with an × for close and dismiss actions
  */
 
-const Close = (props, { rebass }) => {
+const Close = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const cx = classnames('Close', className)
+
+  const sx = {
+    fontSize: '1.5em',
+    lineHeight: 1,
+    fontWeight: 'bold',
+    margin: 0,
+    padding: 0,
+    cursor: 'pointer',
+    color: 'inherit',
+    backgroundColor: 'transparent',
+    border: 0,
+    WebkitAppearance: 'none',
+    ...style
+  }
+
   return (
-    <Base {...props}
-      tagName='button'
-      className='Close'
+    <button
+      {...props}
       title='Close'
-      baseStyle={{
-        fontSize: '1.5em',
-        lineHeight: 1,
-        fontWeight: 'bold',
-        margin: 0,
-        padding: 0,
-        cursor: 'pointer',
-        color: 'inherit',
-        backgroundColor: 'transparent',
-        border: 0,
-        WebkitAppearance: 'none'
-      }}
+      className={cx}
+      style={sx}
       children='×' />
   )
 }
 
-Close.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Close
+export default withRebass(Close)
 

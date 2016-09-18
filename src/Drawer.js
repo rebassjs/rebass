@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * An off-canvas drawer component
@@ -12,9 +12,13 @@ const Drawer = ({
   size,
   position,
   onDismiss,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, zIndex } = { ...config, ...rebass }
+}) => {
+  const { scale, zIndex, colors } = theme
 
   const placements = {
     top: {
@@ -39,7 +43,9 @@ const Drawer = ({
     }
   }
 
-  let width, height, transform
+  let width
+  let height
+  let transform
 
   if (position === 'top' || position === 'bottom') {
     height = size
@@ -58,16 +64,9 @@ const Drawer = ({
     transform = transforms[position]
   }
 
+  const cx = classnames('Drawer', className)
+
   const sx = {
-    dismiss: {
-      position: 'fixed',
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      zIndex: zIndex[3],
-      display: open ? null : 'none'
-    },
     content: {
       position: 'fixed',
       ...placements[position],
@@ -78,18 +77,31 @@ const Drawer = ({
       transform,
       transition: 'transform .2s ease-out',
       overflowX: 'hidden',
-      overflowY: 'scroll'
+      overflowY: 'scroll',
+      color: colors.white,
+      backgroundColor: colors.default,
+      ...style
+    },
+    dismiss: {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      zIndex: zIndex[3],
+      display: open ? null : 'none',
+      ...subComponentStyles.dismiss
     }
   }
 
   return (
-    <div className='Drawer'>
+    <div className={cx}>
       <div style={sx.dismiss}
         onClick={onDismiss} />
-      <Base
+      <div
         {...props}
         className='Drawer Drawer_content'
-        baseStyle={sx.content} />
+        style={sx.content} />
     </div>
   )
 }
@@ -114,14 +126,8 @@ Drawer.defaultProps = {
   open: false,
   size: 320,
   position: 'left',
-  onDismiss: function () {},
-  color: 'white',
-  backgroundColor: 'default'
+  onDismiss: function () {}
 }
 
-Drawer.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Drawer
+export default withRebass(Drawer)
 

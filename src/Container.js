@@ -1,30 +1,38 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Div with max-width and margin auto for centering content
  */
 
-const Container = (props, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+const Container = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale } = theme
+
+  const cx = classnames('Container', className)
+
+  const sx = {
+    maxWidth: 1024,
+    paddingLeft: scale[2],
+    paddingRight: scale[2],
+    margin: 'auto',
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Container'
-      baseStyle={{
-        maxWidth: 1024,
-        paddingLeft: scale[2],
-        paddingRight: scale[2],
-        margin: 'auto'
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Container.contextTypes = {
-  rebass: React.PropTypes.object
-}
+export default withRebass(Container)
 
-export default Container
