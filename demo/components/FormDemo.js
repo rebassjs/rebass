@@ -81,7 +81,7 @@ class FormDemo extends React.Component {
           onChange={handleCheckboxChange} />
         <Button children='Hello' />
         <Space />
-        <Button theme='secondary' children='Nope' />
+        <Button backgroundColor='secondary' children='Nope' />
       </form>
     )
   }

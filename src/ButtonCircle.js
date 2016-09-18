@@ -1,7 +1,8 @@
 
 import React from 'react'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Button from './Button'
-import config from './config'
 
 /**
  * A circular button suited for use with icons
@@ -10,10 +11,13 @@ import config from './config'
 const ButtonCircle = ({
   size,
   children,
+  className,
   style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+}) => {
+  const { scale } = theme
 
   const sx = {
     root: {
@@ -28,14 +32,15 @@ const ButtonCircle = ({
       display: 'flex',
       alignItems: 'center',
       height: '100%',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      ...subComponentStyles.inner
     }
   }
 
   return (
     <Button
       {...props}
-      _className='ButtonCircle'
+      className='ButtonCircle'
       style={sx.root}>
       <div style={sx.inner}>
         {children}
@@ -47,17 +52,9 @@ const ButtonCircle = ({
 ButtonCircle.propTypes = {
   /** Pass an href prop to make the ButtonCircle an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Text color - can either be a key from the config colors object or any color value */
-  color: React.PropTypes.string,
-  /** Background color - can either be a key from the config colors object or any color value */
-  backgroundColor: React.PropTypes.string,
   /** Sets width and height of button */
   size: React.PropTypes.number
 }
 
-ButtonCircle.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default ButtonCircle
+export default withRebass(ButtonCircle)
 

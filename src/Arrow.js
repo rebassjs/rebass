@@ -15,6 +15,7 @@ const Arrow = ({
   ...props
 }) => {
   const cx = classnames('Arrow', className)
+
   const sx = {
     display: 'inline-block',
     width: 0,
@@ -30,10 +31,10 @@ const Arrow = ({
   }
 
   return (
-    <Base
+    <div
       {...props}
       className={cx}
-      baseStyle={sx} />
+      style={sx} />
   )
 }
 

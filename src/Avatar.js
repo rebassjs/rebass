@@ -21,10 +21,13 @@ const Avatar = ({
   const cx = classnames('Avatar', className)
 
   const sx = {
+    display: 'inline-block',
     maxWidth: 'none',
     width: size,
     height: size,
-    backgroundColor: colors.gray
+    backgroundColor: colors.gray,
+    borderRadius: 99999,
+    ...style
   }
 
   return (
@@ -44,12 +47,7 @@ Avatar.propTypes = {
 }
 
 Avatar.defaultProps = {
-  size: 48,
-  circle: true
-}
-
-Avatar.contextTypes = {
-  rebass: React.PropTypes.object
+  size: 48
 }
 
 export default withRebass(Avatar)

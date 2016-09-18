@@ -48,7 +48,7 @@
     "react-docgen": "^2.10.0",
     "react-dom": "^15.3.1",
     "react-element-to-jsx-string": "^4.1.0",
-    "react-geomicons": "^2.0.5",
+    "react-geomicons": "^2.1.0",
     "react-router": "^2.8.0",
     "reflexbox": "^2.1.0",
     "standard": "^8.0.0",

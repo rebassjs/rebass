@@ -1,5 +1,7 @@
 
 import React from 'react'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Button from './Button'
 
 /**
@@ -7,21 +9,27 @@ import Button from './Button'
  */
 
 const ButtonOutline = ({
+  className,
   style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
+}) => {
+  const { colors, borderRadius } = theme
+  const cx = classnames('ButtonOutline', className)
+
   const sx = {
+    color: colors.primary,
     backgroundColor: 'transparent',
+    boxShadow: 'inset 0 0 0 1px',
+    borderRadius,
     ...style
   }
 
   return (
     <Button
       {...props}
-      _className='ButtonOutline'
-      baseStyle={{
-        boxShadow: 'inset 0 0 0 1px'
-      }}
+      className={cx}
       style={sx} />
   )
 }
@@ -29,33 +37,13 @@ const ButtonOutline = ({
 ButtonOutline.propTypes = {
   /** Pass an href prop to make the ButtonOutline an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Text color */
-  color: React.PropTypes.string,
-  /** Controls the border radius for creating button groups */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
-      'top',
-      'right',
-      'bottom',
-      'left'
-    ])
-  ]),
-  /** Creates a pill style button */
-  pill: React.PropTypes.bool,
   /** Creates a larger button */
   big: React.PropTypes.bool
 }
 
 ButtonOutline.defaultProps = {
-  color: 'primary',
-  inverted: false,
-  rounded: true
+  inverted: false
 }
 
-ButtonOutline.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default ButtonOutline
+export default withRebass(ButtonOutline)
 

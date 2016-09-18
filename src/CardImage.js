@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Image for use within the Card component
@@ -10,24 +10,32 @@ import config from './config'
 const CardImage = ({
   src,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+}) => {
+  const { scale } = theme
+
+  const cx = classnames('CardImage', className)
+
+  const sx = {
+    display: 'block',
+    width: `calc(100% + ${2 * scale[1]}px)`,
+    maxWidth: 'none',
+    height: 'auto',
+    margin: -scale[1],
+    marginBottom: scale[1],
+    ...style
+  }
 
   return (
-    <Base
+    <img
       {...props}
-      tagName='img'
-      className='CardImage'
       src={src}
-      baseStyle={{
-        display: 'block',
-        width: `calc(100% + ${2 * scale[1]}px)`,
-        maxWidth: 'none',
-        height: 'auto',
-        margin: -scale[1],
-        marginBottom: scale[1]
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -36,9 +44,5 @@ CardImage.propTypes = {
   src: React.PropTypes.string.isRequired
 }
 
-CardImage.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default CardImage
+export default withRebass(CardImage)
 

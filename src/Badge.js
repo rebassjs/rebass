@@ -1,12 +1,26 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /** Component for displaying small status indicators */
 
-const Badge = (props, { rebass }) => {
-  const { fontSizes, bold, scale, colors } = { ...config, ...rebass }
+const Badge = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const {
+    fontSizes,
+    bold,
+    scale,
+    colors,
+    borderRadius
+  } = theme
+
+  const cx = classnames('Badge', className)
 
   const sx = {
     fontSize: fontSizes[6],
@@ -22,53 +36,19 @@ const Badge = (props, { rebass }) => {
     paddingRight: props.circle ? 0 : scale[1],
     overflow: 'hidden',
     color: colors.white,
-    backgroundColor: colors.default
+    backgroundColor: colors.default,
+    borderRadius,
+    ...style
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Badge'
       inverted
-      baseStyle={sx} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Badge.propTypes = {
-  /** Sets color based on theme */
-  theme: React.PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'default',
-    'info',
-    'success',
-    'warning',
-    'error'
-  ]),
-  /** Controls border radius */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
-      'top',
-      'right',
-      'bottom',
-      'left'
-    ])
-  ]),
-  /** Sets pill style border radii */
-  pill: React.PropTypes.bool,
-  /** Sets width and border radius for circular badges */
-  circle: React.PropTypes.bool
-}
-
-Badge.defaultProps = {
-  theme: 'default',
-  rounded: true
-}
-
-Badge.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Badge
+export default withRebass(Badge)
 

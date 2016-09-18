@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Full-height banner with styling for background images
@@ -10,9 +10,13 @@ import config from './config'
 const Banner = ({
   align,
   backgroundImage,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
 }, { rebass }) => {
-  const { scale, colors, fontSizes } = { ...config, ...rebass }
+  const { scale, colors, fontSizes } = theme
 
   const alignment = {
     left: 'flex-start',
@@ -21,6 +25,8 @@ const Banner = ({
   }
 
   const alignItems = alignment[align]
+
+  const cx = classnames('Banner', className)
 
   const sx = {
     fontSize: fontSizes[1],
@@ -36,14 +42,15 @@ const Banner = ({
     minHeight: '100vh',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundImage: backgroundImage ? `url(${backgroundImage})` : null
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
+    ...style
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Banner'
-      baseStyle={sx} />
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -58,8 +65,5 @@ Banner.defaultProps = {
   align: 'center'
 }
 
-Banner.contextTypes = {
-  rebass: React.PropTypes.object
-}
+export default withRebass(Banner)
 
-export default Banner

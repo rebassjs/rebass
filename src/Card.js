@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Styled box with border
@@ -9,10 +9,15 @@ import config from './config'
 
 const Card = ({
   width,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
 }, { rebass }) => {
-  const { scale, borderColor } = { ...config, ...rebass }
+  const { scale, borderColor, borderRadius } = theme
 
+  const cx = classnames('Card', className)
   const sx = {
     width,
     padding: scale[1],
@@ -20,14 +25,16 @@ const Card = ({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor,
-    overflow: 'hidden'
+    borderRadius,
+    overflow: 'hidden',
+    ...style
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Card'
-      baseStyle={sx} />
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -39,13 +46,5 @@ Card.propTypes = {
   ])
 }
 
-Card.defaultProps = {
-  rounded: true
-}
-
-Card.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Card
+export default withRebass(Card)
 
