@@ -1,8 +1,9 @@
 
 import React from 'react'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Input from './Input'
 import ButtonOutline from './ButtonOutline'
-import Base from './Base'
 
 /**
  * Inline grouped form for search or other simple forms
@@ -16,25 +17,35 @@ const InlineForm = ({
   onChange,
   buttonLabel,
   onClick,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
+}) => {
+  const cx = classnames('InlineForm', className)
+
   const sx = {
     root: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      ...style
     },
     input: {
-      flex: '1 1 auto'
+      flex: '1 1 auto',
+      ...subComponentStyles.Input
     },
     button: {
-      marginLeft: -1
+      marginLeft: -1,
+      ...subComponentStyles.Button,
+      ...subComponentStyles.ButtonOutline
     }
   }
 
   return (
-    <Base {...props}
-      tagName='form'
-      className='InlineForm'
+    <form
+      {...props}
+      className={cx}
       baseStyle={sx.root}>
       <Input
         name={name}
@@ -52,12 +63,8 @@ const InlineForm = ({
         onClick={onClick}
         style={sx.button}
         rounded='right' />
-    </Base>
+    </form>
   )
-}
-
-InlineForm.contextTypes = {
-  rebass: React.PropTypes.object
 }
 
 InlineForm.propTypes = {
@@ -86,5 +93,5 @@ InlineForm.defaultProps = {
   onChange: () => {}
 }
 
-export default InlineForm
+export default withRebass(InlineForm)
 

@@ -1,10 +1,9 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
 import Text from './Text'
-import config from './config'
 
 /**
  * Input element with label with support for aria-invalid, disabled, and readOnly HTML attributes
@@ -17,50 +16,31 @@ const Input = ({
   message,
   hideLabel,
   children,
-  style,
   autoOff,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderColor, borderRadius } = theme
 
   const invalid = props.invalid || props['aria-invalid']
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
+  const cx = classnames('Input', className, {
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
+  })
 
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null
+      color: invalid ? colors.error : null,
+      ...style
+    },
+    label: {
+      ...subComponentStyles.Label
     },
     input: {
       fontFamily: 'inherit',
@@ -76,15 +56,14 @@ const Input = ({
       backgroundColor: 'rgba(255, 255, 255, .25)',
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor: invalid ? colors.error : borderColor
+      borderColor: invalid ? colors.error : borderColor,
+      borderRadius,
+      ...subComponentStyles.input
+    },
+    text: {
+      ...subComponentStyles.Text
     }
   }
-
-  const cx = classnames('Input', {
-    'isInvalid': invalid,
-    'isDisabled': props.disabled,
-    'isReadonly': props.readOnly
-  })
 
   const autoProps = autoOff ? {
     autoComplete: 'off',
@@ -94,23 +73,27 @@ const Input = ({
   } : {}
 
   return (
-    <Base
-      {...rootProps}
+    <div
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
+        style={sx.label}
         children={label} />
-      <Base
-        {...autoProps}
+      <input
         {...props}
-        tagName='input'
+        {...autoProps}
         type={type}
         name={name}
-        baseStyle={sx.input} />
-      {message && <Text small children={message} />}
-    </Base>
+        style={sx.input} />
+      {message && (
+        <Text
+          small
+          style={sx.text}
+          children={message} />
+      )}
+    </div>
   )
 }
 
@@ -127,26 +110,11 @@ Input.propTypes = {
   hideLabel: React.PropTypes.bool,
   /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
   autoOff: React.PropTypes.bool,
-  /** Controls the border radius for creating grouped elements */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
-      'top',
-      'right',
-      'bottom',
-      'left'
-    ])
-  ])
 }
 
 Input.defaultProps = {
-  type: 'text',
-  rounded: true
+  type: 'text'
 }
 
-Input.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Input
+export default withRebass(Input)
 

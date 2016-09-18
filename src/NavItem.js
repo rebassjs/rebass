@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Link for use in navigation. Inherits color
@@ -9,50 +9,51 @@ import config from './config'
 
 const NavItem = ({
   small,
+  active,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, scale, bold } = { ...config, ...rebass }
+}) => {
+  const { fontSizes, scale, bold } = theme
+
+  const cx = classnames('NavItem', className)
+
+  const activeStyle = active ? subComponentStyles.active : {}
+
+  const sx = {
+    fontSize: small ? fontSizes[6] : fontSizes[5],
+    fontWeight: bold,
+    lineHeight: '1rem',
+    textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    paddingTop: small ? scale[1] / 2 : scale[1],
+    paddingBottom: small ? scale[1] / 2 : scale[1],
+    paddingLeft: scale[1],
+    paddingRight: scale[1],
+    color: 'inherit',
+    cursor: 'pointer',
+    ...style,
+    ...activeStyle
+  }
 
   return (
-    <Base
+    <a
       {...props}
-      className='NavItem'
-      baseStyle={{
-        fontSize: small ? fontSizes[6] : fontSizes[5],
-        fontWeight: bold,
-        lineHeight: '1rem',
-        textDecoration: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        alignSelf: 'stretch',
-        paddingTop: small ? scale[1] / 2 : scale[1],
-        paddingBottom: small ? scale[1] / 2 : scale[1],
-        paddingLeft: scale[1],
-        paddingRight: scale[1],
-        color: 'inherit',
-        cursor: 'pointer'
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
 NavItem.propTypes = {
+  /** Sets active styles */
+  active: React.PropTypes.bool,
   /** Sets a smaller font size for compact UI */
-  small: React.PropTypes.bool,
-  /** Root component - useful for use with react-router's Link component */
-  is: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-    React.PropTypes.func
-  ])
+  small: React.PropTypes.bool
 }
 
-NavItem.defaultProps = {
-  is: 'a'
-}
-
-NavItem.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default NavItem
+export default withRebass(NavItem)
 

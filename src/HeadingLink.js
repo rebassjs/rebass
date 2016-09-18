@@ -1,25 +1,46 @@
 
 import React from 'react'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Heading from './Heading'
 
 /**
  * Heading element with unstyled link. Useful for in-page navigation
  */
 
-const HeadingLink = ({ level, size, href, style, ...props }, { rebass }) => {
+const HeadingLink = ({
+  level,
+  size,
+  href,
+  style,
+  className,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const cx = classnames('HeadingLink', className)
+
+  const sx = {
+    root: {
+      ...style
+    },
+    link: {
+      color: 'inherit',
+      textDecoration: 'none',
+      ...subComponentStyles.link
+    }
+  }
+
   return (
     <Heading
-      _className='HeadingLink'
       level={level}
       size={size}
-      style={style}>
+      className={cx}
+      style={sx.root}>
       <a
         {...props}
         href={href}
-        style={{
-          color: 'inherit',
-          textDecoration: 'none'
-        }} />
+        style={sx.link} />
     </Heading>
   )
 }
@@ -38,9 +59,5 @@ HeadingLink.defaultProps = {
   href: '#!'
 }
 
-HeadingLink.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default HeadingLink
+export default withRebass(HeadingLink)
 

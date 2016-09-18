@@ -1,38 +1,44 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Minimal footer component with top border
  */
 
-const Footer = (props, { rebass }) => {
-  const { scale, fontSizes, borderColor } = { ...config, ...rebass }
+const Footer = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale, fontSizes, borderColor } = theme
+
+  const cx = classnames('Footer', className)
+
+  const sx = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    marginTop: scale[3],
+    paddingTop: scale[3],
+    paddingBottom: scale[3],
+    fontSize: fontSizes[5],
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
+    borderTopColor: borderColor,
+    ...style
+  }
 
   return (
-    <Base
+    <footer
       {...props}
-      tagName='footer'
-      className='Footer'
-      baseStyle={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        marginTop: scale[3],
-        paddingTop: scale[3],
-        paddingBottom: scale[3],
-        fontSize: fontSizes[5],
-        borderTopWidth: 1,
-        borderTopStyle: 'solid',
-        borderTopColor: borderColor
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Footer.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Footer
+export default withRebass(Footer)
 
