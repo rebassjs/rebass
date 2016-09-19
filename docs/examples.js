@@ -55,6 +55,7 @@ import {
   Switch,
   Table,
   Text,
+  Textarea,
   Toolbar,
   Tooltip,
   Base
@@ -417,6 +418,16 @@ const examples = {
         ['Corndog', 'Pork', 'Corn', 'Cornbread'],
         ['Hot Dog', 'Pork', 'Peppers', 'Bun'],
       ]} />
+  ),
+  Text: (
+    <Text>Hello</Text>
+  ),
+  Textarea: (
+    <Textarea
+      name='textarea'
+      label='Textarea'
+      defaultValue='Hello'
+    />
   ),
   Toolbar: (
     <Toolbar>
