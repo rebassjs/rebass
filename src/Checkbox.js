@@ -18,6 +18,7 @@ const Checkbox = ({
   theme,
   inverted,
   rounded,
+  stacked,
   style,
   m,
   mt,
@@ -69,6 +70,7 @@ const Checkbox = ({
       position: 'relative',
       display: 'flex',
       alignItems: 'center',
+      flexDirection: stacked ? 'column' : null,
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
       cursor: 'pointer'
@@ -84,7 +86,8 @@ const Checkbox = ({
       justifyContent: 'center',
       width: scale[2],
       height: scale[2],
-      marginRight: scale[1],
+      marginRight: stacked ? null : scale[1],
+      marginBottom: stacked ? scale[1] : null,
       backgroundColor: checked ? 'currentcolor' : 'transparent',
       borderRadius,
       borderStyle: 'solid',
@@ -138,7 +141,9 @@ Checkbox.propTypes = {
   /** Label for form element */
   label: React.PropTypes.string.isRequired,
   /** Name attribute for form element */
-  name: React.PropTypes.string.isRequired
+  name: React.PropTypes.string.isRequired,
+  /** Place label centered under the radio */
+  stacked: React.PropTypes.bool
 }
 
 export default Checkbox
