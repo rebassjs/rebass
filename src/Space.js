@@ -1,24 +1,38 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Inline-block element for adding space between elements
  */
 
-const Space = ({ x, auto, children, ...props }, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+const Space = ({
+  x,
+  auto,
+  children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale } = theme
+
+  const cx = classnames('Space', className)
+
+  const sx = {
+    display: 'inline-block',
+    flex: auto ? '1 1 auto' : null,
+    width: scale[x],
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Space'
-      baseStyle={{
-        display: 'inline-block',
-        flex: auto ? '1 1 auto' : null,
-        width: scale[x]
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -33,9 +47,5 @@ Space.defaultProps = {
   x: 1
 }
 
-Space.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Space
+export default withRebass(Space)
 

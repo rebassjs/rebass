@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Binary toggle switch component
@@ -9,12 +9,18 @@ import config from './config'
 
 const Switch = ({
   checked,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderColor } = theme
 
   const color = checked ? colors.success : borderColor
   const transform = checked ? `translateX(${scale[3] * 0.5}px)` : 'translateX(0)'
+
+  const cx = classnames('Switch', className)
 
   const sx = {
     root: {
@@ -25,7 +31,8 @@ const Switch = ({
       backgroundColor: checked ? 'currentcolor' : null,
       borderRadius: 99999,
       boxShadow: 'inset 0 0 0 2px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...style
     },
     dot: {
       width: scale[3],
@@ -37,19 +44,20 @@ const Switch = ({
       boxShadow: 'inset 0 0 0 2px',
       borderRadius: 99999,
       color,
-      backgroundColor: colors.white
+      backgroundColor: colors.white,
+      ...subComponentStyles.dot
     }
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Switch'
+      className={cx}
       role='checkbox'
       aria-checked={checked}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <div style={sx.dot} />
-    </Base>
+    </div>
   )
 }
 
@@ -58,9 +66,5 @@ Switch.propTypes = {
   checked: React.PropTypes.bool
 }
 
-Switch.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Switch
+export default withRebass(Switch)
 

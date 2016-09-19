@@ -12,6 +12,7 @@ const Heading = ({
   size,
   big,
   alt,
+  center,
   className,
   theme,
   subComponentStyles,
@@ -41,6 +42,7 @@ const Heading = ({
     fontSize,
     fontWeight: bold,
     lineHeight: 1.25,
+    textAlign: center ? 'center' : null,
     margin: 0,
     ...style,
     // This doesn't seem good...
@@ -63,7 +65,9 @@ Heading.propTypes = {
   /** Visual size of heading */
   size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
   /** Applies alternate styling - useful for slugs and subheadings */
-  alt: React.PropTypes.bool
+  alt: React.PropTypes.bool,
+  /** Centers text alignment */
+  center: React.PropTypes.bool
 }
 
 Heading.defaultProps = {

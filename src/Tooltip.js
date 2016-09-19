@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Styled tooltip that shows on hover
@@ -10,9 +10,20 @@ import config from './config'
 const Tooltip = ({
   title,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, scale, colors } = { ...config, ...rebass }
+}) => {
+  const {
+    fontSizes,
+    scale,
+    colors,
+    borderRadius
+  } = theme
+
+  const cx = classnames('Tooltip', className)
 
   const css = `
     .Tooltip_box { display: none }
@@ -23,7 +34,8 @@ const Tooltip = ({
     root: {
       position: 'relative',
       display: 'inline-block',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...style
     },
     box: {
       position: 'absolute',
@@ -37,7 +49,9 @@ const Tooltip = ({
       paddingRight: scale[1],
       color: colors.white,
       backgroundColor: colors.black,
-      transform: 'translate(-50%, -8px)'
+      borderRadius,
+      transform: 'translate(-50%, -8px)',
+      ...subComponentStyles.box
     },
     arrow: {
       position: 'absolute',
@@ -45,22 +59,24 @@ const Tooltip = ({
       left: '50%',
       border: '6px solid transparent',
       borderTopColor: colors.black,
-      transform: 'translate(-50%, 0)'
+      transform: 'translate(-50%, 0)',
+      ...subComponentStyles.box
     }
   }
 
   return (
     <span
-      className='Tooltip'
+      className={cx}
       aria-label={title}
       style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
-      <Base {...props}
-        baseStyle={sx.box}
+      <div
+        {...props}
+        style={sx.box}
         className='Tooltip Tooltip_box'>
         {title}
         <div className='Tooltip_arrow' style={sx.arrow} />
-      </Base>
+      </div>
       {children}
     </span>
   )
@@ -72,12 +88,7 @@ Tooltip.propTypes = {
 }
 
 Tooltip.defaultProps = {
-  inverted: true,
-  rounded: true
+  inverted: true
 }
 
-Tooltip.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Tooltip
+export default withRebass(Tooltip)

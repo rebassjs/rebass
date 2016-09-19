@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Table element with simplified props
@@ -10,27 +10,41 @@ import config from './config'
 const Table = ({
   headings,
   data,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, scale, borderColor } = { ...config, ...rebass }
+}) => {
+  const { fontSizes, scale, borderColor } = theme
+
+  const cx = classnames('Table', className)
 
   const sx = {
     root: {
       maxWidth: '100%',
       overflowX: 'scroll',
       marginBottom: scale[2],
-      borderColor
+      borderColor,
+      ...style
     },
     table: {
       fontSize: fontSizes[5],
       lineHeight: 1.25,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      width: '100%'
+      width: '100%',
+      ...subComponentStyles.table
     },
-    thead: {},
-    tbody: {},
-    tr: {},
+    thead: {
+      ...subComponentStyles.thead
+    },
+    tbody: {
+      ...subComponentStyles.tbody
+    },
+    tr: {
+      ...subComponentStyles.tr
+    },
     th: {
       textAlign: 'left',
       verticalAlign: 'bottom',
@@ -38,22 +52,24 @@ const Table = ({
       paddingLeft: 0,
       borderBottomStyle: 'solid',
       borderBottomWidth: 2,
-      borderColor: 'inherit'
+      borderColor: 'inherit',
+      ...subComponentStyles.th
     },
     td: {
       padding: scale[1],
       paddingLeft: 0,
       borderBottomStyle: 'solid',
       borderBottomWidth: 1,
-      borderColor: 'inherit'
+      borderColor: 'inherit',
+      ...subComponentStyles.td
     }
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Table'
-      baseStyle={sx.root}>
+      className={cx}
+      style={sx.root}>
       <table style={sx.table}>
         <thead style={sx.thead}>
           <tr style={sx.tr}>
@@ -77,7 +93,7 @@ const Table = ({
           ))}
         </tbody>
       </table>
-    </Base>
+    </div>
   )
 }
 
@@ -93,9 +109,5 @@ Table.defaultProps = {
   data: []
 }
 
-Table.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Table
+export default withRebass(Table)
 

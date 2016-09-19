@@ -1,10 +1,9 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
 import Text from './Text'
-import config from './config'
 
 /**
  * Textarea form element with label
@@ -16,49 +15,30 @@ const Textarea = ({
   message,
   hideLabel,
   children,
+  className,
   style,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderColor, borderRadius } = theme
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
+  const cx = classnames('Textarea', className, {
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
+  })
 
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null
+      color: invalid ? colors.error : null,
+      ...style
+    },
+    label: {
+      ...subComponentStyles.label
     },
     textarea: {
       fontFamily: 'inherit',
@@ -69,32 +49,35 @@ const Textarea = ({
       padding: scale[1],
       borderWidth: 1,
       borderStyles: 'solid',
-      borderColor
+      borderColor,
+      borderRadius,
+      ...subComponentStyles.textarea
+    },
+    message: {
+      ...subComponentStyles.message
     }
   }
 
-  const cx = classnames('Textarea', {
-    'isInvalid': invalid,
-    'isDisabled': props.disabled,
-    'isReadonly': props.readOnly
-  })
-
   return (
-    <Base
-      {...rootProps}
+    <div
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
+        style={sx.label}
         children={label} />
-      <Base
+      <textarea
         {...props}
-        tagName='textarea'
         name={name}
-        baseStyle={sx.textarea} />
-      {message && <Text small children={message} />}
-    </Base>
+        style={sx.textarea} />
+      {message && (
+        <Text
+          small
+          style={sx.message}
+          children={message} />
+      )}
+    </div>
   )
 }
 
@@ -109,13 +92,5 @@ Textarea.propTypes = {
   hideLabel: React.PropTypes.bool
 }
 
-Textarea.defaultProps = {
-  rounded: true
-}
-
-Textarea.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Textarea
+export default withRebass(Textarea)
 

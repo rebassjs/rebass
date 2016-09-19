@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Styled number display for statistics
@@ -12,13 +12,20 @@ const Stat = ({
   label,
   unit,
   topLabel,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, bold, scale } = { ...config, ...rebass }
+}) => {
+  const { fontSizes, bold, scale } = theme
+
+  const cx = classnames('Stat', className)
 
   const sx = {
     root: {
-      display: 'inline-block'
+      display: 'inline-block',
+      ...style
     },
     value: {
       fontSize: fontSizes[0],
@@ -26,30 +33,33 @@ const Stat = ({
       fontWeight: bold,
       lineHeight: 1,
       marginTop: topLabel ? scale[1] / 2 : null,
-      marginBottom: topLabel ? null : scale[1] / 2
+      marginBottom: topLabel ? null : scale[1] / 2,
+      ...subComponentStyles.value
     },
     unit: {
-      fontSize: fontSizes[3]
+      fontSize: fontSizes[3],
+      ...subComponentStyles.unit
     },
     label: {
       fontSize: fontSizes[6],
       fontWeight: bold,
-      lineHeight: 1
+      lineHeight: 1,
+      ...subComponentStyles.label
     }
   }
 
   return (
-    <Base
+    <div
       {...props}
       className='Stat'
-      baseStyle={sx.root}>
+      style={sx.root}>
       {topLabel && <div style={sx.label}>{label}</div>}
       <div style={sx.value}>
         {value}
         {unit && <span style={sx.unit}>{unit}</span>}
       </div>
       {!topLabel && <div style={sx.label}>{label}</div>}
-    </Base>
+    </div>
   )
 }
 
@@ -67,9 +77,5 @@ Stat.propTypes = {
   topLabel: React.PropTypes.bool
 }
 
-Stat.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Stat
+export default withRebass(Stat)
 
