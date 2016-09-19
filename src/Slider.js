@@ -1,8 +1,8 @@
 
 import React from 'react'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Label from './Label'
-import Base from './Base'
-import config from './config'
 
 /**
  * Stylized range input with label
@@ -14,46 +14,17 @@ const Slider = ({
   fill,
   hideLabel,
   children,
+  className,
   style,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+}) => {
+  const { scale } = theme
 
   const max = props.max || 100
   const min = props.min || 0
   const percent = (props.value - min) / (max - min) * 100
-
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
 
   const css = `
     .Slider_input::-webkit-slider-thumb {
@@ -75,9 +46,15 @@ const Slider = ({
 
   const backgroundImage = fill ? `linear-gradient(90deg, currentcolor, currentcolor ${percent}%, transparent ${percent}%)` : null
 
+  const cx = classnames('Slider', className)
+
   const sx = {
     root: {
-      paddingBottom: scale[2]
+      paddingBottom: scale[2],
+      ...style
+    },
+    label: {
+      ...subComponentStyles.label
     },
     input: {
       boxSizing: 'border-box',
@@ -93,19 +70,20 @@ const Slider = ({
       height: 6,
       borderRadius: 999,
       WebkitAppearance: 'none',
-      appearance: 'none'
+      appearance: 'none',
+      ...subComponentStyles.input
     }
   }
 
   return (
-    <Base
-      {...rootProps}
-      className='Slider'
-      baseStyle={sx.root}>
+    <div
+      className={cx}
+      style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <Label
         htmlFor={name}
         hide={hideLabel}
+        style={sx.label}
         children={label} />
       <input
         {...props}
@@ -113,7 +91,7 @@ const Slider = ({
         name={name}
         className='Slider_input'
         style={sx.input} />
-    </Base>
+    </div>
   )
 }
 
@@ -128,9 +106,5 @@ Slider.propTypes = {
   hideLabel: React.PropTypes.bool
 }
 
-Slider.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Slider
+export default withRebass(Slider)
 

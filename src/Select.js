@@ -1,11 +1,10 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
 import Text from './Text'
 import Arrow from './Arrow'
-import config from './config'
 
 /**
  * Select form control with label
@@ -18,49 +17,27 @@ const Select = ({
   message,
   hideLabel,
   children,
+  className,
   style,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderColor, borderRadius } = theme
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
+  const cx = classnames('Select', className, {
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
+  })
 
   const sx = {
     root: {
       marginBottom: scale[2],
-      color: invalid ? colors.error : null
+      color: invalid ? colors.error : null,
+      ...style
     },
     select: {
       fontFamily: 'inherit',
@@ -77,50 +54,58 @@ const Select = ({
       borderWidth: 1,
       borderStyle: 'solid',
       borderColor: invalid ? colors.error : borderColor,
+      borderRadius,
       MozAppearance: 'none',
-      WebkitAppearance: 'none'
+      WebkitAppearance: 'none',
+      ...subComponentStyles.select
+    },
+    label: {
+      ...subComponentStyles.label
     },
     wrapper: {
-      position: 'relative'
+      position: 'relative',
+      ...subComponentStyles.wrapper
     },
     arrow: {
       position: 'absolute',
       right: 0,
       top: 0,
       margin: scale[3] / 2,
-      transform: 'translate(50%, -50%)'
+      transform: 'translate(50%, -50%)',
+      ...subComponentStyles.arrow
+    },
+    message: {
+      ...subComponentStyles.label
     }
   }
 
-  const cx = classnames('Select', {
-    'isInvalid': invalid,
-    'isDisabled': props.disabled,
-    'isReadonly': props.readOnly
-  })
-
   return (
-    <Base
-      {...rootProps}
+    <div
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
+        style={sx.label}
         children={label} />
       <div style={sx.wrapper}>
-        <Base
+        <select
           {...props}
-          tagName='select'
           name={name}
-          baseStyle={sx.select}>
+          style={sx.select}>
           {options.map((option, i) => (
             <option key={i} {...option} />
           ))}
-        </Base>
+        </select>
         <Arrow style={sx.arrow} />
       </div>
-      {message && <Text small children={message} />}
-    </Base>
+      {message && (
+        <Text
+          small
+          style={sx.message}
+          children={message} />
+      )}
+    </div>
   )
 }
 
@@ -138,13 +123,8 @@ Select.propTypes = {
 }
 
 Select.defaultProps = {
-  options: [],
-  rounded: true
+  options: []
 }
 
-Select.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Select
+export default withRebass(Select)
 

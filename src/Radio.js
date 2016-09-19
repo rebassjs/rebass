@@ -1,9 +1,8 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
-import config from './config'
 
 /**
  * Styled custom radio input with label
@@ -14,55 +13,22 @@ const Radio = ({
   name,
   checked,
   children,
-  backgroundColor,
-  theme,
-  circle,
   inverted,
+  className,
   style,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors } = { ...config, ...rebass }
+}) => {
+  const { scale, colors } = theme
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
-
-  const dotProps = {
-    backgroundColor,
-    theme,
-    circle,
-    inverted
-  }
+  const cx = classnames('Radio', className, {
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
+  })
 
   const sx = {
     root: {
@@ -71,14 +37,17 @@ const Radio = ({
       alignItems: 'center',
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...style
     },
     input: {
       position: 'absolute',
       zIndex: -1,
-      opacity: 0
+      opacity: 0,
+      ...subComponentStyles.input
     },
     dot: {
+      boxSizing: 'border-box',
       width: scale[2],
       height: scale[2],
       marginRight: scale[1],
@@ -86,35 +55,28 @@ const Radio = ({
       borderWidth: 5,
       borderStyle: checked ? 'solid' : null,
       borderColor: checked ? 'currentcolor' : null,
+      borderRadius: 99999,
       opacity: checked ? null : 1 / 4,
-      transition: 'border .1s ease-out'
+      transition: 'border .1s ease-out',
+      ...subComponentStyles.dot
     }
   }
 
-  const cx = classnames('Radio', {
-    'isInvalid': invalid,
-    'isDisabled': props.disabled,
-    'isReadonly': props.readOnly
-  })
-
   return (
-    <Base
-      {...rootProps}
-      tagName={Label}
+    <Label
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <input
         {...props}
         name={name}
         checked={checked}
         type='radio'
         style={sx.input} />
-      <Base
-        {...dotProps}
+      <div
         className='Radio_dot'
-        baseStyle={sx.dot} />
+        style={sx.dot} />
       {label}
-    </Base>
+    </Label>
   )
 }
 
@@ -125,13 +87,5 @@ Radio.propTypes = {
   name: React.PropTypes.string.isRequired
 }
 
-Radio.defaultProps = {
-  circle: true
-}
-
-Radio.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Radio
+export default withRebass(Radio)
 

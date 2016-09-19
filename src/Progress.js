@@ -1,14 +1,21 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Progress element
  */
 
-const Progress = ({ value, ...props }, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+const Progress = ({
+  value,
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale, colors } = theme
 
   const css = `
     .Progress_progress::-webkit-progress-bar {
@@ -22,12 +29,16 @@ const Progress = ({ value, ...props }, { rebass }) => {
     }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
+  const cx = classnames('Progress', className)
+
   const sx = {
     root: {
       marginBottom: scale[2],
       overflow: 'hidden',
+      color: colors.primary,
       backgroundColor: 'rgba(0, 0, 0, .125)',
-      borderRadius: 9999
+      borderRadius: 9999,
+      ...style
     },
     progress: {
       display: 'block',
@@ -36,15 +47,15 @@ const Progress = ({ value, ...props }, { rebass }) => {
       overflow: 'hidden',
       border: 0,
       WebkitAppearance: 'none',
-      appearance: 'none'
+      appearance: 'none',
+      ...subComponentStyles.progress
     }
   }
 
   return (
-    <Base
-      {...props}
-      className='Progress'
-      baseStyle={sx.root}>
+    <div
+      className={cx}
+      style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <progress
         {...props}
@@ -52,7 +63,7 @@ const Progress = ({ value, ...props }, { rebass }) => {
         value={value}
         children={value}
         style={sx.progress} />
-    </Base>
+    </div>
   )
 }
 
@@ -63,12 +74,5 @@ Progress.propTypes = {
   color: React.PropTypes.string
 }
 
-Progress.defaultProps = {
-  color: 'primary'
-}
+export default withRebass(Progress)
 
-Progress.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Progress

@@ -1,30 +1,35 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Section element with vertical padding
  */
 
-const Section = (props, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+const Section = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale } = theme
+
+  const cx = classnames('Section', className)
+
+  const sx = {
+    paddingTop: scale[4],
+    paddingBottom: scale[4]
+  }
 
   return (
-    <Base
+    <section
       {...props}
-      tagName='section'
       className='Section'
-      baseStyle={{
-        paddingTop: scale[4],
-        paddingBottom: scale[4]
-      }} />
+      style={sx} />
   )
 }
 
-Section.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Section
+export default withRebass(Section)
 
