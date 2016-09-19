@@ -40,7 +40,7 @@ const Input = ({
       ...style
     },
     label: {
-      ...subComponentStyles.Label
+      ...subComponentStyles.label
     },
     input: {
       fontFamily: 'inherit',
@@ -61,7 +61,7 @@ const Input = ({
       ...subComponentStyles.input
     },
     text: {
-      ...subComponentStyles.Text
+      ...subComponentStyles.text
     }
   }
 

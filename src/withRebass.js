@@ -6,6 +6,38 @@ import radii from './util/radii'
 import colorStyle from './util/color-style'
 import defaultTheme from './config'
 
+const isObj = o => typeof o === 'object' && o !== null
+
+const getSubComponentStyles = (...args) => {
+  const keys = args.reduce((a, obj) => [ ...a, ...Object.keys(obj)], [])
+    .reduce((a, key) => {
+      const hasObj = args.reduce((acc, b) => {
+        return acc || isObj(b[key])
+      }, false)
+      if (!hasObj) {
+        return a
+      }
+      if (a.indexOf(key) < 0) {
+        a.push(key)
+      }
+      return a
+    }, [])
+
+  return keys
+    .reduce((a, key) => {
+      args.forEach(obj => {
+        if (isObj(obj[key])) {
+          a[key] = {
+            ...a[key],
+            ...obj[key]
+          }
+        }
+      })
+      return a
+    }, {})
+}
+
+
 const withRebass = Comp => {
   class RebassBase extends React.Component {
     render () {
@@ -14,14 +46,6 @@ const withRebass = Comp => {
       const theme = { ...defaultTheme, ...rebass }
       const { scale, colors, borderRadius } = theme
       const themeStyle = theme[Comp.name] || {}
-
-      const subComponentStyles = Object.keys(themeStyle)
-        .reduce((style, key) => {
-          if (themeStyle[key] && typeof themeStyle[key] === 'object') {
-            style[key] = themeStyle[key]
-          }
-          return style
-        }, {})
 
       const margin = createMargin(scale)
       const padding = createPadding(scale)
@@ -38,17 +62,19 @@ const withRebass = Comp => {
         color,
         backgroundColor,
         inverted,
-        style,
+        style = {},
         baseRef = x => x,
         ...props
       } = this.props
+
+      const subComponentStyles = getSubComponentStyles(themeStyle, style)
 
       const sx = {
         boxSizing: 'border-box',
         ...themeStyle,
         // handle gutter prop with negative numbers instead
-        ...margin({ m, mt, mr, mb, ml, mx, my, gutter }, scale),
-        ...padding({ p, pt, pr, pb, pl, px, py }, scale),
+        ...margin({ m, mt, mr, mb, ml, mx, my, gutter }),
+        ...padding({ p, pt, pr, pb, pl, px, py }),
         ...colorStyle({
           theme,
           color,
@@ -60,8 +86,7 @@ const withRebass = Comp => {
           pill,
           circle
         }, borderRadius),
-        // This includes base styles
-        // Consider keeping baseStyle prop
+        // Write tests for this
         ...style
       }
 
