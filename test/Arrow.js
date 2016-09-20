@@ -2,12 +2,12 @@
 import React from 'react'
 import test from 'ava'
 import { shallow } from 'enzyme'
-import { Arrow, config } from '../src'
+import { Arrow, theme } from '../src'
 
 let wrapper
 let inner
 
-const { fontSizes } = config
+const { fontSizes } = theme
 
 test('renders', t => {
   wrapper = shallow(<Arrow />)
@@ -54,9 +54,12 @@ test('context styles override default styles', t => {
 })
 
 test('style props override context styles', t => {
-  wrapper = shallow(<Arrow style={{
-    color: 'tomato'
-  }} />, {
+  wrapper = shallow(
+    <Arrow
+      color='blue'
+      style={{
+      color: 'tomato'
+    }} />, {
     context: {
       rebass: {
         Arros: {

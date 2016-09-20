@@ -4,7 +4,7 @@ import { setScale as createMargin } from 'understyle/dist/margin'
 import { setScale as createPadding } from 'understyle/dist/padding'
 import radii from './util/radii'
 import colorStyle from './util/color-style'
-import defaultTheme from './config'
+import defaultTheme from './theme'
 
 const isObj = o => typeof o === 'object' && o !== null
 
@@ -37,7 +37,6 @@ const getSubComponentStyles = (...args) => {
     }, {})
 }
 
-
 const withRebass = Comp => {
   class RebassBase extends React.Component {
     render () {
@@ -61,9 +60,7 @@ const withRebass = Comp => {
         // theme, // - rename this
         color,
         backgroundColor,
-        inverted,
         style = {},
-        baseRef = x => x,
         ...props
       } = this.props
 
@@ -78,8 +75,7 @@ const withRebass = Comp => {
         ...colorStyle({
           theme,
           color,
-          backgroundColor,
-          inverted
+          backgroundColor
         }, colors, theme),
         ...radii({
           rounded,
@@ -93,7 +89,6 @@ const withRebass = Comp => {
       return (
         <Comp
           {...props}
-          ref={r => baseRef(r)}
           theme={theme}
           subComponentStyles={subComponentStyles}
           style={sx}

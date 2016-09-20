@@ -44,7 +44,6 @@ const Badge = ({
   return (
     <div
       {...props}
-      inverted
       className={cx}
       style={sx} />
   )

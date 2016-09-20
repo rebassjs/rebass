@@ -2,8 +2,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import Base from './Base'
-import config from './config'
 
 /**
  * Stylized blockquote element with citation link

@@ -48,7 +48,7 @@ const Block = ({
 }
 
 Block.propTypes = {
-  /** Border color - can either be a key from the config colors object or any color value */
+  /** Border color - can either be a key from the theme colors object or any color value */
   borderColor: React.PropTypes.string,
   /** Adds a border */
   border: React.PropTypes.bool,

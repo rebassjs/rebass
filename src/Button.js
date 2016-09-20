@@ -61,9 +61,5 @@ Button.propTypes = {
   big: React.PropTypes.bool
 }
 
-Button.defaultProps = {
-  inverted: true
-}
-
 export default withRebass(Button)
 

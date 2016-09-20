@@ -23,8 +23,6 @@ const colors = {
   error: baseColors.red
 }
 
-const inverted = colors.white
-
 const scale = [
   0,
   8,
@@ -55,18 +53,16 @@ const bold = 600
 const borderRadius = 2
 const borderColor = 'rgba(0, 0, 0, .25)'
 
-const config = {
+const theme = {
   scale,
   fontSizes,
   bold,
   monospace,
   zIndex,
   colors,
-  inverted,
   borderRadius,
-  borderColor,
-  pureRender: true
+  borderColor
 }
 
-export default config
+export default theme
 

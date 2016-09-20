@@ -3,7 +3,7 @@ export { default as withRebass } from './withRebass'
 
 export { default as Base } from './Base'
 
-export { default as config } from './config'
+export { default as theme } from './theme'
 export { default as Arrow } from './Arrow'
 export { default as Avatar } from './Avatar'
 export { default as Badge } from './Badge'
@@ -61,6 +61,9 @@ export { default as Text } from './Text'
 export { default as Textarea } from './Textarea'
 export { default as Toolbar } from './Toolbar'
 export { default as Tooltip } from './Tooltip'
+
+// For backwards compatibility
+export { default as config } from './theme'
 
 import * as Rebass from '.'
 export default Rebass

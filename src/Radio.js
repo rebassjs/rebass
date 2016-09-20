@@ -13,7 +13,6 @@ const Radio = ({
   name,
   checked,
   children,
-  inverted,
   className,
   style,
   theme,

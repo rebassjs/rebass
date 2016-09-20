@@ -41,9 +41,5 @@ ButtonOutline.propTypes = {
   big: React.PropTypes.bool
 }
 
-ButtonOutline.defaultProps = {
-  inverted: false
-}
-
 export default withRebass(ButtonOutline)
 

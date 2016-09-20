@@ -2,12 +2,12 @@
 import React from 'react'
 import test from 'ava'
 import { shallow } from 'enzyme'
-import { Heading, config } from '../src'
+import { Heading, theme } from '../src'
 
 let wrapper
 let inner
 
-const { fontSizes } = config
+const { fontSizes } = theme
 
 test('renders', t => {
   wrapper = shallow(<Heading />)

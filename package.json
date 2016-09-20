@@ -14,9 +14,9 @@
     "deploy": "./deploy.sh",
     "_deploy": "gh-pages -d build",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "test:watch": "mocha test --watch --compilers js:babel-register",
-    "test": "standard && mocha test --compilers js:babel-register",
-    "ava": "ava atest -wv"
+    "_test:watch": "mocha _test --watch --compilers js:babel-register",
+    "_test": "standard && mocha _test --compilers js:babel-register",
+    "test": "ava -wv"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"

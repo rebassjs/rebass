@@ -70,7 +70,7 @@ const Progress = ({
 Progress.propTypes = {
   /** Value for progress bar */
   value: React.PropTypes.number,
-  /** Bar color - can either be a key from the config colors object or any color value */
+  /** Bar color - can either be a key from the theme colors object or any color value */
   color: React.PropTypes.string
 }
 

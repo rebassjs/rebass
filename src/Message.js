@@ -36,9 +36,5 @@ const Message = ({
   )
 }
 
-Message.defaultProps = {
-  inverted: true
-}
-
 export default withRebass(Message)
 

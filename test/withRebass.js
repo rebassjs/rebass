@@ -1,17 +1,27 @@
 
+import { jsdom } from 'jsdom'
+
+global.document = jsdom('')
+global.window = document.defaultView
+
 import React from 'react'
 import test from 'ava'
-import { shallow } from 'enzyme'
-import { withRebass, config } from '../src'
+import { shallow, mount } from 'enzyme'
+import { withRebass, theme } from '../src'
 
 let wrapper
 let inner
 const Box = ({
+  style,
   theme,
   subComponentStyles,
   ...props
 }) => {
-  return <div {...props} />
+  const sx = {
+    color: 'green',
+    ...style
+  }
+  return <div {...props} style={sx} />
 }
 const Base = withRebass(Box)
 
@@ -26,7 +36,8 @@ test('passes a style object', t => {
   const { style } = inner.props()
   t.is(typeof style, 'object')
   t.deepEqual(style, {
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    color: 'green'
   })
 })
 
@@ -47,24 +58,24 @@ test('margin props add styles', t => {
   wrapper = shallow(<Base m={1} mb={2} />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  t.is(style.margin, config.scale[1])
-  t.is(style.marginBottom, config.scale[2])
+  t.is(style.margin, theme.scale[1])
+  t.is(style.marginBottom, theme.scale[2])
 })
 
 test('padding props add styles', t => {
   wrapper = shallow(<Base p={1} pb={2} />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  t.is(style.padding, config.scale[1])
-  t.is(style.paddingBottom, config.scale[2])
+  t.is(style.padding, theme.scale[1])
+  t.is(style.paddingBottom, theme.scale[2])
 })
 
 test('color props add styles', t => {
   wrapper = shallow(<Base color='primary' backgroundColor='black' />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  t.is(style.color, config.colors.primary)
-  t.is(style.backgroundColor, config.colors.black)
+  t.is(style.color, theme.colors.primary)
+  t.is(style.backgroundColor, theme.colors.black)
   // to do: theme, inverted behaviors
 })
 
@@ -72,7 +83,7 @@ test('radii props add styles', t => {
   wrapper = shallow(<Base rounded />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  t.is(style.borderRadius, config.borderRadius)
+  t.is(style.borderRadius, theme.borderRadius)
 })
 
 test('context styles are passed to component', t => {
@@ -86,7 +97,59 @@ test('context styles are passed to component', t => {
     }
   })
   inner = wrapper.first().shallow()
+  const { style } = inner.props()
+  t.is(style.color, 'tomato')
+})
+
+test('context styles override default styles', t => {
+  wrapper = shallow(<Base />, {
+    context: {
+      rebass: {
+        Box: {
+          color: 'tomato'
+        }
+      }
+    }
+  })
+  inner = wrapper.first().shallow()
   const { style } = wrapper.props()
   t.is(style.color, 'tomato')
+})
+
+test('prop styles override default and context styles', t => {
+  wrapper = shallow(<Base color='blue' />, {
+    context: {
+      rebass: {
+        Box: {
+          color: 'tomato'
+        }
+      }
+    }
+  })
+  inner = wrapper.first().shallow()
+  const { style } = wrapper.props()
+  t.is(style.color, theme.colors.blue)
+})
+
+test('inline styles override default, context, and prop styles', t => {
+  wrapper = shallow(
+    <Base
+      color='blue'
+      style={{
+        color: 'black'
+      }}
+    />
+    , {
+    context: {
+      rebass: {
+        Box: {
+          color: 'tomato'
+        }
+      }
+    }
+  })
+  inner = wrapper.first().shallow()
+  const { style } = wrapper.props()
+  t.is(style.color, 'black')
 })
 

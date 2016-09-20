@@ -87,8 +87,5 @@ Tooltip.propTypes = {
   title: React.PropTypes.string
 }
 
-Tooltip.defaultProps = {
-  inverted: true
-}
-
 export default withRebass(Tooltip)
+

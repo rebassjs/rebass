@@ -17,6 +17,8 @@ const Input = ({
   hideLabel,
   children,
   autoOff,
+  baseRef = x => x,
+  ref,
   className,
   style,
   theme,
@@ -84,6 +86,7 @@ const Input = ({
       <input
         {...props}
         {...autoProps}
+        ref={r => baseRef(r)}
         type={type}
         name={name}
         style={sx.input} />
