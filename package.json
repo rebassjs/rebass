@@ -5,7 +5,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepublish": "mkdir -p dist && babel src --out-dir dist",
+    "prepublish": "mkdir -p dist && babel src --out-dir dist --ignore __tests__",
     "static": "static-react docs/components/Root.js --props docs/data.js > build/index.html",
     "build": "mkdir -p build && mkdir -p build/demo && npm run static && npm run demo && npm run copy",
     "copy": "cp demo/bundle.js build/demo && cp demo/index.html build/demo",
