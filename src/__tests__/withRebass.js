@@ -2,6 +2,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { withRebass, theme as defaultTheme } from '..'
+import { getSubComponentStyles } from '../withRebass'
 
 const { scale, colors, borderRadius } = defaultTheme
 
@@ -149,3 +150,30 @@ test('inline styles override default, context, and prop styles', () => {
   expect(style.color).toBe('black')
 })
 
+test('getSubcomponentStyles parses out nested objects', () => {
+  const styles = getSubComponentStyles({
+    color: 'tomato',
+    foo: {
+      color: 'blue'
+    }
+  }, {
+    color: 'green',
+    foo: {
+      margin: 16
+    },
+    bar: {
+      color: 'magenta'
+    }
+  }, {
+    color: 'black'
+  })
+  const styleKeys = Object.keys(styles)
+  expect(styleKeys.length).toBe(2)
+  expect(styles.foo).toEqual({
+    color: 'blue',
+    margin: 16
+  })
+  expect(styles.bar).toEqual({
+    color: 'magenta'
+  })
+})

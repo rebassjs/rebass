@@ -3,12 +3,14 @@
  * Utility for extracting color and backgroundColor props from components
  */
 
-function colorStyle (props, colors, context) {
+const colorStyle = colors => props => {
   colors = colors || {}
   const {
     color,
     backgroundColor,
-    theme // to do: rename this
+
+    // to do: rename this
+    theme
   } = props || {}
   const result = {}
 

@@ -13,6 +13,7 @@ const Radio = ({
   name,
   checked,
   children,
+  stacked,
   className,
   style,
   theme,
@@ -34,6 +35,7 @@ const Radio = ({
       position: 'relative',
       display: 'flex',
       alignItems: 'center',
+      flexDirection: stacked ? 'column' : null,
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
       cursor: 'pointer',
@@ -49,7 +51,8 @@ const Radio = ({
       boxSizing: 'border-box',
       width: scale[2],
       height: scale[2],
-      marginRight: scale[1],
+      marginRight: stacked ? null : scale[1],
+      marginBottom: stacked ? scale[1] : null,
       backgroundColor: checked ? colors.white : 'currentcolor',
       borderWidth: 5,
       borderStyle: checked ? 'solid' : null,
@@ -83,7 +86,9 @@ Radio.propTypes = {
   /** Label for form element */
   label: React.PropTypes.string.isRequired,
   /** Name attribute for form element */
-  name: React.PropTypes.string.isRequired
+  name: React.PropTypes.string.isRequired,
+  /** Place label centered under the radio */
+  stacked: React.PropTypes.bool
 }
 
 export default withRebass(Radio)

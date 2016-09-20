@@ -8,7 +8,7 @@ import defaultTheme from './theme'
 
 const isObj = o => typeof o === 'object' && o !== null
 
-const getSubComponentStyles = (...args) => {
+export const getSubComponentStyles = (...args) => {
   const keys = args.reduce((a, obj) => [ ...a, ...Object.keys(obj) ], [])
     .reduce((a, key) => {
       const hasObj = args.reduce((acc, b) => {
@@ -70,19 +70,19 @@ const withRebass = Comp => {
         boxSizing: 'border-box',
         ...themeStyle,
         // handle gutter prop with negative numbers instead
+        // needs an update from understyle
         ...margin({ m, mt, mr, mb, ml, mx, my, gutter }),
         ...padding({ p, pt, pr, pb, pl, px, py }),
-        ...colorStyle({
+        ...colorStyle(colors)({
           theme,
           color,
           backgroundColor
-        }, colors, theme),
-        ...radii({
+        }),
+        ...radii(borderRadius)({
           rounded,
           pill,
           circle
-        }, borderRadius),
-        // Write tests for this
+        }),
         ...style
       }
 
