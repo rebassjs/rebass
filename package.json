@@ -13,14 +13,12 @@
     "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "ava": "ava -vs --fail-fast",
-    "test": "jest"
+    "test": "standard && jest"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
@@ -79,20 +77,14 @@
       "demo/**/*"
     ],
     "globals": [
+      "test",
+      "expect",
       "before",
       "after",
       "beforeEach",
       "afterEach",
-      "context",
-      "describe",
-      "it"
+      "context"
     ]
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   },
   "eslintConfig": {
     "parser": "babel-eslint"
