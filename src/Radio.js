@@ -14,6 +14,7 @@ const Radio = ({
   checked,
   children,
   stacked,
+  baseRef,
   className,
   style,
   theme,
@@ -70,6 +71,7 @@ const Radio = ({
       style={sx.root}>
       <input
         {...props}
+        ref={baseRef}
         name={name}
         checked={checked}
         type='radio'
@@ -88,7 +90,9 @@ Radio.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Place label centered under the radio */
-  stacked: React.PropTypes.bool
+  stacked: React.PropTypes.bool,
+  /** Adds a ref to the input element */
+  baseRef: React.PropTypes.func
 }
 
 export default withRebass(Radio)

@@ -1,7 +1,8 @@
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { Input } from '..'
+import { isDOMComponent } from 'react-addons-test-utils'
 
 let wrapper
 let inner
@@ -56,7 +57,7 @@ test('style props override context styles', () => {
       }} />, {
         context: {
           rebass: {
-            Arros: {
+            Input: {
               color: 'magenta'
             }
           }
@@ -64,5 +65,18 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
+})
+
+test('baseRef returns the input element', () => {
+  let input
+  wrapper = mount(
+    <Input
+      name='t'
+      label='t'
+      baseRef={r => input = r}
+    />
+  )
+  expect(input).toBeDefined()
+  expect(isDOMComponent(input)).toBe(true)
 })
 

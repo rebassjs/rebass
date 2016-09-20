@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import { isDOMComponent } from 'react-addons-test-utils'
 import { Button } from '..'
 
 let wrapper
@@ -62,5 +63,16 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
+})
+
+test('baseRef returns the button element', () => {
+  let button
+  wrapper = mount(
+    <Button
+      baseRef={r => button = r}
+    />
+  )
+  expect(button).toBeDefined()
+  expect(isDOMComponent(button)).toBe(true)
 })
 

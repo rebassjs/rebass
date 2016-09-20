@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import { isDOMComponent } from 'react-addons-test-utils'
 import { Radio, Label } from '..'
 
 let wrapper
@@ -64,5 +65,18 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
+})
+
+test('baseRef returns the input element', () => {
+  let input
+  wrapper = mount(
+    <Radio
+      name='t'
+      label='t'
+      baseRef={r => input = r}
+    />
+  )
+  expect(input).toBeDefined()
+  expect(isDOMComponent(input)).toBe(true)
 })
 

@@ -16,6 +16,7 @@ const Select = ({
   options,
   message,
   hideLabel,
+  baseRef,
   children,
   className,
   style,
@@ -91,6 +92,7 @@ const Select = ({
       <div style={sx.wrapper}>
         <select
           {...props}
+          ref={baseRef}
           name={name}
           style={sx.select}>
           {options.map((option, i) => (
@@ -119,7 +121,9 @@ Select.propTypes = {
   /** Adds a helper or error message below the select */
   message: React.PropTypes.string,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Adds a ref to the select element */
+  baseRef: React.PropTypes.func
 }
 
 Select.defaultProps = {

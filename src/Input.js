@@ -17,7 +17,7 @@ const Input = ({
   hideLabel,
   children,
   autoOff,
-  baseRef = x => x,
+  baseRef,
   ref,
   className,
   style,
@@ -86,7 +86,7 @@ const Input = ({
       <input
         {...props}
         {...autoProps}
-        ref={r => baseRef(r)}
+        ref={baseRef}
         type={type}
         name={name}
         style={sx.input} />
@@ -112,7 +112,9 @@ Input.propTypes = {
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
   /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
-  autoOff: React.PropTypes.bool
+  autoOff: React.PropTypes.bool,
+  /** Adds a ref to the input element */
+  baseRef: React.PropTypes.func
 }
 
 Input.defaultProps = {

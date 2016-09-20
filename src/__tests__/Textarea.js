@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import { isDOMComponent } from 'react-addons-test-utils'
 import { Textarea } from '..'
 
 let wrapper
@@ -64,5 +65,18 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
+})
+
+test('baseRef returns the textarea element', () => {
+  let textarea
+  wrapper = mount(
+    <Textarea
+      name='t'
+      label='t'
+      baseRef={r => textarea = r}
+    />
+  )
+  expect(textarea).toBeDefined()
+  expect(isDOMComponent(textarea)).toBe(true)
 })
 

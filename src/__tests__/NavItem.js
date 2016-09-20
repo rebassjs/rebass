@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import { isDOMComponent } from 'react-addons-test-utils'
 import { NavItem } from '..'
 
 let wrapper
@@ -62,5 +63,16 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
+})
+
+test('baseRef returns the link element', () => {
+  let link
+  wrapper = mount(
+    <NavItem
+      baseRef={r => link = r}
+    />
+  )
+  expect(link).toBeDefined()
+  expect(isDOMComponent(link)).toBe(true)
 })
 

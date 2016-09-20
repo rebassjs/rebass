@@ -14,6 +14,7 @@ const Textarea = ({
   name,
   message,
   hideLabel,
+  baseRef,
   children,
   className,
   style,
@@ -69,6 +70,7 @@ const Textarea = ({
         children={label} />
       <textarea
         {...props}
+        ref={baseRef}
         name={name}
         style={sx.textarea} />
       {message && (
@@ -89,7 +91,9 @@ Textarea.propTypes = {
   /** Adds a helper or error message below the textarea */
   message: React.PropTypes.string,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Adds a ref to the textarea element */
+  baseRef: React.PropTypes.func
 }
 
 export default withRebass(Textarea)

@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import { isDOMComponent } from 'react-addons-test-utils'
 import { Select } from '..'
 
 let wrapper
@@ -64,5 +65,18 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
+})
+
+test('baseRef returns the select element', () => {
+  let select
+  wrapper = mount(
+    <Select
+      name='t'
+      label='t'
+      baseRef={r => select = r}
+    />
+  )
+  expect(select).toBeDefined()
+  expect(isDOMComponent(select)).toBe(true)
 })
 

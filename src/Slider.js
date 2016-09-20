@@ -13,6 +13,7 @@ const Slider = ({
   name,
   fill,
   hideLabel,
+  baseRef,
   children,
   className,
   style,
@@ -87,6 +88,7 @@ const Slider = ({
         children={label} />
       <input
         {...props}
+        ref={baseRef}
         type='range'
         name={name}
         className='Slider_input'
@@ -103,7 +105,9 @@ Slider.propTypes = {
   /** Adds a fill color to the track - requires client-side JavaScript */
   fill: React.PropTypes.bool,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Adds a ref to the input element */
+  baseRef: React.PropTypes.func
 }
 
 export default withRebass(Slider)

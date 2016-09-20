@@ -8,6 +8,7 @@ import withRebass from './withRebass'
  */
 
 const Close = ({
+  baseRef,
   className,
   style,
   theme,
@@ -33,11 +34,17 @@ const Close = ({
   return (
     <button
       {...props}
+      ref={baseRef}
       title='Close'
       className={cx}
       style={sx}
       children='×' />
   )
+}
+
+Close.propTypes = {
+  /** Adds a ref to the button element */
+  baseRef: React.PropTypes.func
 }
 
 export default withRebass(Close)

@@ -10,6 +10,7 @@ import withRebass from './withRebass'
 const Button = ({
   href,
   big,
+  baseRef,
   style,
   className,
   theme,
@@ -48,6 +49,7 @@ const Button = ({
   return (
     <Comp
       {...props}
+      ref={baseRef}
       href={href}
       className={cx}
       style={sx} />
@@ -58,7 +60,9 @@ Button.propTypes = {
   /** Pass an href prop to make the Button an <a> tag instead of a <button> */
   href: React.PropTypes.string,
   /** Creates a larger button */
-  big: React.PropTypes.bool
+  big: React.PropTypes.bool,
+  /** Adds a ref to the button element */
+  baseRef: React.PropTypes.func
 }
 
 export default withRebass(Button)

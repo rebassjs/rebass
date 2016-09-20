@@ -10,6 +10,7 @@ import withRebass from './withRebass'
 const NavItem = ({
   small,
   active,
+  baseRef,
   className,
   style,
   theme,
@@ -43,6 +44,7 @@ const NavItem = ({
   return (
     <a
       {...props}
+      ref={baseRef}
       className={cx}
       style={sx} />
   )
@@ -52,7 +54,9 @@ NavItem.propTypes = {
   /** Sets active styles */
   active: React.PropTypes.bool,
   /** Sets a smaller font size for compact UI */
-  small: React.PropTypes.bool
+  small: React.PropTypes.bool,
+  /** Adds a ref to the link element */
+  baseRef: React.PropTypes.func
 }
 
 export default withRebass(NavItem)
