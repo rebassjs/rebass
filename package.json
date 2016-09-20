@@ -13,7 +13,7 @@
     "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "test": "ava"
+    "test": "ava -vs --fail-fast"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
