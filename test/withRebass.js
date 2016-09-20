@@ -1,9 +1,4 @@
 
-import { jsdom } from 'jsdom'
-
-global.document = jsdom('')
-global.window = document.defaultView
-
 import React from 'react'
 import test from 'ava'
 import { shallow, mount } from 'enzyme'

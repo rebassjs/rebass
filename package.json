@@ -12,10 +12,7 @@
     "demo": "webpack -p --progress --colors --config demo/webpack.config.js",
     "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
-    "_deploy": "gh-pages -d build",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "_test:watch": "mocha _test --watch --compilers js:babel-register",
-    "_test": "standard && mocha _test --compilers js:babel-register",
     "test": "ava"
   },
   "peerDependencies": {
@@ -32,14 +29,9 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
     "enzyme": "^2.4.1",
-    "expect": "^1.14.0",
     "gh-pages": "^0.11.0",
-    "gx": "^1.0.0-rc3",
-    "jsdom": "^9.5.0",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
-    "mocha": "^3.0.2",
-    "mocha-jsdom": "^1.1.0",
     "object-assign": "^4.1.0",
     "onchange": "^3.0.2",
     "react": "^15.3.1",
@@ -58,8 +50,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
-    "object-assign": "^4.0.1",
-    "react-addons-pure-render-mixin": "^15.3.1",
     "understyle": "^1.2.0"
   },
   "keywords": [
