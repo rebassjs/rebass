@@ -13,7 +13,8 @@
     "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "test": "ava -vs --fail-fast"
+    "ava": "ava -vs --fail-fast",
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
@@ -30,6 +31,7 @@
     "babel-register": "^6.14.0",
     "enzyme": "^2.4.1",
     "gh-pages": "^0.11.0",
+    "jest": "^15.1.1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
     "object-assign": "^4.1.0",
