@@ -1,12 +1,10 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { ButtonCircle, Button, theme } from '../src'
+import { ButtonCircle, Button } from '..'
 
 let wrapper
 let inner
-
-const { fontSizes } = theme
 
 test('renders', () => {
   wrapper = shallow(<ButtonCircle />)
@@ -52,16 +50,16 @@ test('style props override context styles', () => {
     <ButtonCircle
       color='blue'
       style={{
-      color: 'tomato'
-    }} />, {
-    context: {
-      rebass: {
-        Arros: {
-          color: 'magenta'
+        color: 'tomato'
+      }} />, {
+        context: {
+          rebass: {
+            Arros: {
+              color: 'magenta'
+            }
+          }
         }
-      }
-    }
-  })
+      })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })

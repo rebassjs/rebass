@@ -59,7 +59,7 @@ Block.propTypes = {
   /** Adds a border to the bottom side */
   borderBottom: React.PropTypes.bool,
   /** Adds a border to the left side */
-  borderLeft: React.PropTypes.bool,
+  borderLeft: React.PropTypes.bool
 }
 
 export default withRebass(Block)

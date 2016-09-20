@@ -1,12 +1,10 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Section, theme } from '../src'
+import { Section } from '..'
 
 let wrapper
 let inner
-
-const { fontSizes } = theme
 
 test('renders', () => {
   wrapper = shallow(<Section />)
@@ -52,16 +50,16 @@ test('style props override context styles', () => {
     <Section
       color='blue'
       style={{
-      color: 'tomato'
-    }} />, {
-    context: {
-      rebass: {
-        Arros: {
-          color: 'magenta'
+        color: 'tomato'
+      }} />, {
+        context: {
+          rebass: {
+            Arros: {
+              color: 'magenta'
+            }
+          }
         }
-      }
-    }
-  })
+      })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })

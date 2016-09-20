@@ -1,12 +1,10 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { DotIndicator, theme } from '../src'
+import { DotIndicator } from '..'
 
 let wrapper
 let inner
-
-const { fontSizes } = theme
 
 test('renders', () => {
   wrapper = shallow(<DotIndicator />)
@@ -52,16 +50,16 @@ test('style props override context styles', () => {
     <DotIndicator
       color='blue'
       style={{
-      color: 'tomato'
-    }} />, {
-    context: {
-      rebass: {
-        Arros: {
-          color: 'magenta'
+        color: 'tomato'
+      }} />, {
+        context: {
+          rebass: {
+            Arros: {
+              color: 'magenta'
+            }
+          }
         }
-      }
-    }
-  })
+      })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })

@@ -49,7 +49,7 @@ const Checkbox = ({
       height: scale[2],
       marginRight: scale[1],
       backgroundColor: checked ? 'currentcolor' : 'transparent',
-      backgroundColor: checked ? (style.backgroundColor || 'currentcolor') : 'transparent',
+      // backgroundColor: checked ? (style.backgroundColor || 'currentcolor') : 'transparent',
 
       borderRadius,
       borderStyle: 'solid',

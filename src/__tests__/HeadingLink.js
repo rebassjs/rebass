@@ -1,12 +1,10 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { HeadingLink, Heading, theme } from '../src'
+import { HeadingLink, Heading } from '..'
 
 let wrapper
 let inner
-
-const { fontSizes } = theme
 
 test('renders', () => {
   wrapper = shallow(<HeadingLink />)
@@ -52,16 +50,16 @@ test('style props override context styles', () => {
     <HeadingLink
       color='blue'
       style={{
-      color: 'tomato'
-    }} />, {
-    context: {
-      rebass: {
-        Arros: {
-          color: 'magenta'
+        color: 'tomato'
+      }} />, {
+        context: {
+          rebass: {
+            Arros: {
+              color: 'magenta'
+            }
+          }
         }
-      }
-    }
-  })
+      })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })

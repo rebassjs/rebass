@@ -13,6 +13,7 @@
     "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
+    "fix": "standard --fix",
     "test": "standard && jest"
   },
   "peerDependencies": {

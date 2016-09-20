@@ -1,7 +1,9 @@
 
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { withRebass, theme } from '../src'
+import { shallow } from 'enzyme'
+import { withRebass, theme as defaultTheme } from '..'
+
+const { scale, colors, borderRadius } = defaultTheme
 
 let wrapper
 let inner
@@ -52,24 +54,24 @@ test('margin props add styles', () => {
   wrapper = shallow(<Base m={1} mb={2} />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  expect(style.margin).toBe(theme.scale[1])
-  expect(style.marginBottom).toBe(theme.scale[2])
+  expect(style.margin).toBe(scale[1])
+  expect(style.marginBottom).toBe(scale[2])
 })
 
 test('padding props add styles', () => {
   wrapper = shallow(<Base p={1} pb={2} />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  expect(style.padding).toBe(theme.scale[1])
-  expect(style.paddingBottom).toBe(theme.scale[2])
+  expect(style.padding).toBe(scale[1])
+  expect(style.paddingBottom).toBe(scale[2])
 })
 
 test('color props add styles', () => {
   wrapper = shallow(<Base color='primary' backgroundColor='black' />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  expect(style.color).toBe(theme.colors.primary)
-  expect(style.backgroundColor).toBe(theme.colors.black)
+  expect(style.color).toBe(colors.primary)
+  expect(style.backgroundColor).toBe(colors.black)
   // to do: theme, inverted behaviors
 })
 
@@ -77,7 +79,7 @@ test('radii props add styles', () => {
   wrapper = shallow(<Base rounded />)
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  expect(style.borderRadius).toBe(theme.borderRadius)
+  expect(style.borderRadius).toBe(borderRadius)
 })
 
 test('context styles are passed to component', () => {
@@ -122,7 +124,7 @@ test('prop styles override default and context styles', () => {
   })
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
-  expect(style.color).toBe(theme.colors.blue)
+  expect(style.color).toBe(colors.blue)
 })
 
 test('inline styles override default, context, and prop styles', () => {
@@ -134,14 +136,14 @@ test('inline styles override default, context, and prop styles', () => {
       }}
     />
     , {
-    context: {
-      rebass: {
-        Box: {
-          color: 'tomato'
+      context: {
+        rebass: {
+          Box: {
+            color: 'tomato'
+          }
         }
       }
-    }
-  })
+    })
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
   expect(style.color).toBe('black')

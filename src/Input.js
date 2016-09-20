@@ -112,7 +112,7 @@ Input.propTypes = {
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
   /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
-  autoOff: React.PropTypes.bool,
+  autoOff: React.PropTypes.bool
 }
 
 Input.defaultProps = {

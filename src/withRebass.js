@@ -9,7 +9,7 @@ import defaultTheme from './theme'
 const isObj = o => typeof o === 'object' && o !== null
 
 const getSubComponentStyles = (...args) => {
-  const keys = args.reduce((a, obj) => [ ...a, ...Object.keys(obj)], [])
+  const keys = args.reduce((a, obj) => [ ...a, ...Object.keys(obj) ], [])
     .reduce((a, key) => {
       const hasObj = args.reduce((acc, b) => {
         return acc || isObj(b[key])

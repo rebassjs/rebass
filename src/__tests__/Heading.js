@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Heading, theme } from '../src'
+import { Heading, theme } from '..'
 
 let wrapper
 let inner

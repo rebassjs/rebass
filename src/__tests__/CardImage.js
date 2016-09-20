@@ -1,12 +1,10 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { CardImage, theme } from '../src'
+import { CardImage } from '..'
 
 let wrapper
 let inner
-
-const { fontSizes } = theme
 
 test('renders', () => {
   wrapper = shallow(<CardImage src='' />)
@@ -55,14 +53,14 @@ test('style props override context styles', () => {
         color: 'tomato'
       }}
       src='' />, {
-    context: {
-      rebass: {
-        Arros: {
-          color: 'magenta'
+        context: {
+          rebass: {
+            Arros: {
+              color: 'magenta'
+            }
+          }
         }
-      }
-    }
-  })
+      })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })
