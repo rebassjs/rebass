@@ -51,7 +51,7 @@ const Stat = ({
   return (
     <div
       {...props}
-      className='Stat'
+      className={cx}
       style={sx.root}>
       {topLabel && <div style={sx.label}>{label}</div>}
       <div style={sx.value}>

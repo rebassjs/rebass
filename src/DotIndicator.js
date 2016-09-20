@@ -20,6 +20,8 @@ const DotIndicator = ({
 }) => {
   const { scale } = theme
 
+  const cx = classnames('DotIndicator', className)
+
   const sx = {
     root: {
       display: 'inline-flex',
@@ -62,7 +64,7 @@ const DotIndicator = ({
   return (
     <div
       {...props}
-      className='DotIndicator'
+      className={cx}
       style={sx.root}>
       {dots.map((d) => (
         <button

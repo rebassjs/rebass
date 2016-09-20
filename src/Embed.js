@@ -36,7 +36,7 @@ const Embed = ({
       bottom: 0,
       left: 0,
       border: 0,
-      ...subComponentStyle.children
+      ...subComponentStyles.children
     }
   }
 

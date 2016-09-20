@@ -32,7 +32,7 @@ const Toolbar = ({
   return (
     <div
       {...props}
-      className='Toolbar'
+      className={cx}
       style={sx} />
   )
 }

@@ -22,6 +22,8 @@ const SectionHeader = ({
 }) => {
   const { scale, borderColor } = theme
 
+  const cx = classnames('SectionHeader', className)
+
   const sx = {
     root: {
       display: 'flex',
@@ -51,7 +53,7 @@ const SectionHeader = ({
   return (
     <header
       {...props}
-      className='SectionHeader'
+      className={cx}
       style={sx.root}>
       <div style={sx.inner}>
         <HeadingLink

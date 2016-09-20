@@ -16,7 +16,7 @@
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "_test:watch": "mocha _test --watch --compilers js:babel-register",
     "_test": "standard && mocha _test --compilers js:babel-register",
-    "test": "ava -wv"
+    "test": "ava"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"

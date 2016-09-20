@@ -118,7 +118,7 @@ const Donut = ({
   return (
     <div
       {...props}
-      className='Donut'
+      className={cx}
       style={sx.root}>
       <svg
         viewBox={viewBox}

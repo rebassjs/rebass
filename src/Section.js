@@ -20,13 +20,14 @@ const Section = ({
 
   const sx = {
     paddingTop: scale[4],
-    paddingBottom: scale[4]
+    paddingBottom: scale[4],
+    ...style
   }
 
   return (
     <section
       {...props}
-      className='Section'
+      className={cx}
       style={sx} />
   )
 }

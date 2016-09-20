@@ -19,6 +19,8 @@ const ButtonCircle = ({
 }) => {
   const { scale } = theme
 
+  const cx = classnames('ButtonCircle', className)
+
   const sx = {
     root: {
       fontSize: 'inherit',
@@ -40,7 +42,7 @@ const ButtonCircle = ({
   return (
     <Button
       {...props}
-      className='ButtonCircle'
+      className={cx}
       style={sx.root}>
       <div style={sx.inner}>
         {children}

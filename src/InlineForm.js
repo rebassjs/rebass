@@ -46,7 +46,7 @@ const InlineForm = ({
     <form
       {...props}
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <Input
         name={name}
         label={label}
