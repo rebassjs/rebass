@@ -5,6 +5,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
+    "yuidoc": "yuidoc -p src",
     "prepublish": "mkdir -p dist && babel src --out-dir dist --ignore __tests__",
     "static": "static-react docs/components/Root.js --props docs/data.js > build/index.html",
     "build": "mkdir -p build && mkdir -p build/demo && npm run static && npm run demo && npm run copy",
@@ -34,6 +35,7 @@
     "jest": "^15.1.1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
+    "jsx-to-string": "^0.2.16",
     "object-assign": "^4.1.0",
     "onchange": "^3.0.2",
     "react": "^15.3.1",
@@ -48,7 +50,8 @@
     "standard": "^8.0.0",
     "static-react": "^3.1.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.1"
+    "webpack-dev-server": "^1.15.1",
+    "yuidocjs": "^0.10.2"
   },
   "dependencies": {
     "classnames": "^2.2.3",

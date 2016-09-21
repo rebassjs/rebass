@@ -24,7 +24,7 @@ const metadata = {
     ]
   },
   Badge: {
-    description: 'Component for displaying small status indicators ,
+    description: 'Component for displaying small status indicators ',
     props: []
   },
   Banner: {

@@ -3,7 +3,12 @@ import React from 'react'
 import withRebass from './withRebass'
 import classnames from 'classnames'
 
-/** Arrow for use in dropdowns and other UI elements */
+/**
+ * Arrow for use in dropdowns and other UI elements
+ *
+ * @method Arrow
+ * @param {String} direction Arrow direction, either 'up' or 'down'
+ */
 
 const Arrow = ({
   direction,

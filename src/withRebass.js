@@ -103,6 +103,8 @@ const withRebass = Comp => {
     rebass: React.PropTypes.object
   }
 
+  RebassBase.displayName = Comp.name
+
   return RebassBase
 }
 

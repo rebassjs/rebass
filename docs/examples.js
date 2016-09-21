@@ -8,6 +8,7 @@ import {
   Avatar,
   Badge,
   Banner,
+  Base,
   Block,
   Blockquote,
   Breadcrumbs,
@@ -296,6 +297,9 @@ const examples = {
       <Close />
     </Message>
   ),
+  NavItem: (
+    <NavItem href='#NavItem'>NavItem</NavItem>
+  ),
   Overlay: (
     <a href='demo'>See demo</a>
   ),
@@ -311,6 +315,16 @@ const examples = {
         Panels are great for visually separating UI, content, or data from the rest of the page.
       </Text>
       <PanelFooter children='The footer is a good place for less important information' />
+    </Panel>
+  ),
+  PanelFooter: (
+    <Panel theme='info'>
+      <PanelFooter children='The footer is a good place for less important information' />
+    </Panel>
+  ),
+  PanelHeader: (
+    <Panel theme='info'>
+      <PanelHeader children='Panel' />
     </Panel>
   ),
   Pre: (
@@ -440,6 +454,9 @@ const examples = {
     <Tooltip title='Hello!'>
       <Heading level={3}>Tooltip</Heading>
     </Tooltip>
+  ),
+  Base: (
+    <Base p={2} mb={4}>Base</Base>
   )
 }
 

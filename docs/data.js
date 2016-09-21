@@ -2,32 +2,46 @@
 import fs from 'fs'
 import path from 'path'
 import React from 'react'
+import jsxToString from 'jsx-to-string'
 import pkg from '../package.json'
 import examples from './examples'
+import metadata from './metadata'
+
+// Keep an eye on
+// https://github.com/reactjs/react-docgen/pull/124
+// for HOC support
 
 const files = fs.readdirSync(path.join(__dirname, '../src'))
   .filter(f => /\.js$/.test(f))
 
-let base
-
 const components = files
+  .filter(f => !/index|theme|withRebass/.test(f))
   .map(filename => {
     const raw = fs.readFileSync(path.join(__dirname, `../src/${filename}`), 'utf8')
     const Component = require('../src/' + filename).default
     const name = filename.replace(/\.js$/, '')
 
     // [ ] Replace react-docgen
+    // Manual entry?
 
     Component.displayName = name
 
     const example = examples[name] || null
+    let code
+    try {
+      code = jsxToString(example)
+    } catch (e) {
+      console.error('Could not parse', name)
+    }
 
     return {
       name,
       filename,
-      Component,
+      // Component,
       example,
-      raw
+      code,
+      raw,
+      ...metadata[name]
     }
   })
   .filter(c => c)
@@ -37,7 +51,6 @@ const ga = '(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||fun
 module.exports = {
   ...pkg,
   components,
-  base,
   examples,
   ga
 }
