@@ -69,7 +69,7 @@ test('baseRef returns the button element', () => {
   let button
   wrapper = mount(
     <ButtonCircle
-      baseRef={r => button = r}
+      baseRef={r => { button = r }}
     />
   )
   expect(button).toBeDefined()

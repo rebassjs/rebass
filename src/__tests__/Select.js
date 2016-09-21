@@ -73,7 +73,7 @@ test('baseRef returns the select element', () => {
     <Select
       name='t'
       label='t'
-      baseRef={r => select = r}
+      baseRef={r => { select = r }}
     />
   )
   expect(select).toBeDefined()

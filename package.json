@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
-    "understyle": "^1.2.0"
+    "understyle": "^1.3.0"
   },
   "keywords": [
     "components",

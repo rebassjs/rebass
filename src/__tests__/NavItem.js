@@ -69,7 +69,7 @@ test('baseRef returns the link element', () => {
   let link
   wrapper = mount(
     <NavItem
-      baseRef={r => link = r}
+      baseRef={r => { link = r }}
     />
   )
   expect(link).toBeDefined()

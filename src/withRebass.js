@@ -48,15 +48,17 @@ const withRebass = Comp => {
 
       const margin = createMargin(scale)
       const padding = createPadding(scale)
+      const radiusStyles = radii(borderRadius)
+      const colorStyles = colorStyle(colors)
 
       // extract common style props
       const {
         p, pt, pr, pb, pl, px, py,
         m, mt, mr, mb, ml, mx, my,
-        gutter,
         rounded,
         pill,
         circle,
+
         // theme, // - rename this
         color,
         backgroundColor,
@@ -71,14 +73,14 @@ const withRebass = Comp => {
         ...themeStyle,
         // handle gutter prop with negative numbers instead
         // needs an update from understyle
-        ...margin({ m, mt, mr, mb, ml, mx, my, gutter }),
+        ...margin({ m, mt, mr, mb, ml, mx, my }),
         ...padding({ p, pt, pr, pb, pl, px, py }),
-        ...colorStyle(colors)({
+        ...colorStyles({
           theme,
           color,
           backgroundColor
         }),
-        ...radii(borderRadius)({
+        ...radiusStyles({
           rounded,
           pill,
           circle

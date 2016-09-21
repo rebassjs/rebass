@@ -73,7 +73,7 @@ test('baseRef returns the input element', () => {
     <Checkbox
       name='t'
       label='t'
-      baseRef={r => input = r}
+      baseRef={r => { input = r }}
     />
   )
   expect(input).toBeDefined()

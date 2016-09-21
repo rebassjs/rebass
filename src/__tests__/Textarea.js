@@ -73,7 +73,7 @@ test('baseRef returns the textarea element', () => {
     <Textarea
       name='t'
       label='t'
-      baseRef={r => textarea = r}
+      baseRef={r => { textarea = r }}
     />
   )
   expect(textarea).toBeDefined()
