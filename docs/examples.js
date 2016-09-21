@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Icon from 'react-geomicons'
-import { Flex, Box } from 'reflexbox'
+import { Flex } from 'reflexbox'
 
 import {
   Arrow,
@@ -57,8 +57,7 @@ import {
   Text,
   Textarea,
   Toolbar,
-  Tooltip,
-  Base
+  Tooltip
 } from '../src'
 
 const examples = {
@@ -441,15 +440,6 @@ const examples = {
     <Tooltip title='Hello!'>
       <Heading level={3}>Tooltip</Heading>
     </Tooltip>
-  ),
-  Base: (
-    <Base
-      p={2}
-      mb={3}
-      color='blue'
-      backgroundColor='black'
-      rounded
-      children='Base' />
   )
 }
 
