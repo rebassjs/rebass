@@ -13,6 +13,7 @@
     "demo": "webpack -p --progress --colors --config demo/webpack.config.js",
     "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
+    "start": "npm run static",
     "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
     "fix": "standard --fix",
     "test": "standard && jest"

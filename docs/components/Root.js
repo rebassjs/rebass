@@ -2,6 +2,13 @@
 import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import {
+  // for testing...
+  BoxShadow,
+  Group,
+  Input,
+  Button,
+  ButtonOutline,
+
   theme,
 } from '../../src'
 
@@ -56,6 +63,20 @@ class Root extends React.Component {
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </head>
         <body>
+          <div>
+            <BoxShadow p={4}>
+              BoxShadow
+            </BoxShadow>
+            <Group>
+              <Input
+                name='test'
+                label='test'
+              />
+              <Button children='Group' />
+              <Button children='Group' />
+              <ButtonOutline children='Group' />
+            </Group>
+          </div>
           <pre>{description} v{version}</pre>
           {components.map((c, i) => (
             <pre key={i}>{JSON.stringify(c, null, 2)}</pre>

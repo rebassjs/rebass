@@ -52,6 +52,7 @@ const zIndex = [
 const bold = 600
 const borderRadius = 2
 const borderColor = 'rgba(0, 0, 0, .25)'
+const boxShadow = '0 2px 16px rgba(0, 0, 0, .125)'
 
 const theme = {
   scale,
@@ -61,7 +62,8 @@ const theme = {
   zIndex,
   colors,
   borderRadius,
-  borderColor
+  borderColor,
+  boxShadow
 }
 
 export default theme

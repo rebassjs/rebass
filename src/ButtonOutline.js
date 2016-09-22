@@ -9,6 +9,8 @@ import Button from './Button'
  */
 
 const ButtonOutline = ({
+  // to do: active (filled) style
+  active,
   className,
   style,
   theme,

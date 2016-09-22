@@ -58,7 +58,7 @@ test('style props override context styles', () => {
       }} />, {
         context: {
           rebass: {
-            Arros: {
+            Avatar: {
               color: 'magenta'
             }
           }

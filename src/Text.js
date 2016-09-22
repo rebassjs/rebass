@@ -8,6 +8,8 @@ import withRebass from './withRebass'
  */
 
 const Text = ({
+  // to do: Heading-like size prop
+  size,
   small,
   center,
   bold,
@@ -17,13 +19,13 @@ const Text = ({
   subComponentStyles,
   ...props
 }) => {
-  const { fontSizes, bold: b } = theme
+  const { fontSizes } = theme
 
   const cx = classnames('Text', className)
 
   const sx = {
     fontSize: small ? fontSizes[6] : fontSizes[4],
-    fontWeight: bold ? b : null,
+    fontWeight: bold ? theme.bold : null,
     textAlign: center ? 'center' : null,
     margin: 0,
     ...style

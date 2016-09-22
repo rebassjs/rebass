@@ -1,42 +1,47 @@
 
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { isDOMComponent } from 'react-addons-test-utils'
-import { Select } from '..'
+import { shallow } from 'enzyme'
+import { BoxShadow } from '..'
 
 let wrapper
 let inner
 
 test('renders', () => {
-  wrapper = shallow(<Select name='t' label='t' />)
-  inner = wrapper.first().shallow()
+  expect(() => {
+    wrapper = shallow(<BoxShadow />)
+    inner = wrapper.first().shallow()
+  }).not.toThrow()
 })
 
-test('is a div', () => {
+test('defaults to div', () => {
   expect(inner.is('div')).toBe(true)
 })
 
 test('has a className', () => {
-  expect(inner.props().className).toBe('Select')
+  expect(inner.props().className).toBe('BoxShadow')
+})
+
+test('has a default box shadow', () => {
+  expect(typeof inner.props().style.boxShadow).toBe('string')
 })
 
 test('accepts custom className props', () => {
-  wrapper = shallow(<Select name='t' label='t' className='foo' />)
+  wrapper = shallow(<BoxShadow className='foo' />)
   inner = wrapper.first().shallow()
-  expect(inner.props().className).toBe('Select foo')
+  expect(inner.props().className).toBe('BoxShadow foo')
 })
 
 test('accepts custom styles', () => {
-  wrapper = shallow(<Select name='t' label='t' style={{ color: 'tomato' }} />)
+  wrapper = shallow(<BoxShadow style={{ color: 'tomato' }} />)
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })
 
 test('context styles override default styles', () => {
-  wrapper = shallow(<Select name='t' label='t' />, {
+  wrapper = shallow(<BoxShadow />, {
     context: {
       rebass: {
-        Select: {
+        BoxShadow: {
           marginLeft: 0
         }
       }
@@ -48,16 +53,14 @@ test('context styles override default styles', () => {
 
 test('style props override context styles', () => {
   wrapper = shallow(
-    <Select
-      name='t'
-      label='t'
+    <BoxShadow
       color='blue'
       style={{
         color: 'tomato'
       }} />, {
         context: {
           rebass: {
-            Select: {
+            BoxShadow: {
               color: 'magenta'
             }
           }
@@ -65,18 +68,5 @@ test('style props override context styles', () => {
       })
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
-})
-
-test('baseRef returns the select element', () => {
-  let select
-  wrapper = mount(
-    <Select
-      name='t'
-      label='t'
-      baseRef={r => { select = r }}
-    />
-  )
-  expect(select).toBeDefined()
-  expect(isDOMComponent(select)).toBe(true)
 })
 

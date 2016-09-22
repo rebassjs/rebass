@@ -11,6 +11,7 @@ import {
   Base,
   Block,
   Blockquote,
+  BoxShadow,
   Breadcrumbs,
   Button,
   ButtonCircle,
@@ -108,6 +109,11 @@ const examples = {
       source='Robert Bringhurst'>
       In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years. […] Use the old familiar scale, or use new scales of your own devising, but limit yourself, at first, to a modest set of distinct and related intervals.
     </Blockquote>
+  ),
+  BoxShadow: (
+    <BoxShadow p={3}>
+      <Heading children='BoxShadow' />
+    </BoxShadow>
   ),
   Breadcrumbs: (
     <Breadcrumbs
