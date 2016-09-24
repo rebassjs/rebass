@@ -8,7 +8,6 @@ import withRebass from './withRebass'
  */
 
 const Text = ({
-  // to do: Heading-like size prop
   size,
   small,
   center,
@@ -23,8 +22,9 @@ const Text = ({
 
   const cx = classnames('Text', className)
 
+  size = size || (small ? 6 : 4)
   const sx = {
-    fontSize: small ? fontSizes[6] : fontSizes[4],
+    fontSize: fontSizes[size],
     fontWeight: bold ? theme.bold : null,
     textAlign: center ? 'center' : null,
     margin: 0,

@@ -34,10 +34,10 @@ import { Button, Badge } from 'rebass'
 class App extends React.Component {
   render () {
     return (
-      <App>
+      <div>
         <Button>Button</Button>
         <Badge>Badge</Badge>
-      </App>
+      </div>
     )
   }
 }

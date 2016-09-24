@@ -11,6 +11,7 @@ const NavItem = ({
   small,
   active,
   baseRef,
+  is,
   className,
   style,
   theme,
@@ -41,8 +42,10 @@ const NavItem = ({
     ...activeStyle
   }
 
+  const Comp = is || 'a'
+
   return (
-    <a
+    <Comp
       {...props}
       ref={baseRef}
       className={cx}

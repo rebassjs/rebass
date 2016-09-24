@@ -5,20 +5,13 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "yuidoc": "yuidoc -p src",
     "prepublish": "mkdir -p dist && babel src --out-dir dist --ignore __tests__",
-    "static": "static-react docs/components/Root.js --props docs/data.js > build/index.html",
-    "styleguide": "static-react docs/components/StyleGuide.js > build/styleguide.html",
-    "styleguide:watch": "npm run styleguide && onchange 'docs/**/*' -- npm run styleguide",
-    "build": "mkdir -p build && mkdir -p build/demo && npm run static && npm run demo && npm run copy",
-    "copy": "cp demo/bundle.js build/demo && cp demo/index.html build/demo",
-    "demo": "webpack -p --progress --colors --config demo/webpack.config.js",
-    "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
     "deploy": "./deploy.sh",
-    "start": "npm run static",
-    "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
+    "build": "webpack -p",
+    "start": "webpack-dev-server",
     "fix": "standard --fix",
-    "test": "standard && jest"
+    "standard": "standard",
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
@@ -32,6 +25,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
+    "cxs": "^1.0.1",
     "enzyme": "^2.4.1",
     "gh-pages": "^0.11.0",
     "gridsys": "^1.0.0-beta.3",
@@ -48,10 +42,11 @@
     "react-dom": "^15.3.1",
     "react-element-to-jsx-string": "^4.1.0",
     "react-geomicons": "^2.1.0",
-    "react-router": "^2.8.0",
-    "reflexbox": "^2.2.0",
+    "react-router": "^4.0.0-alpha.3",
+    "reflexbox": "^2.2.2",
     "standard": "^8.0.0",
     "static-react": "^3.1.0",
+    "static-site-generator-webpack-plugin": "^3.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1",
     "yuidocjs": "^0.10.2"
@@ -86,12 +81,7 @@
     ],
     "globals": [
       "test",
-      "expect",
-      "before",
-      "after",
-      "beforeEach",
-      "afterEach",
-      "context"
+      "expect"
     ]
   },
   "eslintConfig": {
