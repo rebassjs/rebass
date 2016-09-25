@@ -24,7 +24,7 @@ describe('Block', () => {
   })
 
   it('should not have borders', () => {
-    expect(tree.props.baseStyle.borderStyle).toEqual('none')
+    expect(tree.props.baseStyle.borderStyle).toEqual(undefined)
     expect(tree.props.baseStyle.borderTopStyle).toEqual(undefined)
     expect(tree.props.baseStyle.borderRightStyle).toEqual(undefined)
     expect(tree.props.baseStyle.borderBottomStyle).toEqual(undefined)
@@ -58,7 +58,7 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.baseStyle.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual(undefined)
     })
 
     it('should have a border top', () => {
@@ -73,7 +73,7 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.baseStyle.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual(undefined)
     })
 
     it('should have a border right', () => {
@@ -88,7 +88,7 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.baseStyle.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual(undefined)
     })
 
     it('should have a border bottom', () => {
@@ -103,7 +103,7 @@ describe('Block', () => {
     })
 
     it('should not have a border', () => {
-      expect(tree.props.baseStyle.borderStyle).toEqual('none')
+      expect(tree.props.baseStyle.borderStyle).toEqual(undefined)
     })
 
     it('should have a border left', () => {
