@@ -16,9 +16,11 @@ const Nav = () => {
       children: 'Home'
     },
     {
-      href: '#',
+      is: Link,
+      to: '/components',
       children: 'Components'
     },
+    /*
     {
       href: '#',
       children: 'Themes'
@@ -27,6 +29,7 @@ const Nav = () => {
       href: '#',
       children: 'Demo'
     },
+    */
     {
       href: 'https://github.com/jxnblk/rebass',
       children: 'GitHub'
@@ -54,6 +57,8 @@ const Nav = () => {
         {links.map((link, i) => (
           <NavItem
             {...link}
+            px={0}
+            mr={3}
             key={i}
           />
         ))}

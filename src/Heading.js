@@ -46,7 +46,7 @@ const Heading = ({
     margin: 0,
     ...style,
     // This doesn't seem good...
-    opacity: alt ? 0.5 : null
+    // opacity: alt ? 0.5 : null
   }
 
   return (

@@ -1,13 +1,15 @@
 
 import React from 'react'
-import { Container } from 'gridsys'
+import { Container, Grid } from 'gridsys'
 import BannerHeader from './BannerHeader'
 import Features from './Features'
 import Testimonials from './Testimonials'
 import GettingStarted from './GettingStarted'
 import About from './About'
 import Rule from './Rule'
-import Footer from './Footer'
+import Logo from './Logo'
+
+import TestGrid from './TestGrid'
 
 const Home = (props) => {
   return (
@@ -17,7 +19,6 @@ const Home = (props) => {
       <Testimonials />
       <GettingStarted />
       <About />
-      <Footer />
     </div>
   )
 }

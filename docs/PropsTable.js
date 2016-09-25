@@ -17,6 +17,7 @@ const PropsTable = ({ props, ...other }) => {
       width: '100%'
     },
     th: {
+      width: 160,
       textAlign: 'left',
       padding: '8px 8px 8px 0',
       verticalAlign: 'bottom',

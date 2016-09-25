@@ -71,7 +71,7 @@ class Logo extends React.Component {
       strokeWidth,
       vectorEffect: 'non-scaling-stroke',
       opacity: .5,
-      mixBlendMode: 'screen',
+      mixBlendMode: 'multiply',
     }
 
     const sx = {
@@ -79,7 +79,8 @@ class Logo extends React.Component {
         display: 'inline-block',
         WebkitAnimation: 'color-shift 7s linear 0s infinite',
         animation: 'color-shift 7s linear 0s infinite',
-        color: '#08e'
+        color: '#08e',
+        overflow: 'visible'
       }),
       c1: assign({}, ringStyles, {
         WebkitAnimation: 'rotate1 3s linear 0s infinite',

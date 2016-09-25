@@ -31,8 +31,8 @@ const BannerHeader = () => {
   return (
     <header>
       <Container>
-        <Grid span={12}>
-          <BigHeading>
+        <Grid span={8}>
+          <BigHeading mega>
             Rebass
             {' '}
             <Small>

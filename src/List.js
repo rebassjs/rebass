@@ -3,7 +3,10 @@ import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
 
+/** List component that accepts any child component item types */
+
 const List = ({
+  ordered,
   reset,
   flush,
   className,
@@ -14,6 +17,7 @@ const List = ({
   ...props
 }) => {
   const { space } = theme
+  const Comp = ordered ? 'ol' : 'ul'
   const cx = classnames('List', className)
 
   flush = flush || reset
@@ -22,6 +26,7 @@ const List = ({
   const sx = {
     root: {
       paddingLeft: flush ? 0 : null,
+      margin: 0,
       listStyle: reset ? 'none' : null
     },
     item: {
@@ -37,13 +42,22 @@ const List = ({
   })
 
   return (
-    <ul
+    <Comp
       {...props}
       className={cx}
       style={sx.root}>
       {wrappedChildren}
-    </ul>
+    </Comp>
   )
+}
+
+List.propTypes = {
+  /** Changes the root component to an ordered list */
+  ordered: React.PropTypes.bool,
+  /** Removes padding left to keep text flush-left */
+  flush: React.PropTypes.bool,
+  /** Removes list styling */
+  reset: React.PropTypes.bool
 }
 
 export default withRebass(List)

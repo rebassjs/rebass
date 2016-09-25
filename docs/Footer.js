@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Link } from 'react-router'
-import { Container, Grid } from 'gridsys'
+import { Container, GridGroup, Grid } from 'gridsys'
 import { Heading, NavItem } from '../src'
 import Rule from './Rule'
 
@@ -22,16 +22,14 @@ const Footer = () => {
             children='Home' />
           <NavItem
             px={0}
-            href='#'
+            is={Link}
+            to='/components'
             children='Components' />
           <NavItem
             px={0}
-            href='#'
-            children='Theme' />
-          <NavItem
-            px={0}
-            href='#'
-            children='Demo' />
+            is={Link}
+            to='/styleguide'
+            children='Style Guide' />
           <NavItem
             px={0}
             href='https://github.com/jxnblk/rebass'
@@ -41,10 +39,10 @@ const Footer = () => {
             href='https://npmjs.com/package/rebass'
             children='npm' />
         </Grid>
-        <Grid span={2}>
+        <Grid span={4}>
           <Heading
-            level={4}
             mb={2}
+            level={4}
             children='Related' />
           <NavItem
             px={0}
@@ -76,6 +74,12 @@ const Footer = () => {
             children='React CSS Grid' />
         </Grid>
         <Grid span={12} />
+        <Grid span={12}>
+          <NavItem
+            small
+            href='http://jxnblk.com'
+            children='Made by Jxnblk' />
+        </Grid>
       </Container>
     </footer>
   )

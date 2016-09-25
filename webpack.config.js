@@ -11,7 +11,7 @@ const paths = [
 module.exports = {
   devtool: 'cheap-source-map',
   entry: {
-    main: './docs/entry.js',
+    main: './docs/entry.js'
   },
 
   output: {
@@ -24,7 +24,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         loaders: [
           'babel'
         ]

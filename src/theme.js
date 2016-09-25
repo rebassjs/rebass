@@ -1,11 +1,4 @@
 
-//
-////
-// blue #006dfc
-// orange #fc8f00
-// red #fc2800
-// green #00fc11
-
 const monospace = '"Roboto Mono", Menlo, Consolas, monospace'
 
 const baseColors = {
@@ -13,17 +6,10 @@ const baseColors = {
   white: '#fff',
   gray: '#ddd',
   midgray: '#888',
-
-  // _blue: '#08e',
-  // _red: '#f52',
-  // _orange: '#f70',
-  // _green: '#1c7',
-
-  blue: '#006dfc',
-  orange: '#fc8f00',
-  red: '#fc2800',
-  // green: '#00fc11',
-  green: '#0abf16'
+  blue: '#008cef',
+  red: '#ef0034',
+  orange: '#ef8f00',
+  green: '#00ef50'
 }
 
 const colors = {

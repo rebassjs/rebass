@@ -10,14 +10,17 @@ import {
 } from 'react-router'
 import Nav from './Nav'
 import Home from './Home'
+import ComponentIndex from './ComponentIndex'
+import ComponentDetail from './ComponentDetail'
 import NotFound from './NotFound'
+import ComponentList from './ComponentList'
+import Footer from './Footer'
 import basename from './basename'
 
-// import ComponentIndex from './ComponentIndex'
-// import CompDetail from './CompDetail'
 // import Demo from './Demo'
-// import StyleGuide from './StyleGuide'
 // import Themes from './Themes'
+
+import StyleGuide from './StyleGuide'
 
 const isClient = typeof document !== 'undefined'
 const isDev = process.env.NODE_ENV !== 'production'
@@ -26,16 +29,18 @@ class App extends React.Component {
   getChildContext () {
     return {
       gridsys: {
-        columnCount: 12,
+        // columnCount: 12,
+        columnCount: 8,
         columnWidth: 224
       },
       rebass: {
         monospace: 'Menlo, Consolas, monospace',
+        borderColor: 'inherit',
         Heading: {
-          fontWeight: 800
+          // fontWeight: 800
         },
         Divider: {
-          borderColor: 'inherit'
+          borderBottomColor: 'inherit'
         },
         Pre: {
           fontSize: 12,
@@ -70,16 +75,19 @@ class App extends React.Component {
               pattern='/'
               exactly
               component={Home} />
-            {/*
             <Match
               exactly
               pattern='/components'
               component={ComponentIndex} />
             <Match
               pattern='/components/:name'
-              component={CompDetail} />
-            */}
+              component={ComponentDetail} />
+            <Match
+              pattern='/styleguide'
+              component={StyleGuide} />
             <Miss component={NotFound} />
+            <ComponentList />
+            <Footer />
           </div>
         </Router>
       </div>

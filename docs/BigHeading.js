@@ -5,23 +5,26 @@ import { Heading } from '../src'
 import breakpoints from './breakpoints'
 
 const BigHeading = ({
+  mega,
   ...props
 }) => {
   const cx = cxs({
-    fontSize: 64,
+    fontSize: mega ? 64 : 32,
+    wordBreak: 'break-word',
     [breakpoints.small]: {
-      fontSize: 96
+      fontSize: mega ? 80 : 64
     },
     [breakpoints.medium]: {
-      fontSize: 96
+      fontSize: mega ? 96 : 80
     },
-    [breakpoints.large]: {
+    [breakpoints.xlarge]: {
       fontSize: 128
     }
   })
 
   const sx = {
-    fontSize: null
+    fontSize: null,
+    fontWeight: 800
   }
 
   return (

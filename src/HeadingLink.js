@@ -12,6 +12,7 @@ const HeadingLink = ({
   level,
   size,
   href,
+  alt,
   style,
   className,
   theme,
@@ -33,6 +34,7 @@ const HeadingLink = ({
 
   return (
     <Heading
+      alt={alt}
       level={level}
       size={size}
       className={cx}
