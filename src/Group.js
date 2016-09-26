@@ -27,6 +27,8 @@ const Group = ({
   }
 
   const children = React.Children.map(props.children, (child, i) => {
+    // to do: get this to work when minified
+    // console.log(child)
     const name = child.type.displayName
     const childProps = {}
 
