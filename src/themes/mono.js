@@ -12,8 +12,11 @@ const mono = {
   color: '#111',
   backgroundColor: '#fff',
 
+  // to do: Tweak this
+  // baselineShift: -1 / 32,
+
   scale: [
-    0, 6, 12, 24, 36, 48
+    0, 8, 16, 32, 64
   ],
 
   fontSizes: [

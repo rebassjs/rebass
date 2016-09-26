@@ -30,6 +30,7 @@ const PanelFooter = ({
     borderTopWidth: 1,
     borderTopStyle: 'solid',
     borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`,
+    ...style.fill,
     ...style
   }
 

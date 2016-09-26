@@ -26,6 +26,7 @@ const Toolbar = ({
     paddingRight: scale[1],
     color: colors.white,
     backgroundColor: colors.black,
+    ...style.fill,
     ...style
   }
 

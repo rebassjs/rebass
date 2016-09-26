@@ -27,9 +27,16 @@ test('accepts custom className props', () => {
 })
 
 test('accepts custom styles', () => {
-  wrapper = shallow(<Checkbox name='t' label='t' style={{ color: 'tomato' }} />)
+  wrapper = shallow(
+    <Checkbox
+      checked
+      name='t'
+      label='t'
+      style={{ color: 'tomato' }} />
+  )
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  const box = inner.find('.Checkbox_box')
+  expect(box.props().style.color).toBe('tomato')
 })
 
 test('context styles override default styles', () => {
@@ -43,6 +50,7 @@ test('context styles override default styles', () => {
     }
   })
   inner = wrapper.first().shallow()
+  const box = inner.find('.Checkbox_box')
   expect(inner.props().style.marginLeft).toBe(0)
 })
 
@@ -52,6 +60,7 @@ test('style props override context styles', () => {
       name='t'
       label='t'
       color='blue'
+      checked
       style={{
         color: 'tomato'
       }} />, {
@@ -64,7 +73,8 @@ test('style props override context styles', () => {
         }
       })
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  const box = inner.find('.Checkbox_box')
+  expect(box.props().style.color).toBe('tomato')
 })
 
 test('baseRef returns the input element', () => {

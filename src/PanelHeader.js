@@ -28,6 +28,7 @@ const PanelHeader = ({
     marginBottom: scale[2],
     padding: scale[2],
     borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
+    ...style.fill,
     ...style
   }
 

@@ -1,6 +1,6 @@
 
 import colorStyle from '../color-style'
-import theme from '../../themes'
+import { theme } from '../..'
 
 const { colors } = theme
 

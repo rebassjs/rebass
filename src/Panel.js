@@ -5,6 +5,8 @@ import withRebass from './withRebass'
 import PanelHeader from './PanelHeader'
 import PanelFooter from './PanelFooter'
 
+import isDark from './util/is-dark'
+
 /**
  * Panel for containing small pieces of information
  */
@@ -21,12 +23,18 @@ const Panel = ({
 
   const cx = classnames('Panel', className)
 
+  const fillStyle = {
+    color: colors.black,
+    backgroundColor: colors.gray,
+    borderColor: colors.gray,
+    ...style.fill
+  }
+
   const {
     color,
     backgroundColor,
-    borderColor,
-    ...rootStyle
-  } = style
+    borderColor
+  } = fillStyle
 
   const sx = {
     padding: scale[2],
@@ -35,22 +43,17 @@ const Panel = ({
     borderStyle: 'solid',
     borderRadius,
     borderColor: borderColor || colors.primary,
-    ...rootStyle
+    ...style
   }
 
   const styledChildren = React.Children.map(children, (child) => {
     if (child.type === PanelHeader) {
       return React.cloneElement(child, {
-        style: {
-          color,
-          backgroundColor,
-          borderColor
-        }
+        style: fillStyle
       })
     } else if (child.type === PanelFooter) {
       return React.cloneElement(child, {
         style: {
-          color: backgroundColor,
           borderColor
         }
       })

@@ -80,13 +80,13 @@ const withRebass = Comp => {
           color,
           backgroundColor
         }),
-        ...(fill ? getColorFill(colors)(fill) : {}),
         ...radiusStyles({
           rounded,
           pill,
           circle
         }),
-        ...style
+        ...style,
+        fill: fill ? getColorFill(colors)(fill) : {}
       }
 
       return (

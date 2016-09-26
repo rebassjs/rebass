@@ -23,22 +23,18 @@ const ButtonOutline = ({
     color = colors.white,
     backgroundColor = colors.primary,
     borderColor,
-    ...rootStyle
-  } = style
+  } = style.fill
 
   const sx = {
     color,
     backgroundColor: backgroundColor || 'transparent',
     boxShadow: `inset 0 0 0 1px ${backgroundColor}`,
     borderRadius,
-    ...(active ? {
-      color,
-      backgroundColor
-    } : {
+    ...(active ? style.fill : {
       color: backgroundColor,
       backgroundColor: 'transparent'
     }),
-    ...rootStyle
+    ...style
   }
 
   return (

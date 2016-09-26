@@ -25,19 +25,6 @@ const Tooltip = ({
 
   const cx = classnames('Tooltip', className)
 
-  // const colorStyles = getColorTheme(colors)(colorTheme, true)
-  const {
-    color,
-    backgroundColor,
-    borderColor,
-    ...rootStyle
-  } = style
-  const colorStyles = {
-    color,
-    backgroundColor,
-    borderColor
-  }
-
   const css = `
     .Tooltip_box { display: none }
     .Tooltip:hover .Tooltip_box { display: block }
@@ -48,7 +35,7 @@ const Tooltip = ({
       position: 'relative',
       display: 'inline-block',
       cursor: 'pointer',
-      ...rootStyle
+      ...style
     },
     box: {
       position: 'absolute',
@@ -62,7 +49,9 @@ const Tooltip = ({
       paddingRight: scale[1],
       borderRadius,
       transform: 'translate(-50%, -8px)',
-      ...colorStyles,
+      color: colors.white,
+      backgroundColor: colors.black,
+      ...style.fill,
       ...subComponentStyles.box
     },
     arrow: {
@@ -70,7 +59,7 @@ const Tooltip = ({
       top: '100%',
       left: '50%',
       border: '6px solid transparent',
-      borderTopColor: backgroundColor,
+      borderTopColor: style.fill.backgroundColor || style.backgroundColor,
       transform: 'translate(-50%, 0)',
       ...subComponentStyles.box
     }
@@ -85,7 +74,7 @@ const Tooltip = ({
       <div
         {...props}
         style={sx.box}
-        className='Tooltip Tooltip_box'>
+        className='Tooltip_box'>
         {title}
         <div className='Tooltip_arrow' style={sx.arrow} />
       </div>

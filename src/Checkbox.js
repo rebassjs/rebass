@@ -28,11 +28,10 @@ const Checkbox = ({
   const invalid = props['aria-invalid'] || props.invalid
 
   const {
-    color,
-    backgroundColor,
-    borderColor,
-    ...rootStyle
-  } = style
+    color = colors.white,
+    backgroundColor = colors.success,
+    borderColor = colors.success
+  } = style.fill
 
   const sx = {
     root: {
@@ -43,7 +42,7 @@ const Checkbox = ({
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
       cursor: 'pointer',
-      ...rootStyle
+      ...style
     },
     input: {
       position: 'absolute',

@@ -61,6 +61,7 @@ const Radio = ({
       borderRadius: 99999,
       opacity: checked ? null : 1 / 4,
       transition: 'border .1s ease-out',
+      color: style.fill.backgroundColor,
       ...subComponentStyles.dot
     }
   }

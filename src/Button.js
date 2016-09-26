@@ -25,6 +25,8 @@ const Button = ({
 
   const cx = classnames('Button', className)
 
+  const fillStyles = style.fill
+
   const sx = {
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
@@ -43,6 +45,7 @@ const Button = ({
     borderRadius,
     color: colors.white,
     backgroundColor: colors.primary,
+    ...fillStyles,
     ...style
   }
 

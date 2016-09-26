@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Icon from 'react-geomicons'
+import Reline, { Chevron, X, Plus, Minus } from 'reline'
 import { Flex, Box } from 'reflexbox'
 
 import {
@@ -142,21 +143,21 @@ const examples = {
       align='center'
       justify='space-between'>
       <ButtonCircle title='Like'>
-        <Icon name='heart' />
+        <Chevron />
       </ButtonCircle>
       <ButtonCircle title='Comment'>
-        <Icon name='chat' />
+        <Reline.Arrow />
       </ButtonCircle>
       <ButtonCircle title='Repost'>
-        <Icon name='repost' />
+        <X />
       </ButtonCircle>
       <ButtonCircle title='Bookmark'>
-        <Icon name='bookmark' />
+        <Plus />
       </ButtonCircle>
       <ButtonCircle title='Tag'>
-        <Icon name='tag' />
+        <Minus />
       </ButtonCircle>
-      <Text small children='Example Icon component from react-geomicons' />
+      <Text small children='Example Icon components from Reline' />
     </Flex>
   ),
   ButtonOutline: (
@@ -208,9 +209,13 @@ const examples = {
         label='Checkbox' />
       <Checkbox
         checked
+        name='checkbox_2'
+        label='Checkbox' />
+      <Checkbox
+        checked
         readOnly
-        fill='success'
-        name='checkbox_1'
+        fill='error'
+        name='checkbox_3'
         label='Checkbox' />
     </div>
   ),
@@ -382,7 +387,7 @@ const examples = {
       description='Description about the page' />
   ),
   Panel: (
-    <Panel fill='info'>
+    <Panel>
       <PanelHeader children='Panel' />
       <Text>
         Panels are great for visually separating UI, content, or data from the rest of the page.

@@ -2,7 +2,7 @@
 const toLongHex = short => {
   if (short.length > 6) return short
 
-  const hex = short.split().map(d => {
+  const hex = short.split('').map(d => {
     if (d === '#') return d
     return d + d
   }).join('')

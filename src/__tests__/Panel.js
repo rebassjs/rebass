@@ -26,9 +26,9 @@ test('accepts custom className props', () => {
 })
 
 test('accepts custom styles', () => {
-  wrapper = shallow(<Panel style={{ color: 'tomato' }} />)
+  wrapper = shallow(<Panel style={{ margin: 12 }} />)
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  expect(inner.props().style.margin).toBe(12)
 })
 
 test('context styles override default styles', () => {
