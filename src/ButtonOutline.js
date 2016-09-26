@@ -3,6 +3,7 @@ import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
 import Button from './Button'
+import getColorTheme from './util/get-color-theme'
 
 /**
  * A general purpose outline style button element with customizable colors
@@ -11,6 +12,7 @@ import Button from './Button'
 const ButtonOutline = ({
   // to do: active (filled) style
   active,
+  colorTheme = 'primary',
   className,
   style,
   theme,
@@ -19,11 +21,16 @@ const ButtonOutline = ({
 }) => {
   const { colors, borderRadius } = theme
   const cx = classnames('ButtonOutline', className)
+  const {
+    color,
+    backgroundColor,
+    borderColor
+  } = getColorTheme(colors)(colorTheme, active)
 
   const sx = {
-    color: colors.primary,
-    backgroundColor: 'transparent',
-    boxShadow: 'inset 0 0 0 1px',
+    color,
+    backgroundColor: backgroundColor || 'transparent',
+    boxShadow: `inset 0 0 0 1px ${borderColor || color}`,
     borderRadius,
     ...style
   }

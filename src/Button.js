@@ -2,6 +2,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
+import getColorTheme from './util/get-color-theme'
 
 /**
  * A general purpose button element with customizable colors
@@ -11,6 +12,7 @@ const Button = ({
   href,
   big,
   baseRef,
+  colorTheme = 'primary',
   style,
   className,
   theme,
@@ -22,6 +24,8 @@ const Button = ({
   const Comp = href ? 'a' : 'button'
 
   const minHeight = scale[3]
+
+  const colorStyles = getColorTheme(colors)(colorTheme, true)
 
   const cx = classnames('Button', className)
 
@@ -39,10 +43,9 @@ const Button = ({
     paddingLeft: scale[2],
     paddingRight: scale[2],
     cursor: 'pointer',
-    color: colors.white,
-    backgroundColor: colors.primary,
     border: 0,
     borderRadius,
+    ...colorStyles,
     ...style
   }
 

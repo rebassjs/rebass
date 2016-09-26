@@ -25,7 +25,7 @@ const Input = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale, colors, borderColor, borderRadius } = theme
+  const { scale, colors, borderColor } = theme
 
   const invalid = props.invalid || props['aria-invalid']
 
@@ -35,11 +35,16 @@ const Input = ({
     'isReadonly': props.readOnly
   })
 
+  const {
+    borderRadius = theme.borderRadius,
+    ...rootStyle
+  } = style
+
   const sx = {
     root: {
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
-      ...style
+      ...rootStyle
     },
     label: {
       ...subComponentStyles.label

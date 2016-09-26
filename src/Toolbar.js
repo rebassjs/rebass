@@ -2,12 +2,14 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
+import getColorTheme from './util/get-color-theme'
 
 /**
  * Toolbar component that vertically centers children with display flex
  */
 
 const Toolbar = ({
+  colorTheme,
   className,
   style,
   theme,
@@ -18,14 +20,15 @@ const Toolbar = ({
 
   const cx = classnames('Toolbar', className)
 
+  const colorStyles = getColorTheme(colors)(colorTheme, true)
+
   const sx = {
     display: 'flex',
     alignItems: 'center',
     minHeight: 48,
     paddingLeft: scale[1],
     paddingRight: scale[1],
-    color: colors.white,
-    backgroundColor: colors.primary,
+    ...colorStyles,
     ...style
   }
 

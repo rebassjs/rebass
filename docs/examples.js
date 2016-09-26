@@ -16,6 +16,7 @@ import {
   ButtonOutline,
   Card,
   CardImage,
+  Carousel,
   Checkbox,
   Close,
   Container,
@@ -27,6 +28,7 @@ import {
   Embed,
   Fixed,
   Footer,
+  Group,
   Heading,
   InlineForm,
   Input,
@@ -50,6 +52,7 @@ import {
   SectionHeader,
   Select,
   SequenceMap,
+  SequenceMapStep,
   Slider,
   Space,
   Stat,
@@ -159,7 +162,8 @@ const examples = {
         rounded={false}
         style={{ marginLeft: -1 }}
         children='Group' />
-      <Button
+      <ButtonOutline
+        active
         rounded='right'
         style={{ marginLeft: -1 }}
         children='Button' />
@@ -176,6 +180,22 @@ const examples = {
     <div style={{ maxWidth: 192 }}>
       <CardImage src='http://placehold.it/320/08e/fff' />
     </div>
+  ),
+  Carousel: (
+    <Carousel index={1 / 16}>
+      <Block
+        p={4}
+        color='white'
+        backgroundColor='blue'>
+        One
+      </Block>
+      <Block
+        p={4}
+        color='white'
+        backgroundColor='black'>
+        Two
+      </Block>
+    </Carousel>
   ),
   Checkbox: (
     <div>
@@ -236,7 +256,20 @@ const examples = {
     </Dropdown>
   ),
   DropdownMenu: (
-    <a href='#Dropdown'>See Dropdown example</a>
+    <Dropdown>
+      <Button>
+        Dropdown <Arrow />
+      </Button>
+      <DropdownMenu open
+        style={{
+          overlay: {
+            position: 'static'
+          }
+        }}>
+        <NavItem children='Hello' />
+        <NavItem children='Hi' />
+      </DropdownMenu>
+    </Dropdown>
   ),
   Embed: (
     <Embed ratio={9/16}>
@@ -252,6 +285,14 @@ const examples = {
     <Footer>
       Footer™ ©2016 Jxnblk
     </Footer>
+  ),
+  Group: (
+    <Group>
+      <Input
+        name='grouped-input'
+        label='Grouped' />
+      <Button children='Go' />
+    </Group>
   ),
   Heading: (
     <Heading children='Heading' />
@@ -318,6 +359,16 @@ const examples = {
       </Message>
     </div>
   ),
+  NavItem: (
+    <Flex>
+      <NavItem
+        href='#!'
+        children='NavItem' />
+      <NavItem
+        href='#!'
+        children='NavItem' />
+    </Flex>
+  ),
   Overlay: (
     <a href='demo'>See demo</a>
   ),
@@ -334,6 +385,16 @@ const examples = {
       </Text>
       <PanelFooter children='The footer is a good place for less important information' />
     </Panel>
+  ),
+  PanelFooter: (
+    <PanelFooter>
+      PanelFooter
+    </PanelFooter>
+  ),
+  PanelHeader: (
+    <PanelHeader>
+      PanelHeader
+    </PanelHeader>
   ),
   Pre: (
     <Pre children={`const pre = { preformatted: 'text' }`} />
@@ -393,7 +454,10 @@ const examples = {
       active={1} />
   ),
   SequenceMapStep: (
-    <a href='#SequenceMap' children='See SequenceMap' />
+    <SequenceMapStep
+      first
+      href='#!'
+      children='Step' />
   ),
   Slider: (
     <div>
@@ -428,7 +492,10 @@ const examples = {
     </Flex>
   ),
   Switch: (
-    <Switch />
+    <div>
+      <Switch checked mr={2}/>
+      <Switch />
+    </div>
   ),
   Table: (
     <Table
