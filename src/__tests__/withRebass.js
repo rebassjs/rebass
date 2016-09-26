@@ -34,7 +34,8 @@ test('passes a style object', () => {
   expect(typeof style).toBe('object')
   expect(style).toEqual({
     boxSizing: 'border-box',
-    color: 'green'
+    color: 'green',
+    fill: {}
   })
 })
 

@@ -138,27 +138,30 @@ const examples = {
     </div>
   ),
   ButtonCircle: (
-    <Flex
-      wrap
-      align='center'
-      justify='space-between'>
-      <ButtonCircle title='Like'>
-        <Chevron />
-      </ButtonCircle>
-      <ButtonCircle title='Comment'>
-        <Reline.Arrow />
-      </ButtonCircle>
-      <ButtonCircle title='Repost'>
-        <X />
-      </ButtonCircle>
-      <ButtonCircle title='Bookmark'>
-        <Plus />
-      </ButtonCircle>
-      <ButtonCircle title='Tag'>
-        <Minus />
-      </ButtonCircle>
+    <div>
+      <Flex
+        wrap
+        align='center'
+        mb={1}
+        justify='space-between'>
+        <ButtonCircle title='Like'>
+          <Chevron />
+        </ButtonCircle>
+        <ButtonCircle title='Comment'>
+          <Reline.Arrow />
+        </ButtonCircle>
+        <ButtonCircle title='Repost'>
+          <X />
+        </ButtonCircle>
+        <ButtonCircle title='Bookmark'>
+          <Plus />
+        </ButtonCircle>
+        <ButtonCircle title='Tag'>
+          <Minus />
+        </ButtonCircle>
+      </Flex>
       <Text small children='Example Icon components from Reline' />
-    </Flex>
+    </div>
   ),
   ButtonOutline: (
     <Group>

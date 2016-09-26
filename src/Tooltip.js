@@ -59,7 +59,7 @@ const Tooltip = ({
       top: '100%',
       left: '50%',
       border: '6px solid transparent',
-      borderTopColor: style.fill.backgroundColor || style.backgroundColor,
+      borderTopColor: style.fill.backgroundColor || style.backgroundColor || colors.black,
       transform: 'translate(-50%, 0)',
       ...subComponentStyles.box
     }

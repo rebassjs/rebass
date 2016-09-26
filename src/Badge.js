@@ -25,7 +25,7 @@ const Badge = ({
   const cx = classnames('Badge', className)
 
   const pad = baseline(baselineShift)(scale[1])
-  const xpad = props.circle ? 0 : sclae[1]
+  const xpad = props.circle ? 0 : scale[1]
 
   const sx = {
     fontSize: fontSizes[6],
