@@ -47,7 +47,7 @@ const Select = ({
       display: 'block',
       width: '100%',
       paddingLeft: scale[1],
-      paddingRight: scale[1],
+      paddingRight: scale[3],
       height: scale[3],
       color: 'inherit',
       backgroundColor: 'transparent',

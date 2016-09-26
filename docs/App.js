@@ -87,7 +87,9 @@ class App extends React.Component {
         style={sx.root}>
         <Router {...routerProps}>
           <div>
-            <Nav />
+            <Nav
+              theme={this.state.theme}
+              changeTheme={this.changeTheme} />
             <Match
               {...this.props}
               pattern='/'

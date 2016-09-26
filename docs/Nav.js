@@ -5,10 +5,12 @@ import { Container, Grid } from 'gridsys'
 import {
   Toolbar,
   NavItem,
-  Space
+  Space,
+  Select,
+  themes
 } from '../src'
 
-const Nav = () => {
+const Nav = ({ theme, changeTheme }) => {
   const links = [
     {
       is: Link,
@@ -41,6 +43,12 @@ const Nav = () => {
     }
   ]
 
+  const themeKeys = Object.keys(themes)
+    .map(key => ({
+      value: key,
+      children: key
+    }))
+
   const sx = {
     toolbar: {
       flexWrap: 'wrap'
@@ -63,6 +71,17 @@ const Nav = () => {
             key={i}
           />
         ))}
+        <Space auto />
+        <Select
+          name='theme'
+          label='Theme'
+          hideLabel
+          value={theme}
+          onChange={e => {
+            changeTheme(e.target.value)
+          }}
+          options={themeKeys}
+        />
       </Toolbar>
     </Container>
   )

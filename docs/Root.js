@@ -10,6 +10,10 @@ body {
   line-height: 1.5;
   margin: 0;
 }
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px;
+}
 ${css}`
 }
 
@@ -23,8 +27,10 @@ const Root = ({
     <html lang='en'>
       <head>
         <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <title>Rebass</title>
         <style dangerouslySetInnerHTML={{ __html: basecss }} />
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' />
       </head>
       <body>
         <App {...props} />

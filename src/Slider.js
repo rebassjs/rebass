@@ -48,6 +48,7 @@ const Slider = ({
   const backgroundImage = fill ? `linear-gradient(90deg, currentcolor, currentcolor ${percent}%, transparent ${percent}%)` : null
 
   const cx = classnames('Slider', className)
+  const { height } = { height: 6, ...subComponentStyles.input }
 
   const sx = {
     root: {
@@ -62,13 +63,13 @@ const Slider = ({
       display: 'block',
       width: '100%',
       margin: 0,
-      marginTop: scale[1],
+      marginTop: scale[2] - height / 2,
       cursor: 'pointer',
       color: 'inherit',
       backgroundColor: `rgba(0, 0, 0, ${1 / 8})`,
       backgroundImage,
       backgroundClip: 'content-box',
-      height: 6,
+      height,
       borderRadius: 999,
       WebkitAppearance: 'none',
       appearance: 'none',
