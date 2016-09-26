@@ -37,6 +37,7 @@
     "lodash": "^4.16.1",
     "object-assign": "^4.1.0",
     "onchange": "^3.0.2",
+    "querystring": "^0.2.0",
     "raw-loader": "^0.5.1",
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",

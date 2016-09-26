@@ -2,7 +2,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import getColorTheme from './util/get-color-theme'
 
 /**
  * A general purpose button element with customizable colors
@@ -12,7 +11,6 @@ const Button = ({
   href,
   big,
   baseRef,
-  colorTheme = 'primary',
   style,
   className,
   theme,
@@ -24,8 +22,6 @@ const Button = ({
   const Comp = href ? 'a' : 'button'
 
   const minHeight = scale[3]
-
-  const colorStyles = getColorTheme(colors)(colorTheme, true)
 
   const cx = classnames('Button', className)
 
@@ -45,7 +41,8 @@ const Button = ({
     cursor: 'pointer',
     border: 0,
     borderRadius,
-    ...colorStyles,
+    color: colors.white,
+    backgroundColor: colors.primary,
     ...style
   }
 
@@ -65,7 +62,7 @@ Button.propTypes = {
   /** Creates a larger button */
   big: React.PropTypes.bool,
   /** Adds a ref to the button element */
-  baseRef: React.PropTypes.func
+  baseRef: React.PropTypes.func,
 }
 
 export default withRebass(Button)

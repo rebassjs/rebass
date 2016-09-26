@@ -8,8 +8,6 @@ const baseColors = {
   midgray: '#888',
   blue: '#008cef',
   red: '#ef0034',
-  // orange: '#ef8f00',
-
   orange: '#FFCD29',
   green: '#00ef50'
 }
@@ -19,6 +17,7 @@ const colors = {
   primary: baseColors.blue,
   secondary: baseColors.midgray,
   default: baseColors.black,
+  muted: baseColors.gray,
   info: baseColors.blue,
   success: baseColors.green,
   warning: baseColors.orange,

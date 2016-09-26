@@ -30,7 +30,8 @@ const biblio = {
     error: colors.red,
     info: colors.blue,
     success: colors.green,
-    secondary: colors.midgray
+    secondary: colors.midgray,
+    muted: colors.gray
   },
 
   borderColor: `rgba(0, 0, 0, ${1/8})`,

@@ -27,8 +27,6 @@ const Block = ({
   const cx = classnames('Block', className)
 
   const sx = {
-    marginTop: scale[2],
-    marginBottom: scale[2],
     borderStyle: border ? 'solid' : 'none',
     borderTopStyle: borderTop ? 'solid' : null,
     borderRightStyle: borderRight ? 'solid' : null,

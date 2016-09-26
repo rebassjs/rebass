@@ -2,14 +2,12 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import getColorTheme from './util/get-color-theme'
 
 /**
  * Header for Panel component with vertical centering using flexbox
  */
 
 const PanelHeader = ({
-  colorTheme,
   className,
   style,
   theme,
@@ -19,8 +17,6 @@ const PanelHeader = ({
   const { bold, scale, colors, borderRadius } = theme
 
   const cx = classnames('PanelHeader', className)
-
-  const colorStyles = getColorTheme(colors)(colorTheme, true)
 
   const sx = {
     display: 'flex',
@@ -32,7 +28,6 @@ const PanelHeader = ({
     marginBottom: scale[2],
     padding: scale[2],
     borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
-    ...colorStyles,
     ...style
   }
 
@@ -42,10 +37,6 @@ const PanelHeader = ({
       className={cx}
       style={sx} />
   )
-}
-
-PanelHeader.defaultProps = {
-  colorTheme: 'default'
 }
 
 export default withRebass(PanelHeader)

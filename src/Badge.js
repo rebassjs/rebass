@@ -2,12 +2,10 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import getColorTheme from './util/get-color-theme'
 
 /** Component for displaying small status indicators */
 
 const Badge = ({
-  colorTheme,
   className,
   style,
   theme,
@@ -24,8 +22,6 @@ const Badge = ({
 
   const cx = classnames('Badge', className)
 
-  const colorStyles = getColorTheme(colors)(colorTheme, true)
-
   const sx = {
     fontSize: fontSizes[6],
     fontWeight: bold,
@@ -40,7 +36,6 @@ const Badge = ({
     paddingLeft: props.circle ? 0 : scale[1],
     paddingRight: props.circle ? 0 : scale[1],
     overflow: 'hidden',
-    ...colorStyles,
     borderRadius,
     ...style
   }

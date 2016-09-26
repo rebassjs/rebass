@@ -10,6 +10,7 @@ import {
   Banner,
   Block,
   Blockquote,
+  BoxShadow,
   Breadcrumbs,
   Button,
   ButtonCircle,
@@ -79,15 +80,15 @@ const examples = {
     <Flex align='baseline'>
       <Heading level={4} children='Rebass' />
       <Space />
-      <Badge colorTheme='info' children='0.2.0' />
+      <Badge fill='info' children='0.4.0' />
       <Space x={2} />
       <Heading level={4} children='Pill' />
       <Space />
-      <Badge pill colorTheme='info' children='Pill' />
+      <Badge pill fill='info' children='Pill' />
       <Space x={2} />
       <Heading level={4} children='Circular' />
       <Space />
-      <Badge circle colorTheme='error' children='4' />
+      <Badge circle fill='error' children='4' />
     </Flex>
   ),
   Banner: (
@@ -116,6 +117,11 @@ const examples = {
       source='Robert Bringhurst'>
       In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years. […] Use the old familiar scale, or use new scales of your own devising, but limit yourself, at first, to a modest set of distinct and related intervals.
     </Blockquote>
+  ),
+  BoxShadow: (
+    <BoxShadow>
+      <Block p={3}>BoxShadow</Block>
+    </BoxShadow>
   ),
   Breadcrumbs: (
     <Breadcrumbs
@@ -154,20 +160,18 @@ const examples = {
     </Flex>
   ),
   ButtonOutline: (
-    <div>
+    <Group>
       <ButtonOutline
         rounded='left'
         children='Button' />
       <ButtonOutline
         rounded={false}
-        style={{ marginLeft: -1 }}
         children='Group' />
       <ButtonOutline
         active
         rounded='right'
-        style={{ marginLeft: -1 }}
         children='Button' />
-    </div>
+    </Group>
   ),
   Card: (
     <Card width={256}>
@@ -205,7 +209,7 @@ const examples = {
       <Checkbox
         checked
         readOnly
-        colorTheme='success'
+        fill='success'
         name='checkbox_1'
         label='Checkbox' />
     </div>
@@ -346,15 +350,15 @@ const examples = {
   ),
   Message: (
     <div>
-      <Message colorTheme='success'>
+      <Message fill='success'>
         Hello Message!
         <Space auto />
         <Close />
       </Message>
-      <Message colorTheme='info'>
+      <Message fill='info'>
         Hello Message!
       </Message>
-      <Message colorTheme='error'>
+      <Message fill='error'>
         Hello Message!
       </Message>
     </div>
@@ -378,7 +382,7 @@ const examples = {
       description='Description about the page' />
   ),
   Panel: (
-    <Panel colorTheme='info'>
+    <Panel fill='info'>
       <PanelHeader children='Panel' />
       <Text>
         Panels are great for visually separating UI, content, or data from the rest of the page.

@@ -2,12 +2,10 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import getColorTheme from './util/get-color-theme'
 
 /** Component for displaying flash and error messages */
 
 const Message = ({
-  colorTheme,
   className,
   style,
   theme,
@@ -18,8 +16,6 @@ const Message = ({
 
   const cx = classnames('Message', className)
 
-  const colorStyles = getColorTheme(colors)(colorTheme, true)
-
   const sx = {
     fontWeight: bold,
     display: 'flex',
@@ -27,7 +23,6 @@ const Message = ({
     padding: scale[2],
     marginBottom: scale[2],
     borderRadius,
-    ...colorStyles,
     ...style
   }
 

@@ -3,7 +3,6 @@ import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
 import Label from './Label'
-import getColorTheme from './util/get-color-theme'
 
 /**
  * Checkbox input with label
@@ -18,17 +17,22 @@ const Checkbox = ({
   children,
   stacked,
   baseRef,
-  colorTheme,
   className,
   style,
   theme,
   subComponentStyles,
   ...props
 }) => {
-  const { scale, colors, borderColor, borderRadius } = theme
+  const { scale, colors, borderRadius } = theme
 
   const invalid = props['aria-invalid'] || props.invalid
-  const colorStyles = getColorTheme(colors)(colorTheme, true)
+
+  const {
+    color,
+    backgroundColor,
+    borderColor,
+    ...rootStyle
+  } = style
 
   const sx = {
     root: {
@@ -39,7 +43,7 @@ const Checkbox = ({
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
       cursor: 'pointer',
-      ...style
+      ...rootStyle
     },
     input: {
       position: 'absolute',
@@ -55,9 +59,12 @@ const Checkbox = ({
       height: scale[2],
       marginRight: stacked ? null : scale[1],
       marginBottom: stacked ? scale[1] : null,
-      // backgroundColor: checked ? 'currentcolor' : 'transparent',
-      ...(checked ? colorStyles : {
+      ...(checked ? {
+        color,
+        backgroundColor,
         borderColor
+      } : {
+        borderColor: theme.borderColor
       }),
       borderRadius,
       borderStyle: 'solid',

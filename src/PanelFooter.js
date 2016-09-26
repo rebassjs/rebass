@@ -2,14 +2,12 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import getColorTheme from './util/get-color-theme'
 
 /**
  * Footer for Panel component with vertical centering using flexbox
  */
 
 const PanelFooter = ({
-  colorTheme,
   className,
   style,
   theme,
@@ -19,8 +17,6 @@ const PanelFooter = ({
   const { scale, colors, borderRadius, fontSizes } = theme
 
   const cx = classnames('PanelFooter', className)
-
-  const colorStyles = getColorTheme(colors)(colorTheme)
 
   const sx = {
     fontSize: fontSizes[6],
@@ -34,7 +30,6 @@ const PanelFooter = ({
     borderTopWidth: 1,
     borderTopStyle: 'solid',
     borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`,
-    ...colorStyles,
     ...style
   }
 
@@ -44,10 +39,6 @@ const PanelFooter = ({
       className={cx}
       style={sx} />
   )
-}
-
-PanelFooter.defaultProps = {
-  colorTheme: 'default'
 }
 
 export default withRebass(PanelFooter)

@@ -2,7 +2,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
-import getColorTheme from './util/get-color-theme'
 
 /**
  * Styled tooltip that shows on hover
@@ -11,7 +10,6 @@ import getColorTheme from './util/get-color-theme'
 const Tooltip = ({
   title,
   children,
-  colorTheme,
   className,
   style,
   theme,
@@ -27,7 +25,18 @@ const Tooltip = ({
 
   const cx = classnames('Tooltip', className)
 
-  const colorStyles = getColorTheme(colors)(colorTheme, true)
+  // const colorStyles = getColorTheme(colors)(colorTheme, true)
+  const {
+    color,
+    backgroundColor,
+    borderColor,
+    ...rootStyle
+  } = style
+  const colorStyles = {
+    color,
+    backgroundColor,
+    borderColor
+  }
 
   const css = `
     .Tooltip_box { display: none }
@@ -39,7 +48,7 @@ const Tooltip = ({
       position: 'relative',
       display: 'inline-block',
       cursor: 'pointer',
-      ...style
+      ...rootStyle
     },
     box: {
       position: 'absolute',
@@ -61,7 +70,7 @@ const Tooltip = ({
       top: '100%',
       left: '50%',
       border: '6px solid transparent',
-      borderTopColor: colorStyles.backgroundColor,
+      borderTopColor: backgroundColor,
       transform: 'translate(-50%, 0)',
       ...subComponentStyles.box
     }

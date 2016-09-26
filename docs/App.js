@@ -11,6 +11,7 @@ import {
 import {
   themes
 } from '../src'
+import withParams from './withParams'
 import Nav from './Nav'
 import Home from './Home'
 import ComponentIndex from './ComponentIndex'
@@ -35,6 +36,7 @@ class App extends React.Component {
 
   changeTheme = (theme) => {
     this.setState({ theme })
+    this.props.push({ theme })
   }
 
   getChildContext () {
@@ -44,7 +46,8 @@ class App extends React.Component {
         columnCount: 8,
         columnWidth: 224
       },
-      rebass: themes[theme] || {
+      rebass: {
+        ...themes[theme],
         monospace: 'Menlo, Consolas, monospace',
         Divider: {
           borderColor: 'inherit'
@@ -53,6 +56,13 @@ class App extends React.Component {
           fontSize: 12,
         }
       }
+    }
+  }
+
+  componentDidMount () {
+    const { theme } = this.props.params
+    if (theme) {
+      this.setState({ theme })
     }
   }
 
@@ -127,5 +137,5 @@ App.childContextTypes = {
   rebass: React.PropTypes.object
 }
 
-export default App
+export default withParams(App)
 

@@ -4,6 +4,7 @@ import { setScale as createMargin } from 'understyle/dist/margin'
 import { setScale as createPadding } from 'understyle/dist/padding'
 import radii from './util/radii'
 import colorStyle from './util/color-style'
+import getColorFill from './util/get-color-fill'
 import basicTheme from './themes/basic'
 
 const isObj = o => typeof o === 'object' && o !== null
@@ -60,6 +61,8 @@ const withRebass = Comp => {
         circle,
         color,
         backgroundColor,
+        // to do: this clashes with Slider fill prop
+        fill,
         style = {},
         ...props
       } = this.props
@@ -77,6 +80,7 @@ const withRebass = Comp => {
           color,
           backgroundColor
         }),
+        ...(fill ? getColorFill(colors)(fill) : {}),
         ...radiusStyles({
           rounded,
           pill,
@@ -98,6 +102,24 @@ const withRebass = Comp => {
 
   RebassBase.contextTypes = {
     rebass: React.PropTypes.object
+  }
+
+  RebassBase.propTypes = {
+    /** Sets foreground color */
+    color: React.PropTypes.string,
+    /** Sets background color */
+    backgroundColor: React.PropTypes.string,
+    /** Sets semantic color themes */
+    fill: React.PropTypes.oneOf([
+      'primary',
+      'secondary',
+      'default',
+      'info',
+      'success',
+      'warning',
+      'error',
+      'muted'
+    ])
   }
 
   RebassBase.displayName = Comp.name
