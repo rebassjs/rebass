@@ -8,6 +8,9 @@ import {
   Miss,
   Link
 } from 'react-router'
+import {
+  themes
+} from '../src'
 import Nav from './Nav'
 import Home from './Home'
 import ComponentIndex from './ComponentIndex'
@@ -16,9 +19,9 @@ import NotFound from './NotFound'
 import ComponentList from './ComponentList'
 import Footer from './Footer'
 import basename from './basename'
+import ThemesIndex from './ThemesIndex'
 
 // import Demo from './Demo'
-// import Themes from './Themes'
 
 import StyleGuide from './StyleGuide'
 
@@ -26,21 +29,25 @@ const isClient = typeof document !== 'undefined'
 const isDev = process.env.NODE_ENV !== 'production'
 
 class App extends React.Component {
+  state = {
+    theme: 'basic'
+  }
+
+  changeTheme = (theme) => {
+    this.setState({ theme })
+  }
+
   getChildContext () {
+    const { theme } = this.state
     return {
       gridsys: {
-        // columnCount: 12,
         columnCount: 8,
         columnWidth: 224
       },
-      rebass: {
+      rebass: themes[theme] || {
         monospace: 'Menlo, Consolas, monospace',
-        borderColor: 'inherit',
-        Heading: {
-          // fontWeight: 800
-        },
         Divider: {
-          borderBottomColor: 'inherit'
+          borderColor: 'inherit'
         },
         Pre: {
           fontSize: 12,
@@ -65,8 +72,19 @@ class App extends React.Component {
         context
       }
 
+    const config = themes[this.state.theme]
+
+    const sx = {
+      root: {
+        fontFamily: config.fontFamily,
+        color: config.color,
+        backgroundColor: config.backgroundColor
+      }
+    }
+
     return (
-      <div id='app'>
+      <div id='app'
+        style={sx.root}>
         <Router {...routerProps}>
           <div>
             <Nav />
@@ -82,6 +100,13 @@ class App extends React.Component {
             <Match
               pattern='/components/:name'
               component={ComponentDetail} />
+            <Match
+              pattern='/themes'
+              render={(matchProps) => (
+                <ThemesIndex
+                  changeTheme={this.changeTheme}
+                />
+              )} />
             <Match
               pattern='/styleguide'
               component={StyleGuide} />

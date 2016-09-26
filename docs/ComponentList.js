@@ -9,7 +9,7 @@ import {
   List
 } from '../src'
 import Rule from './Rule'
-import data from './data'
+import data from './data.json'
 
 const chunkLength = Math.ceil(data.components.length / 6)
 const columns = chunk(data.components, chunkLength)

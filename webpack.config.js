@@ -11,12 +11,12 @@ const paths = [
 module.exports = {
   devtool: 'cheap-source-map',
   entry: {
-    main: './docs/entry.js'
+    bundle: './docs/entry.js'
   },
 
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     libraryTarget: 'umd'
   },
 
@@ -44,7 +44,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new StaticSiteGeneratorPlugin('main', paths, {
+    new StaticSiteGeneratorPlugin('bundle', paths, {
       // ...data
     })
   ],

@@ -29,5 +29,5 @@ const data = {
   components
 }
 
-export default data
+module.exports = data
 

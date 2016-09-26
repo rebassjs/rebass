@@ -15,7 +15,8 @@ import {
 import BigHeading from './BigHeading'
 import Rule from './Rule'
 import PropsTable from './PropsTable'
-import data from './data'
+import examples from './examples'
+import data from './data.json'
 
 const PropField = ({
   name,
@@ -33,9 +34,10 @@ const ComponentDetail =({
     <Container>
       <Grid span={12}>
         <Link to='/'>
-          {({ href }) => (
+          {({ href, onClick }) => (
             <NavItem
               px={0}
+              onClick={onClick}
               href={href}>
               Rebass
             </NavItem>
@@ -52,7 +54,7 @@ const ComponentDetail =({
           level={3}>
           Preview:
         </Heading>
-        {comp.example}
+        {examples[comp.name]}
       </Grid>
       <Grid span={3}>
         <Pre children={comp.code} />

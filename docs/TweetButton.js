@@ -1,22 +1,35 @@
 
 import React from 'react'
 
-const script = `
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");
-`
+class TweetButton extends React.Component {
+  // const TweetButton = ({ text, url, via, ...props }) => (
+  componentDidMount () {
+    const script = document.createElement('script')
+    script.id = 'twitter-wjs'
+    script.src = '//platform.twitter.com/widgets.js'
+    this.root.appendChild(script)
+  }
 
-const TweetButton = ({ text, url, via, ...props }) => (
-  <div className='inline-block mr2'
-    style={{ height: 20 }}>
-    <a href="https://twitter.com/share"
-      className="twitter-share-button"
-      data-text={text}
-      data-url={url}
-      data-via={via}
-      children='Tweet' />
-    <script dangerouslySetInnerHTML={{ __html: script }} />
-  </div>
-)
+  render () {
+    const { text, url, via, ...props } = this.props
+
+    return (
+      <div
+        ref={r => { this.root = r }}
+        className='inline-block mr2'
+        style={{ height: 20 }}>
+        <a
+          ref={r => { this.link = r }}
+          href="https://twitter.com/share"
+          className="twitter-share-button"
+          data-text={text}
+          data-url={url}
+          data-via={via}
+          children='Tweet' />
+      </div>
+    )
+  }
+}
 
 TweetButton.defaultProps = {
   text: '',

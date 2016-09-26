@@ -8,7 +8,9 @@ const baseColors = {
   midgray: '#888',
   blue: '#008cef',
   red: '#ef0034',
-  orange: '#ef8f00',
+  // orange: '#ef8f00',
+
+  orange: '#FFCD29',
   green: '#00ef50'
 }
 
@@ -54,7 +56,7 @@ const borderRadius = 2
 const borderColor = 'rgba(0, 0, 0, .25)'
 const boxShadow = '0 2px 16px rgba(0, 0, 0, .125)'
 
-const theme = {
+const basic = {
   scale,
   fontSizes,
   bold,
@@ -66,5 +68,5 @@ const theme = {
   boxShadow
 }
 
-export default theme
+export default basic
 

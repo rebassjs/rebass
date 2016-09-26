@@ -4,7 +4,7 @@ import { setScale as createMargin } from 'understyle/dist/margin'
 import { setScale as createPadding } from 'understyle/dist/padding'
 import radii from './util/radii'
 import colorStyle from './util/color-style'
-import defaultTheme from './theme'
+import basicTheme from './themes/basic'
 
 const isObj = o => typeof o === 'object' && o !== null
 
@@ -42,7 +42,7 @@ const withRebass = Comp => {
     render () {
       const { rebass } = this.context
 
-      const theme = { ...defaultTheme, ...rebass }
+      const theme = { ...basicTheme, ...rebass }
       const { scale, colors, borderRadius } = theme
       const themeStyle = theme[Comp.name] || {}
 

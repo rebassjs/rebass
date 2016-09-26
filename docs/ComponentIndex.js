@@ -11,16 +11,18 @@ import {
 } from '../src'
 import BigHeading from './BigHeading'
 import Rule from './Rule'
-import data from './data'
+import examples from './examples'
+import data from './data.json'
 
 const ComponentIndex = () => {
   return (
     <Container>
       <Grid span={12}>
         <Link to='/'>
-          {({ href }) => (
+          {({ href, onClick }) => (
             <NavItem
               px={0}
+              onClick={onClick}
               href={href}>
               Rebass
             </NavItem>
@@ -35,14 +37,16 @@ const ComponentIndex = () => {
           span={2}>
           <Link to={`/components/${comp.name}`}>
             {({ href, onClick }) => (
-              <LinkBlock href={href}>
+              <LinkBlock
+                onClick={onClick}
+                href={href}>
                 <Heading
                   level={3}
                   mb={2}>
                   {comp.name}
                 </Heading>
                 <Divider />
-                {comp.example}
+                {examples[comp.name]}
               </LinkBlock>
             )}
           </Link>

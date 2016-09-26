@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import ReactDOMServer from 'react-dom/server'
 import cxs from 'cxs'
 
-import data from './data'
+import data from './data.json'
 import Root from './Root'
 import App from './App'
 

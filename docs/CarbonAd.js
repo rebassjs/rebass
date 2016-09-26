@@ -36,16 +36,24 @@ const css = `
 }
 `.replace(/\n/, '').replace(/\s\s+/g, ' ')
 
-const CarbonAd = () => (
-  <div style={{ minHeight: 100 }}>
-    <style dangerouslySetInnerHTML={{ __html: css }} />
-    <script
-      async
-      type='text/javascript'
-      src={`//cdn.carbonads.com/carbon.js?zoneid=1696&serve=CVYD42T&placement=jxnblkcom`}
-      id='_carbonads_js' />
-  </div>
-)
+class CarbonAd extends React.Component {
+  componentDidMount () {
+    const script = document.createElement('script')
+    script.src = '//cdn.carbonads.com/carbon.js?zoneid=1696&serve=CVYD42T&placement=jxnblkcom'
+    script.id = '_carbonads_js'
+    this.root.appendChild(script)
+  }
+
+  render () {
+    return (
+      <div
+        ref={r => { this.root = r }}
+        style={{ minHeight: 100 }}>
+        <style dangerouslySetInnerHTML={{ __html: css }} />
+      </div>
+    )
+  }
+}
 
 export default CarbonAd
 

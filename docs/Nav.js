@@ -20,11 +20,12 @@ const Nav = () => {
       to: '/components',
       children: 'Components'
     },
-    /*
     {
-      href: '#',
+      is: Link,
+      to: '/themes',
       children: 'Themes'
     },
+    /*
     {
       href: '#',
       children: 'Demo'
@@ -52,8 +53,8 @@ const Nav = () => {
         px={3}
         py={2}
         style={sx.toolbar}
-        color='black'
-        backgroundColor='white'>
+        color='inherit'
+        backgroundColor='transparent'>
         {links.map((link, i) => (
           <NavItem
             {...link}

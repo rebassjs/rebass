@@ -12,7 +12,7 @@ import CarbonAd from './CarbonAd'
 import TweetButton from './TweetButton'
 import GithubButton from './GithubButton'
 import TravisBadge from './TravisBadge'
-import data from './data'
+import data from './data.json'
 
 const Small = props => {
   const sx = {
