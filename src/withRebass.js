@@ -58,8 +58,6 @@ const withRebass = Comp => {
         rounded,
         pill,
         circle,
-
-        // theme, // - rename this
         color,
         backgroundColor,
         style = {},
@@ -76,7 +74,6 @@ const withRebass = Comp => {
         ...margin({ m, mt, mr, mb, ml, mx, my }),
         ...padding({ p, pt, pr, pb, pl, px, py }),
         ...colorStyles({
-          theme,
           color,
           backgroundColor
         }),

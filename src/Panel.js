@@ -2,6 +2,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
+import getColorTheme from './util/get-color-theme'
 
 /**
  * Panel for containing small pieces of information
@@ -9,6 +10,7 @@ import withRebass from './withRebass'
 
 const Panel = ({
   children,
+  colorTheme,
   className,
   style,
   theme,
@@ -19,25 +21,22 @@ const Panel = ({
 
   const cx = classnames('Panel', className)
 
-  const borderColor = colors.primary // colors[theme]
+  const { color } = getColorTheme(colors)(colorTheme)
 
   const sx = {
     padding: scale[2],
     marginBottom: scale[2],
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor,
     borderRadius,
-    backgroundColor: colors.white,
+    borderColor: color,
     ...style
   }
 
   const styledChildren = React.Children.map(children, (child) => {
-    // To do: handle theme props
-    if (child && child.props && child.props.theme === 'default') {
+    if (/^Panel/.test(child.type.displayName)) {
       return React.cloneElement(child, {
-        // color,
-        // backgroundColor
+        colorTheme
       })
     } else {
       return child

@@ -73,18 +73,18 @@ const examples = {
     <Avatar src='http://lorempixel.com/64/64/cats' />
   ),
   Badge: (
-    <Flex align='center'>
+    <Flex align='baseline'>
       <Heading level={4} children='Rebass' />
       <Space />
-      <Badge theme='info' children='0.2.0' />
+      <Badge colorTheme='info' children='0.2.0' />
       <Space x={2} />
       <Heading level={4} children='Pill' />
       <Space />
-      <Badge pill theme='info' children='Pill' />
+      <Badge pill colorTheme='info' children='Pill' />
       <Space x={2} />
       <Heading level={4} children='Circular' />
       <Space />
-      <Badge circle theme='error' children='4' />
+      <Badge circle colorTheme='error' children='4' />
     </Flex>
   ),
   Banner: (
@@ -185,7 +185,7 @@ const examples = {
       <Checkbox
         checked
         readOnly
-        theme='success'
+        colorTheme='success'
         name='checkbox_1'
         label='Checkbox' />
     </div>
@@ -304,11 +304,19 @@ const examples = {
     </Menu>
   ),
   Message: (
-    <Message theme='success'>
-      Hello Message!
-      <Space auto />
-      <Close />
-    </Message>
+    <div>
+      <Message colorTheme='success'>
+        Hello Message!
+        <Space auto />
+        <Close />
+      </Message>
+      <Message colorTheme='info'>
+        Hello Message!
+      </Message>
+      <Message colorTheme='error'>
+        Hello Message!
+      </Message>
+    </div>
   ),
   Overlay: (
     <a href='demo'>See demo</a>
@@ -319,7 +327,7 @@ const examples = {
       description='Description about the page' />
   ),
   Panel: (
-    <Panel theme='info'>
+    <Panel colorTheme='info'>
       <PanelHeader children='Panel' />
       <Text>
         Panels are great for visually separating UI, content, or data from the rest of the page.
