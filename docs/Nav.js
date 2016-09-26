@@ -22,12 +22,12 @@ const Nav = ({ theme, changeTheme }) => {
       to: '/components',
       children: 'Components'
     },
+    /*
     {
       is: Link,
       to: '/themes',
       children: 'Themes'
     },
-    /*
     {
       href: '#',
       children: 'Demo'

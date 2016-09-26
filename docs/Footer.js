@@ -28,6 +28,11 @@ const Footer = () => {
           <NavItem
             px={0}
             is={Link}
+            to='/themes'
+            children='Themes' />
+          <NavItem
+            px={0}
+            is={Link}
             to='/styleguide'
             children='Style Guide' />
           <NavItem
