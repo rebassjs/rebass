@@ -11,7 +11,7 @@ import {
 } from '../src'
 import BigHeading from './BigHeading'
 import Rule from './Rule'
-import examples from './examples'
+import getExample from './func-examples'
 import data from './data.json'
 
 const ComponentIndex = () => {
@@ -46,7 +46,7 @@ const ComponentIndex = () => {
                   {comp.name}
                 </Heading>
                 <Divider />
-                {examples[comp.name]}
+                {getExample(comp.name)({})}
               </LinkBlock>
             )}
           </Link>

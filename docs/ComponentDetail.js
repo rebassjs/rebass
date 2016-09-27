@@ -11,13 +11,13 @@ import {
   Pre,
   Input,
   Select,
-  Checkbox
+  Checkbox,
+  theme
 } from '../src'
 import BigHeading from './BigHeading'
 import Rule from './Rule'
 import PropsTable from './PropsTable'
 // import ComponentDemo from './ComponentDemo'
-import examples from './examples'
 import getExample, { filterNull } from './func-examples'
 import data from './data.json'
 
@@ -33,15 +33,38 @@ class ComponentDetail extends React.Component {
     number: 16,
     image: null,
     theme: null,
-    open: false
+    open: false,
+    m: null,
+    p: null,
+    rounded: null,
+    pill: false,
+    color: null,
+    backgroundColor: null,
   }
 
   onChange = obj => {
     this.setState(obj)
   }
 
+  handleChange = e => {
+    const { name, value } = e.target
+    const val = value === '' ? null : value
+    this.setState({ [name]: val })
+  }
+
   render () {
     const { params } = this.props
+    const {
+      text,
+      image,
+      theme,
+      m,
+      p,
+      rounded,
+      pill,
+      color,
+      backgroundColor
+    } = this.state
     const { name } = params
     const comp = find(data.components, d => d.name === name)
 
@@ -87,7 +110,121 @@ class ComponentDetail extends React.Component {
         <Grid span={3}>
           <PropsTable props={comp.props} />
         </Grid>
-        <Grid span={3} />
+        <Grid span={3}>
+          <Input
+            name='text'
+            label='text'
+            value={text}
+            onChange={this.handleChange} />
+          <Select
+            name='image'
+            label='image'
+            value={image || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'Space' },
+            ]}
+          />
+          <Select
+            name='theme'
+            label='fill'
+            value={theme || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: 'primary', children: 'primary' },
+              { value: 'default', children: 'default' },
+              { value: 'muted', children: 'muted' },
+              { value: 'info', children: 'info' },
+              { value: 'success', children: 'success' },
+              { value: 'warning', children: 'warning' },
+              { value: 'error', children: 'error' }
+            ]}
+          />
+          <Select
+            name='color'
+            label='color'
+            value={color || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: 'white', children: 'white' },
+              { value: 'black', children: 'black' },
+              { value: 'blue', children: 'blue' },
+              { value: 'green', children: 'green' },
+              { value: 'orange', children: 'orange' },
+              { value: 'red', children: 'red' },
+              { value: 'midgray', children: 'midgray' },
+              { value: 'gray', children: 'gray' },
+            ]}
+          />
+          <Select
+            name='backgroundColor'
+            label='backgroundColor'
+            value={backgroundColor || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: 'white', children: 'white' },
+              { value: 'black', children: 'black' },
+              { value: 'blue', children: 'blue' },
+              { value: 'green', children: 'green' },
+              { value: 'orange', children: 'orange' },
+              { value: 'red', children: 'red' },
+              { value: 'midgray', children: 'midgray' },
+              { value: 'gray', children: 'gray' },
+            ]}
+          />
+          <Select
+            name='m'
+            label='margin'
+            value={m || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: 0, children: '0' },
+              { value: 1, children: '1' },
+              { value: 2, children: '2' },
+              { value: 3, children: '3' },
+              { value: 4, children: '4' },
+            ]}
+          />
+          <Select
+            name='p'
+            label='padding'
+            value={p || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: 0, children: '0' },
+              { value: 1, children: '1' },
+              { value: 2, children: '2' },
+              { value: 3, children: '3' },
+              { value: 4, children: '4' },
+            ]}
+          />
+          <Select
+            name='rounded'
+            label='rounded'
+            value={rounded || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: false, children: 'false' },
+              { value: true, children: 'true' },
+              { value: 'top', children: 'top' },
+              { value: 'bottom', children: 'bottom' },
+              { value: 'left', children: 'left' },
+              { value: 'right', children: 'right' },
+            ]}
+          />
+          <Checkbox
+            name='pill'
+            label='pill'
+            checked={pill}
+            onClick={e => { this.onChange({ pill: !pill }) }}
+          />
+        </Grid>
         <Grid span={6}>
         </Grid>
       </Container>
