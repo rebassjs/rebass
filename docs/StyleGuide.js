@@ -41,8 +41,6 @@ class StyleGuide extends React.Component {
   render () {
     const sx = {
       root: {
-        fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        lineHeight: 1.5
       }
     }
     const colorKeys = Object.keys(theme.colors)
