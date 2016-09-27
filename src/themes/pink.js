@@ -82,8 +82,13 @@ const pink = {
     backgroundColor: colors.pink
   },
   Input: {},
-  Label: {}
-
+  Label: {},
+  Pre: {
+    fontSize: 12,
+    padding: 16,
+    borderLeft: 0,
+    backgroundColor: colors.pink
+  }
 }
 
 export default pink

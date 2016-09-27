@@ -23,6 +23,9 @@ const Message = ({
     padding: scale[2],
     marginBottom: scale[2],
     borderRadius,
+    color: colors.white,
+    backgroundColor: colors.primary,
+    ...style.fill,
     ...style
   }
 

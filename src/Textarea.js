@@ -52,6 +52,9 @@ const Textarea = ({
       borderStyles: 'solid',
       borderColor,
       borderRadius,
+      boxShadow: 'none',
+      WebkitAppearance: 'none',
+      appearance: 'none',
       ...subComponentStyles.textarea
     },
     message: {

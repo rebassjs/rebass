@@ -10,11 +10,11 @@ const caps = {
 }
 
 const colors = {
-    red: '#e54',
-    blue: '#059',
-    green: '#0b7',
-    midgray: '#444',
-    gray: '#eee'
+  red: '#e54',
+  blue: '#059',
+  green: '#0b7',
+  midgray: '#444',
+  gray: '#eee'
 }
 
 const biblio = {
@@ -28,9 +28,11 @@ const biblio = {
     ...colors,
     primary: colors.red,
     error: colors.red,
+    warning: basic.colors.orange,
     info: colors.blue,
     success: colors.green,
     secondary: colors.midgray,
+    default: colors.midgray,
     muted: colors.gray
   },
 
@@ -63,7 +65,7 @@ const biblio = {
   Toolbar: {
     color: 'inherit',
     backgroundColor: '#fff',
-    borderBottom: `1px solid rgba(0, 0, 0, ${1/8})`
+    borderBottom: `1px solid rgba(0, 0, 0, ${1 / 8})`
   },
 
   Button: {
@@ -112,7 +114,9 @@ const biblio = {
   SectionHeader: {
     borderColor: '#e54',
   },
-
+  Rating: {
+    fontSize: 24
+  }
 }
 
 export default biblio

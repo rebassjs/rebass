@@ -20,7 +20,7 @@ const mono = {
   ],
 
   fontSizes: [
-    64, 24, 20, 18, 14, 12, 10
+    64, 24, 20, 18, 14, 12, 12
   ],
 
   borderColor: `rgba(0, 0, 0, ${1/16})`,
@@ -47,6 +47,25 @@ const mono = {
     input: {
       backgroundColor: `rgba(255, 255, 255, ${1/8})`
     }
+  },
+  Checkbox: {
+    box: {
+      width: 24,
+      height: 24,
+    }
+  },
+  Radio: {
+    dot: {
+      width: 24,
+      height: 24,
+    }
+  },
+  Pre: {
+    fontSize: 14,
+    borderLeft: 0,
+    padding: 8,
+    borderRadius: 2,
+    backgroundColor: basic.colors.gray
   }
 }
 

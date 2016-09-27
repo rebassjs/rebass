@@ -65,6 +65,9 @@ const Input = ({
       borderStyle: 'solid',
       borderColor: invalid ? colors.error : borderColor,
       borderRadius,
+      boxShadow: 'none',
+      WebkitAppearance: 'none',
+      appearance: 'none',
       ...subComponentStyles.input
     },
     text: {

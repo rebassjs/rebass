@@ -121,7 +121,7 @@ const examples = {
   ),
   BoxShadow: (
     <BoxShadow>
-      <Block p={3}>BoxShadow</Block>
+      <Block rounded p={3}>BoxShadow</Block>
     </BoxShadow>
   ),
   Breadcrumbs: (
@@ -239,11 +239,15 @@ const examples = {
     </div>
   ),
   Donut: (
-    <Flex align='center' justify='space-between' wrap>
-      <Donut value={9/16} size={256} strokeWidth={32} />
-      <Donut value={9/16} children='9/16' />
-      <Donut value={5/8} />
-      <Donut value={1/8} />
+    <Flex
+      align='center'
+      justify='space-between'
+      mx={-1}
+      wrap>
+      <Donut m={1} value={9/16} size={256} strokeWidth={32} />
+      <Donut m={1} value={9/16} children='9/16' />
+      <Donut m={1} value={5/8} />
+      <Donut m={1} value={1/8} />
     </Flex>
   ),
   DotIndicator: (
@@ -418,12 +422,11 @@ const examples = {
     <div>
       <Radio
         checked
-        readOnly
         name='radio_1'
-        label='Radio' />
+        label='Radio One' />
       <Radio
         name='radio_1'
-        label='Radio' />
+        label='Radio Two' />
     </div>
   ),
   Rating: (
@@ -496,11 +499,14 @@ const examples = {
     </div>
   ),
   Stat: (
-    <Flex wrap justify='space-between'>
-      <Stat value='512' unit='GB' label='Memory' />
-      <Stat value='32' label='PetaFLOPS' />
-      <Stat value='512' unit='Mbps' label='Upload' />
-      <Stat value='1,024' unit='Mbps' label='Download' />
+    <Flex
+      wrap
+      mx={-1}
+      justify='space-between'>
+      <Stat m={1} value='512' unit='GB' label='Memory' />
+      <Stat m={1} value='32' label='PetaFLOPS' />
+      <Stat m={1} value='512' unit='Mbps' label='Upload' />
+      <Stat m={1} value='1,024' unit='Mbps' label='Download' />
     </Flex>
   ),
   Switch: (

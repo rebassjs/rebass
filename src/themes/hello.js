@@ -21,6 +21,8 @@ const hello = {
   color: '#346',
   backgroundColor: '#fff',
 
+  borderRadius: 6,
+
   colors: {
     ...basic.colors,
     ...colors,
@@ -35,7 +37,7 @@ const hello = {
   inverted: colors.black,
 
   scale: [
-    0, 16, 20, 64, 128
+    0, 8, 16, 32, 64
   ],
 
   bold: 700,
@@ -52,12 +54,14 @@ const hello = {
     backgroundColor: colors.blue
   },
   Button: {
-    fontSize: 20
+    fontSize: 20,
+    paddingTop: 16,
+    paddingBottom: 16,
   },
   ButtonOutline: {
-    fontSize: 20,
+    // fontSize: 20,
     backgroundColor: '#346',
-    boxShadow: 'inset 0 0 0 4px'
+    // boxShadow: 'inset 0 0 0 4px'
   },
   ButtonCircle: {
     fontSize: 16,
@@ -66,7 +70,7 @@ const hello = {
     height: 48,
   },
   Message: {
-    color: colors.black
+    // color: colors.black
   },
   Panel: {
     borderWidth
@@ -86,6 +90,39 @@ const hello = {
     borderWidth,
     borderColor
   },
+  Input: {
+    input: {
+      fontSize: 20,
+      height: 48,
+      paddingTop: 16,
+      paddingBottom: 16
+    }
+  },
+  Select: {
+    select: {
+      fontSize: 20,
+      height: 48
+    },
+    arrow: {
+      marginTop: 24,
+      marginBottom: 24
+    }
+  },
+  Checkbox: {
+    box: {
+      width: 24,
+      height: 24,
+    }
+  },
+  Radio: {
+    dot: {
+      width: 24,
+      height: 24,
+    }
+  },
+  Rating: {
+    fontSize: 24
+  }
 }
 
 export default hello

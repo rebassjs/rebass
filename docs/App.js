@@ -48,13 +48,7 @@ class App extends React.Component {
       },
       rebass: {
         ...themes[theme],
-        monospace: 'Menlo, Consolas, monospace',
-        Divider: {
-          borderColor: 'inherit'
-        },
-        Pre: {
-          fontSize: 12,
-        }
+        monospace: 'Menlo, Consolas, monospace'
       }
     }
   }

@@ -15,6 +15,7 @@ import {
 import BigHeading from './BigHeading'
 import Rule from './Rule'
 import PropsTable from './PropsTable'
+// import ComponentDemo from './ComponentDemo'
 import examples from './examples'
 import data from './data.json'
 
@@ -52,7 +53,7 @@ const ComponentDetail =({
           alt
           mb={3}
           level={3}>
-          Preview:
+          Preview
         </Heading>
         {examples[comp.name]}
       </Grid>

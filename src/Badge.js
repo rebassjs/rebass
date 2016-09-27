@@ -41,6 +41,8 @@ const Badge = ({
     paddingRight: xpad,
     overflow: 'hidden',
     borderRadius,
+    color: colors.white,
+    backgroundColor: colors.default,
     ...style.fill,
     ...style
   }
