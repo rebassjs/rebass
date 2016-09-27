@@ -56,6 +56,7 @@ const borderColor = 'rgba(0, 0, 0, .25)'
 const boxShadow = '0 2px 16px rgba(0, 0, 0, .125)'
 
 const basic = {
+  name: 'Basic',
   scale,
   fontSizes,
   bold,

@@ -46,6 +46,7 @@ const borderColor = 'rgba(0, 0, 0, .25)'
 const boxShadow = '0 2px 16px rgba(0, 0, 0, .125)'
 
 const blue = {
+  name: 'Blue',
   fontFamily: '"Avenir Next", -apple-system, Helvetica, sans-serif',
   lineHeight: 1.5,
 

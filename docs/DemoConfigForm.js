@@ -16,11 +16,9 @@ import {
   Checkbox,
   Radio,
   Button
-} from '../../src'
+} from '../src'
 
 class ConfigForm extends React.Component {
-
-
   render () {
     const {
       scale,
@@ -35,6 +33,9 @@ class ConfigForm extends React.Component {
       drawerOpen,
       toggle,
       onChange,
+      theme,
+      themes,
+      switchConfig,
       reset
     } = this.props
 
@@ -85,6 +86,21 @@ class ConfigForm extends React.Component {
           <Close onClick={toggle('drawerOpen')} />
         </Flex>
         <Box py={2}>
+          <pre>{theme}</pre>
+          <Select
+            name='theme'
+            label='Theme'
+            value={theme}
+            onChange={e => {
+              switchConfig(e.target.value)
+            }}
+            options={Object.keys(themes).map(key => {
+              return {
+                value: key,
+                children: themes[key].name || key
+              }
+            })}
+          />
           <Heading level={3} children='Spacing Scale' />
           {scale.map((s, i) => {
             const handleChange = (e) => {

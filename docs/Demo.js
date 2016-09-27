@@ -5,34 +5,40 @@ import React from 'react'
 import jsonp from 'jsonp'
 import assign from 'object-assign'
 import { Flex, Box } from 'reflexbox'
-import { theme, themes, Container } from '../src'
+import {
+  theme,
+  themes,
+  Container
+} from '../src'
+import themeReset from './theme-reset'
 
-import Navbar from './Navbar'
-import Header from './Header'
-import Intro from './Intro'
-import Cards from './Cards'
-import DataDemo from './DataDemo'
-import BlockPanel from './BlockPanel'
-import Checkout from './Checkout'
-import Forms from './Forms'
-import Headings from './Headings'
-import Colors from './Colors'
-import Comments from './Comments'
-import MegaFooter from './MegaFooter'
-import ConfigForm from './ConfigForm'
-import Modal from './Modal'
+// import Navbar from './Navbar'
+import DemoHeader from './DemoHeader'
+import DemoIntro from './DemoIntro'
+// import Cards from './Cards'
+// import DataDemo from './DataDemo'
+// import BlockPanel from './BlockPanel'
+// import Checkout from './Checkout'
+// import Forms from './Forms'
+// import Headings from './Headings'
+// import Colors from './Colors'
+// import Comments from './Comments'
+// import MegaFooter from './MegaFooter'
+import DemoConfigForm from './DemoConfigForm'
+// import Modal from './Modal'
 
 class App extends React.Component {
   constructor () {
     super()
+    // to do: consider handling this state in App
     this.state = assign({},
       theme,
-      configurations.basic,
+      // init?
+      // configurations.basic,
       {
         drawerOpen: false,
-        dropdownOpen: false,
         modalOpen: false,
-        theme: 'Basic',
+        theme: 'basic',
         repo: {}
       }
     )
@@ -61,21 +67,19 @@ class App extends React.Component {
   }
 
   switchConfig (key) {
-    return (e) => {
-      const theme = assign({}, config, configurations[key])
-      console.log(theme.name)
-      this.resetTheme(() => {
-        this.setState({
-          ...theme,
-          config: theme.name,
-          dropdownOpen: false
-        })
+    const theme = assign({}, theme, themes[key])
+    console.log(theme.name, key)
+    this.resetTheme(() => {
+      console.log('theme reset', key)
+      this.setState({
+        ...theme,
+        theme: key
       })
-    }
+    })
   }
 
   resetTheme (cb) {
-    this.setState(init, cb)
+    this.setState(themeReset, cb)
   }
 
   updateContext (state) {
@@ -111,16 +115,18 @@ class App extends React.Component {
           color,
           backgroundColor
         }}>
+        {/*
         <Navbar {...this.state}
           configurations={configurations}
           switchConfig={this.switchConfig}
           toggle={this.toggle} />
-        <Header toggle={this.toggle} />
+          */}
+        <DemoHeader toggle={this.toggle} />
         <Container style={{
             transition: 'transform .3s ease-out',
             transform: drawerOpen ? 'translateX(-20%)' : 'translateX(0)'
           }}>
-          <Intro />
+          <DemoIntro />
           {/*
           <Cards {...this.state} />
           <DataDemo
@@ -134,13 +140,15 @@ class App extends React.Component {
           <Comments />
           */}
         </Container>
-        {/*
-        <MegaFooter {...this.state} />
-        <ConfigForm
+        <DemoConfigForm
           {...this.state}
+          themes={themes}
           toggle={this.toggle}
           onChange={this.updateContext}
+          switchConfig={this.switchConfig}
           reset={this.resetTheme} />
+        {/*
+        <MegaFooter {...this.state} />
         <Modal {...this.state}
           toggle={this.toggle} />
         */}

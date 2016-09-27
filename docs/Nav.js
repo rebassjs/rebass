@@ -22,17 +22,11 @@ const Nav = ({ theme, changeTheme }) => {
       to: '/components',
       children: 'Components'
     },
-    /*
     {
       is: Link,
-      to: '/themes',
-      children: 'Themes'
-    },
-    {
-      href: '#',
+      to: '/demo',
       children: 'Demo'
     },
-    */
     {
       href: 'https://github.com/jxnblk/rebass',
       children: 'GitHub'

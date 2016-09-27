@@ -16,6 +16,7 @@ import Nav from './Nav'
 import Home from './Home'
 import ComponentIndex from './ComponentIndex'
 import ComponentDetail from './ComponentDetail'
+import Demo from './Demo'
 import NotFound from './NotFound'
 import ComponentList from './ComponentList'
 import Footer from './Footer'
@@ -106,6 +107,9 @@ class App extends React.Component {
             <Match
               pattern='/components/:name'
               component={ComponentDetail} />
+            <Match
+              pattern='/demo'
+              component={Demo} />
             <Match
               pattern='/themes'
               render={(matchProps) => (

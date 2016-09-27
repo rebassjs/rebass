@@ -6,7 +6,7 @@ import {
   Heading,
   Text,
   Button
-} from '../../src'
+} from '../src'
 
 const Header = ({ toggle }) => (
   <Banner

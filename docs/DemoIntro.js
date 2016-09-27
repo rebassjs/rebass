@@ -4,7 +4,7 @@ import {
   PageHeader,
   Breadcrumbs,
   Message
-} from '../../src'
+} from '../src'
 
 const Intro = ({ }) => (
   <div>

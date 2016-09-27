@@ -1,5 +1,5 @@
 
-import Rebass, { config } from '../../src'
+import Rebass, { theme } from '../src'
 
 const componentConfigs = {}
 
@@ -7,15 +7,16 @@ Object.keys(Rebass).forEach(key => {
   componentConfigs[key] = {}
 })
 
-const init = {
+const themeReset = {
   fontFamily: 'inherit',
   fontWeight: 'inherit',
   letterSpacing: 'inherit',
   color: 'inherit',
   backgroundColor: 'inherit',
-  ...config,
+  ...theme,
   ...componentConfigs,
   Heading_alt: {} // Need a better way to handle sub configs
 }
 
-export default init
+export default themeReset
+
