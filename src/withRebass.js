@@ -86,7 +86,12 @@ const withRebass = Comp => {
           circle
         }),
         ...style,
-        fill: fill ? getColorFill(colors)(fill) : {}
+        fill: fill && fill !== true ? getColorFill(colors)(fill) : {}
+      }
+
+      // to do: rename this prop
+      if (fill === true) {
+        props.fill = fill
       }
 
       return (
