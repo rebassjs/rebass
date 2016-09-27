@@ -11,7 +11,7 @@ const Architecture = () => {
   return (
     <section id='architecture'>
       <Container>
-        <Grid span={12}>
+        <Grid span={8}>
           <HeadingLink
             href='#architecture'
             children='Architectural approach' />

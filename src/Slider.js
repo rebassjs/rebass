@@ -21,7 +21,7 @@ const Slider = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale } = theme
+  const { scale, colors } = theme
 
   const max = props.max || 100
   const min = props.min || 0
@@ -66,7 +66,7 @@ const Slider = ({
       marginTop: scale[2] - height / 2,
       cursor: 'pointer',
       color: 'inherit',
-      backgroundColor: `rgba(0, 0, 0, ${1 / 8})`,
+      backgroundColor: colors.gray, // `rgba(0, 0, 0, ${1 / 8})`,
       backgroundImage,
       backgroundClip: 'content-box',
       height,

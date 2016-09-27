@@ -1,15 +1,11 @@
 
+// WIP moving demo over
+
 import React from 'react'
 import jsonp from 'jsonp'
 import assign from 'object-assign'
 import { Flex, Box } from 'reflexbox'
-import {
-  config,
-  Container,
-} from '../../src'
-
-import init from '../configurations/init'
-import configurations from '../configurations'
+import { theme, themes, Container } from '../src'
 
 import Navbar from './Navbar'
 import Header from './Header'
@@ -125,6 +121,7 @@ class App extends React.Component {
             transform: drawerOpen ? 'translateX(-20%)' : 'translateX(0)'
           }}>
           <Intro />
+          {/*
           <Cards {...this.state} />
           <DataDemo
             {...this.state}
@@ -135,7 +132,9 @@ class App extends React.Component {
           <Headings {...this.state} />
           <Colors {...this.state} />
           <Comments />
+          */}
         </Container>
+        {/*
         <MegaFooter {...this.state} />
         <ConfigForm
           {...this.state}
@@ -144,6 +143,7 @@ class App extends React.Component {
           reset={this.resetTheme} />
         <Modal {...this.state}
           toggle={this.toggle} />
+        */}
       </div>
     )
   }

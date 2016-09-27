@@ -15,11 +15,11 @@ const Progress = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale, colors } = theme
+  const { scale, colors, borderColor } = theme
 
   const css = `
     .Progress_progress::-webkit-progress-bar {
-      background-color: rgba(0, 0, 0, .125);
+      background-color: ${colors.gray}; /* rgba(0, 0, 0, .125);*/
     }
     .Progress_progress::-webkit-progress-value {
       background-color: currentcolor;
@@ -36,7 +36,7 @@ const Progress = ({
       marginBottom: scale[2],
       overflow: 'hidden',
       color: colors.primary,
-      backgroundColor: 'rgba(0, 0, 0, .125)',
+      // backgroundColor: 'rgba(0, 0, 0, .125)',
       borderRadius: 9999,
       ...style
     },

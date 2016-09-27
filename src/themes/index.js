@@ -7,6 +7,7 @@ import biblio from './biblio'
 import hello from './hello'
 import pink from './pink'
 import bold from './bold'
+import blue from './blue'
 
 export default {
   basic,
@@ -15,6 +16,7 @@ export default {
   biblio,
   hello,
   pink,
-  bold
+  bold,
+  blue
 }
 

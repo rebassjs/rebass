@@ -33,7 +33,7 @@ const ComponentDetail =({
 
   return (
     <Container>
-      <Grid span={12}>
+      <Grid span={8}>
         <Link to='/'>
           {({ href, onClick }) => (
             <NavItem
