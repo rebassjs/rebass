@@ -81,8 +81,7 @@
   "standard": {
     "parser": "babel-eslint",
     "ignore": [
-      "docs/**/*",
-      "demo/**/*"
+      "docs/**/*"
     ],
     "globals": [
       "test",
