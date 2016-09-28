@@ -1,6 +1,7 @@
 
 import React from 'react'
 import assign from 'object-assign'
+import { Container, Grid } from 'gridsys'
 import { Flex, Box } from 'reflexbox'
 import {
   Section,
@@ -207,11 +208,13 @@ class Forms extends React.Component {
 
     return (
       <Section>
-        <SectionHeader
-          heading='Form Configuration'
-          description='A demonstration of some of the options available for configuring form elements' />
-        <Flex wrap gutter={2}>
-          <Box col={12} sm={5} px={2}>
+        <Container>
+          <Grid span={8}>
+            <SectionHeader
+              heading='Form Configuration'
+              description='A demonstration of some of the options available for configuring form elements' />
+          </Grid>
+          <Grid span={3}>
             <Select
               name='fontFamily'
               label='Font Family'
@@ -293,8 +296,8 @@ class Forms extends React.Component {
               value={this.state.Radio.dot.color}
               onChange={this.handleComponentChange('Radio.dot')}
               options={Object.keys(colors).map(key => { return { value: colors[key], children: key } })} />
-          </Box>
-          <Box col={12} sm={7} px={2}>
+          </Grid>
+          <Grid span={3}>
             <Panel theme='default'>
               <PanelHeader children='Result' />
               <FormDemo
@@ -304,8 +307,8 @@ class Forms extends React.Component {
                 handleCheckboxChange={this.handleCheckboxChange}
                 handleRadioChange={this.handleRadioChange} />
             </Panel>
-          </Box>
-        </Flex>
+          </Grid>
+        </Container>
       </Section>
     )
   }

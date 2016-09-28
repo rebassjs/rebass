@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Container, Grid } from 'gridsys'
 import { Flex, Box } from 'reflexbox'
 import {
   Section,
@@ -19,18 +20,20 @@ import {
 
 const Checkout = () => (
   <Section>
-    <SectionHeader
-      heading='Checkout'
-      description='Don’t worry this isn’t real. It’s just a demo' />
-    <SequenceMap
-      active={0}
-      steps={[
-        { href: '#checkout', children: 'Shipping Address' },
-        { href: '#checkout', children: 'Billing Info' },
-        { href: '#checkout', children: 'Place Order' }
-      ]} />
-    <Flex align='center' wrap gutter={3}>
-      <Box col={12} sm={8} p={3}>
+    <Container>
+      <Grid span={8}>
+        <SectionHeader
+          heading='Checkout'
+          description='Don’t worry this isn’t real. It’s just a demo' />
+        <SequenceMap
+          active={0}
+          steps={[
+            { href: '#checkout', children: 'Shipping Address' },
+            { href: '#checkout', children: 'Billing Info' },
+            { href: '#checkout', children: 'Place Order' }
+          ]} />
+      </Grid>
+      <Grid span={4}>
         <Input
           name='full_name'
           label='Full Name' />
@@ -65,8 +68,8 @@ const Checkout = () => (
         <Button
           big
           children='Continue' />
-      </Box>
-      <Box col={12} sm={4} p={3}>
+      </Grid>
+      <Grid span={2}>
         <Panel m={0} theme='secondary'>
           <PanelHeader>
             Your Cart
@@ -94,8 +97,8 @@ const Checkout = () => (
             <Text bold children='Free' />
           </Flex>
         </Panel>
-      </Box>
-    </Flex>
+      </Grid>
+    </Container>
   </Section>
 )
 

@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Container, Grid } from 'gridsys'
 import { Flex, Box } from 'reflexbox'
 import {
   Section,
@@ -8,14 +9,20 @@ import {
   Blockquote,
   Heading,
   Text,
-} from '../../src'
+} from '../src'
 
-const Headings = ({ fontSizes }) => (
+const Headings = (props, {
+  rebass: {
+    fontSizes
+  }
+}) => (
   <Section>
-    <SectionHeader
-      heading='Type Scale' />
-    <Flex gutter={3} wrap>
-      <Box md={6} p={3}>
+    <Container>
+      <Grid span={8}>
+        <SectionHeader
+          heading='Type Scale' />
+      </Grid>
+      <Grid span={3}>
         {fontSizes.map((size, i) => (
           <Heading
             key={i}
@@ -23,8 +30,8 @@ const Headings = ({ fontSizes }) => (
             size={i}
             children={`Heading ${i} (${size}px)`} />
         ))}
-      </Box>
-      <Box md={6} p={3}>
+      </Grid>
+      <Grid span={3}>
         <Heading level={3}>
           Don’t compose without a scale
         </Heading>
@@ -34,10 +41,14 @@ const Headings = ({ fontSizes }) => (
             source='Robert Bringhurst'>
             In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years. […] Use the old familiar scale, or use new scales of your own devising, but limit yourself, at first, to a modest set of distinct and related intervals.
           </Blockquote>
-      </Box>
-    </Flex>
+      </Grid>
+    </Container>
   </Section>
 )
+
+Headings.contextTypes = {
+  rebass: React.PropTypes.object
+}
 
 export default Headings
 

@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Container, Grid } from 'gridsys'
 import { Flex, Box } from 'reflexbox'
 import {
   Card,
@@ -20,16 +21,14 @@ const Cards = (props, { rebass }) => {
     text: 'An index card consists of card stock cut to a standard size, used for recording and storing small amounts of discrete data. It was invented by Carl Linnaeus, around 1760.'
   }
 
-  const cards = Array.from({ length: 3 }, (c) => card)
+  const cards = Array.from({ length: 4 }, (c) => card)
 
   return (
-    <Flex wrap gutter={2}>
+    <Container>
       {cards.map(({ image, heading, text }, i) => (
-        <Box
+        <Grid
           key={i}
-          col={12}
-          sm={4}
-          p={2}>
+          span={2}>
           <Card>
             <CardImage src={image} />
             <Flex align='center'>
@@ -39,9 +38,9 @@ const Cards = (props, { rebass }) => {
             </Flex>
             <Text small children={text} />
           </Card>
-        </Box>
+        </Grid>
       ))}
-    </Flex>
+    </Container>
   )
 }
 
