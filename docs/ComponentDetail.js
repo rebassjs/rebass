@@ -17,7 +17,7 @@ import {
 import BigHeading from './BigHeading'
 import Rule from './Rule'
 import PropsTable from './PropsTable'
-import getExample, { filterNull } from './func-examples'
+import getExample, { filterNull } from './examples'
 import data from './data.json'
 
 const PropField = ({

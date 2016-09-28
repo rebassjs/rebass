@@ -11,7 +11,7 @@ import {
 } from '../src'
 import BigHeading from './BigHeading'
 import Rule from './Rule'
-import getExample from './func-examples'
+import getExample from './examples'
 import data from './data.json'
 
 const ComponentIndex = () => {
