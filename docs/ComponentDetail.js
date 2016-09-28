@@ -17,7 +17,6 @@ import {
 import BigHeading from './BigHeading'
 import Rule from './Rule'
 import PropsTable from './PropsTable'
-// import ComponentDemo from './ComponentDemo'
 import getExample, { filterNull } from './func-examples'
 import data from './data.json'
 
