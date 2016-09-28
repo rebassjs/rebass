@@ -21,8 +21,7 @@ const ButtonOutline = ({
 
   const {
     color = colors.white,
-    backgroundColor = colors.primary,
-    borderColor,
+    backgroundColor = colors.primary
   } = style.fill
 
   const sx = {

@@ -23,7 +23,7 @@ const mono = {
     64, 24, 20, 18, 14, 12, 12
   ],
 
-  borderColor: `rgba(0, 0, 0, ${1/16})`,
+  borderColor: `rgba(0, 0, 0, ${1 / 16})`,
 
   colors: {
     ...basic.colors,
@@ -45,19 +45,19 @@ const mono = {
   Footer: { borderColor: '#111' },
   Input: {
     input: {
-      backgroundColor: `rgba(255, 255, 255, ${1/8})`
+      backgroundColor: `rgba(255, 255, 255, ${1 / 8})`
     }
   },
   Checkbox: {
     box: {
       width: 24,
-      height: 24,
+      height: 24
     }
   },
   Radio: {
     dot: {
       width: 24,
-      height: 24,
+      height: 24
     }
   },
   Pre: {

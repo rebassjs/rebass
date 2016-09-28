@@ -20,6 +20,7 @@ const Box = ({
   }
   return <div {...props} style={sx} />
 }
+Box._name = 'Box'
 const Base = withRebass(Box)
 
 test('renders', () => {

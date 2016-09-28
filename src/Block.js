@@ -20,7 +20,7 @@ const Block = ({
   subComponentStyles,
   ...props
 }, { rebass }) => {
-  const { scale, colors } = theme
+  const { colors } = theme
 
   borderColor = colors[borderColor] || borderColor || colors.primary
 

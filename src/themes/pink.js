@@ -9,7 +9,7 @@ const caps = {
 const colors = {
   black: '#111',
   blue: '#5cf',
-  //green: '#5fc',
+  // green: '#5fc',
   // green: '#5fa',
   green: '#9f9',
   orange: '#fc7',
@@ -36,7 +36,7 @@ const pink = {
     warning: colors.orange,
     error: colors.red,
     gray: colors.pink,
-    midgray: colors.pink,
+    midgray: colors.pink
   },
   inverted: '#111',
 
@@ -52,7 +52,7 @@ const pink = {
 
   Toolbar: {
     minHeight: 60,
-    backgroundColor: `rgba(255, 255, 255, ${7/8})`,
+    backgroundColor: `rgba(255, 255, 255, ${7 / 8})`,
     color: '#111',
     borderBottom: '1px solid #fcc'
   },
@@ -64,7 +64,7 @@ const pink = {
     backgroundColor: colors.pink
   },
   Heading: {
-    fontStyle: 'italic',
+    fontStyle: 'italic'
   },
   Heading_alt: {
     fontSize: 13,

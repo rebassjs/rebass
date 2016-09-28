@@ -44,7 +44,7 @@ const Heading = ({
     lineHeight: 1.25,
     textAlign: center ? 'center' : null,
     margin: 0,
-    ...style,
+    ...style
     // This doesn't seem good...
     // opacity: alt ? 0.5 : null
   }

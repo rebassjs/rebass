@@ -12,7 +12,7 @@ const dark = {
   color: '#eee',
   backgroundColor: '#111',
   borderRadius: 5,
-  borderColor: `rgba(255, 255, 255, ${1/16})`,
+  borderColor: `rgba(255, 255, 255, ${1 / 16})`,
 
   colors: {
     ...basic.colors,
@@ -37,7 +37,7 @@ const dark = {
 
   Card: {
     backgroundColor: '#222',
-    border: 0,
+    border: 0
   },
   Panel: {
     borderWidth: 2,
@@ -54,33 +54,33 @@ const dark = {
     ...caps,
     fontSize: 12,
     color: '#00d9f7',
-    opacity: 7/8
+    opacity: 7 / 8
   },
   ButtonOutline: {
     ...caps,
     fontSize: 12,
     color: '#00d9f7',
-    opacity: 7/8
+    opacity: 7 / 8
   },
   Toolbar: {
     minHeight: 64,
     color: '#00d9f7',
-    backgroundColor: `rgba(0, 0, 0, ${7/8})`
+    backgroundColor: `rgba(0, 0, 0, ${7 / 8})`
   },
-  Label: { opacity: 5/8 },
+  Label: { opacity: 5 / 8 },
   Menu: {
     color: '#00d9f7',
     backgroundColor: '#000'
   },
   Message: {
     color: '#111',
-    opacity: 15/16
+    opacity: 15 / 16
   },
   Text: {
-    opacity: 7/8
+    opacity: 7 / 8
   },
   Footer: {
-    opacity: 1/2
+    opacity: 1 / 2
   }
 }
 

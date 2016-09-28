@@ -104,21 +104,21 @@ const blue = {
     },
     arrow: {
       marginTop: 24,
-      marginBottom: 24,
+      marginBottom: 24
     }
   },
   Checkbox: {
     box: {
       width: 24,
-      height: 24,
+      height: 24
     }
   },
   Radio: {
     dot: {
       width: 24,
-      height: 24,
+      height: 24
     }
-  },
+  }
 }
 
 export default blue

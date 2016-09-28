@@ -15,7 +15,7 @@ const Progress = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale, colors, borderColor } = theme
+  const { scale, colors } = theme
 
   const css = `
     .Progress_progress::-webkit-progress-bar {

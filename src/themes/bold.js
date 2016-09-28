@@ -8,13 +8,13 @@ const colors = {
   midgray: '#aaa',
 
   // blue: '#0cf',
-  //green: '#0fc',
+  // green: '#0fc',
   // red: '#f05',
   // orange: '#fa4',
   blue: '#99b',
   green: '#9b9',
   red: '#b99',
-  orange: '#ba8',
+  orange: '#ba8'
 }
 
 const bold = {
@@ -31,7 +31,7 @@ const bold = {
     info: colors.blue,
     success: colors.green,
     warning: colors.orange,
-    error: colors.red,
+    error: colors.red
   },
 
   inverted: colors.black,

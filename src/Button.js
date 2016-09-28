@@ -65,7 +65,7 @@ Button.propTypes = {
   /** Creates a larger button */
   big: React.PropTypes.bool,
   /** Adds a ref to the button element */
-  baseRef: React.PropTypes.func,
+  baseRef: React.PropTypes.func
 }
 
 Button._name = 'Button'

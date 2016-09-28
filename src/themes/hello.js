@@ -11,7 +11,7 @@ const colors = {
   green: '#3ea',
   orange: '#fe1',
   gray: '#eef',
-  midgray: '#ccd',
+  midgray: '#ccd'
 }
 
 const hello = {
@@ -56,18 +56,18 @@ const hello = {
   Button: {
     fontSize: 20,
     paddingTop: 16,
-    paddingBottom: 16,
+    paddingBottom: 16
   },
   ButtonOutline: {
     // fontSize: 20,
-    backgroundColor: '#346',
+    backgroundColor: '#346'
     // boxShadow: 'inset 0 0 0 4px'
   },
   ButtonCircle: {
     fontSize: 16,
     lineHeight: '16px',
     width: 48,
-    height: 48,
+    height: 48
   },
   Message: {
     // color: colors.black
@@ -111,13 +111,13 @@ const hello = {
   Checkbox: {
     box: {
       width: 24,
-      height: 24,
+      height: 24
     }
   },
   Radio: {
     dot: {
       width: 24,
-      height: 24,
+      height: 24
     }
   },
   Rating: {

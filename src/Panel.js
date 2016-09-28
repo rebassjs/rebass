@@ -5,8 +5,6 @@ import withRebass from './withRebass'
 import PanelHeader from './PanelHeader'
 import PanelFooter from './PanelFooter'
 
-import isDark from './util/is-dark'
-
 /**
  * Panel for containing small pieces of information
  */
@@ -25,16 +23,11 @@ const Panel = ({
 
   const fillStyle = {
     color: colors.black,
-    backgroundColor: colors.gray,
     borderColor: colors.gray,
     ...style.fill
   }
 
-  const {
-    color,
-    backgroundColor,
-    borderColor
-  } = fillStyle
+  const { borderColor } = fillStyle
 
   const sx = {
     padding: scale[2],

@@ -3,11 +3,9 @@ require('babel-register')
 const fs = require('fs')
 const path = require('path')
 const docgen = require('react-docgen')
-const toJsxString = require('react-element-to-jsx-string').default
+// const toJsxString = require('react-element-to-jsx-string').default
 const Rebass = require('./src')
 const pkg = require('./package.json')
-const examples = require('./docs/examples').default
-const getExample = require('./docs/func-examples').default
 
 const components = Object.keys(Rebass)
   .filter(key => /^[A-Z]/.test(key))
@@ -23,7 +21,7 @@ const components = Object.keys(Rebass)
 
     return Object.assign(metadata, {
       name: key,
-      raw,
+      raw
       // example,
       // code
     })

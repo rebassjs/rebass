@@ -6,7 +6,7 @@ import {
   Button,
   ButtonOutline,
   Input,
-  Select,
+  Select
 } from './index'
 
 /**

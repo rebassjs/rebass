@@ -16,7 +16,6 @@ const List = ({
   children,
   ...props
 }) => {
-  const { space } = theme
   const Comp = ordered ? 'ol' : 'ul'
   const cx = classnames('List', className)
 

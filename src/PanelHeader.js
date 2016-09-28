@@ -14,7 +14,7 @@ const PanelHeader = ({
   subComponentStyles,
   ...props
 }) => {
-  const { bold, scale, colors, borderRadius } = theme
+  const { bold, scale, borderRadius } = theme
 
   const cx = classnames('PanelHeader', className)
 

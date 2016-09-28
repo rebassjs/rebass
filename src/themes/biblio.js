@@ -36,7 +36,7 @@ const biblio = {
     muted: colors.gray
   },
 
-  borderColor: `rgba(0, 0, 0, ${1/8})`,
+  borderColor: `rgba(0, 0, 0, ${1 / 8})`,
 
   scale: [
     0, 12, 24, 48, 96
@@ -84,13 +84,13 @@ const biblio = {
     fontSize: 12
   },
   PanelHeader: {
-    ...sans,
+    ...sans
   },
   Label: {
     ...sans,
     ...caps,
     fontSize: 12,
-    opacity: 5/8
+    opacity: 5 / 8
   },
   SequenceMap: {
     ...sans,
@@ -98,21 +98,21 @@ const biblio = {
     fontSize: 12
   },
   Donut: {
-    ...sans,
+    ...sans
   },
   Stat: {
-    ...sans,
+    ...sans
   },
   Breadcrumbs: {
     ...sans,
-    color: '#e54',
+    color: '#e54'
   },
 
   PageHeader: {
-    borderColor: '#e54',
+    borderColor: '#e54'
   },
   SectionHeader: {
-    borderColor: '#e54',
+    borderColor: '#e54'
   },
   Rating: {
     fontSize: 24

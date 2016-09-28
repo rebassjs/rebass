@@ -48,7 +48,6 @@ test('context styles override default styles', () => {
     }
   })
   inner = wrapper.first().shallow()
-  const box = inner.find('.Checkbox_box')
   expect(inner.props().style.marginLeft).toBe(0)
 })
 

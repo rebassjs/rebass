@@ -21,9 +21,9 @@ const isDark = hex => {
   }
 
   const [ r, g, b ] = toRgb(hex)
-	const yiq = (r * 299 + g * 587 + b * 114) / 1000
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000
 
-	return yiq < 128
+  return yiq < 128
 }
 
 export default isDark
