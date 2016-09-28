@@ -1,5 +1,5 @@
 
-// to do: consider px only
+// to do: consider pixel only
 // paddingTop: padding + shift, // * fontSize
 // paddingBottom: padding - shift
 

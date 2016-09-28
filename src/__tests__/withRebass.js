@@ -70,12 +70,19 @@ test('padding props add styles', () => {
 })
 
 test('color props add styles', () => {
-  wrapper = shallow(<Base color='primary' backgroundColor='black' />)
+  wrapper = shallow(
+    <Base
+      color='primary'
+      backgroundColor='black'
+      fill='primary'
+    />
+  )
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
   expect(style.color).toBe(colors.primary)
   expect(style.backgroundColor).toBe(colors.black)
-  // to do: theme, inverted behaviors
+  expect(style.fill.color).toBe(colors.white)
+  expect(style.fill.backgroundColor).toBe(colors.primary)
 })
 
 test('radii props add styles', () => {

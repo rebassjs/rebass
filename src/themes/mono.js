@@ -12,9 +12,6 @@ const mono = {
   color: '#111',
   backgroundColor: '#fff',
 
-  // to do: Tweak this
-  // baselineShift: -1 / 32,
-
   scale: [
     0, 8, 16, 32, 64
   ],

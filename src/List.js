@@ -16,20 +16,19 @@ const List = ({
   children,
   ...props
 }) => {
+  const { scale } = theme
   const Comp = ordered ? 'ol' : 'ul'
   const cx = classnames('List', className)
 
   flush = flush || reset
 
-  // to do: style padding/indent based on space
   const sx = {
     root: {
-      paddingLeft: flush ? 0 : null,
+      paddingLeft: flush ? 0 : scale[2],
       margin: 0,
       listStyle: reset ? 'none' : null
     },
-    item: {
-    }
+    item: {}
   }
 
   const wrappedChildren = React.Children.map(children, child => {

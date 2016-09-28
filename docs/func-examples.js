@@ -26,6 +26,7 @@ import {
   Divider,
   Donut,
   DotIndicator,
+  Drawer,
   Dropdown,
   DropdownMenu,
   Embed,
@@ -309,9 +310,16 @@ export const examples = {
         active={0} />
     </div>
   ),
-  // to do: Change to link
-  Drawer: ({ ...rest }) => (
-    <a href='demo'>See demo</a>
+  Drawer: ({ text, open, update, ...rest }) => (
+    <div>
+      <Button onClick={e => { update({ open: !open }) }} children='Open' />
+      <Drawer
+        {...getProps(rest)}
+        open={open}
+        onDismiss={e => { update({ open: false }) }}>
+        {text}
+      </Drawer>
+    </div>
   ),
   Dropdown: ({ text, open, update, ...rest }) => (
     <Dropdown {...getProps(rest)}>
