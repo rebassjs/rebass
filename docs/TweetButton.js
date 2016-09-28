@@ -2,7 +2,6 @@
 import React from 'react'
 
 class TweetButton extends React.Component {
-  // const TweetButton = ({ text, url, via, ...props }) => (
   componentDidMount () {
     const script = document.createElement('script')
     script.id = 'twitter-wjs'

@@ -59,18 +59,13 @@ const hello = {
     paddingBottom: 16
   },
   ButtonOutline: {
-    // fontSize: 20,
     backgroundColor: '#346'
-    // boxShadow: 'inset 0 0 0 4px'
   },
   ButtonCircle: {
     fontSize: 16,
     lineHeight: '16px',
     width: 48,
     height: 48
-  },
-  Message: {
-    // color: colors.black
   },
   Panel: {
     borderWidth

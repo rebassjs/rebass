@@ -3,14 +3,8 @@ import basic from './basic'
 
 const colors = {
   black: '#333',
-  // gray: '#eee',
   gray: '#f6f6f6',
   midgray: '#aaa',
-
-  // blue: '#0cf',
-  // green: '#0fc',
-  // red: '#f05',
-  // orange: '#fa4',
   blue: '#99b',
   green: '#9b9',
   red: '#b99',

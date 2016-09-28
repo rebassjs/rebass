@@ -1,11 +1,6 @@
 
 /**
  * Utility for extracting color and backgroundColor props from components
- *
- * @method colorStyle
- * @param {Object} colors Color palette
- * @returns {Function} getColorStyle
- * @param {Object} props Style props from component
  */
 
 const colorStyle = colors => props => {

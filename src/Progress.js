@@ -36,7 +36,6 @@ const Progress = ({
       marginBottom: scale[2],
       overflow: 'hidden',
       color: colors.primary,
-      // backgroundColor: 'rgba(0, 0, 0, .125)',
       borderRadius: 9999,
       ...style
     },

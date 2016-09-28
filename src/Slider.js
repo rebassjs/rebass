@@ -66,7 +66,7 @@ const Slider = ({
       marginTop: scale[2] - height / 2,
       cursor: 'pointer',
       color: 'inherit',
-      backgroundColor: colors.gray, // `rgba(0, 0, 0, ${1 / 8})`,
+      backgroundColor: colors.gray,
       backgroundImage,
       backgroundClip: 'content-box',
       height,

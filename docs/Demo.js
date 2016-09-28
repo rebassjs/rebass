@@ -1,6 +1,4 @@
 
-// WIP moving demo over
-
 import React from 'react'
 import jsonp from 'jsonp'
 import assign from 'object-assign'
@@ -75,18 +73,16 @@ class App extends React.Component {
         <DemoColors />
         <DemoModal {...this.state}
           toggle={this.toggle} />
-        {/*
-          <DemoConfigForm
-            {...this.state}
-            themes={themes}
-            toggle={this.toggle}
-            onChange={e => { alert('Hook this up') }}
-          />
-        */}
       </div>
     )
   }
 }
+// <DemoConfigForm
+//   {...this.state}
+//   themes={themes}
+//   toggle={this.toggle}
+//   onChange={e => { alert('Hook this up') }}
+// />
 
 export default App
 

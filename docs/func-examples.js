@@ -69,13 +69,6 @@ import {
   Base
 } from '../src'
 
-// General props
-// - p
-// - m
-// - rounded
-// - color
-// - backgroundColor
-
 export const filterNull = obj => {
   return Object.keys(obj).reduce((a, key) => {
     if (obj[key] !== null && obj[key] !== undefined) {
@@ -106,7 +99,6 @@ const getProps = ({
 export const defaultProps = {
   text: 'Hello',
   number: 16,
-  // image: 'http://lorempixel.com/64/64/cats',
   image: 'https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg',
   theme: null,
 
