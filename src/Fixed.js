@@ -52,5 +52,7 @@ Fixed.propTypes = {
   zIndex: React.PropTypes.number
 }
 
+Fixed._name = 'Fixed'
+
 export default withRebass(Fixed)
 

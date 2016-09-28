@@ -74,5 +74,7 @@ Heading.defaultProps = {
   level: 2
 }
 
+Heading._name = 'Heading'
+
 export default withRebass(Heading)
 

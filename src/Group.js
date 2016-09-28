@@ -73,5 +73,7 @@ const Group = ({
   )
 }
 
+Group._name = 'Group'
+
 export default withRebass(Group)
 

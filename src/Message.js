@@ -37,5 +37,7 @@ const Message = ({
   )
 }
 
+Message._name = 'Message'
+
 export default withRebass(Message)
 

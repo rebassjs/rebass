@@ -48,5 +48,7 @@ Text.propTypes = {
   center: React.PropTypes.bool
 }
 
+Text._name = 'Text'
+
 export default withRebass(Text)
 

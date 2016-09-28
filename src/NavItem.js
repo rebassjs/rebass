@@ -62,5 +62,7 @@ NavItem.propTypes = {
   baseRef: React.PropTypes.func
 }
 
+NavItem._name = 'NavItem'
+
 export default withRebass(NavItem)
 

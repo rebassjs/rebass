@@ -77,7 +77,7 @@ import {
 
 export const filterNull = obj => {
   return Object.keys(obj).reduce((a, key) => {
-    if (obj[key] && obj[key].length) {
+    if (obj[key] !== null && obj[key] !== undefined) {
       a[key] = obj[key]
     }
     return a

@@ -74,5 +74,7 @@ Progress.propTypes = {
   color: React.PropTypes.string
 }
 
+Progress._name = 'Progress'
+
 export default withRebass(Progress)
 

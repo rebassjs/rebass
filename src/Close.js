@@ -47,5 +47,7 @@ Close.propTypes = {
   baseRef: React.PropTypes.func
 }
 
+Close._name = 'Close'
+
 export default withRebass(Close)
 

@@ -80,5 +80,7 @@ SectionHeader.propTypes = {
   description: React.PropTypes.string
 }
 
+SectionHeader._name = 'SectionHeader'
+
 export default withRebass(SectionHeader)
 

@@ -88,5 +88,7 @@ Tooltip.propTypes = {
   title: React.PropTypes.string
 }
 
+Tooltip._name = 'Tooltip'
+
 export default withRebass(Tooltip)
 

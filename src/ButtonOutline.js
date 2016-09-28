@@ -52,5 +52,7 @@ ButtonOutline.propTypes = {
   big: React.PropTypes.bool
 }
 
+ButtonOutline._name = 'ButtonOutline'
+
 export default withRebass(ButtonOutline)
 

@@ -130,5 +130,7 @@ Select.defaultProps = {
   options: []
 }
 
+Select._name = 'Select'
+
 export default withRebass(Select)
 

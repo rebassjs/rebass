@@ -72,5 +72,7 @@ const Panel = ({
   )
 }
 
+Panel._name = 'Panel'
+
 export default withRebass(Panel)
 

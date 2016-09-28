@@ -40,5 +40,7 @@ const PanelHeader = ({
   )
 }
 
+PanelHeader._name = 'PanelHeader'
+
 export default withRebass(PanelHeader)
 

@@ -123,5 +123,7 @@ Checkbox.propTypes = {
   baseRef: React.PropTypes.func
 }
 
+Checkbox._name = 'Checkbox'
+
 export default withRebass(Checkbox)
 

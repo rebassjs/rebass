@@ -45,7 +45,9 @@ const withRebass = Comp => {
 
       const theme = { ...basicTheme, ...rebass }
       const { scale, colors, borderRadius } = theme
-      const themeStyle = theme[Comp.name] || {}
+
+      // to do: find a way to handle this key even in production
+      const themeStyle = theme[Comp._name] || {}
 
       const margin = createMargin(scale)
       const padding = createPadding(scale)
@@ -127,7 +129,7 @@ const withRebass = Comp => {
     ])
   }
 
-  RebassBase.displayName = Comp.name
+  RebassBase.displayName = Comp._name
 
   return RebassBase
 }

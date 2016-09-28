@@ -61,5 +61,7 @@ HeadingLink.defaultProps = {
   href: '#!'
 }
 
+HeadingLink._name = 'HeadingLink'
+
 export default withRebass(HeadingLink)
 

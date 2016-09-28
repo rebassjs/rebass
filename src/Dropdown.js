@@ -29,5 +29,7 @@ const Dropdown = ({
   )
 }
 
+Dropdown._name = 'Dropdown'
+
 export default withRebass(Dropdown)
 

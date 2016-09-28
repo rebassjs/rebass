@@ -129,5 +129,7 @@ Input.defaultProps = {
   type: 'text'
 }
 
+Input._name = 'Input'
+
 export default withRebass(Input)
 

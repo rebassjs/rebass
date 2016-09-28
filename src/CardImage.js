@@ -44,5 +44,7 @@ CardImage.propTypes = {
   src: React.PropTypes.string.isRequired
 }
 
+CardImage._name = 'CardImage'
+
 export default withRebass(CardImage)
 

@@ -129,5 +129,7 @@ Drawer.defaultProps = {
   onDismiss: function () {}
 }
 
+Drawer._name = 'Drawer'
+
 export default withRebass(Drawer)
 

@@ -156,5 +156,7 @@ Donut.defaultProps = {
   strokeWidth: 8
 }
 
+Donut._name = 'Donut'
+
 export default withRebass(Donut)
 

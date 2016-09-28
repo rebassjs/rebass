@@ -60,5 +60,7 @@ List.propTypes = {
   reset: React.PropTypes.bool
 }
 
+List._name = 'List'
+
 export default withRebass(List)
 

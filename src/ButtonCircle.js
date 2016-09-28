@@ -58,5 +58,7 @@ ButtonCircle.propTypes = {
   size: React.PropTypes.number
 }
 
+ButtonCircle._name = 'ButtonCircle'
+
 export default withRebass(ButtonCircle)
 

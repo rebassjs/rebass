@@ -70,5 +70,7 @@ Breadcrumbs.defaultProps = {
   links: []
 }
 
+Breadcrumbs._name = 'Breadcrumbs'
+
 export default withRebass(Breadcrumbs)
 

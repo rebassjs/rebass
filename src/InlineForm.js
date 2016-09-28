@@ -93,5 +93,7 @@ InlineForm.defaultProps = {
   onChange: () => {}
 }
 
+InlineForm._name = 'InlineForm'
+
 export default withRebass(InlineForm)
 

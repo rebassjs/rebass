@@ -99,5 +99,7 @@ Textarea.propTypes = {
   baseRef: React.PropTypes.func
 }
 
+Textarea._name = 'Textarea'
+
 export default withRebass(Textarea)
 

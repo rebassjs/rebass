@@ -58,5 +58,7 @@ const Carousel = ({
   )
 }
 
+Carousel._name = 'Carousel'
+
 export default withRebass(Carousel)
 

@@ -50,5 +50,7 @@ Label.propTypes = {
   hide: React.PropTypes.bool
 }
 
+Label._name = 'Label'
+
 export default withRebass(Label)
 

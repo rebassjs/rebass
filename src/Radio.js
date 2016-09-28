@@ -96,5 +96,7 @@ Radio.propTypes = {
   baseRef: React.PropTypes.func
 }
 
+Radio._name = 'Radio'
+
 export default withRebass(Radio)
 

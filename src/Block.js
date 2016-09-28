@@ -60,5 +60,7 @@ Block.propTypes = {
   borderLeft: React.PropTypes.bool
 }
 
+Block._name = 'Block'
+
 export default withRebass(Block)
 

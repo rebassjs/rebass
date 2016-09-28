@@ -77,5 +77,7 @@ SequenceMap.defaultProps = {
 
 SequenceMap.Step = SequenceMapStep
 
+SequenceMap._name = 'SequenceMap'
+
 export default withRebass(SequenceMap)
 

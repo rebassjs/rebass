@@ -55,5 +55,7 @@ const Badge = ({
   )
 }
 
+Badge._name = 'Badge'
+
 export default withRebass(Badge)
 

@@ -111,5 +111,7 @@ Slider.propTypes = {
   baseRef: React.PropTypes.func
 }
 
+Slider._name = 'Slider'
+
 export default withRebass(Slider)
 

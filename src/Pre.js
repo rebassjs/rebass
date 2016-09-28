@@ -36,5 +36,7 @@ const Pre = ({
   )
 }
 
+Pre._name = 'Pre'
+
 export default withRebass(Pre)
 

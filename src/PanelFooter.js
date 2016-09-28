@@ -42,5 +42,7 @@ const PanelFooter = ({
   )
 }
 
+PanelFooter._name = 'PanelFooter'
+
 export default withRebass(PanelFooter)
 

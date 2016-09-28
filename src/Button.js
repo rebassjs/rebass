@@ -68,5 +68,7 @@ Button.propTypes = {
   baseRef: React.PropTypes.func,
 }
 
+Button._name = 'Button'
+
 export default withRebass(Button)
 

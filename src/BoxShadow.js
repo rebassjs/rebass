@@ -33,5 +33,7 @@ const BoxShadow = ({
   )
 }
 
+BoxShadow._name = 'BoxShadow'
+
 export default withRebass(BoxShadow)
 

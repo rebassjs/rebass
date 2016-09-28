@@ -101,5 +101,7 @@ Rating.defaultProps = {
   value: 0
 }
 
+Rating._name = 'Rating'
+
 export default withRebass(Rating)
 

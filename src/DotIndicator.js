@@ -94,5 +94,7 @@ DotIndicator.defaultProps = {
   onClick: function () {}
 }
 
+DotIndicator._name = 'DotIndicator'
+
 export default withRebass(DotIndicator)
 

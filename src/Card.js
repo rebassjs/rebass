@@ -46,5 +46,7 @@ Card.propTypes = {
   ])
 }
 
+Card._name = 'Card'
+
 export default withRebass(Card)
 

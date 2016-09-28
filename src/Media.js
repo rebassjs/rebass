@@ -78,5 +78,7 @@ Media.propTypes = {
   align: React.PropTypes.oneOf(['top', 'center', 'bottom'])
 }
 
+Media._name = 'Media'
+
 export default withRebass(Media)
 

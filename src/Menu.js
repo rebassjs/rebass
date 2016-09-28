@@ -41,5 +41,7 @@ const Menu = ({
   )
 }
 
+Menu._name = 'Menu'
+
 export default withRebass(Menu)
 

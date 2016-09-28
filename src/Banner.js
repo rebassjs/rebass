@@ -65,5 +65,7 @@ Banner.defaultProps = {
   align: 'center'
 }
 
+Banner._name = 'Banner'
+
 export default withRebass(Banner)
 

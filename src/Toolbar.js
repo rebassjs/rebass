@@ -38,5 +38,7 @@ const Toolbar = ({
   )
 }
 
+Toolbar._name = 'Toolbar'
+
 export default withRebass(Toolbar)
 
