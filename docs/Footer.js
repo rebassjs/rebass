@@ -28,13 +28,8 @@ const Footer = () => {
           <NavItem
             px={0}
             is={Link}
-            to='/themes'
-            children='Themes' />
-          <NavItem
-            px={0}
-            is={Link}
-            to='/styleguide'
-            children='Style Guide' />
+            to='/demo'
+            children='Demo' />
           <NavItem
             px={0}
             href='https://github.com/jxnblk/rebass'
