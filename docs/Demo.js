@@ -15,17 +15,17 @@ import themeReset from './theme-reset'
 // import Navbar from './Navbar'
 import DemoHeader from './DemoHeader'
 import DemoIntro from './DemoIntro'
-// import Cards from './Cards'
-// import DataDemo from './DataDemo'
-// import BlockPanel from './BlockPanel'
-// import Checkout from './Checkout'
-// import Forms from './Forms'
+import DemoCards from './DemoCards'
+import DemoData from './DemoData'
+import DemoBlockPanel from './DemoBlockPanel'
+import DemoCheckout from './DemoCheckout'
+import DemoForms from './DemoForms'
 // import Headings from './Headings'
 // import Colors from './Colors'
 // import Comments from './Comments'
 // import MegaFooter from './MegaFooter'
 import DemoConfigForm from './DemoConfigForm'
-// import Modal from './Modal'
+import DemoModal from './DemoModal'
 
 class App extends React.Component {
   constructor () {
@@ -50,12 +50,12 @@ class App extends React.Component {
   }
 
   static childContextTypes = {
-    rebass: React.PropTypes.object
+    // rebass: React.PropTypes.object
   }
 
   getChildContext () {
     return {
-      rebass: this.state
+      // rebass: this.state
     }
   }
 
@@ -115,26 +115,20 @@ class App extends React.Component {
           color,
           backgroundColor
         }}>
-        {/*
-        <Navbar {...this.state}
-          configurations={configurations}
-          switchConfig={this.switchConfig}
-          toggle={this.toggle} />
-          */}
         <DemoHeader toggle={this.toggle} />
         <Container style={{
             transition: 'transform .3s ease-out',
             transform: drawerOpen ? 'translateX(-20%)' : 'translateX(0)'
           }}>
           <DemoIntro />
-          {/*
-          <Cards {...this.state} />
-          <DataDemo
+          <DemoCards />
+          <DemoData
             {...this.state}
             {...this.props} />
-          <BlockPanel toggle={this.toggle} />
-          <Checkout />
-          <Forms />
+          <DemoBlockPanel toggle={this.toggle} />
+          <DemoCheckout />
+          <DemoForms />
+          {/*
           <Headings {...this.state} />
           <Colors {...this.state} />
           <Comments />
@@ -149,9 +143,9 @@ class App extends React.Component {
           reset={this.resetTheme} />
         {/*
         <MegaFooter {...this.state} />
-        <Modal {...this.state}
-          toggle={this.toggle} />
         */}
+        <DemoModal {...this.state}
+          toggle={this.toggle} />
       </div>
     )
   }

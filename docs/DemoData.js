@@ -11,7 +11,7 @@ import {
   Slider,
   Space,
   Stat,
-} from '../../src'
+} from '../src'
 
 const rad = (a) => Math.PI * a /180
 
@@ -29,7 +29,8 @@ class DataDemo extends React.Component {
   }
 
   handleChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
+    const num = parseInt(e.target.value)
+    this.setState({ [e.target.name]: num })
   }
 
   render () {

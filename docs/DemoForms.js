@@ -13,8 +13,89 @@ import {
   Select,
   Slider,
   Textarea,
-} from '../../src'
-import FormDemo from './FormDemo'
+  Label,
+  Radio,
+  Checkbox,
+  Button,
+  Space
+} from '../src'
+
+class FormDemo extends React.Component {
+  render () {
+    const {
+      fontFamily,
+      input,
+      select,
+      radio,
+      radio1,
+      radio2,
+      textarea,
+      checkbox,
+      handleChange,
+      handleNumberChange,
+      handleCheckboxChange,
+      handleRadioChange,
+      ...props
+    } = this.props
+
+    const handleSubmit = (e) => e.preventDefault()
+
+    return (
+      <form onSubmit={handleSubmit}
+        style={{
+          fontFamily
+        }}>
+        <Input
+          name='input'
+          label='Input'
+          value={input}
+          onChange={handleChange} />
+        <Select
+          name='select'
+          label='Select'
+          value={select}
+          onChange={handleNumberChange}
+          options={[
+            { value: 2, children: 'Two' },
+            { value: 4, children: 'Four' },
+            { value: 8, children: 'Eight' },
+            { value: 16, children: 'Sixteen' },
+            { value: 32, children: 'Thirty-Two' },
+            { value: 64, children: 'Sixty-Four' },
+            { value: 128, children: 'One Hundred Twenty-Eight' },
+            { value: 256, children: 'Two Hundred Fifty-Six' }
+          ]} />
+        <Radio
+          name='radio1'
+          value='radio1'
+          checked={radio === 'radio1'}
+          onChange={handleRadioChange}
+          label='Radio 1' />
+        <Radio
+          name='radio1'
+          value='radio2'
+          checked={radio === 'radio2'}
+          onChange={handleRadioChange}
+          label='Radio 2' />
+        <Textarea
+          value={textarea || ''}
+          name='textarea'
+          label='Textarea'
+          onChange={handleChange} />
+        <Checkbox
+          mb={2}
+          checked={checkbox}
+          name='checkbox'
+          label='Checkbox'
+          onChange={handleCheckboxChange} />
+        <Button children='Hello' />
+        <Space />
+        <Button backgroundColor='secondary' children='Nope' />
+      </form>
+    )
+  }
+}
+
 
 class Forms extends React.Component {
   constructor(props, { rebass }) {
@@ -32,10 +113,12 @@ class Forms extends React.Component {
           borderWidth: 5
         }
       },
-      Checkbox_box: {
-        width: scale[2],
-        height: scale[2],
-        color: colors.green
+      Checkbox: {
+        box: {
+          width: scale[2],
+          height: scale[2],
+          color: colors.green
+        }
       },
       // FormDemo
       input: 'Hello!',
@@ -67,7 +150,9 @@ class Forms extends React.Component {
   }
 
   handleChange (e) {
-    this.setState({ [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    const val = isNaN(parseInt(value)) ? value : parseInt(value)
+    this.setState({ [name]: val })
   }
 
   handleNumberChange (e) {
@@ -88,8 +173,9 @@ class Forms extends React.Component {
     return (e) => {
       const [ k1, k2 ] = key.split('.')
       const comp = this.state[key] || this.state[k1][k2]
-      const val = e.target.value
-      const checkboxBox = this.state.Checkbox_box
+      const { value } = e.target
+      const val = isNaN(parseInt(value)) ? value : parseInt(value)
+      const checkboxBox = this.state.Checkbox.box
       comp[e.target.name] = val
       if (e.target.name === 'width') {
         comp.height = val
@@ -100,7 +186,9 @@ class Forms extends React.Component {
       }
       this.setState({
         [key]: comp,
-        Checkbox_box: checkboxBox
+        Checkbox: {
+          box: checkboxBox
+        }
       })
     }
   }
@@ -168,7 +256,7 @@ class Forms extends React.Component {
               min={0}
               max={32}
               step={1}
-              onChange={this.handleChange} />
+              onChange={this.handleNumberChange} />
             <Select
               name='borderColor'
               label='Border color'

@@ -43,6 +43,7 @@ const Panel = ({
     borderStyle: 'solid',
     borderRadius,
     borderColor: borderColor || colors.primary,
+    backgroundColor: colors.white,
     ...style
   }
 

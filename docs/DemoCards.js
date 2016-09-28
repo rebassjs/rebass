@@ -8,10 +8,11 @@ import {
   Text,
   Space,
   Rating
-} from '../../src'
+} from '../src'
 
 
-const Cards = ({ colors }) => {
+const Cards = (props, { rebass }) => {
+  const { colors } = rebass
   const primary = /^\#/.test(colors.primary) ? colors.primary.replace('#', '') : '#666'
   const card = {
     image: `http://placehold.it/256x192/${primary}/fff`,
@@ -42,6 +43,10 @@ const Cards = ({ colors }) => {
       ))}
     </Flex>
   )
+}
+
+Cards.contextTypes = {
+  rebass: React.PropTypes.object
 }
 
 export default Cards

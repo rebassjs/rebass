@@ -70,7 +70,7 @@ const Nav = ({ theme, changeTheme }) => {
           name='theme'
           label='Theme'
           hideLabel
-          m={0}
+          mb={0}
           value={theme}
           onChange={e => {
             changeTheme(e.target.value)

@@ -10,7 +10,7 @@ import {
   Media,
   Close,
   Space
-} from '../../src'
+} from '../src'
 
 const Modal = ({ modalOpen, toggle }) => (
   <Overlay
@@ -43,3 +43,4 @@ const Modal = ({ modalOpen, toggle }) => (
 )
 
 export default Modal
+

@@ -9,7 +9,7 @@ import {
   Button,
   Panel,
   PanelHeader
-} from '../../src'
+} from '../src'
 
 const BlockPanel = ({ toggle }) => (
   <Section>

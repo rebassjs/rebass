@@ -15,7 +15,7 @@ import {
   Space,
   Tooltip,
   Close
-} from '../../src'
+} from '../src'
 
 const Checkout = () => (
   <Section>
@@ -100,3 +100,4 @@ const Checkout = () => (
 )
 
 export default Checkout
+
