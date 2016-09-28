@@ -70,7 +70,7 @@ class ComponentDetail extends React.Component {
 
     const example = getExample(comp.name)({
       ...filterNull(this.state),
-      text: comp.name,
+      text: text || comp.name,
       update: this.onChange
     })
 
@@ -104,46 +104,28 @@ class ComponentDetail extends React.Component {
           </Heading>
           {example}
         </Grid>
-        <Grid span={3}>
-          <Pre children={code} />
-        </Grid>
-        <Grid span={3}>
-          <PropsTable props={comp.props} />
-        </Grid>
-        <Grid span={3}>
+        <Grid span={1}>
           <Input
             name='text'
             label='text'
+            mb={1}
             value={text}
             onChange={this.handleChange} />
-          <Select
-            name='image'
-            label='image'
-            value={image || ''}
-            onChange={this.handleChange}
-            options={[
-              { value: '', children: 'Space' },
-            ]}
-          />
-          <Select
-            name='theme'
-            label='fill'
-            value={theme || ''}
-            onChange={this.handleChange}
-            options={[
-              { value: '', children: 'null' },
-              { value: 'primary', children: 'primary' },
-              { value: 'default', children: 'default' },
-              { value: 'muted', children: 'muted' },
-              { value: 'info', children: 'info' },
-              { value: 'success', children: 'success' },
-              { value: 'warning', children: 'warning' },
-              { value: 'error', children: 'error' }
-            ]}
-          />
+          {/*
+            <Select
+              name='image'
+              label='image'
+              value={image || ''}
+              onChange={this.handleChange}
+              options={[
+                { value: '', children: 'Space' },
+              ]}
+            />
+          */}
           <Select
             name='color'
             label='color'
+            mb={1}
             value={color || ''}
             onChange={this.handleChange}
             options={[
@@ -161,6 +143,7 @@ class ComponentDetail extends React.Component {
           <Select
             name='backgroundColor'
             label='backgroundColor'
+            mb={1}
             value={backgroundColor || ''}
             onChange={this.handleChange}
             options={[
@@ -176,8 +159,28 @@ class ComponentDetail extends React.Component {
             ]}
           />
           <Select
+            name='theme'
+            label='fill'
+            mb={1}
+            value={theme || ''}
+            onChange={this.handleChange}
+            options={[
+              { value: '', children: 'null' },
+              { value: 'primary', children: 'primary' },
+              { value: 'default', children: 'default' },
+              { value: 'muted', children: 'muted' },
+              { value: 'info', children: 'info' },
+              { value: 'success', children: 'success' },
+              { value: 'warning', children: 'warning' },
+              { value: 'error', children: 'error' }
+            ]}
+          />
+        </Grid>
+        <Grid span={1}>
+          <Select
             name='m'
             label='margin'
+            mb={1}
             value={m || ''}
             onChange={this.handleChange}
             options={[
@@ -192,6 +195,7 @@ class ComponentDetail extends React.Component {
           <Select
             name='p'
             label='padding'
+            mb={1}
             value={p || ''}
             onChange={this.handleChange}
             options={[
@@ -206,6 +210,7 @@ class ComponentDetail extends React.Component {
           <Select
             name='rounded'
             label='rounded'
+            mb={1}
             value={rounded || ''}
             onChange={this.handleChange}
             options={[
@@ -218,12 +223,20 @@ class ComponentDetail extends React.Component {
               { value: 'right', children: 'right' },
             ]}
           />
-          <Checkbox
-            name='pill'
-            label='pill'
-            checked={pill}
-            onClick={e => { this.onChange({ pill: !pill }) }}
-          />
+          {/*
+            <Checkbox
+              name='pill'
+              label='pill'
+              checked={pill}
+              onClick={e => { this.onChange({ pill: !pill }) }}
+            />
+          */}
+        </Grid>
+        <Grid span={3}>
+          <PropsTable props={comp.props} />
+        </Grid>
+        <Grid span={3}>
+          <Pre children={code} />
         </Grid>
         <Grid span={6}>
         </Grid>
