@@ -2,11 +2,32 @@
 import React from 'react'
 import { Container, GridGroup, Grid } from 'gridsys'
 import {
+  Heading,
   HeadingLink,
   Text,
   Pre
 } from '../src'
 import Rule from './Rule'
+
+const gettingStartedExample = `import React from 'react'
+import { Input, Button } from 'rebass'
+
+const App = ({
+  username,
+  onChange,
+  onSubmit
+}) => (
+  <form onSubmit={onSubmit}>
+    <Input
+      name='username'
+      label='Username'
+      value={username}
+      onChange={onChange} />
+    <Button
+      children='Go' />
+  </form>
+)
+`
 
 const contextExample =
 `class App extends React.Component {
@@ -34,6 +55,18 @@ App.childContextTypes = {
 const About = () => {
   return (
     <Container>
+      <Grid span={3}>
+        <HeadingLink
+          href='#getting-started'
+          children='Getting Started' />
+        <Rule />
+        <Heading level={4} children='Install' />
+        <Pre>npm install --save rebass</Pre>
+        <Heading
+          level={4}
+          children='Import & Use' />
+        <Pre children={gettingStartedExample} />
+      </Grid>
       <Grid span={3}>
         <HeadingLink
           href='#architecture'

@@ -45,7 +45,7 @@ class App extends React.Component {
     return {
       gridsys: {
         columnCount: 8,
-        columnWidth: 224
+        // debug: true
       },
       rebass: {
         ...themes[theme],

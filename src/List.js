@@ -28,7 +28,9 @@ const List = ({
       margin: 0,
       listStyle: reset ? 'none' : null
     },
-    item: {}
+    item: {
+      marginBottom: scale[1]
+    }
   }
 
   const wrappedChildren = React.Children.map(children, child => {

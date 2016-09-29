@@ -4,7 +4,6 @@ import { Container, Grid } from 'gridsys'
 import BannerHeader from './BannerHeader'
 import Features from './Features'
 import Testimonials from './Testimonials'
-import GettingStarted from './GettingStarted'
 import About from './About'
 import Rule from './Rule'
 import Logo from './Logo'
@@ -17,7 +16,6 @@ const Home = (props) => {
       <BannerHeader />
       <Features />
       <Testimonials />
-      <GettingStarted />
       <About />
     </div>
   )

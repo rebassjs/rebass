@@ -29,7 +29,7 @@
     "cxs": "^1.0.1",
     "enzyme": "^2.4.1",
     "gh-pages": "^0.11.0",
-    "gridsys": "^1.0.0-beta.3",
+    "gridsys": "^1.0.0-beta.4",
     "jest": "^15.1.1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
