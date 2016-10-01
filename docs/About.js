@@ -91,6 +91,9 @@ const About = () => {
         <Text mb={2}>
           Each Rebass component is wrapped with the <code>withRebass</code> higher order component, which provides the theme object through context and handles several style shorthand props.
         </Text>
+        <Text mb={2}>
+          Every component in Rebass has the following props available to quickly style and lay out views:
+        </Text>
         <Table
           headings={[
             'Prop',

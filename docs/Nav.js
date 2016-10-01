@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Link } from 'react-router'
+import { Flex } from 'reflexbox'
 import { Container, Grid } from 'gridsys'
 import {
   Toolbar,
@@ -44,8 +45,8 @@ const Nav = ({ theme, changeTheme }) => {
     }))
 
   const sx = {
-    toolbar: {
-      flexWrap: 'wrap'
+    select: {
+      flex: 'none'
     }
   }
 
@@ -54,23 +55,25 @@ const Nav = ({ theme, changeTheme }) => {
       <Toolbar
         px={3}
         py={2}
-        style={sx.toolbar}
         color='inherit'
         backgroundColor='transparent'>
-        {links.map((link, i) => (
-          <NavItem
-            {...link}
-            px={0}
-            mr={3}
-            key={i}
-          />
-        ))}
+        <Flex wrap auto>
+          {links.map((link, i) => (
+            <NavItem
+              {...link}
+              px={0}
+              mr={3}
+              key={i}
+            />
+          ))}
+        </Flex>
         <Space auto />
         <Select
           name='theme'
           label='Theme'
           hideLabel
           mb={0}
+          style={sx.select}
           value={theme}
           onChange={e => {
             changeTheme(e.target.value)
