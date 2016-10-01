@@ -55,7 +55,7 @@ App.childContextTypes = {
 const About = () => {
   return (
     <Container>
-      <Grid span={3}>
+      <Grid min={6} split={2}>
         <HeadingLink
           href='#getting-started'
           children='Getting Started' />
@@ -67,7 +67,7 @@ const About = () => {
           children='Import & Use' />
         <Pre children={gettingStartedExample} />
       </Grid>
-      <Grid span={3}>
+      <Grid min={6} split={2}>
         <HeadingLink
           href='#architecture'
           children='Architectural approach' />
@@ -82,7 +82,7 @@ const About = () => {
           Rebass only contains presentational components, which means controlling things like progressive disclosure mechanisms or dropdown menus should be handled at a higher level in container components. Therefore, Rebass itself does not require any client-side JavaScript, is well suited to server-side rendering, and can fit into virtually any higher level application architecture.
         </Text>
       </Grid>
-      <Grid span={3}>
+      <Grid min={6} split={2}>
         <HeadingLink
           href='#hoc'
           children='Higher Order Component' />
@@ -91,7 +91,7 @@ const About = () => {
           Each Rebass component is wrapped with the <code>withRebass</code> higher order component, which provides the theme object through context and handles several style shorthand props.
         </Text>
       </Grid>
-      <Grid span={3}>
+      <Grid min={6} split={2}>
         <section id='themes'>
           <HeadingLink
             href='#themes'

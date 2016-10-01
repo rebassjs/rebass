@@ -9,12 +9,12 @@ const BigHeading = ({
   ...props
 }) => {
   const cx = cxs({
-    fontSize: mega ? 64 : 32,
+    fontSize: mega ? 32 : 24,
     wordBreak: 'break-word',
-    [breakpoints.small]: {
-      fontSize: mega ? 80 : 64
-    },
     [breakpoints.medium]: {
+      fontSize: mega ? 64 : 48
+    },
+    [breakpoints.large]: {
       fontSize: mega ? 96 : 80
     },
     [breakpoints.xlarge]: {

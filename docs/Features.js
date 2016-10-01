@@ -23,7 +23,7 @@ const Features = () => {
         </Grid>
       </Container>
       <Container>
-        <Grid span={2}>
+        <Grid min={6} split={3}>
           <List reset>
             <Text bold>
               Uses inline styles
@@ -39,7 +39,7 @@ const Features = () => {
             </Text>
           </List>
         </Grid>
-        <Grid span={2}>
+        <Grid min={6} split={3}>
           <List reset>
             <Text bold>
               Built for pixel-perfect alignment
@@ -55,7 +55,7 @@ const Features = () => {
             </Text>
           </List>
         </Grid>
-        <Grid span={2}>
+        <Grid min={6} split={4}>
           <List reset>
             <Text bold>
               Customizable themes using React context
