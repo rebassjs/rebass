@@ -17,15 +17,12 @@ import Home from './Home'
 import ComponentIndex from './ComponentIndex'
 import ComponentDetail from './ComponentDetail'
 import Demo from './Demo'
+import StyleGuideView from './StyleGuideView'
 import NotFound from './NotFound'
 import ComponentList from './ComponentList'
 import Footer from './Footer'
 import basename from './basename'
 import ThemesIndex from './ThemesIndex'
-
-// import Demo from './Demo'
-
-import StyleGuide from './StyleGuide'
 
 const isClient = typeof document !== 'undefined'
 const isDev = process.env.NODE_ENV !== 'production'
@@ -119,7 +116,7 @@ class App extends React.Component {
               )} />
             <Match
               pattern='/styleguide'
-              component={StyleGuide} />
+              component={StyleGuideView} />
             <Miss component={NotFound} />
             <ComponentList />
             <Footer />
