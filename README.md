@@ -133,12 +133,12 @@ body {
 }
 ```
 
-    ## Styling with CSS
+## Styling with CSS
 
-    Although it's not recommended to use extensively, components can be styled with CSS.
-    Each component has a className that matches the component name.
-    To control things like button hover styles, this can be a convenient way to style pseudo-classes.
-    Note, that due to the use of inline styles, some properties may need to be overridden with an `!important` flag.
+Although it's not recommended to use extensively, components can be styled with global CSS.
+Each component has a className that matches the component name.
+To control things like button hover styles, this can be a convenient way to style pseudo-classes.
+Note, that due to the use of inline styles, some properties may need to be overridden with an `!important` flag.
 
 ```css
 .Button:hover {
@@ -156,9 +156,9 @@ but shares a similar approach to application-agnostic UI development.*
 ## Related
 
 - [Reflexbox](http://jxnblk.com/reflexbox)
+- [Reline](http://jxnblk.com/reline)
 - [Robox](http://jxnblk.com/robox)
 - [understyle](http://jxnblk.com/understyle)
-- [Reline](http://jxnblk.com/reline)
 - [React Geomicons](http://jxnblk.com/react-geomicons)
 - [Gx](http://jxnblk.com/gx)
 - [Gridsys](http://jxnblk.com/gridsys)
