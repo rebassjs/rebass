@@ -62,13 +62,13 @@ const pink = {
     backgroundColor: colors.pink
   },
   Heading: {
-    fontStyle: 'italic'
-  },
-  Heading_alt: {
-    fontSize: 13,
-    opacity: 1,
-    fontStyle: 'normal',
-    ...caps
+    fontStyle: 'italic',
+    alt: {
+      fontSize: 13,
+      opacity: 1,
+      fontStyle: 'normal',
+      ...caps
+    }
   },
   NavItem: {
     ...caps

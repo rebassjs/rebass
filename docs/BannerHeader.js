@@ -13,6 +13,7 @@ import TweetButton from './TweetButton'
 import GithubButton from './GithubButton'
 import TravisBadge from './TravisBadge'
 import data from './data.json'
+import Logo from './Logo'
 
 const Small = props => {
   const sx = {
@@ -31,7 +32,10 @@ const BannerHeader = () => {
   return (
     <header>
       <Container>
-        <Grid span={8}>
+        <Grid span={2}>
+          <Logo size={256} />
+        </Grid>
+        <Grid span={4}>
           <BigHeading mega>
             Rebass
             {' '}
@@ -47,6 +51,7 @@ const BannerHeader = () => {
           </Text>
           <Rule />
         </Grid>
+        <Grid span={8} />
         <Grid align='middle'>
           <TweetButton
             text={`Rebass: ${data.description}`}

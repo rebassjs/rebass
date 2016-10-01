@@ -38,10 +38,12 @@ const bold = {
     0, 12, 24, 48, 72
   ],
 
-  Heading_alt: {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    letterSpacing: '.2em'
+  Heading: {
+    alt: {
+      fontSize: 12,
+      textTransform: 'uppercase',
+      letterSpacing: '.2em'
+    }
   },
 
   Toolbar: {

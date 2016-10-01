@@ -12,7 +12,7 @@ body {
 }
 :focus {
   outline: none;
-  box-shadow: 0 0 0 2px;
+  box-shadow: 0 0 0 2px rgba(0, 191, 191, .25);
 }
 ${css}`
 }

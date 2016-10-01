@@ -6,7 +6,6 @@ import Features from './Features'
 import Testimonials from './Testimonials'
 import About from './About'
 import Rule from './Rule'
-import Logo from './Logo'
 
 import TestGrid from './TestGrid'
 

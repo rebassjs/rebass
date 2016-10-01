@@ -1,4 +1,5 @@
 
+const serif = 'Georgia, serif'
 const monospace = 'Menlo, Consolas, monospace'
 
 const baseColors = {
@@ -55,17 +56,30 @@ const borderRadius = 2
 const borderColor = 'rgba(0, 0, 0, .25)'
 const boxShadow = '0 2px 16px rgba(0, 0, 0, .125)'
 
+const caps = {
+  textTransform: 'uppercase',
+  letterSpacing: '.2em'
+}
+
 const basic = {
   name: 'Basic',
   scale,
   fontSizes,
   bold,
+  serif,
   monospace,
+  caps,
   zIndex,
   colors,
   borderRadius,
   borderColor,
-  boxShadow
+  boxShadow,
+  Heading: {
+    alt: {
+      ...caps,
+      color: colors.red
+    }
+  }
 }
 
 export default basic

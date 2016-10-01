@@ -48,12 +48,14 @@ const biblio = {
 
   bold: 500,
 
-  Heading_alt: {
-    opacity: 1,
-    ...sans,
-    ...caps,
-    fontSize: 14,
-    color: colors.red
+  Heading: {
+    alt: {
+      opacity: 1,
+      ...sans,
+      ...caps,
+      fontSize: 14,
+      color: colors.red
+    }
   },
 
   Banner: {
