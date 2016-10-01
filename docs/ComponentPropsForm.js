@@ -59,7 +59,7 @@ const ComponentPropsForm = ({
 
   return (
     <Panel
-      fill='default'
+      theme='default'
       pb={propsOpen ? null : 0}>
       <PanelHeader
         mb={propsOpen ? null : 0}
@@ -119,9 +119,10 @@ const ComponentPropsForm = ({
                 ]}
               />
             </Flex>
+            {/*
               <Select
                 name='theme'
-                label='fill'
+                label='theme'
                 mb={1}
                 value={theme || ''}
                 onChange={onChange}
@@ -136,7 +137,6 @@ const ComponentPropsForm = ({
                   { value: 'error', children: 'error' }
                 ]}
               />
-            {/*
             */}
             <Slider
               name='m'

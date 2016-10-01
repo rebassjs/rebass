@@ -74,7 +74,7 @@ test('color props add styles', () => {
     <Base
       color='primary'
       backgroundColor='black'
-      fill='primary'
+      theme='primary'
     />
   )
   inner = wrapper.first().shallow()

@@ -43,10 +43,10 @@ const withRebass = Comp => {
     render () {
       const { rebass } = this.context
 
-      const theme = { ...basicTheme, ...rebass }
-      const { scale, colors, borderRadius } = theme
+      const baseTheme = { ...basicTheme, ...rebass }
+      const { scale, colors, borderRadius } = baseTheme
 
-      const themeStyle = theme[Comp._name] || {}
+      const themeStyle = baseTheme[Comp._name] || {}
 
       const margin = createMargin(scale)
       const padding = createPadding(scale)
@@ -62,8 +62,7 @@ const withRebass = Comp => {
         circle,
         color,
         backgroundColor,
-        // to do: this clashes with Slider fill prop
-        fill,
+        theme,
         style = {},
         ...props
       } = this.props
@@ -85,18 +84,13 @@ const withRebass = Comp => {
           circle
         }),
         ...style,
-        fill: fill && fill !== true ? getColorFill(colors)(fill) : {}
-      }
-
-      // to do: rename this prop
-      if (fill === true) {
-        props.fill = fill
+        fill: theme ? getColorFill(colors)(theme) : {}
       }
 
       return (
         <Comp
           {...props}
-          theme={theme}
+          theme={baseTheme}
           subComponentStyles={subComponentStyles}
           style={sx}
         />
@@ -114,7 +108,7 @@ const withRebass = Comp => {
     /** Sets background color */
     backgroundColor: React.PropTypes.string,
     /** Sets semantic color themes */
-    fill: React.PropTypes.oneOf([
+    theme: React.PropTypes.oneOf([
       'primary',
       'secondary',
       'default',

@@ -121,7 +121,7 @@ const About = () => {
             [ 'pill', 'boolean', 'Sets border radius 99999 for pill and circle shapes' ],
             [ 'color', 'string', 'Foreground color - a key from the color object or any other color value' ],
             [ 'backgroundColor', 'string', 'Background color' ],
-            [ 'fill', 'string', 'Semantic forground and background color' ],
+            [ 'theme', 'string', 'Semantic forground and background color' ],
           ]} />
       </Grid>
       <Grid min={6} split={2}>
