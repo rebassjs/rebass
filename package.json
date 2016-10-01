@@ -1,13 +1,14 @@
 {
   "name": "rebass",
   "version": "0.4.0-beta.4",
-  "description": "Configurable React Stateless Functional UI Components",
+  "xdescription": "Configurable React Stateless Functional UI Components",
+  "description": "React functional UI component design system",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
     "prepublish": "mkdir -p dist && babel src --out-dir dist --ignore __tests__",
     "deploy": "./deploy.sh",
-    "data": "node create-data.js",
+    "data": "node docs/create-data.js",
     "build": "mkdir -p build && npm run data && webpack -p",
     "start": "webpack-dev-server",
     "fix": "standard --fix",
