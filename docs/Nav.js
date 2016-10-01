@@ -39,10 +39,6 @@ const Nav = ({ theme, changeTheme }) => {
   ]
 
   const themeKeys = Object.keys(themes)
-    .map(key => ({
-      value: key,
-      children: key
-    }))
 
   const sx = {
     select: {

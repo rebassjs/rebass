@@ -81,6 +81,12 @@ const Select = ({
     }
   }
 
+  const selectOptions = options.map((opt, i) => {
+    return typeof opt === 'string'
+      ? <option key={i} children={opt} />
+      : <option key={i} {...opt} />
+  })
+
   return (
     <div
       className={cx}
@@ -96,9 +102,7 @@ const Select = ({
           ref={baseRef}
           name={name}
           style={sx.select}>
-          {options.map((option, i) => (
-            <option key={i} {...option} />
-          ))}
+          {selectOptions}
         </select>
         <Arrow style={sx.arrow} />
       </div>
