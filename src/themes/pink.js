@@ -51,8 +51,7 @@ const pink = {
   Toolbar: {
     minHeight: 60,
     backgroundColor: `rgba(255, 255, 255, ${7 / 8})`,
-    color: '#111',
-    borderBottom: '1px solid #fcc'
+    color: '#111'
   },
 
   Banner: {

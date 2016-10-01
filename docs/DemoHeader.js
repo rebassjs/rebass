@@ -16,7 +16,7 @@ const Header = () => (
       paddingTop: 48,
       backgroundAttachment: 'fixed'
     }}
-    backgroundImage='https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg'>
+    backgroundImage='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'>
     <Heading size={1} big children='Rebass' />
     <Text children='Configurable example page' />
   </Banner>

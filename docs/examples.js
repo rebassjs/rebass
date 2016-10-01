@@ -100,7 +100,7 @@ const getProps = ({
 export const defaultProps = {
   text: 'Hello',
   number: 16,
-  image: 'https://d262ilb51hltx0.cloudfront.net/max/2000/1*DZwdGMaeu-rvTroJYui6Uw.jpeg',
+  image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20',
   theme: null,
 
   open: false,
