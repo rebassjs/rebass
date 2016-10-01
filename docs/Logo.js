@@ -1,13 +1,8 @@
 
-
-import assign from 'object-assign'
 import React from 'react'
 import cxs from 'cxs'
 import breakpoints from './breakpoints'
 
-const offset1 = 0 // 15
-const offset2 = 0 // 45
-const offset3 = 0 // 60
 const rotationKeyframes = (
 `
 /* <![CDATA[ */
@@ -18,37 +13,29 @@ const rotationKeyframes = (
   100% { color: #08e }
 }
 @keyframes rotate1 {
-    0% { transform: rotate3d(0, 1, 1, ${  0 + offset1}deg) }
-   50% { transform: rotate3d(0, 1, 1, ${180 + offset1}deg) }
-  100% { transform: rotate3d(0, 1, 1, ${360 + offset1}deg) }
+    0% { transform: rotate3d(0, 1, 1, 0deg) }
+   50% { transform: rotate3d(0, 1, 1, 180deg) }
+  100% { transform: rotate3d(0, 1, 1, 360deg) }
 }
 @keyframes rotate2 {
-    0% { transform: rotate3d(1, 0, 1, ${  0 + offset2}deg) }
-   50% { transform: rotate3d(1, 0, 1, ${180 + offset2}deg) }
-  100% { transform: rotate3d(1, 0, 1, ${360 + offset2}deg) }
+    0% { transform: rotate3d(1, 0, 1, 0deg) }
+   50% { transform: rotate3d(1, 0, 1, 180deg) }
+  100% { transform: rotate3d(1, 0, 1, 360deg) }
 }
 @keyframes rotate3 {
-    0% { transform: rotate3d(1, 1, 0, ${  0 + offset3}deg) }
-   50% { transform: rotate3d(1, 1, 0, ${180 + offset3}deg) }
-  100% { transform: rotate3d(1, 1, 0, ${360 + offset3}deg) }
+    0% { transform: rotate3d(1, 1, 0, 0deg) }
+   50% { transform: rotate3d(1, 1, 0, 180deg) }
+  100% { transform: rotate3d(1, 1, 0, 360deg) }
 }
 /* ]]> */
 `
 ).replace(/\n/g, ' ').replace(/\s\s+/g, ' ')
 
-const Circle = props => (
-  <path
-    {...props}
-    d={[]}
-  />
-)
-
 class Logo extends React.Component {
 
   render() {
-    const { size, strokeWidth, style } = this.props
+    const { size, style } = this.props
 
-    const c = 0 // size / 2
     const path = 'M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4'
 
     const ringStyles = {
@@ -59,12 +46,11 @@ class Logo extends React.Component {
     }
 
     const sx = {
-      svg: assign(style, {
+      svg: {
+        ...style,
         display: 'inline-block',
-        maxWidth: '100%',
-        // height: 'auto',
-        // overflow: 'visible'
-      }),
+        maxWidth: '100%'
+      },
       c1: {
         animation: 'rotate1 4s linear -.25s infinite',
       },
@@ -89,16 +75,12 @@ class Logo extends React.Component {
       <svg
         width={size}
         height={size}
-        viewBox={[
-          0, 0, 32, 32
-        ].join(' ')}
+        viewBox='0 0 32 32'
         onClick={this.handleClick}
         className={cx}
         style={sx.svg}>
         <style dangerouslySetInnerHTML={{ __html: rotationKeyframes }} />
-        <rect width={size} height={size} fill='none' />
-
-        <g transform={`translate(${c}, ${c})`}>
+        <g>
           <path d={path} style={{ ...ringStyles, ...sx.c1  }}  fill='cyan' />
           <path d={path} style={{ ...ringStyles, ...sx.c2 }}  fill='yellow' />
           <path d={path} style={{ ...ringStyles, ...sx.c3 }}  fill='magenta' />
@@ -110,9 +92,7 @@ class Logo extends React.Component {
 }
 
 Logo.defaultProps = {
-  size: 128,
-  strokeWidth: 5,
-  style: {}
+  size: 128
 }
 
 export default Logo

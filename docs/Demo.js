@@ -12,7 +12,6 @@ import DemoCheckout from './DemoCheckout'
 import DemoForms from './DemoForms'
 import DemoHeadings from './DemoHeadings'
 import DemoColors from './DemoColors'
-import DemoConfigForm from './DemoConfigForm'
 import DemoModal from './DemoModal'
 
 class App extends React.Component {
@@ -77,12 +76,6 @@ class App extends React.Component {
     )
   }
 }
-// <DemoConfigForm
-//   {...this.state}
-//   themes={themes}
-//   toggle={this.toggle}
-//   onChange={e => { alert('Hook this up') }}
-// />
 
 export default App
 
