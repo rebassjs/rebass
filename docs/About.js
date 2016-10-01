@@ -5,7 +5,8 @@ import {
   Heading,
   HeadingLink,
   Text,
-  Pre
+  Pre,
+  Table
 } from '../src'
 import Rule from './Rule'
 
@@ -87,9 +88,38 @@ const About = () => {
           href='#hoc'
           children='Higher Order Component' />
         <Rule />
-        <Text>
+        <Text mb={2}>
           Each Rebass component is wrapped with the <code>withRebass</code> higher order component, which provides the theme object through context and handles several style shorthand props.
         </Text>
+        <Table
+          headings={[
+            'Prop',
+            'Type',
+            'Description'
+          ]}
+          data={[
+            [ 'm', 'number', 'Margin based on the global spacing scale' ],
+            [ 'mt', 'number', 'Margin top' ],
+            [ 'mr', 'number', 'Margin right' ],
+            [ 'mb', 'number', 'Margin bottom' ],
+            [ 'ml', 'number', 'Margin left' ],
+            [ 'mx', 'number', 'X-axis margin (left and right)' ],
+            [ 'my', 'number', 'Y-axis margin (top and bottom)' ],
+
+            [ 'p', 'number', 'Padding based on the global spacing scale' ],
+            [ 'pt', 'number', 'Padding top' ],
+            [ 'pr', 'number', 'Padding right' ],
+            [ 'pb', 'number', 'Padding bottom' ],
+            [ 'pl', 'number', 'Padding left' ],
+            [ 'px', 'number', 'X-axis padding (left and right)' ],
+            [ 'py', 'number', 'Y-axis padding (top and bottom)' ],
+
+            [ 'rounded', 'boolean or string', 'Border radius' ],
+            [ 'pill', 'boolean', 'Sets border radius 99999 for pill and circle shapes' ],
+            [ 'color', 'string', 'Foreground color - a key from the color object or any other color value' ],
+            [ 'backgroundColor', 'string', 'Background color' ],
+            [ 'fill', 'string', 'Semantic forground and background color' ],
+          ]} />
       </Grid>
       <Grid min={6} split={2}>
         <section id='themes'>
