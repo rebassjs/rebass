@@ -14,7 +14,6 @@ if (typeof document !== 'undefined') {
 
 module.exports = (locals, callback) => {
   const root = ReactDOMServer.renderToStaticMarkup(<Root {...data} />)
-  // To do: cxs.css render??
   const html = `<!DOCTYPE html>${root}`
 
   callback(null, html)

@@ -47,7 +47,7 @@ const Typography = (props, { rebass }) => {
             In typesetting by hand compositing, a sort or type is a piece of type representing a particular letter or symbol, cast from a matrix mould and assembled with other sorts bearing additional letters into lines of type to make up a form from which a page is printed.
           </Text>
           <Blockquote
-            source='Robert Brignhurst'
+            source='Robert Bringhurst'
             mb={2}>
             “The simplest scale is a single note, and sticking with a single note draws more attention to other parameters, such as rhythm and inflection... In the sixteenth century, a series of common sizes developed among European typographers, and the series survived with little change and few additions for 400 years... This is the typographic equivalent of the diatonic scale.”
 

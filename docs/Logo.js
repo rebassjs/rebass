@@ -54,7 +54,6 @@ class Logo extends React.Component {
     const ringStyles = {
       display: 'block',
       vectorEffect: 'non-scaling-stroke',
-      opacity: .75,
       mixBlendMode: 'multiply',
       transformOrigin: '50% 50%'
     }

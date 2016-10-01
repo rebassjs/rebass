@@ -2,6 +2,7 @@
 import React from 'react'
 import Icon from 'react-geomicons'
 import assign from 'object-assign'
+import { Link } from 'react-router'
 import Reline, { Chevron, X, Plus, Minus } from 'reline'
 import { Flex, Box } from 'reflexbox'
 
@@ -354,9 +355,8 @@ export const examples = {
         allowFullScreen />
     </Embed>
   ),
-  // to do: fix link
   Fixed: ({ ...rest }) => (
-    <a href='demo'>See demo</a>
+    <div />
   ),
   Footer: ({ ...rest }) => (
     <Footer {...getProps(rest)}>
