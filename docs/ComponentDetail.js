@@ -3,12 +3,16 @@ import React from 'react'
 import { Link } from 'react-router'
 import find from 'lodash/find'
 import toJsxString from 'react-element-to-jsx-string'
+import { Chevron } from 'reline'
 import { Container, Grid } from 'gridsys'
+import { Flex } from 'reflexbox'
 import {
   NavItem,
   Heading,
   Text,
   Pre,
+  Space,
+  Button,
   theme
 } from '../src'
 import BigHeading from './BigHeading'
@@ -64,6 +68,15 @@ class ComponentDetail extends React.Component {
     const { text } = this.state
     const { name } = params
     const comp = find(data.components, d => d.name === name)
+    const index = data.components.indexOf(comp)
+
+    const previous = index > 0
+      ? data.components[index - 1].name
+      : null
+
+    const next = index < data.components.length - 1
+      ? data.components[index + 1].name
+      : null
 
     const example = getExample(comp.name)({
       ...filterNull(this.state),
@@ -93,12 +106,6 @@ class ComponentDetail extends React.Component {
           <Rule />
         </Grid>
         <Grid span={8}>
-          <Heading
-            alt
-            mb={3}
-            level={3}>
-            Preview
-          </Heading>
           {example}
         </Grid>
         <Grid span={3}>
@@ -114,6 +121,35 @@ class ComponentDetail extends React.Component {
           <PropsTable props={comp.props} />
         </Grid>
         <Grid span={6}>
+        </Grid>
+        <Grid span={8}>
+          <Flex>
+            {previous && (
+              <Link to={`/components/${previous}`}>
+                {({ href, onClick }) => (
+                  <Button
+                    backgroundColor='black'
+                    onClick={onClick}
+                    href={href}>
+                    <Chevron size={12} left /> {previous}
+                  </Button>
+                )}
+              </Link>
+            )}
+            <Space auto />
+            {next && (
+              <Link to={`/components/${next}`}>
+                {({ href, onClick }) => (
+                  <Button
+                    backgroundColor='black'
+                    onClick={onClick}
+                    href={href}>
+                    {next} <Chevron size={12} right />
+                  </Button>
+                )}
+              </Link>
+            )}
+          </Flex>
         </Grid>
       </Container>
     )

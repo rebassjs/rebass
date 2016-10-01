@@ -58,7 +58,9 @@ const ComponentPropsForm = ({
 }) => {
 
   return (
-    <Panel fill='muted' pb={propsOpen ? null : 0}>
+    <Panel
+      fill='default'
+      pb={propsOpen ? null : 0}>
       <PanelHeader
         mb={propsOpen ? null : 0}
         onClick={toggle}>

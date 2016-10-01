@@ -3,16 +3,19 @@ import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
 
+/**
+ * Carousel that wraps children and displays one at a time
+ */
+
 const Carousel = ({
   index,
-  length,
   className,
   style,
   theme,
   subComponentStyles,
   ...props
 }) => {
-  length = length || props.children.length || 0
+  const length = props.children ? (props.children.length || 0) : 0
 
   const cx = classnames('Carousel', className)
 
@@ -56,6 +59,11 @@ const Carousel = ({
       </div>
     </div>
   )
+}
+
+Carousel.propTypes = {
+  /** Index for the child to show */
+  index: React.PropTypes.number
 }
 
 Carousel._name = 'Carousel'

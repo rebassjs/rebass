@@ -13,7 +13,7 @@ const Intro = ({ }) => (
       <PageHeader
         my={1}
         heading='Demo'
-        description='Change or edit the configuration to see component styles update in real time' />
+        description='Change the theme to see component styles update in real time' />
       <Breadcrumbs
         mb={2}
         links={[
