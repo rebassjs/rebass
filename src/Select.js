@@ -82,9 +82,9 @@ const Select = ({
   }
 
   const selectOptions = options.map((opt, i) => {
-    return typeof opt === 'string'
-      ? <option key={i} children={opt} />
-      : <option key={i} {...opt} />
+    return typeof opt === 'object'
+      ? <option key={i} {...opt} />
+      : <option key={i} children={opt} />
   })
 
   return (
