@@ -58,6 +58,7 @@ const Select = ({
       borderRadius,
       MozAppearance: 'none',
       WebkitAppearance: 'none',
+      ...style.fill,
       ...subComponentStyles.select
     },
     label: {

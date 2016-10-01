@@ -73,8 +73,6 @@ const withRebass = Comp => {
       const sx = {
         boxSizing: 'border-box',
         ...themeStyle,
-        // handle gutter prop with negative numbers instead
-        // needs an update from understyle
         ...margin({ m, mt, mr, mb, ml, mx, my }),
         ...padding({ p, pt, pr, pb, pl, px, py }),
         ...colorStyles({

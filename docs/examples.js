@@ -367,7 +367,8 @@ export const examples = {
     <Group {...getProps(rest)}>
       <Input
         name='grouped-input'
-        label='Grouped' />
+        label='Grouped'
+      />
       <Button children={text} />
     </Group>
   ),
@@ -388,13 +389,14 @@ export const examples = {
       name='inline_form'
       label='InlineForm' />
   ),
-  Input: ({ text, update, ...rest }) => (
+  Input: ({ text, theme, update, ...rest }) => (
     <Input
       {...getProps(rest)}
       name='input_example'
       placeholder='Placeholder'
       label='Input'
       value={text}
+      fill={theme}
       onChange={e => { update({ text: e.target.value }) }}
     />
   ),

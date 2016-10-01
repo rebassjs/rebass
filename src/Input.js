@@ -37,8 +37,10 @@ const Input = ({
 
   const {
     borderRadius = theme.borderRadius,
+    backgroundColor,
     ...rootStyle
   } = style
+
 
   const sx = {
     root: {
@@ -60,7 +62,7 @@ const Input = ({
       paddingLeft: scale[1],
       paddingRight: scale[1],
       color: 'inherit',
-      backgroundColor: 'rgba(255, 255, 255, .25)',
+      backgroundColor: backgroundColor || 'rgba(255, 255, 255, .25)',
       borderWidth: 1,
       borderStyle: 'solid',
       borderColor: invalid ? colors.error : borderColor,
@@ -68,6 +70,7 @@ const Input = ({
       boxShadow: 'none',
       WebkitAppearance: 'none',
       appearance: 'none',
+      ...style.fill,
       ...subComponentStyles.input
     },
     text: {

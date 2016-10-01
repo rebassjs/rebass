@@ -117,7 +117,6 @@ const ComponentPropsForm = ({
                 ]}
               />
             </Flex>
-            {/*
               <Select
                 name='theme'
                 label='fill'
@@ -135,6 +134,7 @@ const ComponentPropsForm = ({
                   { value: 'error', children: 'error' }
                 ]}
               />
+            {/*
             */}
             <Slider
               name='m'

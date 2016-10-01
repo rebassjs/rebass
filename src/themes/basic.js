@@ -76,8 +76,7 @@ const basic = {
   boxShadow,
   Heading: {
     alt: {
-      ...caps,
-      color: colors.red
+      ...caps
     }
   }
 }

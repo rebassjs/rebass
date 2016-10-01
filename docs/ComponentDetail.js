@@ -46,7 +46,6 @@ class ComponentDetail extends React.Component {
 
   handleChange = e => {
     const { name, value } = e.target
-    console.log(value === -1, value === '-1')
     const val = (value === '' || value === '-1')
       ? null
       : /^true$|^false$/.test(value)
