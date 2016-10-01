@@ -14,12 +14,13 @@ const Pre = ({
   subComponentStyles,
   ...props
 }) => {
-  const { monospace, scale, borderColor } = theme
+  const { monospace, scale, fontSizes, borderColor } = theme
 
   const cx = classnames('Pre', className)
 
   const sx = {
     fontFamily: monospace,
+    fontSize: fontSizes[5],
     paddingLeft: scale[2],
     marginBottom: scale[2],
     borderLeft: `4px solid ${borderColor}`,
@@ -34,6 +35,8 @@ const Pre = ({
       style={sx} />
   )
 }
+
+Pre._name = 'Pre'
 
 export default withRebass(Pre)
 

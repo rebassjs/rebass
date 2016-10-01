@@ -14,7 +14,7 @@ const PanelHeader = ({
   subComponentStyles,
   ...props
 }) => {
-  const { bold, scale, colors, borderRadius } = theme
+  const { bold, scale, borderRadius } = theme
 
   const cx = classnames('PanelHeader', className)
 
@@ -28,8 +28,7 @@ const PanelHeader = ({
     marginBottom: scale[2],
     padding: scale[2],
     borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
-    color: colors.white,
-    backgroundColor: colors.primary,
+    ...style.fill,
     ...style
   }
 
@@ -40,6 +39,8 @@ const PanelHeader = ({
       style={sx} />
   )
 }
+
+PanelHeader._name = 'PanelHeader'
 
 export default withRebass(PanelHeader)
 

@@ -47,10 +47,11 @@ const Tooltip = ({
       paddingBottom: scale[1] / 2,
       paddingLeft: scale[1],
       paddingRight: scale[1],
-      color: colors.white,
-      backgroundColor: colors.black,
       borderRadius,
       transform: 'translate(-50%, -8px)',
+      color: colors.white,
+      backgroundColor: colors.black,
+      ...style.fill,
       ...subComponentStyles.box
     },
     arrow: {
@@ -58,7 +59,7 @@ const Tooltip = ({
       top: '100%',
       left: '50%',
       border: '6px solid transparent',
-      borderTopColor: colors.black,
+      borderTopColor: style.fill.backgroundColor || style.backgroundColor || colors.black,
       transform: 'translate(-50%, 0)',
       ...subComponentStyles.box
     }
@@ -73,7 +74,7 @@ const Tooltip = ({
       <div
         {...props}
         style={sx.box}
-        className='Tooltip Tooltip_box'>
+        className='Tooltip_box'>
         {title}
         <div className='Tooltip_arrow' style={sx.arrow} />
       </div>
@@ -86,6 +87,8 @@ Tooltip.propTypes = {
   /** Text to display in tooltip */
   title: React.PropTypes.string
 }
+
+Tooltip._name = 'Tooltip'
 
 export default withRebass(Tooltip)
 

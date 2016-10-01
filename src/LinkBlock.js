@@ -31,5 +31,7 @@ const LinkBlock = ({
   )
 }
 
+LinkBlock._name = 'LinkBlock'
+
 export default withRebass(LinkBlock)
 

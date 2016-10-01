@@ -34,5 +34,7 @@ const Container = ({
   )
 }
 
+Container._name = 'Container'
+
 export default withRebass(Container)
 

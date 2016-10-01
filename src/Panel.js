@@ -2,6 +2,8 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
+import PanelHeader from './PanelHeader'
+import PanelFooter from './PanelFooter'
 
 /**
  * Panel for containing small pieces of information
@@ -19,25 +21,35 @@ const Panel = ({
 
   const cx = classnames('Panel', className)
 
-  const borderColor = colors.primary // colors[theme]
+  const fillStyle = {
+    color: colors.black,
+    borderColor: colors.gray,
+    ...style.fill
+  }
+
+  const { borderColor } = fillStyle
 
   const sx = {
     padding: scale[2],
     marginBottom: scale[2],
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor,
     borderRadius,
+    borderColor: borderColor || colors.primary,
     backgroundColor: colors.white,
     ...style
   }
 
   const styledChildren = React.Children.map(children, (child) => {
-    // To do: handle theme props
-    if (child && child.props && child.props.theme === 'default') {
+    if (child.type === PanelHeader) {
       return React.cloneElement(child, {
-        // color,
-        // backgroundColor
+        style: fillStyle
+      })
+    } else if (child.type === PanelFooter) {
+      return React.cloneElement(child, {
+        style: {
+          borderColor
+        }
       })
     } else {
       return child
@@ -52,6 +64,8 @@ const Panel = ({
       children={styledChildren} />
   )
 }
+
+Panel._name = 'Panel'
 
 export default withRebass(Panel)
 

@@ -92,5 +92,7 @@ SequenceMapStep.propTypes = {
   active: React.PropTypes.bool
 }
 
+SequenceMapStep._name = 'SequenceMapStep'
+
 export default withRebass(SequenceMapStep)
 

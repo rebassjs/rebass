@@ -25,6 +25,8 @@ const Button = ({
 
   const cx = classnames('Button', className)
 
+  const fillStyles = style.fill
+
   const sx = {
     fontFamily: 'inherit',
     fontSize: fontSizes[5],
@@ -39,10 +41,11 @@ const Button = ({
     paddingLeft: scale[2],
     paddingRight: scale[2],
     cursor: 'pointer',
-    color: colors.white,
-    backgroundColor: colors.primary,
     border: 0,
     borderRadius,
+    color: colors.white,
+    backgroundColor: colors.primary,
+    ...fillStyles,
     ...style
   }
 
@@ -64,6 +67,8 @@ Button.propTypes = {
   /** Adds a ref to the button element */
   baseRef: React.PropTypes.func
 }
+
+Button._name = 'Button'
 
 export default withRebass(Button)
 

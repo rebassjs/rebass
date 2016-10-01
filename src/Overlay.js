@@ -98,5 +98,7 @@ Overlay.defaultProps = {
   onDismiss: function () {}
 }
 
+Overlay._name = 'Overlay'
+
 export default withRebass(Overlay)
 

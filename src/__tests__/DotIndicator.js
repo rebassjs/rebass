@@ -54,7 +54,7 @@ test('style props override context styles', () => {
       }} />, {
         context: {
           rebass: {
-            Arros: {
+            DotIndicator: {
               color: 'magenta'
             }
           }

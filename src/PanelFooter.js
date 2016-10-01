@@ -14,9 +14,7 @@ const PanelFooter = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale, colors, borderRadius, fontSizes } = theme
-
-  const borderColor = colors[theme]
+  const { scale, borderRadius, fontSizes } = theme
 
   const cx = classnames('PanelFooter', className)
 
@@ -31,8 +29,8 @@ const PanelFooter = ({
     padding: scale[2],
     borderTopWidth: 1,
     borderTopStyle: 'solid',
-    borderColor,
     borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`,
+    ...style.fill,
     ...style
   }
 
@@ -43,6 +41,8 @@ const PanelFooter = ({
       style={sx} />
   )
 }
+
+PanelFooter._name = 'PanelFooter'
 
 export default withRebass(PanelFooter)
 

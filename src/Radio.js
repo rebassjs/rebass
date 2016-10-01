@@ -61,6 +61,7 @@ const Radio = ({
       borderRadius: 99999,
       opacity: checked ? null : 1 / 4,
       transition: 'border .1s ease-out',
+      color: style.fill.backgroundColor,
       ...subComponentStyles.dot
     }
   }
@@ -94,6 +95,8 @@ Radio.propTypes = {
   /** Adds a ref to the input element */
   baseRef: React.PropTypes.func
 }
+
+Radio._name = 'Radio'
 
 export default withRebass(Radio)
 

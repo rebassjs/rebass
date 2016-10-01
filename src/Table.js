@@ -109,5 +109,7 @@ Table.defaultProps = {
   data: []
 }
 
+Table._name = 'Table'
+
 export default withRebass(Table)
 

@@ -87,5 +87,7 @@ DropdownMenu.defaultProps = {
   onDismiss: function () {}
 }
 
+DropdownMenu._name = 'DropdownMenu'
+
 export default withRebass(DropdownMenu)
 

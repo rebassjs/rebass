@@ -66,5 +66,7 @@ Switch.propTypes = {
   checked: React.PropTypes.bool
 }
 
+Switch._name = 'Switch'
+
 export default withRebass(Switch)
 

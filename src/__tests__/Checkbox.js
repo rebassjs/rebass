@@ -27,7 +27,12 @@ test('accepts custom className props', () => {
 })
 
 test('accepts custom styles', () => {
-  wrapper = shallow(<Checkbox name='t' label='t' style={{ color: 'tomato' }} />)
+  wrapper = shallow(
+    <Checkbox
+      name='t'
+      label='t'
+      style={{ color: 'tomato' }} />
+  )
   inner = wrapper.first().shallow()
   expect(inner.props().style.color).toBe('tomato')
 })
@@ -57,7 +62,7 @@ test('style props override context styles', () => {
       }} />, {
         context: {
           rebass: {
-            Arros: {
+            Checkbox: {
               color: 'magenta'
             }
           }

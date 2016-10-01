@@ -11,6 +11,7 @@ const NavItem = ({
   small,
   active,
   baseRef,
+  is,
   className,
   style,
   theme,
@@ -41,8 +42,10 @@ const NavItem = ({
     ...activeStyle
   }
 
+  const Comp = is || 'a'
+
   return (
-    <a
+    <Comp
       {...props}
       ref={baseRef}
       className={cx}
@@ -58,6 +61,8 @@ NavItem.propTypes = {
   /** Adds a ref to the link element */
   baseRef: React.PropTypes.func
 }
+
+NavItem._name = 'NavItem'
 
 export default withRebass(NavItem)
 

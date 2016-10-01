@@ -47,7 +47,7 @@ const Select = ({
       display: 'block',
       width: '100%',
       paddingLeft: scale[1],
-      paddingRight: scale[1],
+      paddingRight: scale[3],
       height: scale[3],
       color: 'inherit',
       backgroundColor: 'transparent',
@@ -58,6 +58,7 @@ const Select = ({
       borderRadius,
       MozAppearance: 'none',
       WebkitAppearance: 'none',
+      ...style.fill,
       ...subComponentStyles.select
     },
     label: {
@@ -129,6 +130,8 @@ Select.propTypes = {
 Select.defaultProps = {
   options: []
 }
+
+Select._name = 'Select'
 
 export default withRebass(Select)
 

@@ -70,5 +70,7 @@ Blockquote.propTypes = {
   href: React.PropTypes.string
 }
 
+Blockquote._name = 'Blockquote'
+
 export default withRebass(Blockquote)
 

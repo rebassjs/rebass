@@ -25,7 +25,8 @@ const Toolbar = ({
     paddingLeft: scale[1],
     paddingRight: scale[1],
     color: colors.white,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.black,
+    ...style.fill,
     ...style
   }
 
@@ -36,6 +37,8 @@ const Toolbar = ({
       style={sx} />
   )
 }
+
+Toolbar._name = 'Toolbar'
 
 export default withRebass(Toolbar)
 

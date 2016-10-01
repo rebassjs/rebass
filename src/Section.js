@@ -32,5 +32,7 @@ const Section = ({
   )
 }
 
+Section._name = 'Section'
+
 export default withRebass(Section)
 

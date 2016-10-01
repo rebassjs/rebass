@@ -43,5 +43,7 @@ Divider.propTypes = {
   width: React.PropTypes.number
 }
 
+Divider._name = 'Divider'
+
 export default withRebass(Divider)
 

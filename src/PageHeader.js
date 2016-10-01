@@ -77,5 +77,7 @@ PageHeader.propTypes = {
   description: React.PropTypes.string
 }
 
+PageHeader._name = 'PageHeader'
+
 export default withRebass(PageHeader)
 

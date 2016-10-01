@@ -50,5 +50,7 @@ Avatar.defaultProps = {
   size: 48
 }
 
+Avatar._name = 'Avatar'
+
 export default withRebass(Avatar)
 

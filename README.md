@@ -34,10 +34,10 @@ import { Button, Badge } from 'rebass'
 class App extends React.Component {
   render () {
     return (
-      <App>
+      <div>
         <Button>Button</Button>
         <Badge>Badge</Badge>
-      </App>
+      </div>
     )
   }
 }
@@ -61,7 +61,7 @@ Therefore, Rebass itself does not require any client-side JavaScript,
 is well suited to server-side rendering,
 and can fit into virtually any higher level application architecture.
 
-## Configuration
+## Theme Configuration
 
 Global theme styles are set using
 [React Context](https://facebook.github.io/react/docs/context.html).
@@ -135,7 +135,7 @@ body {
 
 ## Styling with CSS
 
-Although it's not recommended to use extensively, components can be styled with CSS.
+Although it's not recommended to use extensively, components can be styled with global CSS.
 Each component has a className that matches the component name.
 To control things like button hover styles, this can be a convenient way to style pseudo-classes.
 Note, that due to the use of inline styles, some properties may need to be overridden with an `!important` flag.
@@ -150,6 +150,22 @@ Note, that due to the use of inline styles, some properties may need to be overr
 
 *Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
 but shares a similar approach to application-agnostic UI development.*
+
+---
+
+## Related
+
+- [Reflexbox](http://jxnblk.com/reflexbox)
+- [Reline](http://jxnblk.com/reline)
+- [Robox](http://jxnblk.com/robox)
+- [understyle](http://jxnblk.com/understyle)
+- [React Geomicons](http://jxnblk.com/react-geomicons)
+- [Gx](http://jxnblk.com/gx)
+- [Gridsys](http://jxnblk.com/gridsys)
+- [Rgx](http://jxnblk.com/rgx)
+- [React CSS Grid](https://github.com/jxnblk/react-css-grid)
+- [Cxs](https://github.com/jxnblk/cxs)
+- [Basscss](http://basscss.com/)
 
 [MIT License](.github/LICENSE.md)
 

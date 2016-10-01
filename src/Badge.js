@@ -2,6 +2,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import withRebass from './withRebass'
+import baseline from './util/baseline'
 
 /** Component for displaying small status indicators */
 
@@ -15,6 +16,7 @@ const Badge = ({
   const {
     fontSizes,
     bold,
+    baselineShift,
     scale,
     colors,
     borderRadius
@@ -22,22 +24,26 @@ const Badge = ({
 
   const cx = classnames('Badge', className)
 
+  const pad = baseline(baselineShift)(scale[1])
+  const xpad = props.circle ? 0 : scale[1]
+
   const sx = {
     fontSize: fontSizes[6],
     fontWeight: bold,
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
+    verticalAlignment: 'baseline',
     width: props.circle ? scale[2] : null,
     height: scale[2],
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: props.circle ? 0 : scale[1],
-    paddingRight: props.circle ? 0 : scale[1],
+    ...pad,
+    paddingLeft: xpad,
+    paddingRight: xpad,
     overflow: 'hidden',
+    borderRadius,
     color: colors.white,
     backgroundColor: colors.default,
-    borderRadius,
+    ...style.fill,
     ...style
   }
 
@@ -48,6 +54,8 @@ const Badge = ({
       style={sx} />
   )
 }
+
+Badge._name = 'Badge'
 
 export default withRebass(Badge)
 

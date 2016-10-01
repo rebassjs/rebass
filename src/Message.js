@@ -22,9 +22,10 @@ const Message = ({
     alignItems: 'center',
     padding: scale[2],
     marginBottom: scale[2],
-    backgroundColor: colors.default,
-    color: colors.white,
     borderRadius,
+    color: colors.white,
+    backgroundColor: colors.primary,
+    ...style.fill,
     ...style
   }
 
@@ -35,6 +36,8 @@ const Message = ({
       style={sx} />
   )
 }
+
+Message._name = 'Message'
 
 export default withRebass(Message)
 

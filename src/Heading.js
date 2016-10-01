@@ -26,10 +26,6 @@ const Heading = ({
 
   let fontSize = typeof size === 'number' ? h(size) : h(level)
 
-  if (alt) {
-    fontSize = h(4)
-  }
-
   if (big) {
     fontSize *= 2
   }
@@ -44,9 +40,10 @@ const Heading = ({
     lineHeight: 1.25,
     textAlign: center ? 'center' : null,
     margin: 0,
-    ...style,
+    ...(alt ? subComponentStyles.alt : {}),
+    ...style
     // This doesn't seem good...
-    opacity: alt ? 0.5 : null
+    // opacity: alt ? 0.5 : null
   }
 
   return (
@@ -73,6 +70,8 @@ Heading.propTypes = {
 Heading.defaultProps = {
   level: 2
 }
+
+Heading._name = 'Heading'
 
 export default withRebass(Heading)
 

@@ -40,5 +40,7 @@ const Footer = ({
   )
 }
 
+Footer._name = 'Footer'
+
 export default withRebass(Footer)
 

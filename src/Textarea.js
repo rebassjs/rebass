@@ -52,6 +52,9 @@ const Textarea = ({
       borderStyles: 'solid',
       borderColor,
       borderRadius,
+      boxShadow: 'none',
+      WebkitAppearance: 'none',
+      appearance: 'none',
       ...subComponentStyles.textarea
     },
     message: {
@@ -95,6 +98,8 @@ Textarea.propTypes = {
   /** Adds a ref to the textarea element */
   baseRef: React.PropTypes.func
 }
+
+Textarea._name = 'Textarea'
 
 export default withRebass(Textarea)
 

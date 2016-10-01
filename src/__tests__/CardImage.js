@@ -55,7 +55,7 @@ test('style props override context styles', () => {
       src='' />, {
         context: {
           rebass: {
-            Arros: {
+            CardImage: {
               color: 'magenta'
             }
           }

@@ -56,7 +56,7 @@ test('style props override context styles', () => {
       }} />, {
         context: {
           rebass: {
-            Arros: {
+            InlineForm: {
               color: 'magenta'
             }
           }

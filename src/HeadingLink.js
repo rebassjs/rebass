@@ -12,6 +12,7 @@ const HeadingLink = ({
   level,
   size,
   href,
+  alt,
   style,
   className,
   theme,
@@ -33,6 +34,7 @@ const HeadingLink = ({
 
   return (
     <Heading
+      alt={alt}
       level={level}
       size={size}
       className={cx}
@@ -58,6 +60,8 @@ HeadingLink.defaultProps = {
   level: 2,
   href: '#!'
 }
+
+HeadingLink._name = 'HeadingLink'
 
 export default withRebass(HeadingLink)
 

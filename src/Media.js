@@ -11,6 +11,8 @@ const Media = ({
   img,
   right,
   align,
+  imgWidth,
+  imgHeight,
   children,
   className,
   style,
@@ -57,6 +59,8 @@ const Media = ({
       style={sx.root}>
       <img
         src={img}
+        width={imgWidth}
+        height={imgHeight}
         style={sx.image} />
       <div
         style={sx.body}
@@ -73,6 +77,8 @@ Media.propTypes = {
   /** Vertical alignment */
   align: React.PropTypes.oneOf(['top', 'center', 'bottom'])
 }
+
+Media._name = 'Media'
 
 export default withRebass(Media)
 

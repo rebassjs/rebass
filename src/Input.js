@@ -25,7 +25,7 @@ const Input = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale, colors, borderColor, borderRadius } = theme
+  const { scale, colors, borderColor } = theme
 
   const invalid = props.invalid || props['aria-invalid']
 
@@ -35,11 +35,18 @@ const Input = ({
     'isReadonly': props.readOnly
   })
 
+  const {
+    borderRadius = theme.borderRadius,
+    backgroundColor,
+    ...rootStyle
+  } = style
+
+
   const sx = {
     root: {
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
-      ...style
+      ...rootStyle
     },
     label: {
       ...subComponentStyles.label
@@ -55,11 +62,15 @@ const Input = ({
       paddingLeft: scale[1],
       paddingRight: scale[1],
       color: 'inherit',
-      backgroundColor: 'rgba(255, 255, 255, .25)',
+      backgroundColor: backgroundColor || 'rgba(255, 255, 255, .25)',
       borderWidth: 1,
       borderStyle: 'solid',
       borderColor: invalid ? colors.error : borderColor,
       borderRadius,
+      boxShadow: 'none',
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      ...style.fill,
       ...subComponentStyles.input
     },
     text: {
@@ -120,6 +131,8 @@ Input.propTypes = {
 Input.defaultProps = {
   type: 'text'
 }
+
+Input._name = 'Input'
 
 export default withRebass(Input)
 

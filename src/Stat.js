@@ -77,5 +77,7 @@ Stat.propTypes = {
   topLabel: React.PropTypes.bool
 }
 
+Stat._name = 'Stat'
+
 export default withRebass(Stat)
 

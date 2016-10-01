@@ -4,7 +4,8 @@ import { setScale as createMargin } from 'understyle/dist/margin'
 import { setScale as createPadding } from 'understyle/dist/padding'
 import radii from './util/radii'
 import colorStyle from './util/color-style'
-import defaultTheme from './theme'
+import getColorFill from './util/get-color-fill'
+import basicTheme from './themes/basic'
 
 const isObj = o => typeof o === 'object' && o !== null
 
@@ -42,9 +43,10 @@ const withRebass = Comp => {
     render () {
       const { rebass } = this.context
 
-      const theme = { ...defaultTheme, ...rebass }
+      const theme = { ...basicTheme, ...rebass }
       const { scale, colors, borderRadius } = theme
-      const themeStyle = theme[Comp.name] || {}
+
+      const themeStyle = theme[Comp._name] || {}
 
       const margin = createMargin(scale)
       const padding = createPadding(scale)
@@ -58,10 +60,10 @@ const withRebass = Comp => {
         rounded,
         pill,
         circle,
-
-        // theme, // - rename this
         color,
         backgroundColor,
+        // to do: this clashes with Slider fill prop
+        fill,
         style = {},
         ...props
       } = this.props
@@ -71,12 +73,9 @@ const withRebass = Comp => {
       const sx = {
         boxSizing: 'border-box',
         ...themeStyle,
-        // handle gutter prop with negative numbers instead
-        // needs an update from understyle
         ...margin({ m, mt, mr, mb, ml, mx, my }),
         ...padding({ p, pt, pr, pb, pl, px, py }),
         ...colorStyles({
-          theme,
           color,
           backgroundColor
         }),
@@ -85,7 +84,13 @@ const withRebass = Comp => {
           pill,
           circle
         }),
-        ...style
+        ...style,
+        fill: fill && fill !== true ? getColorFill(colors)(fill) : {}
+      }
+
+      // to do: rename this prop
+      if (fill === true) {
+        props.fill = fill
       }
 
       return (
@@ -102,6 +107,26 @@ const withRebass = Comp => {
   RebassBase.contextTypes = {
     rebass: React.PropTypes.object
   }
+
+  RebassBase.propTypes = {
+    /** Sets foreground color */
+    color: React.PropTypes.string,
+    /** Sets background color */
+    backgroundColor: React.PropTypes.string,
+    /** Sets semantic color themes */
+    fill: React.PropTypes.oneOf([
+      'primary',
+      'secondary',
+      'default',
+      'info',
+      'success',
+      'warning',
+      'error',
+      'muted'
+    ])
+  }
+
+  RebassBase.displayName = Comp._name
 
   return RebassBase
 }

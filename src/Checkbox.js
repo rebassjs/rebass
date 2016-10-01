@@ -27,6 +27,12 @@ const Checkbox = ({
 
   const invalid = props['aria-invalid'] || props.invalid
 
+  const {
+    color = colors.white,
+    backgroundColor = colors.success,
+    borderColor = colors.success
+  } = style.fill
+
   const sx = {
     root: {
       position: 'relative',
@@ -52,13 +58,16 @@ const Checkbox = ({
       height: scale[2],
       marginRight: stacked ? null : scale[1],
       marginBottom: stacked ? scale[1] : null,
-      backgroundColor: checked ? 'currentcolor' : 'transparent',
-      // backgroundColor: checked ? (style.backgroundColor || 'currentcolor') : 'transparent',
-
+      ...(checked ? {
+        color,
+        backgroundColor,
+        borderColor
+      } : {
+        borderColor: theme.borderColor
+      }),
       borderRadius,
       borderStyle: 'solid',
       borderWidth: 2,
-      borderColor: checked ? null : colors.gray,
       transition: 'background-color .1s ease-out',
       ...subComponentStyles.box
     },
@@ -113,6 +122,8 @@ Checkbox.propTypes = {
   /** Adds a ref to the input element */
   baseRef: React.PropTypes.func
 }
+
+Checkbox._name = 'Checkbox'
 
 export default withRebass(Checkbox)
 

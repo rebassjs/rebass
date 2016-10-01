@@ -8,6 +8,7 @@ import withRebass from './withRebass'
  */
 
 const Text = ({
+  size,
   small,
   center,
   bold,
@@ -17,13 +18,14 @@ const Text = ({
   subComponentStyles,
   ...props
 }) => {
-  const { fontSizes, bold: b } = theme
+  const { fontSizes } = theme
 
   const cx = classnames('Text', className)
 
+  size = size || (small ? 6 : 4)
   const sx = {
-    fontSize: small ? fontSizes[6] : fontSizes[4],
-    fontWeight: bold ? b : null,
+    fontSize: fontSizes[size],
+    fontWeight: bold ? theme.bold : null,
     textAlign: center ? 'center' : null,
     margin: 0,
     ...style
@@ -45,6 +47,8 @@ Text.propTypes = {
   /** Centers text alignment */
   center: React.PropTypes.bool
 }
+
+Text._name = 'Text'
 
 export default withRebass(Text)
 

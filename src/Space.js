@@ -47,5 +47,7 @@ Space.defaultProps = {
   x: 1
 }
 
+Space._name = 'Space'
+
 export default withRebass(Space)
 

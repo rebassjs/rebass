@@ -20,6 +20,7 @@ const Box = ({
   }
   return <div {...props} style={sx} />
 }
+Box._name = 'Box'
 const Base = withRebass(Box)
 
 test('renders', () => {
@@ -34,7 +35,8 @@ test('passes a style object', () => {
   expect(typeof style).toBe('object')
   expect(style).toEqual({
     boxSizing: 'border-box',
-    color: 'green'
+    color: 'green',
+    fill: {}
   })
 })
 
@@ -68,12 +70,19 @@ test('padding props add styles', () => {
 })
 
 test('color props add styles', () => {
-  wrapper = shallow(<Base color='primary' backgroundColor='black' />)
+  wrapper = shallow(
+    <Base
+      color='primary'
+      backgroundColor='black'
+      fill='primary'
+    />
+  )
   inner = wrapper.first().shallow()
   const { style } = wrapper.props()
   expect(style.color).toBe(colors.primary)
   expect(style.backgroundColor).toBe(colors.black)
-  // to do: theme, inverted behaviors
+  expect(style.fill.color).toBe(colors.white)
+  expect(style.fill.backgroundColor).toBe(colors.primary)
 })
 
 test('radii props add styles', () => {

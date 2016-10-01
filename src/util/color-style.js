@@ -7,10 +7,7 @@ const colorStyle = colors => props => {
   colors = colors || {}
   const {
     color,
-    backgroundColor,
-
-    // to do: rename this
-    theme
+    backgroundColor
   } = props || {}
   const result = {}
 
@@ -24,10 +21,6 @@ const colorStyle = colors => props => {
     result.backgroundColor = colors[backgroundColor]
   } else if (typeof backgroundColor === 'string') {
     result.backgroundColor = backgroundColor
-  }
-
-  if (theme && colors[theme]) {
-    result.color = colors[theme]
   }
 
   return result

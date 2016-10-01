@@ -47,5 +47,7 @@ Arrow.defaultProps = {
   direction: 'down'
 }
 
+Arrow._name = 'Arrow'
+
 export default withRebass(Arrow)
 

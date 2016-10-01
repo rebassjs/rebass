@@ -66,5 +66,7 @@ Embed.defaultProps = {
   ratio: 9 / 16
 }
 
+Embed._name = 'Embed'
+
 export default withRebass(Embed)
 

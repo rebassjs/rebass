@@ -19,7 +19,7 @@ const Progress = ({
 
   const css = `
     .Progress_progress::-webkit-progress-bar {
-      background-color: rgba(0, 0, 0, .125);
+      background-color: ${colors.gray}; /* rgba(0, 0, 0, .125);*/
     }
     .Progress_progress::-webkit-progress-value {
       background-color: currentcolor;
@@ -36,7 +36,6 @@ const Progress = ({
       marginBottom: scale[2],
       overflow: 'hidden',
       color: colors.primary,
-      backgroundColor: 'rgba(0, 0, 0, .125)',
       borderRadius: 9999,
       ...style
     },
@@ -73,6 +72,8 @@ Progress.propTypes = {
   /** Bar color - can either be a key from the theme colors object or any color value */
   color: React.PropTypes.string
 }
+
+Progress._name = 'Progress'
 
 export default withRebass(Progress)
 

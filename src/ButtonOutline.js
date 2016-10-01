@@ -9,6 +9,7 @@ import Button from './Button'
  */
 
 const ButtonOutline = ({
+  active,
   className,
   style,
   theme,
@@ -18,11 +19,20 @@ const ButtonOutline = ({
   const { colors, borderRadius } = theme
   const cx = classnames('ButtonOutline', className)
 
+  const {
+    color = colors.white,
+    backgroundColor = colors.primary
+  } = style.fill
+
   const sx = {
-    color: colors.primary,
-    backgroundColor: 'transparent',
-    boxShadow: 'inset 0 0 0 1px',
+    color,
+    backgroundColor: backgroundColor || 'transparent',
+    boxShadow: `inset 0 0 0 1px ${backgroundColor}`,
     borderRadius,
+    ...(active ? style.fill : {
+      color: backgroundColor,
+      backgroundColor: 'transparent'
+    }),
     ...style
   }
 
@@ -40,6 +50,8 @@ ButtonOutline.propTypes = {
   /** Creates a larger button */
   big: React.PropTypes.bool
 }
+
+ButtonOutline._name = 'ButtonOutline'
 
 export default withRebass(ButtonOutline)
 
