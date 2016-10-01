@@ -33,12 +33,10 @@
     "jest": "^15.1.1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
-    "jsx-to-string": "^0.2.16",
     "lodash": "^4.16.1",
     "object-assign": "^4.1.0",
     "onchange": "^3.0.2",
     "querystring": "^0.2.0",
-    "raw-loader": "^0.5.1",
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-component-permutations": "^1.0.0-beta2",
@@ -53,8 +51,7 @@
     "static-react": "^3.1.0",
     "static-site-generator-webpack-plugin": "^3.0.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.1",
-    "yuidocjs": "^0.10.2"
+    "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
     "classnames": "^2.2.3",
