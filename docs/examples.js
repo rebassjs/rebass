@@ -63,6 +63,8 @@ import {
   Stat,
   Switch,
   Table,
+  Tabs,
+  TabItem,
   Text,
   Textarea,
   Toolbar,
@@ -627,6 +629,35 @@ export const examples = {
         ['Corndog', 'Pork', 'Corn', 'Cornbread'],
         ['Hot Dog', 'Pork', 'Peppers', 'Bun'],
       ]} />
+  ),
+  Tabs: ({ text, update, ...rest }) => (
+    <Tabs
+      {...getProps(rest)}>
+      <TabItem
+        active={text === 'Tabs'}
+        onClick={e => { update({ text: 'Tabs' }) }}
+        children='Tabs' />
+      <TabItem
+        active={text === 'Two'}
+        onClick={e => { update({ text: 'Two' }) }}
+        children='Two' />
+      <TabItem
+        active={text === 'Four'}
+        onClick={e => { update({ text: 'Four' }) }}
+        children='Four' />
+      <TabItem
+        active={text === 'Eight'}
+        onClick={e => { update({ text: 'Eight' }) }}
+        children='Eight' />
+    </Tabs>
+  ),
+  TabItem: ({ text, update, ...rest }) => (
+    <Tabs>
+      <TabItem
+        {...getProps(rest)}
+        active
+        children='TabItem' />
+    </Tabs>
   ),
   Text: ({ text, ...rest }) => (
     <Text {...getProps(rest)}>{text}</Text>
