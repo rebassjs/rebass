@@ -1,3 +1,4 @@
+
 # Rebass
 
 Configurable React Stateless Functional UI Components
@@ -13,11 +14,15 @@ http://jxnblk.com/rebass
 - Uses inline styles
 - No CSS dependencies
 - No leaky global styles
-- [Presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
-- [Configurable](#configuration) with React Context
+- Promotes consistent styling
+- Built for pixel-perfect alignment
+- Works with any application architecture
+- Promotes separation of business logic and style
+- Convenient style props for margin, padding, and colors
+- Customizable themes using React context
 - Great for prototyping
 - Production ready
-- [Tested](https://travis-ci.org/jxnblk/rebass)
+- Unit tested
 
 Rebass is a React UI component library that uses inline styles to avoid CSS dependencies and prevent leaky global styles from affecting an application. Rebass components are built as stateless functional components and modeled as <a href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963'>presentational components</a>. With unit tests for each component, Rebass is great for prototyping and ready for production.
 
