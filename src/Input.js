@@ -47,13 +47,13 @@ const Input = ({
     root: {
       display: horizontal ? 'flex' : null,
       alignItems: horizontal ? 'baseline' : null,
-      paddingRight: horizontal ? scale[1] : null,
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
       ...rootStyle
     },
     label: {
-      width: horizontal ? 96 : null,
+      minWidth: horizontal ? 96 : null,
+      paddingRight: horizontal ? scale[1] : null,
       ...subComponentStyles.label
     },
     input: {

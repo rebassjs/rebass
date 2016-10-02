@@ -72,6 +72,7 @@ const Select = ({
     },
     label: {
       paddingRight: horizontal ? scale[1] : null,
+      minWidth: horizontal ? 96 : null,
       ...subComponentStyles.label
     },
     wrapper: {

@@ -121,15 +121,15 @@ export const examples = {
     <Flex align='baseline'>
       <Heading level={4} children='Rebass' />
       <Space />
-      <Badge fill={theme} {...getProps(rest)} children='0.4.0' />
+      <Badge theme={theme} {...getProps(rest)} children='0.4.0' />
       <Space x={2} />
       <Heading level={4} children='Pill' />
       <Space />
-      <Badge pill fill={theme} {...getProps(rest)} children='Pill' />
+      <Badge pill theme={theme} {...getProps(rest)} children='Pill' />
       <Space x={2} />
       <Heading level={4} children='Circular' />
       <Space />
-      <Badge circle fill={theme} {...getProps(rest)} children='4' />
+      <Badge circle theme={theme} {...getProps(rest)} children='4' />
     </Flex>
   ),
   Banner: ({ text, image, ...rest }) => (
@@ -180,7 +180,7 @@ export const examples = {
   ),
   Button: ({ text, theme, ...rest }) => (
     <div>
-      <Button {...getProps(rest)} fill={theme} children={text} />
+      <Button {...getProps(rest)} theme={theme} children={text} />
     </div>
   ),
   ButtonCircle: ({ theme, ...rest }) => (
@@ -190,19 +190,19 @@ export const examples = {
         align='center'
         mb={1}
         justify='space-between'>
-        <ButtonCircle fill={theme} {...getProps(rest)} title='More'>
+        <ButtonCircle theme={theme} {...getProps(rest)} title='More'>
           <Chevron />
         </ButtonCircle>
-        <ButtonCircle fill={theme} {...getProps(rest)} title='Next'>
+        <ButtonCircle theme={theme} {...getProps(rest)} title='Next'>
           <Reline.Arrow />
         </ButtonCircle>
-        <ButtonCircle fill={theme} {...getProps(rest)} title='Dismiss'>
+        <ButtonCircle theme={theme} {...getProps(rest)} title='Dismiss'>
           <X />
         </ButtonCircle>
-        <ButtonCircle fill={theme} {...getProps(rest)} title='Add'>
+        <ButtonCircle theme={theme} {...getProps(rest)} title='Add'>
           <Plus />
         </ButtonCircle>
-        <ButtonCircle fill={theme} {...getProps(rest)} title='Remove'>
+        <ButtonCircle theme={theme} {...getProps(rest)} title='Remove'>
           <Minus />
         </ButtonCircle>
       </Flex>
@@ -213,15 +213,15 @@ export const examples = {
     <Group>
       <ButtonOutline
         {...getProps(rest)}
-        fill={theme}
+        theme={theme}
         children={text} />
       <ButtonOutline
         {...getProps(rest)}
-        fill={theme}
+        theme={theme}
         children={text} />
       <ButtonOutline
         {...getProps(rest)}
-        fill={theme}
+        theme={theme}
         active
         children={text} />
     </Group>
@@ -264,7 +264,7 @@ export const examples = {
     <div>
       <Checkbox
         {...getProps(rest)}
-        fill={theme}
+        theme={theme}
         checked={open}
         onClick={e => { update({ open: !open }) }}
         name='checkbox_1'
@@ -396,7 +396,7 @@ export const examples = {
       placeholder='Placeholder'
       label='Input'
       value={text}
-      fill={theme}
+      theme={theme}
       onChange={e => { update({ text: e.target.value }) }}
     />
   ),
@@ -445,7 +445,7 @@ export const examples = {
   Message: ({ theme, ...rest }) => (
     <div>
       <Message
-        fill={theme}
+        theme={theme}
         {...getProps(rest)}>
         Hello Message!
         <Space auto />
@@ -485,7 +485,7 @@ export const examples = {
   ),
   Panel: ({ text, theme, ...rest }) => (
     <Panel
-      fill={theme}
+      theme={theme}
       {...getProps(rest)}>
       <PanelHeader children={text} />
       <Text>
@@ -502,7 +502,7 @@ export const examples = {
   ),
   PanelHeader: ({ theme, ...rest }) => (
     <PanelHeader
-      fill={theme}
+      theme={theme}
       {...getProps(rest)}>
       PanelHeader
     </PanelHeader>
@@ -586,9 +586,9 @@ export const examples = {
     <div>
       <Slider
         {...getProps(rest)}
+        fill
         name='slider_1'
         label='Slider'
-        fill={theme}
         value={number}
         onChange={e => { update({ number: parseInt(e.target.value) }) }}
       />
@@ -642,7 +642,7 @@ export const examples = {
   ),
   Toolbar: ({ text, theme, ...rest }) => (
     <Toolbar
-      fill={theme}
+      theme={theme}
       {...getProps(rest)}>
       <NavItem children={text} />
       <NavItem children='NavItem' />
@@ -652,7 +652,7 @@ export const examples = {
   ),
   Tooltip: ({ text, theme, ...rest }) => (
     <Tooltip
-      fill={theme}
+      theme={theme}
       {...getProps(rest)}
       title={text}>
       <Heading level={3}>Hover</Heading>

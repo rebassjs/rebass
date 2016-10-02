@@ -13,6 +13,7 @@ const Slider = ({
   name,
   fill,
   hideLabel,
+  horizontal,
   baseRef,
   children,
   className,
@@ -58,18 +59,24 @@ const Slider = ({
 
   const sx = {
     root: {
+      display: horizontal ? 'flex' : null,
+      alignItems: horizontal ? 'center' : null,
       paddingBottom: scale[2],
       ...rootStyle
     },
     label: {
+      minWidth: horizontal ? 96 : null,
+      paddingRight: horizontal ? scale[1] : null,
       ...subComponentStyles.label
     },
     input: {
       boxSizing: 'border-box',
       display: 'block',
       width: '100%',
+      flex: horizontal ? '1 1 auto' : null,
       margin: 0,
       marginTop: scale[2] - height / 2,
+      marginBottom: scale[2] - height / 2,
       cursor: 'pointer',
       color: color || 'inherit',
       backgroundColor: backgroundColor || colors.gray,
@@ -113,6 +120,8 @@ Slider.propTypes = {
   fill: React.PropTypes.bool,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
+  /** Displays label to the left */
+  horizontal: React.PropTypes.bool,
   /** Adds a ref to the input element */
   baseRef: React.PropTypes.func
 }

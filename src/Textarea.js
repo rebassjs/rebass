@@ -48,7 +48,7 @@ const Textarea = ({
       ...rootStyle
     },
     label: {
-      width: horizontal ? 96 : null,
+      minWidth: horizontal ? 96 : null,
       paddingRight: horizontal ? scale[1] : null,
       ...subComponentStyles.label
     },
