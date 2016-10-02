@@ -31,10 +31,10 @@ test('accepts custom styles', () => {
     <Checkbox
       name='t'
       label='t'
-      style={{ color: 'tomato' }} />
+      style={{ margin: 12 }} />
   )
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  expect(inner.props().style.margin).toBe(12)
 })
 
 test('context styles override default styles', () => {
@@ -56,20 +56,20 @@ test('style props override context styles', () => {
     <Checkbox
       name='t'
       label='t'
-      color='blue'
+      m={0}
       style={{
-        color: 'tomato'
+        margin: 12
       }} />, {
         context: {
           rebass: {
             Checkbox: {
-              color: 'magenta'
+              margin: 24
             }
           }
         }
       })
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  expect(inner.props().style.margin).toBe(12)
 })
 
 test('baseRef returns the input element', () => {

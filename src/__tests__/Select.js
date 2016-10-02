@@ -27,9 +27,9 @@ test('accepts custom className props', () => {
 })
 
 test('accepts custom styles', () => {
-  wrapper = shallow(<Select name='t' label='t' style={{ color: 'tomato' }} />)
+  wrapper = shallow(<Select name='t' label='t' style={{ margin: 12 }} />)
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  expect(inner.props().style.margin).toBe(12)
 })
 
 test('context styles override default styles', () => {
@@ -51,20 +51,20 @@ test('style props override context styles', () => {
     <Select
       name='t'
       label='t'
-      color='blue'
+      margin={0}
       style={{
-        color: 'tomato'
+        margin: 12
       }} />, {
         context: {
           rebass: {
             Select: {
-              color: 'magenta'
+              margin: 24
             }
           }
         }
       })
   inner = wrapper.first().shallow()
-  expect(inner.props().style.color).toBe('tomato')
+  expect(inner.props().style.margin).toBe(12)
 })
 
 test('baseRef returns the select element', () => {
