@@ -34,11 +34,17 @@ const Select = ({
     'isReadonly': props.readOnly
   })
 
+  const {
+    color,
+    backgroundColor,
+    ...rootStyle
+  } = style
+
   const sx = {
     root: {
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
-      ...style
+      ...rootStyle
     },
     select: {
       fontFamily: 'inherit',
@@ -49,8 +55,8 @@ const Select = ({
       paddingLeft: scale[1],
       paddingRight: scale[3],
       height: scale[3],
-      color: 'inherit',
-      backgroundColor: 'transparent',
+      color: color || 'inherit',
+      backgroundColor: backgroundColor || 'transparent',
       backgroundImage: 'none',
       borderWidth: 1,
       borderStyle: 'solid',

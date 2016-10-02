@@ -32,11 +32,17 @@ const Textarea = ({
     'isReadonly': props.readOnly
   })
 
+  const {
+    color,
+    backgroundColor,
+    ...rootStyle
+  } = style
+
   const sx = {
     root: {
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
-      ...style
+      ...rootStyle
     },
     label: {
       ...subComponentStyles.label
@@ -48,6 +54,8 @@ const Textarea = ({
       display: 'block',
       width: '100%',
       padding: scale[1],
+      color: color || 'inherit',
+      backgroundColor: backgroundColor || colors.lighten,
       borderWidth: 1,
       borderStyles: 'solid',
       borderColor,

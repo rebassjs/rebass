@@ -27,6 +27,12 @@ const Slider = ({
   const min = props.min || 0
   const percent = (props.value - min) / (max - min) * 100
 
+  const {
+    color,
+    backgroundColor,
+    ...rootStyle
+  } = style
+
   const css = `
     .Slider_input::-webkit-slider-thumb {
       width: 24px;
@@ -53,7 +59,7 @@ const Slider = ({
   const sx = {
     root: {
       paddingBottom: scale[2],
-      ...style
+      ...rootStyle
     },
     label: {
       ...subComponentStyles.label
@@ -65,8 +71,8 @@ const Slider = ({
       margin: 0,
       marginTop: scale[2] - height / 2,
       cursor: 'pointer',
-      color: 'inherit',
-      backgroundColor: colors.gray,
+      color: color || 'inherit',
+      backgroundColor: backgroundColor || colors.gray,
       backgroundImage,
       backgroundClip: 'content-box',
       height,

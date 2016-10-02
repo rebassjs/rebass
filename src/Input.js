@@ -37,6 +37,7 @@ const Input = ({
 
   const {
     borderRadius = theme.borderRadius,
+    color,
     backgroundColor,
     ...rootStyle
   } = style
@@ -60,7 +61,7 @@ const Input = ({
       margin: 0,
       paddingLeft: scale[1],
       paddingRight: scale[1],
-      color: 'inherit',
+      color: color || 'inherit',
       backgroundColor: backgroundColor || colors.lighten,
       borderWidth: 1,
       borderStyle: 'solid',

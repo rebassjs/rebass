@@ -31,6 +31,11 @@ const Radio = ({
     'isReadonly': props.readOnly
   })
 
+  const {
+    backgroundColor,
+    ...rootStyle
+  } = style
+
   const sx = {
     root: {
       position: 'relative',
@@ -40,7 +45,7 @@ const Radio = ({
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
       cursor: 'pointer',
-      ...style
+      ...rootStyle
     },
     input: {
       position: 'absolute',
@@ -61,7 +66,7 @@ const Radio = ({
       borderRadius: 99999,
       opacity: checked ? null : 1 / 4,
       transition: 'border .1s ease-out',
-      color: style.fill.backgroundColor,
+      color: backgroundColor || style.fill.backgroundColor,
       ...subComponentStyles.dot
     }
   }
