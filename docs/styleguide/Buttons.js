@@ -18,10 +18,10 @@ const Buttons = (props, { rebass }) => {
         mx={-2}>
         <Button m={2} children='Button' />
         <ButtonOutline m={2} children='Button' />
-        <Button m={2} fill='error' children='Button' />
-        <ButtonOutline m={2} fill='error' children='Button' />
-        <Button m={2} fill='success' children='Button' />
-        <Button m={2} fill='warning' children='Button' />
+        <Button m={2} theme='error' children='Button' />
+        <ButtonOutline m={2} theme='error' children='Button' />
+        <Button m={2} theme='success' children='Button' />
+        <Button m={2} theme='warning' children='Button' />
         <ButtonCircle m={2}>
           <Chevron
             down
