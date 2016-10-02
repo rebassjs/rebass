@@ -44,17 +44,6 @@ const withRebass = Comp => {
     render () {
       const { rebass } = this.context
 
-      const baseTheme = { ...basicTheme, ...rebass }
-      const { scale, colors, borderRadius } = baseTheme
-
-      const themeStyle = baseTheme[Comp._name] || {}
-
-      const margin = createMargin(scale)
-      const padding = createPadding(scale)
-      const radiusStyles = radii(borderRadius)
-      const colorStyles = colorStyle(colors)
-
-      // extract common style props
       const {
         bold,
         center,
@@ -70,6 +59,16 @@ const withRebass = Comp => {
         style = {},
         ...props
       } = this.props
+
+      const baseTheme = { ...basicTheme, ...rebass, circle }
+      const { scale, colors, borderRadius } = baseTheme
+
+      const themeStyle = baseTheme[Comp._name] || {}
+
+      const margin = createMargin(scale)
+      const padding = createPadding(scale)
+      const radiusStyles = radii(borderRadius)
+      const colorStyles = colorStyle(colors)
 
       const subComponentStyles = getSubComponentStyles(themeStyle, style)
 

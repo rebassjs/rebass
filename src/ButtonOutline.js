@@ -25,7 +25,6 @@ const ButtonOutline = ({
   } = style.fill
 
   const sx = {
-    color,
     backgroundColor: backgroundColor || 'transparent',
     boxShadow: `inset 0 0 0 1px ${backgroundColor}`,
     borderRadius,
@@ -39,6 +38,7 @@ const ButtonOutline = ({
   return (
     <Button
       {...props}
+      circle={theme.circle}
       className={cx}
       style={sx} />
   )

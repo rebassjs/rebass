@@ -10,6 +10,7 @@ import withRebass from './withRebass'
 const Button = ({
   href,
   big,
+  size,
   baseRef,
   style,
   className,
@@ -21,7 +22,10 @@ const Button = ({
 
   const Comp = href ? 'a' : 'button'
 
-  const minHeight = scale[3]
+  const minHeight = size || scale[3]
+  const width = theme.circle ? minHeight : null
+  const padx = theme.circle ? 0 : scale[2]
+  const pady = big ? scale[2] : scale[1]
 
   const cx = classnames('Button', className)
 
@@ -33,13 +37,14 @@ const Button = ({
     fontWeight: bold,
     lineHeight: `${scale[2]}px`,
     minHeight,
+    width,
     textDecoration: 'none',
     display: 'inline-block',
     margin: 0,
-    paddingTop: big ? scale[2] : scale[1],
-    paddingBottom: big ? scale[2] : scale[1],
-    paddingLeft: scale[2],
-    paddingRight: scale[2],
+    paddingTop: pady,
+    paddingBottom: pady,
+    paddingLeft: padx,
+    paddingRight: padx,
     cursor: 'pointer',
     border: 0,
     borderRadius,
@@ -62,8 +67,12 @@ const Button = ({
 Button.propTypes = {
   /** Pass an href prop to make the Button an <a> tag instead of a <button> */
   href: React.PropTypes.string,
-  /** Creates a larger button */
+  /** Creates a larger button by adding padding */
   big: React.PropTypes.bool,
+  /** Sets height of button in pixels */
+  size: React.PropTypes.number,
+  /** Creates a circle shaped button */
+  circle: React.PropTypes.bool,
   /** Adds a ref to the button element */
   baseRef: React.PropTypes.func
 }
