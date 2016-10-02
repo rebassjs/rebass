@@ -8,8 +8,6 @@ import Label from './Label'
  * Checkbox input with label
  */
 
-// - [ ] Default to green color for checkbox...
-
 const Checkbox = ({
   label,
   name,
