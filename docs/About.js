@@ -117,6 +117,9 @@ const About = () => {
             [ 'px', 'number', 'X-axis padding (left and right)' ],
             [ 'py', 'number', 'Y-axis padding (top and bottom)' ],
 
+            [ 'bold', 'boolean', 'Sets bold font weight' ],
+            [ 'center', 'boolean', 'Center aligns text' ],
+            [ 'caps', 'boolean', 'Sets all caps style' ],
             [ 'rounded', 'boolean or string', 'Border radius' ],
             [ 'pill', 'boolean', 'Sets border radius 99999 for pill and circle shapes' ],
             [ 'color', 'string', 'Foreground color - a key from the color object or any other color value' ],

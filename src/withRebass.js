@@ -2,6 +2,7 @@
 import React from 'react'
 import { setScale as createMargin } from 'understyle/dist/margin'
 import { setScale as createPadding } from 'understyle/dist/padding'
+import getTypographicStyle from './util/get-typographic-style'
 import radii from './util/radii'
 import colorStyle from './util/color-style'
 import getColorFill from './util/get-color-fill'
@@ -55,6 +56,9 @@ const withRebass = Comp => {
 
       // extract common style props
       const {
+        bold,
+        center,
+        caps,
         p, pt, pr, pb, pl, px, py,
         m, mt, mr, mb, ml, mx, my,
         rounded,
@@ -72,6 +76,7 @@ const withRebass = Comp => {
       const sx = {
         boxSizing: 'border-box',
         ...themeStyle,
+        ...getTypographicStyle(baseTheme)({ bold, center, caps }),
         ...margin({ m, mt, mr, mb, ml, mx, my }),
         ...padding({ p, pt, pr, pb, pl, px, py }),
         ...colorStyles({
