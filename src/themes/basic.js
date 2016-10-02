@@ -5,12 +5,14 @@ const monospace = 'Menlo, Consolas, monospace'
 const baseColors = {
   black: '#111',
   white: '#fff',
-  gray: '#ddd',
+  gray: '#eee',
   midgray: '#888',
   blue: '#008cef',
   red: '#ef0034',
   orange: '#FFCD29',
-  green: '#00ef50'
+  green: '#00ef50',
+  lighten: `rgba(255, 255, 255, ${1 / 16})`,
+  darken: `rgba(0, 0, 0, ${1 / 16})`
 }
 
 const colors = {

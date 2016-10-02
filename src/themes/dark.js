@@ -12,7 +12,7 @@ const dark = {
   color: '#eee',
   backgroundColor: '#111',
   borderRadius: 5,
-  borderColor: `rgba(255, 255, 255, ${1 / 16})`,
+  borderColor: basic.colors.lighten,
 
   colors: {
     ...basic.colors,

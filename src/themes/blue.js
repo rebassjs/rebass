@@ -8,7 +8,9 @@ const colors = {
   red: '#f40',
   orange: '#f90',
   gray: '#eee',
-  midgray: '#576'
+  midgray: '#576',
+  lighten: `rgba(255, 255, 255, ${1 / 16})`,
+  darken: `rgba(0, 0, 0, ${1 / 16})`
 }
 
 const scale = [
@@ -41,8 +43,8 @@ const zIndex = [
 const monospace = 'Menlo, Consolas, monospace'
 const bold = 600
 const borderRadius = 4
-const borderColor = 'rgba(0, 0, 0, .25)'
-const boxShadow = '0 2px 16px rgba(0, 0, 0, .125)'
+const borderColor = colors.darken
+const boxShadow = `0 2px 16px ${colors.darken}`
 
 const blue = {
   name: 'Blue',

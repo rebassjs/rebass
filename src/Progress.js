@@ -19,7 +19,7 @@ const Progress = ({
 
   const css = `
     .Progress_progress::-webkit-progress-bar {
-      background-color: ${colors.gray}; /* rgba(0, 0, 0, .125);*/
+      background-color: ${colors.darken};
     }
     .Progress_progress::-webkit-progress-value {
       background-color: currentcolor;

@@ -42,8 +42,6 @@ const Heading = ({
     margin: 0,
     ...(alt ? subComponentStyles.alt : {}),
     ...style
-    // This doesn't seem good...
-    // opacity: alt ? 0.5 : null
   }
 
   return (

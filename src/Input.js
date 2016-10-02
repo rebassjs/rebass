@@ -61,7 +61,7 @@ const Input = ({
       paddingLeft: scale[1],
       paddingRight: scale[1],
       color: 'inherit',
-      backgroundColor: backgroundColor || 'rgba(255, 255, 255, .25)',
+      backgroundColor: backgroundColor || colors.lighten,
       borderWidth: 1,
       borderStyle: 'solid',
       borderColor: invalid ? colors.error : borderColor,
