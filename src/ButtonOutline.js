@@ -20,7 +20,6 @@ const ButtonOutline = ({
   const cx = classnames('ButtonOutline', className)
 
   const {
-    color = colors.white,
     backgroundColor = colors.primary
   } = style.fill
 

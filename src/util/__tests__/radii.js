@@ -3,7 +3,6 @@ import radii from '../radii'
 
 test('returns an object', () => {
   const sx = radii()()
-  console.log(sx)
   expect(typeof sx).toBe('object')
 })
 
