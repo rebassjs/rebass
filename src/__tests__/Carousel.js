@@ -1,7 +1,6 @@
 
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { isDOMComponent } from 'react-addons-test-utils'
+import { shallow } from 'enzyme'
 import { Carousel } from '..'
 
 let wrapper

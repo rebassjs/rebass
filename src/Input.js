@@ -41,7 +41,6 @@ const Input = ({
     ...rootStyle
   } = style
 
-
   const sx = {
     root: {
       marginBottom: scale[2],

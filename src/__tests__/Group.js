@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Group, Button, Input } from '..'
+import { Group } from '..'
 
 let wrapper
 let inner
