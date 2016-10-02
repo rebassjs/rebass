@@ -16,6 +16,7 @@ const Select = ({
   options,
   message,
   hideLabel,
+  horizontal,
   baseRef,
   children,
   className,
@@ -42,6 +43,8 @@ const Select = ({
 
   const sx = {
     root: {
+      display: horizontal ? 'flex' : null,
+      alignItems: horizontal ? 'baseline' : null,
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
       ...rootStyle
@@ -68,10 +71,12 @@ const Select = ({
       ...subComponentStyles.select
     },
     label: {
+      paddingRight: horizontal ? scale[1] : null,
       ...subComponentStyles.label
     },
     wrapper: {
       position: 'relative',
+      flex: horizontal ? '1 1 auto' : null,
       ...subComponentStyles.wrapper
     },
     arrow: {
@@ -83,6 +88,7 @@ const Select = ({
       ...subComponentStyles.arrow
     },
     message: {
+      paddingLeft: horizontal ? scale[1] : null,
       ...subComponentStyles.label
     }
   }
@@ -133,6 +139,8 @@ Select.propTypes = {
   message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
+  /** Displays label to the left */
+  horizontal: React.PropTypes.bool,
   /** Adds a ref to the select element */
   baseRef: React.PropTypes.func
 }

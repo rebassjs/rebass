@@ -14,6 +14,7 @@ const Textarea = ({
   name,
   message,
   hideLabel,
+  horizontal,
   baseRef,
   children,
   className,
@@ -40,11 +41,15 @@ const Textarea = ({
 
   const sx = {
     root: {
+      display: horizontal ? 'flex' : null,
+      alignItems: horizontal ? 'baseline' : null,
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
       ...rootStyle
     },
     label: {
+      width: horizontal ? 96 : null,
+      paddingRight: horizontal ? scale[1] : null,
       ...subComponentStyles.label
     },
     textarea: {
@@ -52,6 +57,7 @@ const Textarea = ({
       fontSize: 'inherit',
       boxSizing: 'border-box',
       display: 'block',
+      flex: horizontal ? '1 1 auto' : null,
       width: '100%',
       padding: scale[1],
       color: color || 'inherit',
@@ -66,6 +72,7 @@ const Textarea = ({
       ...subComponentStyles.textarea
     },
     message: {
+      paddingLeft: horizontal ? scale[1] : null,
       ...subComponentStyles.message
     }
   }
@@ -103,6 +110,8 @@ Textarea.propTypes = {
   message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
+  /** Displays label to the left */
+  horizontal: React.PropTypes.bool,
   /** Adds a ref to the textarea element */
   baseRef: React.PropTypes.func
 }
