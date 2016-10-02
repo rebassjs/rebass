@@ -392,6 +392,7 @@ export const examples = {
   Input: ({ text, theme, update, ...rest }) => (
     <Input
       {...getProps(rest)}
+      horizontal
       name='input_example'
       placeholder='Placeholder'
       label='Input'

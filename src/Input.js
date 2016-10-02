@@ -15,6 +15,7 @@ const Input = ({
   type,
   message,
   hideLabel,
+  horizontal,
   children,
   autoOff,
   baseRef,
@@ -44,11 +45,15 @@ const Input = ({
 
   const sx = {
     root: {
+      display: horizontal ? 'flex' : null,
+      alignItems: horizontal ? 'baseline' : null,
+      paddingRight: horizontal ? scale[1] : null,
       marginBottom: scale[2],
       color: invalid ? colors.error : null,
       ...rootStyle
     },
     label: {
+      width: horizontal ? 96 : null,
       ...subComponentStyles.label
     },
     input: {
@@ -56,6 +61,7 @@ const Input = ({
       fontSize: 'inherit',
       boxSizing: 'border-box',
       display: 'block',
+      flex: horizontal ? '1 1 auto' : null,
       width: '100%',
       height: scale[3],
       margin: 0,
@@ -73,8 +79,9 @@ const Input = ({
       ...style.fill,
       ...subComponentStyles.input
     },
-    text: {
-      ...subComponentStyles.text
+    message: {
+      paddingLeft: horizontal ? scale[1] : null,
+      ...subComponentStyles.message
     }
   }
 
@@ -104,7 +111,7 @@ const Input = ({
       {message && (
         <Text
           small
-          style={sx.text}
+          style={sx.message}
           children={message} />
       )}
     </div>
@@ -122,6 +129,8 @@ Input.propTypes = {
   message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
+  /** Displays label to the left */
+  horizontal: React.PropTypes.bool,
   /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
   autoOff: React.PropTypes.bool,
   /** Adds a ref to the input element */
