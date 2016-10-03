@@ -44,7 +44,7 @@
     "react-dom": "^15.3.1",
     "react-element-to-jsx-string": "^4.1.0",
     "react-geomicons": "^2.1.0",
-    "react-router": "^4.0.0-alpha.3",
+    "react-router": "^4.0.0-alpha.4",
     "reflexbox": "^2.2.2",
     "reline": "^1.0.0-beta.3",
     "standard": "^8.0.0",

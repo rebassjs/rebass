@@ -11,6 +11,7 @@ import {
   Avatar,
   Badge,
   Banner,
+  Bar,
   Block,
   Blockquote,
   BoxShadow,
@@ -143,6 +144,12 @@ export const examples = {
       backgroundImage={image}>
       <Heading size={0} children={text} />
     </Banner>
+  ),
+  Bar: ({ text, ...rest }) => (
+    <div>
+      <Bar {...getProps(rest)} value={1/4}>{text}</Bar>
+      <Bar {...getProps(rest)} value={7/8}>87.5%</Bar>
+    </div>
   ),
   Block: ({ text, image, theme, ...rest }) => (
     <Block
