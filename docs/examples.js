@@ -59,6 +59,7 @@ import {
   Select,
   SequenceMap,
   SequenceMapStep,
+  SignInForm,
   Slider,
   Space,
   Stat,
@@ -590,6 +591,24 @@ export const examples = {
       first
       href='#!'
       children='Step' />
+  ),
+  SignInForm: ({ text, open, update, ...rest }) => (
+    <SignInForm
+      username={text}
+      password=''
+      remember={open}
+      onChange={e => {
+        let { name, value } = e.target
+        let key
+        if (name === 'username') {
+          key = 'text'
+        } else if (name === 'remember') {
+          key = 'open'
+          value = !open
+        }
+        update({ [key]: value })
+      }}
+    />
   ),
   Slider: ({ number, theme, update, ...rest }) => (
     <div>
