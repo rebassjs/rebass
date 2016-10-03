@@ -30,6 +30,8 @@ const SignInForm = ({
     }
   }
 
+  // Or Create an Account...
+
   return (
     <form
       {...props}
@@ -58,6 +60,7 @@ const SignInForm = ({
         onClick={onChange}
       />
       <Button children='Sign In' />
+      <a href='#'>Forgot password?</a>
     </form>
   )
 }
