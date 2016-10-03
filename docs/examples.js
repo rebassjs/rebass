@@ -23,6 +23,7 @@ import {
   CardImage,
   Carousel,
   Checkbox,
+  Circle,
   Close,
   Container,
   Divider,
@@ -280,6 +281,12 @@ export const examples = {
         name='checkbox_1'
         label={text} />
     </div>
+  ),
+  Circle: ({ theme, ...rest }) => (
+    <Circle
+      {...getProps(rest)}
+      theme={theme}
+      children='4' />
   ),
   Close: ({ ...rest }) => (
     <Close {...getProps(rest)} />
