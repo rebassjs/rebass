@@ -8,6 +8,7 @@ import { Flex, Box } from 'reflexbox'
 
 import {
   Arrow,
+  AspectRatio,
   Avatar,
   Badge,
   Banner,
@@ -118,6 +119,20 @@ export const examples = {
       {text}
       <Arrow {...getProps(rest)} />
     </Button>
+  ),
+  AspectRatio: ({ text, image, ...rest }) => (
+    <div
+      style={{
+        maxWidth: 512
+      }}>
+      <AspectRatio
+        ratio={9/16}
+        {...getProps(rest)}>
+        <Card>
+          {text}
+        </Card>
+      </AspectRatio>
+    </div>
   ),
   Avatar: ({ image, ...rest }) => (
     <Avatar {...getProps(rest)} src={image} />

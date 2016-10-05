@@ -20,7 +20,7 @@ const SignInForm = ({
   subComponentStyles,
   ...props
 }) => {
-  const {} = theme
+  // const {} = theme
 
   const cx = classnames('SignInForm', className)
 
@@ -35,6 +35,7 @@ const SignInForm = ({
   return (
     <form
       {...props}
+      className={cx}
       style={sx.root}>
       {heading && <Heading mb={2} children={heading} />}
       <Input

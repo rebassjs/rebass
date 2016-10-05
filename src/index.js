@@ -7,6 +7,7 @@ export { default as theme } from './themes/basic'
 export { default as themes } from './themes'
 
 export { default as Arrow } from './Arrow'
+export { default as AspectRatio } from './AspectRatio'
 export { default as Avatar } from './Avatar'
 export { default as Badge } from './Badge'
 export { default as Banner } from './Banner'
