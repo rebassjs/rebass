@@ -510,7 +510,7 @@ export const examples = {
   ),
   Panel: ({ text, theme, ...rest }) => (
     <Panel
-      theme={theme}
+      theme={theme || 'primary'}
       {...getProps(rest)}>
       <PanelHeader children={text} />
       <Text>
