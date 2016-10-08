@@ -125,13 +125,13 @@ export const examples = {
       style={{
         maxWidth: 512
       }}>
-      <AspectRatio
-        ratio={9/16}
-        {...getProps(rest)}>
-        <Card>
-          {text}
-        </Card>
-      </AspectRatio>
+      <Card>
+        <AspectRatio
+          ratio={9/16}
+          {...getProps(rest)}>
+            {text}
+        </AspectRatio>
+      </Card>
     </div>
   ),
   Avatar: ({ image, ...rest }) => (
