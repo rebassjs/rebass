@@ -209,32 +209,21 @@ export const examples = {
       <Button {...getProps(rest)} theme={theme} children={text} />
     </div>
   ),
+  /*
   ButtonCircle: ({ theme, ...rest }) => (
     <div>
-      <Flex
-        wrap
-        align='center'
-        mb={1}
-        justify='space-between'>
-        <ButtonCircle theme={theme} {...getProps(rest)} title='More'>
-          <Chevron />
-        </ButtonCircle>
-        <ButtonCircle theme={theme} {...getProps(rest)} title='Next'>
-          <Reline.Arrow />
-        </ButtonCircle>
-        <ButtonCircle theme={theme} {...getProps(rest)} title='Dismiss'>
-          <X />
-        </ButtonCircle>
-        <ButtonCircle theme={theme} {...getProps(rest)} title='Add'>
-          <Plus />
-        </ButtonCircle>
-        <ButtonCircle theme={theme} {...getProps(rest)} title='Remove'>
-          <Minus />
-        </ButtonCircle>
-      </Flex>
+      <Button
+        circle
+        theme={theme}
+        mb={2}
+        {...getProps(rest)}
+        title='More'>
+        <Chevron />
+      </Button>
       <Text small children='Example Icon components from Reline' />
     </div>
   ),
+  */
   ButtonOutline: ({ text, theme, ...rest }) => (
     <Group>
       <ButtonOutline
@@ -297,10 +286,14 @@ export const examples = {
         label={text} />
     </div>
   ),
-  Circle: ({ theme, ...rest }) => (
+  Circle: ({
+    color = 'blue',
+    theme,
+    ...rest
+  }) => (
     <Circle
       {...getProps(rest)}
-      theme={theme}
+      color={color}
       children='4' />
   ),
   Close: ({ ...rest }) => (

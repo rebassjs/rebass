@@ -5,12 +5,10 @@ import withRebass from './withRebass'
 import Button from './Button'
 
 /**
- * A circular button suited for use with icons
+ * Deprecated in favor of Button `circle` prop
  */
 
 const ButtonCircle = ({
-  size,
-  children,
   className,
   style,
   theme,
@@ -21,41 +19,13 @@ const ButtonCircle = ({
 
   const cx = classnames('ButtonCircle', className)
 
-  const sx = {
-    root: {
-      fontSize: 'inherit',
-      width: size || scale[3],
-      height: size || scale[3],
-      padding: 0,
-      borderRadius: 99999,
-      ...style
-    },
-    inner: {
-      display: 'flex',
-      alignItems: 'center',
-      height: '100%',
-      justifyContent: 'center',
-      ...subComponentStyles.inner
-    }
-  }
-
   return (
     <Button
       {...props}
+      circle
       className={cx}
-      style={sx.root}>
-      <div style={sx.inner}>
-        {children}
-      </div>
-    </Button>
+      style={style} />
   )
-}
-
-ButtonCircle.propTypes = {
-  /** Pass an href prop to make the ButtonCircle an <a> tag instead of a <button> */
-  href: React.PropTypes.string,
-  /** Sets width and height of button */
-  size: React.PropTypes.number
 }
 
 ButtonCircle._name = 'ButtonCircle'

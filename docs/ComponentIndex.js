@@ -28,7 +28,9 @@ const ComponentIndex = () => {
             </NavItem>
           )}
         </Link>
-        <BigHeading children='Components' />
+        <BigHeading>
+          {data.components.length} Components
+        </BigHeading>
         <Rule />
       </Grid>
       {data.components.map((comp, i) => (

@@ -8,7 +8,7 @@ const pkg = require('../package.json')
 
 const components = Object.keys(Rebass)
   .filter(key => /^[A-Z]/.test(key))
-  .filter(key => key !== 'Base')
+  .filter(key => !/Base|ButtonCircle/.test(key))
   .map(key => {
     const raw = fs.readFileSync(path.join(__dirname, '..', 'src', key + '.js'), 'utf8')
     const plain = raw.replace(/withRebass\(([A-Za-z]+)\)/, key)
