@@ -28,11 +28,12 @@ const TabItem = ({
     borderBottomStyle: 'solid',
     borderBottomColor: 'transparent',
     cursor: 'pointer',
+    ...style,
     ...(active ? {
       color: colors.primary,
-      borderBottomColor: colors.primary
-    } : {}),
-    ...style
+      borderBottomColor: colors.primary,
+      ...subComponentStyles.active
+    } : {})
   }
 
   return (
