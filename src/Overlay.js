@@ -51,6 +51,7 @@ const Overlay = ({
       zIndex: zIndex[1],
       minWidth: 320,
       width: fullWidth ? '100%' : null,
+      overflow: 'scroll',
       ...(box ? innerStyle : {})
     }
   }
