@@ -65,6 +65,7 @@ const Donut = ({
   size,
   strokeWidth,
   children,
+  showDefaultPercentage,
   ...props
 }, { rebass }) => {
   const { bold } = { ...config, ...rebass }
@@ -116,7 +117,7 @@ const Donut = ({
         <path d={createPath(size, value, strokeWidth)} />
       </svg>
       {children}
-      {!children &&
+      {!children && showDefaultPercentage &&
         <span style={sx.percentage}>
           {Math.round(value * 100)}
           <span style={sx.unit}>%</span>
@@ -134,14 +135,17 @@ Donut.propTypes = {
   /** Sets width of stroke */
   strokeWidth: React.PropTypes.number,
   /** Text color - can either be a key from the config colors object or any color value */
-  color: React.PropTypes.string
+  color: React.PropTypes.string,
+  /** If true does not display default percentage */
+  showDefaultPercentage: React.PropTypes.bool
 }
 
 Donut.defaultProps = {
   value: 0,
   size: 128,
   strokeWidth: 8,
-  color: 'primary'
+  color: 'primary',
+  showDefaultPercentage: true
 }
 
 Donut.contextTypes = {

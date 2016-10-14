@@ -108,6 +108,17 @@ describe('Donut', () => {
     })
   })
 
+  context('when showDefaultPercentage is set to false', () => {
+    beforeEach(() => {
+      renderer.render(<Donut value={1 / 4} showDefaultPercentage={false} />)
+      tree = renderer.getRenderOutput()
+      percentage = tree.props.children[1]
+    })
+    it('should not show value as perecentage', () => {
+      expect(percentage).toNotExist()
+    })
+  })
+
   context('when custom styles are set', () => {
     beforeEach(() => {
       renderer.render(<Donut style={{ color: 'tomato' }} />)
