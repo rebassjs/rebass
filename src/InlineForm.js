@@ -74,8 +74,11 @@ InlineForm.propTypes = {
   placeholder: React.PropTypes.string,
   /** onChange handler for input */
   onChange: React.PropTypes.func,
-  /** Text for button */
-  buttonLabel: React.PropTypes.string,
+  /** Text or element for button */
+  buttonLabel: React.PropTypes.oneOfType([
+    React.PropTypes.element,
+    React.PropTypes.string
+  ]),
   /** onClick handler for button */
   onClick: React.PropTypes.func
 }
