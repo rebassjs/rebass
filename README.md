@@ -75,7 +75,30 @@ and component-specific styles can be added to customize on a per-component basis
 
 View the [demo](http://jxnblk.com/rebass/demo) to see some configuration options in action.
 
-To configure the theme, add `childContextTypes` and `getChildContext` to your root component.
+### ThemeProvider
+
+To change the theme for all Rebass components, wrap the React component tree with the ThemeProvider component.
+
+```jsx
+import React from 'react'
+import {
+  ThemeProvider,
+  Button
+} from 'rebass'
+import customTheme from './custom-theme'
+
+const App = () => (
+  <ThemeProvider theme={customTheme}>
+    <Button>
+      Themed Button
+    </Button>
+  </ThemeProvider>
+)
+```
+
+### Manually adding context
+
+Alternatively, manually set context by adding `childContextTypes` and `getChildContext` to your root component.
 
 ```jsx
 class App extends React.Component {
