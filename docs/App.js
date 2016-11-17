@@ -9,7 +9,8 @@ import {
   Link
 } from 'react-router'
 import {
-  themes
+  themes,
+  ThemeProvider
 } from '../src'
 import withParams from './withParams'
 import Nav from './Nav'
@@ -43,10 +44,6 @@ class App extends React.Component {
       gridsys: {
         columnCount: 8,
         // debug: true
-      },
-      rebass: {
-        ...themes[theme],
-        monospace: 'Menlo, Consolas, monospace'
       }
     }
   }
@@ -87,49 +84,50 @@ class App extends React.Component {
     return (
       <div id='app'
         style={sx.root}>
-        <Router {...routerProps}>
-          <div>
-            <Nav
-              theme={this.state.theme}
-              changeTheme={this.changeTheme} />
-            <Match
-              {...this.props}
-              pattern='/'
-              exactly
-              component={Home} />
-            <Match
-              exactly
-              pattern='/components'
-              component={ComponentIndex} />
-            <Match
-              pattern='/components/:name'
-              component={ComponentDetail} />
-            <Match
-              pattern='/demo'
-              component={Demo} />
-            <Match
-              pattern='/themes'
-              render={(matchProps) => (
-                <ThemesIndex
-                  changeTheme={this.changeTheme}
-                />
-              )} />
-            <Match
-              pattern='/styleguide'
-              component={StyleGuideView} />
-            <Miss component={NotFound} />
-            <ComponentList />
-            <Footer />
-          </div>
-        </Router>
+        <ThemeProvider theme={config}>
+          <Router {...routerProps}>
+            <div>
+              <Nav
+                theme={this.state.theme}
+                changeTheme={this.changeTheme} />
+              <Match
+                {...this.props}
+                pattern='/'
+                exactly
+                component={Home} />
+              <Match
+                exactly
+                pattern='/components'
+                component={ComponentIndex} />
+              <Match
+                pattern='/components/:name'
+                component={ComponentDetail} />
+              <Match
+                pattern='/demo'
+                component={Demo} />
+              <Match
+                pattern='/themes'
+                render={(matchProps) => (
+                  <ThemesIndex
+                    changeTheme={this.changeTheme}
+                  />
+                )} />
+              <Match
+                pattern='/styleguide'
+                component={StyleGuideView} />
+              <Miss component={NotFound} />
+              <ComponentList />
+              <Footer />
+            </div>
+          </Router>
+        </ThemeProvider>
       </div>
     )
   }
 }
 
 App.childContextTypes = {
-  gridsys: React.PropTypes.object,
-  rebass: React.PropTypes.object
+  gridsys: React.PropTypes.object
 }
 
 export default withParams(App)

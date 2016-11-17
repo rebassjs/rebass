@@ -1,5 +1,6 @@
 
 export { default as withRebass } from './withRebass'
+export { default as ThemeProvider } from './ThemeProvider'
 
 export { default as Base } from './Base'
 

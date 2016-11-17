@@ -60,7 +60,7 @@ const withRebass = Comp => {
         ...props
       } = this.props
 
-      const baseTheme = { ...basicTheme, ...rebass, circle }
+      const baseTheme = { ...basicTheme, ...rebass }
       const { scale, colors, borderRadius } = baseTheme
 
       const themeStyle = baseTheme[Comp._name] || {}
