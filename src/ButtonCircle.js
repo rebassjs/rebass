@@ -15,8 +15,6 @@ const ButtonCircle = ({
   subComponentStyles,
   ...props
 }) => {
-  const { scale } = theme
-
   const cx = classnames('ButtonCircle', className)
 
   return (
