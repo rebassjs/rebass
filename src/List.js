@@ -26,10 +26,12 @@ const List = ({
     root: {
       paddingLeft: flush ? 0 : scale[2],
       margin: 0,
-      listStyle: reset ? 'none' : null
+      listStyle: reset ? 'none' : null,
+      ...style
     },
     item: {
-      marginBottom: scale[1]
+      marginBottom: scale[1],
+      ...subComponentStyles.item
     }
   }
 
