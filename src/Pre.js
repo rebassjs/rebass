@@ -1,33 +1,42 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Pre element for displaying code examples
  */
 
-const Pre = (props, { rebass }) => {
-  const { monospace, scale, borderColor } = { ...config, ...rebass }
+const Pre = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { monospace, scale, fontSizes, borderColor } = theme
+
+  const cx = classnames('Pre', className)
+
+  const sx = {
+    fontFamily: monospace,
+    fontSize: fontSizes[5],
+    paddingLeft: scale[2],
+    marginBottom: scale[2],
+    borderLeft: `4px solid ${borderColor}`,
+    overflowX: 'scroll',
+    ...style
+  }
 
   return (
-    <Base
+    <pre
       {...props}
-      tagName='pre'
-      className='Pre'
-      baseStyle={{
-        fontFamily: monospace,
-        paddingLeft: scale[2],
-        marginBottom: scale[2],
-        borderLeft: `4px solid ${borderColor}`,
-        overflowX: 'scroll'
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Pre.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Pre._name = 'Pre'
 
-export default Pre
+export default withRebass(Pre)
 

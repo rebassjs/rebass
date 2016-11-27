@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Styled hr element
@@ -9,24 +9,32 @@ import config from './config'
 
 const Divider = ({
   width,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, borderColor } = theme
+
+  const cx = classnames('Divider', className)
+
+  const sx = {
+    width,
+    marginTop: scale[2],
+    marginBottom: scale[2],
+    border: 0,
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderBottomColor: borderColor,
+    ...style
+  }
 
   return (
-    <Base
+    <hr
       {...props}
-      tagName='hr'
-      className='Divider'
-      baseStyle={{
-        width,
-        marginTop: scale[2],
-        marginBottom: scale[2],
-        border: 0,
-        borderBottomWidth: 1,
-        borderBottomStyle: 'solid',
-        borderBottomColor: borderColor
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -35,9 +43,7 @@ Divider.propTypes = {
   width: React.PropTypes.number
 }
 
-Divider.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Divider._name = 'Divider'
 
-export default Divider
+export default withRebass(Divider)
 

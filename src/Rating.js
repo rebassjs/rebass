@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Star rating component with clickable buttons
@@ -10,16 +10,24 @@ import config from './config'
 const Rating = ({
   value,
   onClick,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, colors } = { ...config, ...rebass }
+}) => {
+  const { fontSizes, colors } = theme
 
   const stars = Array.from({ length: 5 }, (a, b) => b)
+
+  const cx = classnames('Rating', className)
 
   const sx = {
     root: {
       display: 'inline-flex',
-      fontSize: fontSizes[4]
+      fontSize: fontSizes[4],
+      color: colors.orange,
+      ...style
     },
     star: {
       position: 'relative',
@@ -31,7 +39,8 @@ const Rating = ({
       border: 0,
       color: 'inherit',
       backgroundColor: 'transparent',
-      cursor: onClick ? 'pointer' : null
+      cursor: onClick ? 'pointer' : null,
+      ...subComponentStyles.star
     }
   }
 
@@ -64,10 +73,10 @@ const Rating = ({
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Rating'
-      baseStyle={sx.root}>
+      className={cx}
+      style={sx.root}>
       {stars.map((s) => (
         <button
           key={s}
@@ -77,7 +86,7 @@ const Rating = ({
           <span style={getActiveStyle(s)}>★</span>
         </button>
       ))}
-    </Base>
+    </div>
   )
 }
 
@@ -89,13 +98,10 @@ Rating.propTypes = {
 }
 
 Rating.defaultProps = {
-  value: 0,
-  color: 'orange'
+  value: 0
 }
 
-Rating.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Rating._name = 'Rating'
 
-export default Rating
+export default withRebass(Rating)
 

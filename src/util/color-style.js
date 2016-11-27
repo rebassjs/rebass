@@ -3,13 +3,11 @@
  * Utility for extracting color and backgroundColor props from components
  */
 
-function colorStyle (props, colors, context) {
+const colorStyle = colors => props => {
   colors = colors || {}
   const {
     color,
-    backgroundColor,
-    theme,
-    inverted
+    backgroundColor
   } = props || {}
   const result = {}
 
@@ -23,16 +21,6 @@ function colorStyle (props, colors, context) {
     result.backgroundColor = colors[backgroundColor]
   } else if (typeof backgroundColor === 'string') {
     result.backgroundColor = backgroundColor
-  }
-
-  if (theme && colors[theme]) {
-    const invertedColor = context && context.inverted
-    if (inverted) {
-      result.color = invertedColor || colors.white
-      result.backgroundColor = colors[theme]
-    } else {
-      result.color = colors[theme]
-    }
   }
 
   return result

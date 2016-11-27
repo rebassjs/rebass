@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Label element for form controls
@@ -9,9 +9,15 @@ import config from './config'
 
 const Label = ({
   hide,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, bold } = { ...config, ...rebass }
+}) => {
+  const { fontSizes, bold } = theme
+
+  const cx = classnames('Label', className)
 
   const hideStyle = hide ? {
     position: 'absolute',
@@ -21,17 +27,19 @@ const Label = ({
     clip: 'rect(1px, 1px, 1px, 1px)'
   } : {}
 
+  const sx = {
+    fontSize: fontSizes[5],
+    fontWeight: bold,
+    lineHeight: 1,
+    ...hideStyle,
+    ...style
+  }
+
   return (
-    <Base
+    <label
       {...props}
-      tagName='label'
-      className='Label'
-      baseStyle={{
-        fontSize: fontSizes[5],
-        fontWeight: bold,
-        lineHeight: 1,
-        ...hideStyle
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -42,9 +50,7 @@ Label.propTypes = {
   hide: React.PropTypes.bool
 }
 
-Label.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Label._name = 'Label'
 
-export default Label
+export default withRebass(Label)
 

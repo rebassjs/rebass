@@ -1,9 +1,8 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
-import config from './config'
 
 /**
  * Checkbox input with label
@@ -14,56 +13,23 @@ const Checkbox = ({
   name,
   checked,
   children,
-  backgroundColor,
-  theme,
-  inverted,
-  rounded,
   stacked,
+  baseRef,
+  className,
   style,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderRadius } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderRadius } = theme
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
-
-  const boxProps = {
+  const {
+    color,
     backgroundColor,
-    theme,
-    inverted,
-    rounded
-  }
+    ...rootStyle
+  } = style
 
   const sx = {
     root: {
@@ -73,12 +39,14 @@ const Checkbox = ({
       flexDirection: stacked ? 'column' : null,
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...rootStyle
     },
     input: {
       position: 'absolute',
       zIndex: -1,
-      opacity: 0
+      opacity: 0,
+      ...subComponentStyles.input
     },
     box: {
       display: 'flex',
@@ -88,52 +56,57 @@ const Checkbox = ({
       height: scale[2],
       marginRight: stacked ? null : scale[1],
       marginBottom: stacked ? scale[1] : null,
-      backgroundColor: checked ? 'currentcolor' : 'transparent',
+      ...(checked ? {
+        color: color || style.fill.color || colors.white,
+        backgroundColor: backgroundColor || style.fill.backgroundColor || colors.success,
+        borderColor: backgroundColor || style.fill.borderColor || colors.success
+      } : {
+        borderColor: theme.borderColor
+      }),
       borderRadius,
       borderStyle: 'solid',
       borderWidth: 2,
-      borderColor: checked ? null : colors.gray,
-      transition: 'background-color .1s ease-out'
+      transition: 'background-color .1s ease-out',
+      ...subComponentStyles.box
     },
     icon: {
       display: checked ? null : 'none',
       width: '75%',
       height: '75%',
       marginTop: 1,
-      fill: colors.white
+      fill: 'currentcolor',
+      ...subComponentStyles.icon
     }
   }
 
-  const cx = classnames('Checkbox', {
+  const cx = classnames('Checkbox', className, {
     'isInvalid': invalid,
     'isDisabled': props.disabled,
     'isReadonly': props.readOnly
   })
 
   return (
-    <Base
-      {...rootProps}
-      tagName={Label}
+    <Label
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <input
         {...props}
+        ref={baseRef}
         name={name}
         type='checkbox'
         checked={checked}
         style={sx.input} />
-      <Base
-        {...boxProps}
+      <div
         className='Checkbox_box'
-        baseStyle={sx.box}>
+        style={sx.box}>
         <svg
           viewBox='0 0 32 32'
           style={sx.icon}>
           <path d='M1 14 L5 10 L13 18 L27 4 L31 8 L13 26 z' />
         </svg>
-      </Base>
+      </div>
       {label}
-    </Base>
+    </Label>
   )
 }
 
@@ -143,8 +116,12 @@ Checkbox.propTypes = {
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Place label centered under the radio */
-  stacked: React.PropTypes.bool
+  stacked: React.PropTypes.bool,
+  /** Adds a ref to the input element */
+  baseRef: React.PropTypes.func
 }
 
-export default Checkbox
+Checkbox._name = 'Checkbox'
+
+export default withRebass(Checkbox)
 

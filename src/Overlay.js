@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Fixed positioned overlay for use with modal dialogs
@@ -14,14 +14,21 @@ const Overlay = ({
   box,
   onDismiss,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { zIndex, scale, colors, borderRadius } = { ...config, ...rebass }
+}) => {
+  const { zIndex, scale, colors, borderRadius } = theme
+
+  const cx = classnames('Overlay', className)
 
   const innerStyle = {
     padding: scale[3],
     backgroundColor: colors.white,
-    borderRadius
+    borderRadius,
+    ...subComponentStyles.box
   }
 
   const sx = {
@@ -35,7 +42,8 @@ const Overlay = ({
       display: open ? 'flex' : 'none',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      ...subComponentStyles.background
     },
     dismiss: {
       position: 'fixed',
@@ -44,25 +52,28 @@ const Overlay = ({
       bottom: 0,
       left: 0,
       backgroundColor: dark ? colors.black : colors.white,
-      opacity: 0.875
+      opacity: 0.875,
+      ...subComponentStyles.dismiss
     },
     inner: {
       position: 'relative',
       zIndex: zIndex[1],
       minWidth: 320,
       width: fullWidth ? '100%' : null,
+      ...style,
       ...(box ? innerStyle : {})
     }
   }
 
   return (
     <div
-      className='Overlay'
+      className={cx}
       style={sx.root}>
       <div style={sx.dismiss}
         onClick={onDismiss} />
-      <Base {...props}
-        baseStyle={sx.inner}
+      <div
+        {...props}
+        style={sx.inner}
         children={children} />
     </div>
   )
@@ -87,9 +98,7 @@ Overlay.defaultProps = {
   onDismiss: function () {}
 }
 
-Overlay.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Overlay._name = 'Overlay'
 
-export default Overlay
+export default withRebass(Overlay)
 

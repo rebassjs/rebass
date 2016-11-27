@@ -1,12 +1,32 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Responsive media embed wrapper
  */
 
-const Embed = ({ ratio, children, ...props }, { rebass }) => {
+const Embed = ({
+  ratio,
+  children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const cx = classnames('Embed', className)
+
+  const sx = {
+    position: 'relative',
+    height: 0,
+    padding: 0,
+    paddingBottom: `${ratio * 100}%`,
+    overflow: 'hidden',
+    ...style
+  }
+
   const childProps = {
     style: {
       position: 'absolute',
@@ -15,7 +35,8 @@ const Embed = ({ ratio, children, ...props }, { rebass }) => {
       top: 0,
       bottom: 0,
       left: 0,
-      border: 0
+      border: 0,
+      ...subComponentStyles.children
     }
   }
 
@@ -24,17 +45,11 @@ const Embed = ({ ratio, children, ...props }, { rebass }) => {
   })
 
   return (
-    <Base
+    <div
       {...props}
-      className='Embed'
+      className={cx}
       children={styledChildren}
-      baseStyle={{
-        position: 'relative',
-        height: 0,
-        padding: 0,
-        paddingBottom: `${ratio * 100}%`,
-        overflow: 'hidden'
-      }} />
+      style={sx} />
   )
 }
 
@@ -51,9 +66,7 @@ Embed.defaultProps = {
   ratio: 9 / 16
 }
 
-Embed.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Embed._name = 'Embed'
 
-export default Embed
+export default withRebass(Embed)
 

@@ -1,42 +1,46 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Component for displaying text in UI
  */
 
 const Text = ({
+  size,
   small,
-  bold,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, bold: b } = { ...config, ...rebass }
+}) => {
+  const { fontSizes } = theme
+
+  const cx = classnames('Text', className)
+
+  size = size || (small ? 6 : 4)
+  const sx = {
+    fontSize: fontSizes[size],
+    margin: 0,
+    ...style
+  }
 
   return (
-    <Base
+    <p
       {...props}
-      tagName='p'
-      className='Text'
-      baseStyle={{
-        fontSize: small ? fontSizes[6] : fontSizes[4],
-        fontWeight: bold ? b : null,
-        margin: 0
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
 Text.propTypes = {
   /** Sets a smaller font size */
-  small: React.PropTypes.bool,
-  /** Sets bold font weight */
-  bold: React.PropTypes.bool
+  small: React.PropTypes.bool
 }
 
-Text.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Text._name = 'Text'
 
-export default Text
+export default withRebass(Text)
 

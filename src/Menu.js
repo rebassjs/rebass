@@ -1,42 +1,47 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Menu component for navigation links and actions
  */
 
-const Menu = (props, { rebass }) => {
-  const { scale, colors, borderColor, borderRadius } = { ...config, ...rebass }
+const Menu = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale, colors, borderColor, borderRadius } = theme
+
+  const cx = classnames('Menu', className)
+
+  const sx = {
+    display: 'flex',
+    flexDirection: 'column',
+    minWidth: 128,
+    marginBottom: scale[2],
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor,
+    borderRadius,
+    color: colors.black,
+    backgroundColor: colors.white,
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Menu'
-      baseStyle={{
-        display: 'flex',
-        flexDirection: 'column',
-        minWidth: 128,
-        marginBottom: scale[2],
-        overflow: 'hidden',
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor,
-        borderRadius,
-        color: colors.black,
-        backgroundColor: colors.white
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Menu.defaultProps = {
-  rounded: true
-}
+Menu._name = 'Menu'
 
-Menu.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Menu
+export default withRebass(Menu)
 

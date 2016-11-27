@@ -1,6 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Layout container for fixed positioning children
@@ -12,21 +13,29 @@ const Fixed = ({
   bottom,
   left,
   zIndex,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
 }) => {
+  const cx = classnames('Fixed', className)
+
   const sx = {
     position: 'fixed',
     top: top ? 0 : null,
     right: right ? 0 : null,
     bottom: bottom ? 0 : null,
     left: left ? 0 : null,
-    zIndex
+    zIndex,
+    ...style
   }
 
   return (
-    <Base {...props}
-      className='Fixed'
-      baseStyle={sx} />
+    <div
+      {...props}
+      className={cx}
+      style={sx} />
   )
 }
 
@@ -43,5 +52,7 @@ Fixed.propTypes = {
   zIndex: React.PropTypes.number
 }
 
-export default Fixed
+Fixed._name = 'Fixed'
+
+export default withRebass(Fixed)
 

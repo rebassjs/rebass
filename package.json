@@ -1,21 +1,18 @@
 {
   "name": "rebass",
-  "version": "0.3.3",
-  "description": "Configurable React Stateless Functional UI Components",
+  "version": "0.4.0-beta.9",
+  "description": "React functional UI component design system",
   "author": "Brent Jackson",
   "license": "MIT",
   "scripts": {
-    "prepublish": "mkdir -p dist && babel src --out-dir dist",
-    "static": "static-react docs/components/Root.js --props docs/data.js > build/index.html",
-    "build": "mkdir -p build && mkdir -p build/demo && npm run static && npm run demo && npm run copy",
-    "copy": "cp demo/bundle.js build/demo && cp demo/index.html build/demo",
-    "demo": "webpack -p --progress --colors --config demo/webpack.config.js",
-    "demo:dev": "webpack-dev-server --progress --colors --config demo/webpack.config.js",
+    "prepublish": "mkdir -p dist && babel src --out-dir dist --ignore __tests__",
     "deploy": "./deploy.sh",
-    "_deploy": "gh-pages -d build",
-    "watch": "npm run start && onchange 'src/**/*' 'docs/**/*' -- npm run start",
-    "test:watch": "mocha test --watch --compilers js:babel-register",
-    "test": "standard && mocha test --compilers js:babel-register"
+    "data": "node docs/create-data.js",
+    "build": "mkdir -p build && npm run data && webpack -p --progress --colors",
+    "start": "webpack-dev-server",
+    "fix": "standard --fix",
+    "standard": "standard",
+    "test": "standard && jest"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"
@@ -29,34 +26,36 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
-    "expect": "^1.14.0",
+    "cxs": "^1.0.1",
+    "enzyme": "^2.4.1",
     "gh-pages": "^0.11.0",
-    "gx": "^1.0.0-rc3",
-    "jsdom": "^9.5.0",
+    "gridsys": "^1.0.0-beta.5",
+    "jest": "^15.1.1",
     "json-loader": "^0.5.4",
     "jsonp": "^0.2.0",
-    "mocha": "^3.0.2",
-    "mocha-jsdom": "^1.1.0",
+    "lodash": "^4.16.1",
     "object-assign": "^4.1.0",
     "onchange": "^3.0.2",
+    "querystring": "^0.2.0",
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-component-permutations": "^1.0.0-beta2",
     "react-docgen": "^2.10.0",
     "react-dom": "^15.3.1",
     "react-element-to-jsx-string": "^4.1.0",
-    "react-geomicons": "^2.0.5",
-    "react-router": "^2.8.0",
-    "reflexbox": "^2.1.0",
+    "react-geomicons": "^2.1.0",
+    "react-router": "^4.0.0-alpha.4",
+    "reflexbox": "^2.2.2",
+    "reline": "^1.0.0-beta.3",
     "standard": "^8.0.0",
     "static-react": "^3.1.0",
+    "static-site-generator-webpack-plugin": "^3.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
     "classnames": "^2.2.3",
-    "object-assign": "^4.0.1",
-    "react-addons-pure-render-mixin": "^15.3.1"
+    "understyle": "^1.3.0"
   },
   "keywords": [
     "components",
@@ -79,17 +78,11 @@
   "standard": {
     "parser": "babel-eslint",
     "ignore": [
-      "docs/**/*",
-      "demo/**/*"
+      "docs/**/*"
     ],
     "globals": [
-      "before",
-      "after",
-      "beforeEach",
-      "afterEach",
-      "context",
-      "describe",
-      "it"
+      "test",
+      "expect"
     ]
   },
   "eslintConfig": {

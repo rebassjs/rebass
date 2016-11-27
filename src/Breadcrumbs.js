@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Breadcrumb navigation links
@@ -10,43 +10,54 @@ import config from './config'
 const Breadcrumbs = ({
   links,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, scale } = { ...config, ...rebass }
+}) => {
+  const { fontSizes, scale } = theme
+
+  const cx = classnames('Breadcrumbs', className)
 
   const sx = {
     root: {
       fontSize: fontSizes[5],
       display: 'flex',
       marginBottom: scale[2],
-      alignItems: 'center'
+      alignItems: 'center',
+      ...style
     },
     spacer: {
       marginLeft: '.5em',
-      marginRight: '.5em'
+      marginRight: '.5em',
+      ...subComponentStyles.spacer
     }
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Breadcrumbs'
-      baseStyle={sx.root}>
-      {links.map((link, i) => (
-        <div key={i}>
-          <Base
-            is='a'
-            {...link}
-            style={{
-              color: 'inherit',
-              textDecoration: i === links.length - 1 ? 'none' : null
-            }} />
-          {i < links.length - 1 &&
-            <span style={sx.spacer}>/</span>
-          }
-        </div>
-      ))}
-    </Base>
+      className={cx}
+      style={sx.root}>
+      {links.map((link, i) => {
+        const linkStyle = {
+          color: 'inherit',
+          textDecoration: i === links.length - 1 ? 'none' : null
+        }
+
+        return (
+          <div key={i}>
+            <a
+              {...link}
+              style={linkStyle} />
+            {i < links.length - 1 && (
+              <span style={sx.spacer}>/</span>
+            )}
+          </div>
+        )
+      })}
+    </div>
   )
 }
 
@@ -59,9 +70,7 @@ Breadcrumbs.defaultProps = {
   links: []
 }
 
-Breadcrumbs.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Breadcrumbs._name = 'Breadcrumbs'
 
-export default Breadcrumbs
+export default withRebass(Breadcrumbs)
 

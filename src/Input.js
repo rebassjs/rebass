@@ -1,10 +1,9 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
 import Text from './Text'
-import config from './config'
 
 /**
  * Input element with label with support for aria-invalid, disabled, and readOnly HTML attributes
@@ -16,75 +15,75 @@ const Input = ({
   type,
   message,
   hideLabel,
+  horizontal,
   children,
-  style,
   autoOff,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  baseRef,
+  ref,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderColor } = theme
 
   const invalid = props.invalid || props['aria-invalid']
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
+  const cx = classnames('Input', className, {
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
+  })
+
+  const {
+    borderRadius = theme.borderRadius,
+    color,
+    backgroundColor,
+    ...rootStyle
+  } = style
 
   const sx = {
     root: {
+      display: horizontal ? 'flex' : null,
+      alignItems: horizontal ? 'baseline' : null,
       marginBottom: scale[2],
-      color: invalid ? colors.error : null
+      color: invalid ? colors.error : null,
+      ...rootStyle
+    },
+    label: {
+      minWidth: horizontal ? 96 : null,
+      paddingRight: horizontal ? scale[1] : null,
+      ...subComponentStyles.label
     },
     input: {
       fontFamily: 'inherit',
       fontSize: 'inherit',
       boxSizing: 'border-box',
       display: 'block',
+      flex: horizontal ? '1 1 auto' : null,
       width: '100%',
       height: scale[3],
       margin: 0,
       paddingLeft: scale[1],
       paddingRight: scale[1],
-      color: 'inherit',
-      backgroundColor: 'rgba(255, 255, 255, .25)',
+      color: color || 'inherit',
+      backgroundColor: backgroundColor || colors.lighten,
       borderWidth: 1,
       borderStyle: 'solid',
-      borderColor: invalid ? colors.error : borderColor
+      borderColor: invalid ? colors.error : borderColor,
+      borderRadius,
+      boxShadow: 'none',
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      ...style.fill,
+      ...subComponentStyles.input
+    },
+    message: {
+      paddingLeft: horizontal ? scale[1] : null,
+      ...subComponentStyles.message
     }
   }
-
-  const cx = classnames('Input', {
-    'isInvalid': invalid,
-    'isDisabled': props.disabled,
-    'isReadonly': props.readOnly
-  })
 
   const autoProps = autoOff ? {
     autoComplete: 'off',
@@ -94,23 +93,28 @@ const Input = ({
   } : {}
 
   return (
-    <Base
-      {...rootProps}
+    <div
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
+        style={sx.label}
         children={label} />
-      <Base
-        {...autoProps}
+      <input
         {...props}
-        tagName='input'
+        {...autoProps}
+        ref={baseRef}
         type={type}
         name={name}
-        baseStyle={sx.input} />
-      {message && <Text small children={message} />}
-    </Base>
+        style={sx.input} />
+      {message && (
+        <Text
+          small
+          style={sx.message}
+          children={message} />
+      )}
+    </div>
   )
 }
 
@@ -125,28 +129,19 @@ Input.propTypes = {
   message: React.PropTypes.string,
   /** Hides the form element label */
   hideLabel: React.PropTypes.bool,
+  /** Displays label to the left */
+  horizontal: React.PropTypes.bool,
   /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
   autoOff: React.PropTypes.bool,
-  /** Controls the border radius for creating grouped elements */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
-      'top',
-      'right',
-      'bottom',
-      'left'
-    ])
-  ])
+  /** Adds a ref to the input element */
+  baseRef: React.PropTypes.func
 }
 
 Input.defaultProps = {
-  type: 'text',
-  rounded: true
+  type: 'text'
 }
 
-Input.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Input._name = 'Input'
 
-export default Input
+export default withRebass(Input)
 

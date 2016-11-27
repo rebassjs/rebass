@@ -3,7 +3,7 @@
  * Utility for extracting border radii props from components
  */
 
-function radii (props, r = 2) {
+const radii = (radius = 2) => props => {
   const {
     rounded,
     pill,
@@ -13,17 +13,17 @@ function radii (props, r = 2) {
   let borderRadius
 
   if (rounded === true) {
-    borderRadius = r
+    borderRadius = radius
   } else if (rounded === false) {
     borderRadius = 0
   }
 
   if (typeof rounded === 'string') {
     const obj = {
-      top: `${r}px ${r}px 0 0`,
-      right: `0 ${r}px ${r}px 0`,
-      bottom: `0 0 ${r}px ${r}px`,
-      left: `${r}px 0 0 ${r}px`
+      top: `${radius}px ${radius}px 0 0`,
+      right: `0 ${radius}px ${radius}px 0`,
+      bottom: `0 0 ${radius}px ${radius}px`,
+      left: `${radius}px 0 0 ${radius}px`
     }
     borderRadius = obj[rounded] || null
   }

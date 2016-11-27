@@ -1,8 +1,8 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Menu from './Menu'
-import config from './config'
 
 /**
  * Absolutely positioned Menu component for use within Dropdown component
@@ -14,9 +14,15 @@ const DropdownMenu = ({
   top,
   children,
   onDismiss,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { zIndex } = { ...config, ...rebass }
+}) => {
+  const { zIndex } = theme
+
+  const cx = classnames('DropdownMenu', className)
 
   const sx = {
     root: {
@@ -26,7 +32,8 @@ const DropdownMenu = ({
       right: right ? 0 : 'auto',
       top: top ? 'auto' : '100%',
       bottom: top ? '100%' : 'auto',
-      zIndex: 4
+      zIndex: 4,
+      ...style
     },
     overlay: {
       position: 'fixed',
@@ -34,26 +41,33 @@ const DropdownMenu = ({
       top: 0,
       right: 0,
       bottom: 0,
-      left: 0
+      left: 0,
+      ...subComponentStyles.overlay
     },
     content: {
       position: 'relative',
-      zIndex: zIndex[1]
+      zIndex: zIndex[1],
+      ...subComponentStyles.content
+    },
+    Menu: {
+      ...subComponentStyles.Menu
     }
   }
 
   return (
-    <Base
+    <div
       {...props}
-      className='DropdownMenu'
-      baseStyle={sx.root}>
-      <div style={sx.overlay}
+      className={cx}
+      style={sx.root}>
+      <div
+        style={sx.overlay}
         onClick={onDismiss} />
       <div style={sx.content}>
         <Menu {...props}
+          style={sx.Menu}
           children={children} />
       </div>
-    </Base>
+    </div>
   )
 }
 
@@ -73,9 +87,7 @@ DropdownMenu.defaultProps = {
   onDismiss: function () {}
 }
 
-DropdownMenu.contextTypes = {
-  rebass: React.PropTypes.object
-}
+DropdownMenu._name = 'DropdownMenu'
 
-export default DropdownMenu
+export default withRebass(DropdownMenu)
 

@@ -1,10 +1,9 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
+import withRebass from './withRebass'
 import Label from './Label'
 import Text from './Text'
-import config from './config'
 
 /**
  * Textarea form element with label
@@ -15,86 +14,90 @@ const Textarea = ({
   name,
   message,
   hideLabel,
+  horizontal,
+  baseRef,
   children,
+  className,
   style,
-  m,
-  mt,
-  mr,
-  mb,
-  ml,
-  mx,
-  my,
-  p,
-  pt,
-  pr,
-  pb,
-  pl,
-  px,
-  py,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, colors, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, colors, borderColor, borderRadius } = theme
 
   const invalid = props['aria-invalid'] || props.invalid
 
-  const rootProps = {
-    style,
-    m,
-    mt,
-    mr,
-    mb,
-    ml,
-    mx,
-    my,
-    p,
-    pt,
-    pr,
-    pb,
-    pl,
-    px,
-    py
-  }
+  const cx = classnames('Textarea', className, {
+    'isInvalid': invalid,
+    'isDisabled': props.disabled,
+    'isReadonly': props.readOnly
+  })
+
+  const {
+    color,
+    backgroundColor,
+    ...rootStyle
+  } = style
 
   const sx = {
     root: {
+      display: horizontal ? 'flex' : null,
+      alignItems: horizontal ? 'baseline' : null,
       marginBottom: scale[2],
-      color: invalid ? colors.error : null
+      color: invalid ? colors.error : null,
+      ...rootStyle
+    },
+    label: {
+      minWidth: horizontal ? 96 : null,
+      paddingRight: horizontal ? scale[1] : null,
+      ...subComponentStyles.label
     },
     textarea: {
       fontFamily: 'inherit',
       fontSize: 'inherit',
       boxSizing: 'border-box',
       display: 'block',
+      flex: horizontal ? '1 1 auto' : null,
       width: '100%',
       padding: scale[1],
+      color: color || 'inherit',
+      backgroundColor: backgroundColor || colors.lighten,
       borderWidth: 1,
       borderStyles: 'solid',
-      borderColor
+      borderColor,
+      borderRadius,
+      boxShadow: 'none',
+      WebkitAppearance: 'none',
+      appearance: 'none',
+      ...subComponentStyles.textarea
+    },
+    message: {
+      paddingLeft: horizontal ? scale[1] : null,
+      ...subComponentStyles.message
     }
   }
 
-  const cx = classnames('Textarea', {
-    'isInvalid': invalid,
-    'isDisabled': props.disabled,
-    'isReadonly': props.readOnly
-  })
-
   return (
-    <Base
-      {...rootProps}
+    <div
       className={cx}
-      baseStyle={sx.root}>
+      style={sx.root}>
       <Label
         htmlFor={name}
         hide={hideLabel}
+        style={sx.label}
         children={label} />
-      <Base
+      <textarea
         {...props}
-        tagName='textarea'
+        ref={baseRef}
         name={name}
-        baseStyle={sx.textarea} />
-      {message && <Text small children={message} />}
-    </Base>
+        style={sx.textarea} />
+      {message && (
+        <Text
+          small
+          style={sx.message}
+          children={message} />
+      )}
+    </div>
   )
 }
 
@@ -106,16 +109,14 @@ Textarea.propTypes = {
   /** Adds a helper or error message below the textarea */
   message: React.PropTypes.string,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: React.PropTypes.bool,
+  /** Displays label to the left */
+  horizontal: React.PropTypes.bool,
+  /** Adds a ref to the textarea element */
+  baseRef: React.PropTypes.func
 }
 
-Textarea.defaultProps = {
-  rounded: true
-}
+Textarea._name = 'Textarea'
 
-Textarea.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Textarea
+export default withRebass(Textarea)
 

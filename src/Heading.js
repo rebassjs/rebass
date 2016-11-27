@@ -1,8 +1,7 @@
 
 import React from 'react'
 import classnames from 'classnames'
-import Base from './Base'
-import config from './config'
+import withRebass from './withRebass'
 
 /**
  * Heading element with no margin and size based on fontSizes scale
@@ -13,38 +12,43 @@ const Heading = ({
   size,
   big,
   alt,
-  _className,
+  center,
+  className,
+  theme,
+  subComponentStyles,
+  style,
   ...props
-}, { rebass }) => {
-  const { fontSizes, bold } = { ...config, ...rebass }
-  const Component = `h${level}`
+}) => {
+  const { fontSizes, bold } = theme
+  const Comp = `h${level}`
 
-  const h = (n) => fontSizes[n]
+  const h = n => fontSizes[n]
 
   let fontSize = typeof size === 'number' ? h(size) : h(level)
-  if (alt) {
-    fontSize = h(4)
-  }
+
   if (big) {
     fontSize *= 2
   }
 
-  const cx = classnames(_className || 'Heading', {
+  const cx = classnames('Heading', className, {
     'Heading_alt': alt
   })
 
+  const sx = {
+    fontSize,
+    fontWeight: bold,
+    lineHeight: 1.25,
+    textAlign: center ? 'center' : null,
+    margin: 0,
+    ...(alt ? subComponentStyles.alt : {}),
+    ...style
+  }
+
   return (
-    <Base
+    <Comp
       {...props}
-      tagName={Component}
       className={cx}
-      baseStyle={{
-        fontSize,
-        fontWeight: bold,
-        lineHeight: 1.25,
-        margin: 0,
-        opacity: alt ? 0.5 : null
-      }} />
+      style={sx} />
   )
 }
 
@@ -56,16 +60,16 @@ Heading.propTypes = {
   /** Visual size of heading */
   size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
   /** Applies alternate styling - useful for slugs and subheadings */
-  alt: React.PropTypes.bool
+  alt: React.PropTypes.bool,
+  /** Centers text alignment */
+  center: React.PropTypes.bool
 }
 
 Heading.defaultProps = {
   level: 2
 }
 
-Heading.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Heading._name = 'Heading'
 
-export default Heading
+export default withRebass(Heading)
 

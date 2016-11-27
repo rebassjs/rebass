@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Media object with vertical alignment using flexbox
@@ -11,10 +11,16 @@ const Media = ({
   img,
   right,
   align,
+  imgWidth,
+  imgHeight,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+}) => {
+  const { scale } = theme
 
   const alignment = {
     top: 'flex-start',
@@ -24,25 +30,42 @@ const Media = ({
 
   const alignItems = alignment[align]
 
+  const cx = classnames('Media', className)
+
+  const sx = {
+    root: {
+      display: 'flex',
+      marginBottom: scale[2],
+      alignItems,
+      ...style
+    },
+    image: {
+      flex: 'none',
+      maxWidth: 'none',
+      marginRight: right ? 0 : scale[2],
+      marginLeft: right ? scale[2] : 0,
+      order: right ? 9999 : null,
+      ...subComponentStyles.image
+    },
+    body: {
+      ...subComponentStyles.body
+    }
+  }
+
   return (
-    <Base
+    <div
       {...props}
-      className='Media'
-      baseStyle={{
-        display: 'flex',
-        marginBottom: scale[2],
-        alignItems
-      }}>
-      <img src={img}
-        style={{
-          flex: 'none',
-          maxWidth: 'none',
-          marginRight: right ? 0 : scale[2],
-          marginLeft: right ? scale[2] : 0,
-          order: right ? 9999 : null
-        }} />
-      <div children={children} />
-    </Base>
+      className={cx}
+      style={sx.root}>
+      <img
+        src={img}
+        width={imgWidth}
+        height={imgHeight}
+        style={sx.image} />
+      <div
+        style={sx.body}
+        children={children} />
+    </div>
   )
 }
 
@@ -55,9 +78,7 @@ Media.propTypes = {
   align: React.PropTypes.oneOf(['top', 'center', 'bottom'])
 }
 
-Media.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Media._name = 'Media'
 
-export default Media
+export default withRebass(Media)
 

@@ -1,18 +1,25 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Progress element
  */
 
-const Progress = ({ value, ...props }, { rebass }) => {
-  const { scale } = { ...config, ...rebass }
+const Progress = ({
+  value,
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale, colors } = theme
 
   const css = `
     .Progress_progress::-webkit-progress-bar {
-      background-color: rgba(0, 0, 0, .125);
+      background-color: ${colors.darken};
     }
     .Progress_progress::-webkit-progress-value {
       background-color: currentcolor;
@@ -22,12 +29,15 @@ const Progress = ({ value, ...props }, { rebass }) => {
     }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
+  const cx = classnames('Progress', className)
+
   const sx = {
     root: {
       marginBottom: scale[2],
       overflow: 'hidden',
-      backgroundColor: 'rgba(0, 0, 0, .125)',
-      borderRadius: 9999
+      color: colors.primary,
+      borderRadius: 9999,
+      ...style
     },
     progress: {
       display: 'block',
@@ -36,15 +46,15 @@ const Progress = ({ value, ...props }, { rebass }) => {
       overflow: 'hidden',
       border: 0,
       WebkitAppearance: 'none',
-      appearance: 'none'
+      appearance: 'none',
+      ...subComponentStyles.progress
     }
   }
 
   return (
-    <Base
-      {...props}
-      className='Progress'
-      baseStyle={sx.root}>
+    <div
+      className={cx}
+      style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <progress
         {...props}
@@ -52,23 +62,18 @@ const Progress = ({ value, ...props }, { rebass }) => {
         value={value}
         children={value}
         style={sx.progress} />
-    </Base>
+    </div>
   )
 }
 
 Progress.propTypes = {
   /** Value for progress bar */
   value: React.PropTypes.number,
-  /** Bar color - can either be a key from the config colors object or any color value */
+  /** Bar color - can either be a key from the theme colors object or any color value */
   color: React.PropTypes.string
 }
 
-Progress.defaultProps = {
-  color: 'primary'
-}
+Progress._name = 'Progress'
 
-Progress.contextTypes = {
-  rebass: React.PropTypes.object
-}
+export default withRebass(Progress)
 
-export default Progress

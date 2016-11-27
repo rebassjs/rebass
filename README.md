@@ -1,3 +1,4 @@
+
 # Rebass
 
 Configurable React Stateless Functional UI Components
@@ -13,11 +14,15 @@ http://jxnblk.com/rebass
 - Uses inline styles
 - No CSS dependencies
 - No leaky global styles
-- [Presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
-- [Configurable](#configuration) with React Context
+- Promotes consistent styling
+- Built for pixel-perfect alignment
+- Works with any application architecture
+- Promotes separation of business logic and style
+- Convenient style props for margin, padding, and colors
+- Customizable themes using React context
 - Great for prototyping
 - Production ready
-- [Tested](https://travis-ci.org/jxnblk/rebass)
+- Unit tested
 
 Rebass is a React UI component library that uses inline styles to avoid CSS dependencies and prevent leaky global styles from affecting an application. Rebass components are built as stateless functional components and modeled as <a href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963'>presentational components</a>. With unit tests for each component, Rebass is great for prototyping and ready for production.
 
@@ -34,10 +39,10 @@ import { Button, Badge } from 'rebass'
 class App extends React.Component {
   render () {
     return (
-      <App>
+      <div>
         <Button>Button</Button>
         <Badge>Badge</Badge>
-      </App>
+      </div>
     )
   }
 }
@@ -61,7 +66,7 @@ Therefore, Rebass itself does not require any client-side JavaScript,
 is well suited to server-side rendering,
 and can fit into virtually any higher level application architecture.
 
-## Configuration
+## Theme Configuration
 
 Global theme styles are set using
 [React Context](https://facebook.github.io/react/docs/context.html).
@@ -70,7 +75,30 @@ and component-specific styles can be added to customize on a per-component basis
 
 View the [demo](http://jxnblk.com/rebass/demo) to see some configuration options in action.
 
-To configure the theme, add `childContextTypes` and `getChildContext` to your root component.
+### ThemeProvider
+
+To change the theme for all Rebass components, wrap the React component tree with the ThemeProvider component.
+
+```jsx
+import React from 'react'
+import {
+  ThemeProvider,
+  Button
+} from 'rebass'
+import customTheme from './custom-theme'
+
+const App = () => (
+  <ThemeProvider theme={customTheme}>
+    <Button>
+      Themed Button
+    </Button>
+  </ThemeProvider>
+)
+```
+
+### Manually adding context
+
+Alternatively, manually set context by adding `childContextTypes` and `getChildContext` to your root component.
 
 ```jsx
 class App extends React.Component {
@@ -135,7 +163,7 @@ body {
 
 ## Styling with CSS
 
-Although it's not recommended to use extensively, components can be styled with CSS.
+Although it's not recommended to use extensively, components can be styled with global CSS.
 Each component has a className that matches the component name.
 To control things like button hover styles, this can be a convenient way to style pseudo-classes.
 Note, that due to the use of inline styles, some properties may need to be overridden with an `!important` flag.
@@ -150,6 +178,22 @@ Note, that due to the use of inline styles, some properties may need to be overr
 
 *Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
 but shares a similar approach to application-agnostic UI development.*
+
+---
+
+## Related
+
+- [Reflexbox](http://jxnblk.com/reflexbox)
+- [Reline](http://jxnblk.com/reline)
+- [Robox](http://jxnblk.com/robox)
+- [understyle](http://jxnblk.com/understyle)
+- [React Geomicons](http://jxnblk.com/react-geomicons)
+- [Gx](http://jxnblk.com/gx)
+- [Gridsys](http://jxnblk.com/gridsys)
+- [Rgx](http://jxnblk.com/rgx)
+- [React CSS Grid](https://github.com/jxnblk/react-css-grid)
+- [Cxs](https://github.com/jxnblk/cxs)
+- [Basscss](http://basscss.com/)
 
 [MIT License](.github/LICENSE.md)
 

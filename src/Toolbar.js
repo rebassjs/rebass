@@ -1,34 +1,44 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Toolbar component that vertically centers children with display flex
  */
 
-const Toolbar = (props, { rebass }) => {
-  const { scale, colors } = { ...config, ...rebass }
+const Toolbar = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale, colors } = theme
+
+  const cx = classnames('Toolbar', className)
+
+  const sx = {
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: 48,
+    paddingLeft: scale[1],
+    paddingRight: scale[1],
+    color: colors.white,
+    backgroundColor: colors.black,
+    ...style.fill,
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Toolbar'
-      baseStyle={{
-        display: 'flex',
-        alignItems: 'center',
-        minHeight: 48,
-        paddingLeft: scale[1],
-        paddingRight: scale[1],
-        color: colors.white,
-        backgroundColor: colors.primary
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Toolbar.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Toolbar._name = 'Toolbar'
 
-export default Toolbar
+export default withRebass(Toolbar)
 

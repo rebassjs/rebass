@@ -1,7 +1,8 @@
 
 import React from 'react'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import LinkBlock from './LinkBlock'
-import config from './config'
 
 /**
  * Subcomponent for use in SequenceMap
@@ -12,9 +13,15 @@ const SequenceMapStep = ({
   first,
   active,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
 }, { rebass }) => {
-  const { scale, colors } = { ...config, ...rebass }
+  const { scale, colors } = theme
+
+  const cx = classnames('SequenceMapStep', className)
 
   const sx = {
     link: {
@@ -26,7 +33,8 @@ const SequenceMapStep = ({
       lineHeight: 1.25,
       flex: `1 1 ${width}`,
       paddingLeft: scale[1],
-      paddingRight: scale[1]
+      paddingRight: scale[1],
+      ...style
     },
     dot: {
       position: 'relative',
@@ -36,7 +44,8 @@ const SequenceMapStep = ({
       height: scale[2],
       marginBottom: scale[1],
       borderRadius: 99999,
-      backgroundColor: 'currentcolor'
+      backgroundColor: 'currentcolor',
+      ...subComponentStyles.dot
     },
     line: {
       position: 'absolute',
@@ -45,17 +54,21 @@ const SequenceMapStep = ({
       left: 0,
       right: 0,
       height: 4,
-      backgroundColor: 'currentcolor'
+      backgroundColor: 'currentcolor',
+      ...subComponentStyles.line
     },
-    label: {},
+    label: {
+      ...subComponentStyles.label
+    },
     active: {
-      color: colors.primary
+      color: colors.primary,
+      ...subComponentStyles.active
     }
   }
 
   return (
     <LinkBlock
-      _className='SequenceMap_Step'
+      className={cx}
       style={{
         ...sx.link,
         ...(active ? sx.active : {})
@@ -70,10 +83,6 @@ const SequenceMapStep = ({
   )
 }
 
-SequenceMapStep.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
 SequenceMapStep.propTypes = {
   /** Width of step */
   width: React.PropTypes.string,
@@ -83,5 +92,7 @@ SequenceMapStep.propTypes = {
   active: React.PropTypes.bool
 }
 
-export default SequenceMapStep
+SequenceMapStep._name = 'SequenceMapStep'
+
+export default withRebass(SequenceMapStep)
 

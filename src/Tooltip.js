@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Styled tooltip that shows on hover
@@ -10,9 +10,20 @@ import config from './config'
 const Tooltip = ({
   title,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { fontSizes, scale, colors } = { ...config, ...rebass }
+}) => {
+  const {
+    fontSizes,
+    scale,
+    colors,
+    borderRadius
+  } = theme
+
+  const cx = classnames('Tooltip', className)
 
   const css = `
     .Tooltip_box { display: none }
@@ -23,7 +34,8 @@ const Tooltip = ({
     root: {
       position: 'relative',
       display: 'inline-block',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ...style
     },
     box: {
       position: 'absolute',
@@ -35,32 +47,37 @@ const Tooltip = ({
       paddingBottom: scale[1] / 2,
       paddingLeft: scale[1],
       paddingRight: scale[1],
+      borderRadius,
+      transform: 'translate(-50%, -8px)',
       color: colors.white,
       backgroundColor: colors.black,
-      transform: 'translate(-50%, -8px)'
+      ...style.fill,
+      ...subComponentStyles.box
     },
     arrow: {
       position: 'absolute',
       top: '100%',
       left: '50%',
       border: '6px solid transparent',
-      borderTopColor: colors.black,
-      transform: 'translate(-50%, 0)'
+      borderTopColor: style.fill.backgroundColor || style.backgroundColor || colors.black,
+      transform: 'translate(-50%, 0)',
+      ...subComponentStyles.box
     }
   }
 
   return (
     <span
-      className='Tooltip'
+      className={cx}
       aria-label={title}
       style={sx.root}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
-      <Base {...props}
-        baseStyle={sx.box}
-        className='Tooltip Tooltip_box'>
+      <div
+        {...props}
+        style={sx.box}
+        className='Tooltip_box'>
         {title}
         <div className='Tooltip_arrow' style={sx.arrow} />
-      </Base>
+      </div>
       {children}
     </span>
   )
@@ -71,13 +88,7 @@ Tooltip.propTypes = {
   title: React.PropTypes.string
 }
 
-Tooltip.defaultProps = {
-  inverted: true,
-  rounded: true
-}
+Tooltip._name = 'Tooltip'
 
-Tooltip.contextTypes = {
-  rebass: React.PropTypes.object
-}
+export default withRebass(Tooltip)
 
-export default Tooltip

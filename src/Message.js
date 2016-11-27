@@ -1,49 +1,43 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /** Component for displaying flash and error messages */
 
-const Message = (props, { rebass }) => {
-  const { bold, scale } = { ...config, ...rebass }
+const Message = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { bold, scale, colors, borderRadius } = theme
+
+  const cx = classnames('Message', className)
+
+  const sx = {
+    fontWeight: bold,
+    display: 'flex',
+    alignItems: 'center',
+    padding: scale[2],
+    marginBottom: scale[2],
+    borderRadius,
+    color: colors.white,
+    backgroundColor: colors.primary,
+    ...style.fill,
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='Message'
-      baseStyle={{
-        fontWeight: bold,
-        display: 'flex',
-        alignItems: 'center',
-        padding: scale[2],
-        marginBottom: scale[2]
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-Message.propTypes = {
-  /** Sets color from config */
-  theme: React.PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'default',
-    'info',
-    'success',
-    'warning',
-    'error'
-  ])
-}
+Message._name = 'Message'
 
-Message.defaultProps = {
-  theme: 'default',
-  inverted: true,
-  rounded: true
-}
-
-Message.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default Message
+export default withRebass(Message)
 

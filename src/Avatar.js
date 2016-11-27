@@ -1,7 +1,7 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import withRebass from './withRebass'
+import classnames from 'classnames'
 
 /**
  * A circular image for displaying user avatars
@@ -10,23 +10,33 @@ import config from './config'
 const Avatar = ({
   size,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
 }, { rebass }) => {
-  const { colors } = { ...config, ...rebass }
+  const { colors } = theme
+
+  const cx = classnames('Avatar', className)
+
+  const sx = {
+    display: 'inline-block',
+    maxWidth: 'none',
+    width: size,
+    height: size,
+    backgroundColor: colors.gray,
+    borderRadius: 99999,
+    ...style
+  }
 
   return (
-    <Base
+    <img
       {...props}
-      tagName='img'
-      className='Avatar'
+      className={cx}
       width={size}
       height={size}
-      baseStyle={{
-        maxWidth: 'none',
-        width: size,
-        height: size,
-        backgroundColor: colors.gray
-      }}
+      style={sx}
     />
   )
 }
@@ -37,13 +47,10 @@ Avatar.propTypes = {
 }
 
 Avatar.defaultProps = {
-  size: 48,
-  circle: true
+  size: 48
 }
 
-Avatar.contextTypes = {
-  rebass: React.PropTypes.object
-}
+Avatar._name = 'Avatar'
 
-export default Avatar
+export default withRebass(Avatar)
 

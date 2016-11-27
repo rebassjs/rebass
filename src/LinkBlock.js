@@ -1,45 +1,37 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Unstyled display block link
  */
 
 const LinkBlock = ({
-  _className,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
+}) => {
+  const cx = classnames('LinkBlock', className)
+
   const sx = {
     display: 'block',
     textDecoration: 'none',
-    color: 'inherit'
+    color: 'inherit',
+    ...style
   }
 
   return (
-    <Base
+    <a
       {...props}
-      className={_className || 'LinkBlock'}
-      baseStyle={sx} />
+      className={cx}
+      style={sx} />
   )
 }
 
-LinkBlock.propTypes = {
-  /** Root component - useful for use with react-router's Link component */
-  is: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-    React.PropTypes.func
-  ])
-}
+LinkBlock._name = 'LinkBlock'
 
-LinkBlock.defaultProps = {
-  is: 'a'
-}
-
-LinkBlock.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default LinkBlock
+export default withRebass(LinkBlock)
 

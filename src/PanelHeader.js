@@ -1,55 +1,46 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Header for Panel component with vertical centering using flexbox
  */
 
-const PanelHeader = (props, { rebass }) => {
-  const { bold, scale, borderRadius } = { ...config, ...rebass }
+const PanelHeader = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { bold, scale, borderRadius } = theme
+
+  const cx = classnames('PanelHeader', className)
+
+  const sx = {
+    display: 'flex',
+    alignItems: 'center',
+    fontWeight: bold,
+    marginTop: -scale[2] - 1,
+    marginRight: -scale[2] - 1,
+    marginLeft: -scale[2] - 1,
+    marginBottom: scale[2],
+    padding: scale[2],
+    borderRadius: `${borderRadius}px ${borderRadius}px 0 0`,
+    ...style.fill,
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='PanelHeader'
-      inverted
-      baseStyle={{
-        display: 'flex',
-        alignItems: 'center',
-        fontWeight: bold,
-        marginTop: -scale[2] - 1,
-        marginRight: -scale[2] - 1,
-        marginLeft: -scale[2] - 1,
-        marginBottom: scale[2],
-        padding: scale[2],
-        borderRadius: `${borderRadius}px ${borderRadius}px 0 0`
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-PanelHeader.propTypes = {
-  /** Sets color from config */
-  theme: React.PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'default',
-    'info',
-    'success',
-    'warning',
-    'error'
-  ])
-}
+PanelHeader._name = 'PanelHeader'
 
-PanelHeader.defaultProps = {
-  theme: 'default',
-  inverted: true
-}
-
-PanelHeader.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default PanelHeader
+export default withRebass(PanelHeader)
 

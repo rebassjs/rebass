@@ -1,57 +1,48 @@
 
 import React from 'react'
-import Base from './Base'
-import config from './config'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 
 /**
  * Footer for Panel component with vertical centering using flexbox
  */
 
-const PanelFooter = ({ theme, ...props }, { rebass }) => {
-  const { scale, colors, borderRadius, fontSizes } = { ...config, ...rebass }
-  const borderColor = colors[theme]
+const PanelFooter = ({
+  className,
+  style,
+  theme,
+  subComponentStyles,
+  ...props
+}) => {
+  const { scale, borderRadius, fontSizes } = theme
+
+  const cx = classnames('PanelFooter', className)
+
+  const sx = {
+    fontSize: fontSizes[6],
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: scale[2],
+    marginRight: -scale[2],
+    marginBottom: -scale[2],
+    marginLeft: -scale[2],
+    padding: scale[2],
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
+    borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`,
+    ...style.fill,
+    ...style
+  }
 
   return (
-    <Base
+    <div
       {...props}
-      className='PanelFooter'
-      baseStyle={{
-        fontSize: fontSizes[6],
-        display: 'flex',
-        alignItems: 'center',
-        marginTop: scale[2],
-        marginRight: -scale[2],
-        marginBottom: -scale[2],
-        marginLeft: -scale[2],
-        padding: scale[2],
-        borderTopWidth: 1,
-        borderTopStyle: 'solid',
-        borderColor,
-        borderRadius: `0 0 ${borderRadius}px ${borderRadius}px`
-      }} />
+      className={cx}
+      style={sx} />
   )
 }
 
-PanelFooter.propTypes = {
-  /** Sets color based on theme */
-  theme: React.PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'default',
-    'info',
-    'success',
-    'warning',
-    'error'
-  ])
-}
+PanelFooter._name = 'PanelFooter'
 
-PanelFooter.defaultProps = {
-  theme: 'default'
-}
-
-PanelFooter.contextTypes = {
-  rebass: React.PropTypes.object
-}
-
-export default PanelFooter
+export default withRebass(PanelFooter)
 

@@ -1,9 +1,9 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import HeadingLink from './HeadingLink'
 import Text from './Text'
-import config from './config'
 
 /**
  * Header for section elements
@@ -14,34 +14,60 @@ const SectionHeader = ({
   href,
   description,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, borderColor } = theme
+
+  const cx = classnames('SectionHeader', className)
+
+  const sx = {
+    root: {
+      display: 'flex',
+      alignItems: 'center',
+      paddingBottom: scale[1],
+      marginTop: scale[3],
+      marginBottom: scale[3],
+      borderBottomWidth: 1,
+      borderBottomStyle: 'solid',
+      borderBottomColor: borderColor,
+      ...style
+    },
+    inner: {
+      flex: '1 1 auto',
+      ...subComponentStyles.inner
+    },
+    Heading: {
+      ...subComponentStyles.Heading
+    },
+    Text: {
+      ...subComponentStyles.Text
+    }
+  }
+
+  href = href || `#${heading || ''}`
 
   return (
-    <Base
+    <header
       {...props}
-      tagName='header'
-      className='SectionHeader'
-      baseStyle={{
-        display: 'flex',
-        alignItems: 'center',
-        paddingBottom: scale[1],
-        marginTop: scale[3],
-        marginBottom: scale[3],
-        borderBottomWidth: 1,
-        borderBottomStyle: 'solid',
-        borderBottomColor: borderColor
-      }}>
-      <div style={{
-        flex: '1 1 auto' }}>
-        <HeadingLink href={href || `#${heading || ''}`} children={heading} />
+      className={cx}
+      style={sx.root}>
+      <div style={sx.inner}>
+        <HeadingLink
+          href={href}
+          style={sx.Heading}
+          children={heading} />
         {description && (
-          <Text children={description} />
+          <Text
+            style={sx.Text}
+            children={description} />
         )}
       </div>
       {children}
-    </Base>
+    </header>
   )
 }
 
@@ -54,9 +80,7 @@ SectionHeader.propTypes = {
   description: React.PropTypes.string
 }
 
-SectionHeader.contextTypes = {
-  rebass: React.PropTypes.object
-}
+SectionHeader._name = 'SectionHeader'
 
-export default SectionHeader
+export default withRebass(SectionHeader)
 

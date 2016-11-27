@@ -1,9 +1,9 @@
 
 import React from 'react'
-import Base from './Base'
+import classnames from 'classnames'
+import withRebass from './withRebass'
 import Heading from './Heading'
 import Text from './Text'
-import config from './config'
 
 /**
  * Main page header with description
@@ -13,35 +13,60 @@ const PageHeader = ({
   heading,
   description,
   children,
+  className,
+  style,
+  theme,
+  subComponentStyles,
   ...props
-}, { rebass }) => {
-  const { scale, borderColor } = { ...config, ...rebass }
+}) => {
+  const { scale, borderColor } = theme
+
+  const cx = classnames('PageHeader', className)
+
+  const sx = {
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      paddingTop: scale[3],
+      paddingBottom: scale[2],
+      marginTop: scale[4],
+      marginBottom: scale[4],
+      borderBottomWidth: 2,
+      borderBottomStyle: 'solid',
+      borderColor,
+      ...style
+    },
+    inner: {
+      flex: '1 1 auto',
+      ...subComponentStyles.inner
+    },
+    heading: {
+      ...subComponentStyles.Heading
+    },
+    text: {
+      ...subComponentStyles.Text
+    }
+  }
 
   return (
-    <Base
+    <header
       {...props}
-      tagName='header'
-      className='PageHeader'
-      baseStyle={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        paddingTop: scale[3],
-        paddingBottom: scale[2],
-        marginTop: scale[4],
-        marginBottom: scale[4],
-        borderBottomWidth: 2,
-        borderBottomStyle: 'solid',
-        borderColor
-      }}>
-      <div style={{ flex: '1 1 auto' }}>
-        <Heading level={1} children={heading} />
+      className={cx}
+      style={sx.root}>
+      <div style={sx.inner}>
+        <Heading
+          level={1}
+          style={sx.heading}
+          children={heading} />
         {description && (
-          <Text children={description} />
+          <Text
+            style={sx.text}
+            children={description} />
         )}
       </div>
       {children}
-    </Base>
+    </header>
   )
 }
 
@@ -52,9 +77,7 @@ PageHeader.propTypes = {
   description: React.PropTypes.string
 }
 
-PageHeader.contextTypes = {
-  rebass: React.PropTypes.object
-}
+PageHeader._name = 'PageHeader'
 
-export default PageHeader
+export default withRebass(PageHeader)
 
