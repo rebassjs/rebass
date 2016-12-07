@@ -50,7 +50,7 @@
     "reflexbox": "^2.1.0",
     "standard": "^8.0.0",
     "static-react": "^3.1.0",
-    "webpack": "^1.13.2",
+    "webpack": "^1.14.0",
     "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
