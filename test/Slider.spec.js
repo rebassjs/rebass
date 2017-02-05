@@ -69,7 +69,7 @@ describe('Slider', () => {
     })
 
     it('should have a background gradient', () => {
-      expect(input.props.style.backgroundImage).toMatch(/^linear\-gradient/)
+      expect(input.props.style.backgroundImage).toMatch(/^linear-gradient/)
     })
   })
 
