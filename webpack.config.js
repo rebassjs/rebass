@@ -11,18 +11,12 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         // exclude: /node_modules/,
-        loaders: [
-          'babel'
-        ]
-      },
-      {
-        test: /\.json$/,
-        loaders: [
-          'json'
+        use: [
+          'babel-loader'
         ]
       }
     ]
