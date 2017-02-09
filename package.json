@@ -51,7 +51,7 @@
     "standard": "^8.6.0",
     "static-react": "^3.1.0",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.15.1"
+    "webpack-dev-server": "^1.16.3"
   },
   "dependencies": {
     "classnames": "^2.2.3",
