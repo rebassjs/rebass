@@ -14,7 +14,6 @@ const PanelHeader = (props, { rebass }) => {
     <Base
       {...props}
       className='PanelHeader'
-      inverted
       baseStyle={{
         display: 'flex',
         alignItems: 'center',
