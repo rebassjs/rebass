@@ -2,6 +2,7 @@
 import React from 'react'
 import Base from './Base'
 import config from './config'
+import borderStyles from './util/border-styles'
 
 /**
  * Generic box with visual styling
@@ -23,13 +24,15 @@ const Block = ({
   const sx = {
     marginTop: scale[2],
     marginBottom: scale[2],
-    borderStyle: border ? 'solid' : 'none',
-    borderTopStyle: borderTop ? 'solid' : null,
-    borderRightStyle: borderRight ? 'solid' : null,
-    borderBottomStyle: borderBottom ? 'solid' : null,
-    borderLeftStyle: borderLeft ? 'solid' : null,
     borderWidth: 4,
-    borderColor
+    borderColor,
+    ...borderStyles({
+      border,
+      borderTop,
+      borderRight,
+      borderBottom,
+      borderLeft
+    })
   }
 
   return (
@@ -47,15 +50,30 @@ Block.propTypes = {
   /** Border color - can either be a key from the config colors object or any color value */
   borderColor: React.PropTypes.string,
   /** Adds a border */
-  border: React.PropTypes.bool,
+  border: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.number
+  ]),
   /** Adds a border to the top side */
-  borderTop: React.PropTypes.bool,
+  borderTop: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.number
+  ]),
   /** Adds a border to the right side */
-  borderRight: React.PropTypes.bool,
+  borderRight: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.number
+  ]),
   /** Adds a border to the bottom side */
-  borderBottom: React.PropTypes.bool,
+  borderBottom: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.number
+  ]),
   /** Adds a border to the left side */
-  borderLeft: React.PropTypes.bool,
+  borderLeft: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.number
+  ]),
 
   /** Applies margin with the margin utility based on the spacing scale */
   m: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
