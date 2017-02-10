@@ -73,7 +73,7 @@ const Radio = ({
       flexDirection: stacked ? 'column' : null,
       paddingBottom: scale[1],
       color: invalid ? colors.error : null,
-      cursor: 'pointer'
+      cursor: props.disabled ? 'inherit' : 'pointer'
     },
     input: {
       position: 'absolute',
