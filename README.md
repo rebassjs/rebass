@@ -74,10 +74,6 @@ To configure the theme, add `childContextTypes` and `getChildContext` to your ro
 
 ```jsx
 class App extends React.Component {
-  static childContextTypes = {
-    rebass: React.PropTypes.object
-  }
-
   getChildContext () {
     return {
       rebass: {
@@ -93,6 +89,10 @@ class App extends React.Component {
   render () {
     // ...
   }
+}
+
+App.childContextTypes = {
+  rebass: React.PropTypes.object
 }
 ```
 
