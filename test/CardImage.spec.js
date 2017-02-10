@@ -10,7 +10,7 @@ describe('CardImage', () => {
   let tree
 
   beforeEach(() => {
-    renderer.render(<CardImage />)
+    renderer.render(<CardImage src='http://placehold.it/256' />)
     tree = renderer.getRenderOutput()
   })
 
@@ -38,7 +38,7 @@ describe('CardImage', () => {
 
   context('when custom styles are set', () => {
     beforeEach(() => {
-      renderer.render(<CardImage style={{ color: 'tomato' }} />)
+      renderer.render(<CardImage src='http://placehold.it/256' style={{ color: 'tomato' }} />)
       tree = renderer.getRenderOutput()
     })
     it('should have a custom color', () => {
@@ -46,4 +46,3 @@ describe('CardImage', () => {
     })
   })
 })
-
