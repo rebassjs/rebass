@@ -15,6 +15,7 @@ const Slider = ({
   hideLabel,
   children,
   style,
+  color,
   m,
   mt,
   mr,
@@ -39,6 +40,7 @@ const Slider = ({
 
   const rootProps = {
     style,
+    color,
     m,
     mt,
     mr,
