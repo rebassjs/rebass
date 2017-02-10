@@ -31,16 +31,12 @@ npm i rebass
 import React from 'react'
 import { Button, Badge } from 'rebass'
 
-class App extends React.Component {
-  render () {
-    return (
-      <App>
-        <Button>Button</Button>
-        <Badge>Badge</Badge>
-      </App>
-    )
-  }
-}
+const App = () => (
+  <div>
+    <Button>Button</Button>
+    <Badge>Badge</Badge>
+  </div>
+)
 ```
 
 ## Component Documentation
