@@ -116,7 +116,7 @@ const Input = ({
 
 Input.propTypes = {
   /** Label for form element */
-  label: React.PropTypes.string.isRequired,
+  label: React.PropTypes.node.isRequired,
   /** Name attribute for form element */
   name: React.PropTypes.string.isRequired,
   /** Form element type */
