@@ -9,6 +9,7 @@ import config from './config'
 
 const Tooltip = ({
   title,
+  placement,
   children,
   ...props
 }, { rebass }) => {
@@ -19,6 +20,67 @@ const Tooltip = ({
     .Tooltip:hover .Tooltip_box { display: block }
   `.replace(/\n/g, '').replace(/\s\s+/g, ' ')
 
+  const getStylesForPlacement = (placement = 'top', scale) => {
+    if (placement === 'left') {
+      return {
+        box: {
+          top: 0,
+          right: '100%',
+          transform: `translate(-${1.375 * scale[1]}px, 0)`
+        },
+        arrow: {
+          top: 0,
+          right: 0,
+          transform: `translate(${1.375 * scale[1]}px, 60%)`,
+          borderLeftColor: colors.black
+        }
+      }
+    } else if (placement === 'right') {
+      return {
+        box: {
+          top: 0,
+          left: '100%',
+          transform: `translate(${1.375 * scale[1]}px, 0)`
+        },
+        arrow: {
+          top: 0,
+          left: 0,
+          transform: `translate(-${1.375 * scale[1]}px, 60%)`,
+          borderRightColor: colors.black
+        }
+      }
+    } else if (placement === 'bottom') {
+      return {
+        box: {
+          top: '100%',
+          left: '50%',
+          transform: `translate(-50%, ${scale[1]}px)`
+        },
+        arrow: {
+          bottom: '100%',
+          left: '50%',
+          transform: 'translate(-50%, 0)',
+          borderBottomColor: colors.black
+        }
+      }
+    } else {
+      // Top
+      return {
+        box: {
+          bottom: '100%',
+          left: '50%',
+          transform: `translate(-50%, -${scale[1]}px)`
+        },
+        arrow: {
+          top: '100%',
+          left: '50%',
+          transform: 'translate(-50%, 0)',
+          borderTopColor: colors.black
+        }
+      }
+    }
+  }
+
   const sx = {
     root: {
       position: 'relative',
@@ -27,8 +89,6 @@ const Tooltip = ({
     },
     box: {
       position: 'absolute',
-      bottom: '100%',
-      left: '50%',
       fontSize: fontSizes[6],
       whiteSpace: 'nowrap',
       paddingTop: scale[1] / 2,
@@ -37,15 +97,12 @@ const Tooltip = ({
       paddingRight: scale[1],
       color: colors.white,
       backgroundColor: colors.black,
-      transform: 'translate(-50%, -8px)'
+      ...getStylesForPlacement(placement, scale).box
     },
     arrow: {
       position: 'absolute',
-      top: '100%',
-      left: '50%',
       border: '6px solid transparent',
-      borderTopColor: colors.black,
-      transform: 'translate(-50%, 0)'
+      ...getStylesForPlacement(placement, scale).arrow
     }
   }
 
@@ -68,11 +125,19 @@ const Tooltip = ({
 
 Tooltip.propTypes = {
   /** Text to display in tooltip */
-  title: React.PropTypes.string
+  title: React.PropTypes.string,
+  /** Direction to place the tooltip */
+  placement: React.PropTypes.oneOf([
+    'top',
+    'right',
+    'bottom',
+    'left'
+  ])
 }
 
 Tooltip.defaultProps = {
   inverted: true,
+  placement: 'top',
   rounded: true
 }
 

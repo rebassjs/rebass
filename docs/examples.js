@@ -438,9 +438,20 @@ const examples = {
     </Toolbar>
   ),
   Tooltip: (
-    <Tooltip title='Hello!'>
-      <Heading level={3}>Tooltip</Heading>
-    </Tooltip>
+    <Flex wrap justify='space-between'>
+      <Tooltip title='Hello!'>
+        <Heading level={3}>Tooltip</Heading>
+      </Tooltip>
+      <Tooltip title='Hello!' placement='right'>
+        <Heading level={3}>Tooltip Right</Heading>
+      </Tooltip>
+      <Tooltip title='Hello!' placement='bottom'>
+        <Heading level={3}>Tooltip Bottom</Heading>
+      </Tooltip>
+      <Tooltip title='Hello!' placement='left'>
+        <Heading level={3}>Tooltip Left</Heading>
+      </Tooltip>
+    </Flex>
   ),
   Base: (
     <Base
