@@ -33,11 +33,9 @@
     "gh-pages": "^0.12.0",
     "gx": "^1.0.0-rc3",
     "jsdom": "^9.10.0",
-    "json-loader": "^0.5.4",
     "jsonp": "^0.2.1",
     "mocha": "^3.2.0",
     "mocha-jsdom": "^1.1.0",
-    "object-assign": "^4.1.0",
     "onchange": "^3.2.1",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
@@ -50,8 +48,8 @@
     "reflexbox": "^2.1.0",
     "standard": "^8.6.0",
     "static-react": "^3.1.0",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.3"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
     "classnames": "^2.2.3",
