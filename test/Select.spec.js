@@ -46,6 +46,11 @@ describe('Select', () => {
     expect(tree.props.baseStyle.color).toNotExist()
   })
 
+  it('should be rounded by default', () => {
+    expect(tree.props.baseStyle.rounded).toEqual(true)
+    expect(select.props.rounded).toEqual(true)
+  })
+
   context('when options are set', () => {
     beforeEach(() => {
       renderer.render(
