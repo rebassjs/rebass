@@ -118,6 +118,7 @@ class Base extends React.Component {
       baseStyle,
       style,
       baseRef,
+      parentName,
       ...props
     } = this.props
 
@@ -125,7 +126,11 @@ class Base extends React.Component {
     const { scale, colors, borderRadius } = { ...config, ...rebass }
     const name = props.className
     const keys = name ? name.split(' ') : []
-    const contextStyle = keys.reduce((a, key) => (assign(a, (rebass ? rebass[key] : {}))), {})
+    // Ignore the case where tagName and className are not explicitly set as the path Name.div is not terribly useful.
+    if (parentName && (name || tagName)) {
+      keys.push(parentName + '.' + (name || tagName))
+    }
+    const contextStyle = keys.reduce((a, key) => (assign(a, key.split('.').reduce((result, subKey) => (result[subKey] || {}), (rebass || {})))), {})
 
     const Component = is || props.Component || tagName || 'div'
 
@@ -157,4 +162,3 @@ class Base extends React.Component {
 }
 
 export default Base
-
