@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -83,9 +84,9 @@ const Table = ({
 
 Table.propTypes = {
   /** Headings for <th> */
-  headings: React.PropTypes.array,
+  headings: PropTypes.array,
   /** Array of table row data for <td> */
-  data: React.PropTypes.arrayOf(React.PropTypes.array)
+  data: PropTypes.arrayOf(PropTypes.array)
 }
 
 Table.defaultProps = {
@@ -94,7 +95,7 @@ Table.defaultProps = {
 }
 
 Table.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Table

@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -36,7 +37,7 @@ const Badge = (props, { rebass }) => {
 
 Badge.propTypes = {
   /** Sets color based on theme */
-  theme: React.PropTypes.oneOf([
+  theme: PropTypes.oneOf([
     'primary',
     'secondary',
     'default',
@@ -46,9 +47,9 @@ Badge.propTypes = {
     'error'
   ]),
   /** Controls border radius */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
+  rounded: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf([
       'top',
       'right',
       'bottom',
@@ -56,9 +57,9 @@ Badge.propTypes = {
     ])
   ]),
   /** Sets pill style border radii */
-  pill: React.PropTypes.bool,
+  pill: PropTypes.bool,
   /** Sets width and border radius for circular badges */
-  circle: React.PropTypes.bool
+  circle: PropTypes.bool
 }
 
 Badge.defaultProps = {
@@ -67,7 +68,7 @@ Badge.defaultProps = {
 }
 
 Badge.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Badge

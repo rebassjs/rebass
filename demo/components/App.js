@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import jsonp from 'jsonp'
 import assign from 'object-assign'
@@ -61,7 +62,7 @@ class App extends React.Component {
   }
 
   static childContextTypes = {
-    rebass: React.PropTypes.object
+    rebass: PropTypes.object
   }
 
   getChildContext () {

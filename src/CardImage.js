@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -33,11 +34,11 @@ const CardImage = ({
 
 CardImage.propTypes = {
   /** Image source */
-  src: React.PropTypes.string.isRequired
+  src: PropTypes.string.isRequired
 }
 
 CardImage.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default CardImage

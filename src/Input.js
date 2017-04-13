@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import classnames from 'classnames'
 import Base from './Base'
@@ -116,21 +117,21 @@ const Input = ({
 
 Input.propTypes = {
   /** Label for form element */
-  label: React.PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   /** Name attribute for form element */
-  name: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   /** Form element type */
-  type: React.PropTypes.string,
+  type: PropTypes.string,
   /** Adds a helper or error message below the input */
-  message: React.PropTypes.string,
+  message: PropTypes.string,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool,
+  hideLabel: PropTypes.bool,
   /** Disables autocomplete, autocorrect, autocapitalize, and spellcheck props */
-  autoOff: React.PropTypes.bool,
+  autoOff: PropTypes.bool,
   /** Controls the border radius for creating grouped elements */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
+  rounded: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf([
       'top',
       'right',
       'bottom',
@@ -145,7 +146,7 @@ Input.defaultProps = {
 }
 
 Input.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Input

@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -58,9 +59,9 @@ const Progress = ({ value, ...props }, { rebass }) => {
 
 Progress.propTypes = {
   /** Value for progress bar */
-  value: React.PropTypes.number,
+  value: PropTypes.number,
   /** Bar color - can either be a key from the config colors object or any color value */
-  color: React.PropTypes.string
+  color: PropTypes.string
 }
 
 Progress.defaultProps = {
@@ -68,7 +69,7 @@ Progress.defaultProps = {
 }
 
 Progress.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Progress

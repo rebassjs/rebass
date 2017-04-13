@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Label from './Label'
 import Base from './Base'
@@ -119,17 +120,17 @@ const Slider = ({
 
 Slider.propTypes = {
   /** Label for form element */
-  label: React.PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   /** Name attribute for form element */
-  name: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   /** Adds a fill color to the track - requires client-side JavaScript */
-  fill: React.PropTypes.bool,
+  fill: PropTypes.bool,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: PropTypes.bool
 }
 
 Slider.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Slider

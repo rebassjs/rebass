@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Button from './Button'
 import config from './config'
@@ -46,17 +47,17 @@ const ButtonCircle = ({
 
 ButtonCircle.propTypes = {
   /** Pass an href prop to make the ButtonCircle an <a> tag instead of a <button> */
-  href: React.PropTypes.string,
+  href: PropTypes.string,
   /** Text color - can either be a key from the config colors object or any color value */
-  color: React.PropTypes.string,
+  color: PropTypes.string,
   /** Background color - can either be a key from the config colors object or any color value */
-  backgroundColor: React.PropTypes.string,
+  backgroundColor: PropTypes.string,
   /** Sets width and height of button */
-  size: React.PropTypes.number
+  size: PropTypes.number
 }
 
 ButtonCircle.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default ButtonCircle

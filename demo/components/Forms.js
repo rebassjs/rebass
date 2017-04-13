@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import assign from 'object-assign'
 import { Flex, Box } from 'reflexbox'
@@ -51,7 +52,7 @@ class Forms extends React.Component {
   }
 
   static childContextTypes = {
-    rebass: React.PropTypes.object
+    rebass: PropTypes.object
   }
 
   getChildContext () {
@@ -221,7 +222,7 @@ class Forms extends React.Component {
 }
 
 Forms.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Forms

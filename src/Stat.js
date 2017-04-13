@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -55,20 +56,20 @@ const Stat = ({
 
 Stat.propTypes = {
   /** Value for stat shown in large font size */
-  value: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
   ]),
   /** Optional unit for displaying next to value */
-  unit: React.PropTypes.string,
+  unit: PropTypes.string,
   /** Label for stat */
-  label: React.PropTypes.string,
+  label: PropTypes.string,
   /** Displays label above value */
-  topLabel: React.PropTypes.bool
+  topLabel: PropTypes.bool
 }
 
 Stat.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Stat

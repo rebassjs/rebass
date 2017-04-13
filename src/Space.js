@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -24,9 +25,9 @@ const Space = ({ x, auto, children, ...props }, { rebass }) => {
 
 Space.propTypes = {
   /** Width of space based on the spacing scale */
-  x: React.PropTypes.oneOf([1, 2, 3, 4]),
+  x: PropTypes.oneOf([1, 2, 3, 4]),
   /** Sets flex: 1 1 auto */
-  auto: React.PropTypes.bool
+  auto: PropTypes.bool
 }
 
 Space.defaultProps = {
@@ -34,7 +35,7 @@ Space.defaultProps = {
 }
 
 Space.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Space

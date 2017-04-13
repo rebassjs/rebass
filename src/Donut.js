@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -128,13 +129,13 @@ const Donut = ({
 
 Donut.propTypes = {
   /** Value from 0 to 1 */
-  value: React.PropTypes.number,
+  value: PropTypes.number,
   /** Sets width and height */
-  size: React.PropTypes.number,
+  size: PropTypes.number,
   /** Sets width of stroke */
-  strokeWidth: React.PropTypes.number,
+  strokeWidth: PropTypes.number,
   /** Text color - can either be a key from the config colors object or any color value */
-  color: React.PropTypes.string
+  color: PropTypes.string
 }
 
 Donut.defaultProps = {
@@ -145,7 +146,7 @@ Donut.defaultProps = {
 }
 
 Donut.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Donut

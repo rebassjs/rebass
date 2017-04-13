@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Input from './Input'
 import ButtonOutline from './ButtonOutline'
@@ -57,30 +58,30 @@ const InlineForm = ({
 }
 
 InlineForm.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 InlineForm.propTypes = {
   /** Input label */
-  label: React.PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   /** Input name */
-  name: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   /** Input value */
-  value: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.string
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
   ]),
   /** Input placeholder */
-  placeholder: React.PropTypes.string,
+  placeholder: PropTypes.string,
   /** onChange handler for input */
-  onChange: React.PropTypes.func,
+  onChange: PropTypes.func,
   /** Text or element for button */
-  buttonLabel: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.string
+  buttonLabel: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string
   ]),
   /** onClick handler for button */
-  onClick: React.PropTypes.func
+  onClick: PropTypes.func
 }
 
 InlineForm.defaultProps = {

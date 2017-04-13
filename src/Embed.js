@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 
@@ -44,7 +45,7 @@ Embed.propTypes = {
    * Divide height over width to calculate.
    * E.g. ratio={9/16}
    */
-  ratio: React.PropTypes.number
+  ratio: PropTypes.number
 }
 
 Embed.defaultProps = {
@@ -52,7 +53,7 @@ Embed.defaultProps = {
 }
 
 Embed.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Embed

@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -48,15 +49,15 @@ const Media = ({
 
 Media.propTypes = {
   /** Image source */
-  img: React.PropTypes.string,
+  img: PropTypes.string,
   /** Displays image to the right */
-  right: React.PropTypes.bool,
+  right: PropTypes.bool,
   /** Vertical alignment */
-  align: React.PropTypes.oneOf(['top', 'center', 'bottom'])
+  align: PropTypes.oneOf(['top', 'center', 'bottom'])
 }
 
 Media.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Media

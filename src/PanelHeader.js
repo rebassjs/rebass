@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -30,7 +31,7 @@ const PanelHeader = (props, { rebass }) => {
 
 PanelHeader.propTypes = {
   /** Sets color from config */
-  theme: React.PropTypes.oneOf([
+  theme: PropTypes.oneOf([
     'primary',
     'secondary',
     'default',
@@ -47,7 +48,7 @@ PanelHeader.defaultProps = {
 }
 
 PanelHeader.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default PanelHeader

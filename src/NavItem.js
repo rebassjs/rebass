@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -37,12 +38,12 @@ const NavItem = ({
 
 NavItem.propTypes = {
   /** Sets a smaller font size for compact UI */
-  small: React.PropTypes.bool,
+  small: PropTypes.bool,
   /** Root component - useful for use with react-router's Link component */
-  is: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-    React.PropTypes.func
+  is: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.func
   ])
 }
 
@@ -51,7 +52,7 @@ NavItem.defaultProps = {
 }
 
 NavItem.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default NavItem

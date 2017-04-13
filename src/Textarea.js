@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import classnames from 'classnames'
 import Base from './Base'
@@ -100,13 +101,13 @@ const Textarea = ({
 
 Textarea.propTypes = {
   /** Label for form element */
-  label: React.PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   /** Name attribute for form element */
-  name: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   /** Adds a helper or error message below the textarea */
-  message: React.PropTypes.string,
+  message: PropTypes.string,
   /** Hides the form element label */
-  hideLabel: React.PropTypes.bool
+  hideLabel: PropTypes.bool
 }
 
 Textarea.defaultProps = {
@@ -114,7 +115,7 @@ Textarea.defaultProps = {
 }
 
 Textarea.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Textarea

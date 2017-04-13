@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -32,11 +33,11 @@ const Divider = ({
 
 Divider.propTypes = {
   /** Sets a fixed width for stylistic options */
-  width: React.PropTypes.number
+  width: PropTypes.number
 }
 
 Divider.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Divider
