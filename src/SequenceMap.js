@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import SequenceMapStep from './SequenceMapStep'
@@ -50,14 +51,14 @@ const SequenceMap = ({
 }
 
 SequenceMap.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 SequenceMap.propTypes = {
   /** Array of links for each step in the sequence */
-  steps: React.PropTypes.array,
+  steps: PropTypes.array,
   /** Index of current step */
-  active: React.PropTypes.number
+  active: PropTypes.number
 }
 
 SequenceMap.defaultProps = {

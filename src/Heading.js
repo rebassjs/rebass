@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import classnames from 'classnames'
 import Base from './Base'
@@ -50,13 +51,13 @@ const Heading = ({
 
 Heading.propTypes = {
   /** Doubles the visual size - useful for marketing pages */
-  big: React.PropTypes.bool,
+  big: PropTypes.bool,
   /** Heading level, e.g. level={1} for <h1> */
-  level: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** Visual size of heading */
-  size: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
+  size: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
   /** Applies alternate styling - useful for slugs and subheadings */
-  alt: React.PropTypes.bool
+  alt: PropTypes.bool
 }
 
 Heading.defaultProps = {
@@ -64,7 +65,7 @@ Heading.defaultProps = {
 }
 
 Heading.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Heading

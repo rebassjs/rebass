@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import Menu from './Menu'
@@ -59,13 +60,13 @@ const DropdownMenu = ({
 
 DropdownMenu.propTypes = {
   /** Toggles visibility of DropdownMenu */
-  open: React.PropTypes.bool,
+  open: PropTypes.bool,
   /** Anchors menu to the right */
-  right: React.PropTypes.bool,
+  right: PropTypes.bool,
   /** Anchors menu to the top */
-  top: React.PropTypes.bool,
+  top: PropTypes.bool,
   /** Click event callback for the background overlay */
-  onDismiss: React.PropTypes.func
+  onDismiss: PropTypes.func
 }
 
 DropdownMenu.defaultProps = {
@@ -74,7 +75,7 @@ DropdownMenu.defaultProps = {
 }
 
 DropdownMenu.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default DropdownMenu

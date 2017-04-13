@@ -69,6 +69,9 @@ View the [demo](http://jxnblk.com/rebass/demo) to see some configuration options
 To configure the theme, add `childContextTypes` and `getChildContext` to your root component.
 
 ```jsx
+import React from 'react'
+import PropTypes from 'prop-types'
+
 class App extends React.Component {
   getChildContext () {
     return {
@@ -88,7 +91,7 @@ class App extends React.Component {
 }
 
 App.childContextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 ```
 

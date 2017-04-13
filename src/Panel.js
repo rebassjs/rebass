@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -38,7 +39,7 @@ const Panel = ({ theme, children, ...props }, { rebass }) => {
 
 Panel.propTypes = {
   /** Sets color from config */
-  theme: React.PropTypes.oneOf([
+  theme: PropTypes.oneOf([
     'primary',
     'secondary',
     'default',
@@ -54,7 +55,7 @@ Panel.defaultProps = {
 }
 
 Panel.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Panel

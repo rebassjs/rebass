@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Button from './Button'
 
@@ -28,13 +29,13 @@ const ButtonOutline = ({
 
 ButtonOutline.propTypes = {
   /** Pass an href prop to make the ButtonOutline an <a> tag instead of a <button> */
-  href: React.PropTypes.string,
+  href: PropTypes.string,
   /** Text color */
-  color: React.PropTypes.string,
+  color: PropTypes.string,
   /** Controls the border radius for creating button groups */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
+  rounded: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf([
       'top',
       'right',
       'bottom',
@@ -42,9 +43,9 @@ ButtonOutline.propTypes = {
     ])
   ]),
   /** Creates a pill style button */
-  pill: React.PropTypes.bool,
+  pill: PropTypes.bool,
   /** Creates a larger button */
-  big: React.PropTypes.bool
+  big: PropTypes.bool
 }
 
 ButtonOutline.defaultProps = {
@@ -54,7 +55,7 @@ ButtonOutline.defaultProps = {
 }
 
 ButtonOutline.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default ButtonOutline

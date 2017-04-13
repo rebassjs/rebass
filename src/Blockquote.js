@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -56,9 +57,9 @@ const Blockquote = ({
 
 Blockquote.propTypes = {
   /** Name of source */
-  source: React.PropTypes.string,
+  source: PropTypes.string,
   /** URL link to source */
-  href: React.PropTypes.string
+  href: PropTypes.string
 }
 
 export default Blockquote

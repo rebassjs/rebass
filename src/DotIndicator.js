@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -74,11 +75,11 @@ const DotIndicator = ({
 
 DotIndicator.propTypes = {
   /** Number of dot buttons to show */
-  length: React.PropTypes.number,
+  length: PropTypes.number,
   /** Index of the currently active dot */
-  active: React.PropTypes.number,
+  active: PropTypes.number,
   /** Click event callback - returns index of clicked button */
-  onClick: React.PropTypes.func
+  onClick: PropTypes.func
 }
 
 DotIndicator.defaultProps = {
@@ -86,7 +87,7 @@ DotIndicator.defaultProps = {
 }
 
 DotIndicator.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default DotIndicator

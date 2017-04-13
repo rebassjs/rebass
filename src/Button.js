@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -51,15 +52,15 @@ const Button = ({
 
 Button.propTypes = {
   /** Pass an href prop to make the Button an <a> tag instead of a <button> */
-  href: React.PropTypes.string,
+  href: PropTypes.string,
   /** Button color - can either be a key from the config colors object or any color value */
-  color: React.PropTypes.string,
+  color: PropTypes.string,
   /** Background color - can either be a key from the config colors object or any color value */
-  backgroundColor: React.PropTypes.string,
+  backgroundColor: PropTypes.string,
   /** Controls the border radius for creating button groups */
-  rounded: React.PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.oneOf([
+  rounded: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf([
       'top',
       'right',
       'bottom',
@@ -67,11 +68,11 @@ Button.propTypes = {
     ])
   ]),
   /** Creates a pill style button */
-  pill: React.PropTypes.bool,
+  pill: PropTypes.bool,
   /** Creates a larger button */
-  big: React.PropTypes.bool,
+  big: PropTypes.bool,
   /** Sets color from config */
-  theme: React.PropTypes.oneOf([
+  theme: PropTypes.oneOf([
     'primary',
     'secondary',
     'default',
@@ -90,7 +91,7 @@ Button.defaultProps = {
 }
 
 Button.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Button

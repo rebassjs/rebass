@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -33,7 +34,7 @@ const Avatar = ({
 
 Avatar.propTypes = {
   /** Width and height of image in pixels */
-  size: React.PropTypes.number
+  size: PropTypes.number
 }
 
 Avatar.defaultProps = {
@@ -42,7 +43,7 @@ Avatar.defaultProps = {
 }
 
 Avatar.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Avatar

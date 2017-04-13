@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -71,15 +72,15 @@ const Overlay = ({
 
 Overlay.propTypes = {
   /** Shows and hides overlay */
-  open: React.PropTypes.bool,
+  open: PropTypes.bool,
   /** Sets dark transparent overlay style */
-  dark: React.PropTypes.bool,
+  dark: PropTypes.bool,
   /** Sets padding and background white for the content container */
-  box: React.PropTypes.bool,
+  box: PropTypes.bool,
   /** Sets content container full width */
-  fullWidth: React.PropTypes.bool,
+  fullWidth: PropTypes.bool,
   /** Click event callback for the Overlay background */
-  onDismiss: React.PropTypes.func
+  onDismiss: PropTypes.func
 }
 
 Overlay.defaultProps = {
@@ -89,7 +90,7 @@ Overlay.defaultProps = {
 }
 
 Overlay.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Overlay

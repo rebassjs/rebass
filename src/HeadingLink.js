@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Heading from './Heading'
 
@@ -26,11 +27,11 @@ const HeadingLink = ({ level, size, href, style, ...props }, { rebass }) => {
 
 HeadingLink.propTypes = {
   /** Heading level, e.g. level={1} for <h1> */
-  level: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** Visual size of heading */
-  size: React.PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
   /** href for link */
-  href: React.PropTypes.string
+  href: PropTypes.string
 }
 
 HeadingLink.defaultProps = {
@@ -39,7 +40,7 @@ HeadingLink.defaultProps = {
 }
 
 HeadingLink.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default HeadingLink

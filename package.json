@@ -39,11 +39,11 @@
     "mocha-jsdom": "^1.1.0",
     "object-assign": "^4.1.0",
     "onchange": "^3.2.1",
-    "react": "^15.4.2",
+    "react": "^15.5.4",
     "react-addons-test-utils": "^15.4.2",
     "react-component-permutations": "^1.0.0-beta2",
     "react-docgen": "^2.13.0",
-    "react-dom": "^15.4.2",
+    "react-dom": "^15.5.4",
     "react-element-to-jsx-string": "^6.0.0",
     "react-geomicons": "^2.0.5",
     "react-router": "^3.0.2",
@@ -56,6 +56,7 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "object-assign": "^4.1.1",
+    "prop-types": "^15.5.8",
     "react-addons-pure-render-mixin": "^15.4.2"
   },
   "keywords": [

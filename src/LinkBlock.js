@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 
@@ -26,10 +27,10 @@ const LinkBlock = ({
 
 LinkBlock.propTypes = {
   /** Root component - useful for use with react-router's Link component */
-  is: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-    React.PropTypes.func
+  is: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.func
   ])
 }
 
@@ -38,7 +39,7 @@ LinkBlock.defaultProps = {
 }
 
 LinkBlock.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default LinkBlock

@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 
@@ -32,15 +33,15 @@ const Fixed = ({
 
 Fixed.propTypes = {
   /** Sets top: 0 */
-  top: React.PropTypes.bool,
+  top: PropTypes.bool,
   /** Sets right: 0 */
-  right: React.PropTypes.bool,
+  right: PropTypes.bool,
   /** Sets bottom: 0 */
-  bottom: React.PropTypes.bool,
+  bottom: PropTypes.bool,
   /** Sets left: 0 */
-  left: React.PropTypes.bool,
+  left: PropTypes.bool,
   /** Sets z-index */
-  zIndex: React.PropTypes.number
+  zIndex: PropTypes.number
 }
 
 export default Fixed

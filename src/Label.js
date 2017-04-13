@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -39,11 +40,11 @@ Label.propTypes = {
   /** Accessibly hide label for use in high density UI.
    *  This can still cause accessibility issues. Use this with caution.
    */
-  hide: React.PropTypes.bool
+  hide: PropTypes.bool
 }
 
 Label.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Label

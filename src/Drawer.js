@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import Base from './Base'
 import config from './config'
@@ -96,18 +97,18 @@ const Drawer = ({
 
 Drawer.propTypes = {
   /** Width or height of drawer, depending on placement */
-  size: React.PropTypes.number,
+  size: PropTypes.number,
   /** Shows and hides the drawer */
-  open: React.PropTypes.bool,
+  open: PropTypes.bool,
   /** Position relative to the viewport */
-  position: React.PropTypes.oneOf([
+  position: PropTypes.oneOf([
     'top',
     'right',
     'bottom',
     'left'
   ]),
   /** Click event callback for the background overlay */
-  onDismiss: React.PropTypes.func
+  onDismiss: PropTypes.func
 }
 
 Drawer.defaultProps = {
@@ -120,7 +121,7 @@ Drawer.defaultProps = {
 }
 
 Drawer.contextTypes = {
-  rebass: React.PropTypes.object
+  rebass: PropTypes.object
 }
 
 export default Drawer
