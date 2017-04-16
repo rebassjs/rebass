@@ -101,7 +101,7 @@ like the `Button` object in the example above.
 ## Per-Instance Overrides
 
 Components accept overrides using the `style` prop to handle any one-off situations.
-For example, to remove the margin bottom from an Input for a particular situation, do the following
+For example, to remove the border from an Input for a particular situation, do the following:
 
 ```jsx
 <Input
