@@ -8,7 +8,8 @@ import {
   Text,
   Lead,
   Button,
-  ButtonOutline
+  ButtonOutline,
+  Pre
 } from 'rebass'
 import Logo from './Logo'
 
@@ -32,18 +33,19 @@ const Header = props => (
     <Logo />
     <Flex
       wrap
+      mx={-3}
       py={5}
       align='center'>
       <Heading
         caps
         w={[ 1, null, 384 ]}
-        px={2}
+        px={3}
         is='h1'
         f={[ 6, 7, 8 ]}>
         Rebass
       </Heading>
       <Lead
-        px={2}
+        px={3}
         w={[ 1, 384 ]}>
         Functional React UI component library, built with styled-components
       </Lead>
@@ -54,9 +56,10 @@ const Header = props => (
         color='black'
         bg='white'
         children='GitHub'
-        mx={2}
+        mx={3}
         my={4}
       />
+      <Pre mx={3}>npm i rebass</Pre>
       {false && (
         <ButtonOutline
           is='a'

@@ -9,6 +9,7 @@ import Props from './Props'
 import Configuration from './Configuration'
 import ComponentNav from './ComponentNav'
 import ExampleList from './ExampleList'
+import CTA from './CTA'
 import Footer from './Footer'
 
 const App = props => (
@@ -21,6 +22,7 @@ const App = props => (
     <Configuration />
     <ComponentNav />
     <ExampleList />
+    <CTA />
     <Footer />
   </Provider>
 )

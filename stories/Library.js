@@ -1,7 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Flex, Box } from 'grid-styled'
+import styled from 'styled-components'
 import Rebass, {
+  Flex,
+  Box,
   Button,
   ButtonOutline,
   ButtonCircle,
@@ -27,7 +29,6 @@ import Rebass, {
   Image,
   Avatar,
   BackgroundImage,
-  // Embed,
   Container,
   Divider,
   Media,
@@ -500,5 +501,18 @@ storiesOf('Fixed', module)
       bottom
       right
       children='Fixed'
+    />
+  ))
+
+const CustomButton = styled(Button)`
+  border: 1px solid rgba(0, 0, 0, .25);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, .125));
+  box-shadow: 0 0 4px rgba(0, 0, 0, .25)
+`
+
+storiesOf('Customizing', module)
+  .add('Button', () => (
+    <CustomButton
+      children='hello'
     />
   ))
