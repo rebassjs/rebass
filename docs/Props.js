@@ -27,29 +27,12 @@ const Props = props => (
         <Link href='https://github.com/jxnblk/palx'>
           Palx
         </Link>.
+        {` See the `}
+        <Link href='https://github.com/jxnblk/rebass/#base-props'>
+          docs on GitHub
+        </Link>
+        {` for more.`}
       </Text>
-      <ul>
-        <li>
-          <Code>m</Code> margin
-          (<Code>mt</Code> <Code>mr</Code> <Code>mb</Code> <Code>ml</Code> <Code>mx</Code> <Code>my</Code>)
-        </li>
-        <li>
-          <Code>p</Code> padding
-          (<Code>pt</Code> <Code>pr</Code> <Code>pb</Code> <Code>pl</Code> <Code>px</Code> <Code>py</Code>)
-        </li>
-        <li>
-          <Code>width</Code> or <Code>w</Code> width
-        </li>
-        <li>
-          <Code>fontSize</Code> of <Code>f</Code> fontSize
-        </li>
-        <li>
-          <Code>color</Code> foreground color
-        </li>
-        <li>
-          <Code>bg</Code> background color
-        </li>
-      </ul>
     </Box>
   </Section>
 )
