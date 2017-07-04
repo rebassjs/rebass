@@ -21,7 +21,7 @@ const code = `<div>
       Boop
     </Button>
   </Group>
-  <Divider my={4} color='gray.3' />
+  <Divider my={4} color='gray3' />
   <Box mb={2}>
     <Label>Name</Label>
     <Input />

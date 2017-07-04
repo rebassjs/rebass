@@ -14,7 +14,8 @@ import Rebass, {
   Border,
   Relative,
   Absolute,
-  hoc
+  hoc,
+  theme
 } from 'rebass'
 
 const scope = Object.assign({}, Rebass)
@@ -51,8 +52,8 @@ const Live = props => {
           top right bottom left>
           <Relative>
             <XRay
-              color='#cff'
-              backgroundColor='#000'
+              color={theme.colors.blue2}
+              backgroundColor={theme.colors.gray9}
               disabled={!props.xray}>
               <Box p={4}>
                 <LivePreview />

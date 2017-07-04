@@ -37,9 +37,23 @@ export const weights = [
 
 const palette = palx('#07c')
 
+const flattened = Object.keys(palette)
+  .reduce((a, key) => {
+    const value = palette[key]
+    if (Array.isArray(value)) {
+      a[key] = value[5]
+      value.forEach((val, i) => {
+        a[key + i] = val
+      })
+    } else {
+      a[key] = value
+    }
+    return a
+  }, {})
+
 // todo: flatten
 
-export const colors = Object.assign({}, palette, {
+export const colors = Object.assign({}, flattened, {
   black: '#000',
   white: '#fff'
 })

@@ -6,9 +6,8 @@ export const idx = (props, obj) => {
 
 export const px = n => typeof n === 'number' ? n + 'px' : n
 
-export const color = props => (n = 'blue', i = 5) =>
-  idx([ 'colors', baseKey(n) ], props.theme)
-  ? props.theme.colors[baseKey(n)][i] : n
+export const color = props => (n = 'blue', i = '') =>
+  idx([ 'colors', baseKey(n) + i ], props.theme) || n
 
 export const darken = n => `rgba(0, 0, 0, ${n})`
 

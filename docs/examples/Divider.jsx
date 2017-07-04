@@ -1,3 +1,3 @@
 <Divider
-  color='blue.4'
+  color='blue'
 />

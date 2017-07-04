@@ -62,7 +62,7 @@ const components = [
     name: 'ButtonOutline',
     tag: 'Button',
     props: {
-      color: 'blue.5',
+      color: 'blue',
       bg: 'transparent'
     },
     style: props => ({
@@ -94,7 +94,7 @@ const components = [
     name: 'Link',
     tag: 'a',
     props: {
-      color: 'blue.5'
+      color: 'blue'
     },
     style: props => ({
       '&:hover': {
@@ -286,7 +286,7 @@ const components = [
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue', 5)
+        borderColor: color(props)('blue')
       },
       '&:disabled': {
         opacity: 1/4
@@ -313,7 +313,7 @@ const components = [
       borderRadius: px(props.theme.radius),
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue', 5),
+        borderColor: color(props)('blue'),
       },
       '&:disabled': {
         opacity: 1/4
@@ -340,7 +340,7 @@ const components = [
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue', 5),
+        borderColor: color(props)('blue'),
       },
       '&:disabled': {
         opacity: 1/4
@@ -518,7 +518,7 @@ const components = [
     },
     style: props => ({
       overflow: 'hidden',
-      boxShadow: `inset 0 0 0 1px ${color(props)('gray', 3)}, 0 0 4px ${color(props)('gray', 2)}`,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray', 2)}, 0 0 4px ${color(props)('gray', 2)}`,
       borderRadius: px(props.theme.radius)
     })
   },
@@ -613,7 +613,7 @@ const components = [
       px: 3,
       py: 2,
       color: 'white',
-      bg: 'blue.5'
+      bg: 'blue'
     },
     style: props => ({
       fontWeight: idx('weights.1', props.theme)
@@ -662,7 +662,7 @@ const components = [
       p: 1,
       mx: 1,
       color: 'white',
-      bg: 'blue.5'
+      bg: 'blue'
     },
     style: props => ({
       fontWeight: idx('weights.1', props.theme),
@@ -694,11 +694,11 @@ const components = [
     style: props => ({
       textDecoration: 'none',
       fontWeight: idx('weights.1', props.theme),
-      color: props.active ? color(props)('blue', 5) : 'inherit',
+      color: props.active ? color(props)('blue') : 'inherit',
       borderBottomWidth: props.active ? 2 : 0,
       borderBottomStyle: 'solid',
       '&:hover': {
-        color: color(props)('blue', 5),
+        color: color(props)('blue'),
       }
     }),
     propTypes: {
@@ -724,10 +724,10 @@ const components = [
       backgroundColor: props.active ? 'currentcolor' : darken(1/4),
       appearance: 'none',
       '&:hover': {
-        backgroundColor: color(props)('blue', 5),
+        backgroundColor: color(props)('blue'),
       },
       '&:focus': {
-        backgroundColor: color(props)('blue', 5),
+        backgroundColor: color(props)('blue'),
       },
       '&:disabled': {
         opacity: 1/4

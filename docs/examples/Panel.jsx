@@ -1,7 +1,7 @@
-<Panel color='blue.5'>
+<Panel color='blue'>
   <PanelHeader
     color='white'
-    bg='blue.5'>
+    bg='blue'>
     Hello
   </PanelHeader>
   <Box p={3}>
@@ -9,7 +9,7 @@
       Panel
     </Subhead>
   </Box>
-  <PanelFooter color='blue.5'>
+  <PanelFooter color='blue'>
     Footer
   </PanelFooter>
 </Panel>

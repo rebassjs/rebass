@@ -28,7 +28,7 @@ const Header = props => (
   <Root
     py={[ null, null, 6 ]}
     color='white'
-    bg='gray.7'
+    bg='gray7'
     backgroundImage={photo}>
     <Logo />
     <Flex
