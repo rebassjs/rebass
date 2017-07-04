@@ -55,6 +55,9 @@ Therefore, Rebass itself does not require any client-side JavaScript,
 is well suited to server-side rendering,
 and can fit into virtually any higher level application architecture.
 
+See [Patterns for Style Composition in React](http://jxnblk.com/writing/posts/patterns-for-style-composition-in-react/)
+for more on some of the thought behind Rebass.
+
 
 ## Base Props
 
@@ -79,7 +82,7 @@ design-system-based responsive style props using [styled-system](https://github.
   width={[
     1,    // 100% width at the smallest breakpoint
     1/2,  // 50% width at the next breakpoint
-    1/4   // 25% widht at the next
+    1/4   // 25% width at the next
   ]}
 />
 
@@ -154,8 +157,102 @@ Prop | Meaning
 ```
 
 ### Colors
+
+The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
+
+```jsx
+// Keys reference values in the color palette object
+<Text color='blue' />
+
+// Background color can be set with the `bg` prop
+<Button bg='red' />
+
+// Values that do not map to a key in `theme.colors` can be used
+<Button bg='tomato' />
+
+// Arrays can be used to change colors responsively
+<Text color={[ 'blue', 'green' ]} />
+```
+
 ### Responsive Styles
 
+All of the core props above accept arrays as values to set mobile-first responsive styles.
+The first value is not scoped to a media query and applies to all breakpoints.
+Each value after the first corresponds to a media query derived from `theme.breakpoints`.
+
+```jsx
+<Text
+  width={[
+    1,    // 100% width at the smallest breakpoint
+    1/2,  // 50% width at the next breakpoint
+    null, // null skips a breakpoint
+    1/4   // 25% width at the next
+  ]}
+/>
+```
+
+## `is` Prop
+
+## Component-Specific Props
+
+Some components accept other props for styling.
+
+### `<Text />`
+
+The `<Text />` component, which is also the base for `<Heading />`, `<Subhead />`, `<Lead />`, and `<Small />`,
+accepts several typographic style props.
+
+- `left` (boolean) text-align: left
+- `center` (boolean) text-align: center
+- `right` (boolean) text-align: right
+- `justify` (boolean) text-align: justify
+- `bold` (boolean) font-weight: theme.weights[1]
+- `caps` (boolean) text-transform: uppecase; letter-spacing: .2em
+
+### `<Border />`
+
+- `borderWidth` (number) pixel value for border width
+- `top` (boolean) border-top
+- `right` (boolean) border-right
+- `bottom` (boolean) border-bottom
+- `left` (boolean) border-left
+- `color` (string) sets *only* the border color
+
+### `<NavLink />`, `<TabItem />`, `<DotButton />`
+
+- `active` (boolean) adjusts style for an active state
+
+### `<Banner />`
+
+- `backgroundImage` (string) URL for a background image
+
+### `<BackgroundImage />`
+
+- `ratio` (number) converted into a percentage to maintain aspect ratio
+
+### `<Avatar />`
+
+- `size` (number) pixel width and height
+
+### `<Fixed />` and `<Absolute />`
+
+Both components accept props to control positioning. The margin and padding props can be used to control distance from the edge of a container.
+
+- `top` (boolean) top: 0
+- `right` (boolean) right: 0
+- `bottom` (boolean) bottom: 0
+- `left` (boolean) left: 0
+- `z` (number) z-index
+
+
+## Grid Styled
+
+For convenience, the [Grid Styles](http://jxnblk.com/grid-styled) `<Flex />` and `<Box />` components are included in Rebass
+to handle most page layout needs.
+
+```jsx
+import { Flex, Box } from 'rebass'
+```
 
 ## Configuration
 
