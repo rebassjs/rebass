@@ -4,6 +4,7 @@ import {
   shape,
   arrayOf,
   oneOfType,
+  array,
   object,
   string,
   number,

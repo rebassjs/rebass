@@ -1,36 +1,23 @@
 import {
+  bool,
+  string,
+  number,
+} from 'prop-types'
+import {
   space,
   fontSizes,
   weights,
   colors,
 } from './theme'
-
-const idx = (props, obj) => {
-  const keys = typeof props === 'string' ? props.split('.') : props
-  return keys.reduce((a, b) => (a && a[b]) ? a[b] : null, obj)
-}
-
-const px = n => typeof n === 'number' ? n + 'px' : n
-
-const color = props => (n = 'blue', i = 5) =>
-  idx([ 'colors', baseKey(n) ], props.theme)
-  ? props.theme.colors[baseKey(n)][i] : n
-const darken = n => `rgba(0, 0, 0, ${n})`
-
-const baseKey = n => n.split('.')[0]
-
-const caps = props => props.caps ? ({
-  textTransform: 'uppercase',
-  letterSpacing: '.2em'
-}) : {}
-
-const align = props => {
-  if (props.left) return 'left'
-  if (props.center) return 'center'
-  if (props.right) return 'right'
-  if (props.justify) return 'justify'
-  return null
-}
+import {
+  idx,
+  px,
+  color,
+  darken,
+  baseKey,
+  caps,
+  align,
+} from './util'
 
 const components = [
   // Buttons
@@ -136,7 +123,10 @@ const components = [
       '&:disabled': {
         opacity: 1/4
       },
-    })
+    }),
+    propTypes: {
+      active: bool
+    }
   },
   {
     name: 'BlockLink',
@@ -163,7 +153,15 @@ const components = [
       lineHeight: 1.25,
       textAlign: align(props),
       fontWeight: props.bold ? idx('weights.1', props.theme) : idx('weights.0', props.theme)
-    }, caps(props))
+    }, caps(props)),
+    propTypes: {
+      left: bool,
+      center: bool,
+      right: bool,
+      justify: bool,
+      bold: bool,
+      caps: bool
+    }
   },
   {
     name: 'Subhead',
@@ -184,10 +182,18 @@ const components = [
     props: {
       m: 0
     },
-    style: props => ({
+    style: props => Object.assign({
       textAlign: align(props),
       fontWeight: props.bold ? idx('weights.1', props.theme) : null
-    })
+    }, caps(props)),
+    propTypes: {
+      left: bool,
+      center: bool,
+      right: bool,
+      justify: bool,
+      bold: bool,
+      caps: bool
+    }
   },
   {
     name: 'Small',
@@ -248,8 +254,7 @@ const components = [
       m: 0,
       f: 3,
     },
-    style: props => ({
-    })
+    style: {}
   },
 
   // Forms
@@ -354,9 +359,7 @@ const components = [
       type: 'checkbox',
       mr: 1
     },
-    style: props => ({
-
-    })
+    style: props => ({})
   },
   {
     name: 'Radio',
@@ -365,8 +368,7 @@ const components = [
       type: 'radio',
       mr: 1
     },
-    style: props => ({
-    })
+    style: props => ({})
   },
   {
     name: 'Slider',
@@ -374,6 +376,7 @@ const components = [
     props: {
       w: 1,
       my: 2,
+      mx: 0,
       type: 'range'
     },
     style: props => ({
@@ -412,15 +415,16 @@ const components = [
   {
     name: 'Avatar',
     tag: 'img',
-    props: {
-      // size: 48
-    },
+    props: {},
     style: props => ({
       display: 'inline-block',
       width: px(props.size || 48),
       height: px(props.size || 48),
       borderRadius: px(99999)
-    })
+    }),
+    propTypes: {
+      size: number
+    }
   },
 
   {
@@ -428,8 +432,7 @@ const components = [
     tag: 'div',
     props: {
       w: 1,
-      // How does this work with styled-components?
-      // ratio: 3/4
+      // ratio: 3/4 // How does styled-components handle this??
     },
     style: props => ({
       backgroundImage: props.src ? `url(${props.src})` : null,
@@ -437,10 +440,12 @@ const components = [
       backgroundPosition: 'center',
       height: 0,
       paddingBottom: ((props.ratio || 3/4) * 100) + '%'
-    })
+    }),
+    propTypes: {
+      src: string,
+      ratio: number
+    }
   },
-
-  // { name: 'Embed' },
 
   // Layout
   {
@@ -450,8 +455,12 @@ const components = [
       px: 3,
       mx: 'auto'
     },
-    style: {
-      maxWidth: px(1024)
+    style: props => ({
+      maxWidth: px(props.width || 1024),
+      width: 'auto'
+    }),
+    propTypes: {
+      width: number
     }
   },
   {
@@ -470,14 +479,31 @@ const components = [
     name: 'Border',
     tag: 'div',
     props: {},
-    style: props => ({
-      borderTopWidth: props.top ? px(1) : 0,
-      borderRightWidth: props.right ? px(1) : 0,
-      borderBottomWidth: props.bottom ? px(1) : 0,
-      borderLeftWidth: props.left ? px(1) : 0,
-      borderStyle: 'solid',
-      borderColor: props.borderColor || color(props)('gray', 2)
-    })
+    style: props => {
+      const w = px(props.borderWidth || 1)
+      const borderWidth = (!props.top && !props.right && !props.bottom && !props.left) ? w : null
+      const directions = borderWidth ? null : {
+        borderTopWidth: props.top ? w : 0,
+        borderRightWidth: props.right ? w : 0,
+        borderBottomWidth: props.bottom ? w : 0,
+        borderLeftWidth: props.left ? w : 0,
+      }
+
+      return Object.assign({
+        borderWidth,
+        borderStyle: 'solid',
+        borderColor: props.color || color(props)('gray', 2),
+        color: 'inherit'
+      }, directions)
+    },
+    propTypes: {
+      top: bool,
+      right: bool,
+      bottom: bool,
+      left: bool,
+      width: number,
+      color: string,
+    }
   },
   {
     name: 'Media',
@@ -516,13 +542,15 @@ const components = [
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null,
-    })
+    }),
+    propTypes: {
+      backgroundImage: string
+    }
   },
   {
     name: 'Panel',
     tag: 'div',
-    props: {
-    },
+    props: {},
     style: props => ({
       overflow: 'hidden',
       borderRadius: px(props.theme.radius),
@@ -534,7 +562,7 @@ const components = [
     name: 'PanelHeader',
     tag: 'header',
     props: {
-      f: 3,
+      f: 2,
       p: 2,
     },
     style: props => ({
@@ -567,7 +595,7 @@ const components = [
     },
     style: props => ({
       display: 'block',
-      height: px(idx('space.2', props.theme)),
+      height: px(idx('space.1', props.theme)),
       backgroundColor: color(props)('gray', 2),
       borderRadius: px(props.theme.radius),
       overflow: 'hidden',
@@ -677,7 +705,10 @@ const components = [
       '&:hover': {
         color: color(props)('blue', 5),
       }
-    })
+    }),
+    propTypes: {
+      active: bool
+    }
   },
 
   {
@@ -706,13 +737,11 @@ const components = [
       '&:disabled': {
         opacity: 1/4
       }
-    })
+    }),
+    propTypes: {
+      active: bool
+    }
   },
-
-  // Menu
-  // PageHeader
-  // SectionHeader
-  // Switch
 
   {
     name: 'Relative',
@@ -734,7 +763,14 @@ const components = [
       bottom: props.bottom ? 0 : null,
       left: props.left ? 0 : null,
       zIndex: props.z
-    })
+    }),
+    propTypes: {
+      top: bool,
+      right: bool,
+      bottom: bool,
+      left: bool,
+      z: number
+    }
   },
   {
     name: 'Fixed',
@@ -747,8 +783,15 @@ const components = [
       bottom: props.bottom ? 0 : null,
       left: props.left ? 0 : null,
       zIndex: props.z
-    })
-  },
+    }),
+    propTypes: {
+      top: bool,
+      right: bool,
+      bottom: bool,
+      left: bool,
+      z: number
+    }
+  }
 ]
 
 export default components

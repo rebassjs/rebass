@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "babel src -d dist",
     "start": "start-storybook -p 8000 -c stories",
-    "test": "ava"
+    "test": "nyc ava"
   },
   "keywords": [
     "components",
@@ -35,6 +35,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "grid-styled": "^2.0.0-6",
+    "nyc": "^11.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1"
@@ -52,5 +53,12 @@
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "test",
+      "docs",
+      "stories"
+    ]
   }
 }

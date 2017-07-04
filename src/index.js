@@ -14,6 +14,7 @@ export { default as theme } from './theme'
 export { default as Tag } from './Tag'
 export { default as createLibrary } from './create-library'
 export { default as createComponent } from './create-component'
+export { default as util } from './util'
 
 export const {
   Button,

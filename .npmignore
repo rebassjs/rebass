@@ -1,2 +1,5 @@
 docs
 test
+stories
+coverage
+.nyc_output

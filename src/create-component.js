@@ -6,7 +6,8 @@ const createComponent = (config, components = {}) => {
   const {
     tag,
     props,
-    style
+    style,
+    propTypes = {}
   } = config
   if (!config || !tag || !style) return null
 
@@ -14,6 +15,8 @@ const createComponent = (config, components = {}) => {
 
   const Base = hoc(Tag(_tag))
   const Component = styled(Base).attrs(props)([], style)
+
+  Component.propTypes = propTypes
 
   return Component
 }
