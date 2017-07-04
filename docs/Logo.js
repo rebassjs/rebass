@@ -59,6 +59,7 @@ const Logo = props => {
     strokeWidth: 2,
     vectorEffect: 'non-scaling-stroke'
   }
+  const size = props.size || 256
 
   const electrons = props.static
     ? (
@@ -77,8 +78,8 @@ const Logo = props => {
   return (
     <Svg viewBox='0 0 64 64'
       size={props.size}
-      width={props.size}
-      height={props.size}>
+      width={size}
+      height={size}>
       <circle
         cx={32}
         cy={32}
@@ -94,10 +95,6 @@ const Logo = props => {
       />
     </Svg>
   )
-}
-
-Logo.defaultProps = {
-  size: 256
 }
 
 export default Logo
