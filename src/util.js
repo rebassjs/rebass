@@ -11,7 +11,7 @@ export const color = props => (n = 'blue', i = '') =>
 
 export const darken = n => `rgba(0, 0, 0, ${n})`
 
-export const baseKey = n => n.split('.')[0]
+export const baseKey = n => n.replace(/\d/g, '')
 
 export const caps = props => props.caps ? ({
   textTransform: 'uppercase',
