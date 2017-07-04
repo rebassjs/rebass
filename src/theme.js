@@ -37,6 +37,8 @@ export const weights = [
 
 const palette = palx('#07c')
 
+// todo: flatten
+
 export const colors = Object.assign({}, palette, {
   black: '#000',
   white: '#fff'

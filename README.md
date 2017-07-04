@@ -30,7 +30,6 @@ const App = props => (
 )
 ```
 
-
 ## Features
 
 - Style encapsulation with styled-components
@@ -193,11 +192,93 @@ Each value after the first corresponds to a media query derived from `theme.brea
 
 ## `is` Prop
 
+Each component accepts an `is` prop to change the underlying HTML element on a per-instance basis.
+This is useful for ensuring semantic markup, while keeping styles decoupled.
+
+```jsx
+<Heading
+  is='h1'
+  children='Top-level heading'
+/>
+
+<Button
+  is='a'
+  href='#!'
+  children='Link Button'
+/>
+```
+
 ## Components
 
 ### `<Provider />`
 
+The `<Provider />` component is a wrapper around styled-components' [ThemeProvider](https://www.styled-components.com/docs/advanced#theming).
+It also provides global styles that remove the body tag's margin, sets all elements to `box-sizing: border-box`,
+and sets a default font-family value based on `theme.font`.
+
+The Provider should be wrapped around a top-level component to ensure Rebass works as expected.
+
+```jsx
+import React from 'react'
+import { Provider } from 'rebass'
+import Page from './Page'
+
+const App = props => (
+  <Provider>
+    <Page />
+  </Provider>
+)
+```
+
 ### UI Components
+
+To see an interactive demo of all Rebass components, see http://jxnblk.com/rebass
+
+- [Button](http://jxnblk.com/rebass/#Button)
+- [ButtonOutline](http://jxnblk.com/rebass/#ButtonOutline)
+- [ButtonCircle](http://jxnblk.com/rebass/#ButtonCircle)
+- [Link](http://jxnblk.com/rebass/#Link)
+- [NavLink](http://jxnblk.com/rebass/#NavLink)
+- [BlockLink](http://jxnblk.com/rebass/#BlockLink)
+- [Heading](http://jxnblk.com/rebass/#Heading)
+- [Subhead](http://jxnblk.com/rebass/#Subhead)
+- [Text](http://jxnblk.com/rebass/#Text)
+- [Small](http://jxnblk.com/rebass/#Small)
+- [Lead](http://jxnblk.com/rebass/#Lead)
+- [Pre](http://jxnblk.com/rebass/#Pre)
+- [Code](http://jxnblk.com/rebass/#Code)
+- [Samp](http://jxnblk.com/rebass/#Samp)
+- [Blockquote](http://jxnblk.com/rebass/#Blockquote)
+- [Label](http://jxnblk.com/rebass/#Label)
+- [Input](http://jxnblk.com/rebass/#Input)
+- [Select](http://jxnblk.com/rebass/#Select)
+- [Textarea](http://jxnblk.com/rebass/#Textarea)
+- [Checkbox](http://jxnblk.com/rebass/#Checkbox)
+- [Radio](http://jxnblk.com/rebass/#Radio)
+- [Slider](http://jxnblk.com/rebass/#Slider)
+- [Image](http://jxnblk.com/rebass/#Image)
+- [Avatar](http://jxnblk.com/rebass/#Avatar)
+- [BackgroundImage](http://jxnblk.com/rebass/#BackgroundImage)
+- [Container](http://jxnblk.com/rebass/#Container)
+- [Divider](http://jxnblk.com/rebass/#Divider)
+- [Border](http://jxnblk.com/rebass/#Border)
+- [Media](http://jxnblk.com/rebass/#Media)
+- [Card](http://jxnblk.com/rebass/#Card)
+- [Banner](http://jxnblk.com/rebass/#Banner)
+- [Panel](http://jxnblk.com/rebass/#Panel)
+- [PanelHeader](http://jxnblk.com/rebass/#PanelHeader)
+- [PanelFooter](http://jxnblk.com/rebass/#PanelFooter)
+- [Progress](http://jxnblk.com/rebass/#Progress)
+- [Message](http://jxnblk.com/rebass/#Message)
+- [Group](http://jxnblk.com/rebass/#Group)
+- [Toolbar](http://jxnblk.com/rebass/#Toolbar)
+- [Badge](http://jxnblk.com/rebass/#Badge)
+- [Tabs](http://jxnblk.com/rebass/#Tabs)
+- [TabItem](http://jxnblk.com/rebass/#TabItem)
+- [DotButton](http://jxnblk.com/rebass/#DotButton)
+- [Relative](http://jxnblk.com/rebass/#Relative)
+- [Absolute](http://jxnblk.com/rebass/#Absolute)
+- [Fixed](http://jxnblk.com/rebass/#Fixed)
 
 
 ## Component-Specific Props

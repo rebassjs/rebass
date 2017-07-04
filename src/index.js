@@ -43,7 +43,6 @@ export const {
   Image,
   Avatar,
   BackgroundImage,
-  // Embed,
   Container,
   Divider,
   Border,
