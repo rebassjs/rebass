@@ -1,46 +1,45 @@
 # Rebass
 
-Configurable React Stateless Functional UI Components
+Stateless React UI component library, built with [styled-components](https://www.styled-components.com)
 
 [![Build Status](https://travis-ci.org/jxnblk/rebass.svg?branch=master)](https://travis-ci.org/jxnblk/rebass)
 
 http://jxnblk.com/rebass
 
-<!-- Rewrite
-## Features
-
-- Uses inline styles
-- No CSS dependencies
-- No leaky global styles
-- [Presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
-- [Configurable](#configuration) with React Context
-- Great for prototyping
-- Production ready
-- [Tested](https://travis-ci.org/jxnblk/rebass)
-
-Rebass is a React UI component library that uses inline styles to avoid CSS dependencies and prevent leaky global styles from affecting an application. Rebass components are built as stateless functional components and modeled as <a href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963'>presentational components</a>. With unit tests for each component, Rebass is great for prototyping and ready for production.
-
-## Getting Started
-
-```bash
+```sh
 npm i rebass
 ```
 
+Rebass is a library of highly-composable, primitive UI components for React,
+built with styled-components to keep styles isolated and reduce the need to write custom CSS in your application.
+Based upon a configurable design system,
+Rebass‘s props API makes building consistent, responsive web apps simpler and faster.
+
+
+## Getting Started
+
 ```jsx
 import React from 'react'
-import { Button, Badge } from 'rebass'
+import { Provider, Heading, Button } from 'rebass'
 
-const App = () => (
-  <div>
-    <Button>Button</Button>
-    <Badge>Badge</Badge>
-  </div>
+const App = props => (
+  <Provider>
+    <Heading>Hello<Heading>
+    <Button>Rebass</Button>
+  </Provider>
 )
 ```
 
-## Component Documentation
 
-Each component exposes a simple API of props. View the source code or see <http://jxnblk.com/rebass> for more information.
+## Features
+
+- Style encapsulation with styled-components
+- No external CSS dependencies
+- Configurable theming
+- Design-system based consistency
+- Built for responsive web design
+- Reduces the need to write custom CSS
+
 
 ## Architectural Approach
 
@@ -56,96 +55,148 @@ Therefore, Rebass itself does not require any client-side JavaScript,
 is well suited to server-side rendering,
 and can fit into virtually any higher level application architecture.
 
+
+## Base Props
+
+All Rebass components are wrapped in a higher order component that handles
+design-system-based responsive style props using [styled-system](https://github.com/jxnblk/styled-system).
+
+### Width
+
+```jsx
+// Numbers from 0–1 are converted to percentage widths
+// e.g. width 50%
+<Text width={1/2} />
+
+// Numbers greater than 1 are converted to pixels
+<Text width={256} />
+
+// Strings can be used for other values
+<Text width='32em' />
+
+// Arrays can be used for mobile-first responsive styles
+<Text
+  width={[
+    1,    // 100% width at the smallest breakpoint
+    1/2,  // 50% width at the next breakpoint
+    1/4   // 25% widht at the next
+  ]}
+/>
+
+// The shorthand `w` prop can be used instead of `width`
+<Text w={1/2} />
+```
+
+### Font Size
+
+The `fontSize` prop makes referencing steps on the typographic scale
+simple and helps promote consistent design.
+
+```jsx
+// Numbers are used to reference steps on the typographic scale
+// i.e. the `theme.fontSizes` array
+<Text fontSize={3} />
+
+// Numbers greater than the length of the typographic scale
+// are converted to pixels
+<Text fontSize={18} />
+
+// Strings can be used for other values
+<Text fontSize='3em' />
+
+// Arrays can be used for mobile-first responsive styles
+<Text fontSize={[ 3, 4, 5 ]} />
+
+// The shorthand `f` prop can be used instead of `width`
+<Text f={3} />
+```
+
+### Margin and Padding
+
+The margin and padding props make referencing steps on the spacing scale
+(i.e. the `theme.space` array) simple and help promote consistency in
+layout design without the need to add custom margin and padding declarations throughout an application.
+The margin and padding props use a shorthand syntax.
+
+Prop | Meaning
+---|---
+`m`  | margin
+`mt` | margin-top
+`mr` | margin-right
+`mb` | margin-bottom
+`ml` | margin-left
+`mx` | margin-left and margin-right
+`my` | margin-top and margin-bottom
+`p`  | padding
+`pt` | padding-top
+`pr` | padding-right
+`pb` | padding-bottom
+`pl` | padding-left
+`px` | padding-left and padding-right
+`py` | padding-top and padding-bottom
+
+```jsx
+// Numbers reference steps on the spacing scale
+// e.g. 8px
+<Text m={2} />
+
+// Numbers greater than the length of `theme.space.length` are converted to pixels
+<Text my={256} />
+
+// Negative values can be used to add negative margins
+<Text mx={-2} />
+
+// Strings can be used for other values
+<Text mx='auto' />
+
+// Arrays can be used for mobile-first responsive styles
+<Text m={[ 0, 1, 2 ]} />
+```
+
+### Colors
+### Responsive Styles
+
+
 ## Configuration
 
-Global theme styles are set using
-[React Context](https://facebook.github.io/react/docs/context.html).
-This means that the default global styles can be configured,
-and component-specific styles can be added to customize on a per-component basis.
-
-View the [demo](http://jxnblk.com/rebass/demo) to see some configuration options in action.
-
-To configure the theme, add `childContextTypes` and `getChildContext` to your root component.
+Rebass’s core design system includes breakpoints, a spacing scale,
+a typographic scale, fonts, font weights, border radius, and a color palette –
+all of which can be configured with the `<Provider />` component.
 
 ```jsx
-class App extends React.Component {
-  getChildContext () {
-    return {
-      rebass: {
-        colors: myCustomColors,
-        fontSizes: [ 64, 48, 24, 18, 16, 14, 12],
-        Button: {
-          backgroundColor: 'tomato'
-        }
-      }
-    }
-  }
+import React from 'react'
+import { Provider } from 'rebass'
 
-  render () {
-    // ...
-  }
+const theme = {
+  breakpoints: [
+    // min-width breakpoints in ems
+    40, 52, 64
+  ],
+  space: [
+    0, 6, 12, 18, 24, 30, 36
+  ],
+  fontSizes: [
+    12, 16, 18, 24, 36, 48, 72
+  ],
+  weights: [
+    400, 600
+  ],
+  colors: {
+    black: '#111',
+    white: '#fff',
+    blue: '#07c'
+  },
+  font: 'Georgia, serif',
+  monospace: '"Roboto Mono", Menlo, monospace',
+  radius: 2
 }
 
-App.childContextTypes = {
-  rebass: React.PropTypes.object
-}
+const App = props => (
+  <Provider theme={theme}>
+    <Heading>Hello</Heading>
+  </Provider>
+)
 ```
-
-After setting context in the root component, all instances of Rebass components will use these values throughout the app.
-For reference to the default values, see [`/src/config.js`](src/config.js).
-
-To alter per-component styles, pass a style object that matches the name of the component,
-like the `Button` object in the example above.
-
-## Per-Instance Overrides
-
-Components accept overrides using the `style` prop to handle any one-off situations.
-For example, to remove the margin bottom from an Input for a particular situation, do the following
-
-```jsx
-<Input
-  name='input_name'
-  label='Input Label'
-  style={{ border: 0 }} />
-```
-
-## Base Styles
-
-Rebass components inherit styles where appropriate.
-Set your own base styles for color and fonts to customize the overall look and feel of an application.
-It's recommended that you use `* { box-sizing: border-box }` and set `line-height: 1.5` on the body.
-
-**Example**
-
-```css
-* { box-sizing: border-box}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.5;
-  color: #111;
-  background-color: #fff;
-}
-```
-
-## Styling with CSS
-
-Although it's not recommended to use extensively, components can be styled with CSS.
-Each component has a className that matches the component name.
-To control things like button hover styles, this can be a convenient way to style pseudo-classes.
-Note, that due to the use of inline styles, some properties may need to be overridden with an `!important` flag.
-
-```css
-.Button:hover {
-  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.125);
-}
-```
-
----
-
-*Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
-but shares a similar approach to application-agnostic UI development.*
--->
 
 [MIT License](.github/LICENSE.md)
 

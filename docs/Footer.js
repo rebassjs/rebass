@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from 'grid-styled'
+import { Flex } from 'rebass'
 import { NavLink } from 'rebass'
 
 const Footer = props => (

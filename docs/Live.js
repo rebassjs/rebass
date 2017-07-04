@@ -7,19 +7,17 @@ import {
   LiveError,
   LiveEditor,
 } from 'react-live'
-import { Flex, Box } from 'grid-styled'
 import XRay from 'react-x-ray'
 import Rebass, {
+  Flex,
+  Box,
   Border,
   Relative,
   Absolute,
   hoc
 } from 'rebass'
 
-const scope = Object.assign({}, Rebass, {
-  Flex,
-  Box
-})
+const scope = Object.assign({}, Rebass)
 
 const Editor = hoc(styled(LiveEditor)`
   font-family: 'SF Mono', Menlo, monospace;

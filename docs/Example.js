@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'funcup'
-import { Flex, Box } from 'grid-styled'
 import Rebass, {
+  Flex,
+  Box,
   Heading,
   BlockLink,
   NavLink,
