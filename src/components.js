@@ -41,7 +41,7 @@ const components = [
       borderRadius: px(props.theme.radius),
       border: 0,
       appearance: 'none',
-      backgroundColor: color(props)(props.bg, 5),
+      backgroundColor: color(props)(props.bg),
       '&:hover': {
         backgroundColor: color(props)(props.bg, 6),
       },
@@ -599,10 +599,10 @@ const components = [
         backgroundColor: color(props)('gray', 2)
       },
       '&::-webkit-progress-value': {
-        backgroundColor: color(props)(props.color, 5)
+        backgroundColor: color(props)(props.color)
       },
       '&::-moz-progress-bar': {
-        backgroundColor: color(props)(props.color, 5)
+        backgroundColor: color(props)(props.color)
       }
     })
   },
