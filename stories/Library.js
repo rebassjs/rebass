@@ -86,6 +86,31 @@ storiesOf('Heading', module)
       children='Hello'
     />
   ))
+  .add('Center', () => (
+    <Heading
+      center
+      children='Hello'
+    />
+  ))
+  .add('Not bold', () => (
+    <Heading
+      bold={false}
+      children='Hello'
+    />
+  ))
+  .add('H1', () => (
+    <Heading
+      is='h1'
+      children='Hello'
+    />
+  ))
+
+storiesOf('Subhead', module)
+  .add('Default', () => (
+    <Subhead
+      children='Hello'
+    />
+  ))
 
 storiesOf('Text', module)
   .add('Default', () => (

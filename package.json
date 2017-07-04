@@ -21,6 +21,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
+    "grid-styled": "^2.0.0-6",
     "palx": "^1.0.2",
     "prop-types": "^15.5.10",
     "styled-components": "^2.1.0",
@@ -34,7 +35,6 @@
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
-    "grid-styled": "^2.0.0-6",
     "nyc": "^11.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

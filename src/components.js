@@ -141,19 +141,36 @@ const components = [
 
   // Typography
   {
-    name: 'Heading',
-    tag: 'h2',
+    name: 'Text',
+    tag: 'p',
     props: {
+      m: 0
+    },
+    style: props => Object.assign({
+      textAlign: align(props),
+      fontWeight: props.bold ? idx('weights.1', props.theme) : idx('weights.0', props.theme)
+    }, caps(props)),
+    propTypes: {
+      left: bool,
+      center: bool,
+      right: bool,
+      justify: bool,
+      bold: bool,
+      caps: bool
+    }
+  },
+  {
+    name: 'Heading',
+    tag: 'Text',
+    props: {
+      is: 'h2',
       f: 5,
       m: 0,
       bold: true
     },
-    style: props => Object.assign({
-      fontWeight: idx('weights.1', props.theme),
-      lineHeight: 1.25,
-      textAlign: align(props),
-      fontWeight: props.bold ? idx('weights.1', props.theme) : idx('weights.0', props.theme)
-    }, caps(props)),
+    style: {
+      lineHeight: 1.25
+    },
     propTypes: {
       left: bool,
       center: bool,
@@ -171,29 +188,7 @@ const components = [
       f: 4,
       m: 0,
     },
-    style: props => ({
-      fontWeight: idx('weights.1', props.theme),
-      lineHeight: 1.25
-    })
-  },
-  {
-    name: 'Text',
-    tag: 'p',
-    props: {
-      m: 0
-    },
-    style: props => Object.assign({
-      textAlign: align(props),
-      fontWeight: props.bold ? idx('weights.1', props.theme) : null
-    }, caps(props)),
-    propTypes: {
-      left: bool,
-      center: bool,
-      right: bool,
-      justify: bool,
-      bold: bool,
-      caps: bool
-    }
+    style: {}
   },
   {
     name: 'Small',

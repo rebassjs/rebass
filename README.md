@@ -193,6 +193,13 @@ Each value after the first corresponds to a media query derived from `theme.brea
 
 ## `is` Prop
 
+## Components
+
+### `<Provider />`
+
+### UI Components
+
+
 ## Component-Specific Props
 
 Some components accept other props for styling.
@@ -247,7 +254,7 @@ Both components accept props to control positioning. The margin and padding prop
 
 ## Grid Styled
 
-For convenience, the [Grid Styles](http://jxnblk.com/grid-styled) `<Flex />` and `<Box />` components are included in Rebass
+For convenience, the [Grid Styled](http://jxnblk.com/grid-styled) `<Flex />` and `<Box />` components are included in Rebass
 to handle most page layout needs.
 
 ```jsx
@@ -294,6 +301,13 @@ const App = props => (
   </Provider>
 )
 ```
+
+### Related
+
+- [styled-system](https://github.com/jxnblk/styled-system)
+- [grid-styled](https://github.com/jxnblk/grid-styled)
+- [palx](https://github.com/jxnblk/palx)
+- [styled-components](https://github.com/styled-components/styled-components)
 
 [MIT License](.github/LICENSE.md)
 
