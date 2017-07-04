@@ -1,4 +1,5 @@
-
-build
 docs
-demo
+test
+stories
+coverage
+.nyc_output

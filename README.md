@@ -1,47 +1,44 @@
 # Rebass
 
-Configurable React Stateless Functional UI Components
+Stateless React UI component library, built with [styled-components](https://www.styled-components.com)
 
 [![Build Status](https://travis-ci.org/jxnblk/rebass.svg?branch=master)](https://travis-ci.org/jxnblk/rebass)
-[![Code Climate](https://codeclimate.com/github/jxnblk/rebass/badges/gpa.svg)](https://codeclimate.com/github/jxnblk/rebass)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 http://jxnblk.com/rebass
 
-## Features
-
-- Uses inline styles
-- No CSS dependencies
-- No leaky global styles
-- [Presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963) work with any application architecture
-- [Configurable](#configuration) with React Context
-- Great for prototyping
-- Production ready
-- [Tested](https://travis-ci.org/jxnblk/rebass)
-
-Rebass is a React UI component library that uses inline styles to avoid CSS dependencies and prevent leaky global styles from affecting an application. Rebass components are built as stateless functional components and modeled as <a href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963'>presentational components</a>. With unit tests for each component, Rebass is great for prototyping and ready for production.
-
-## Getting Started
-
-```bash
+```sh
 npm i rebass
 ```
 
+Rebass is a library of highly-composable, primitive UI components for React,
+built with styled-components to keep styles isolated and reduce the need to write custom CSS in your application.
+Based upon a configurable design system,
+Rebass‘s props API makes building consistent, responsive web apps simpler and faster.
+
+
+## Getting Started
+
 ```jsx
 import React from 'react'
-import { Button, Badge } from 'rebass'
+import { Provider, Heading, Button } from 'rebass'
 
-const App = () => (
-  <div>
-    <Button>Button</Button>
-    <Badge>Badge</Badge>
-  </div>
+const App = props => (
+  <Provider>
+    <Heading>Hello<Heading>
+    <Button>Rebass</Button>
+  </Provider>
 )
 ```
 
-## Component Documentation
+## Features
 
-Each component exposes a simple API of props. View the source code or see <http://jxnblk.com/rebass> for more information.
+- Style encapsulation with styled-components
+- No external CSS dependencies
+- Configurable theming
+- Design-system based consistency
+- Built for responsive web design
+- Reduces the need to write custom CSS
+
 
 ## Architectural Approach
 
@@ -57,95 +54,356 @@ Therefore, Rebass itself does not require any client-side JavaScript,
 is well suited to server-side rendering,
 and can fit into virtually any higher level application architecture.
 
+See [Patterns for Style Composition in React](http://jxnblk.com/writing/posts/patterns-for-style-composition-in-react/)
+for more on some of the thought behind Rebass.
+
+
+## Base Props
+
+All Rebass components are wrapped in a higher order component that handles
+design-system-based responsive style props using [styled-system](https://github.com/jxnblk/styled-system).
+
+### Width
+
+```jsx
+// Numbers from 0–1 are converted to percentage widths
+// e.g. width 50%
+<Text width={1/2} />
+
+// Numbers greater than 1 are converted to pixels
+<Text width={256} />
+
+// Strings can be used for other values
+<Text width='32em' />
+
+// Arrays can be used for mobile-first responsive styles
+<Text
+  width={[
+    1,    // 100% width at the smallest breakpoint
+    1/2,  // 50% width at the next breakpoint
+    1/4   // 25% width at the next
+  ]}
+/>
+
+// The shorthand `w` prop can be used instead of `width`
+<Text w={1/2} />
+```
+
+### Font Size
+
+The `fontSize` prop makes referencing steps on the typographic scale
+simple and helps promote consistent design.
+
+```jsx
+// Numbers are used to reference steps on the typographic scale
+// i.e. the `theme.fontSizes` array
+<Text fontSize={3} />
+
+// Numbers greater than the length of the typographic scale
+// are converted to pixels
+<Text fontSize={18} />
+
+// Strings can be used for other values
+<Text fontSize='3em' />
+
+// Arrays can be used for mobile-first responsive styles
+<Text fontSize={[ 3, 4, 5 ]} />
+
+// The shorthand `f` prop can be used instead of `width`
+<Text f={3} />
+```
+
+### Margin and Padding
+
+The margin and padding props make referencing steps on the spacing scale
+(i.e. the `theme.space` array) simple and help promote consistency in
+layout design without the need to add custom margin and padding declarations throughout an application.
+The margin and padding props use a shorthand syntax.
+
+Prop | Meaning
+---|---
+`m`  | margin
+`mt` | margin-top
+`mr` | margin-right
+`mb` | margin-bottom
+`ml` | margin-left
+`mx` | margin-left and margin-right
+`my` | margin-top and margin-bottom
+`p`  | padding
+`pt` | padding-top
+`pr` | padding-right
+`pb` | padding-bottom
+`pl` | padding-left
+`px` | padding-left and padding-right
+`py` | padding-top and padding-bottom
+
+```jsx
+// Numbers reference steps on the spacing scale
+// e.g. 8px
+<Text m={2} />
+
+// Numbers greater than the length of `theme.space.length` are converted to pixels
+<Text my={256} />
+
+// Negative values can be used to add negative margins
+<Text mx={-2} />
+
+// Strings can be used for other values
+<Text mx='auto' />
+
+// Arrays can be used for mobile-first responsive styles
+<Text m={[ 0, 1, 2 ]} />
+```
+
+### Colors
+
+The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
+
+```jsx
+// Keys reference values in the color palette object
+<Text color='blue' />
+
+// Background color can be set with the `bg` prop
+<Button bg='red' />
+
+// Values that do not map to a key in `theme.colors` can be used
+<Button bg='tomato' />
+
+// Arrays can be used to change colors responsively
+<Text color={[ 'blue', 'green' ]} />
+```
+
+### Responsive Styles
+
+All of the core props above accept arrays as values to set mobile-first responsive styles.
+The first value is not scoped to a media query and applies to all breakpoints.
+Each value after the first corresponds to a media query derived from `theme.breakpoints`.
+
+```jsx
+<Text
+  width={[
+    1,    // 100% width at the smallest breakpoint
+    1/2,  // 50% width at the next breakpoint
+    null, // null skips a breakpoint
+    1/4   // 25% width at the next
+  ]}
+/>
+```
+
+## `is` Prop
+
+Each component accepts an `is` prop to change the underlying HTML element on a per-instance basis.
+This is useful for ensuring semantic markup, while keeping styles decoupled.
+
+```jsx
+<Heading
+  is='h1'
+  children='Top-level heading'
+/>
+
+<Button
+  is='a'
+  href='#!'
+  children='Link Button'
+/>
+```
+
+## Components
+
+### `<Provider />`
+
+The `<Provider />` component is a wrapper around styled-components' [ThemeProvider](https://www.styled-components.com/docs/advanced#theming).
+It also provides global styles that remove the body tag's margin, sets all elements to `box-sizing: border-box`,
+and sets a default font-family value based on `theme.font`.
+
+The Provider should be wrapped around a top-level component to ensure Rebass works as expected.
+
+```jsx
+import React from 'react'
+import { Provider } from 'rebass'
+import Page from './Page'
+
+const App = props => (
+  <Provider>
+    <Page />
+  </Provider>
+)
+```
+
+### UI Components
+
+To see an interactive demo of all Rebass components, see http://jxnblk.com/rebass
+
+- [Button](http://jxnblk.com/rebass/#Button)
+- [ButtonOutline](http://jxnblk.com/rebass/#ButtonOutline)
+- [ButtonCircle](http://jxnblk.com/rebass/#ButtonCircle)
+- [Link](http://jxnblk.com/rebass/#Link)
+- [NavLink](http://jxnblk.com/rebass/#NavLink)
+- [BlockLink](http://jxnblk.com/rebass/#BlockLink)
+- [Heading](http://jxnblk.com/rebass/#Heading)
+- [Subhead](http://jxnblk.com/rebass/#Subhead)
+- [Text](http://jxnblk.com/rebass/#Text)
+- [Small](http://jxnblk.com/rebass/#Small)
+- [Lead](http://jxnblk.com/rebass/#Lead)
+- [Pre](http://jxnblk.com/rebass/#Pre)
+- [Code](http://jxnblk.com/rebass/#Code)
+- [Samp](http://jxnblk.com/rebass/#Samp)
+- [Blockquote](http://jxnblk.com/rebass/#Blockquote)
+- [Label](http://jxnblk.com/rebass/#Label)
+- [Input](http://jxnblk.com/rebass/#Input)
+- [Select](http://jxnblk.com/rebass/#Select)
+- [Textarea](http://jxnblk.com/rebass/#Textarea)
+- [Checkbox](http://jxnblk.com/rebass/#Checkbox)
+- [Radio](http://jxnblk.com/rebass/#Radio)
+- [Slider](http://jxnblk.com/rebass/#Slider)
+- [Image](http://jxnblk.com/rebass/#Image)
+- [Avatar](http://jxnblk.com/rebass/#Avatar)
+- [BackgroundImage](http://jxnblk.com/rebass/#BackgroundImage)
+- [Container](http://jxnblk.com/rebass/#Container)
+- [Divider](http://jxnblk.com/rebass/#Divider)
+- [Border](http://jxnblk.com/rebass/#Border)
+- [Media](http://jxnblk.com/rebass/#Media)
+- [Card](http://jxnblk.com/rebass/#Card)
+- [Banner](http://jxnblk.com/rebass/#Banner)
+- [Panel](http://jxnblk.com/rebass/#Panel)
+- [PanelHeader](http://jxnblk.com/rebass/#PanelHeader)
+- [PanelFooter](http://jxnblk.com/rebass/#PanelFooter)
+- [Progress](http://jxnblk.com/rebass/#Progress)
+- [Message](http://jxnblk.com/rebass/#Message)
+- [Group](http://jxnblk.com/rebass/#Group)
+- [Toolbar](http://jxnblk.com/rebass/#Toolbar)
+- [Badge](http://jxnblk.com/rebass/#Badge)
+- [Tabs](http://jxnblk.com/rebass/#Tabs)
+- [TabItem](http://jxnblk.com/rebass/#TabItem)
+- [DotButton](http://jxnblk.com/rebass/#DotButton)
+- [Relative](http://jxnblk.com/rebass/#Relative)
+- [Absolute](http://jxnblk.com/rebass/#Absolute)
+- [Fixed](http://jxnblk.com/rebass/#Fixed)
+
+
+## Component-Specific Props
+
+Some components accept other props for styling.
+
+### `<Text />`
+
+The `<Text />` component, which is also the base for `<Heading />`, `<Subhead />`, `<Lead />`, and `<Small />`,
+accepts several typographic style props.
+
+- `left` (boolean) text-align: left
+- `center` (boolean) text-align: center
+- `right` (boolean) text-align: right
+- `justify` (boolean) text-align: justify
+- `bold` (boolean) font-weight: theme.weights[1]
+- `caps` (boolean) text-transform: uppecase; letter-spacing: .2em
+
+### `<Border />`
+
+- `borderWidth` (number) pixel value for border width
+- `top` (boolean) border-top
+- `right` (boolean) border-right
+- `bottom` (boolean) border-bottom
+- `left` (boolean) border-left
+- `color` (string) sets *only* the border color
+
+### `<NavLink />`, `<TabItem />`, `<DotButton />`
+
+- `active` (boolean) adjusts style for an active state
+
+### `<Banner />`
+
+- `backgroundImage` (string) URL for a background image
+
+### `<BackgroundImage />`
+
+- `ratio` (number) converted into a percentage to maintain aspect ratio
+
+### `<Avatar />`
+
+- `size` (number) pixel width and height
+
+### `<Fixed />` and `<Absolute />`
+
+Both components accept props to control positioning. The margin and padding props can be used to control distance from the edge of a container.
+
+- `top` (boolean) top: 0
+- `right` (boolean) right: 0
+- `bottom` (boolean) bottom: 0
+- `left` (boolean) left: 0
+- `z` (number) z-index
+
+
+## Grid Styled
+
+For convenience, the [Grid Styled](http://jxnblk.com/grid-styled) `<Flex />` and `<Box />` components are included in Rebass
+to handle most page layout needs.
+
+```jsx
+import { Flex, Box } from 'rebass'
+```
+
 ## Configuration
 
-Global theme styles are set using
-[React Context](https://facebook.github.io/react/docs/context.html).
-This means that the default global styles can be configured,
-and component-specific styles can be added to customize on a per-component basis.
-
-View the [demo](http://jxnblk.com/rebass/demo) to see some configuration options in action.
-
-To configure the theme, add `childContextTypes` and `getChildContext` to your root component.
+Rebass’s core design system includes breakpoints, a spacing scale,
+a typographic scale, fonts, font weights, border radius, and a color palette –
+all of which can be configured with the `<Provider />` component.
 
 ```jsx
-class App extends React.Component {
-  getChildContext () {
-    return {
-      rebass: {
-        colors: myCustomColors,
-        fontSizes: [ 64, 48, 24, 18, 16, 14, 12],
-        Button: {
-          backgroundColor: 'tomato'
-        }
-      }
-    }
-  }
+import React from 'react'
+import { Provider } from 'rebass'
 
-  render () {
-    // ...
-  }
+const theme = {
+  breakpoints: [
+    // min-width breakpoints in ems
+    40, 52, 64
+  ],
+  space: [
+    0, 6, 12, 18, 24, 30, 36
+  ],
+  fontSizes: [
+    12, 16, 18, 24, 36, 48, 72
+  ],
+  weights: [
+    400, 600
+  ],
+  colors: {
+    black: '#111',
+    white: '#fff',
+    blue: '#07c'
+  },
+  font: 'Georgia, serif',
+  monospace: '"Roboto Mono", Menlo, monospace',
+  radius: 2
 }
 
-App.childContextTypes = {
-  rebass: React.PropTypes.object
-}
+const App = props => (
+  <Provider theme={theme}>
+    <Heading>Hello</Heading>
+  </Provider>
+)
 ```
 
-After setting context in the root component, all instances of Rebass components will use these values throughout the app.
-For reference to the default values, see [`/src/config.js`](src/config.js).
+## Customizing Components
 
-To alter per-component styles, pass a style object that matches the name of the component,
-like the `Button` object in the example above.
-
-## Per-Instance Overrides
-
-Components accept overrides using the `style` prop to handle any one-off situations.
-For example, to remove the margin bottom from an Input for a particular situation, do the following
+Rebass components can be completely customized using styled-components.
 
 ```jsx
-<Input
-  name='input_name'
-  label='Input Label'
-  style={{ border: 0 }} />
+import styled from 'styled-components'
+import { Button } from 'rebass'
+
+const CustomButton = styled(Button)`
+  border: 1px solid rgba(0, 0, 0, .25);
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, .125));
+  box-shadow: 0 0 4px rgba(0, 0, 0, .25)
+`
 ```
 
-## Base Styles
+### Related
 
-Rebass components inherit styles where appropriate.
-Set your own base styles for color and fonts to customize the overall look and feel of an application.
-It's recommended that you use `* { box-sizing: border-box }` and set `line-height: 1.5` on the body.
-
-**Example**
-
-```css
-* { box-sizing: border-box}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.5;
-  color: #111;
-  background-color: #fff;
-}
-```
-
-## Styling with CSS
-
-Although it's not recommended to use extensively, components can be styled with CSS.
-Each component has a className that matches the component name.
-To control things like button hover styles, this can be a convenient way to style pseudo-classes.
-Note, that due to the use of inline styles, some properties may need to be overridden with an `!important` flag.
-
-```css
-.Button:hover {
-  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.125);
-}
-```
-
----
-
-*Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
-but shares a similar approach to application-agnostic UI development.*
+- [styled-system](https://github.com/jxnblk/styled-system)
+- [grid-styled](https://github.com/jxnblk/grid-styled)
+- [palx](https://github.com/jxnblk/palx)
+- [styled-components](https://github.com/styled-components/styled-components)
 
 [MIT License](.github/LICENSE.md)
 

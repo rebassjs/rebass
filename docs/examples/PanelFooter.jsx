@@ -1,0 +1,3 @@
+<PanelFooter>
+  Hello
+</PanelFooter>

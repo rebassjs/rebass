@@ -1,0 +1,3 @@
+<Small
+  children='Hello'
+/>

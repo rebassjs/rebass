@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack -p",
+    "build-examples": "node build-examples.js",
+    "card": "repng Card.js -d 1 -w 1024 -h 512 -o . -f card",
+    "card-dev": "repng Card.js --dev -P 8081"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "funcup": "^1.0.0-1",
+    "raw-loader": "^0.5.1",
+    "react-live": "^1.7.0",
+    "react-x-ray": "^1.0.0-2",
+    "repng": "^2.0.0-alpha.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
