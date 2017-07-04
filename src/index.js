@@ -1,65 +1,67 @@
+import components from './components'
+import Provider from './Provider'
+import createLibrary from './create-library'
 
-export { default as Base } from './Base'
+const library = createLibrary(components)
+const Rebass = Object.assign({}, library, { Provider })
 
-export { default as config } from './config'
-export { default as Arrow } from './Arrow'
-export { default as Avatar } from './Avatar'
-export { default as Badge } from './Badge'
-export { default as Banner } from './Banner'
-export { default as Block } from './Block'
-export { default as Blockquote } from './Blockquote'
-export { default as Breadcrumbs } from './Breadcrumbs'
-export { default as Button } from './Button'
-export { default as ButtonCircle } from './ButtonCircle'
-export { default as ButtonOutline } from './ButtonOutline'
-export { default as Card } from './Card'
-export { default as CardImage } from './CardImage'
-export { default as Checkbox } from './Checkbox'
-export { default as Close } from './Close'
-export { default as Container } from './Container'
-export { default as Divider } from './Divider'
-export { default as Donut } from './Donut'
-export { default as DotIndicator } from './DotIndicator'
-export { default as Drawer } from './Drawer'
-export { default as Dropdown } from './Dropdown'
-export { default as DropdownMenu } from './DropdownMenu'
-export { default as Embed } from './Embed'
-export { default as Fixed } from './Fixed'
-export { default as Footer } from './Footer'
-export { default as Heading } from './Heading'
-export { default as HeadingLink } from './HeadingLink'
-export { default as Input } from './Input'
-export { default as InlineForm } from './InlineForm'
-export { default as Label } from './Label'
-export { default as LinkBlock } from './LinkBlock'
-export { default as Media } from './Media'
-export { default as Menu } from './Menu'
-export { default as Message } from './Message'
-export { default as NavItem } from './NavItem'
-export { default as Overlay } from './Overlay'
-export { default as PageHeader } from './PageHeader'
-export { default as Panel } from './Panel'
-export { default as PanelFooter } from './PanelFooter'
-export { default as PanelHeader } from './PanelHeader'
-export { default as Pre } from './Pre'
-export { default as Progress } from './Progress'
-export { default as Radio } from './Radio'
-export { default as Rating } from './Rating'
-export { default as Section } from './Section'
-export { default as SectionHeader } from './SectionHeader'
-export { default as Select } from './Select'
-export { default as SequenceMap } from './SequenceMap'
-export { default as SequenceMapStep } from './SequenceMapStep'
-export { default as Slider } from './Slider'
-export { default as Space } from './Space'
-export { default as Stat } from './Stat'
-export { default as Switch } from './Switch'
-export { default as Table } from './Table'
-export { default as Text } from './Text'
-export { default as Textarea } from './Textarea'
-export { default as Toolbar } from './Toolbar'
-export { default as Tooltip } from './Tooltip'
+const { length } = Object.keys(library)
+console.log(length + ' Rebass components')
 
-import * as Rebass from '.'
+export { default as Provider } from './Provider'
+export { default as hoc } from './hoc'
+export { default as theme } from './theme'
+export { default as Tag } from './Tag'
+export { default as createLibrary } from './create-library'
+export { default as createComponent } from './create-component'
+
+export const {
+  Button,
+  ButtonOutline,
+  ButtonCircle,
+  Link,
+  NavLink,
+  BlockLink,
+  Heading,
+  Subhead,
+  Text,
+  Small,
+  Lead,
+  Pre,
+  Code,
+  Samp,
+  Blockquote,
+  Label,
+  Input,
+  Select,
+  Textarea,
+  Checkbox,
+  Radio,
+  Slider,
+  Image,
+  Avatar,
+  BackgroundImage,
+  // Embed,
+  Container,
+  Divider,
+  Border,
+  Media,
+  Card,
+  Banner,
+  Panel,
+  PanelHeader,
+  PanelFooter,
+  Progress,
+  Message,
+  Group,
+  Toolbar,
+  Badge,
+  Tabs,
+  TabItem,
+  DotButton,
+  Relative,
+  Absolute,
+  Fixed,
+} = library
+
 export default Rebass
-

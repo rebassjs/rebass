@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack -p",
+    "build-examples": "node build-examples.js"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "funcup": "^1.0.0-1",
+    "raw-loader": "^0.5.1",
+    "react-live": "^1.7.0",
+    "react-x-ray": "^1.0.0-2",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}

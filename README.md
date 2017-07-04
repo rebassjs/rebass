@@ -3,11 +3,10 @@
 Configurable React Stateless Functional UI Components
 
 [![Build Status](https://travis-ci.org/jxnblk/rebass.svg?branch=master)](https://travis-ci.org/jxnblk/rebass)
-[![Code Climate](https://codeclimate.com/github/jxnblk/rebass/badges/gpa.svg)](https://codeclimate.com/github/jxnblk/rebass)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 http://jxnblk.com/rebass
 
+<!-- Rewrite
 ## Features
 
 - Uses inline styles
@@ -146,6 +145,7 @@ Note, that due to the use of inline styles, some properties may need to be overr
 
 *Note: Unlike previous versions, Rebass is no longer explicitly associated with Basscss,
 but shares a similar approach to application-agnostic UI development.*
+-->
 
 [MIT License](.github/LICENSE.md)
 
