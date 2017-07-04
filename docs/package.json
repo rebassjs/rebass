@@ -9,6 +9,7 @@
   "devDependencies": {
     "babel-loader": "^7.1.1",
     "funcup": "^1.0.0-1",
+    "hidden-styled": "^1.0.0-0",
     "raw-loader": "^0.5.1",
     "react-live": "^1.7.0",
     "react-x-ray": "^1.0.0-2",
