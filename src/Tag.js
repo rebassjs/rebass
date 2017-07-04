@@ -1,12 +1,13 @@
 import React from 'react'
-import { removeProps } from 'styled-system'
+import cleanProps from './clean-props'
 
 const Tag = tag => {
   const Base = props => {
-    const Comp = typeof tag === 'string' ? (props.is || tag) : tag
-    const next = removeProps(props)
+    const isEl = typeof tag === 'string'
+    const Comp = isEl ? (props.is || tag) : tag
+    const next = isEl ? cleanProps(props) : props
 
-    if (typeof tag === 'string') delete next.is
+    if (isEl) delete next.is
 
     return <Comp {...next} />
   }
