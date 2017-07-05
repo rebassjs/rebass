@@ -7,7 +7,7 @@ Stateless React UI component library, built with [styled-components](https://www
 http://jxnblk.com/rebass
 
 ```sh
-npm i rebass
+npm i rebass@next
 ```
 
 Rebass is a library of highly-composable, primitive UI components for React,

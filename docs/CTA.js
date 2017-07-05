@@ -27,7 +27,7 @@ const CTA = props => (
         />
       </Box>
       <Box p={2} w={[ 1, 1/2 ]}>
-        <Pre>npm i rebass</Pre>
+        <Pre>npm i rebass@next</Pre>
       </Box>
     </Flex>
   </Section>

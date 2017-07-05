@@ -59,7 +59,7 @@ const Header = props => (
         mx={3}
         my={4}
       />
-      <Pre mx={3}>npm i rebass</Pre>
+      <Pre mx={3}>npm i rebass@next</Pre>
       {false && (
         <ButtonOutline
           is='a'
