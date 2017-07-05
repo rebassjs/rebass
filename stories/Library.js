@@ -220,7 +220,7 @@ storiesOf('ButtonOutline', module)
   ))
   .add('Colors', () => (
     <ButtonOutline
-      color='green.5'
+      color='green'
       children='Hello'
     />
   ))
@@ -245,7 +245,7 @@ storiesOf('Divider', module)
     <Divider />
   ))
   .add('Color', () => (
-    <Divider color='blue.4' />
+    <Divider color='blue4' />
   ))
 
 storiesOf('Form Elements', module)
@@ -373,16 +373,16 @@ storiesOf('Panel', module)
     </Panel>
   ))
   .add('Blue', () => (
-    <Panel color='blue.5'>
+    <Panel color='blue'>
       <PanelHeader
         color='white'
-        bg='blue.5'>
+        bg='blue'>
         Hello Panel
       </PanelHeader>
       <Box p={2}>
         Hello there, Panel
       </Box>
-      <PanelFooter color='blue.5'>
+      <PanelFooter color='blue'>
         Footer
       </PanelFooter>
     </Panel>
@@ -392,10 +392,10 @@ storiesOf('Message', module)
   .add('Default', () => (
     <div>
       <Message mb={2} children='Hello Message' />
-      <Message mb={2} bg='red.5' children='Hello Message' />
-      <Message mb={2} bg='orange.5' children='Hello Message' />
-      <Message mb={2} bg='yellow.5' children='Hello Message' />
-      <Message mb={2} bg='green.5' children='Hello Message' />
+      <Message mb={2} bg='red' children='Hello Message' />
+      <Message mb={2} bg='orange' children='Hello Message' />
+      <Message mb={2} bg='yellow' children='Hello Message' />
+      <Message mb={2} bg='green' children='Hello Message' />
     </div>
   ))
 
