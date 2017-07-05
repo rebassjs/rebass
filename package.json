@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "Stateless React UI component library",
   "main": "dist/index.js",
   "scripts": {
