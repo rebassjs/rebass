@@ -24,7 +24,7 @@ import { Provider, Heading, Button } from 'rebass'
 
 const App = props => (
   <Provider>
-    <Heading>Hello<Heading>
+    <Heading>Hello</Heading>
     <Button>Rebass</Button>
   </Provider>
 )
