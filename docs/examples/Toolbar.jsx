@@ -1,4 +1,4 @@
-<Toolbar>
+<Toolbar bg='black'>
   <NavLink>
     Hello
   </NavLink>
