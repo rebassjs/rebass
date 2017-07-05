@@ -7,7 +7,7 @@ const Tag = tag => {
     const Comp = isEl ? (props.is || tag) : tag
     const next = isEl ? cleanProps(props) : props
 
-    if (isEl) delete next.is
+    if (isEl) next.is = null
 
     return <Comp {...next} />
   }
