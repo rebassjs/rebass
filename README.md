@@ -398,6 +398,12 @@ const CustomButton = styled(Button)`
 `
 ```
 
+## Server-Side Rendering
+
+Rebass uses styled-components for styling.
+The styled-components documentation explains how to handle
+[Server-Side Rendering](https://www.styled-components.com/docs/advanced#server-side-rendering).
+
 ### Related
 
 - [styled-system](https://github.com/jxnblk/styled-system)
