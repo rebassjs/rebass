@@ -646,7 +646,7 @@ const components = [
     props: {
       px: 2,
       color: 'white',
-      bg: 'gray.9'
+      bg: 'gray9'
     },
     style: {
       display: 'flex',
