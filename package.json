@@ -6,6 +6,7 @@
   "scripts": {
     "prepublish": "babel src -d dist",
     "start": "start-storybook -p 8000 -c stories",
+    "storybook": "build-storybook -c stories -o docs/stories",
     "test": "nyc ava"
   },
   "keywords": [
