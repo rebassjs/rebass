@@ -22,11 +22,11 @@ addDecorator(story => (
   </Provider>
 ))
 
-// const req = require.context('.', true, /\.js$/)
+const req = require.context('.', true, /\.js$/)
 
 const load = () => {
-  require('./Library')
-  // req.keys().forEach(req)
+  // require('./Library')
+  req.keys().forEach(req)
 }
 
 configure(load, module)
