@@ -1,7 +1,7 @@
 {
   "name": "rebass",
   "version": "1.0.0-1",
-  "description": "Stateless React UI component library",
+  "description": "Functional React UI component library, built with styled-components",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
