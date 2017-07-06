@@ -26,7 +26,7 @@ const Btn = styled(Button)`
 
 const Header = props => (
   <Root
-    py={[ null, null, 6 ]}
+    py={[ 4, 5, 6 ]}
     color='white'
     bg='gray7'
     backgroundImage={photo}>

@@ -25,17 +25,23 @@ const NavBar = props => (
           children='GitHub'
         />
       </Hide>
+      <NavLink
+        href='https://github.com/jxnblk/rebass/stories'
+        children='Storybook'
+      />
       <Box mx='auto' />
       <Tweet />
-      <BlockLink
-        ml={3}
-        mr={2}
-        py={2}
-        href='https://travis-ci.org/jxnblk/rebass'>
-        <Image
-          src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
-        />
-      </BlockLink>
+      <Hide xs>
+        <BlockLink
+          ml={3}
+          mr={2}
+          py={2}
+          href='https://travis-ci.org/jxnblk/rebass'>
+          <Image
+            src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
+          />
+        </BlockLink>
+      </Hide>
       <BlockLink
         mx={2}
         py={2}
