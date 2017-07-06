@@ -109,7 +109,7 @@ simple and helps promote consistent design.
 // Arrays can be used for mobile-first responsive styles
 <Text fontSize={[ 3, 4, 5 ]} />
 
-// The shorthand `f` prop can be used instead of `width`
+// The shorthand `f` prop can be used instead of `fontSize`
 <Text f={3} />
 ```
 
