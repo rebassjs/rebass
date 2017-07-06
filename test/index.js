@@ -55,6 +55,21 @@ test('theme is an object', t => {
   t.is(typeof theme.monospace, 'string')
 })
 
+test('createComponent returns null with no config', t => {
+  const a = createComponent({})
+  t.is(a, null)
+})
+
+test('createComponent returns a component', t => {
+  const A = createComponent({
+    tag: 'div',
+    style: {
+      color: 'tomato'
+    }
+  })
+  t.true(isElement(<A />))
+})
+
 test('util.idx safely gets values', t => {
   const obj = {
     hello: {
