@@ -22,6 +22,7 @@ const CTA = props => (
         </Lead>
         <Button
           is='a'
+          f={2}
           href='https://github.com/jxnblk/rebass'
           children='GitHub'
         />

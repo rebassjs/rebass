@@ -9,6 +9,7 @@ import Props from './Props'
 import Configuration from './Configuration'
 import ComponentNav from './ComponentNav'
 import ExampleList from './ExampleList'
+import Customizing from './Customizing'
 import CTA from './CTA'
 import Footer from './Footer'
 
@@ -20,6 +21,7 @@ const App = props => (
     <Demo />
     <Props />
     <Configuration />
+    <Customizing />
     <ComponentNav />
     <ExampleList />
     <CTA />
