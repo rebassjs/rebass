@@ -26,7 +26,7 @@ const NavBar = props => (
         />
       </Hide>
       <NavLink
-        href='https://github.com/jxnblk/rebass/stories'
+        href='http://jxnblk.com/rebass/stories'
         children='Storybook'
       />
       <Box mx='auto' />
