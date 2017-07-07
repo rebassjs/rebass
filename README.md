@@ -279,6 +279,7 @@ To see an interactive demo of all Rebass components, see http://jxnblk.com/rebas
 - [Relative](http://jxnblk.com/rebass/#Relative)
 - [Absolute](http://jxnblk.com/rebass/#Absolute)
 - [Fixed](http://jxnblk.com/rebass/#Fixed)
+- [Sticky](http://jxnblk.com/rebass/#Sticky)
 
 
 ## Component-Specific Props
