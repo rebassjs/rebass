@@ -786,6 +786,36 @@ const components = [
       left: bool,
       z: number
     }
+  },
+  {
+    name: 'Sticky',
+    tag: 'div',
+    props: {},
+    style: props => (`
+      position: -webkit-sticky;
+      position: sticky;
+      top: ${props.top ? 0 : null};
+      right: ${props.right ? 0 : null};
+      bottom: ${props.bottom ? 0 : null};
+      left: ${props.left ? 0 : null};
+      z-index: ${props.z};
+    `),
+    _style: props => ({
+      position: '-webkit-sticky',
+      // position: 'sticky',
+      top: props.top ? 0 : null,
+      right: props.right ? 0 : null,
+      bottom: props.bottom ? 0 : null,
+      left: props.left ? 0 : null,
+      zIndex: props.z
+    }),
+    propTypes: {
+      top: bool,
+      right: bool,
+      bottom: bool,
+      left: bool,
+      z: number
+    }
   }
 ]
 

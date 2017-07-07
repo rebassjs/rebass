@@ -51,6 +51,7 @@ import DotButton from './DotButton.jsx'
 import Relative from './Relative.jsx'
 import Absolute from './Absolute.jsx'
 import Fixed from './Fixed.jsx'
+import Sticky from './Sticky.jsx'
 
 export const examples = {
   Button,
@@ -105,6 +106,7 @@ export const examples = {
   Relative,
   Absolute,
   Fixed,
+  Sticky,
 }
 
 export const components = Object.keys(examples)

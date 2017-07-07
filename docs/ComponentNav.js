@@ -3,21 +3,23 @@ import {
   Flex,
   Box,
   Container,
-  Heading,
+  Subhead,
   NavLink
 } from 'rebass'
 import { components } from './examples'
 
 const ComponentNav = props => (
   <Container py={5}>
-    <Heading mb={3}>
+    <Subhead f={2} mb={3}>
       {components.length} Components
-    </Heading>
+    </Subhead>
     <nav>
       <Flex wrap mx={-2}>
         {components.map(name => (
           <NavLink
-            w={[ 1/2, 1/3, 1/4, 1/5 ]}
+            f={0}
+            py={1}
+            w={[ 1/2, 1 ]}
             key={name}
             href={`#${name}`}
             children={name}
