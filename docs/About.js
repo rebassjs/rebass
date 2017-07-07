@@ -8,7 +8,7 @@ const About = props => (
   <Container my={5}>
     <Lead
       f={[ 3, 4 ]}
-      w={[ 1, null, 640 ]}>
+      w={[ 1, null, '31em' ]}>
       Rebass is a library of highly-composable, primitive UI components for React,
       built with styled-components to keep styles isolated and reduce the need to write custom CSS in your application.
       Based upon a configurable design system,

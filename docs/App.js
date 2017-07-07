@@ -11,6 +11,7 @@ import {
 import NavBar from './NavBar'
 import Header from './Header'
 import About from './About'
+import Testimonials from './Testimonials'
 import SideNav from './SideNav'
 import Demo from './Demo'
 import Props from './Props'
@@ -39,6 +40,7 @@ const App = props => (
     <NavBar />
     <Header />
     <About />
+    <Testimonials />
     <Container>
       <Flex wrap>
         <StickySide w={[ 1, 1/3, 1/4 ]}>
