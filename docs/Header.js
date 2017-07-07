@@ -16,7 +16,6 @@ import Logo from './Logo'
 const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
 
 const Root = styled(Banner)`
-  // background-blend-mode: multiply;
   background-attachment: fixed;
 `
 
@@ -25,7 +24,7 @@ const Btn = styled(Button)`
 `
 
 const Header = props => (
-  <Root
+  <Banner
     py={[ 4, 5, 6 ]}
     color='white'
     bg='gray7'
@@ -71,7 +70,7 @@ const Header = props => (
         />
       )}
     </Flex>
-  </Root>
+  </Banner>
 )
 
 export default Header

@@ -63,6 +63,7 @@ export const {
   Relative,
   Absolute,
   Fixed,
+  Sticky,
 } = library
 
 export default Rebass
