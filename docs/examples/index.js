@@ -44,6 +44,7 @@ import Message from './Message.jsx'
 import Group from './Group.jsx'
 import Toolbar from './Toolbar.jsx'
 import Badge from './Badge.jsx'
+import Circle from './Circle.jsx'
 
 import Tabs from './Tabs.jsx'
 import TabItem from './TabItem.jsx'
@@ -99,6 +100,7 @@ export const examples = {
   Group,
   Toolbar,
   Badge,
+  Circle,
 
   Tabs,
   TabItem,

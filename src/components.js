@@ -671,6 +671,61 @@ const components = [
       borderRadius: px(props.theme.radius)
     })
   },
+  {
+    name: 'Circle',
+    tag: 'Badge',
+    props: {
+      color: 'white',
+      bg: 'blue'
+    },
+    style: props => ({
+      textAlign: 'center',
+      width: px(props.size || 24),
+      height: px(props.size || 24),
+      borderRadius: px(99999)
+    })
+  },
+  {
+    name: 'Overlay',
+    tag: 'div',
+    props: {
+      p: 3,
+      bg: 'white'
+    },
+    style: props => ({
+      border: '1px solid tomato',
+      position: 'fixed',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      overflow: 'auto',
+      borderRadius: px(props.theme.radius),
+      // Safari seems to max out
+      boxShadow: `0 0 0 9999px ${darken(3/4)}`,
+      /*
+      '&:before': {
+        content: '" "',
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        backgroundColor: darken(3/4)
+      }
+      */
+    })
+  },
+
+  // Close
+  // Donut
+  // Switch
+  // Drawer
+  // Menu
+  // Dropdown
+  // List
+  // Overlay
 
   {
     name: 'Tabs',

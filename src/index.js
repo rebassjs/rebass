@@ -57,6 +57,7 @@ export const {
   Group,
   Toolbar,
   Badge,
+  Circle,
   Tabs,
   TabItem,
   DotButton,
@@ -64,6 +65,7 @@ export const {
   Absolute,
   Fixed,
   Sticky,
+  Overlay,
 } = library
 
 export default Rebass
