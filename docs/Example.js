@@ -20,7 +20,7 @@ const Example = props => {
       id={props.name}
       my={5}>
       <Flex my={3} align='center'>
-        <Heading>
+        <Heading f={[ 4, 5 ]}>
           <BlockLink href={'#' + props.name}>
             {props.name}
           </BlockLink>

@@ -11,6 +11,7 @@ const Section = props => (
   <Container
     is='section'
     id={props.name}
+    px={0}
     my={6}>
     <Heading>
       <BlockLink href={'#' + props.name}>

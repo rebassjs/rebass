@@ -61,7 +61,9 @@ const Live = props => {
               color={theme.colors.blue2}
               backgroundColor={theme.colors.gray9}
               disabled={!props.xray}>
-              <Box p={4}>
+              <Box
+                p={3}
+                style={{ minHeight: 128 }}>
                 <LivePreview />
               </Box>
             </XRay>
