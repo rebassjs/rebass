@@ -69,6 +69,7 @@ export const {
   Drawer,
   Carousel,
   CarouselSlide,
+  Tooltip,
 } = library
 
 export default Rebass

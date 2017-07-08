@@ -899,6 +899,53 @@ const components = [
     })
   },
 
+  {
+    name: 'Tooltip',
+    tag: 'div',
+    props: {
+      color: 'white',
+      bg: 'black'
+    },
+    style: props => ({
+      position: 'relative',
+      color: 'inherit',
+      backgroundColor: 'transparent',
+      '&::before': {
+        display: 'none',
+        content: `"${props.text}"`,
+        position: 'absolute',
+        bottom: '100%',
+        left: '50%',
+        transform: 'translate(-50%, -4px)',
+        whiteSpace: 'nowrap',
+        fontSize: px(idx('fontSizes.0', props.theme)),
+        paddingTop: px(props.theme.space[1]),
+        paddingBottom: px(props.theme.space[1]),
+        paddingLeft: px(props.theme.space[2]),
+        paddingRight: px(props.theme.space[2]),
+        color: color(props)(props.color),
+        backgroundColor: color(props)(props.bg),
+        borderRadius: px(props.theme.radius),
+      },
+      '&::after': {
+        display: 'none',
+        position: 'absolute',
+        bottom: '100%',
+        left: '50%',
+        transform: 'translate(-50%, 8px)',
+        content: '" "',
+        borderWidth: px(6),
+        borderStyle: 'solid',
+        borderColor: 'transparent',
+        borderTopColor: color(props)(props.bg),
+      },
+      '&:hover': {
+        '&::before, &::after': {
+          display: 'block'
+        },
+      }
+    })
+  },
 ]
 
 export const getDrawerStyle = ({ open, position, size }) => {
