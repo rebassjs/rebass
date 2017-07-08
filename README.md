@@ -280,6 +280,17 @@ To see an interactive demo of all Rebass components, see http://jxnblk.com/rebas
 - [Absolute](http://jxnblk.com/rebass/#Absolute)
 - [Fixed](http://jxnblk.com/rebass/#Fixed)
 - [Sticky](http://jxnblk.com/rebass/#Sticky)
+- [Drawer](http://jxnblk.com/rebass/#Drawer)
+- [Overlay](http://jxnblk.com/rebass/#Overlay)
+- [Donut](http://jxnblk.com/rebass/#Donut)
+- [Switch](http://jxnblk.com/rebass/#Switch)
+- [Embed](http://jxnblk.com/rebass/#Embed)
+- [Star](http://jxnblk.com/rebass/#Star)
+- [Circle](http://jxnblk.com/rebass/#Circle)
+- [Tooltip](http://jxnblk.com/rebass/#Tooltip)
+- [Carousel](http://jxnblk.com/rebass/#Carousel)
+- [CarouselSlide](http://jxnblk.com/rebass/#CarouselSlide)
+- [ScrollCarousel](http://jxnblk.com/rebass/#ScrollCarousel)
 
 
 ## Component-Specific Props
