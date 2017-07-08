@@ -1,7 +1,9 @@
+import React from 'react'
 import {
   bool,
   string,
   number,
+  oneOf,
 } from 'prop-types'
 import {
   space,
@@ -18,6 +20,7 @@ import {
   caps,
   align,
 } from './util'
+import DonutBase from './DonutBase'
 
 const components = [
   // Buttons
@@ -88,6 +91,27 @@ const components = [
     },
     style: props => ({
       borderRadius: px(99999)
+    })
+  },
+  {
+    name: 'ButtonTransparent',
+    tag: 'Button',
+    props: {
+      color: 'inherit',
+      bg: 'transparent'
+    },
+    style: props => ({
+      '&:hover': {
+        color: color(props)(props.color, 8),
+        backgroundColor: 'transparent'
+      },
+      '&:focus': {
+        boxShadow: `inset 0 0 0 2px, 0 0 0 2px ${color(props)(props.color, 3)}`
+      },
+      '&:active': {
+        backgroundColor: 'transparent',
+        boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${color(props)(props.color, 9)}`
+      }
     })
   },
   {
@@ -671,6 +695,39 @@ const components = [
       borderRadius: px(props.theme.radius)
     })
   },
+  {
+    name: 'Circle',
+    tag: 'Badge',
+    props: {
+      color: 'white',
+      bg: 'blue'
+    },
+    style: props => ({
+      textAlign: 'center',
+      width: px(props.size || 24),
+      height: px(props.size || 24),
+      borderRadius: px(99999)
+    })
+  },
+  {
+    name: 'Overlay',
+    tag: 'div',
+    props: {
+      p: 3,
+      bg: 'white'
+    },
+    style: props => ({
+      position: 'fixed',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      overflow: 'auto',
+      borderRadius: px(props.theme.radius),
+      boxShadow: `0 0 0 60vmax ${darken(1/2)}, 0 0 32px ${darken(1/4)}`,
+    })
+  },
 
   {
     name: 'Tabs',
@@ -807,7 +864,281 @@ const components = [
       left: bool,
       z: number
     }
-  }
+  },
+  {
+    name: 'Drawer',
+    tag: 'Fixed',
+    props: {
+      bg: 'white',
+      size: 320,
+    },
+    style: props => {
+      const position = props.position || 'left'
+      const size = props.size || 320
+      const h = /^(left|right)$/.test(position) ? 1 : 0
+      const width = h ? px(size) : null
+      const height = h ? null : px(size)
+      let transform
+      const transforms = {
+        left: 'translateX(-100%)',
+        right: 'translateX(100%)',
+        top: 'translateY(-100%)',
+        bottom: 'translateY(100%)',
+      }
+      if (!props.open) transform = transforms[position]
+
+      const top = /^(top|left|right)$/.test(position) ? 0 : null
+      const bottom = /^(bottom|left|right)$/.test(position) ? 0 : null
+      const left = /^(left|top|bottom)$/.test(position) ? 0 : null
+      const right = /^(right|top|bottom)$/.test(position) ? 0 : null
+
+      return {
+        top,
+        bottom,
+        left,
+        right,
+        width,
+        height,
+        transform,
+        overflowX: 'hidden',
+        overflowY: 'auto',
+        transitionProperty: 'transform',
+        transitionDuration: '.2s',
+        transitionTimingFunction: 'ease-out'
+      }
+    },
+    propTypes: {
+      size: number,
+      position: oneOf([
+        'top',
+        'right',
+        'bottom',
+        'left',
+      ])
+    }
+  },
+
+  {
+    name: 'Carousel',
+    tag: 'div',
+    props: {
+    },
+    style: props => ({
+      width: '100%',
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      '& > div:first-child': {
+        marginLeft: (props.index * -100) + '%',
+        transitionProperty: 'margin',
+        transitionDuration: '.2s',
+        transitionTimingFunction: 'ease-out'
+      }
+    }),
+    propTypes: {
+      index: number
+    }
+  },
+  {
+    name: 'ScrollCarousel',
+    tag: 'div',
+    props: {},
+    style: props => ({
+      width: '100%',
+      overflow: 'auto',
+      whiteSpace: 'nowrap',
+      scrollSnapPointsX: 'repeat(100%)',
+      scrollSnapType: 'mandatory',
+      scrollSnapDestination: '0% 100%',
+    })
+  },
+  {
+    name: 'CarouselSlide',
+    tag: 'div',
+    props: {
+      w: 1,
+      p: 3
+    },
+    style: props => ({
+      display: 'inline-block',
+      verticalAlign: 'middle'
+    })
+  },
+
+  {
+    name: 'Tooltip',
+    tag: 'div',
+    props: {
+      color: 'white',
+      bg: 'black'
+    },
+    style: props => ({
+      display: 'inline-block',
+      position: 'relative',
+      color: 'inherit',
+      backgroundColor: 'transparent',
+      '&::before': {
+        display: 'none',
+        content: `"${props.text}"`,
+        position: 'absolute',
+        bottom: '100%',
+        left: '50%',
+        transform: 'translate(-50%, -4px)',
+        whiteSpace: 'nowrap',
+        fontSize: px(idx('fontSizes.0', props.theme)),
+        paddingTop: px(idx('space.1', props.theme)),
+        paddingBottom: px(idx('space.1', props.theme)),
+        paddingLeft: px(idx('space.2', props.theme)),
+        paddingRight: px(idx('space.2', props.theme)),
+        color: color(props)(props.color),
+        backgroundColor: color(props)(props.bg),
+        borderRadius: px(props.theme.radius),
+      },
+      '&::after': {
+        display: 'none',
+        position: 'absolute',
+        bottom: '100%',
+        left: '50%',
+        transform: 'translate(-50%, 8px)',
+        content: '" "',
+        borderWidth: px(6),
+        borderStyle: 'solid',
+        borderColor: 'transparent',
+        borderTopColor: color(props)(props.bg),
+      },
+      '&:hover': {
+        '&::before, &::after': {
+          display: 'block'
+        },
+      }
+    })
+  },
+
+  {
+    name: 'Switch',
+    tag: 'div',
+    props: {
+      role: 'checkbox',
+      color: 'blue'
+    },
+    style: props => ({
+      display: 'inline-flex',
+      width: px(32),
+      height: px(20),
+      borderRadius: px(9999),
+      backgroundColor: props.checked ? color(props)(props.color) : 'transparent',
+      boxShadow: 'inset 0 0 0 2px',
+      transitionProperty: 'background-color',
+      transitionDuration: '.2s',
+      transitionTimingFunction: 'ease-out',
+      '&::after': {
+        content: '" "',
+        width: px(12),
+        height: px(12),
+        margin: px(4),
+        borderRadius: px(9999),
+        transitionProperty: 'transform, color',
+        transitionDuration: '.1s',
+        transitionTimingFunction: 'ease-out',
+        transform: props.checked ? `translateX(12px)` : `translateX(0)`,
+        backgroundColor: props.checked ? idx('colors.white', props.theme) : color(props)(props.color),
+      }
+    })
+  },
+
+  {
+    name: 'Close',
+    tag: 'ButtonTransparent',
+    props: {
+      p: 0,
+      f: 3,
+      children: '×'
+    },
+    style: props => ({
+      lineHeight: 1,
+      width: px(24),
+      height: px(24)
+    })
+  },
+
+  {
+    name: 'Star',
+    tag: 'div',
+    props: {
+      f: 3,
+      color: 'yellow',
+      children: props => props.checked ? '★' : '☆'
+    },
+    style: props => ({
+      position: 'relative',
+      width: '1em',
+      height: '1em',
+      '&::after': {
+        display: props.half ? 'block' : 'none',
+        content: '"★"',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '1em',
+        height: '1em',
+        clip: 'rect(0, .45em, 1em, 0)'
+      }
+    })
+  },
+
+  {
+    name: 'Arrow',
+    tag: 'div',
+    props: {},
+    style: props => ({
+      display: 'inline-block',
+      width: 0,
+      height: 0,
+      verticalAlign: 'middle',
+      borderRight: '.3125em solid transparent',
+      borderLeft: '.3125em solid transparent',
+      borderTop: props.direction === 'down' ? '.4375em solid' : null,
+      borderBottom: props.direction === 'up' ? '.4375em solid' : null
+    }),
+    propTypes: {
+      direction: oneOf([ 'up', 'down' ])
+    },
+    defaultProps: {
+      direction: 'down'
+    }
+  },
+
+  {
+    name: 'Embed',
+    tag: 'div',
+    props: {},
+    style: props => ({
+      position: 'relative',
+      height: 0,
+      padding: 0,
+      paddingBottom: `${(props.ratio || 9 / 16) * 100}%`,
+      overflow: 'hidden',
+      '& > iframe': {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        border: 0
+      }
+    })
+  },
+
+  {
+    name: 'Donut',
+    tag: DonutBase,
+    props: {
+      color: 'blue',
+      strokeWidth: 2,
+      value: 1
+    },
+    style:  {}
+  },
 ]
 
 export default components

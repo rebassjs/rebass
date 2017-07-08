@@ -1,6 +1,7 @@
 import Button from './Button.jsx'
 import ButtonOutline from './ButtonOutline.jsx'
 import ButtonCircle from './ButtonCircle.jsx'
+import ButtonTransparent from './ButtonTransparent.jsx'
 import Link from './Link.jsx'
 import NavLink from './NavLink.jsx'
 import BlockLink from './BlockLink.jsx'
@@ -23,6 +24,7 @@ import Textarea from './Textarea.jsx'
 import Checkbox from './Checkbox.jsx'
 import Radio from './Radio.jsx'
 import Slider from './Slider.jsx'
+import Switch from './Switch.jsx'
 
 import Image from './Image.jsx'
 import Avatar from './Avatar.jsx'
@@ -44,19 +46,35 @@ import Message from './Message.jsx'
 import Group from './Group.jsx'
 import Toolbar from './Toolbar.jsx'
 import Badge from './Badge.jsx'
+import Circle from './Circle.jsx'
 
 import Tabs from './Tabs.jsx'
 import TabItem from './TabItem.jsx'
+import Donut from './Donut.jsx'
 import DotButton from './DotButton.jsx'
+import Close from './Close.jsx'
+
+import Arrow from './Arrow.jsx'
+import Star from './Star.jsx'
+import Tooltip from './Tooltip.jsx'
+
 import Relative from './Relative.jsx'
 import Absolute from './Absolute.jsx'
 import Fixed from './Fixed.jsx'
 import Sticky from './Sticky.jsx'
 
+import Embed from './Embed.jsx'
+import Overlay from './Overlay.jsx'
+import Drawer from './Drawer.jsx'
+import Carousel from './Carousel.jsx'
+import ScrollCarousel from './ScrollCarousel.jsx'
+import CarouselSlide from './CarouselSlide.jsx'
+
 export const examples = {
   Button,
   ButtonOutline,
   ButtonCircle,
+  ButtonTransparent,
   Link,
   NavLink,
   BlockLink,
@@ -78,6 +96,7 @@ export const examples = {
   Checkbox,
   Radio,
   Slider,
+  Switch,
 
   Image,
   Avatar,
@@ -99,14 +118,29 @@ export const examples = {
   Group,
   Toolbar,
   Badge,
+  Circle,
 
   Tabs,
   TabItem,
+  Donut,
   DotButton,
+  Close,
+
+  Arrow,
+  Star,
+  Tooltip,
+
   Relative,
   Absolute,
   Fixed,
   Sticky,
+
+  Embed,
+  Overlay,
+  Drawer,
+  Carousel,
+  ScrollCarousel,
+  CarouselSlide,
 }
 
 export const components = Object.keys(examples)

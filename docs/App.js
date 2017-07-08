@@ -62,7 +62,11 @@ const App = props => (
 )
 
 const state = {
-  xray: false
+  xray: false,
+  overlay: false,
+  drawer: false,
+  checked: false,
+  fixed: false,
 }
 
 export default createProvider(state)(App)

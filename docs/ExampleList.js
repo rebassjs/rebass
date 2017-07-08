@@ -6,14 +6,14 @@ import Example from './Example'
 import { components } from './examples'
 
 const ExampleList = props => (
-  <Container>
+  <div>
     {components.map(name => (
       <Example
         key={name}
         name={name}
       />
     ))}
-  </Container>
+  </div>
 )
 
 export default ExampleList
