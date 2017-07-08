@@ -1,14 +1,15 @@
-import { Flex, Box } from 'grid-styled'
 import components from './components'
+import { Flex, Box } from './grid'
 import Provider from './Provider'
 import createLibrary from './create-library'
 
 const library = createLibrary(components)
-const Rebass = Object.assign({}, library, { Provider, Flex, Box })
 
 const { length } = Object.keys(library)
 
-export { Flex, Box } from 'grid-styled'
+const Rebass = Object.assign({}, library, { Provider, Flex, Box })
+
+export { Flex, Box } from './grid'
 export { default as Provider } from './Provider'
 export { default as hoc } from './hoc'
 export { default as theme } from './theme'

@@ -12,15 +12,17 @@ const Demo = props => (
 )
 
 const code = `<div>
-  <Heading mb={3}>Hello</Heading>
-  <Group>
-    <ButtonOutline>
-      Beep
-    </ButtonOutline>
-    <Button>
-      Boop
-    </Button>
-  </Group>
+  <Flex align='center'>
+    <Heading mr='auto'>Hello</Heading>
+    <Group>
+      <ButtonOutline>
+        Beep
+      </ButtonOutline>
+      <Button>
+        Boop
+      </Button>
+    </Group>
+  </Flex>
   <Divider my={4} color='gray3' />
   <Box mb={2}>
     <Label>Name</Label>

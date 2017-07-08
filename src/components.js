@@ -511,7 +511,7 @@ const components = [
       return Object.assign({
         borderWidth,
         borderStyle: 'solid',
-        borderColor: props.color || color(props)('gray', 2),
+        borderColor: color(props)(props.color || 'gray', 2),
         color: 'inherit'
       }, directions)
     },
