@@ -23,6 +23,7 @@ import Textarea from './Textarea.jsx'
 import Checkbox from './Checkbox.jsx'
 import Radio from './Radio.jsx'
 import Slider from './Slider.jsx'
+import Switch from './Switch.jsx'
 
 import Image from './Image.jsx'
 import Avatar from './Avatar.jsx'
@@ -48,11 +49,22 @@ import Circle from './Circle.jsx'
 
 import Tabs from './Tabs.jsx'
 import TabItem from './TabItem.jsx'
+import Donut from './Donut.jsx'
 import DotButton from './DotButton.jsx'
+import Star from './Star.jsx'
+import Tooltip from './Tooltip.jsx'
+
 import Relative from './Relative.jsx'
 import Absolute from './Absolute.jsx'
 import Fixed from './Fixed.jsx'
 import Sticky from './Sticky.jsx'
+
+import Embed from './Embed.jsx'
+import Overlay from './Overlay.jsx'
+import Drawer from './Drawer.jsx'
+import Carousel from './Carousel.jsx'
+import ScrollCarousel from './ScrollCarousel.jsx'
+import CarouselSlide from './CarouselSlide.jsx'
 
 export const examples = {
   Button,
@@ -79,6 +91,7 @@ export const examples = {
   Checkbox,
   Radio,
   Slider,
+  Switch,
 
   Image,
   Avatar,
@@ -104,11 +117,22 @@ export const examples = {
 
   Tabs,
   TabItem,
+  Donut,
   DotButton,
+  Star,
+  Tooltip,
+
   Relative,
   Absolute,
   Fixed,
   Sticky,
+
+  Embed,
+  Overlay,
+  Drawer,
+  Carousel,
+  ScrollCarousel,
+  CarouselSlide,
 }
 
 export const components = Object.keys(examples)

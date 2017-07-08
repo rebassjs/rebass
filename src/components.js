@@ -865,7 +865,7 @@ const components = [
         bottom: 'translateY(100%)',
       }
       if (!props.open) transform = transforms[position]
-      console.log(position)
+
       const top = /^(top|left|right)$/.test(position) ? 0 : null
       const bottom = /^(bottom|left|right)$/.test(position) ? 0 : null
       const left = /^(left|top|bottom)$/.test(position) ? 0 : null
@@ -951,6 +951,7 @@ const components = [
       bg: 'black'
     },
     style: props => ({
+      display: 'inline-block',
       position: 'relative',
       color: 'inherit',
       backgroundColor: 'transparent',

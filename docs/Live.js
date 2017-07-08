@@ -18,7 +18,7 @@ import Rebass, {
   theme
 } from 'rebass'
 
-const scope = Object.assign({}, Rebass, { styled })
+const _scope = Object.assign({}, Rebass, { styled })
 
 const Editor = hoc(styled(LiveEditor)`
   font-family: 'SF Mono', Menlo, monospace;
@@ -40,7 +40,13 @@ const Err = styled(LiveError)`
   background-color: red;
 `
 
+const toggle = key => state => ({
+  [key]: !state[key]
+})
+
 const Live = props => {
+  const scope = Object.assign({ toggle }, _scope, props)
+
   return (
     <LiveProvider
       {...props}
@@ -73,7 +79,10 @@ const Live = props => {
 }
 
 const map = state => ({
-  xray: state.xray
+  xray: state.xray,
+  overlay: state.overlay,
+  drawer: state.drawer,
+  checked: state.checked
 })
 
 export default connect(map)(Live)
