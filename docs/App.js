@@ -66,6 +66,7 @@ const state = {
   overlay: false,
   drawer: false,
   checked: false,
+  fixed: false,
 }
 
 export default createProvider(state)(App)

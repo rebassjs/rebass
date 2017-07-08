@@ -84,7 +84,8 @@ const map = state => ({
   xray: state.xray,
   overlay: state.overlay,
   drawer: state.drawer,
-  checked: state.checked
+  checked: state.checked,
+  fixed: state.fixed
 })
 
 export default connect(map)(Live)

@@ -1139,11 +1139,6 @@ const components = [
     },
     style:  {}
   },
-
-  // Close
-  // Menu
-  // Dropdown
-  // List
 ]
 
 export default components
