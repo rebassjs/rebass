@@ -1049,11 +1049,14 @@ const components = [
     name: 'Close',
     tag: 'ButtonTransparent',
     props: {
-      p: 1,
+      p: 0,
       f: 3,
       children: '×'
     },
     style: props => ({
+      lineHeight: 1,
+      width: px(24),
+      height: px(24)
     })
   },
 
@@ -1080,6 +1083,28 @@ const components = [
         clip: 'rect(0, .45em, 1em, 0)'
       }
     })
+  },
+
+  {
+    name: 'Arrow',
+    tag: 'div',
+    props: {},
+    style: props => ({
+      display: 'inline-block',
+      width: 0,
+      height: 0,
+      verticalAlign: 'middle',
+      borderRight: '.3125em solid transparent',
+      borderLeft: '.3125em solid transparent',
+      borderTop: props.direction === 'down' ? '.4375em solid' : null,
+      borderBottom: props.direction === 'up' ? '.4375em solid' : null
+    }),
+    propTypes: {
+      direction: oneOf([ 'up', 'down' ])
+    },
+    defaultProps: {
+      direction: 'down'
+    }
   },
 
   {

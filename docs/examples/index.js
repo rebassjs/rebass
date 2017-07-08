@@ -52,6 +52,9 @@ import Tabs from './Tabs.jsx'
 import TabItem from './TabItem.jsx'
 import Donut from './Donut.jsx'
 import DotButton from './DotButton.jsx'
+import Close from './Close.jsx'
+
+import Arrow from './Arrow.jsx'
 import Star from './Star.jsx'
 import Tooltip from './Tooltip.jsx'
 
@@ -121,6 +124,9 @@ export const examples = {
   TabItem,
   Donut,
   DotButton,
+  Close,
+
+  Arrow,
   Star,
   Tooltip,
 

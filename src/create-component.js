@@ -7,7 +7,8 @@ const createComponent = (config, components = {}) => {
     tag,
     props,
     style,
-    propTypes = {}
+    propTypes = {},
+    defaultProps = {}
   } = config
   if (!config || !tag || !style) return null
 
@@ -17,6 +18,7 @@ const createComponent = (config, components = {}) => {
   const Component = styled(Base).attrs(props)([], style)
 
   Component.propTypes = propTypes
+  Component.defaultProps = defaultProps
 
   return Component
 }

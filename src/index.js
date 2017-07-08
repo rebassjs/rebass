@@ -74,6 +74,7 @@ export const {
   CarouselSlide,
   Tooltip,
   Switch,
+  Arrow,
   Star,
   Embed,
   Donut,
