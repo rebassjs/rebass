@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   bool,
   string,
@@ -1003,6 +1004,70 @@ const components = [
         clip: 'rect(0, .45em, 1em, 0)'
       }
     })
+  },
+
+  {
+    name: 'Embed',
+    tag: 'div',
+    props: {},
+    style: props => ({
+      position: 'relative',
+      height: 0,
+      padding: 0,
+      paddingBottom: `${(props.ratio || 9 / 16) * 100}%`,
+      overflow: 'hidden',
+      '& > iframe': {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        border: 0
+      }
+    })
+  },
+
+  {
+    name: 'Donut',
+    tag: props => {
+      const R = 16 - props.strokeWidth
+      const C = 2 * Math.PI * R
+      return (
+        <svg
+          {...props}
+          viewBox='0 0 32 32'
+          width={props.size || 128}
+          height={props.size || 128}>
+          <circle
+            cx={16}
+            cy={16}
+            r={R}
+            fill='none'
+            stroke='currentcolor'
+            strokeWidth={props.strokeWidth}
+            opacity='0.125'
+          />
+          <circle
+            cx={16}
+            cy={16}
+            r={R}
+            fill='none'
+            stroke='currentcolor'
+            strokeWidth={props.strokeWidth}
+            strokeDasharray={C}
+            strokeDashoffset={C - props.value * C}
+            transform='rotate(-90 16 16)'
+          />
+        </svg>
+      )
+    },
+    props: {
+      color: 'blue',
+      strokeWidth: 4,
+      value: 1
+    },
+    style:  {}
   },
 ]
 

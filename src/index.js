@@ -72,6 +72,8 @@ export const {
   Tooltip,
   Switch,
   Star,
+  Embed,
+  Donut,
 } = library
 
 export default Rebass
