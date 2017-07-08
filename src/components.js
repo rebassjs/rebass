@@ -946,6 +946,39 @@ const components = [
       }
     })
   },
+
+  {
+    name: 'Switch',
+    tag: 'div',
+    props: {
+      role: 'checkbox',
+      color: 'blue'
+    },
+    style: props => ({
+      display: 'inline-flex',
+      width: px(32),
+      height: px(20),
+      borderRadius: px(9999),
+      backgroundColor: props.checked ? color(props)(props.color) : 'transparent',
+      boxShadow: 'inset 0 0 0 2px',
+      transitionProperty: 'background-color',
+      transitionDuration: '.2s',
+      transitionTimingFunction: 'ease-out',
+      '&::after': {
+        content: '" "',
+        width: px(12),
+        height: px(12),
+        margin: px(4),
+        borderRadius: px(9999),
+        transitionProperty: 'transform, color',
+        transitionDuration: '.1s',
+        transitionTimingFunction: 'ease-out',
+        transform: props.checked ? `translateX(12px)` : `translateX(0)`,
+        backgroundColor: props.checked ? idx('colors.white', props.theme) : color(props)(props.color),
+
+      }
+    })
+  },
 ]
 
 export const getDrawerStyle = ({ open, position, size }) => {
