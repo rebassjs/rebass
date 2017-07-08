@@ -40,7 +40,8 @@
     "nyc": "^11.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^15.6.1",
+    "react-x-ray": "^1.0.0-2"
   },
   "repository": {
     "type": "git",

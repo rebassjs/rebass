@@ -1,6 +1,7 @@
 import Button from './Button.jsx'
 import ButtonOutline from './ButtonOutline.jsx'
 import ButtonCircle from './ButtonCircle.jsx'
+import ButtonTransparent from './ButtonTransparent.jsx'
 import Link from './Link.jsx'
 import NavLink from './NavLink.jsx'
 import BlockLink from './BlockLink.jsx'
@@ -70,6 +71,7 @@ export const examples = {
   Button,
   ButtonOutline,
   ButtonCircle,
+  ButtonTransparent,
   Link,
   NavLink,
   BlockLink,

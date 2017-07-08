@@ -2,6 +2,8 @@ import React from 'react'
 import { configure, addDecorator } from '@storybook/react'
 import { injectGlobal } from 'styled-components'
 import { Box } from 'grid-styled'
+import { createProvider } from 'funcup'
+import XRay from 'react-x-ray'
 import Provider from '../src/Provider'
 
 injectGlobal([], {
@@ -14,12 +16,26 @@ injectGlobal([], {
   }
 })
 
-addDecorator(story => (
+const hoc = createProvider({
+  xray: false
+})
+
+const toggleXRay = state => ({ xray: !state.xray })
+
+const Demo = hoc(props => (
   <Provider>
-    <Box p={3}>
-      {story()}
-    </Box>
+    <XRay disabled={!props.xray}>
+      <Box
+        p={3}
+        onClick={e => props.update(toggleXRay)}>
+        {props.story()}
+      </Box>
+    </XRay>
   </Provider>
+))
+
+addDecorator(story => (
+  <Demo story={story} />
 ))
 
 const req = require.context('.', true, /\.js$/)

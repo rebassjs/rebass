@@ -1,0 +1,3 @@
+<ButtonTransparent>
+  Hello
+</ButtonTransparent>

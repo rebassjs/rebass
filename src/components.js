@@ -94,6 +94,27 @@ const components = [
     })
   },
   {
+    name: 'ButtonTransparent',
+    tag: 'Button',
+    props: {
+      color: 'inherit',
+      bg: 'transparent'
+    },
+    style: props => ({
+      '&:hover': {
+        color: color(props)(props.color, 8),
+        backgroundColor: 'transparent'
+      },
+      '&:focus': {
+        boxShadow: `inset 0 0 0 2px, 0 0 0 2px ${color(props)(props.color, 3)}`
+      },
+      '&:active': {
+        backgroundColor: 'transparent',
+        boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${color(props)(props.color, 9)}`
+      }
+    })
+  },
+  {
     name: 'Link',
     tag: 'a',
     props: {
@@ -1021,6 +1042,18 @@ const components = [
         transform: props.checked ? `translateX(12px)` : `translateX(0)`,
         backgroundColor: props.checked ? idx('colors.white', props.theme) : color(props)(props.color),
       }
+    })
+  },
+
+  {
+    name: 'Close',
+    tag: 'ButtonTransparent',
+    props: {
+      p: 1,
+      f: 3,
+      children: '×'
+    },
+    style: props => ({
     })
   },
 
