@@ -71,6 +71,7 @@ export const {
   CarouselSlide,
   Tooltip,
   Switch,
+  Star,
 } = library
 
 export default Rebass

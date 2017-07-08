@@ -979,6 +979,31 @@ const components = [
       }
     })
   },
+
+  {
+    name: 'Star',
+    tag: 'div',
+    props: {
+      f: 3,
+      color: 'yellow',
+      children: props => props.checked ? '★' : '☆'
+    },
+    style: props => ({
+      position: 'relative',
+      width: '1em',
+      height: '1em',
+      '&::after': {
+        display: props.half ? 'block' : 'none',
+        content: '"★"',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '1em',
+        height: '1em',
+        clip: 'rect(0, .45em, 1em, 0)'
+      }
+    })
+  },
 ]
 
 export const getDrawerStyle = ({ open, position, size }) => {
