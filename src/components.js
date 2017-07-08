@@ -872,6 +872,33 @@ const components = [
     }
   },
 
+  {
+    name: 'Carousel',
+    tag: 'div',
+    props: {
+    },
+    style: props => ({
+      width: '100%',
+      overflow: 'auto',
+      whiteSpace: 'nowrap',
+      scrollSnapPointsX: 'repeat(100%)',
+      scrollSnapType: 'mandatory',
+      scrollSnapDestination: '0% 100%',
+    })
+  },
+  {
+    name: 'CarouselSlide',
+    tag: 'div',
+    props: {
+      w: 1,
+      p: 3
+    },
+    style: props => ({
+      display: 'inline-block',
+      verticalAlign: 'middle'
+    })
+  },
+
 ]
 
 export const getDrawerStyle = ({ open, position, size }) => {

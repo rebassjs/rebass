@@ -67,6 +67,8 @@ export const {
   Sticky,
   Overlay,
   Drawer,
+  Carousel,
+  CarouselSlide,
 } = library
 
 export default Rebass
