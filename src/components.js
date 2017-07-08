@@ -3,6 +3,7 @@ import {
   bool,
   string,
   number,
+  oneOf,
 } from 'prop-types'
 import {
   space,
@@ -19,6 +20,7 @@ import {
   caps,
   align,
 } from './util'
+import DonutBase from './DonutBase'
 
 const components = [
   // Buttons
@@ -702,30 +704,9 @@ const components = [
       maxHeight: '100vh',
       overflow: 'auto',
       borderRadius: px(props.theme.radius),
-      // Safari seems to max out
-      boxShadow: `0 0 0 999px ${darken(3/4)}`,
-      /*
-      '&:before': {
-        content: '" "',
-        position: 'fixed',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        backgroundColor: darken(3/4)
-      }
-      */
+      boxShadow: `0 0 0 60vmax ${darken(1/2)}, 0 0 32px ${darken(1/4)}`,
     })
   },
-
-  // Close
-  // Donut
-  // Switch
-  // Drawer
-  // Menu
-  // Dropdown
-  // List
-  // Overlay
 
   {
     name: 'Tabs',
@@ -867,9 +848,52 @@ const components = [
     name: 'Drawer',
     tag: 'Fixed',
     props: {
-      bg: 'gray'
+      bg: 'white',
+      size: 320,
     },
     style: props => {
+      const position = props.position || 'left'
+      const size = props.size || 320
+      const h = /^(left|right)$/.test(position) ? 1 : 0
+      const width = h ? px(size) : null
+      const height = h ? null : px(size)
+      let transform
+      const transforms = {
+        left: 'translateX(-100%)',
+        right: 'translateX(100%)',
+        top: 'translateY(-100%)',
+        bottom: 'translateY(100%)',
+      }
+      if (!props.open) transform = transforms[position]
+      console.log(position)
+      const top = /^(top|left|right)$/.test(position) ? 0 : null
+      const bottom = /^(bottom|left|right)$/.test(position) ? 0 : null
+      const left = /^(left|top|bottom)$/.test(position) ? 0 : null
+      const right = /^(right|top|bottom)$/.test(position) ? 0 : null
+
+      return {
+        top,
+        bottom,
+        left,
+        right,
+        width,
+        height,
+        transform,
+        overflowX: 'hidden',
+        overflowY: 'auto',
+        transitionProperty: 'transform',
+        transitionDuration: '.2s',
+        transitionTimingFunction: 'ease-out'
+      }
+    },
+    propTypes: {
+      size: number,
+      position: oneOf([
+        'top',
+        'right',
+        'bottom',
+        'left',
+      ])
     }
   },
 
@@ -878,6 +902,25 @@ const components = [
     tag: 'div',
     props: {
     },
+    style: props => ({
+      width: '100%',
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      '& > div:first-child': {
+        marginLeft: (props.index * -100) + '%',
+        transitionProperty: 'margin',
+        transitionDuration: '.2s',
+        transitionTimingFunction: 'ease-out'
+      }
+    }),
+    propTypes: {
+      index: number
+    }
+  },
+  {
+    name: 'ScrollCarousel',
+    tag: 'div',
+    props: {},
     style: props => ({
       width: '100%',
       overflow: 'auto',
@@ -920,10 +963,10 @@ const components = [
         transform: 'translate(-50%, -4px)',
         whiteSpace: 'nowrap',
         fontSize: px(idx('fontSizes.0', props.theme)),
-        paddingTop: px(props.theme.space[1]),
-        paddingBottom: px(props.theme.space[1]),
-        paddingLeft: px(props.theme.space[2]),
-        paddingRight: px(props.theme.space[2]),
+        paddingTop: px(idx('space.1', props.theme)),
+        paddingBottom: px(idx('space.1', props.theme)),
+        paddingLeft: px(idx('space.2', props.theme)),
+        paddingRight: px(idx('space.2', props.theme)),
         color: color(props)(props.color),
         backgroundColor: color(props)(props.bg),
         borderRadius: px(props.theme.radius),
@@ -976,7 +1019,6 @@ const components = [
         transitionTimingFunction: 'ease-out',
         transform: props.checked ? `translateX(12px)` : `translateX(0)`,
         backgroundColor: props.checked ? idx('colors.white', props.theme) : color(props)(props.color),
-
       }
     })
   },
@@ -1030,48 +1072,19 @@ const components = [
 
   {
     name: 'Donut',
-    tag: props => {
-      const R = 16 - props.strokeWidth
-      const C = 2 * Math.PI * R
-      return (
-        <svg
-          {...props}
-          viewBox='0 0 32 32'
-          width={props.size || 128}
-          height={props.size || 128}>
-          <circle
-            cx={16}
-            cy={16}
-            r={R}
-            fill='none'
-            stroke='currentcolor'
-            strokeWidth={props.strokeWidth}
-            opacity='0.125'
-          />
-          <circle
-            cx={16}
-            cy={16}
-            r={R}
-            fill='none'
-            stroke='currentcolor'
-            strokeWidth={props.strokeWidth}
-            strokeDasharray={C}
-            strokeDashoffset={C - props.value * C}
-            transform='rotate(-90 16 16)'
-          />
-        </svg>
-      )
-    },
+    tag: DonutBase,
     props: {
       color: 'blue',
-      strokeWidth: 4,
+      strokeWidth: 2,
       value: 1
     },
     style:  {}
   },
-]
 
-export const getDrawerStyle = ({ open, position, size }) => {
-}
+  // Close
+  // Menu
+  // Dropdown
+  // List
+]
 
 export default components
