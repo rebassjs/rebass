@@ -1,5 +1,6 @@
 import React from 'react'
 import { configure, addDecorator } from '@storybook/react'
+import { setOptions } from '@storybook/addon-options'
 import { injectGlobal } from 'styled-components'
 import { Box } from 'grid-styled'
 import { createProvider } from 'funcup'
@@ -37,6 +38,12 @@ const Demo = hoc(props => (
 addDecorator(story => (
   <Demo story={story} />
 ))
+
+setOptions({
+  name: 'Rebass',
+  url: 'http://jxnblk.com/rebass',
+  showDownPanel: false,
+})
 
 const req = require.context('.', true, /\.js$/)
 
