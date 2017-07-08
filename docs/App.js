@@ -19,6 +19,7 @@ import Configuration from './Configuration'
 import Components from './Components'
 import ExampleList from './ExampleList'
 import Customizing from './Customizing'
+import GridStyled from './GridStyled'
 import CTA from './CTA'
 import Footer from './Footer'
 
@@ -51,6 +52,7 @@ const App = props => (
           <Props />
           <Configuration />
           <Customizing />
+          <GridStyled />
           <Components />
           <ExampleList />
           <CTA />

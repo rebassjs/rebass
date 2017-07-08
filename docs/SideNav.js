@@ -27,14 +27,15 @@ const SideNav = props => (
       <Link name='Props' />
       <Link name='Configuration' />
       <Link name='Customizing' />
-      <Divider color='gray3' />
+      <Link name='Grid Styled' />
+      <Divider my={3} color='gray3' />
       {components.map(name => (
         <Link
           key={name}
           name={name}
         />
       ))}
-      <Divider color='gray3' />
+      <Divider my={3} color='gray3' />
       <Link href='https://github.com/jxnblk/rebass' children='GitHub' />
       <Link href='#' children='Top' />
     </Box>

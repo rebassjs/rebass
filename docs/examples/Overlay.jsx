@@ -12,7 +12,7 @@
         left
         onClick={e => update(toggle('overlay'))}
       />
-      <Overlay>
+      <Overlay w={256}>
         <Heading>Hello</Heading>
       </Overlay>
     </div>

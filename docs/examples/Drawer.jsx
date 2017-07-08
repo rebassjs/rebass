@@ -15,6 +15,7 @@
   <Drawer
     open={drawer}
     position='right'
+    p={3}
     color='white'
     bg='gray9'>
     <Heading>Hello</Heading>
