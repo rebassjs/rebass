@@ -693,7 +693,6 @@ const components = [
       bg: 'white'
     },
     style: props => ({
-      border: '1px solid tomato',
       position: 'fixed',
       top: '50%',
       left: '50%',
@@ -703,7 +702,7 @@ const components = [
       overflow: 'auto',
       borderRadius: px(props.theme.radius),
       // Safari seems to max out
-      boxShadow: `0 0 0 9999px ${darken(3/4)}`,
+      boxShadow: `0 0 0 999px ${darken(3/4)}`,
       /*
       '&:before': {
         content: '" "',
@@ -862,7 +861,20 @@ const components = [
       left: bool,
       z: number
     }
-  }
+  },
+  {
+    name: 'Drawer',
+    tag: 'Fixed',
+    props: {
+      bg: 'gray'
+    },
+    style: props => {
+    }
+  },
+
 ]
+
+export const getDrawerStyle = ({ open, position, size }) => {
+}
 
 export default components

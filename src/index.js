@@ -66,6 +66,7 @@ export const {
   Fixed,
   Sticky,
   Overlay,
+  Drawer,
 } = library
 
 export default Rebass
