@@ -37,7 +37,7 @@ const StickySide = styled(Box)`
 `
 
 const App = props => (
-  <Provider>
+  <Provider theme={theme}>
     <NavBar />
     <Header />
     <About />
@@ -62,6 +62,10 @@ const App = props => (
     </Container>
   </Provider>
 )
+
+const theme = {
+  maxWidth: 1280
+}
 
 const state = {
   xray: false,

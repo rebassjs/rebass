@@ -475,7 +475,7 @@ const components = [
       mx: 'auto'
     },
     style: props => ({
-      maxWidth: px(props.width || 1024),
+      maxWidth: px(props.width || idx('maxWidth', props.theme) || 1024),
       width: 'auto'
     }),
     propTypes: {
