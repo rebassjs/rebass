@@ -12,7 +12,8 @@ const Section = props => (
     is='section'
     id={props.name}
     px={0}
-    my={6}>
+    py={4}
+    >
     <Heading>
       <BlockLink href={'#' + props.name}>
         {props.name}

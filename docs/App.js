@@ -23,10 +23,13 @@ import GridStyled from './GridStyled'
 import CTA from './CTA'
 import Footer from './Footer'
 
+import XRay from 'react-x-ray'
+
 const StickySide = styled(Box)`
   display: none;
 
   @media screen and (min-width: 32em) {
+    flex: none;
     display: block;
     position: -webkit-sticky;
     position: sticky;
@@ -43,11 +46,16 @@ const App = props => (
     <About />
     <Testimonials />
     <Container>
-      <Flex wrap>
-        <StickySide w={[ 1, 1/3, 1/4 ]}>
+      <Flex wrap={[ true, false ]}>
+        <StickySide
+          w={[ 1, 160 ]}
+          pr={3}>
           <SideNav />
         </StickySide>
-        <Box w={[ 1, 2/3, 3/4 ]}>
+        <Box
+          flex='0 1 auto'
+          w={[ 1, 'calc(100% - 160px)' ]}
+          pl={[ 0, 3 ]}>
           <Demo />
           <Props />
           <Configuration />

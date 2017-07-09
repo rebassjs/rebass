@@ -21,7 +21,7 @@ const SideNav = props => (
     <Box
       py={3}
       ml={-2}
-      pr={4}>
+      my={4}>
       <Link href='#' children='Top' />
       <Link name='Demo' />
       <Link name='Props' />
