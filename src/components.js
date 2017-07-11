@@ -79,8 +79,9 @@ const components = [
         boxShadow: `inset 0 0 0 2px, 0 0 0 2px`
       },
       '&:active': {
-        backgroundColor: 'transparent',
-        boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${darken(1/4)}`
+        color: color(props)('white'),
+        backgroundColor: color(props)(props.color),
+        boxShadow: `inset 0 0 0 2px ${color(props)(props.color)}, inset 0 0 8px ${darken(1/4)}`
       }
     })
   },
