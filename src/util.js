@@ -6,12 +6,9 @@ export const idx = (props, obj) => {
 
 export const px = n => typeof n === 'number' ? n + 'px' : n
 
-export const color = props => (n = 'blue', i = '') =>
-  idx([ 'colors', baseKey(n) + i ], props.theme) || n
+export const color = props => (n = 'blue') => idx([ 'colors', n ], props.theme) || n
 
 export const darken = n => `rgba(0, 0, 0, ${n})`
-
-export const baseKey = n => n.replace(/\d/g, '')
 
 export const caps = props => props.caps ? ({
   textTransform: 'uppercase',
@@ -31,7 +28,6 @@ export default {
   px,
   color,
   darken,
-  baseKey,
   caps,
   align
 }

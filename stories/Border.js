@@ -11,7 +11,7 @@ storiesOf('Border', module)
   .add('Color', () => (
     <Border
       p={2}
-      color='tomato'>
+      color='blue'>
       Hello
     </Border>
   ))
@@ -19,7 +19,7 @@ storiesOf('Border', module)
     <Border
       p={2}
       borderWidth={4}
-      color='tomato'>
+      color='blue'>
       Hello
     </Border>
   ))

@@ -16,11 +16,12 @@ import {
   px,
   color,
   darken,
-  baseKey,
   caps,
   align,
 } from './util'
 import DonutBase from './DonutBase'
+
+const bold = props => idx('weights.1', props.theme)
 
 const components = [
   // Buttons
@@ -37,7 +38,7 @@ const components = [
     style: props => ({
       display: 'inline-block',
       fontFamily: 'inherit',
-      fontWeight: idx('weights.1', props.theme),
+      fontWeight: bold(props),
       lineHeight: 1.25,
       textAlign: 'center',
       textDecoration: 'none',
@@ -46,15 +47,15 @@ const components = [
       appearance: 'none',
       backgroundColor: color(props)(props.bg),
       '&:hover': {
-        backgroundColor: color(props)(props.bg, 6),
+        boxShadow: `inset 0 0 0 999px ${darken(1/8)}`
       },
       '&:focus': {
         outline: 0,
-        boxShadow: `0 0 0 2px ${color(props)(props.bg, 3)}`
+        boxShadow: `0 0 0 2px ${color(props)(props.bg)}`
       },
       '&:active': {
         backgroundColor: color(props)(props.bg, 6),
-        boxShadow: `inset 0 0 8px ${color(props)(props.bg, 9)}`
+        boxShadow: `inset 0 0 8px ${darken(1/4)}`
       },
       '&:disabled': {
         opacity: 1/4
@@ -71,15 +72,16 @@ const components = [
     style: props => ({
       boxShadow: `inset 0 0 0 2px`,
       '&:hover': {
-        color: color(props)(props.color, 8),
-        backgroundColor: 'transparent'
+        color: color(props)('white'),
+        backgroundColor: color(props)(props.color)
       },
       '&:focus': {
-        boxShadow: `inset 0 0 0 2px, 0 0 0 2px ${color(props)(props.color, 3)}`
+        boxShadow: `inset 0 0 0 2px, 0 0 0 2px`
       },
       '&:active': {
-        backgroundColor: 'transparent',
-        boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${color(props)(props.color, 9)}`
+        color: color(props)('white'),
+        backgroundColor: color(props)(props.color),
+        boxShadow: `inset 0 0 0 2px ${color(props)(props.color)}, inset 0 0 8px ${darken(1/4)}`
       }
     })
   },
@@ -102,15 +104,15 @@ const components = [
     },
     style: props => ({
       '&:hover': {
-        color: color(props)(props.color, 8),
+        color: color(props)(props.color),
         backgroundColor: 'transparent'
       },
       '&:focus': {
-        boxShadow: `inset 0 0 0 2px, 0 0 0 2px ${color(props)(props.color, 3)}`
+        boxShadow: `inset 0 0 0 2px, 0 0 0 2px`
       },
       '&:active': {
         backgroundColor: 'transparent',
-        boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${color(props)(props.color, 9)}`
+        boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${darken(1/4)}`
       }
     })
   },
@@ -120,11 +122,7 @@ const components = [
     props: {
       color: 'blue'
     },
-    style: props => ({
-      '&:hover': {
-        color: color(props)(props.color, 8)
-      }
-    })
+    style: {}
   },
   {
     name: 'NavLink',
@@ -135,7 +133,7 @@ const components = [
     },
     style: props => ({
       display: 'inline-block',
-      fontWeight: idx('weights.1', props.theme),
+      fontWeight: bold(props),
       textDecoration: 'none',
       whiteSpace: 'nowrap',
       color: 'inherit',
@@ -172,7 +170,7 @@ const components = [
     },
     style: props => Object.assign({
       textAlign: align(props),
-      fontWeight: props.bold ? idx('weights.1', props.theme) : idx('weights.0', props.theme)
+      fontWeight: props.bold ? bold(props) : idx('weights.0', props.theme)
     }, caps(props)),
     propTypes: {
       left: bool,
@@ -305,7 +303,7 @@ const components = [
       fontSize: 'inherit',
       borderWidth: px(1),
       borderStyle: 'solid',
-      borderColor: color(props)('gray', 2),
+      borderColor: color(props)('gray2'),
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
@@ -333,7 +331,7 @@ const components = [
       height: 32,
       borderWidth: px(1),
       borderStyle: 'solid',
-      borderColor: color(props)('gray', 2),
+      borderColor: color(props)('gray2'),
       borderRadius: px(props.theme.radius),
       '&:focus': {
         outline: 'none',
@@ -359,7 +357,7 @@ const components = [
       fontSize: 'inherit',
       borderWidth: px(1),
       borderStyle: 'solid',
-      borderColor: color(props)('gray', 2),
+      borderColor: color(props)('gray2'),
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
@@ -404,7 +402,7 @@ const components = [
       cursor: 'pointer',
       color: 'inherit',
       borderRadius: px(99999),
-      backgroundColor: color(props)('gray', 2),
+      backgroundColor: color(props)('gray2'),
       appearance: 'none',
       '&::-webkit-slider-thumb': {
         width: px(16),
@@ -511,7 +509,7 @@ const components = [
       return Object.assign({
         borderWidth,
         borderStyle: 'solid',
-        borderColor: color(props)(props.color || 'gray', 2),
+        borderColor: color(props)(props.color || 'gray2'),
         color: 'inherit'
       }, directions)
     },
@@ -542,7 +540,7 @@ const components = [
     },
     style: props => ({
       overflow: 'hidden',
-      boxShadow: `inset 0 0 0 1px ${color(props)('gray', 2)}, 0 0 4px ${color(props)('gray', 2)}`,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}, 0 0 4px ${color(props)('gray2')}`,
       borderRadius: px(props.theme.radius)
     })
   },
@@ -585,7 +583,7 @@ const components = [
       p: 2,
     },
     style: props => ({
-      fontWeight: idx('weights.1', props.theme),
+      fontWeight: bold(props),
       borderBottomWidth: px(1),
       borderBottomStyle: 'solid',
     })
@@ -598,7 +596,7 @@ const components = [
       p: 2,
     },
     style: props => ({
-      fontWeight: idx('weights.1', props.theme),
+      fontWeight: bold(props),
       borderTopWidth: px(1),
       borderTopStyle: 'solid',
     })
@@ -610,17 +608,17 @@ const components = [
     tag: 'progress',
     props: {
       w: 1,
-      m: 0
+      m: 0,
+      bg: 'gray2'
     },
     style: props => ({
       display: 'block',
       height: px(idx('space.1', props.theme)),
-      backgroundColor: color(props)('gray', 2),
       borderRadius: px(props.theme.radius),
       overflow: 'hidden',
       appearance: 'none',
       '&::-webkit-progress-bar': {
-        backgroundColor: color(props)('gray', 2)
+        backgroundColor: color(props)(props.bg)
       },
       '&::-webkit-progress-value': {
         backgroundColor: color(props)(props.color)
@@ -640,7 +638,7 @@ const components = [
       bg: 'blue'
     },
     style: props => ({
-      fontWeight: idx('weights.1', props.theme)
+      fontWeight: bold(props)
     })
   },
   {
@@ -689,7 +687,7 @@ const components = [
       bg: 'blue'
     },
     style: props => ({
-      fontWeight: idx('weights.1', props.theme),
+      fontWeight: bold(props),
       display: 'inline-block',
       verticalAlign: 'middle',
       borderRadius: px(props.theme.radius)
@@ -737,7 +735,7 @@ const components = [
       display: 'flex',
       borderBottomWidth: px(1),
       borderBottomStyle: 'solid',
-      borderColor: color(props)('gray', 2)
+      borderColor: color(props)('gray2')
     })
   },
   {
@@ -750,7 +748,7 @@ const components = [
     },
     style: props => ({
       textDecoration: 'none',
-      fontWeight: idx('weights.1', props.theme),
+      fontWeight: bold(props),
       color: props.active ? color(props)('blue') : 'inherit',
       borderBottomWidth: props.active ? 2 : 0,
       borderBottomStyle: 'solid',
@@ -1040,7 +1038,7 @@ const components = [
         transitionDuration: '.1s',
         transitionTimingFunction: 'ease-out',
         transform: props.checked ? `translateX(12px)` : `translateX(0)`,
-        backgroundColor: props.checked ? idx('colors.white', props.theme) : color(props)(props.color),
+        backgroundColor: props.checked ? color(props)('white') : color(props)(props.color),
       }
     })
   },
