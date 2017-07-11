@@ -98,24 +98,19 @@ test('util.color returns a color from the theme', t => {
   const cx = util.color({ theme })
   const a = cx()
   const b = cx('green')
-  const c = cx('red', 3)
+  const c = cx('red3')
   const d = cx('pink3')
-  const e = cx('teal2', 5)
+  const e = cx('teal5')
   t.is(a, theme.colors.blue)
   t.is(b, theme.colors.green)
   t.is(c, theme.colors.red3)
-  t.is(d, theme.colors.pink)
+  t.is(d, theme.colors.pink3)
   t.is(e, theme.colors.teal5)
 })
 
 test('util.darken returns and rgba value', t => {
   const a = util.darken(1/2)
   t.is(a, 'rgba(0, 0, 0, 0.5)')
-})
-
-test('util.baseKey gets the base key string', t => {
-  const a = util.baseKey('blue2')
-  t.is(a, 'blue')
 })
 
 test('util.caps returns a caps style object', t => {
