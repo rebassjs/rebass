@@ -811,9 +811,10 @@ const components = [
     style: props => ({
       position: 'absolute',
       top: props.top ? 0 : null,
-      right: props.right ? 0 : null,
+      right: props.center ? null : (props.right ? 0 : null),
       bottom: props.bottom ? 0 : null,
-      left: props.left ? 0 : null,
+      left: props.center ? '50%' : (props.left ? 0 : null),
+      transform: props.center ? 'translateX(-50%)' : null,
       zIndex: props.z
     }),
     propTypes: {
@@ -821,6 +822,7 @@ const components = [
       right: bool,
       bottom: bool,
       left: bool,
+      center: bool,
       z: number
     }
   },
