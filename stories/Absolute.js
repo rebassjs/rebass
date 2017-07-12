@@ -1,63 +1,54 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Fixed } from '../src'
+import { Absolute } from '../src'
 
-storiesOf('Fixed', module)
+storiesOf('Absolute', module)
   .add('Default', () => (
-    <Fixed
-      children='Fixed'
-    />
-  ))
-  .add('Bottom Right', () => (
-    <Fixed
-      bottom
-      right
-      children='Fixed'
-    />
+    <Absolute children='Absolute' />
   ))
   .add('Center', () => (
-    <Fixed 
+    <Absolute 
       center
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
   .add('CenterX', () => (
-    <Fixed 
+    <Absolute 
       centerX 
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
   .add('CenterY', () => (
-    <Fixed 
+    <Absolute 
       centerY 
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
   .add('CenterX Top', () => (
-    <Fixed 
+    <Absolute 
       centerX 
       top 
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
   .add('CenterX Bottom', () => (
-    <Fixed 
+    <Absolute 
       centerX 
       bottom 
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
   .add('CenterY Left', () => (
-    <Fixed 
+    <Absolute 
       centerY 
       left 
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
   .add('CenterY Right', () => (
-    <Fixed 
+    <Absolute 
       centerY 
       right 
-      children='Fixed' 
+      children='Absolute' 
     />
   ))
