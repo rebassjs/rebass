@@ -15,6 +15,7 @@ import Testimonials from './Testimonials'
 import SideNav from './SideNav'
 import Demo from './Demo'
 import Props from './Props'
+import ResponsiveStyles from './ResponsiveStyles'
 import Configuration from './Configuration'
 import Components from './Components'
 import ExampleList from './ExampleList'
@@ -58,6 +59,7 @@ const App = props => (
           pl={[ 0, 3 ]}>
           <Demo />
           <Props />
+          <ResponsiveStyles />
           <Configuration />
           <Customizing />
           <GridStyled />

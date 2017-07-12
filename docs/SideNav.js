@@ -25,6 +25,7 @@ const SideNav = props => (
       <Link href='#' children='Top' />
       <Link name='Demo' />
       <Link name='Props' />
+      <Link name='Responsive Styles' />
       <Link name='Configuration' />
       <Link name='Customizing' />
       <Link name='Grid Styled' />
