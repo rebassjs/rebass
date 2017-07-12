@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {
   compose,
-  defaultProps
+  // defaultProps // doesn't work with styled-components' whitelist
 } from 'recompose'
 import tag from './tag'
 import hoc from './hoc'
