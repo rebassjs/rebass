@@ -23,11 +23,37 @@ export const align = props => {
   return null
 }
 
+export const center = props => {
+  if (props.center || (props.centerX && props.centerY)) {
+    return {
+      top: '50%',
+      bottom: 'auto',
+      left: '50%',
+      right: 'auto',
+      transform: 'translate(-50%, -50%)'
+    }
+  } else if (props.centerX) {
+    return {
+      left: '50%',
+      right: 'auto',
+      transform: 'translateX(-50%)'
+    }
+  } else if (props.centerY) {
+    return {
+      top: '50%',
+      bottom: 'auto',
+      transform: 'translateY(-50%)'
+    }
+  }
+  return null
+}
+
 export default {
   idx,
   px,
   color,
   darken,
   caps,
-  align
+  align,
+  center,
 }
