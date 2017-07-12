@@ -8,6 +8,7 @@ import {
 } from 'rebass'
 import Live from './Live'
 import Section from './Section'
+import PropsTable from './PropsTable'
 
 const Props = props => (
   <Section name='Props'>
@@ -34,6 +35,7 @@ const Props = props => (
         {` for more.`}
       </Text>
     </Box>
+    <PropsTable />
   </Section>
 )
 
