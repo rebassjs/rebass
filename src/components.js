@@ -27,7 +27,7 @@ const components = [
   // Buttons
   {
     name: 'Button',
-    tag: 'button',
+    type: 'button',
     props: {
       f: 1,
       m: 0,
@@ -64,7 +64,7 @@ const components = [
   },
   {
     name: 'ButtonOutline',
-    tag: 'Button',
+    type: 'Button',
     props: {
       color: 'blue',
       bg: 'transparent'
@@ -87,7 +87,7 @@ const components = [
   },
   {
     name: 'ButtonCircle',
-    tag: 'Button',
+    type: 'Button',
     props: {
       px: 3
     },
@@ -97,7 +97,7 @@ const components = [
   },
   {
     name: 'ButtonTransparent',
-    tag: 'Button',
+    type: 'Button',
     props: {
       color: 'inherit',
       bg: 'transparent'
@@ -118,7 +118,7 @@ const components = [
   },
   {
     name: 'Link',
-    tag: 'a',
+    type: 'a',
     props: {
       color: 'blue'
     },
@@ -126,7 +126,7 @@ const components = [
   },
   {
     name: 'NavLink',
-    tag: 'a',
+    type: 'a',
     props: {
       f: 1,
       p: 2
@@ -152,7 +152,7 @@ const components = [
   },
   {
     name: 'BlockLink',
-    tag: 'a',
+    type: 'a',
     props: {},
     style: {
       display: 'block',
@@ -164,7 +164,7 @@ const components = [
   // Typography
   {
     name: 'Text',
-    tag: 'p',
+    type: 'p',
     props: {
       m: 0
     },
@@ -183,7 +183,7 @@ const components = [
   },
   {
     name: 'Heading',
-    tag: 'Text',
+    type: 'Text',
     props: {
       is: 'h2',
       f: 5,
@@ -204,7 +204,7 @@ const components = [
   },
   {
     name: 'Subhead',
-    tag: 'Heading',
+    type: 'Heading',
     props: {
       is: 'h3',
       f: 4,
@@ -214,7 +214,7 @@ const components = [
   },
   {
     name: 'Small',
-    tag: 'Text',
+    type: 'Text',
     props: {
       is: 'small',
       f: 0
@@ -223,7 +223,7 @@ const components = [
   },
   {
     name: 'Lead',
-    tag: 'Text',
+    type: 'Text',
     props: {
       is: 'p',
       f: 3,
@@ -235,7 +235,7 @@ const components = [
   },
   {
     name: 'Pre',
-    tag: 'pre',
+    type: 'pre',
     props: {
       f: 1,
       m: 0,
@@ -247,7 +247,7 @@ const components = [
   },
   {
     name: 'Code',
-    tag: 'code',
+    type: 'code',
     props: {
       f: 1,
     },
@@ -257,7 +257,7 @@ const components = [
   },
   {
     name: 'Samp',
-    tag: 'Code',
+    type: 'Code',
     props: {
       is: 'samp'
     },
@@ -265,7 +265,7 @@ const components = [
   },
   {
     name: 'Blockquote',
-    tag: 'Text',
+    type: 'Text',
     props: {
       is: 'blockquote',
       m: 0,
@@ -277,7 +277,7 @@ const components = [
   // Forms
   {
     name: 'Label',
-    tag: 'label',
+    type: 'label',
     props: {
       f: 1,
       mb: 1
@@ -289,7 +289,7 @@ const components = [
   },
   {
     name: 'Input',
-    tag: 'input',
+    type: 'input',
     props: {
       type: 'text',
       p: 1,
@@ -317,7 +317,7 @@ const components = [
   },
   {
     name: 'Select',
-    tag: 'select',
+    type: 'select',
     props: {
       p: 1,
       m: 0,
@@ -344,7 +344,7 @@ const components = [
   },
   {
     name: 'Textarea',
-    tag: 'textarea',
+    type: 'textarea',
     props: {
       p: 1,
       m: 0,
@@ -371,7 +371,7 @@ const components = [
   },
   {
     name: 'Checkbox',
-    tag: 'input',
+    type: 'input',
     props: {
       type: 'checkbox',
       mr: 1
@@ -380,7 +380,7 @@ const components = [
   },
   {
     name: 'Radio',
-    tag: 'input',
+    type: 'input',
     props: {
       type: 'radio',
       mr: 1
@@ -389,7 +389,7 @@ const components = [
   },
   {
     name: 'Slider',
-    tag: 'input',
+    type: 'input',
     props: {
       w: 1,
       my: 2,
@@ -421,7 +421,7 @@ const components = [
 
   {
     name: 'Image',
-    tag: 'img',
+    type: 'img',
     props: {},
     style: {
       display: 'block',
@@ -431,7 +431,7 @@ const components = [
   },
   {
     name: 'Avatar',
-    tag: 'img',
+    type: 'img',
     props: {},
     style: props => ({
       display: 'inline-block',
@@ -446,7 +446,7 @@ const components = [
 
   {
     name: 'BackgroundImage',
-    tag: 'div',
+    type: 'div',
     props: {
       w: 1,
       // ratio: 3/4 // How does styled-components handle this??
@@ -467,7 +467,7 @@ const components = [
   // Layout
   {
     name: 'Container',
-    tag: 'div',
+    type: 'div',
     props: {
       px: 3,
       mx: 'auto'
@@ -482,7 +482,7 @@ const components = [
   },
   {
     name: 'Divider',
-    tag: 'hr',
+    type: 'hr',
     props: {
       my: 2
     },
@@ -494,7 +494,7 @@ const components = [
   },
   {
     name: 'Border',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => {
       const w = px(props.borderWidth || 1)
@@ -524,7 +524,7 @@ const components = [
   },
   {
     name: 'Media',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       display: 'flex',
@@ -534,7 +534,7 @@ const components = [
 
   {
     name: 'Card',
-    tag: 'div',
+    type: 'div',
     props: {
       bg: 'white'
     },
@@ -546,7 +546,7 @@ const components = [
   },
   {
     name: 'Banner',
-    tag: 'div',
+    type: 'div',
     props: {
       p: [ 3, 4 ]
     },
@@ -566,7 +566,7 @@ const components = [
   },
   {
     name: 'Panel',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       overflow: 'hidden',
@@ -577,7 +577,7 @@ const components = [
   },
   {
     name: 'PanelHeader',
-    tag: 'header',
+    type: 'header',
     props: {
       f: 2,
       p: 2,
@@ -590,7 +590,7 @@ const components = [
   },
   {
     name: 'PanelFooter',
-    tag: 'footer',
+    type: 'footer',
     props: {
       f: 1,
       p: 2,
@@ -605,7 +605,7 @@ const components = [
   // UI
   {
     name: 'Progress',
-    tag: 'progress',
+    type: 'progress',
     props: {
       w: 1,
       m: 0,
@@ -630,7 +630,7 @@ const components = [
   },
   {
     name: 'Message',
-    tag: 'div',
+    type: 'div',
     props: {
       px: 3,
       py: 2,
@@ -643,7 +643,7 @@ const components = [
   },
   {
     name: 'Group',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => {
       const R = px(props.theme.radius || 4)
@@ -664,7 +664,7 @@ const components = [
 
   {
     name: 'Toolbar',
-    tag: 'div',
+    type: 'div',
     props: {
       px: 2,
       color: 'white',
@@ -678,7 +678,7 @@ const components = [
 
   {
     name: 'Badge',
-    tag: 'div',
+    type: 'div',
     props: {
       f: 0,
       p: 1,
@@ -695,7 +695,7 @@ const components = [
   },
   {
     name: 'Circle',
-    tag: 'Badge',
+    type: 'Badge',
     props: {
       color: 'white',
       bg: 'blue'
@@ -709,7 +709,7 @@ const components = [
   },
   {
     name: 'Overlay',
-    tag: 'div',
+    type: 'div',
     props: {
       p: 3,
       bg: 'white'
@@ -729,7 +729,7 @@ const components = [
 
   {
     name: 'Tabs',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       display: 'flex',
@@ -740,7 +740,7 @@ const components = [
   },
   {
     name: 'TabItem',
-    tag: 'a',
+    type: 'a',
     props: {
       f: 1,
       mr: 3,
@@ -763,7 +763,7 @@ const components = [
 
   {
     name: 'DotButton',
-    tag: 'button',
+    type: 'button',
     props: {
       m: 0,
     },
@@ -795,7 +795,7 @@ const components = [
 
   {
     name: 'Relative',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       position: 'relative',
@@ -804,7 +804,7 @@ const components = [
   },
   {
     name: 'Absolute',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       position: 'absolute',
@@ -824,7 +824,7 @@ const components = [
   },
   {
     name: 'Fixed',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       position: 'fixed',
@@ -844,7 +844,7 @@ const components = [
   },
   {
     name: 'Sticky',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => (`
       position: -webkit-sticky;
@@ -865,7 +865,7 @@ const components = [
   },
   {
     name: 'Drawer',
-    tag: 'Fixed',
+    type: 'Fixed',
     props: {
       bg: 'white',
       size: 320,
@@ -918,7 +918,7 @@ const components = [
 
   {
     name: 'Carousel',
-    tag: 'div',
+    type: 'div',
     props: {
     },
     style: props => ({
@@ -938,7 +938,7 @@ const components = [
   },
   {
     name: 'ScrollCarousel',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       width: '100%',
@@ -951,7 +951,7 @@ const components = [
   },
   {
     name: 'CarouselSlide',
-    tag: 'div',
+    type: 'div',
     props: {
       w: 1,
       p: 3
@@ -964,7 +964,7 @@ const components = [
 
   {
     name: 'Tooltip',
-    tag: 'div',
+    type: 'div',
     props: {
       color: 'white',
       bg: 'black'
@@ -1013,7 +1013,7 @@ const components = [
 
   {
     name: 'Switch',
-    tag: 'div',
+    type: 'div',
     props: {
       role: 'checkbox',
       color: 'blue'
@@ -1045,7 +1045,7 @@ const components = [
 
   {
     name: 'Close',
-    tag: 'ButtonTransparent',
+    type: 'ButtonTransparent',
     props: {
       p: 0,
       f: 3,
@@ -1060,7 +1060,7 @@ const components = [
 
   {
     name: 'Star',
-    tag: 'div',
+    type: 'div',
     props: {
       f: 3,
       color: 'yellow',
@@ -1085,7 +1085,7 @@ const components = [
 
   {
     name: 'Arrow',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       display: 'inline-block',
@@ -1107,7 +1107,7 @@ const components = [
 
   {
     name: 'Embed',
-    tag: 'div',
+    type: 'div',
     props: {},
     style: props => ({
       position: 'relative',
@@ -1129,7 +1129,7 @@ const components = [
 
   {
     name: 'Donut',
-    tag: DonutBase,
+    type: DonutBase,
     props: {
       color: 'blue',
       strokeWidth: 2,
