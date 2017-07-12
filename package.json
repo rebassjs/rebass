@@ -25,6 +25,7 @@
     "grid-styled": "^2.0.0-8",
     "palx": "^1.0.2",
     "prop-types": "^15.5.10",
+    "recompose": "^0.23.5",
     "styled-components": "^2.1.0",
     "styled-system": "^1.0.0-7"
   },

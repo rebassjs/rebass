@@ -1,6 +1,13 @@
 import styled from 'styled-components'
+import {
+  compose,
+  withProps,
+  defaultProps
+} from 'recompose'
 import Tag from './Tag'
 import hoc from './hoc'
+
+const withStyle = (style, props) => C => styled(C).attrs(props)([], style)
 
 const createComponent = (config, components = {}) => {
   const {
@@ -8,17 +15,22 @@ const createComponent = (config, components = {}) => {
     props,
     style,
     propTypes = {},
-    defaultProps = {}
   } = config
   if (!config || !tag || !style) return null
 
   const _tag = components[tag] || tag
 
-  const Base = hoc(Tag(_tag))
-  const Component = styled(Base).attrs(props)([], style)
+  const enhance = compose(
+    withStyle(style, props),
+    hoc,
+    // defaultProps(props),
+    Tag
+  )
+
+  const Component = enhance(_tag)
 
   Component.propTypes = propTypes
-  Component.defaultProps = defaultProps
+  Component.defaultProps = config.defaultProps || {}
 
   return Component
 }
