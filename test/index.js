@@ -36,7 +36,7 @@ test('Provider renders', t => {
 })
 
 test('hoc returns a component', t => {
-  const Comp = hoc('div')
+  const Comp = hoc()('div')
   const json = render(<Comp />).toJSON()
   t.is(typeof Comp, 'function')
   t.true(isElement(<Comp />))
