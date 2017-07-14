@@ -22,12 +22,12 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "grid-styled": "^2.0.0-8",
+    "grid-styled": "^2.0.0-9",
     "palx": "^1.0.2",
     "prop-types": "^15.5.10",
     "recompose": "^0.23.5",
     "styled-components": "^2.1.0",
-    "styled-system": "^1.0.0-7"
+    "styled-system": "^1.0.0-9"
   },
   "devDependencies": {
     "@storybook/addon-options": "^3.1.6",
