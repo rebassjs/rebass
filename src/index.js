@@ -38,6 +38,7 @@ export const {
   Label,
   Input,
   Select,
+  Select2,
   Textarea,
   Checkbox,
   Radio,

@@ -47,9 +47,7 @@ const components = [
       textAlign: 'center',
       textDecoration: 'none',
       borderRadius: px(props.theme.radius),
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: 'transparent',
+      border: 0,
       appearance: 'none',
       backgroundColor: color(props)(props.bg),
       '&:hover': {
@@ -311,14 +309,13 @@ const components = [
       lineHeight: 'inherit',
       display: 'inline-block',
       verticalAlign: 'middle',
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: color(props)('gray2'),
+      border: 0,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue')
+        boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
       },
       '&:disabled': {
         opacity: 1/4
@@ -328,7 +325,6 @@ const components = [
   {
     name: 'Select',
     type: 'select',
-    // type: SelectBase,
     props: {
       p: 1,
       m: 0,
@@ -342,14 +338,42 @@ const components = [
       lineHeight: 'inherit',
       display: 'inline-block',
       verticalAlign: 'middle',
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: color(props)('gray2'),
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
+      border: 0,
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue'),
+        boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
+      },
+      '&:disabled': {
+        opacity: 1/4
+      },
+    })
+  },
+  {
+    name: 'Select2',
+    type: SelectBase,
+    props: {
+      p: 1,
+      m: 0,
+      w: 1,
+      color: 'inherit',
+      bg: 'transparent'
+    },
+    style: props => ({
+      fontFamily: 'inherit',
+      fontSize: 'inherit',
+      lineHeight: 'inherit',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      border: 0,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
+      borderRadius: px(props.theme.radius),
+      appearance: 'none',
+      '&:focus': {
+        outline: 'none',
+        boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
       },
       '&:disabled': {
         opacity: 1/4
@@ -369,14 +393,13 @@ const components = [
     style: props => ({
       fontFamily: 'inherit',
       fontSize: 'inherit',
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: color(props)('gray2'),
+      border: 0,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue'),
+        boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
       },
       '&:disabled': {
         opacity: 1/4
