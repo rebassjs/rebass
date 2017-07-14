@@ -20,7 +20,7 @@ import Rebass, {
 
 const _scope = Object.assign({}, Rebass, { styled })
 
-const Editor = hoc(styled(LiveEditor)`
+const Editor = hoc()(styled(LiveEditor)`
   font-family: 'SF Mono', Menlo, monospace;
   font-size: 13px;
   tab-size: 2;
