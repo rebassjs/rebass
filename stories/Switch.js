@@ -5,12 +5,6 @@ import { Switch } from '../src'
 
 storiesOf('Switch', module)
   .add('Default', () => (
-    <Switch />
-  ))
-  .add('Checked', () => (
-    <Switch checked />
-  ))
-  .add('Live', () => (
     <Live />
   ))
 
