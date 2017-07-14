@@ -1,12 +1,4 @@
-import styled from 'styled-components'
-import {
-  compose,
-  // defaultProps // doesn't work with styled-components' whitelist
-} from 'recompose'
-import tag from './tag'
 import hoc from './hoc'
-
-const withStyle = (style, props) => C => styled(C).attrs(props)([], style)
 
 const createComponent = (config, components = {}) => {
   const {
@@ -15,17 +7,11 @@ const createComponent = (config, components = {}) => {
     style,
     propTypes = {},
   } = config
-  if (!config || !tag || !style) return null
+  if (!config || !type || !style) return null
 
   const _tag = components[type] || type
 
-  const enhance = compose(
-    withStyle(style, props),
-    hoc,
-    tag
-  )
-
-  const Component = enhance(_tag)
+  const Component = hoc(style, props)(_tag)
 
   Component.propTypes = propTypes
   Component.defaultProps = config.defaultProps || {}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { compose } from 'recompose'
 import styled from 'styled-components'
 import {
   space,
@@ -12,6 +13,7 @@ import {
   number,
   string
 } from 'prop-types'
+import tag from './tag'
 
 const prop = oneOfType([
   number,
@@ -45,7 +47,7 @@ const propTypes = {
   py: prop,
 }
 
-const hoc = Component => {
+const withStyle = (style, props) => Component => {
   const Base = styled(Component)([],
     space,
     width,
@@ -55,7 +57,16 @@ const hoc = Component => {
 
   Base.propTypes = propTypes
 
-  return Base
+  const Comp = styled(Base)
+    .attrs(props)
+    ([], style)
+
+  return Comp
 }
+
+const hoc = (style, props) => compose(
+  withStyle(style, props),
+  tag
+)
 
 export default hoc
