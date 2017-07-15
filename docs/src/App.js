@@ -13,6 +13,8 @@ import Home from './Home'
 import GettingStarted from './GettingStarted'
 import PropsView from './PropsView'
 
+import Component from './Component'
+
 import SideNav from './SideNav'
 import Demo from './Demo'
 import Props from './Props'
@@ -60,6 +62,7 @@ const App = props => (
             width={1024}>
             <GettingStarted pattern='/getting-started' />
             <PropsView pattern='/props' />
+            <Component pattern='/components/:name' />
           </Container>
         </Box>
       </Flex>

@@ -27,23 +27,30 @@ const SideNav = props => (
       <Link href='/' children='Rebass' />
       <Link href='/getting-started' children='Getting Started' />
       <Link href='/props' children='Props' />
+      {/*
       <Link name='Demo' />
       <Link name='Responsive Styles' />
-      <Link name='Colors' />
-      <Link name='Typographic Scale' />
       <Link name='Configuration' />
       <Link name='Customizing' />
       <Link name='Grid Styled' />
+      */}
       <Divider my={3} color='gray3' />
       {components.map(name => (
         <Link
           key={name}
-          name={name}
+          href={`/components/${name}`}
+          children={name}
         />
       ))}
       <Divider my={3} color='gray3' />
-      <Link href='https://github.com/jxnblk/rebass' children='GitHub' />
-      <Link href='#' children='Top' />
+      <Link
+        href='https://github.com/jxnblk/rebass'
+        children='GitHub'
+      />
+      <Link
+        href='http://jxnblk.com'
+        children='Made by Jxnblk'
+      />
     </Box>
   </nav>
 )
