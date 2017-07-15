@@ -10,7 +10,6 @@ import {
   Provider,
   hoc,
   theme,
-  Tag,
   createLibrary,
   createComponent,
   util

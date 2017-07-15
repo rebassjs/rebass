@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "1.0.0-7",
+  "version": "1.0.0-8",
   "description": "Functional React UI component library, built with styled-components",
   "main": "dist/index.js",
   "scripts": {
