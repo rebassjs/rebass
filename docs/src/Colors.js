@@ -27,6 +27,7 @@ const Card = props => (
       w={1}>
       {ten.map(n => (
         <Box
+          key={n}
           w={1/10}
           flex='1 1 auto'
           py={2}

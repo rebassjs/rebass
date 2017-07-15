@@ -26,8 +26,6 @@ import GridStyled from './GridStyled'
 import CTA from './CTA'
 import Footer from './Footer'
 
-import XRay from 'react-x-ray'
-
 const StickySide = styled(Box)`
   display: none;
 
