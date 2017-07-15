@@ -11,6 +11,7 @@ import Colors from './Colors'
 import TypographicScale from './TypographicScale'
 import GridStyled from './GridStyled'
 import Props from './Props'
+import ResponsiveStyles from './ResponsiveStyles'
 import Configuration from './Configuration'
 import Customizing from './Customizing'
 import Components from './Components'
@@ -26,6 +27,7 @@ const Home = props => (
     <Testimonials />
     <Demo />
     <Props />
+    <ResponsiveStyles />
     <Colors />
     <TypographicScale />
     <GridStyled />

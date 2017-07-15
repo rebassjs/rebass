@@ -13,21 +13,8 @@ import {
 import Home from './Home'
 import GettingStarted from './GettingStarted'
 import PropsView from './PropsView'
-
 import Component from './Component'
-
 import SideNav from './SideNav'
-import Demo from './Demo'
-import Props from './Props'
-import ResponsiveStyles from './ResponsiveStyles'
-import Colors from './Colors'
-import TypographicScale from './TypographicScale'
-import Configuration from './Configuration'
-import Components from './Components'
-import ExampleList from './ExampleList'
-import Customizing from './Customizing'
-import GridStyled from './GridStyled'
-import Footer from './Footer'
 
 const StickySide = styled(Box)`
   display: none;
@@ -51,7 +38,7 @@ const App = props => (
       <Flex>
         <StickySide w={[ 1, 192 ]}>
           <Border right>
-            <SideNav />
+            <SideNav {...props} />
           </Border>
         </StickySide>
         <Box flex='0 1 auto' w={[ 1, 'calc(100% - 192px)' ]}>
@@ -66,19 +53,6 @@ const App = props => (
         </Box>
       </Flex>
     )}
-
-    {/*
-          <Demo />
-          <Props />
-          <ResponsiveStyles />
-          <Colors />
-          <TypographicScale />
-          <Configuration />
-          <Customizing />
-          <GridStyled />
-          <Components />
-          <ExampleList />
-    */}
   </Provider>
 )
 

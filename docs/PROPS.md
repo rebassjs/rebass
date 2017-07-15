@@ -4,11 +4,13 @@
 All Rebass components are wrapped in a higher order component that handles
 design-system-based responsive style props using [styled-system](https://github.com/jxnblk/styled-system).
 
-```live
-<Box bg='tomato'>Hello</Box>
-```
-
 ### Width
+
+```live
+<Box width={1/2} bg='blue'>
+  Hello
+</Box>
+```
 
 ```jsx
 // Numbers from 0–1 are converted to percentage widths
@@ -39,6 +41,12 @@ design-system-based responsive style props using [styled-system](https://github.
 The `fontSize` prop makes referencing steps on the typographic scale
 simple and helps promote consistent design.
 
+```live
+<Text f={5}>
+  Hello
+</Text>
+```
+
 ```jsx
 // Numbers are used to reference steps on the typographic scale
 // i.e. the `theme.fontSizes` array
@@ -65,22 +73,31 @@ The margin and padding props make referencing steps on the spacing scale
 layout design without the need to add custom margin and padding declarations throughout an application.
 The margin and padding props use a shorthand syntax.
 
-Prop | Meaning
----|---
-`m`  | margin
-`mt` | margin-top
-`mr` | margin-right
-`mb` | margin-bottom
-`ml` | margin-left
-`mx` | margin-left and margin-right
-`my` | margin-top and margin-bottom
-`p`  | padding
-`pt` | padding-top
-`pr` | padding-right
-`pb` | padding-bottom
-`pl` | padding-left
-`px` | padding-left and padding-right
-`py` | padding-top and padding-bottom
+```live
+<Box
+  p={3}
+  mx={2}
+  my={4}
+  color='white'
+  bg='blue'>
+  Hello
+</Box>
+```
+
+- `m`: margin
+- `mt`: margin-top
+- `mr`: margin-right
+- `mb`: margin-bottom
+- `ml`: margin-left
+- `mx`: margin-left and margin-right
+- `my`: margin-top and margin-bottom
+- `p` : padding
+- `pt`: padding-top
+- `pr`: padding-right
+- `pb`: padding-bottom
+- `pl`: padding-left
+- `px`: padding-left and padding-right
+- `py`: padding-top and padding-bottom
 
 ```jsx
 // Numbers reference steps on the spacing scale
@@ -104,6 +121,12 @@ Prop | Meaning
 
 The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
 
+```live
+<Box color='white' bg='fuschia' p={3}>
+  Hello
+</Box>
+```
+
 ```jsx
 // Keys reference values in the color palette object
 <Text color='blue' />
@@ -124,6 +147,25 @@ All of the core props above accept arrays as values to set mobile-first responsi
 The first value is not scoped to a media query and applies to all breakpoints.
 Each value after the first corresponds to a media query derived from `theme.breakpoints`.
 
+```live
+<Flex wrap>
+  <Box
+    w={[ 1, 1/2 ]}
+    p={2}
+    color='white'
+    bg='blue'>
+    Hello
+  </Box>
+  <Box
+    w={[ 1, 1/2 ]}
+    p={2}
+    color='white'
+    bg='blue'>
+    Hello
+  </Box>
+</Flex>
+```
+
 ```jsx
 <Text
   width={[
@@ -135,17 +177,19 @@ Each value after the first corresponds to a media query derived from `theme.brea
 />
 ```
 
-## `is` Prop
+## HTML Element Prop
 
 Each component accepts an `is` prop to change the underlying HTML element on a per-instance basis.
 This is useful for ensuring semantic markup, while keeping styles decoupled.
 
-```jsx
+```live
 <Heading
   is='h1'
   children='Top-level heading'
 />
+```
 
+```live
 <Button
   is='a'
   href='#!'

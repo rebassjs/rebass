@@ -1,11 +1,11 @@
 import React from 'react'
 import { createView } from 'rrx'
 import Markdown from './Markdown'
+import src from 'raw-loader!../GETTING_STARTED.md'
 
 const GettingStarted = props => (
   <div>
-    <h1>Getting Started</h1>
-    T/K
+    <Markdown children={src} />
   </div>
 )
 

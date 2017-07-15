@@ -4,9 +4,7 @@ import src from 'raw-loader!../PROPS.md'
 import Markdown from './Markdown'
 
 const Props = props => (
-  <Markdown>
-    {src}
-  </Markdown>
+  <Markdown children={src} />
 )
 
 export default createView(Props)

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link as RLink } from 'rrx'
 import {
   Box,
+  Subhead,
   Divider,
   NavLink
 } from 'rebass'
@@ -19,14 +20,34 @@ const Link = props => (
   />
 )
 
-const SideNav = props => (
-  <nav>
-    <Box py={3}>
-      <Link href='/' children='Rebass' />
-      <Link href='/getting-started' children='Getting Started' />
-      <Link href='/props' children='Props' />
-      <Link href='/theming' children='Theming' />
-      {/*
+const SideNav = props => {
+  const { pathname } = props.location
+
+  return (
+    <nav>
+      <Box py={3}>
+        <Link href='/' children='Rebass' />
+        <Link
+          href='/getting-started'
+          children='Getting Started'
+          active={pathname === '/getting-started'}
+        />
+        <Link
+          href='/props'
+          children='Props'
+          active={pathname === '/props'}
+        />
+        <Link
+          href='/theming'
+          children='Theming'
+          active={pathname === '/theming'}
+        />
+        <Link
+          href='/extending'
+          children='Extending'
+          active={pathname === '/extending'}
+        />
+        {/*
       <Link name='Demo' />
       <Link name='Responsive Styles' />
       <Link name='Configuration' />
@@ -34,11 +55,15 @@ const SideNav = props => (
       <Link name='Grid Styled' />
       */}
       <Divider my={3} color='gray3' />
+      <Subhead f={0} px={3} mb={2} caps>
+        {components.length} Components
+      </Subhead>
       {components.map(name => (
         <Link
           key={name}
           href={`/components/${name}`}
           children={name}
+          active={pathname === '/components/' + name}
         />
       ))}
       <Divider my={3} color='gray3' />
@@ -54,6 +79,7 @@ const SideNav = props => (
       />
     </Box>
   </nav>
-)
+  )
+}
 
 export default SideNav

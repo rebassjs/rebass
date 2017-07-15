@@ -1,14 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
 import Live from './Live'
 import ReactMarkdown from 'react-markdown'
-import {
+import Rebass, {
+  Box,
   Heading,
+  BlockLink,
   Link,
-  Pre,
   Code,
 } from 'rebass'
 
 const h = React.createElement
+
+const Pre = styled(Rebass.Pre)`
+  border-left: 2px solid;
+`
 
 class Markdown extends React.Component {
   render () {
@@ -25,19 +31,22 @@ const CodeBlock = ({ language, literal }) => {
   if (language !== 'live') {
     return (
       <Pre
-        f={0}
-        p={3}
-        color='black'
-        bg='blue0'>
+        f={1}
+        px={3}
+        py={1}
+        my={3}
+        color='black'>
         {literal}
       </Pre>
     )
   }
 
   return (
-    <Live
-      code={literal}
-    />
+    <Box mb={3}>
+      <Live
+        code={literal}
+      />
+    </Box>
   )
 }
 
@@ -50,11 +59,21 @@ const MDHeading = props => {
         is='h1'
         f={[ 5, 6, 7, 8 ]}
         mt={4}
+        mb={4}
       />
     )
   }
 
-  return <Heading {...props} mt={3} />
+  return (
+    <BlockLink href={'#' + props.children}>
+      <Heading
+        {...props}
+        id={props.children}
+        mt={5}
+        mb={2}
+      />
+    </BlockLink>
+  )
 }
 
 const MDCode = props => (

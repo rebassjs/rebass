@@ -17,8 +17,9 @@ import Rebass, {
   hoc,
   theme
 } from 'rebass'
+import { photo } from './constants'
 
-const _scope = Object.assign({}, Rebass, { styled })
+const _scope = Object.assign({}, Rebass, { styled, photo })
 
 const Editor = hoc()(styled(LiveEditor)`
   font-family: 'SF Mono', Menlo, monospace;

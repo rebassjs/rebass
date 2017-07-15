@@ -17,9 +17,12 @@ const ComponentsSection = props => (
     </Text>
     <Flex wrap mx={-2}>
       {components.map(name => (
-        <Box key={name}>
+        <Box key={name}
+          w={[ 1/2, 1/3, 1/4, 1/6 ]}>
           <NavLink
             is={Link}
+            f={0}
+            py={1}
             href={'/components/' + name}
             children={name}
           />
