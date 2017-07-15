@@ -7,7 +7,8 @@ import {
   Sticky,
   Container,
   Flex,
-  Box
+  Box,
+  Border,
 } from 'rebass'
 import Home from './Home'
 import GettingStarted from './GettingStarted'
@@ -37,6 +38,7 @@ const StickySide = styled(Box)`
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    bottom: 0;
     height: 100vh;
     overflow: auto;
   }
@@ -47,15 +49,12 @@ const App = props => (
     <Home pattern='/' />
     {props.location.pathname !== '/' && (
       <Flex>
-        <StickySide
-          w={[ 1, 160 ]}
-          px={3}>
-          <SideNav />
+        <StickySide w={[ 1, 192 ]}>
+          <Border right>
+            <SideNav />
+          </Border>
         </StickySide>
-        <Box
-          flex='0 1 auto'
-          w={[ 1, 'calc(100% - 160px)' ]}
-          pl={[ 0, 3 ]}>
+        <Box flex='0 1 auto' w={[ 1, 'calc(100% - 192px)' ]}>
           <Container
             mt={5}
             pb={6}

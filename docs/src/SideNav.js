@@ -14,19 +14,18 @@ const Link = props => (
     children={props.name}
     {...props}
     w={1}
+    px={3}
     py={1}
   />
 )
 
 const SideNav = props => (
   <nav>
-    <Box
-      py={3}
-      ml={-2}
-      my={4}>
+    <Box py={3}>
       <Link href='/' children='Rebass' />
       <Link href='/getting-started' children='Getting Started' />
       <Link href='/props' children='Props' />
+      <Link href='/theming' children='Theming' />
       {/*
       <Link name='Demo' />
       <Link name='Responsive Styles' />
@@ -44,10 +43,12 @@ const SideNav = props => (
       ))}
       <Divider my={3} color='gray3' />
       <Link
+        is='a'
         href='https://github.com/jxnblk/rebass'
         children='GitHub'
       />
       <Link
+        is='a'
         href='http://jxnblk.com'
         children='Made by Jxnblk'
       />

@@ -22,7 +22,17 @@ class Markdown extends React.Component {
 }
 
 const CodeBlock = ({ language, literal }) => {
-  if (language !== 'live') return <Pre f={0} color='blue'>{literal}</Pre>
+  if (language !== 'live') {
+    return (
+      <Pre
+        f={0}
+        p={3}
+        color='black'
+        bg='blue0'>
+        {literal}
+      </Pre>
+    )
+  }
 
   return (
     <Live
@@ -31,10 +41,33 @@ const CodeBlock = ({ language, literal }) => {
   )
 }
 
+const MDHeading = props => {
+  if (props.level === 1) {
+    console.log('h1', props.level)
+    return (
+      <Heading
+        {...props}
+        is='h1'
+        f={[ 5, 6, 7, 8 ]}
+        mt={4}
+      />
+    )
+  }
+
+  return <Heading {...props} mt={3} />
+}
+
+const MDCode = props => (
+  <Code
+    color='blue'
+    children={props.literal}
+  />
+)
+
 const renderers = {
   CodeBlock,
-  Heading: props => <Heading {...props} mt={3} />,
-  Code: props => <Code color='blue' children={props.literal} />,
+  Heading: MDHeading,
+  Code: MDCode,
   Link
 }
 
