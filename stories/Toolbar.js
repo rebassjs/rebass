@@ -6,7 +6,7 @@ storiesOf('Toolbar', module)
   .add('Default', () => (
     <Toolbar>
       <NavLink children='Hello' />
-      <NavLink children='Toolbar' />
+      <NavLink active children='Toolbar' />
       <NavLink ml='auto' children='Beep Boop' />
     </Toolbar>
   ))

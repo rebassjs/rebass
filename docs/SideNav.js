@@ -26,6 +26,8 @@ const SideNav = props => (
       <Link name='Demo' />
       <Link name='Props' />
       <Link name='Responsive Styles' />
+      <Link name='Colors' />
+      <Link name='Typographic Scale' />
       <Link name='Configuration' />
       <Link name='Customizing' />
       <Link name='Grid Styled' />

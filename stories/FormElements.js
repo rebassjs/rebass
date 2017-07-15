@@ -15,7 +15,9 @@ storiesOf('Form Elements', module)
   .add('Default', () => (
     <form>
       <Label>Input</Label>
-      <Input defaultValue='Hello' />
+      <Input
+        defaultValue='Hello'
+      />
       <Label>Select</Label>
       <Select defaultValue='Hello'>
         <option>Hello</option>

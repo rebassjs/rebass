@@ -16,6 +16,8 @@ import SideNav from './SideNav'
 import Demo from './Demo'
 import Props from './Props'
 import ResponsiveStyles from './ResponsiveStyles'
+import Colors from './Colors'
+import TypographicScale from './TypographicScale'
 import Configuration from './Configuration'
 import Components from './Components'
 import ExampleList from './ExampleList'
@@ -60,6 +62,8 @@ const App = props => (
           <Demo />
           <Props />
           <ResponsiveStyles />
+          <Colors />
+          <TypographicScale />
           <Configuration />
           <Customizing />
           <GridStyled />

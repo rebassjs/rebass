@@ -19,7 +19,9 @@ import {
   caps,
   align,
 } from './util'
+import { Flex, Box } from './grid'
 import DonutBase from './DonutBase'
+import SelectBase from './SelectBase'
 
 const bold = props => idx('weights.1', props.theme)
 
@@ -31,15 +33,18 @@ const components = [
     props: {
       f: 1,
       m: 0,
-      px: 3,
-      py: 2,
+      pl: 3,
+      pr: 3,
+      pt: 2,
+      pb: 2,
       color: 'white',
     },
     style: props => ({
-      display: 'inline-block',
       fontFamily: 'inherit',
       fontWeight: bold(props),
-      lineHeight: 1.25,
+      lineHeight: 16 / 14,
+      display: 'inline-block',
+      verticalAlign: 'middle',
       textAlign: 'center',
       textDecoration: 'none',
       borderRadius: px(props.theme.radius),
@@ -89,7 +94,8 @@ const components = [
     name: 'ButtonCircle',
     type: 'Button',
     props: {
-      px: 3
+      pl: 3,
+      pr: 3
     },
     style: props => ({
       borderRadius: px(99999)
@@ -129,10 +135,12 @@ const components = [
     type: 'a',
     props: {
       f: 1,
-      p: 2
+      p: 2,
     },
     style: props => ({
-      display: 'inline-block',
+      display: 'inline-flex',
+      alignItems: 'center',
+      alignSelf: 'stretch',
       fontWeight: bold(props),
       textDecoration: 'none',
       whiteSpace: 'nowrap',
@@ -273,6 +281,24 @@ const components = [
     },
     style: {}
   },
+  {
+    name: 'Measure',
+    type: 'div',
+    props: {},
+    style: {
+      maxWidth: '32em'
+    }
+  },
+  {
+    name: 'Truncate',
+    type: 'Text',
+    props: {},
+    style: {
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis'
+    }
+  },
 
   // Forms
   {
@@ -301,14 +327,16 @@ const components = [
     style: props => ({
       fontFamily: 'inherit',
       fontSize: 'inherit',
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: color(props)('gray2'),
+      lineHeight: 'inherit',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      border: 0,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue')
+        boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
       },
       '&:disabled': {
         opacity: 1/4
@@ -317,29 +345,28 @@ const components = [
   },
   {
     name: 'Select',
-    type: 'select',
+    type: SelectBase,
     props: {
-      p: 1,
       m: 0,
       w: 1,
       color: 'inherit',
       bg: 'transparent'
     },
     style: props => ({
-      fontFamily: 'inherit',
-      fontSize: 'inherit',
-      height: 32,
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: color(props)('gray2'),
-      borderRadius: px(props.theme.radius),
-      '&:focus': {
-        outline: 'none',
-        borderColor: color(props)('blue'),
-      },
-      '&:disabled': {
-        opacity: 1/4
-      },
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      select: {
+        padding: px(idx('space.1', props.theme)),
+        boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
+        borderRadius: px(props.theme.radius),
+
+        '&:focus': {
+          boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
+        },
+        '&:disabled': {
+          opacity: 1/4
+        }
+      }
     })
   },
   {
@@ -355,14 +382,13 @@ const components = [
     style: props => ({
       fontFamily: 'inherit',
       fontSize: 'inherit',
-      borderWidth: px(1),
-      borderStyle: 'solid',
-      borderColor: color(props)('gray2'),
+      border: 0,
+      boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
       borderRadius: px(props.theme.radius),
       appearance: 'none',
       '&:focus': {
         outline: 'none',
-        borderColor: color(props)('blue'),
+        boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
       },
       '&:disabled': {
         opacity: 1/4
@@ -392,8 +418,10 @@ const components = [
     type: 'input',
     props: {
       w: 1,
-      my: 2,
-      mx: 0,
+      mt: 2,
+      mb: 2,
+      ml: 0,
+      mr: 0,
       type: 'range'
     },
     style: props => ({
@@ -450,6 +478,7 @@ const components = [
     props: {
       w: 1,
       // ratio: 3/4 // How does styled-components handle this??
+      // Fix this once non-whitelisted styled-components is out
     },
     style: props => ({
       backgroundImage: props.src ? `url(${props.src})` : null,
@@ -470,7 +499,8 @@ const components = [
     type: 'div',
     props: {
       px: 3,
-      mx: 'auto'
+      ml: 'auto',
+      mr: 'auto'
     },
     style: props => ({
       maxWidth: px(props.width || idx('maxWidth', props.theme) || 1024),
@@ -484,7 +514,8 @@ const components = [
     name: 'Divider',
     type: 'hr',
     props: {
-      my: 2
+      mt: 2,
+      mb: 2
     },
     style: {
       border: 0,
@@ -632,12 +663,17 @@ const components = [
     name: 'Message',
     type: 'div',
     props: {
-      px: 3,
-      py: 2,
+      pl: 3,
+      pr: 3,
+      pt: 2,
+      pb: 2,
       color: 'white',
       bg: 'blue'
     },
     style: props => ({
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: px(48),
       fontWeight: bold(props)
     })
   },
@@ -666,12 +702,14 @@ const components = [
     name: 'Toolbar',
     type: 'div',
     props: {
-      px: 2,
+      pl: 2,
+      pr: 2,
       color: 'white',
       bg: 'gray9'
     },
     style: {
       display: 'flex',
+      minHeight: px(48),
       alignItems: 'center'
     }
   },
@@ -682,7 +720,8 @@ const components = [
     props: {
       f: 0,
       p: 1,
-      mx: 1,
+      ml: 1,
+      mr: 1,
       color: 'white',
       bg: 'blue'
     },
@@ -744,7 +783,8 @@ const components = [
     props: {
       f: 1,
       mr: 3,
-      py: 2,
+      pt: 2,
+      pb: 2,
     },
     style: props => ({
       textDecoration: 'none',
@@ -1020,24 +1060,25 @@ const components = [
     },
     style: props => ({
       display: 'inline-flex',
-      width: px(32),
-      height: px(20),
+      width: px(40),
+      height: px(24),
       borderRadius: px(9999),
       backgroundColor: props.checked ? color(props)(props.color) : 'transparent',
       boxShadow: 'inset 0 0 0 2px',
       transitionProperty: 'background-color',
       transitionDuration: '.2s',
       transitionTimingFunction: 'ease-out',
+      userSelect: 'none',
       '&::after': {
         content: '" "',
-        width: px(12),
-        height: px(12),
+        width: px(16),
+        height: px(16),
         margin: px(4),
         borderRadius: px(9999),
         transitionProperty: 'transform, color',
         transitionDuration: '.1s',
         transitionTimingFunction: 'ease-out',
-        transform: props.checked ? `translateX(12px)` : `translateX(0)`,
+        transform: props.checked ? `translateX(16px)` : `translateX(0)`,
         backgroundColor: props.checked ? color(props)('white') : color(props)(props.color),
       }
     })
@@ -1064,12 +1105,13 @@ const components = [
     props: {
       f: 3,
       color: 'yellow',
-      children: props => props.checked ? '★' : '☆'
+      children: '★'
     },
     style: props => ({
       position: 'relative',
       width: '1em',
       height: '1em',
+      color: props.checked ? color(props)(props.color) : darken(1/8),
       '&::after': {
         display: props.half ? 'block' : 'none',
         content: '"★"',
@@ -1078,6 +1120,7 @@ const components = [
         top: 0,
         width: '1em',
         height: '1em',
+        color: color(props)(props.color),
         clip: 'rect(0, .45em, 1em, 0)'
       }
     })
@@ -1136,6 +1179,25 @@ const components = [
       value: 1
     },
     style:  {}
+  },
+
+  {
+    name: 'Row',
+    type: Flex,
+    props: {
+      mx: -3,
+    },
+    style: {}
+  },
+  {
+    name: 'Column',
+    type: Box,
+    props: {
+      px: 3,
+      mb: 4,
+      flex: '1 1 auto'
+    },
+    style: {}
   },
 ]
 

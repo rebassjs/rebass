@@ -12,7 +12,17 @@ const Rebass = Object.assign({}, library, { Provider, Flex, Box })
 export { Flex, Box } from './grid'
 export { default as Provider } from './Provider'
 export { default as hoc } from './hoc'
-export { default as theme } from './theme'
+export {
+  default as theme,
+  breakpoints,
+  space,
+  font,
+  monospace,
+  fontSizes,
+  weights,
+  colors,
+  radius
+} from './theme'
 export { default as tag } from './tag'
 export { default as createLibrary } from './create-library'
 export { default as createComponent } from './create-component'
@@ -35,9 +45,12 @@ export const {
   Code,
   Samp,
   Blockquote,
+  Measure,
+  Truncate,
   Label,
   Input,
   Select,
+  Select2,
   Textarea,
   Checkbox,
   Radio,
@@ -79,6 +92,8 @@ export const {
   Star,
   Embed,
   Donut,
+  Row,
+  Column,
 } = library
 
 export default Rebass

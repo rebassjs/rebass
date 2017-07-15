@@ -16,6 +16,8 @@ import Pre from './Pre.jsx'
 import Code from './Code.jsx'
 import Samp from './Samp.jsx'
 import Blockquote from './Blockquote.jsx'
+import Measure from './Measure.jsx'
+import Truncate from './Truncate.jsx'
 
 import Label from './Label.jsx'
 import Input from './Input.jsx'
@@ -70,6 +72,9 @@ import Carousel from './Carousel.jsx'
 import ScrollCarousel from './ScrollCarousel.jsx'
 import CarouselSlide from './CarouselSlide.jsx'
 
+import Row from './Row.jsx'
+import Column from './Column.jsx'
+
 export const examples = {
   Button,
   ButtonOutline,
@@ -88,6 +93,8 @@ export const examples = {
   Code,
   Samp,
   Blockquote,
+  Measure,
+  Truncate,
 
   Label,
   Input,
@@ -141,6 +148,9 @@ export const examples = {
   Carousel,
   ScrollCarousel,
   CarouselSlide,
+
+  Row,
+  Column,
 }
 
 export const components = Object.keys(examples)

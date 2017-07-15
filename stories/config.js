@@ -26,12 +26,14 @@ const toggleXRay = state => ({ xray: !state.xray })
 const Demo = hoc(props => (
   <Provider>
     <XRay disabled={!props.xray}>
-      <Box
-        p={3}
-        onClick={e => props.update(toggleXRay)}>
+      <Box p={3}>
         {props.story()}
       </Box>
     </XRay>
+    <button
+      onClick={e => props.update(toggleXRay)}
+      children='X-Ray'
+    />
   </Provider>
 ))
 
