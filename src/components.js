@@ -134,10 +134,12 @@ const components = [
     type: 'a',
     props: {
       f: 1,
-      p: 2
+      p: 2,
     },
     style: props => ({
-      display: 'inline-block',
+      display: 'inline-flex',
+      alignItems: 'center',
+      alignSelf: 'stretch',
       fontWeight: bold(props),
       textDecoration: 'none',
       whiteSpace: 'nowrap',
@@ -651,6 +653,9 @@ const components = [
       bg: 'blue'
     },
     style: props => ({
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: px(48),
       fontWeight: bold(props)
     })
   },
@@ -686,6 +691,7 @@ const components = [
     },
     style: {
       display: 'flex',
+      minHeight: px(48),
       alignItems: 'center'
     }
   },
