@@ -12,7 +12,9 @@ import Tweet from './Tweet'
 
 const NavBar = props => (
   <Absolute top left right>
-    <Toolbar py={2} bg='transparent'>
+    <Toolbar
+      bg='black'
+      xbg='transparent'>
       <Hide xs>
         <NavLink
           href='http://jxnblk.com/rebass'

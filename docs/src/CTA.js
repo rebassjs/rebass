@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'rrx'
 import {
   Flex,
   Box,
@@ -11,25 +12,20 @@ import Section from './Section'
 
 const CTA = props => (
   <Section name='Get Started'>
+    <Lead mb={3}>
+      Read the docs to get started
+    </Lead>
     <Flex
-      mx={-2}
       py={3}
-      align='center'
-      wrap>
-      <Box p={2} w={[ 1, 1/2 ]}>
-        <Lead mb={3}>
-          Read the docs on GitHub
-        </Lead>
-        <Button
-          is='a'
-          f={2}
-          href='https://github.com/jxnblk/rebass'
-          children='GitHub'
-        />
-      </Box>
-      <Box p={2} w={[ 1, 1/2 ]}>
-        <Pre>npm i rebass</Pre>
-      </Box>
+      align='center'>
+      <Button
+        is={Link}
+        f={2}
+        py={[ 2, 3 ]}
+        href='/getting-started'
+        children='Documentation'
+      />
+      <Pre mx={3} color='blue'>npm i rebass</Pre>
     </Flex>
   </Section>
 )

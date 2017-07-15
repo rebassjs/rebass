@@ -9,4 +9,4 @@ const Props = props => (
   </Markdown>
 )
 
-export default Props
+export default createView(Props)

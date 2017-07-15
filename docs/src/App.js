@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { createProvider } from 'funcup'
+import { createRouter, Link } from 'rrx'
 import {
   Provider,
   Sticky,
@@ -8,10 +9,10 @@ import {
   Flex,
   Box
 } from 'rebass'
-import NavBar from './NavBar'
-import Header from './Header'
-import About from './About'
-import Testimonials from './Testimonials'
+import Home from './Home'
+import GettingStarted from './GettingStarted'
+import PropsView from './PropsView'
+
 import SideNav from './SideNav'
 import Demo from './Demo'
 import Props from './Props'
@@ -23,7 +24,6 @@ import Components from './Components'
 import ExampleList from './ExampleList'
 import Customizing from './Customizing'
 import GridStyled from './GridStyled'
-import CTA from './CTA'
 import Footer from './Footer'
 
 const StickySide = styled(Box)`
@@ -42,21 +42,30 @@ const StickySide = styled(Box)`
 
 const App = props => (
   <Provider theme={theme}>
-    <NavBar />
-    <Header />
-    <About />
-    <Testimonials />
-    <Container>
-      <Flex wrap={[ true, false ]}>
+    <Home pattern='/' />
+    {props.location.pathname !== '/' && (
+      <Flex>
         <StickySide
           w={[ 1, 160 ]}
-          pr={3}>
+          px={3}>
           <SideNav />
         </StickySide>
         <Box
           flex='0 1 auto'
           w={[ 1, 'calc(100% - 160px)' ]}
           pl={[ 0, 3 ]}>
+          <Container
+            mt={5}
+            pb={6}
+            width={1024}>
+            <GettingStarted pattern='/getting-started' />
+            <PropsView pattern='/props' />
+          </Container>
+        </Box>
+      </Flex>
+    )}
+
+    {/*
           <Demo />
           <Props />
           <ResponsiveStyles />
@@ -67,11 +76,7 @@ const App = props => (
           <GridStyled />
           <Components />
           <ExampleList />
-          <CTA />
-          <Footer />
-        </Box>
-      </Flex>
-    </Container>
+    */}
   </Provider>
 )
 
@@ -87,4 +92,4 @@ const state = {
   fixed: false,
 }
 
-export default createProvider(state)(App)
+export default createProvider(state)(createRouter(App))

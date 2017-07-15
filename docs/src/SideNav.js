@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link as RLink } from 'rrx'
 import {
   Box,
   Divider,
@@ -8,6 +9,7 @@ import { components } from './examples'
 
 const Link = props => (
   <NavLink
+    is={RLink}
     href={'#' + props.name}
     children={props.name}
     {...props}
@@ -22,9 +24,10 @@ const SideNav = props => (
       py={3}
       ml={-2}
       my={4}>
-      <Link href='#' children='Top' />
+      <Link href='/' children='Rebass' />
+      <Link href='/getting-started' children='Getting Started' />
+      <Link href='/props' children='Props' />
       <Link name='Demo' />
-      <Link name='Props' />
       <Link name='Responsive Styles' />
       <Link name='Colors' />
       <Link name='Typographic Scale' />
