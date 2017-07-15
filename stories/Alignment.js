@@ -5,7 +5,6 @@ import {
   Box,
   Input,
   Select,
-  Select2,
   Button,
   Slider,
   Switch,
@@ -24,12 +23,6 @@ storiesOf('Alignment', module)
         value='Beep'>
         <option>Beep</option>
       </Select>
-      <Select2
-        w={1/4}
-        mr={1}
-        value='Beep'>
-        <option>Beep</option>
-      </Select2>
       <Button
         children='Hello'
       />
