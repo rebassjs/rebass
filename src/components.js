@@ -19,6 +19,7 @@ import {
   caps,
   align,
 } from './util'
+import { Flex, Box } from './grid'
 import DonutBase from './DonutBase'
 import SelectBase from './SelectBase'
 
@@ -279,6 +280,14 @@ const components = [
       f: 3,
     },
     style: {}
+  },
+  {
+    name: 'Measure',
+    type: 'div',
+    props: {},
+    style: {
+      maxWidth: '32em'
+    }
   },
 
   // Forms
@@ -1161,6 +1170,25 @@ const components = [
       value: 1
     },
     style:  {}
+  },
+
+  {
+    name: 'Row',
+    type: Flex,
+    props: {
+      mx: -3,
+    },
+    style: {}
+  },
+  {
+    name: 'Column',
+    type: Box,
+    props: {
+      px: 3,
+      mb: 4,
+      flex: '1 1 auto'
+    },
+    style: {}
   },
 ]
 

@@ -35,6 +35,7 @@ export const {
   Code,
   Samp,
   Blockquote,
+  Measure,
   Label,
   Input,
   Select,
@@ -80,6 +81,8 @@ export const {
   Star,
   Embed,
   Donut,
+  Row,
+  Column,
 } = library
 
 export default Rebass
