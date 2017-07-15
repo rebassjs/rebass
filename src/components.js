@@ -289,6 +289,16 @@ const components = [
       maxWidth: '32em'
     }
   },
+  {
+    name: 'Truncate',
+    type: 'Text',
+    props: {},
+    style: {
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis'
+    }
+  },
 
   // Forms
   {

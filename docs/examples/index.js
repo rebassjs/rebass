@@ -17,6 +17,7 @@ import Code from './Code.jsx'
 import Samp from './Samp.jsx'
 import Blockquote from './Blockquote.jsx'
 import Measure from './Measure.jsx'
+import Truncate from './Truncate.jsx'
 
 import Label from './Label.jsx'
 import Input from './Input.jsx'
@@ -93,6 +94,7 @@ export const examples = {
   Samp,
   Blockquote,
   Measure,
+  Truncate,
 
   Label,
   Input,

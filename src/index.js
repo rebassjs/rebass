@@ -36,6 +36,7 @@ export const {
   Samp,
   Blockquote,
   Measure,
+  Truncate,
   Label,
   Input,
   Select,
