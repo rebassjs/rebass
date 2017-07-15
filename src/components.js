@@ -42,7 +42,7 @@ const components = [
     style: props => ({
       fontFamily: 'inherit',
       fontWeight: bold(props),
-      lineHeight: 16 / 14, //1.25,
+      lineHeight: 16 / 14,
       display: 'inline-block',
       verticalAlign: 'middle',
       textAlign: 'center',
@@ -355,7 +355,7 @@ const components = [
     style: props => ({
       display: 'inline-block',
       verticalAlign: 'middle',
-      'select': {
+      select: {
         padding: px(idx('space.1', props.theme)),
         boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
         borderRadius: px(props.theme.radius),
