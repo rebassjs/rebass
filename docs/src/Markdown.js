@@ -28,7 +28,8 @@ class Markdown extends React.Component {
 }
 
 const CodeBlock = ({ language, literal }) => {
-  if (!/live/.test(language)) {
+  console.log(language)
+  if (!/\.|live/.test(language)) {
     return (
       <Pre
         f={1}

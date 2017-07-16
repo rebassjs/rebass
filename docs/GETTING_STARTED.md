@@ -9,7 +9,7 @@ npm i rebass
 
 To ensure Rebass's theme is properly configured, use the `Provider` component at the root of your application.
 
-```live
+```.jsx
 const App = props => (
   <Provider>
     <Heading>Hello</Heading>
@@ -29,7 +29,7 @@ import {
 } from 'rebass'
 ```
 
-```live
+```.jsx
 <Card width={256}>
   <BackgroundImage src={photo} />
   <Box p={2}>

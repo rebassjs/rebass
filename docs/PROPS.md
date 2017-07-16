@@ -6,7 +6,7 @@ design-system-based responsive style props using [styled-system](https://github.
 
 ### Width
 
-```live
+```.jsx
 <Box width={1/2} bg='blue'>
   Hello
 </Box>
@@ -41,7 +41,7 @@ design-system-based responsive style props using [styled-system](https://github.
 The `fontSize` prop makes referencing steps on the typographic scale
 simple and helps promote consistent design.
 
-```live
+```.jsx
 <Text f={5}>
   Hello
 </Text>
@@ -73,7 +73,7 @@ The margin and padding props make referencing steps on the spacing scale
 layout design without the need to add custom margin and padding declarations throughout an application.
 The margin and padding props use a shorthand syntax.
 
-```live
+```.jsx
 <Box
   p={3}
   mx={2}
@@ -121,7 +121,7 @@ The margin and padding props use a shorthand syntax.
 
 The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
 
-```live
+```.jsx
 <Box color='white' bg='fuschia' p={3}>
   Hello
 </Box>
@@ -147,7 +147,7 @@ All of the core props above accept arrays as values to set mobile-first responsi
 The first value is not scoped to a media query and applies to all breakpoints.
 Each value after the first corresponds to a media query derived from `theme.breakpoints`.
 
-```live
+```.jsx
 <Flex wrap>
   <Box
     w={[ 1, 1/2 ]}
@@ -182,14 +182,14 @@ Each value after the first corresponds to a media query derived from `theme.brea
 Each component accepts an `is` prop to change the underlying HTML element on a per-instance basis.
 This is useful for ensuring semantic markup, while keeping styles decoupled.
 
-```live
+```.jsx
 <Heading
   is='h1'
   children='Top-level heading'
 />
 ```
 
-```live
+```.jsx
 <Button
   is='a'
   href='#!'
