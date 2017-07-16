@@ -6,17 +6,17 @@ a typographic scale, fonts, font weights, border radius, and a color palette, al
 
 To customize the underlying theme, pass a `theme` object to the `<Provider />` component.
 
-```jsx-live
+```jsx:live
 <Provider
-	theme={{
-		font: '"Avenir Next", Helvetica, sans-serif',
-		fontSizes: [
-			12, 16, 24, 36, 48, 72
-		]
-	}}>
-	<Heading f={[ 2, 3, 4, 5 ]}>
-		Hello
-	</Heading>
+  theme={{
+    font: '"Avenir Next", Helvetica, sans-serif',
+    fontSizes: [
+      12, 16, 24, 36, 48, 72
+    ]
+  }}>
+  <Heading f={[ 2, 3, 4, 5 ]}>
+    Hello
+  </Heading>
 </Provider>
 ```
 
