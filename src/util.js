@@ -23,7 +23,7 @@ export const align = props => {
   return null
 }
 
-export const center = props => {
+export const getCenterPosition = props => {
   if (props.center || (props.centerX && props.centerY)) {
     return {
       top: '50%',
@@ -48,6 +48,35 @@ export const center = props => {
   return null
 }
 
+export const getArbitraryPosition = props => {
+  const result = {}
+  if ('top' in props) {
+    result['top'] = 0
+  }
+  if ('bottom' in props) {
+    result['bottom'] = 0
+  }
+  if ('left' in props) {
+    result['left'] = 0
+  }
+  if ('right' in props) {
+    result['right'] = 0
+  }
+  if ('zIndex' in props) {
+    result['zIndex'] = props.zIndex
+  }
+  return result;
+}
+
+export const position = (name, props) => {
+  return Object.assign(
+    {
+      position: name,
+    },
+    getArbitraryPosition(props),
+    getCenterPosition(props))
+}
+
 export default {
   idx,
   px,
@@ -55,5 +84,5 @@ export default {
   darken,
   caps,
   align,
-  center,
+  position,
 }

@@ -18,7 +18,7 @@ import {
   darken,
   caps,
   align,
-  center,
+  position,
 } from './util'
 import DonutBase from './DonutBase'
 
@@ -807,19 +807,15 @@ const components = [
     name: 'Absolute',
     type: 'div',
     props: {},
-    style: props => Object.assign({
-      position: 'absolute',
-      top: props.top ? 0 : null,
-      right: props.right ? 0 : null,
-      bottom: props.bottom ? 0 : null,
-      left: props.left ? 0 : null,
-      zIndex: props.z
-    }, center(props)),
+    style: props => position('absolute', props),
     propTypes: {
       top: bool,
       right: bool,
       bottom: bool,
       left: bool,
+      center: bool,
+      centerX: bool,
+      centerY: bool,
       z: number
     }
   },
@@ -827,19 +823,15 @@ const components = [
     name: 'Fixed',
     type: 'div',
     props: {},
-    style: props => Object.assign({
-      position: 'fixed',
-      top: props.top ? 0 : null,
-      right: props.right ? 0 : null,
-      bottom: props.bottom ? 0 : null,
-      left: props.left ? 0 : null,
-      zIndex: props.z
-    }, center(props)),
+    style: props => position('fixed', props),
     propTypes: {
       top: bool,
       right: bool,
       bottom: bool,
       left: bool,
+      center: bool,
+      centerX: bool,
+      centerY: bool,
       z: number
     }
   },

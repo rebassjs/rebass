@@ -134,30 +134,49 @@ test('util.align returns text-align values', t => {
   t.is(e, null)
 })
 
-test('util.center returns a center style object', t => {
-  const a = util.center({ center: true })
-  const b = util.center({ centerX: true, centerY: true })
-  const c = util.center({ centerX: true })
-  const d = util.center({ centerY: true })
-  const e = util.center({})
+test('util.position returns the position style object', t => {
+  const a = util.position('absolute', { centerX: true, bottom: true })
+  const b = util.position('absolute', { centerX: true, top: true })
+  const c = util.position('absolute', { centerY: true, left: true })
+  const d = util.position('absolute', { centerY: true, right: true })
+  const e = util.position('fixed', { center: true, zIndex: 10 })
+  const f = util.position('fixed', { centerX: true, centerY: true, zIndex: 10 })
   t.deepEqual(a, {
-      top: '50%',
-      bottom: 'auto',
-      left: '50%',
-      right: 'auto',
-      transform: 'translate(-50%, -50%)'
+    position: 'absolute',
+    bottom: 0,
+    left: '50%',
+    right: 'auto',
+    transform: 'translateX(-50%)',
   })
-  t.deepEqual(b, a)
+  t.deepEqual(b, {
+    position: 'absolute',
+    top: 0,
+    left: '50%',
+    right: 'auto',
+    transform: 'translateX(-50%)',
+  })
   t.deepEqual(c, {
-      left: '50%',
-      right: 'auto',
-      transform: 'translateX(-50%)'
+    position: 'absolute',
+    left: 0,
+    top: '50%',
+    bottom: 'auto',
+    transform: 'translateY(-50%)'
   })
   t.deepEqual(d, {
-      top: '50%',
-      bottom: 'auto',
-      transform: 'translateY(-50%)'
+    position: 'absolute',
+    right: 0,
+    top: '50%',
+    bottom: 'auto',
+    transform: 'translateY(-50%)'
   })
-  t.is(e, null)
+  t.deepEqual(e, {
+    position: 'fixed',
+    top: '50%',
+    bottom: 'auto',
+    left: '50%',
+    right: 'auto',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 10,
+  })
+  t.deepEqual(e, f)
 })
-
