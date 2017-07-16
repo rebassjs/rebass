@@ -29,7 +29,7 @@ class Markdown extends React.Component {
 
 const CodeBlock = ({ language, literal }) => {
   console.log(language)
-  if (!/\.|live/.test(language)) {
+  if (!/\./.test(language)) {
     return (
       <Pre
         f={1}
@@ -42,7 +42,7 @@ const CodeBlock = ({ language, literal }) => {
     )
   }
 
-  const noInline = /render/.test(language) ? true : false
+  const noInline = /\.\./.test(language) ? true : false
 
   return (
     <Box mb={3}>
