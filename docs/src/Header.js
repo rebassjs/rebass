@@ -50,7 +50,10 @@ const Header = props => (
         Functional React UI component library, built with styled-components
       </Lead>
     </Flex>
-    <Flex wrap align='center'>
+    <Flex
+      wrap
+      mx={-3}
+      align='center'>
       <Button
         is={Link}
         href='/getting-started'

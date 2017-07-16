@@ -17,6 +17,7 @@ import GridSystem from './GridSystem'
 import Theming from './Theming'
 import Extending from './Extending'
 import ServerSide from './ServerSide'
+import ComponentList from './ComponentList'
 import Component from './Component'
 import SideNav from './SideNav'
 
@@ -56,6 +57,7 @@ const App = props => (
             <Theming pattern='/theming' />
             <Extending pattern='/extending' />
             <ServerSide pattern='/server-side-rendering' />
+            <ComponentList pattern='/components' />
             <Component pattern='/components/:name' />
           </Container>
         </Box>

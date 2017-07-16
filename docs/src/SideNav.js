@@ -58,9 +58,11 @@ const SideNav = props => {
           active={pathname === '/server-side-rendering'}
         />
         <Divider my={3} color='gray3' />
-        <Subhead f={0} px={3} mb={2} caps>
-          {components.length} Components
-        </Subhead>
+        <Link
+          href='/components'
+          children={components.length + ' Components'}
+          active={pathname === '/components'}
+        />
         {components.map(name => (
           <Link
             key={name}
