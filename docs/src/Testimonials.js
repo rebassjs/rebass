@@ -52,7 +52,14 @@ const quotes = [
     text: 'Why the hell are we now putting CSS in Javascript? I’m losing my mind with web developers trying to control everything in the world with client-side javascript. What a mess.',
     source: 'alttab',
     href: 'https://news.ycombinator.com/item?id=14705579'
-  }
+  },
+  /*
+  {
+    text: 'Rebass is so incredible that at this point making anything from scratch just seems silly.',
+    source: 'Vincent van der Meulen',
+    href: 'https://mobile.twitter.com/vincentmvdm/status/886356961389813760'
+  },
+  */
 ]
 
 export default Testimonials
