@@ -13,6 +13,7 @@
     "react-live": "^1.7.0",
     "react-markdown": "^2.5.0",
     "react-x-ray": "^1.0.0-2",
+    "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
     "rrx": "^1.0.0-b1",
     "webpack": "^3.0.0",

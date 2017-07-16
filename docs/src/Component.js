@@ -1,5 +1,9 @@
 import React from 'react'
 import { createView } from 'rrx'
+import {
+  Flex,
+  Box,
+} from 'rebass'
 import Example from './Example'
 import Pagination from './Pagination'
 import { components } from './examples'
@@ -21,13 +25,19 @@ const Component = props => {
   } : null
 
   return (
-    <div>
-      <Example name={name} />
+    <Flex
+      column
+      style={{
+        minHeight: '80vh'
+      }}>
+      <Box flex='1 1 auto'>
+        <Example name={name} />
+      </Box>
       <Pagination
         previous={previous}
         next={next}
       />
-    </div>
+    </Flex>
   )
 }
 
