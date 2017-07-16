@@ -4,6 +4,7 @@ import {
   Flex,
   Box,
 } from 'rebass'
+import PageTitle from './PageTitle'
 import Example from './Example'
 import Pagination from './Pagination'
 import { components } from './examples'
@@ -25,19 +26,24 @@ const Component = props => {
   } : null
 
   return (
-    <Flex
-      column
-      style={{
-        minHeight: '80vh'
-      }}>
-      <Box flex='1 1 auto'>
-        <Example name={name} />
-      </Box>
-      <Pagination
-        previous={previous}
-        next={next}
-      />
-    </Flex>
+    <div>
+      <PageTitle>
+        {name}
+      </PageTitle>
+      <Flex
+        column
+        style={{
+          minHeight: '70vh'
+        }}>
+        <Box flex='1 1 auto'>
+          <Example name={name} />
+        </Box>
+        <Pagination
+          previous={previous}
+          next={next}
+        />
+      </Flex>
+    </div>
   )
 }
 

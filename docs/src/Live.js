@@ -32,6 +32,7 @@ const Editor = hoc()(styled(LiveEditor)`
   background-color: ${colors.gray0};
   outline: none;
   overflow: auto;
+  max-height: 512px;
 `)
 
 const Err = styled(LiveError)`

@@ -7,7 +7,7 @@ npm i rebass
 
 ## Provider
 
-To ensure Rebass's theme is properly configured, use the `Provider` component at the root of your application.
+To ensure Rebass's theme is properly configured, use the `<Provider />` component at the root of your application.
 
 ```.jsx
 const App = props => (

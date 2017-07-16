@@ -23,7 +23,7 @@ const CTA = props => (
         f={2}
         py={[ 2, 3 ]}
         href='/getting-started'
-        children='Documentation'
+        children='Getting Started'
       />
       <Pre mx={3} color='blue'>npm i rebass</Pre>
     </Flex>

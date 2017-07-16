@@ -15,8 +15,8 @@ const Link = styled(props => (
     is={RLink}
     href={'#' + props.name}
     children={props.name}
-    {...props}
     f={[ 0, 1 ]}
+    {...props}
     w={[ 1/2, 1 ]}
     px={3}
     py={1}

@@ -8,13 +8,9 @@ import Rebass, {
   BlockLink,
   Link,
   Code,
+  Pre,
 } from 'rebass'
-
-const h = React.createElement
-
-const Pre = styled(Rebass.Pre)`
-  // border-left: 2px solid;
-`
+import PageTitle from './PageTitle'
 
 class Markdown extends React.Component {
   render () {
@@ -33,7 +29,7 @@ const CodeBlock = ({ language, literal }) => {
       <Pre
         f={13}
         px={3}
-        py={2}
+        py={3}
         my={3}
         color='blue6'
         bg='gray0'>
@@ -57,13 +53,7 @@ const CodeBlock = ({ language, literal }) => {
 const MDHeading = props => {
   if (props.level === 1) {
     return (
-      <Heading
-        {...props}
-        is='h1'
-        f={[ 5, 6, 7, 8 ]}
-        mt={4}
-        mb={4}
-      />
+      <PageTitle {...props} />
     )
   }
 

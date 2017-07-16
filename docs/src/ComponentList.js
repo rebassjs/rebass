@@ -9,6 +9,7 @@ import {
   Pre,
 } from 'rebass'
 import { examples, components } from './examples'
+import PageTitle from './PageTitle'
 import Preview from './Preview'
 
 const CompCard = props => (
@@ -27,9 +28,9 @@ const CompCard = props => (
 
 const ComponentList = props => (
   <div>
-    <Heading>
+    <PageTitle>
       {components.length} Components
-    </Heading>
+    </PageTitle>
     <Flex
       wrap
       my={4}

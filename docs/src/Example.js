@@ -16,23 +16,14 @@ const Example = props => {
   const code = examples[props.name]
 
   return (
-    <Box
-      id={props.name}
-      my={5}>
-      <Flex my={3} align='center'>
-        <Heading f={[ 4, 5 ]}>
-          <BlockLink href={'#' + props.name}>
-            {props.name}
-          </BlockLink>
-        </Heading>
-        <NavLink
-          ml='auto'
-          onClick={e => props.update(toggleXray)}
-          children='X-Ray'
-        />
-      </Flex>
+    <div>
       <Live code={code} />
-    </Box>
+      <NavLink
+        f={0}
+        onClick={e => props.update(toggleXray)}
+        children='X-Ray'
+      />
+    </div>
   )
 }
 
