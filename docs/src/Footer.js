@@ -5,7 +5,7 @@ import { NavLink } from 'rebass'
 const Footer = props => (
   <footer>
     <Container>
-      <Flex mx={-2} py={4}>
+      <Flex mx={-2} mt={5}>
         <NavLink
           href='http://jxnblk.com/rebass'
           children='Rebass'

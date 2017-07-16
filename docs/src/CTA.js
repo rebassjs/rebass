@@ -4,7 +4,6 @@ import {
   Flex,
   Box,
   Text,
-  Lead,
   Pre,
   Button,
 } from 'rebass'
@@ -12,12 +11,18 @@ import Section from './Section'
 
 const CTA = props => (
   <Section name='Get Started'>
-    <Lead mb={3}>
+    <Text mb={3}>
       Read the docs to get started
-    </Lead>
+    </Text>
     <Flex
       py={3}
       align='center'>
+      <Pre
+        ml='auto'
+        mr={3}
+        color='blue'>
+        npm i rebass
+      </Pre>
       <Button
         is={Link}
         f={2}
@@ -25,7 +30,6 @@ const CTA = props => (
         href='/getting-started'
         children='Getting Started'
       />
-      <Pre mx={3} color='blue'>npm i rebass</Pre>
     </Flex>
   </Section>
 )
