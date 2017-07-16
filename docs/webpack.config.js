@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './entry.js',
+  entry: './src/entry.js',
 
   output: {
     path: __dirname,
@@ -34,5 +34,9 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
-  ]
+  ],
+
+  devServer: {
+    historyApiFallback: true
+  }
 }

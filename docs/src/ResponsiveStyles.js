@@ -25,6 +25,7 @@ const code = `<Text
     null, // null skips a breakpoint
     1/4   // 25% width at the next
   ]}
+  p={2}
   children='Hello'
   color='white'
   bg='blue'

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'rrx'
 import {
   Flex,
   Box,
@@ -33,7 +34,7 @@ const Header = props => (
     <Flex
       wrap
       mx={-3}
-      py={5}
+      pt={4}
       align='center'>
       <Heading
         caps
@@ -48,27 +49,33 @@ const Header = props => (
         w={[ 1, 384 ]}>
         Functional React UI component library, built with styled-components
       </Lead>
+    </Flex>
+    <Flex
+      wrap
+      mx={-3}
+      align='center'>
       <Button
-        is='a'
-        href='https://github.com/jxnblk/rebass'
+        is={Link}
+        href='/getting-started'
         f={2}
         color='black'
         bg='white'
+        children='Documentation'
+        py={[ 2, 3 ]}
+        mx={3}
+        my={4}
+      />
+      <ButtonOutline
+        is='a'
+        href='https://github.com/jxnblk/rebass'
+        f={2}
+        color='white'
         children='GitHub'
+        py={[ 2, 3 ]}
         mx={3}
         my={4}
       />
       <Pre mx={3}>npm i rebass</Pre>
-      {false && (
-        <ButtonOutline
-          is='a'
-          href='#!'
-          f={2}
-          m={2}
-          color='white'
-          children='Documentation'
-        />
-      )}
     </Flex>
   </Banner>
 )

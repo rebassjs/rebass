@@ -153,6 +153,6 @@ export const examples = {
   Column,
 }
 
-export const components = Object.keys(examples)
+export const components = Object.keys(examples).sort()
 
 export default examples

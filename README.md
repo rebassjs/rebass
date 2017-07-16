@@ -32,9 +32,11 @@ const App = props => (
 
 ## Features
 
+- Functional stateless UI components
 - Style encapsulation with styled-components
 - No external CSS dependencies
 - Configurable theming
+- Extensible base components
 - Design-system based consistency
 - Built for responsive web design
 - Reduces the need to write custom CSS

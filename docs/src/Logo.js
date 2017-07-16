@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { theme } from '../src'
+import { theme } from '../../src'
 
 const Svg = styled.svg`
   display: block;

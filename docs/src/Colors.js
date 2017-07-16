@@ -19,7 +19,7 @@ const Card = props => (
     p={2}>
     <Box
       px={3}
-      py={4}
+      py={[ 4, 4, 5 ]}
       bg={props.value}
     />
     <Flex
@@ -27,6 +27,7 @@ const Card = props => (
       w={1}>
       {ten.map(n => (
         <Box
+          key={n}
           w={1/10}
           flex='1 1 auto'
           py={2}

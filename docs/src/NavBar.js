@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'rrx'
 import {
   Absolute,
   Toolbar,
@@ -11,24 +12,30 @@ import Hide from 'hidden-styled'
 import Tweet from './Tweet'
 
 const NavBar = props => (
-  <Absolute top left right>
-    <Toolbar py={2} bg='transparent'>
-      <Hide xs>
-        <NavLink
-          href='http://jxnblk.com/rebass'
-          children='Rebass'
-        />
-      </Hide>
+  <Absolute
+    z={2}
+    top
+    left
+    right>
+    <Toolbar bg='transparent' {...props}>
+      <NavLink
+        is={Link}
+        href='/'
+        children='Rebass'
+      />
       <Hide xs>
         <NavLink
           href='https://github.com/jxnblk/rebass'
           children='GitHub'
         />
       </Hide>
-      <NavLink
-        href='http://jxnblk.com/rebass/stories'
-        children='Storybook'
-      />
+      <Hide xs>
+        <NavLink
+          is={Link}
+          href='/getting-started'
+          children='Docs'
+        />
+      </Hide>
       <Box mx='auto' />
       <Tweet />
       <Hide xs>

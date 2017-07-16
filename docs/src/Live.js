@@ -15,10 +15,12 @@ import Rebass, {
   Relative,
   Absolute,
   hoc,
+  colors,
   theme
 } from 'rebass'
+import { photo } from './constants'
 
-const _scope = Object.assign({}, Rebass, { styled })
+const _scope = Object.assign({}, Rebass, { styled, photo })
 
 const Editor = hoc()(styled(LiveEditor)`
   font-family: 'SF Mono', Menlo, monospace;
@@ -26,10 +28,11 @@ const Editor = hoc()(styled(LiveEditor)`
   tab-size: 2;
   margin: 0;
   padding: 16px;
-  color: white;
-  background-color: #000;
+  color: ${colors.blue6};
+  background-color: ${colors.gray0};
   outline: none;
   overflow: auto;
+  max-height: 512px;
 `)
 
 const Err = styled(LiveError)`
