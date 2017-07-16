@@ -38,6 +38,11 @@ const SideNav = props => {
           active={pathname === '/props'}
         />
         <Link
+          href='/grid-system'
+          children='Grid System'
+          active={pathname === '/grid-system'}
+        />
+        <Link
           href='/theming'
           children='Theming'
           active={pathname === '/theming'}
@@ -47,38 +52,36 @@ const SideNav = props => {
           children='Extending'
           active={pathname === '/extending'}
         />
-        {/*
-      <Link name='Demo' />
-      <Link name='Responsive Styles' />
-      <Link name='Configuration' />
-      <Link name='Customizing' />
-      <Link name='Grid Styled' />
-      */}
-      <Divider my={3} color='gray3' />
-      <Subhead f={0} px={3} mb={2} caps>
-        {components.length} Components
-      </Subhead>
-      {components.map(name => (
         <Link
-          key={name}
-          href={`/components/${name}`}
-          children={name}
-          active={pathname === '/components/' + name}
+          href='/server-side-rendering'
+          children='Server Side Rendering'
+          active={pathname === '/server-side-rendering'}
         />
-      ))}
-      <Divider my={3} color='gray3' />
-      <Link
-        is='a'
-        href='https://github.com/jxnblk/rebass'
-        children='GitHub'
-      />
-      <Link
-        is='a'
-        href='http://jxnblk.com'
-        children='Made by Jxnblk'
-      />
-    </Box>
-  </nav>
+        <Divider my={3} color='gray3' />
+        <Subhead f={0} px={3} mb={2} caps>
+          {components.length} Components
+        </Subhead>
+        {components.map(name => (
+          <Link
+            key={name}
+            href={`/components/${name}`}
+            children={name}
+            active={pathname === '/components/' + name}
+          />
+        ))}
+        <Divider my={3} color='gray3' />
+        <Link
+          is='a'
+          href='https://github.com/jxnblk/rebass'
+          children='GitHub'
+        />
+        <Link
+          is='a'
+          href='http://jxnblk.com'
+          children='Made by Jxnblk'
+        />
+      </Box>
+    </nav>
   )
 }
 

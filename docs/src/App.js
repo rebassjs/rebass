@@ -13,6 +13,10 @@ import {
 import Home from './Home'
 import GettingStarted from './GettingStarted'
 import PropsView from './PropsView'
+import GridSystem from './GridSystem'
+import Theming from './Theming'
+import Extending from './Extending'
+import ServerSide from './ServerSide'
 import Component from './Component'
 import SideNav from './SideNav'
 
@@ -48,6 +52,10 @@ const App = props => (
             width={1024}>
             <GettingStarted pattern='/getting-started' />
             <PropsView pattern='/props' />
+            <GridSystem pattern='/grid-system' />
+            <Theming pattern='/theming' />
+            <Extending pattern='/extending' />
+            <ServerSide pattern='/server-side-rendering' />
             <Component pattern='/components/:name' />
           </Container>
         </Box>

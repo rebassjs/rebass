@@ -28,7 +28,7 @@ class Markdown extends React.Component {
 }
 
 const CodeBlock = ({ language, literal }) => {
-  if (language !== 'live') {
+  if (!/live/.test(language)) {
     return (
       <Pre
         f={1}
@@ -41,10 +41,13 @@ const CodeBlock = ({ language, literal }) => {
     )
   }
 
+  const noInline = /render/.test(language) ? true : false
+
   return (
     <Box mb={3}>
       <Live
         code={literal}
+        noInline={noInline}
       />
     </Box>
   )
@@ -52,7 +55,6 @@ const CodeBlock = ({ language, literal }) => {
 
 const MDHeading = props => {
   if (props.level === 1) {
-    console.log('h1', props.level)
     return (
       <Heading
         {...props}
