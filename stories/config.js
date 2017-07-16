@@ -3,7 +3,7 @@ import { configure, addDecorator } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import { injectGlobal } from 'styled-components'
 import { Box } from 'grid-styled'
-import { createProvider } from 'funcup'
+import { createProvider } from 'refunk'
 import XRay from 'react-x-ray'
 import Provider from '../src/Provider'
 

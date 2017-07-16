@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { createProvider } from 'funcup'
+import { createProvider } from 'refunk'
 import { createRouter, Link } from 'rrx'
 import {
   Provider,

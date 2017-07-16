@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { connect } from 'funcup'
+import { connect } from 'refunk'
 import {
   LiveProvider,
   LivePreview,

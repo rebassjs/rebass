@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { createProvider } from 'funcup'
+import { createProvider } from 'refunk'
 import {
   Carousel,
   CarouselSlide,

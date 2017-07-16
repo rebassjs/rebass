@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'funcup'
+import { connect } from 'refunk'
 import Rebass, {
   Flex,
   Box,

@@ -38,12 +38,12 @@
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
-    "funcup": "^1.0.0-1",
     "nyc": "^11.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
-    "react-x-ray": "^1.0.0-2"
+    "react-x-ray": "^1.0.0-2",
+    "refunk": "^1.0.0-2"
   },
   "repository": {
     "type": "git",

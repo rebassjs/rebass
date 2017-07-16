@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { createProvider } from 'funcup'
+import { createProvider } from 'refunk'
 import { Donut, Slider } from '../src'
 
 const hoc = createProvider({ value: 2 / 3 })
