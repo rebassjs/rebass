@@ -54,7 +54,7 @@ const App = props => {
           w={[ 1, 'calc(100% - 192px)' ]}>
           <Container
             mt={6}
-            px={4}
+            px={[ 3, 3, 4 ]}
             pb={3}
             width={1024}>
             <GettingStarted pattern='/getting-started' />

@@ -6,12 +6,16 @@ Rebass includes and incredibly flexible, responsive flexbox grid system based on
 Use the `<Flex />` and `<Box />` components to fine tune spacing and alignment in a variety of combination.
 
 ```.jsx
-<Flex>
-  <Box w={1/2} bg='blue'>
-    Half
+<Flex mx={-2}>
+  <Box w={1/2} px={2}>
+    <Text p={1} color='white' bg='blue'>
+      Half
+    </Text>
   </Box>
-  <Box w={1/2} bg='green'>
-    Half
+  <Box w={1/2} px={2}>
+    <Text p={1} color='white' bg='blue'>
+      Half
+    </Text>
   </Box>
 </Flex>
 ```

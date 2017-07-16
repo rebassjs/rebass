@@ -47,8 +47,8 @@ const code = `<Card
   m={3}
   width={[ 1, 1/2 ]}
   fontSize={[ 4, 5, 6 ]}
-  color='blue'
-  bg='blue0'
+  color='white'
+  bg='blue'
 >
   <Text>
     Hello

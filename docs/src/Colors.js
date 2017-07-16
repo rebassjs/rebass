@@ -19,7 +19,7 @@ const Card = props => (
     p={2}>
     <Box
       px={3}
-      py={4}
+      py={[ 4, 4, 5 ]}
       bg={props.value}
     />
     <Flex
