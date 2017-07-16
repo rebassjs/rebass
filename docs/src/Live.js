@@ -15,6 +15,7 @@ import Rebass, {
   Relative,
   Absolute,
   hoc,
+  colors,
   theme
 } from 'rebass'
 import { photo } from './constants'
@@ -27,8 +28,8 @@ const Editor = hoc()(styled(LiveEditor)`
   tab-size: 2;
   margin: 0;
   padding: 16px;
-  color: white;
-  background-color: #000;
+  color: ${colors.blue6};
+  background-color: ${colors.gray0};
   outline: none;
   overflow: auto;
 `)

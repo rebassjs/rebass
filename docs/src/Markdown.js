@@ -13,7 +13,7 @@ import Rebass, {
 const h = React.createElement
 
 const Pre = styled(Rebass.Pre)`
-  border-left: 2px solid;
+  // border-left: 2px solid;
 `
 
 class Markdown extends React.Component {
@@ -28,15 +28,15 @@ class Markdown extends React.Component {
 }
 
 const CodeBlock = ({ language, literal }) => {
-  console.log(language)
   if (!/\./.test(language)) {
     return (
       <Pre
-        f={1}
+        f={13}
         px={3}
-        py={1}
+        py={2}
         my={3}
-        color='black'>
+        color='blue6'
+        bg='gray0'>
         {literal}
       </Pre>
     )
