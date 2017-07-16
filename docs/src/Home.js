@@ -1,7 +1,6 @@
 import React from 'react'
 import { createView } from 'rrx'
 import { Container } from 'rebass'
-import NavBar from './NavBar'
 import Header from './Header'
 import About from './About'
 import Features from './Features'
@@ -20,7 +19,6 @@ import Footer from './Footer'
 
 const Home = props => (
   <div>
-    <NavBar />
     <Header />
     <About />
     <Features />

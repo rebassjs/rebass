@@ -10,6 +10,7 @@ import {
   Box,
   Border,
 } from 'rebass'
+import NavBar from './NavBar'
 import Home from './Home'
 import GettingStarted from './GettingStarted'
 import PropsView from './PropsView'
@@ -22,10 +23,11 @@ import Component from './Component'
 import SideNav from './SideNav'
 
 const StickySide = styled(Box)`
-  display: none;
+  // display: none;
 
   @media screen and (min-width: 32em) {
     flex: none;
+    order: 0;
     display: block;
     position: -webkit-sticky;
     position: sticky;
@@ -36,20 +38,24 @@ const StickySide = styled(Box)`
   }
 `
 
-const App = props => (
-  <Provider theme={theme}>
-    <Home pattern='/' />
-    {props.location.pathname !== '/' && (
-      <Flex>
-        <StickySide w={[ 1, 192 ]}>
-          <Border right>
-            <SideNav {...props} />
-          </Border>
-        </StickySide>
-        <Box flex='0 1 auto' w={[ 1, 'calc(100% - 192px)' ]}>
+const App = props => {
+  const { pathname } = props.location
+
+  return (
+    <Provider theme={theme}>
+      <NavBar
+        bg={pathname === '/' ? 'transparent' : 'black'}
+      />
+      <Home pattern='/' />
+      <Flex wrap>
+        <Box
+          flex='0 1 auto'
+          order={[ null, 2 ]}
+          w={[ 1, 'calc(100% - 192px)' ]}>
           <Container
-            mt={5}
-            pb={6}
+            mt={6}
+            px={4}
+            pb={3}
             width={1024}>
             <GettingStarted pattern='/getting-started' />
             <PropsView pattern='/props' />
@@ -61,10 +67,17 @@ const App = props => (
             <Component pattern='/components/:name' />
           </Container>
         </Box>
+        {pathname !== '/' && (
+          <StickySide w={[ 1, 192 ]}>
+            <Border right>
+              <SideNav {...props} />
+            </Border>
+          </StickySide>
+        )}
       </Flex>
-    )}
-  </Provider>
-)
+    </Provider>
+  )
+}
 
 const theme = {
   maxWidth: 1280

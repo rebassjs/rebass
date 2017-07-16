@@ -8,7 +8,7 @@ import {
 } from 'rebass'
 
 const Pagination = props => (
-  <Flex my={5}>
+  <Flex my={[ 3, 5 ]}>
     {props.previous && (
       <NavLink
         is={Link}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link as RLink } from 'rrx'
+import styled from 'styled-components'
 import {
+  Flex,
   Box,
   Subhead,
   Divider,
@@ -8,25 +10,32 @@ import {
 } from 'rebass'
 import { components } from './examples'
 
-const Link = props => (
+const Link = styled(props => (
   <NavLink
     is={RLink}
     href={'#' + props.name}
     children={props.name}
     {...props}
-    w={1}
+    f={[ 0, 1 ]}
+    w={[ 1/2, 1 ]}
     px={3}
     py={1}
   />
-)
+))([], props => ({
+  color: props.active ? 'white' : 'inherit',
+  backgroundColor: props.active ? props.theme.colors.blue : 'transparent',
+  '&:hover': {
+    backgroundColor: props.active ? props.theme.colors.blue : null,
+  }
+}))
 
 const SideNav = props => {
   const { pathname } = props.location
 
   return (
     <nav>
-      <Box py={3}>
-        <Link href='/' children='Rebass' />
+      <Flex wrap py={4}>
+        <Divider w={1} my={3} color='gray3' />
         <Link
           href='/getting-started'
           children='Getting Started'
@@ -57,7 +66,7 @@ const SideNav = props => {
           children='Server Side Rendering'
           active={pathname === '/server-side-rendering'}
         />
-        <Divider my={3} color='gray3' />
+        <Divider w={1} my={3} color='gray3' />
         <Link
           href='/components'
           children={components.length + ' Components'}
@@ -71,22 +80,24 @@ const SideNav = props => {
             active={pathname === '/components/' + name}
           />
         ))}
-        <Divider my={3} color='gray3' />
+        <Divider w={1} my={3} color='gray3' />
         <Link
           href='/storybook'
           children='Storybook'
         />
         <Link
           is='a'
+          f={0}
           href='https://github.com/jxnblk/rebass'
           children='GitHub'
         />
         <Link
+          f={0}
           is='a'
           href='http://jxnblk.com'
           children='Made by Jxnblk'
         />
-      </Box>
+      </Flex>
     </nav>
   )
 }
