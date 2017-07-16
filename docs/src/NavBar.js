@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'rrx'
 import {
   Absolute,
   Toolbar,
@@ -12,9 +13,7 @@ import Tweet from './Tweet'
 
 const NavBar = props => (
   <Absolute top left right>
-    <Toolbar
-      bg='black'
-      xbg='transparent'>
+    <Toolbar bg='transparent'>
       <Hide xs>
         <NavLink
           href='http://jxnblk.com/rebass'
@@ -27,10 +26,13 @@ const NavBar = props => (
           children='GitHub'
         />
       </Hide>
-      <NavLink
-        href='http://jxnblk.com/rebass/stories'
-        children='Storybook'
-      />
+      <Hide xs>
+        <NavLink
+          is={Link}
+          href='/getting-started'
+          children='Docs'
+        />
+      </Hide>
       <Box mx='auto' />
       <Tweet />
       <Hide xs>

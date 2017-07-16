@@ -73,6 +73,10 @@ const SideNav = props => {
         ))}
         <Divider my={3} color='gray3' />
         <Link
+          href='/storybook'
+          children='Storybook'
+        />
+        <Link
           is='a'
           href='https://github.com/jxnblk/rebass'
           children='GitHub'
