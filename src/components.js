@@ -318,6 +318,7 @@ const components = [
     type: 'input',
     props: {
       type: 'text',
+      f: 'inherit',
       p: 1,
       m: 0,
       w: 1,
@@ -326,7 +327,6 @@ const components = [
     },
     style: props => ({
       fontFamily: 'inherit',
-      fontSize: 'inherit',
       lineHeight: 'inherit',
       display: 'inline-block',
       verticalAlign: 'middle',
