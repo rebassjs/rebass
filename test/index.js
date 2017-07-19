@@ -133,3 +133,30 @@ test('util.align returns text-align values', t => {
   t.is(e, null)
 })
 
+test('util.center returns a center style object', t => {
+  const a = util.center({ center: true })
+  const b = util.center({ centerX: true, centerY: true })
+  const c = util.center({ centerX: true })
+  const d = util.center({ centerY: true })
+  const e = util.center({})
+  t.deepEqual(a, {
+      top: '50%',
+      bottom: 'auto',
+      left: '50%',
+      right: 'auto',
+      transform: 'translate(-50%, -50%)'
+  })
+  t.deepEqual(b, a)
+  t.deepEqual(c, {
+      left: '50%',
+      right: 'auto',
+      transform: 'translateX(-50%)'
+  })
+  t.deepEqual(d, {
+      top: '50%',
+      bottom: 'auto',
+      transform: 'translateY(-50%)'
+  })
+  t.is(e, null)
+})
+
