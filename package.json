@@ -64,6 +64,10 @@
       "test",
       "docs",
       "stories"
+    ],
+    "reporter": [
+      "lcov",
+      "html"
     ]
   }
 }
