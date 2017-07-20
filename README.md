@@ -115,6 +115,25 @@ simple and helps promote consistent design.
 <Text f={3} />
 ```
 
+### Font Weight
+
+Like`fontSize`, the `fontWeight` prop allows you to easily reference steps on the weights scale.
+
+```jsx
+// Numbers are used to reference steps on the weights scale
+// i.e. the `theme.weights` array
+<Text fontWeight={1} />
+
+// The bold typographic style prop will apply fontWeight={1}
+<Text bold />
+
+// Strings can be used instead
+<Text fontWeight='bold' />
+
+// The shorthand `fw` prop can be used instead of `fontSize`
+<Text fw={1} />
+```
+
 ### Margin and Padding
 
 The margin and padding props make referencing steps on the spacing scale
