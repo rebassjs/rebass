@@ -15,12 +15,20 @@ export const caps = props => props.caps ? ({
   letterSpacing: '.2em'
 }) : {}
 
-export const align = props => {
+export const alignValue = props => {
   if (props.left) return 'left'
   if (props.center) return 'center'
   if (props.right) return 'right'
   if (props.justify) return 'justify'
   return null
+}
+
+export const align = props => {
+  const value = alignValue(props)
+  if (!value) return null
+  return {
+    textAlign: value
+  }
 }
 
 export default {
