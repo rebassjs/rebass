@@ -130,7 +130,7 @@ Like`fontSize`, the `fontWeight` prop allows you to easily reference steps on th
 // Strings can be used instead
 <Text fontWeight='bold' />
 
-// The shorthand `fw` prop can be used instead of `fontSize`
+// The shorthand `fw` prop can be used instead of `fontWeight`
 <Text fw={1} />
 ```
 
