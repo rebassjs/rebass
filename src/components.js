@@ -4,6 +4,7 @@ import {
   string,
   number,
   oneOf,
+  oneOfType,
 } from 'prop-types'
 import {
   space,
@@ -23,6 +24,7 @@ import { Flex, Box } from './grid'
 import DonutBase from './DonutBase'
 import SelectBase from './SelectBase'
 
+const numberOrString = oneOfType([ number, string ])
 const bold = props => idx('weights.1', props.theme)
 
 const components = [
@@ -503,11 +505,10 @@ const components = [
       mr: 'auto'
     },
     style: props => ({
-      maxWidth: px(props.width || idx('maxWidth', props.theme) || 1024),
-      width: 'auto'
+      maxWidth: px(props.maxWidth || idx('maxWidth', props.theme) || 1024)
     }),
     propTypes: {
-      width: number
+      maxWidth: numberOrString
     }
   },
   {
