@@ -178,6 +178,7 @@ const components = [
     },
     style: props => Object.assign({
       textAlign: align(props),
+      fontStyle: props.italic ? 'italic' : null,
       fontWeight: props.bold ? bold(props) : idx('weights.0', props.theme)
     }, caps(props)),
     propTypes: {
@@ -186,7 +187,8 @@ const components = [
       right: bool,
       justify: bool,
       bold: bool,
-      caps: bool
+      italic: bool,
+      caps: bool,
     }
   },
   {
