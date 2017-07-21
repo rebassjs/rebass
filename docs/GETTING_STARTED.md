@@ -17,6 +17,17 @@ const App = props => (
 )
 ```
 
+You might also want to set some global styles in your application.
+
+```jsx
+import { injectGlobal } from 'styled-components'
+
+injectGlobal`
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+`
+```
+
 Import UI components from Rebass and use them to build larger components.
 
 ```js
