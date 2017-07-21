@@ -215,8 +215,7 @@ This is useful for ensuring semantic markup, while keeping styles decoupled.
 ### `<Provider />`
 
 The `<Provider />` component is a wrapper around styled-components' [ThemeProvider](https://www.styled-components.com/docs/advanced#theming).
-It also provides global styles that remove the body tag's margin, sets all elements to `box-sizing: border-box`,
-and sets a default font-family value based on `theme.font`.
+It also sets a default font-family value based on `theme.font`.
 
 The Provider should be wrapped around a top-level component to ensure Rebass works as expected.
 
