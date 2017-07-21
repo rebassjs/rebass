@@ -231,6 +231,18 @@ const App = props => (
 )
 ```
 
+You'll likely want to add additional global styles that set `box-sizing: border-box` in your application.
+This can be done with styled-components [`injectGlobal`](https://www.styled-components.com/docs/api#injectglobal):
+
+```jsx
+import { injectGlobal } from 'styled-components'
+
+injectGlobal`
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+`
+```
+
 ### UI Components
 
 For an interactive demo of all Rebass components, see http://jxnblk.com/rebass
