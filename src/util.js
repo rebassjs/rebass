@@ -23,6 +23,17 @@ export const align = props => {
   return null
 }
 
+export const fontWeight = props => {
+  const fw = props.fw || props.fontWeight;
+  if (props.fw === 0 || props.fontWeight === 0) return idx('weights.0', props.theme)
+  if (props.bold) return idx('weights.1', props.theme)
+  if (typeof fw === 'string') return fw
+  if (typeof fw === 'number') return idx('weights.'+fw, props.theme)
+  return null
+}
+
+export const bold = props => idx('weights.1', props.theme)
+
 export default {
   idx,
   px,

@@ -46,6 +46,12 @@ storiesOf('Button', module)
       children='Hello'
     />
   ))
+  .add('Regular Font', () => (
+    <Button
+      fontWeight = {0}
+      children='Hello'
+    />
+  ))
   .add('Width', () => (
     <Button
       w={[ 1, 1/2 ]}

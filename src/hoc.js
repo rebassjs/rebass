@@ -29,6 +29,8 @@ const propTypes = {
   w: prop,
   fontSize: prop,
   f: prop,
+  fontWeight: prop,
+  fw: prop,
   color: prop,
   bg: prop,
   m: prop,

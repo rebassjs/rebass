@@ -18,12 +18,12 @@ import {
   darken,
   caps,
   align,
+  fontWeight,
+  bold,
 } from './util'
 import { Flex, Box } from './grid'
 import DonutBase from './DonutBase'
 import SelectBase from './SelectBase'
-
-const bold = props => idx('weights.1', props.theme)
 
 const components = [
   // Buttons
@@ -41,7 +41,7 @@ const components = [
     },
     style: props => ({
       fontFamily: 'inherit',
-      fontWeight: bold(props),
+      fontWeight: fontWeight(props) || bold(props),
       lineHeight: 16 / 14,
       display: 'inline-block',
       verticalAlign: 'middle',
@@ -141,7 +141,7 @@ const components = [
       display: 'inline-flex',
       alignItems: 'center',
       alignSelf: 'stretch',
-      fontWeight: bold(props),
+      fontWeight: fontWeight(props),
       textDecoration: 'none',
       whiteSpace: 'nowrap',
       color: 'inherit',
@@ -178,7 +178,7 @@ const components = [
     },
     style: props => Object.assign({
       textAlign: align(props),
-      fontWeight: props.bold ? bold(props) : idx('weights.0', props.theme)
+      fontWeight: fontWeight(props)
     }, caps(props)),
     propTypes: {
       left: bool,
@@ -614,7 +614,7 @@ const components = [
       p: 2,
     },
     style: props => ({
-      fontWeight: bold(props),
+      fontWeight: fontWeight(props),
       borderBottomWidth: px(1),
       borderBottomStyle: 'solid',
     })
@@ -627,7 +627,7 @@ const components = [
       p: 2,
     },
     style: props => ({
-      fontWeight: bold(props),
+      fontWeight: fontWeight(props),
       borderTopWidth: px(1),
       borderTopStyle: 'solid',
     })
@@ -674,7 +674,7 @@ const components = [
       display: 'flex',
       alignItems: 'center',
       minHeight: px(48),
-      fontWeight: bold(props)
+      fontWeight: fontWeight(props)
     })
   },
   {
@@ -726,7 +726,7 @@ const components = [
       bg: 'blue'
     },
     style: props => ({
-      fontWeight: bold(props),
+      fontWeight: fontWeight(props),
       display: 'inline-block',
       verticalAlign: 'middle',
       borderRadius: px(props.theme.radius)
@@ -788,7 +788,7 @@ const components = [
     },
     style: props => ({
       textDecoration: 'none',
-      fontWeight: bold(props),
+      fontWeight: fontWeight(props),
       color: props.active ? color(props)('blue') : 'inherit',
       borderBottomWidth: props.active ? 2 : 0,
       borderBottomStyle: 'solid',
