@@ -251,6 +251,7 @@ accepts several typographic style props.
 - `right` (boolean) text-align: right
 - `justify` (boolean) text-align: justify
 - `bold` (boolean) font-weight: theme.weights[1]
+- `italic` (boolean) font-style: italic
 - `caps` (boolean) text-transform: uppercase; letter-spacing: .2em
 
 ### `<Border />`

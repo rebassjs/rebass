@@ -22,3 +22,10 @@ storiesOf('Text', module)
       children='Hello'
     />
   ))
+  .add('Italic', () => (
+    <Text
+      is='div'
+      italic
+      children='Hello'
+    />
+  ))
