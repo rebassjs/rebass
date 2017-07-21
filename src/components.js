@@ -145,7 +145,7 @@ const components = [
       textDecoration: 'none',
       whiteSpace: 'nowrap',
       color: 'inherit',
-      backgroundColor: props.active ? darken(1/4) : null,
+      backgroundColor: props.active ? darken(1/4) : 'transparent',
       cursor: 'pointer',
       '&:hover': {
         backgroundColor: darken(1/16)
@@ -176,10 +176,15 @@ const components = [
     props: {
       m: 0
     },
-    style: props => Object.assign({
-      textAlign: align(props),
-      fontWeight: props.bold ? bold(props) : idx('weights.0', props.theme)
-    }, caps(props)),
+    style: props => Object.assign(
+      {
+        fontWeight: props.bold
+          ? bold(props)
+          : idx('weights.0', props.theme)
+      },
+      align(props),
+      caps(props)
+    ),
     propTypes: {
       left: bool,
       center: bool,
@@ -481,7 +486,7 @@ const components = [
       // Fix this once non-whitelisted styled-components is out
     },
     style: props => ({
-      backgroundImage: props.src ? `url(${props.src})` : null,
+      backgroundImage: props.src ? `url(${props.src})` : 'none',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: 0,
@@ -529,7 +534,9 @@ const components = [
     props: {},
     style: props => {
       const w = px(props.borderWidth || 1)
-      const borderWidth = (!props.top && !props.right && !props.bottom && !props.left) ? w : null
+      const borderWidth = (!props.top && !props.right && !props.bottom && !props.left)
+        ? { borderWidth: w }
+        : null
       const directions = borderWidth ? null : {
         borderTopWidth: props.top ? w : 0,
         borderRightWidth: props.right ? w : 0,
@@ -538,11 +545,10 @@ const components = [
       }
 
       return Object.assign({
-        borderWidth,
         borderStyle: 'solid',
         borderColor: color(props)(props.color || 'gray2'),
         color: 'inherit'
-      }, directions)
+      }, borderWidth, directions)
     },
     propTypes: {
       top: bool,
@@ -589,7 +595,7 @@ const components = [
       minHeight: '80vh',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : null,
+      backgroundImage: props.backgroundImage ? `url(${props.backgroundImage})` : 'none',
     }),
     propTypes: {
       backgroundImage: string
@@ -914,36 +920,38 @@ const components = [
       const position = props.position || 'left'
       const size = props.size || 320
       const h = /^(left|right)$/.test(position) ? 1 : 0
-      const width = h ? px(size) : null
-      const height = h ? null : px(size)
-      let transform
+      const width = h ? { width: px(size) } : null
+      const height = h ? null : { height: px(size) }
       const transforms = {
         left: 'translateX(-100%)',
         right: 'translateX(100%)',
         top: 'translateY(-100%)',
         bottom: 'translateY(100%)',
       }
-      if (!props.open) transform = transforms[position]
+      const transform = !props.open
+        ? { transform: transforms[position] }
+        : null
 
-      const top = /^(top|left|right)$/.test(position) ? 0 : null
-      const bottom = /^(bottom|left|right)$/.test(position) ? 0 : null
-      const left = /^(left|top|bottom)$/.test(position) ? 0 : null
-      const right = /^(right|top|bottom)$/.test(position) ? 0 : null
+      const top = /^(top|left|right)$/.test(position) ? { top: 0 } : null
+      const bottom = /^(bottom|left|right)$/.test(position) ? { bottom: 0 } : null
+      const left = /^(left|top|bottom)$/.test(position) ? { left: 0 } : null
+      const right = /^(right|top|bottom)$/.test(position) ? { right: 0 } : null
 
-      return {
-        top,
-        bottom,
-        left,
-        right,
-        width,
-        height,
-        transform,
+      return Object.assign({
         overflowX: 'hidden',
         overflowY: 'auto',
         transitionProperty: 'transform',
         transitionDuration: '.2s',
         transitionTimingFunction: 'ease-out'
-      }
+      },
+        top,
+        bottom,
+        left,
+        right,
+        transform,
+        width,
+        height
+      )
     },
     propTypes: {
       size: number,
@@ -1130,16 +1138,18 @@ const components = [
     name: 'Arrow',
     type: 'div',
     props: {},
-    style: props => ({
-      display: 'inline-block',
-      width: 0,
-      height: 0,
-      verticalAlign: 'middle',
-      borderRight: '.3125em solid transparent',
-      borderLeft: '.3125em solid transparent',
-      borderTop: props.direction === 'down' ? '.4375em solid' : null,
-      borderBottom: props.direction === 'up' ? '.4375em solid' : null
-    }),
+    style: props => {
+      const borderTop = props.direction === 'down' ? { borderTop: '.4375em solid' } : null
+      const borderBottom = props.direction === 'up' ? { borderBottom: '.4375em solid' } : null
+      return Object.assign({
+        display: 'inline-block',
+        width: 0,
+        height: 0,
+        verticalAlign: 'middle',
+        borderRight: '.3125em solid transparent',
+        borderLeft: '.3125em solid transparent',
+      }, borderTop, borderBottom)
+    },
     propTypes: {
       direction: oneOf([ 'up', 'down' ])
     },
