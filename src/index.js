@@ -23,7 +23,6 @@ export {
   colors,
   radius
 } from './theme'
-export { default as tag } from './tag'
 export { default as createLibrary } from './create-library'
 export { default as createComponent } from './create-component'
 export { default as util } from './util'
