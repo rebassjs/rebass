@@ -13,7 +13,8 @@ import {
   number,
   string
 } from 'prop-types'
-import tag from './tag'
+import tag from 'tag-hoc'
+import styleProps from './style-props'
 
 const prop = oneOfType([
   number,
@@ -65,9 +66,11 @@ const withStyle = (style, props) => Component => {
   return Comp
 }
 
+const Tag = tag(styleProps)
+
 const hoc = (style, props) => compose(
   withStyle(style, props),
-  tag
+  Tag
 )
 
 export default hoc
