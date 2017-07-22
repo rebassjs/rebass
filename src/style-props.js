@@ -1,3 +1,6 @@
+// blacklist for removing style props with tag-hoc
+// related: https://github.com/styled-components/styled-components/issues/439
+
 export default [
   'width',
   'w',
