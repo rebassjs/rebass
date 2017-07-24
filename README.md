@@ -273,6 +273,10 @@ accepts several typographic style props.
 - `left` (boolean) border-left
 - `color` (string) sets *only* the border color
 
+### `<Container />`
+
+- `maxWidth` (number) the maximum width of the container element
+
 ### `<NavLink />`, `<TabItem />`, `<DotButton />`
 
 - `active` (boolean) adjusts style for an active state
