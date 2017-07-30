@@ -11,7 +11,7 @@ import {
   Code
 } from '../src'
 
-storiesOf('Typography', module)
+storiesOf('styles/Typography', module)
   .add('Default', () => (
     <div>
       <Heading>Hello Heading</Heading>

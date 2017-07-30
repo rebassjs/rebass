@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Button } from '../src'
 
-storiesOf('Button', module)
+storiesOf('components/Button', module)
   .add('Default', () => (
     <Button
       children='Hello'
@@ -59,4 +59,3 @@ storiesOf('Button', module)
       children='Hello'
     />
   ))
-

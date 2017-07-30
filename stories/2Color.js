@@ -10,7 +10,7 @@ import {
 const { colors } = theme
 const keys = Object.keys(colors)
 
-storiesOf('Colors', module)
+storiesOf('styles/Colors', module)
   .add('Palx', () => (
     <Flex wrap>
       {keys.map(key => (

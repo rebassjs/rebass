@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Star, Flex, Text } from '../src'
 
-storiesOf('Star', module)
+storiesOf('components/Star', module)
   .add('Default', () => (
     <Flex>
       <Star checked />

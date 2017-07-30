@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Button, Arrow } from '../src'
 
-storiesOf('Arrow', module)
+storiesOf('components/Arrow', module)
   .add('Default', () => (
     <Arrow />
   ))

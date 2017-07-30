@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Text } from '../src'
 
-storiesOf('Text', module)
+storiesOf('components/Text', module)
   .add('Default', () => (
     <Text
       children='Hello Rebass'

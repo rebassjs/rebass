@@ -11,7 +11,7 @@ import {
   Progress
 } from '../src'
 
-storiesOf('Form Elements', module)
+storiesOf('forms/Form Elements', module)
   .add('Default', () => (
     <form>
       <Label>Input</Label>
@@ -41,4 +41,3 @@ storiesOf('Form Elements', module)
       <Progress my={3} value={1/3} />
     </form>
   ))
-

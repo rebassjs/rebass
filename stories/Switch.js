@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { createProvider } from 'refunk'
 import { Switch } from '../src'
 
-storiesOf('Switch', module)
+storiesOf('components/Switch', module)
   .add('Default', () => (
     <Live />
   ))

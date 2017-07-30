@@ -7,7 +7,7 @@ import {
 } from '../src'
 import { photo } from './constants'
 
-storiesOf('Card', module)
+storiesOf('components/Card', module)
   .add('Default', () => (
     <Card
       children='Hello Card'

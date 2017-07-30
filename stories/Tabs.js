@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Tabs, TabItem } from '../src'
 
-storiesOf('Tabs', module)
+storiesOf('components/Tabs', module)
   .add('Default', () => (
     <Tabs>
       <TabItem

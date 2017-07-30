@@ -6,7 +6,7 @@ import {
   ButtonOutline
 } from '../src'
 
-storiesOf('Group', module)
+storiesOf('components/Group', module)
   .add('Default', () => (
     <Group>
       <Button children='Hello' />

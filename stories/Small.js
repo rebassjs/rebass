@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Small } from '../src'
 
-storiesOf('Small', module)
+storiesOf('components/Small', module)
   .add('Default', () => (
     <Small
       children='Hello Small'

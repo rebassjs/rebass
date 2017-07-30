@@ -50,7 +50,7 @@ const Live = hoc(props => (
   </Relative>
 ))
 
-storiesOf('Carousel', module)
+storiesOf('components/Carousel', module)
   .add('Default', () => (
     <Live />
   ))

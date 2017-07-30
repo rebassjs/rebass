@@ -22,7 +22,7 @@ const Live = hoc(props => (
   </div>
 ))
 
-storiesOf('Donut', module)
+storiesOf('charts/Donut', module)
   .add('Default', () => (
     <Live />
   ))
