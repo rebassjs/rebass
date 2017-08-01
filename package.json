@@ -31,8 +31,8 @@
     "tag-hoc": "^1.0.0-0"
   },
   "devDependencies": {
-    "@storybook/addon-options": "alpha",
-    "@storybook/react": "alpha",
+    "@storybook/addon-options": "^3.2.1",
+    "@storybook/react": "^3.2.0",
     "ava": "^0.20.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
