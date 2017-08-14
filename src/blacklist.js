@@ -4,6 +4,7 @@
 export default [
   'width',
   'w',
+  'maxWidth',
   'fontSize',
   'f',
   'color',
