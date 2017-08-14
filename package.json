@@ -7,6 +7,7 @@
     "prepublish": "babel src -d dist",
     "start": "start-storybook -p 8000 -c stories",
     "storybook": "build-storybook -c stories -o docs/stories",
+    "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava"
   },
   "keywords": [
@@ -26,20 +27,21 @@
     "palx": "^1.0.2",
     "prop-types": "^15.5.10",
     "recompose": "^0.23.5",
-    "styled-components": "^2.1.0",
-    "styled-system": "^1.0.0-9",
-    "tag-hoc": "^1.0.0-0"
+    "styled-components": "^2.1.2",
+    "styled-system": "^1.0.0-12",
+    "tag-hoc": "^1.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-options": "^3.1.6",
-    "@storybook/react": "^3.1.7",
+    "@storybook/addon-options": "^3.2.4",
+    "@storybook/react": "^3.2.4",
     "ava": "^0.20.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
-    "nyc": "^11.0.3",
+    "codecov": "^2.3.0",
+    "nyc": "^11.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
@@ -65,10 +67,6 @@
       "test",
       "docs",
       "stories"
-    ],
-    "reporter": [
-      "lcov",
-      "html"
     ]
   }
 }

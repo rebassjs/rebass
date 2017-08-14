@@ -34,6 +34,21 @@ test('Provider renders', t => {
   t.snapshot(json)
 })
 
+test('Provider renders with custom theme', t => {
+  const json = render(<Provider
+    theme={{
+      font: null, // 'monospace',
+      fontSizes: [
+        12, 16, 18, 24, 36, 48, 72
+      ],
+      space: [
+        0, 6, 12, 18, 24, 30, 36
+      ]
+    }}
+  />).toJSON()
+  t.snapshot(json)
+})
+
 test('hoc returns a component', t => {
   const Comp = hoc()('div')
   const json = render(<Comp />).toJSON()
@@ -133,3 +148,197 @@ test('util.align returns text-align values', t => {
   t.deepEqual(e, null)
 })
 
+test('renders NavLink active', t => {
+  const json = render(<Rebass.NavLink active />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Text bold', t => {
+  const json = render(<Rebass.Text bold />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Border top', t => {
+  const json = render(<Rebass.Border top />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Border right', t => {
+  const json = render(<Rebass.Border right />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Border bottom', t => {
+  const json = render(<Rebass.Border bottom />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Border left', t => {
+  const json = render(<Rebass.Border left />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Border borderWidth', t => {
+  const json = render(<Rebass.Border borderWidth={2} />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Banner backgroundImage', t => {
+  const json = render(<Rebass.Banner backgroundImage='hello.png' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders TabItem active', t => {
+  const json = render(<Rebass.TabItem active />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders DotButton active', t => {
+  const json = render(<Rebass.DotButton active />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Absolute top', t => {
+  const json = render(<Rebass.Absolute top />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Absolute right', t => {
+  const json = render(<Rebass.Absolute right />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Absolute bottom', t => {
+  const json = render(<Rebass.Absolute bottom />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Absolute left', t => {
+  const json = render(<Rebass.Absolute left />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Fixed top', t => {
+  const json = render(<Rebass.Fixed top />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Fixed right', t => {
+  const json = render(<Rebass.Fixed right />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Fixed bottom', t => {
+  const json = render(<Rebass.Fixed bottom />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Fixed left', t => {
+  const json = render(<Rebass.Fixed left />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Sticky top', t => {
+  const json = render(<Rebass.Sticky top />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Sticky right', t => {
+  const json = render(<Rebass.Sticky right />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Sticky bottom', t => {
+  const json = render(<Rebass.Sticky bottom />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Sticky left', t => {
+  const json = render(<Rebass.Sticky left />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer open', t => {
+  const json = render(<Rebass.Drawer open />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer position top', t => {
+  const json = render(<Rebass.Drawer position='top' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer position right', t => {
+  const json = render(<Rebass.Drawer position='right' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer position bottom', t => {
+  const json = render(<Rebass.Drawer position='bottom' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer position left', t => {
+  const json = render(<Rebass.Drawer position='left' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer open position top', t => {
+  const json = render(<Rebass.Drawer open position='top' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer open position right', t => {
+  const json = render(<Rebass.Drawer open position='right' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer open position bottom', t => {
+  const json = render(<Rebass.Drawer open position='bottom' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer open position left', t => {
+  const json = render(<Rebass.Drawer open position='left' />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Drawer size', t => {
+  const json = render(<Rebass.Drawer size={128} />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Carousel index', t => {
+  const json = render(<Rebass.Carousel index={2} />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Star checked', t => {
+  const json = render(<Rebass.Star checked />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Star half', t => {
+  const json = render(<Rebass.Star half />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Arrow up', t => {
+  const json = render(<Rebass.Arrow up />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Embed ratio', t => {
+  const json = render(<Rebass.Embed ratio={1/2} />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders Switch checked', t => {
+  const json = render(<Rebass.Switch checked />).toJSON()
+  t.snapshot(json)
+})
+
+test('renders BackgroundImage src', t => {
+  const json = render(<Rebass.BackgroundImage src='hello.png' />).toJSON()
+  t.snapshot(json)
+})

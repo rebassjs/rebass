@@ -36,9 +36,14 @@ export default [
   'right',
   'justify',
   'top',
-  'right',
   'bottom',
-  'left',
   'z',
   'backgroundImage',
+
+  'borderWidth',
+  'size',
+  'position',
+  'index',
+  'direction',
+  'text',
 ]

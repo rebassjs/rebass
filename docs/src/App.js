@@ -56,7 +56,7 @@ const App = props => {
             mt={6}
             px={[ 3, 3, 4 ]}
             pb={3}
-            width={1024}>
+            maxWidth={1024}>
             <GettingStarted pattern='/getting-started' />
             <PropsView pattern='/props' />
             <GridSystem pattern='/grid-system' />
