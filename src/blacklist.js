@@ -42,8 +42,8 @@ export default [
 
   'borderWidth',
   'size',
-  'maxWidth',
   'position',
   'index',
-  'direction'
+  'direction',
+  'text',
 ]
