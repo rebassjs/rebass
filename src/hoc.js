@@ -14,7 +14,7 @@ import {
   string
 } from 'prop-types'
 import tag from 'tag-hoc'
-import styleProps from './style-props'
+import blacklist from './blacklist'
 
 const prop = oneOfType([
   number,
@@ -66,7 +66,7 @@ const withStyle = (style, props) => Component => {
   return Comp
 }
 
-const Tag = tag(styleProps)
+const Tag = tag(blacklist)
 
 const hoc = (style, props) => compose(
   withStyle(style, props),
