@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Heading } from '../src'
 
-storiesOf('Heading', module)
+storiesOf('components/Heading', module)
   .add('Default', () => (
     <Heading
       children='Hello'

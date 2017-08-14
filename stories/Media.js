@@ -8,7 +8,7 @@ import {
 } from '../src'
 import { photo } from './constants'
 
-storiesOf('Media', module)
+storiesOf('media/Media', module)
   .add('Default', () => (
     <Media>
       <Image

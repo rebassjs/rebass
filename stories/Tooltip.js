@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Tooltip, Text, Flex, Relative } from '../src'
 
-storiesOf('Tooltip', module)
+storiesOf('components/Tooltip', module)
   .add('Default', () => (
     <Flex>
       <Relative my={4}>

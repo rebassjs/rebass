@@ -4,8 +4,8 @@ import {
   Heading,
 } from '../src'
 
-storiesOf('Type Scale', module)
-  .add('Type Scale', () => (
+storiesOf('styles/Type Scale', module)
+  .add('Default', () => (
     <div>
       <Heading f={8} children='Hello' />
       <Heading f={7} children='Hello' />

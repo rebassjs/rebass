@@ -6,7 +6,7 @@ import {
   Heading,
 } from '../src'
 
-storiesOf('ScrollCarousel', module)
+storiesOf('components/ScrollCarousel', module)
   .add('Default', () => (
     <ScrollCarousel>
       <CarouselSlide

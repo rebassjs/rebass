@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Message } from '../src'
 
-storiesOf('Message', module)
+storiesOf('components/Message', module)
   .add('Default', () => (
     <div>
       <Message mb={2} children='Hello Message' />

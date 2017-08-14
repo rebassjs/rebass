@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Embed } from '../src'
 
-storiesOf('Embed', module)
+storiesOf('media/Embed', module)
   .add('Default', () => (
     <Embed>
       <iframe
@@ -14,4 +14,3 @@ storiesOf('Embed', module)
       />
     </Embed>
   ))
-

@@ -7,7 +7,7 @@ import {
   Box,
 } from '../src'
 
-storiesOf('Panel', module)
+storiesOf('components/Panel', module)
   .add('Default', () => (
     <Panel>
       <PanelHeader>Hello Panel</PanelHeader>

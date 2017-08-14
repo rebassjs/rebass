@@ -38,7 +38,7 @@ const Live = hoc(props => (
   </div>
 ))
 
-storiesOf('Drawer', module)
+storiesOf('components/Drawer', module)
   .add('Left', () => (
     <Live />
   ))
@@ -51,5 +51,3 @@ storiesOf('Drawer', module)
   .add('Bottom', () => (
     <Live position='bottom' />
   ))
-
-

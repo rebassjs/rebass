@@ -10,7 +10,7 @@ import {
   Switch,
 } from '../src'
 
-storiesOf('Alignment', module)
+storiesOf('forms/Alignment', module)
   .add('Default', () => (
     <div>
       <Input

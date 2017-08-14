@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Circle } from '../src'
 
-storiesOf('Circle', module)
+storiesOf('components/Circle', module)
   .add('Default', () => (
     <Circle>
       16

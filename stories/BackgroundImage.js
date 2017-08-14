@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { BackgroundImage } from '../src'
 import { photo } from './constants'
 
-storiesOf('BackgroundImage', module)
+storiesOf('media/BackgroundImage', module)
   .add('Default', () => (
     <BackgroundImage
       src={photo}

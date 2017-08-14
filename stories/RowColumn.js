@@ -6,7 +6,7 @@ import {
   Column
 } from '../src'
 
-storiesOf('Row & Column', module)
+storiesOf('components/Row & Column', module)
   .add('Default', () => (
     <Container>
       <Row>

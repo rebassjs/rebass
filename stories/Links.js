@@ -6,7 +6,7 @@ import {
   BlockLink
 } from '../src'
 
-storiesOf('Links', module)
+storiesOf('components/Links', module)
   .add('Default', () => (
     <div>
       <Link href='#!' children='Link' />

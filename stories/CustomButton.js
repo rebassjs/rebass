@@ -9,7 +9,7 @@ const CustomButton = styled(Button)`
   box-shadow: 0 0 4px rgba(0, 0, 0, .25)
 `
 
-storiesOf('Custom Button', module)
+storiesOf('components/Custom Button', module)
   .add('Button', () => (
     <CustomButton
       children='hello'

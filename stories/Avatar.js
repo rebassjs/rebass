@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { Avatar } from '../src'
 import { photo } from './constants'
 
-storiesOf('Avatar', module)
+storiesOf('components/Avatar', module)
   .add('Default', () => (
     <Avatar src={photo} />
   ))

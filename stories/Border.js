@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Border } from '../src'
 
-storiesOf('Border', module)
+storiesOf('components/Border', module)
   .add('Default', () => (
     <Border p={2}>
       Hello
