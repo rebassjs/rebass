@@ -915,11 +915,12 @@ const components = [
     type: 'Fixed',
     props: {
       bg: 'white',
+      position: 'left',
       size: 320,
     },
     style: props => {
-      const position = props.position || 'left'
-      const size = props.size || 320
+      const position = props.position
+      const size = props.size
       const h = /^(left|right)$/.test(position) ? 1 : 0
       const width = h ? { width: px(size) } : null
       const height = h ? null : { height: px(size) }
