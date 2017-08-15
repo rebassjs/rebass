@@ -781,7 +781,7 @@ const components = [
       display: 'flex',
       borderBottomWidth: px(1),
       borderBottomStyle: 'solid',
-      borderColor: color(props)('gray2')
+      borderColor: color(props)(props.color || 'gray2')
     })
   },
   {
@@ -796,7 +796,7 @@ const components = [
     style: props => ({
       textDecoration: 'none',
       fontWeight: bold(props),
-      color: props.active ? color(props)('blue') : 'inherit',
+      color: props.active ? color(props)(props.color || 'blue') : 'inherit',
       borderBottomWidth: props.active ? 2 : 0,
       borderBottomStyle: 'solid',
       '&:hover': {
