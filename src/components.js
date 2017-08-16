@@ -42,6 +42,7 @@ const components = [
       color: 'white',
     },
     style: props => ({
+      cursor: 'pointer',
       fontFamily: 'inherit',
       fontWeight: bold(props),
       lineHeight: 16 / 14,
@@ -74,9 +75,10 @@ const components = [
     type: 'Button',
     props: {
       color: 'blue',
-      bg: 'transparent'
+      bg: 'transparent',
     },
     style: props => ({
+      cursor: 'pointer',
       boxShadow: `inset 0 0 0 2px`,
       '&:hover': {
         color: color(props)('white'),
@@ -100,6 +102,7 @@ const components = [
       pr: 3
     },
     style: props => ({
+      cursor: 'pointer',
       borderRadius: px(99999)
     })
   },
@@ -111,6 +114,7 @@ const components = [
       bg: 'transparent'
     },
     style: props => ({
+      cursor: 'pointer',
       '&:hover': {
         color: color(props)(props.color),
         backgroundColor: 'transparent'
