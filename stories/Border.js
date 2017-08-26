@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Border } from '../src'
+import { Border, Box } from '../src'
 
 storiesOf('Border', module)
   .add('Default', () => (
@@ -31,3 +31,16 @@ storiesOf('Border', module)
       Hello
     </Border>
   ))
+  .add('Conditional', () => {
+    const range = [0, 1, 2]
+    return <Box>
+      {range.map((i) => (
+        <Border
+          py={2}
+          top={!!i}
+          none={!i}>
+          Hello
+        </Border>
+      ))}
+    </Box>
+  })

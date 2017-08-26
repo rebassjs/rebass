@@ -183,6 +183,11 @@ test('renders Border borderWidth', t => {
   t.snapshot(json)
 })
 
+test('renders Border none', t => {
+  const json = render(<Rebass.Border top none />).toJSON()
+  t.snapshot(json)
+})
+
 test('renders Banner backgroundImage', t => {
   const json = render(<Rebass.Banner backgroundImage='hello.png' />).toJSON()
   t.snapshot(json)

@@ -271,6 +271,7 @@ accepts several typographic style props.
 - `right` (boolean) border-right
 - `bottom` (boolean) border-bottom
 - `left` (boolean) border-left
+- `none` (boolean) hide all borders
 - `color` (string) sets *only* the border color
 
 ### `<Container />`
