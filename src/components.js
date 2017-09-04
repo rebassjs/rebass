@@ -914,13 +914,11 @@ const components = [
     name: 'Drawer',
     type: 'Fixed',
     props: {
-      bg: 'white',
-      position: 'left',
-      size: 320,
+      bg: 'white'
     },
     style: props => {
-      const position = props.position
-      const size = props.size
+      const position = props.position || 'left'
+      const size = props.size || 320
       const h = /^(left|right)$/.test(position) ? 1 : 0
       const width = h ? { width: px(size) } : null
       const height = h ? null : { height: px(size) }
