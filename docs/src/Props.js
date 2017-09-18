@@ -32,7 +32,7 @@ const Props = props => (
         {` See the `}
         <Link
           is={RLink}
-          href='/props'>
+          href='/rebass/props'>
           props documentation
         </Link>
         {` for more.`}
