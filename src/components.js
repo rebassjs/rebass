@@ -20,7 +20,7 @@ import {
   caps,
   align,
 } from './util'
-import { Flex, Box } from './grid'
+import { Flex, Box } from 'grid-styled'
 import DonutBase from './DonutBase'
 import SelectBase from './SelectBase'
 
@@ -1209,6 +1209,19 @@ const components = [
       mb: 4,
       flex: '1 1 auto'
     },
+    style: {}
+  },
+
+  {
+    name: 'Flex',
+    type: Flex,
+    props: {},
+    style: {}
+  },
+  {
+    name: 'Box',
+    type: Box,
+    props: {},
     style: {}
   },
 ]
