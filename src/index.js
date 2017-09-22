@@ -1,5 +1,4 @@
 import components from './components'
-import { Flex, Box } from './grid'
 import Provider from './Provider'
 import createLibrary from './create-library'
 
@@ -7,9 +6,8 @@ const library = createLibrary(components)
 
 const { length } = Object.keys(library)
 
-const Rebass = Object.assign({}, library, { Provider, Flex, Box })
+const Rebass = Object.assign({}, library, { Provider })
 
-export { Flex, Box } from './grid'
 export { default as Provider } from './Provider'
 export { default as hoc } from './hoc'
 export {
@@ -93,6 +91,8 @@ export const {
   Donut,
   Row,
   Column,
+  Flex,
+  Box,
 } = library
 
 export default Rebass
