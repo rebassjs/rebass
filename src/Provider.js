@@ -24,8 +24,8 @@ const Provider = props => (
 Provider.propTypes = {
   theme: shape({
     breakpoints: arrayOf(number),
-    space: arrayOf(number),
-    fontSizes: arrayOf(number),
+    space: arrayOf(oneOfType([number, string])),
+    fontSizes: arrayOf(oneOfType([number, string])),
     weights: arrayOf(number),
     colors: oneOfType([
       object,
