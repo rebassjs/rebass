@@ -359,10 +359,9 @@ const App = props => (
 Rebass components can be completely customized using styled-components.
 
 ```jsx
-import styled from 'styled-components'
 import { Button } from 'rebass'
 
-const CustomButton = styled(Button)`
+const CustomButton = Button.extend`
   border: 1px solid rgba(0, 0, 0, .25);
   background-image: linear-gradient(transparent, rgba(0, 0, 0, .125));
   box-shadow: 0 0 4px rgba(0, 0, 0, .25)
