@@ -28,7 +28,7 @@
     "prop-types": "^15.6.0",
     "recompose": "^0.26.0",
     "styled-components": "^2.2.1",
-    "styled-system": "^1.0.7",
+    "styled-system": "^1.0.8",
     "tag-hoc": "^1.0.0"
   },
   "devDependencies": {
@@ -37,10 +37,10 @@
     "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
-    "codecov": "^2.3.0",
+    "codecov": "^2.3.1",
     "nyc": "^11.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
