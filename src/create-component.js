@@ -2,6 +2,7 @@ import hoc from './hoc'
 
 const createComponent = (config, components = {}) => {
   const {
+    name,
     type,
     props,
     style,
@@ -13,6 +14,7 @@ const createComponent = (config, components = {}) => {
 
   const Component = hoc(style, props)(_tag)
 
+  Component.displayName = name
   Component.propTypes = propTypes
   Component.defaultProps = config.defaultProps || {}
 
