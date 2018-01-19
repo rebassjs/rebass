@@ -4,7 +4,6 @@ import { setOptions } from '@storybook/addon-options'
 import { injectGlobal } from 'styled-components'
 import { Box } from 'grid-styled'
 import { createProvider } from 'refunk'
-import XRay from 'react-x-ray'
 import Provider from '../src/Provider'
 
 injectGlobal([], {
@@ -23,22 +22,10 @@ const hoc = createProvider({
 
 const toggleXRay = state => ({ xray: !state.xray })
 
-const Demo = hoc(props => (
-  <Provider>
-    <XRay disabled={!props.xray}>
-      <Box p={3}>
-        {props.story()}
-      </Box>
-    </XRay>
-    <button
-      onClick={e => props.update(toggleXRay)}
-      children='X-Ray'
-    />
-  </Provider>
-))
-
 addDecorator(story => (
-  <Demo story={story} />
+  <Provider>
+      {story()}
+  </Provider>
 ))
 
 setOptions({
