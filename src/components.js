@@ -913,7 +913,7 @@ const components = [
   {
     name: 'Drawer',
     type: 'Fixed',
-    props: {
+    defaultProps: {
       bg: 'white',
       position: 'left',
       size: 320,
