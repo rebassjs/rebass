@@ -913,10 +913,10 @@ const components = [
   {
     name: 'Drawer',
     type: 'Fixed',
-    props: {
+    defaultProps: {
       bg: 'white',
-      position: props => props.position || 'left',
-      size: props => props.size || 320,
+      position: 'left',
+      size: 320,
     },
     style: props => {
       const position = props.position
