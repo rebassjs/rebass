@@ -915,8 +915,8 @@ const components = [
     type: 'Fixed',
     props: {
       bg: 'white',
-      position: 'left',
-      size: 320,
+      position: props => props.position || 'left',
+      size: props => props.size || 320,
     },
     style: props => {
       const position = props.position
