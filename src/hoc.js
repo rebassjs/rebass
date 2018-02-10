@@ -59,9 +59,7 @@ const withStyle = (style, props) => Component => {
   Base.propTypes = propTypes
 
   // Clean this up after styled-components removes whitelisting
-  const Comp = styled(Base)
-    .attrs(props)
-    ([], style)
+  const Comp = styled(Base)([], style)
 
   return Comp
 }
