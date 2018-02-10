@@ -136,6 +136,7 @@ const components = [
     name: 'NavLink',
     type: 'a',
     props: {
+      color: 'inherit',
       f: 1,
       p: 2,
     },
@@ -146,7 +147,6 @@ const components = [
       fontWeight: bold(props),
       textDecoration: 'none',
       whiteSpace: 'nowrap',
-      color: 'inherit',
       backgroundColor: props.active ? darken(1/4) : 'transparent',
       cursor: 'pointer',
       '&:hover': {
@@ -163,11 +163,12 @@ const components = [
   {
     name: 'BlockLink',
     type: 'a',
-    props: {},
+    props: {
+      color: 'inherit',
+    },
     style: {
       display: 'block',
       textDecoration: 'none',
-      color: 'inherit',
     }
   },
 
@@ -424,6 +425,7 @@ const components = [
     name: 'Slider',
     type: 'input',
     props: {
+      color: 'inherit',
       w: 1,
       mt: 2,
       mb: 2,
@@ -435,7 +437,6 @@ const components = [
       display: 'block',
       height: px(idx('space.1', props.theme)),
       cursor: 'pointer',
-      color: 'inherit',
       borderRadius: px(99999),
       backgroundColor: color(props)('gray2'),
       appearance: 'none',
