@@ -122,6 +122,23 @@ test('util.color returns a color from the theme', t => {
   t.is(e, theme.colors.teal5)
 })
 
+test('util.color returns a nested color from the theme', t => {
+  const cx = util.color({ 
+    theme: {
+      colors: {
+        greyScale: {
+          0: 'black',
+          100: 'white',
+        }
+      }
+    } 
+  })
+  const black = cx('greyScale.0')
+  const white = cx('greyScale.100')
+  t.is(black, 'black')
+  t.is(white, 'white')
+})
+
 test('util.darken returns and rgba value', t => {
   const a = util.darken(1/2)
   t.is(a, 'rgba(0, 0, 0, 0.5)')
