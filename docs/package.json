@@ -6,17 +6,17 @@
     "card-dev": "repng src/Card.js --dev -P 8081"
   },
   "devDependencies": {
-    "babel-loader": "^7.1.1",
+    "babel-loader": "^7.1.2",
     "hidden-styled": "^1.0.0-0",
     "raw-loader": "^0.5.1",
-    "react-live": "^1.7.0",
-    "react-markdown": "^2.5.0",
-    "react-x-ray": "^1.0.0-2",
+    "react-live": "^1.7.1",
+    "react-markdown": "^3.1.4",
+    "react-x-ray": "^1.0.0-4",
     "refunk": "^1.0.0-2",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
-    "rrx": "^1.0.0-2",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+    "rrx": "^1.0.0-3",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.0"
   }
 }
