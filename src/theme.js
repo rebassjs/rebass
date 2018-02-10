@@ -5,7 +5,7 @@ export const breakpoints = [
   48,
   64,
   80
-]
+].map(n => n + 'em')
 
 export const space = [
   0,
@@ -30,7 +30,7 @@ export const fontSizes = [
   96
 ]
 
-export const weights = [
+export const fontWeights = [
   400,
   700
 ]
@@ -51,24 +51,23 @@ const flattened = Object.keys(palette)
     return a
   }, {})
 
-// todo: flatten
-
 export const colors = Object.assign({}, flattened, {
   black: '#000',
   white: '#fff'
 })
 
-export const radius = 4
-export const font = `-apple-system, BlinkMacSystemFont, sans-serif`
-export const monospace = '"SF Mono", "Roboto Mono", Menlo, monospace'
+export const radii = [ 0, 2, 4 ]
+export const fonts = [
+  'system-ui, sans-serif',
+'Menlo, monospace'
+]
 
 export default {
   breakpoints,
   space,
   fontSizes,
-  weights,
-  font,
-  monospace,
+  fontWeights,
+  fonts,
   colors,
-  radius,
+  radii,
 }
