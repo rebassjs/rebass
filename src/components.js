@@ -535,7 +535,7 @@ const components = [
     type: 'div',
     props: {},
     style: props => {
-      const w = px(props.borderWidth || 1)
+      const w = px(props.none ? 0 : props.borderWidth || 1)
       const borderWidth = (!props.top && !props.right && !props.bottom && !props.left)
         ? { borderWidth: w }
         : null
@@ -557,6 +557,7 @@ const components = [
       right: bool,
       bottom: bool,
       left: bool,
+      none: bool,
       width: number,
       color: string,
     }
