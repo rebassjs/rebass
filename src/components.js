@@ -1141,7 +1141,9 @@ const components = [
   {
     name: 'Arrow',
     type: 'div',
-    props: {},
+    props: {
+      direction: 'down'
+    },
     style: props => {
       const borderTop = props.direction === 'down' ? { borderTop: '.4375em solid' } : null
       const borderBottom = props.direction === 'up' ? { borderBottom: '.4375em solid' } : null
@@ -1156,9 +1158,6 @@ const components = [
     },
     propTypes: {
       direction: oneOf([ 'up', 'down' ])
-    },
-    defaultProps: {
-      direction: 'down'
     }
   },
 

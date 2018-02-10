@@ -16,7 +16,7 @@ const createComponent = (config, components = {}) => {
 
   Component.displayName = name
   Component.propTypes = propTypes
-  Component.defaultProps = config.defaultProps || {}
+  Component.defaultProps = config.props || {}
 
   return Component
 }
