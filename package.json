@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "grid-styled": "^3.0.0",
-    "palx": "^1.0.2",
+    "palx": "^1.0.3",
     "prop-types": "^15.6.0",
     "styled-components": ">=2.0 || >=3.0",
     "styled-system": "^1.1.7",
