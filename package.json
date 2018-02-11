@@ -7,7 +7,6 @@
     "prepublish": "babel src -d dist",
     "start": "start-storybook -p 8000 -c stories",
     "demo": "x0 dev docs/Demo.js -op 9000",
-    "xdemo": "x0 build docs/Demo.js --static -d demo",
     "storybook": "build-storybook -c stories -o docs/stories",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava"

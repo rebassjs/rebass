@@ -47,6 +47,8 @@ export { Embed } from './Embed'
 
 export { Container } from './Container'
 export { Group } from './Group'
+export { Row } from './Row'
+export { Column } from './Column'
 
 export { Border } from './Border'
 export { Card } from './Card'
@@ -63,6 +65,7 @@ export { Badge } from './Badge'
 export { Circle } from './Circle'
 export { Dot } from './Dot'
 export { Arrow } from './Arrow'
+export { Donut } from './Donut'
 
 export {
   Position,
