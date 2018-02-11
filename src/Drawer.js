@@ -7,8 +7,8 @@ import {
 } from './utils'
 
 export const Drawer = styled(Fixed)([],
-  system.space,
-  system.color,
+  space,
+  color,
   zIndex,
   drawerOpen, {
     position: 'fixed',

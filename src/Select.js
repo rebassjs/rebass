@@ -7,7 +7,7 @@ const Root = styled.div`
   align-items: center;
 `
 
-const Select = styled.select([], {
+const SelectElement = styled.select([], {
   fontFamily: 'inherit',
   fontSize: 'inherit',
   lineHeight: 'inherit',
@@ -39,7 +39,7 @@ const Arrow = styled(props => (
 
 const SelectBase = props => (
   <Root>
-    <Select {...props} />
+    <SelectElement {...props} />
     <Arrow />
   </Root>
 )

@@ -51,8 +51,6 @@ export const colors = Object.assign({}, hues, {
   white: '#fff'
 })
 
-console.log(colors)
-
 export const radii = [ 0, 2, 4 ]
 
 export const fonts = {

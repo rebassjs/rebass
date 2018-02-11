@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { sizeWidth, sizeHeight } from './utils'
+import { darken, sizeWidth, sizeHeight } from './utils'
 
 export const Dot = sys({
   is: 'button',

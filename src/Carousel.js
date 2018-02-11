@@ -1,4 +1,5 @@
 import sys from 'system-components'
+import { Flex } from 'grid-styled'
 import { carouselIndex } from './utils'
 
 export const Carousel = sys({

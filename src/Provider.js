@@ -1,4 +1,5 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
 import Root from './Root'
 import theme from './theme'
 

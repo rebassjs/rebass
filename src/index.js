@@ -1,5 +1,7 @@
 export { Flex, Box } from 'grid-styled'
 
+export { default as theme } from './theme'
+
 export { CSS } from './CSS'
 export { Root } from './Root'
 export { Provider } from './Provider'
@@ -12,6 +14,7 @@ export { ButtonTransparent } from './ButtonTransparent'
 export { Link } from './Link'
 export { NavLink } from './NavLink'
 export { BlockLink } from './BlockLink'
+export { Close } from './Close'
 
 export { Text } from './Text'
 export { Heading } from './Heading'
@@ -35,10 +38,12 @@ export { Textarea } from './Textarea'
 export { Radio } from './Radio'
 export { Checkbox } from './Checkbox'
 export { Slider } from './Slider'
+export { Switch } from './Switch'
 
 export { Image } from './Image'
 export { BackgroundImage } from './BackgroundImage'
 export { Avatar } from './Avatar'
+export { Embed } from './Embed'
 
 export { Container } from './Container'
 export { Group } from './Group'
@@ -57,6 +62,7 @@ export { Tab } from './Tab'
 export { Badge } from './Badge'
 export { Circle } from './Circle'
 export { Dot } from './Dot'
+export { Arrow } from './Arrow'
 
 export {
   Position,
@@ -65,7 +71,9 @@ export {
   Fixed,
   Sticky,
 } from './Position'
+
 export { Overlay } from './Overlay'
 export { Drawer } from './Drawer'
 export { Carousel } from './Carousel'
+export { Tooltip } from './Tooltip'
 
