@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { darken, maxWidth, maxHeight } from './utils'
+import { darken, maxHeight } from './utils'
 import { Fixed } from './index'
 
 export const Overlay = sys({
@@ -17,7 +17,7 @@ export const Overlay = sys({
   transform: 'translate(-50%, -50%)'
 },
   'width',
-  maxWidth,
+  'maxWidth',
   maxHeight,
 )
 Overlay.displayName = 'Overlay'

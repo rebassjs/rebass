@@ -25,13 +25,6 @@ export const backgroundPosition = system.style({
   prop: 'backgroundPosition'
 })
 
-export const maxWidth = system.responsiveStyle({
-  prop: 'maxWidth',
-  cssProperty: 'maxWidth',
-  key: 'maxWidths',
-  numberToPx: true
-})
-
 export const maxHeight = system.responsiveStyle({
   prop: 'maxHeight',
   cssProperty: 'maxHeight',
