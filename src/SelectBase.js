@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { color } from './util'
 
 const Root = styled.div`
-  position: relative;
+  display: flex;
+  align-items: center;
 `
 
 const Select = styled.select([], {
@@ -29,21 +29,16 @@ const Arrow = styled(props => (
     />
   </svg>
 ))`
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 8px;
   height: 8px;
-  margin: 12px;
+  margin-left: -16px;
   fill: currentcolor;
+  pointer-events: none;
 `
 
 const SelectBase = props => (
-  <Root className={props.className}>
-    <Select
-      {...props}
-      className={null}
-    />
+  <Root>
+    <Select {...props} />
     <Arrow />
   </Root>
 )
