@@ -7,7 +7,7 @@ export const Slider = sys({
   mx: 0,
   my: 2,
   color: 'inherit',
-  bg: 'grays.1',
+  bg: 'gray',
   borderRadius: 99999,
 }, props => ({
   display: 'block',

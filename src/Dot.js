@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { darken, sizeWidth, sizeHeight } from './utils'
+import { darken } from './utils'
 
 export const Dot = sys({
   is: 'button',
@@ -8,7 +8,7 @@ export const Dot = sys({
   size: 16,
   bg: darken(1/4),
   borderRadius: 99999,
-  borderWidth: 4,
+  border: 4,
   borderColor: 'transparent',
   focus: {
     backgroundColor: 'blue'
@@ -23,8 +23,7 @@ export const Dot = sys({
   appearance: 'none',
   backgroundClip: 'padding-box'
 },
-  sizeWidth,
-  sizeHeight
+  'size',
 )
 
 Dot.displayName = 'Dot'

@@ -4,9 +4,8 @@ export const Divider = sys({
   is: 'hr',
   mx: 0,
   my: 3,
-  // needs fix in styled-system
-  borderWidth: 1,
-  borderBottom: true,
+  border: 0,
+  borderBottom: 1,
   borderColor: 'gray'
 })
 

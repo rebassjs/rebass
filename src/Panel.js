@@ -3,7 +3,7 @@ import sys from 'system-components'
 export const Panel = sys({
   bg: 'white',
   borderRadius: 2,
-  borderWidth: 1,
+  border: 1,
   borderColor: 'gray'
 }, {
   overflow: 'hidden'
@@ -16,8 +16,7 @@ Panel.Header = sys({
   fontSize: 2,
   p: 2,
   bg: 'white',
-  borderWidth: 1,
-  borderBottom: true,
+  borderBottom: 1,
   borderColor: 'gray'
 })
 
@@ -28,8 +27,7 @@ Panel.Footer = sys({
   fontSize: 1,
   p: 2,
   bg: 'white',
-  borderWidth: 1,
-  borderTop: true,
+  borderTop: 1,
   borderColor: 'gray'
 })
 

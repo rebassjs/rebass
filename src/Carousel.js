@@ -1,6 +1,14 @@
 import sys from 'system-components'
 import { Flex } from 'grid-styled'
-import { carouselIndex } from './utils'
+
+export const carouselIndex = ({ index }) => ({
+  '& > div:first-child': {
+    marginLeft: (index * 100) + '%',
+    transitionProperty: 'margin',
+    transitionDuration: '.2s',
+    transitionTimingFunction: 'ease-out'
+  }
+})
 
 export const Carousel = sys({
   is: Flex,

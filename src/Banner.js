@@ -1,11 +1,5 @@
 import sys from 'system-components'
 import { Flex } from 'grid-styled'
-import {
-  minHeight,
-  backgroundSize,
-  backgroundPosition,
-  backgroundImage
-} from './utils'
 
 export const Banner = sys({
   is: Flex,
@@ -19,10 +13,10 @@ export const Banner = sys({
   color: 'white',
   bg: 'gray'
 },
-  minHeight,
-  backgroundSize,
-  backgroundPosition,
-  backgroundImage
+  'minHeight',
+  'backgroundSize',
+  'backgroundPosition',
+  'backgroundImage'
 )
 
 Banner.displayName = 'Banner'

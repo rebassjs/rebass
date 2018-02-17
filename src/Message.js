@@ -1,6 +1,5 @@
 import sys from 'system-components'
 import { Flex } from 'grid-styled'
-import { minHeight } from './utils'
 
 export const Message = sys({
   is: Flex,
@@ -11,7 +10,7 @@ export const Message = sys({
   bg: 'blue',
   align: 'center',
   minHeight: '48px',
-}, minHeight, {
+}, 'minHeight', {
   WebkitFontSmoothing: 'antialiased',
 })
 

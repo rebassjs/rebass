@@ -1,5 +1,4 @@
 import sys from 'system-components'
-import { fontFamily } from './utils'
 
 export const Pre = sys({
   is: 'pre',
@@ -9,7 +8,7 @@ export const Pre = sys({
 }, {
   overflow: 'auto'
 },
-  fontFamily,
+  'fontFamily',
   'color'
 )
 

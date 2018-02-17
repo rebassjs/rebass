@@ -1,13 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
 import sys from 'system-components'
+import { themeGet } from 'styled-system'
 
-const Root = styled.div`
+/*
+const Root = sys('space', `
   display: flex;
   align-items: center;
-`
+`)
 
-const SelectElement = styled.select([], {
+const SelectElement = sys({
+  is: 'select',
+}, {
   fontFamily: 'inherit',
   fontSize: 'inherit',
   lineHeight: 'inherit',
@@ -18,24 +21,30 @@ const SelectElement = styled.select([], {
   backgroundColor: 'transparent',
   border: 0,
   borderRadius: 0,
-  outline: 'none'
-})
+  outline: 'none',
+  '&:disabled': {
+    opacity: 1/4
+  }
+}, props => ({
+  '&:focus': {
+    boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue')(props)}`
+  }
+}))
 
-const Arrow = styled(props => (
-  <svg
-    {...props}
-    viewBox='0 0 32 32'>
-    <path
-      d='M0 6 L32 6 L16 28 z'
-    />
+const Svg = props =>
+  <svg {...props} viewBox='0 0 32 32'>
+    <path d='M0 6 L32 6 L16 28 z' />
   </svg>
-))`
+
+const Arrow = sys({
+  is: Svg
+}, `
   width: 8px;
   height: 8px;
   margin-left: -16px;
   fill: currentcolor;
   pointer-events: none;
-`
+`)
 
 const SelectBase = props => (
   <Root>
@@ -44,42 +53,56 @@ const SelectBase = props => (
   </Root>
 )
 
-export const Select = sys({
+export const xSelect = sys({
   is: SelectBase,
   m: 0,
   px: 1,
   py: 1,
   width: 1,
-  borderWidth: 0,
+  border: 0,
   borderColor: 'gray',
   boxShadow: 1,
   borderRadius: 2,
   color: 'inherit',
   bg: 'transparent'
 })
+*/
+
+const arrow = encodeURI(`data:image/svg+xml,<svg xmlns='http://www.w3c.org/2000/svg' width='32' height='32' viewbox='0 0 32 32' fill='tomato'> <path d='M0 6 L32 6 L16 28 z' /> </svg>`)
+
+export const Select = sys({
+  is: 'select',
+  m: 0,
+  px: 1,
+  py: 2,
+  width: 1,
+  border: 0,
+  borderColor: 'gray',
+  boxShadow: 1,
+  borderRadius: 2,
+  color: 'inherit',
+  bg: 'transparent'
+}, {
+  fontFamily: 'inherit',
+  fontSize: 'inherit',
+  lineHeight: 'inherit',
+  appearance: 'none',
+  width: '100%',
+  border: 0,
+  backgroundImage: `url("${arrow}")`,
+  backgroundSize: '8px 8px',
+  // backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'center right',
+  '&:disabled': {
+    opacity: 1/4
+  }
+}, props => ({
+  '&:focus': {
+    outline: 'none',
+    boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue')(props)}`
+  }
+}))
 
 Select.displayName = 'Select'
 
 export default Select
-
-  /* TODO
-  {
-    name: 'Select',
-    style: props => ({
-      display: 'inline-block',
-      verticalAlign: 'middle',
-      select: {
-        padding: px(idx('space.1', props.theme)),
-        boxShadow: `inset 0 0 0 1px ${color(props)('gray2')}`,
-        borderRadius: px(props.theme.radius),
-
-        '&:focus': {
-          boxShadow: `inset 0 0 0 1px ${color(props)('blue')}`,
-        },
-        '&:disabled': {
-          opacity: 1/4
-        }
-      }
-    })
-  },
-  */

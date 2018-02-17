@@ -7,7 +7,7 @@ export const Input = sys({
   fontSize: 'inherit',
   lineHeight: 'inherit',
   px: 1,
-  py: 1,
+  py: 2,
   m: 0,
   width: 1,
   borderWidth: 0,

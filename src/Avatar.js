@@ -1,5 +1,4 @@
 import sys from 'system-components'
-import { sizeWidth, sizeHeight } from './utils'
 
 export const Avatar = sys({
   is: 'img',
@@ -8,8 +7,7 @@ export const Avatar = sys({
 }, {
   display: 'inline-block'
 },
-  sizeWidth,
-  sizeHeight
+  'size',
 )
 
 Avatar.displayName = 'Avatar'

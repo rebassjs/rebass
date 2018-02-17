@@ -1,9 +1,8 @@
 import sys from 'system-components'
-import { fontFamily } from './utils'
 
 export const Root = sys({
   font: 'sans',
-}, fontFamily, {
+}, 'fontFamily', {
   '& *': {
     boxSizing: 'border-box'
   }

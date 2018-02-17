@@ -1,9 +1,8 @@
 import sys from 'system-components'
-import { ratio } from './utils'
 
 export const Embed = sys({
   ratio: 9 / 16
-}, ratio, props => ({
+}, 'ratio', props => ({
   position: 'relative',
   overflow: 'hidden',
   '& > iframe': {

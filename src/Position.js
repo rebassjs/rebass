@@ -1,20 +1,13 @@
 import sys from 'system-components'
-import {
-  zIndex,
-  top,
-  right,
-  bottom,
-  left
-} from './utils'
 
 export const Position = sys(
   'space',
   'color',
-  zIndex,
-  top,
-  right,
-  bottom,
-  left
+  'zIndex',
+  'top',
+  'right',
+  'bottom',
+  'left'
 )
 
 Position.displayName = 'Position'

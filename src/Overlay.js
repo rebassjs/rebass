@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { darken, maxHeight } from './utils'
+import { darken } from './utils'
 import { Fixed } from './index'
 
 export const Overlay = sys({
@@ -18,7 +18,7 @@ export const Overlay = sys({
 },
   'width',
   'maxWidth',
-  maxHeight,
+  'maxHeight',
 )
 Overlay.displayName = 'Overlay'
 

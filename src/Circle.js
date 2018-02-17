@@ -1,6 +1,5 @@
 import sys from 'system-components'
 import Badge from './Badge'
-import { sizeWidth, sizeHeight } from './utils'
 
 export const Circle = sys({
   is: Badge,
@@ -9,8 +8,7 @@ export const Circle = sys({
   borderRadius: '99999px'
 },
   'textAlign',
-  sizeWidth,
-  sizeHeight
+  'size'
 )
 
 Circle.displayName = 'Circle'

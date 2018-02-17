@@ -1,10 +1,12 @@
 import sys from 'system-components'
-import {
-  ratio,
-  backgroundImage,
-  backgroundSize,
-  backgroundPosition
-} from './utils'
+import { style } from 'styled-system'
+
+const bgImage = style({
+  prop: 'image',
+  alias: 'src',
+  cssProperty: 'backgroundImage',
+  getter: n => `url(${n})`
+})
 
 export const BackgroundImage = sys({
   width: 1,
@@ -12,10 +14,10 @@ export const BackgroundImage = sys({
   backgroundSize: 'cover',
   backgroundPosition: 'center'
 },
-  ratio,
-  backgroundImage,
-  backgroundSize,
-  backgroundPosition,
+  bgImage,
+  'ratio',
+  'backgroundSize',
+  'backgroundPosition',
   'space',
   'color',
 )

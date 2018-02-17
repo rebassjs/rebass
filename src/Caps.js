@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Text from './Text'
-import { letterSpacing } from './utils'
+import { letterSpacing } from 'styled-system'
 
 export const Caps = styled(Text)([], letterSpacing, {
   textTransform: 'uppercase'
