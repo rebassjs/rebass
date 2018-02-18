@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 import Button from './Button'
-import { darken } from './utils'
 
 export const ButtonTransparent = styled(Button)([], props => ({
   '&:hover': {
-    color: theme('colors.' + props.color)(props),
+    color: themeGet('colors.' + props.color)(props),
     backgroundColor: 'transparent'
   },
   '&:focus': {
@@ -13,7 +12,7 @@ export const ButtonTransparent = styled(Button)([], props => ({
   },
   '&:active': {
     backgroundColor: 'transparent',
-    boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${darken(1/4)}`
+    boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
   }
 }))
 

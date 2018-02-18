@@ -1,6 +1,5 @@
 import sys from 'system-components'
-import { theme } from 'styled-system'
-import { darken } from './utils'
+import { themeGet } from 'styled-system'
 
 export const Button = sys({
   is: 'button',
@@ -24,15 +23,15 @@ export const Button = sys({
     textDecoration: 'none',
     appearance: 'none',
     '&:hover': {
-      boxShadow: `inset 0 0 0 999px ${darken(1/8)}`
+      boxShadow: `inset 0 0 0 999px ${themeGet('colors.darken.0')(props)}`
     },
     '&:focus': {
       outline: 0,
-      boxShadow: `0 0 0 2px ${theme('colors.blue')(props)}`
+      boxShadow: `0 0 0 2px ${themeGet('colors.blue')(props)}`
     },
     '&:active': {
-      backgroundColor: theme('colors.blue.6')(props),
-      boxShadow: `inset 0 0 8px ${darken(1/4)}`
+      backgroundColor: themeGet('colors.blue.6')(props),
+      boxShadow: `inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
     },
     '&:disabled': {
       opacity: 1/4

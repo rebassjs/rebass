@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { darken } from './utils'
+import { themeGet } from 'styled-system'
 
 export const NavLink = sys({
   is: 'a',
@@ -16,7 +16,7 @@ export const NavLink = sys({
   whiteSpace: 'nowrap',
   cursor: 'pointer',
   '&:hover': {
-    backgroundColor: darken(1/16)
+    backgroundColor: themeGet('colors.darken.0')(props)
   },
   '&:disabled': {
     opacity: 1/4

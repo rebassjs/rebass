@@ -1,12 +1,11 @@
 import sys from 'system-components'
-import { darken } from './utils'
 
 export const Dot = sys({
   is: 'button',
   m: 0,
   p: 0,
   size: 16,
-  bg: darken(1/4),
+  bg: 'darken.1',
   borderRadius: 99999,
   border: 4,
   borderColor: 'transparent',

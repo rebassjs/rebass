@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { darken } from './utils'
+import { themeGet } from 'styled-system'
 import { Fixed } from './index'
 
 export const Overlay = sys({
@@ -11,11 +11,11 @@ export const Overlay = sys({
   borderRadius: 2,
   maxWidth: '100vw',
   maxHeight: '100vh',
-  boxShadow: `0 0 0 60vmax ${darken(1/2)}, 0 0 32px ${darken(1/4)}`,
-}, {
+}, props => ({
+  boxShadow: `0 0 0 60vmax ${themeGet('colors.darken.2')(props)}, 0 0 32px ${themeGet('colors.darken.1')(props)}`,
   overflow: 'auto',
   transform: 'translate(-50%, -50%)'
-},
+}),
   'width',
   'maxWidth',
   'maxHeight',
