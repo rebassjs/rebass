@@ -2,6 +2,7 @@ export { Flex, Box } from 'grid-styled'
 
 export { default as theme } from './theme'
 
+export { Base } from './Base'
 export { CSS } from './CSS'
 export { Root } from './Root'
 export { Provider } from './Provider'
