@@ -2,9 +2,11 @@ import React from 'react'
 import { createView, Link } from 'rrx'
 import {
   Flex,
+  Box,
   Heading,
   BlockLink,
   Card,
+  Border,
   Divider,
   Pre,
 } from 'rebass'
@@ -13,7 +15,7 @@ import PageTitle from './PageTitle'
 import Preview from './Preview'
 
 const CompCard = props => (
-  <Card p={2}>
+  <Box p={2}>
     <Preview
       code={props.code}
       style={{
@@ -21,9 +23,9 @@ const CompCard = props => (
         overflow: 'hidden'
       }}
     />
-    <Divider color='gray2' />
+    <Divider my={1} />
     <Pre fontSize={0}>{props.name}</Pre>
-  </Card>
+  </Box>
 )
 
 const ComponentList = props => (
@@ -33,15 +35,12 @@ const ComponentList = props => (
     </PageTitle>
     <Flex
       flexWrap='wrap'
-      my={4}
-      mx={-2}>
+      my={4}>
       {components.map(name => (
         <BlockLink
           is={Link}
           href={'/components/' + name}
           key={name}
-          px={2}
-          pb={3}
           width={[ 1/2, 1/2, 1/3, 1/4 ]}>
           <CompCard
             name={name}

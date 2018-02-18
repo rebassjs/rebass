@@ -5,10 +5,10 @@
   />
   {drawer && (
     <Fixed
-      top
-      right
-      bottom
-      left
+      top={0}
+      right={0}
+      bottom={0}
+      left={0}
       onClick={e => update(toggle('drawer'))}
     />
   )}
@@ -17,7 +17,7 @@
     position='right'
     p={3}
     color='white'
-    bg='gray9'>
+    bg='dark'>
     <Heading>Hello</Heading>
   </Drawer>
 </div>

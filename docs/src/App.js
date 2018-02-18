@@ -26,7 +26,7 @@ import Component from './Component'
 import SideNav from './SideNav'
 
 const StickySide = styled(Box)`
-  // display: none;
+  display: none;
 
   @media screen and (min-width: 32em) {
     flex: none;
@@ -71,16 +71,13 @@ const App = connect(props => {
           bg={pathname === '/' ? 'transparent' : 'black'}
         />
         <Home pattern='/' />
-        <Flex flexWrap='wrap'>
+        <Flex flexWrap={[ 'wrap', 'nowrap' ]}>
           <Box
-            flex='0 1 auto'
+            flex='1 1 auto'
+            width={1}
             order={[ null, 2 ]}
-            w={[ 1, 'calc(100% - 192px)' ]}>
-            <Container
-              mt={6}
-              px={[ 3, 3, 4 ]}
-              pb={3}
-              maxWidth={1024}>
+            px={[ 3, 3, 5 ]}
+            py={[ 5, 5, 6 ]}>
               <GettingStarted pattern='/getting-started' />
               <PropsView pattern='/props' />
               <GridSystem pattern='/grid-system' />
@@ -89,7 +86,6 @@ const App = connect(props => {
               <ServerSide pattern='/server-side-rendering' />
               <ComponentList pattern='/components' />
               <Component pattern='/components/:name' />
-            </Container>
           </Box>
           {pathname !== '/' && (
             <StickySide w={[ 1, 192 ]}>
