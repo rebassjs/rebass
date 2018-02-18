@@ -42,7 +42,7 @@ export const radii = [ 0, 2, 4 ]
 export const fonts = {
   0: 'system-ui, sans-serif',
   sans: 'system-ui, sans-serif',
-  mono: 'Menlo, monospace'
+  mono: '"SF Mono", "Roboto Mono", Menlo, monospace'
 }
 
 export const shadows = [

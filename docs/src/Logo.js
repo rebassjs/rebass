@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { size, width, height } from 'styled-system'
 import { theme } from '../../src'
 
 const Svg = styled.svg`
@@ -7,13 +8,10 @@ const Svg = styled.svg`
   max-width: 100%;
   margin: 0;
   fill: none;
-  stroke: white;
-  mix-blend-mode: overlay;
+  stroke: magenta;
 
-  @media screen and (min-width: ${theme.breakpoints[1]}em) {
-    width: ${props => props.size ? props.size + 'px' : '320px'};
-    height: ${props => props.size ? props.size + 'px' : '320px'};
-  }
+  ${width}
+  ${height}
 `
 
 const spin1 = keyframes`
@@ -59,7 +57,6 @@ const Logo = props => {
     strokeWidth: 2,
     vectorEffect: 'non-scaling-stroke'
   }
-  const size = props.size || 256
 
   const electrons = props.static
     ? (
@@ -77,9 +74,8 @@ const Logo = props => {
 
   return (
     <Svg viewBox='0 0 64 64'
-      size={props.size}
-      width={size}
-      height={size}>
+      width={props.size}
+      height={props.size}>
       <circle
         cx={32}
         cy={32}
@@ -95,6 +91,10 @@ const Logo = props => {
       />
     </Svg>
   )
+}
+
+Logo.defaultProps = {
+  size: 256
 }
 
 export default Logo

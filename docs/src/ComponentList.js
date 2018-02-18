@@ -22,7 +22,7 @@ const CompCard = props => (
       }}
     />
     <Divider color='gray2' />
-    <Pre f={0}>{props.name}</Pre>
+    <Pre fontSize={0}>{props.name}</Pre>
   </Card>
 )
 
@@ -32,7 +32,7 @@ const ComponentList = props => (
       {components.length} Components
     </PageTitle>
     <Flex
-      wrap
+      flexWrap='wrap'
       my={4}
       mx={-2}>
       {components.map(name => (
@@ -42,7 +42,7 @@ const ComponentList = props => (
           key={name}
           px={2}
           pb={3}
-          w={[ 1/2, 1/2, 1/3, 1/4 ]}>
+          width={[ 1/2, 1/2, 1/3, 1/4 ]}>
           <CompCard
             name={name}
             code={examples[name]}

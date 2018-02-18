@@ -15,13 +15,13 @@ const ComponentsSection = props => (
     <Text mb={3}>
       Rebass includes {components.length} stateless functional components.
     </Text>
-    <Flex wrap mx={-2}>
+    <Flex flexWrap='wrap' mx={-2}>
       {components.map(name => (
         <Box key={name}
           w={[ 1/2, 1/3, 1/4, 1/6 ]}>
           <NavLink
             is={Link}
-            f={0}
+            fontSize={0}
             py={1}
             href={'/components/' + name}
             children={name}

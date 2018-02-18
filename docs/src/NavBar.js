@@ -8,37 +8,31 @@ import {
   BlockLink,
   Image,
 } from 'rebass'
-import Hide from 'hidden-styled'
 import Tweet from './Tweet'
 
 const NavBar = props => (
   <Absolute
-    z={2}
-    top
-    left
-    right>
+    zIndex={2}
+    top={0}
+    left={0}
+    right={0}>
     <Toolbar bg='transparent' {...props}>
       <NavLink
         is={Link}
         href='/'
         children='Rebass'
       />
-      <Hide xs>
         <NavLink
           href='https://github.com/jxnblk/rebass'
           children='GitHub'
         />
-      </Hide>
-      <Hide xs>
         <NavLink
           is={Link}
           href='/getting-started'
           children='Docs'
         />
-      </Hide>
       <Box mx='auto' />
       <Tweet />
-      <Hide xs>
         <BlockLink
           ml={3}
           mr={2}
@@ -48,7 +42,6 @@ const NavBar = props => (
             src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
           />
         </BlockLink>
-      </Hide>
       <BlockLink
         mx={2}
         py={2}

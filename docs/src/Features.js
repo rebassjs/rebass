@@ -10,7 +10,7 @@ import Section from './Section'
 const Features = props => (
   <Section name='Features'>
     <Flex
-      wrap
+      flexWrap='wrap'
       mx={-3}
       mt={3}>
       {features.map(text => (
@@ -18,8 +18,8 @@ const Features = props => (
           key={text}
           px={3}
           mb={[ 2, 3, 4 ]}
-          w={[ 1, 1/2, 1/4 ]}>
-          <Text f={2} bold>
+          width={[ 1, 1/2, 1/4 ]}>
+          <Text fontSize={2} bold>
             {text}
           </Text>
         </Box>

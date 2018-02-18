@@ -6,7 +6,7 @@ export const BlockLink = sys({
 }, {
   display: 'block',
   textDecoration: 'none'
-}, 'space')
+}, 'space', 'width')
 
 BlockLink.displayName = 'BlockLink'
 

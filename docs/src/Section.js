@@ -12,7 +12,7 @@ const Section = props => (
     is='section'
     id={props.name}
     py={4}>
-    <Heading>
+    <Heading mb={2}>
       <BlockLink href={'#' + props.name}>
         {props.name}
       </BlockLink>

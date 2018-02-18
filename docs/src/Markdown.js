@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Live from './Live'
 import ReactMarkdown from 'react-markdown'
-import Rebass, {
+import * as Rebass from 'rebass'
+import {
   Box,
   Heading,
   BlockLink,
@@ -27,7 +28,7 @@ const CodeBlock = ({ language, literal }) => {
   if (!/\./.test(language)) {
     return (
       <Pre
-        f={13}
+        fontSize={13}
         px={3}
         py={3}
         my={3}

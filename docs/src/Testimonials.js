@@ -12,13 +12,13 @@ const Testimonials = props => (
   <Container py={3}>
     <Flex
       mx={-3}
-      wrap>
+      flexWrap='wrap'>
       {quotes.map(quote => (
         <Box
           key={quote.href}
-          w={[ 1, 1/2 ]}
+          width={[ 1, 1/2 ]}
           p={3}>
-          <Blockquote f={[ 2, 3 ]}>
+          <Blockquote fontSize={[ 2, 3 ]} fontWeight='bold'>
             “{quote.text}”
           </Blockquote>
           <Small>

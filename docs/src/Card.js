@@ -7,7 +7,7 @@ const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=20
 const Card = props => (
   <Provider>
     <Banner
-      backgroundImage={photo}
+      bg='black'
       style={{
         width: 768,
         minHeight: 0,

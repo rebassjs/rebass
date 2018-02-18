@@ -3,7 +3,7 @@ import sys from 'system-components'
 export const Border = sys({
   border: 1,
   borderColor: 'gray'
-}, 'space', 'color')
+}, 'space', 'width', 'color')
 
 Border.displayName = 'Border'
 

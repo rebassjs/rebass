@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { createProvider } from 'refunk'
+import connect from 'refunk'
 import { createRouter, Link } from 'rrx'
+import Webfont from 'ok-webfont'
+
 import {
   Provider,
   Sticky,
@@ -9,6 +11,7 @@ import {
   Flex,
   Box,
   Border,
+  theme,
 } from 'rebass'
 import NavBar from './NavBar'
 import Home from './Home'
@@ -38,57 +41,89 @@ const StickySide = styled(Box)`
   }
 `
 
-const App = props => {
+const CSS = props => (
+  <style
+    dangerouslySetInnerHTML={{
+      __html: props.css
+    }}
+  />
+)
+CSS.defaultProps = {
+  css: '*{box-sizing:border-box}body{margin:0}'
+}
+
+const App = connect(props => {
   const { pathname } = props.location
+  console.log(props)
 
   return (
-    <Provider theme={theme}>
-      <NavBar
-        bg={pathname === '/' ? 'transparent' : 'black'}
-      />
-      <Home pattern='/' />
-      <Flex wrap>
-        <Box
-          flex='0 1 auto'
-          order={[ null, 2 ]}
-          w={[ 1, 'calc(100% - 192px)' ]}>
-          <Container
-            mt={6}
-            px={[ 3, 3, 4 ]}
-            pb={3}
-            maxWidth={1024}>
-            <GettingStarted pattern='/getting-started' />
-            <PropsView pattern='/props' />
-            <GridSystem pattern='/grid-system' />
-            <Theming pattern='/theming' />
-            <Extending pattern='/extending' />
-            <ServerSide pattern='/server-side-rendering' />
-            <ComponentList pattern='/components' />
-            <Component pattern='/components/:name' />
-          </Container>
-        </Box>
-        {pathname !== '/' && (
-          <StickySide w={[ 1, 192 ]}>
-            <Border right>
-              <SideNav {...props} />
-            </Border>
-          </StickySide>
-        )}
-      </Flex>
-    </Provider>
+    <React.Fragment>
+      <head>
+        <title>Rebass</title>
+        <meta name='viewport'
+          content='width=device-width,initial-scale=0,viewport-fit=cover'
+        />
+        <CSS />
+        <Webfont font='Roboto Mono' />
+      </head>
+      <Provider theme={props.theme}>
+        <NavBar
+          bg={pathname === '/' ? 'transparent' : 'black'}
+        />
+        <Home pattern='/' />
+        <Flex flexWrap='wrap'>
+          <Box
+            flex='0 1 auto'
+            order={[ null, 2 ]}
+            w={[ 1, 'calc(100% - 192px)' ]}>
+            <Container
+              mt={6}
+              px={[ 3, 3, 4 ]}
+              pb={3}
+              maxWidth={1024}>
+              <GettingStarted pattern='/getting-started' />
+              <PropsView pattern='/props' />
+              <GridSystem pattern='/grid-system' />
+              <Theming pattern='/theming' />
+              <Extending pattern='/extending' />
+              <ServerSide pattern='/server-side-rendering' />
+              <ComponentList pattern='/components' />
+              <Component pattern='/components/:name' />
+            </Container>
+          </Box>
+          {pathname !== '/' && (
+            <StickySide w={[ 1, 192 ]}>
+              <Border right>
+                <SideNav {...props} />
+              </Border>
+            </StickySide>
+          )}
+        </Flex>
+      </Provider>
+    </React.Fragment>
   )
-}
+})
 
-const theme = {
-  maxWidth: 1280
-}
-
-const state = {
+App.defaultProps = {
   xray: false,
   overlay: false,
   drawer: false,
   checked: false,
   fixed: false,
+  theme: {
+    ...theme,
+    maxWidths: [
+      1280
+    ]
+  },
 }
 
-export default createProvider(state)(createRouter(App))
+const Router = createRouter(App)
+
+Router.defaultProps = {
+  options: {
+    basename: '/'
+  }
+}
+
+export default Router

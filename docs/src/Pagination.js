@@ -14,7 +14,7 @@ const Pagination = props => (
         is={Link}
         href={props.previous.href}>
         <Chevron left size={16} />
-        <Text bold ml={2}>
+        <Text fontWeight='bold' ml={2}>
           {props.previous.name}
         </Text>
       </NavLink>

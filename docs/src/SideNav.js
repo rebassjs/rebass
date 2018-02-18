@@ -15,9 +15,9 @@ const Link = styled(props => (
     is={RLink}
     href={'#' + props.name}
     children={props.name}
-    f={[ 0, 1 ]}
+    fontSize={[ 0, 1 ]}
     {...props}
-    w={[ 1/2, 1 ]}
+    width={[ 1/2, 1 ]}
     px={3}
     py={1}
   />
@@ -34,8 +34,8 @@ const SideNav = props => {
 
   return (
     <nav>
-      <Flex wrap py={4}>
-        <Divider w={1} my={3} color='gray3' />
+      <Flex flexWrap='wrap' py={4}>
+        <Divider width={1} my={3} color='gray3' />
         <Link
           href='/getting-started'
           children='Getting Started'
@@ -66,7 +66,7 @@ const SideNav = props => {
           children='Server Side Rendering'
           active={pathname === '/server-side-rendering'}
         />
-        <Divider w={1} my={3} color='gray3' />
+        <Divider width={1} my={3} color='gray3' />
         <Link
           href='/components'
           children={components.length + ' Components'}
@@ -80,21 +80,21 @@ const SideNav = props => {
             active={pathname === '/components/' + name}
           />
         ))}
-        <Divider w={1} my={3} color='gray3' />
+        <Divider width={1} my={3} color='gray3' />
         <Link
           is='a'
-          f={0}
-          href='http://jxnblk.com/rebass/stories'
-          children='Storybook'
+          fontSize={0}
+          href='http://jxnblk.com/rebass/demo'
+          children='Demo'
         />
         <Link
           is='a'
-          f={0}
+          fontSize={0}
           href='https://github.com/jxnblk/rebass'
           children='GitHub'
         />
         <Link
-          f={0}
+          fontSize={0}
           is='a'
           href='http://jxnblk.com'
           children='Made by Jxnblk'

@@ -31,7 +31,7 @@ const Component = props => {
         {name}
       </PageTitle>
       <Flex
-        column
+        flexDirection='column'
         style={{
           minHeight: '70vh'
         }}>

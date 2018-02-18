@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "1.0.7",
+  "version": "2.0.0-0",
   "description": "Functional React UI component library, built with styled-components",
   "main": "dist/index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@compositor/kit": "^1.0.0-1",
     "@compositor/x0": "^3.1.1",
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",

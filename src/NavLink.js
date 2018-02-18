@@ -21,7 +21,7 @@ export const NavLink = sys({
   '&:disabled': {
     opacity: 1/4
   },
-}))
+}), 'width')
 
 NavLink.displayName = 'NavLink'
 

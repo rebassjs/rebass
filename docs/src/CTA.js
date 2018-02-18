@@ -16,7 +16,7 @@ const CTA = props => (
     </Text>
     <Flex
       py={3}
-      align='center'>
+      alignItems='center'>
       <Pre
         ml='auto'
         mr={3}

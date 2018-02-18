@@ -21,21 +21,20 @@ const Props = props => (
     <Live code={code} />
     <Box my={3}>
       <Text>
-        {`These core props are handled with `}
+        These core props are handled with
+        {' '}
         <Link href='https://github.com/jxnblk/styled-system'>
           styled-system
-        </Link>
-        {`, and the default color palette is created with `}
-        <Link href='https://github.com/jxnblk/palx'>
-          Palx
         </Link>.
-        {` See the `}
+        See the
+        {' '}
         <Link
           is={RLink}
           href='/rebass/props'>
           props documentation
         </Link>
-        {` for more.`}
+        {' '}
+        for more.
       </Text>
     </Box>
   </Section>

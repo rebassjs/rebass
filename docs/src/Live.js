@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { connect } from 'refunk'
+import { width } from 'styled-system'
+import connect from 'refunk'
 import {
   LiveProvider,
   LivePreview,
@@ -8,21 +9,22 @@ import {
   LiveEditor,
 } from 'react-live'
 import XRay from 'react-x-ray'
-import Rebass, {
+import * as Rebass from 'rebass'
+import {
   Flex,
   Box,
   Border,
   Relative,
   Absolute,
-  hoc,
-  colors,
   theme
 } from 'rebass'
 import { photo } from './constants'
 
+const { colors } = theme
+
 const _scope = Object.assign({}, Rebass, { styled, photo })
 
-const Editor = hoc()(styled(LiveEditor)`
+const Editor = styled(LiveEditor)`
   font-family: 'SF Mono', Menlo, monospace;
   font-size: 13px;
   tab-size: 2;
@@ -33,7 +35,8 @@ const Editor = hoc()(styled(LiveEditor)`
   outline: none;
   overflow: auto;
   max-height: 512px;
-`)
+  ${width}
+`
 
 const Err = styled(LiveError)`
   font-family: 'SF Mono', Menlo, monospace;
@@ -55,10 +58,8 @@ const Live = props => {
       {...props}
       scope={scope}
       mountStylesheet={false}>
-      <Flex wrap>
-        <Border
-          w={[ 1, null, 3/5 ]}
-          top right bottom left>
+      <Flex flexWrap='wrap'>
+        <Border width={[ 1, null, 3/5 ]}>
           <Relative>
             <XRay
               color={theme.colors.blue2}
@@ -70,7 +71,7 @@ const Live = props => {
                 <LivePreview />
               </Box>
             </XRay>
-            <Absolute top left right>
+            <Absolute top={0} left={0} right={0}>
               <Err />
             </Absolute>
           </Relative>
@@ -83,12 +84,4 @@ const Live = props => {
   )
 }
 
-const map = state => ({
-  xray: state.xray,
-  overlay: state.overlay,
-  drawer: state.drawer,
-  checked: state.checked,
-  fixed: state.fixed
-})
-
-export default connect(map)(Live)
+export default connect(Live)

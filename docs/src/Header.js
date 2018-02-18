@@ -24,54 +24,62 @@ const Btn = styled(Button)`
   mix-blend-mode: overlay;
 `
 
+const Title = Heading.extend`
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+`
+
 const Header = props => (
   <Banner
-    py={[ 4, 5, 6 ]}
+    py={[ 4, 5 ]}
     color='white'
-    bg='gray7'
-    backgroundImage={photo}>
-    <Logo />
+    bg='black'>
+    <Box width={1}>
+      <Logo
+        size={[ 256, 320, 512 ]}
+      />
+    </Box>
     <Flex
-      wrap
+      flexWrap='wrap'
+      width={1}
       mx={-3}
-      pt={4}
-      align='center'>
-      <Heading
-        caps
-        w={[ 1, null, 384 ]}
-        px={3}
-        is='h1'
-        f={[ 6, 7, 8 ]}>
-        Rebass
-      </Heading>
-      <Lead
-        px={3}
-        w={[ 1, 384 ]}>
-        Functional React UI component library, built with styled-components
-      </Lead>
+      alignItems='center'>
+      <Box width={[ 1, null, 384 ]} px={3}>
+        <Title
+          is='h1'
+          fontSize={[ 6, 7, 8 ]}>
+          Rebass
+        </Title>
+      </Box>
+      <Box px={3} width={[ 1, 384 ]}>
+        <Lead>
+          Functional React UI component library, built with styled-components
+        </Lead>
+      </Box>
     </Flex>
     <Flex
-      wrap
       mx={-3}
-      align='center'>
+      width={1}
+      flexWrap='wrap'
+      alignItems='center'>
       <Button
         is={Link}
         href='/getting-started'
-        f={2}
+        fontSize={2}
         color='black'
         bg='white'
         children='Documentation'
-        py={[ 2, 3 ]}
+        py={3}
         mx={3}
         my={4}
       />
       <ButtonOutline
         is='a'
         href='https://github.com/jxnblk/rebass'
-        f={2}
+        fontSize={2}
         color='white'
         children='GitHub'
-        py={[ 2, 3 ]}
+        py={3}
         mx={3}
         my={4}
       />

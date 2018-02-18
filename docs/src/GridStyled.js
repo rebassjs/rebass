@@ -16,17 +16,17 @@ const GridStyled = props => (
   </Section>
 )
 
-const code = `<Flex wrap mx={-2}>
-  <Box p={2} w={[ 1, 1/2, 1/4 ]}>
+const code = `<Flex flexWrap='wrap' mx={-2}>
+  <Box p={2} width={[ 1, 1/2, 1/4 ]}>
     <Box p={1} color='white' bg='blue'>Box</Box>
   </Box>
-  <Box p={2} w={[ 1, 1/2, 1/4 ]}>
+  <Box p={2} width={[ 1, 1/2, 1/4 ]}>
     <Box p={1} color='white' bg='blue'>Box</Box>
   </Box>
-  <Box p={2} w={[ 1, 1/2, 1/4 ]}>
+  <Box p={2} width={[ 1, 1/2, 1/4 ]}>
     <Box p={1} color='white' bg='blue'>Box</Box>
   </Box>
-  <Box p={2} w={[ 1, 1/2, 1/4 ]}>
+  <Box p={2} width={[ 1, 1/2, 1/4 ]}>
     <Box p={1} color='white' bg='blue'>Box</Box>
   </Box>
 </Flex>`
