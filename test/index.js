@@ -73,32 +73,32 @@ test('renders Text bold', t => {
 })
 
 test('renders Border top', t => {
-  const json = render(<Rebass.Border borderTop />).toJSON()
+  const json = render(<Rebass.Border borderTop={1} />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Border right', t => {
-  const json = render(<Rebass.Border borderRight />).toJSON()
+  const json = render(<Rebass.Border borderRight={1} />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Border bottom', t => {
-  const json = render(<Rebass.Border borderBottom />).toJSON()
+  const json = render(<Rebass.Border borderBottom={1} />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Border left', t => {
-  const json = render(<Rebass.Border borderLeft />).toJSON()
+  const json = render(<Rebass.Border borderLeft={1} />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Border borderWidth', t => {
-  const json = render(<Rebass.Border borderWidth={2} />).toJSON()
+test('renders Border border 2', t => {
+  const json = render(<Rebass.Border border={2} />).toJSON()
   t.snapshot(json)
 })
 
 test('renders Border none', t => {
-  const json = render(<Rebass.Border borderWidth='none' />).toJSON()
+  const json = render(<Rebass.Border border='none' />).toJSON()
   t.snapshot(json)
 })
 

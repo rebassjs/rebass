@@ -10,7 +10,7 @@ export const Input = sys({
   py: 2,
   m: 0,
   width: 1,
-  borderWidth: 0,
+  border: 0,
   borderColor: 'gray',
   boxShadow: 1,
   borderRadius: 2,

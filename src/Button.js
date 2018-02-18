@@ -12,7 +12,7 @@ export const Button = sys({
   color: 'white',
   bg: 'blue',
   borderRadius: 2,
-  borderWidth: 0,
+  border: 0,
 },
   props => ({
     fontFamily: 'inherit',
