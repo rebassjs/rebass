@@ -5,9 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
-    "start": "start-storybook -p 8000 -c stories",
-    "demo": "x0 dev docs/Demo.js -op 9000",
-    "storybook": "build-storybook -c stories -o docs/stories",
+    "start": "x0 dev docs/Demo.js -op 9000",
+    "demo": "x0 build docs/Demo.js -d docs/demo",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava"
   },
@@ -27,14 +26,12 @@
     "grid-styled": "^3.2.0",
     "prop-types": "^15.6.0",
     "styled-components": ">=2.0 || >=3.0",
-    "styled-system": "^2.0.2",
+    "styled-system": "^2.1.0",
     "system-components": "^2.0.1"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.0-1",
     "@compositor/x0": "^3.1.1",
-    "@storybook/addon-options": "^3.3.3",
-    "@storybook/react": "^3.3.3",
     "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -48,7 +45,7 @@
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
     "react-x-ray": "^1.0.0-4",
-    "refunk": "^1.0.0-2"
+    "refunk": "^2.2.4"
   },
   "repository": {
     "type": "git",
@@ -70,5 +67,8 @@
       "docs",
       "stories"
     ]
+  },
+  "x0": {
+    "cssLibrary": "styled-components"
   }
 }

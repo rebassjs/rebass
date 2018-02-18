@@ -2,6 +2,7 @@ import sys from 'system-components'
 import { theme } from 'styled-system'
 
 export const Progress = sys({
+  is: 'progress',
   width: 1,
   m: 0,
   px: 0,

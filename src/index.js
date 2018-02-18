@@ -76,8 +76,10 @@ export {
   Sticky,
 } from './Position'
 
-export { Overlay } from './Overlay'
+export { Modal } from './Modal'
 export { Drawer } from './Drawer'
 export { Carousel } from './Carousel'
 export { Tooltip } from './Tooltip'
 
+// backwards compat
+export { Modal as Overlay } from './Modal'
