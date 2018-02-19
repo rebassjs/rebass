@@ -18,12 +18,15 @@ const Configuration = props => (
 
 const code = `<Provider
   theme={{
-    font: '"Avenir Next", Helvetica, sans-serif',
+    fonts: {
+      0: '"Avenir Next", Helvetica, sans-serif',
+      sans: '"Avenir Next", Helvetica, sans-serif',
+    },
     fontSizes: [
       12, 16, 24, 36, 48, 72
     ]
   }}>
-  <Heading f={[ 2, 3, 4, 5 ]}>
+  <Heading fontSize={[ 2, 3, 4, 5 ]}>
     Hello
   </Heading>
 </Provider>

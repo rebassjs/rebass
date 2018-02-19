@@ -1,11 +1,11 @@
 {
   "name": "rebass",
   "version": "2.0.0-0",
-  "description": "Functional React UI component library, built with styled-components",
+  "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
-    "start": "x0 dev docs/Demo.js -op 9000",
+    "start": "x0 dev docs/Demo.js -op 9009",
     "demo": "x0 build docs/Demo.js -d docs/demo",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava"
@@ -15,6 +15,8 @@
     "react",
     "react-component",
     "ui",
+    "design-system",
+    "styled-system",
     "styled-components",
     "presentational",
     "stateless",

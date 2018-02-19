@@ -1,6 +1,7 @@
 # Rebass
 
-Functional React UI component library, built with [styled-components](https://www.styled-components.com)
+React UI component library & design system,
+built with [styled-components](https://www.styled-components.com)
 
 [![Build Status](https://travis-ci.org/jxnblk/rebass.svg?branch=master)](https://travis-ci.org/jxnblk/rebass)
 

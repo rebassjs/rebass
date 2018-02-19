@@ -31,9 +31,6 @@ design-system-based responsive style props using [styled-system](https://github.
     1/4   // 25% width at the next
   ]}
 />
-
-// The shorthand `w` prop can be used instead of `width`
-<Text w={1/2} />
 ```
 
 ### Font Size
@@ -42,7 +39,7 @@ The `fontSize` prop makes referencing steps on the typographic scale
 simple and helps promote consistent design.
 
 ```.jsx
-<Text f={5}>
+<Text fontSize={5}>
   Hello
 </Text>
 ```
@@ -61,9 +58,6 @@ simple and helps promote consistent design.
 
 // Arrays can be used for mobile-first responsive styles
 <Text fontSize={[ 3, 4, 5 ]} />
-
-// The shorthand `f` prop can be used instead of `fontSize`
-<Text f={3} />
 ```
 
 ### Margin and Padding
@@ -150,14 +144,14 @@ Each value after the first corresponds to a media query derived from `theme.brea
 ```.jsx
 <Flex wrap>
   <Box
-    w={[ 1, 1/2 ]}
+    width={[ 1, 1/2 ]}
     p={2}
     color='white'
     bg='blue'>
     Hello
   </Box>
   <Box
-    w={[ 1, 1/2 ]}
+    width={[ 1, 1/2 ]}
     p={2}
     color='white'
     bg='blue'>

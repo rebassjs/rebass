@@ -3,6 +3,7 @@ import {
   Heading,
   Truncate,
   Text,
+  Measure,
   theme,
 } from 'rebass'
 import Section from './Section'
@@ -12,9 +13,9 @@ const scale = [ ...fontSizes ].reverse()
 
 const TypographicScale = () => (
   <Section name='Typographic Scale'>
-    <Text mb={3}>
+    <Measure mb={3}>
       The default typographic scale is based on a 16px base and common sizes, well suited for responsive typography that helps maintain a natural feeling visual rhythm.
-    </Text>
+    </Measure>
     {scale.map(f => (
       <Truncate
         key={f}

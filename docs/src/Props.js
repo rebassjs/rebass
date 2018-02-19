@@ -6,6 +6,7 @@ import {
   Text,
   Link,
   Code,
+  Measure,
 } from 'rebass'
 import Live from './Live'
 import Section from './Section'
@@ -13,11 +14,11 @@ import Section from './Section'
 
 const Props = props => (
   <Section name='Props'>
-    <Text mb={3}>
+    <Measure mb={3}>
       Every Rebass component includes several responsive style props for handling
       margin, padding, width, font size, and color.
       Based on an underlying design system with spacing and typographic scales and colors, Rebass encourages consistency in design and helps increase development velocity.
-    </Text>
+    </Measure>
     <Live code={code} />
     <Box my={3}>
       <Text>

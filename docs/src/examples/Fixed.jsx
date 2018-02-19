@@ -8,9 +8,9 @@
       m={2}
       p={3}
       bg='green3'
-      z={1}
-      right
-      bottom>
+      zIndex={1}
+      right={0}
+      bottom={0}>
       Hello
     </Fixed>
   )}

@@ -10,11 +10,9 @@ npm i rebass
 To ensure Rebass's theme is properly configured, use the `<Provider />` component at the root of your application.
 
 ```.jsx
-const App = props => (
-  <Provider>
-    <Heading>Hello</Heading>
-  </Provider>
-)
+<Provider>
+  <Heading>Hello</Heading>
+</Provider>
 ```
 
 You might also want to set some global styles in your application.

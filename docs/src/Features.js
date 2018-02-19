@@ -19,7 +19,7 @@ const Features = props => (
           px={3}
           mb={[ 2, 3, 4 ]}
           width={[ 1, 1/2, 1/4 ]}>
-          <Text fontSize={2} bold>
+          <Text fontSize={2} fontWeight='bold'>
             {text}
           </Text>
         </Box>

@@ -10,6 +10,7 @@ import {
   Link,
   Code,
   Pre,
+  Measure,
 } from 'rebass'
 import PageTitle from './PageTitle'
 
@@ -24,7 +25,7 @@ class Markdown extends React.Component {
   }
 }
 
-const CodeBlock = ({ language, literal }) => {
+const CodeBlock = ({ language, value }) => {
   if (!/\./.test(language)) {
     return (
       <Pre
@@ -32,9 +33,9 @@ const CodeBlock = ({ language, literal }) => {
         px={3}
         py={3}
         my={3}
-        color='blue6'
-        bg='gray0'>
-        {literal}
+        color='blue'
+        bg='#fcfcff'>
+        {value}
       </Pre>
     )
   }
@@ -44,7 +45,7 @@ const CodeBlock = ({ language, literal }) => {
   return (
     <Box mb={3}>
       <Live
-        code={literal}
+        code={value}
         noInline={noInline}
       />
     </Box>
@@ -73,15 +74,16 @@ const MDHeading = props => {
 const MDCode = props => (
   <Code
     color='blue'
-    children={props.literal}
+    children={props.value}
   />
 )
 
 const renderers = {
-  CodeBlock,
-  Heading: MDHeading,
-  Code: MDCode,
-  Link
+  code: CodeBlock,
+  heading: MDHeading,
+  inlineCode: MDCode,
+  link: Link,
+  paragraph: props => <Measure {...props} maxWidth='40em' mb={3} />,
 }
 
 export default Markdown

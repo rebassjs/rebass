@@ -15,9 +15,6 @@ export const NavLink = sys({
   textDecoration: 'none',
   whiteSpace: 'nowrap',
   cursor: 'pointer',
-  '&:hover': {
-    backgroundColor: themeGet('colors.darken.0')(props)
-  },
   '&:disabled': {
     opacity: 1/4
   },

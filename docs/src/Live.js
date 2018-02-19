@@ -25,13 +25,12 @@ const { colors } = theme
 const _scope = Object.assign({}, Rebass, { styled, photo })
 
 const Editor = styled(LiveEditor)`
-  font-family: 'SF Mono', Menlo, monospace;
+  font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
   font-size: 13px;
   tab-size: 2;
   margin: 0;
   padding: 16px;
-  color: ${colors.blue6};
-  background-color: ${colors.gray0};
+  color: ${colors.blue};
   outline: none;
   overflow: auto;
   max-height: 512px;

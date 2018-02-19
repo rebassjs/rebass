@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 
 export const Tooltip = sys({
   color: 'white',
@@ -17,14 +17,14 @@ export const Tooltip = sys({
     left: '50%',
     transform: 'translate(-50%, -4px)',
     whiteSpace: 'nowrap',
-    fontSize: theme('fontSizes.0')(props),
+    fontSize: themeGet('fontSizes.0', '10px')(props),
     paddingTop: '4px',
     paddingBottom: '4px',
     paddingLeft: '8px',
     paddingRight: '8px',
-    color: theme('colors.' + props.color)(props),
-    backgroundColor: theme('colors.' + props.bg)(props),
-    borderRadius: theme('radii.1')(props) + 'px'
+    color: themeGet('colors.' + props.color)(props),
+    backgroundColor: themeGet('colors.' + props.bg)(props),
+    borderRadius: themeGet('radii.1')(props) + 'px'
   },
   '&::after': {
     display: 'none',
@@ -36,7 +36,7 @@ export const Tooltip = sys({
     borderWidth: '6px',
     borderStyle: 'solid',
     borderColor: 'transparent',
-    borderTopColor: theme('colors.' + props.bg)(props)
+    borderTopColor: themeGet('colors.' + props.bg)(props)
   },
   '&:hover': {
     '&::before, &::after': {

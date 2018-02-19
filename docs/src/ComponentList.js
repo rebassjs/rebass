@@ -15,7 +15,7 @@ import PageTitle from './PageTitle'
 import Preview from './Preview'
 
 const CompCard = props => (
-  <Box p={2}>
+  <Box px={2} mb={4}>
     <Preview
       code={props.code}
       style={{

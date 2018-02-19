@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Root from './Root'
-import theme from './theme'
+import defaultTheme from './theme'
 
 export class Provider extends React.Component {
   render () {
@@ -11,7 +11,7 @@ export class Provider extends React.Component {
     } = this.props
 
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
         <Root {...props} />
       </ThemeProvider>
     )
@@ -19,7 +19,7 @@ export class Provider extends React.Component {
 }
 
 Provider.defaultProps = {
-  theme
+  theme: {}
 }
 
 Provider.displayName = 'Rebass.Provider'

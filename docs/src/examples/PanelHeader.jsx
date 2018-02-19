@@ -1,3 +1,3 @@
-<PanelHeader>
+<Panel.Header>
   Hello
-</PanelHeader>
+</Panel.Header>

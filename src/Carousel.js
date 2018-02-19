@@ -3,7 +3,7 @@ import { Flex } from 'grid-styled'
 
 export const carouselIndex = ({ index }) => ({
   '& > div:first-child': {
-    marginLeft: (index * 100) + '%',
+    marginLeft: (index * -100) + '%',
     transitionProperty: 'margin',
     transitionDuration: '.2s',
     transitionTimingFunction: 'ease-out'
@@ -15,7 +15,11 @@ export const Carousel = sys({
   width: 1,
 }, {
   overflow: 'hidden',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  '& > div': {
+    flex: 'none',
+    width: '100%'
+  }
 }, carouselIndex)
 
 Carousel.displayName = 'Carousel'

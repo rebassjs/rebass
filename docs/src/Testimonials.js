@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-  Container,
   Flex,
   Box,
   Blockquote,
   Small,
   Link
 } from 'rebass'
+import Container from './Container'
 
 const Testimonials = props => (
   <Container py={3}>

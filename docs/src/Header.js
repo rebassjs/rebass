@@ -1,4 +1,5 @@
 import React from 'react'
+import connect from 'refunk'
 import styled from 'styled-components'
 import { Link } from 'rrx'
 import {
@@ -10,9 +11,12 @@ import {
   Lead,
   Button,
   ButtonOutline,
-  Pre
+  Pre,
+  BlockLink,
+  Image,
 } from 'rebass'
 import Logo from './Logo'
+import Tweet from './Tweet'
 
 const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
 
@@ -29,7 +33,7 @@ const Title = Heading.extend`
   letter-spacing: 0.2em;
 `
 
-const Header = props => (
+const Header = connect(props => (
   <Banner
     py={[ 4, 5 ]}
     color='white'
@@ -51,9 +55,9 @@ const Header = props => (
           Rebass
         </Title>
       </Box>
-      <Box px={3} width={[ 1, 384 ]}>
-        <Lead>
-          Functional React UI component library, built with styled-components
+      <Box px={3} width={[ 1, 1, 512 ]}>
+        <Lead fontWeight='bold'>
+          {props.pkg.description}
         </Lead>
       </Box>
     </Flex>
@@ -85,7 +89,30 @@ const Header = props => (
       />
       <Pre mx={3}>npm i rebass</Pre>
     </Flex>
+    <Flex
+      px={3}
+      alignItems='center'
+      width={1}>
+      <BlockLink
+        mr={2}
+        py={2}
+        href='https://travis-ci.org/jxnblk/rebass'>
+        <Image
+          src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
+        />
+      </BlockLink>
+      <BlockLink
+        ml={2}
+        mr={3}
+        py={2}
+        href='https://github.com/jxnblk/rebass'>
+        <Image
+          src='https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star'
+        />
+      </BlockLink>
+      <Tweet />
+    </Flex>
   </Banner>
-)
+))
 
 export default Header

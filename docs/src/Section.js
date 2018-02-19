@@ -2,10 +2,10 @@ import React from 'react'
 import {
   Flex,
   Box,
-  Container,
   Heading,
   BlockLink,
 } from 'rebass'
+import Container from './Container'
 
 const Section = props => (
   <Container

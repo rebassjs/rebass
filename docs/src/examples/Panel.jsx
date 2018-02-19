@@ -1,15 +1,15 @@
 <Panel color='blue'>
-  <PanelHeader
+  <Panel.Header
     color='white'
     bg='blue'>
     Hello
-  </PanelHeader>
+  </Panel.Header>
   <Box p={3}>
     <Subhead>
       Panel
     </Subhead>
   </Box>
-  <PanelFooter color='blue'>
+  <Panel.Footer color='blue'>
     Footer
-  </PanelFooter>
+  </Panel.Footer>
 </Panel>

@@ -1,5 +1,5 @@
 <Text
-  center
-  bold
+  textAlign='center'
+  fontWeight='bold'
   children='Hello'
 />
