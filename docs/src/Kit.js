@@ -70,7 +70,7 @@ import {
   Embed,
   // Star,
   Donut,
-} from '../src'
+} from '../../src'
 
 const colors = (
   <Example name='Colors'>

@@ -5,8 +5,6 @@
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "babel src -d dist",
-    "start": "x0 dev docs/Demo.js -op 9009",
-    "demo": "x0 build docs/Demo.js -d docs/demo",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava"
   },
