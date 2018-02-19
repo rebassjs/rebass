@@ -18,8 +18,6 @@ import {
 import Logo from './Logo'
 import Tweet from './Tweet'
 
-const photo = 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
-
 const Root = styled(Banner)`
   background-attachment: fixed;
 `
@@ -66,6 +64,7 @@ const Header = connect(props => (
           fontSize={[ 6, 7, 8 ]}>
           Rebass
         </Title>
+        <Pre mb={2}>v{props.pkg.version}</Pre>
         <Lead fontWeight='bold'>
           {props.pkg.description}
         </Lead>
@@ -96,7 +95,7 @@ const Header = connect(props => (
             mx={3}
             my={3}
           />
-          <Pre mx={3}>npm i rebass</Pre>
+          <Pre mx={3}>npm i rebass@next</Pre>
         </Flex>
       </Box>
     </Flex>
