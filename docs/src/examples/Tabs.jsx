@@ -1,11 +1,11 @@
 <Tabs>
-  <TabItem active>
+  <Tab borderColor='blue'>
     Beep
-  </TabItem>
-  <TabItem>
+  </Tab>
+  <Tab>
     Boop
-  </TabItem>
-  <TabItem>
+  </Tab>
+  <Tab>
     Bop
-  </TabItem>
+  </Tab>
 </Tabs>

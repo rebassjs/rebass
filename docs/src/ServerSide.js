@@ -1,5 +1,4 @@
 import React from 'react'
-import { createView } from 'rrx'
 import src from 'raw-loader!../SERVER_SIDE_RENDERING.md'
 import Markdown from './Markdown'
 import Pagination from './Pagination'
@@ -20,4 +19,4 @@ const ServerSide = props => (
   </div>
 )
 
-export default createView(ServerSide)
+export default ServerSide

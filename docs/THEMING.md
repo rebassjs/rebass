@@ -1,20 +1,22 @@
 
 # Theming
 
-Rebass's core design system includes breakpoints, a spacing scale,
-a typographic scale, fonts, font weights, border radius, and a color palette, all of which can be configured with the `<Provider />` component.
+Rebass's core theme includes breakpoints, a spacing scale,
+a typographic scale, fonts, font weights, border radii, and colors, all of which can be configured with the `<Provider />` component.
 
 To customize the underlying theme, pass a `theme` object to the `<Provider />` component.
 
 ```.jsx
 <Provider
   theme={{
-    font: '"Avenir Next", Helvetica, sans-serif',
+    fonts: {
+      sans: '"Avenir Next", Helvetica, sans-serif',
+    },
     fontSizes: [
       12, 16, 24, 36, 48, 72
     ]
   }}>
-  <Heading f={[ 2, 3, 4, 5 ]}>
+  <Heading fontSize={[ 2, 3, 4, 5 ]}>
     Hello
   </Heading>
 </Provider>
@@ -40,6 +42,10 @@ const theme = {
     64,
     128,
   ],
+  fonts: {
+    sans: 'system-ui, sans-serif',
+    mono: 'Menlo, monospace',
+  },
   fontSizes: [
     12,
     14,
@@ -52,17 +58,17 @@ const theme = {
     72,
     96
   ],
-  weights: [
-    400,
-    700
-  ],
+  weights: {
+    normal: 400,
+    bold: 700
+  },
   colors: {
     black: '#000',
     white: '#fff',
-    ...palxColors
+    ...etc
   },
-  radius: 4,
-  font: '-apple-system, BlinkMacSystemFont, sans-serif',
-  monospace: '"SF Mono", "Roboto Mono", Menlo, monospace'
+  radii: [ 0, 2, 4 ]
 }
 ```
+
+See the [styled-system](https://github.com/jxnblk/styled-system) docs for more about how Rebass style props integrate with the theme.

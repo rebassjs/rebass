@@ -1,6 +1,7 @@
 import React from 'react'
-import { Flex, Container } from 'rebass'
+import { Flex } from 'rebass'
 import { NavLink } from 'rebass'
+import Container from './Container'
 
 const Footer = props => (
   <footer>

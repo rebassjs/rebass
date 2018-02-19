@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import { Chevron } from 'reline'
 import {
   Flex,
@@ -12,9 +12,9 @@ const Pagination = props => (
     {props.previous && (
       <NavLink
         is={Link}
-        href={props.previous.href}>
+        to={props.previous.href}>
         <Chevron left size={16} />
-        <Text bold ml={2}>
+        <Text fontWeight='bold' ml={2}>
           {props.previous.name}
         </Text>
       </NavLink>
@@ -23,7 +23,7 @@ const Pagination = props => (
       <NavLink
         is={Link}
         ml='auto'
-        href={props.next.href}>
+        to={props.next.href}>
         <Text bold mr={2}>
           {props.next.name}
         </Text>

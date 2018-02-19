@@ -1,5 +1,4 @@
 import React from 'react'
-import { createView } from 'rrx'
 import src from 'raw-loader!../GRID_SYSTEM.md'
 import Markdown from './Markdown'
 import Pagination from './Pagination'
@@ -20,4 +19,4 @@ const GridSystem = props => (
   </div>
 )
 
-export default createView(GridSystem)
+export default GridSystem

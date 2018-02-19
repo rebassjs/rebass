@@ -1,5 +1,4 @@
 import React from 'react'
-import { createView } from 'rrx'
 import {
   Flex,
   Box,
@@ -9,8 +8,10 @@ import Example from './Example'
 import Pagination from './Pagination'
 import { components } from './examples'
 
+console.log('Component')
+
 const Component = props => {
-  const { name } = props.params
+  const { name } = props.match.params
   const index = components.indexOf(name)
   const previousName = components[index - 1]
   const nextName = components[index + 1]
@@ -31,7 +32,7 @@ const Component = props => {
         {name}
       </PageTitle>
       <Flex
-        column
+        flexDirection='column'
         style={{
           minHeight: '70vh'
         }}>
@@ -47,4 +48,4 @@ const Component = props => {
   )
 }
 
-export default createView(Component)
+export default Component

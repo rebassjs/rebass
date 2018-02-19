@@ -1,19 +1,16 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { size, width, height } from 'styled-system'
 import { theme } from '../../src'
 
-const Svg = styled.svg`
-  display: block;
-  max-width: 100%;
-  margin: 0;
-  fill: none;
-  stroke: white;
-  mix-blend-mode: overlay;
-
-  @media screen and (min-width: ${theme.breakpoints[1]}em) {
-    width: ${props => props.size ? props.size + 'px' : '320px'};
-    height: ${props => props.size ? props.size + 'px' : '320px'};
-  }
+const Svg = styled(({
+  width,
+  height,
+  ...props
+}) => <svg {...props} />)`
+  mix-blend-mode: screen;
+  ${width}
+  ${height}
 `
 
 const spin1 = keyframes`
@@ -55,17 +52,28 @@ const Logo = props => {
   const electronProps = {
     cx: 32,
     cy: 32,
-    r: 20,
+    r: 24,
     strokeWidth: 2,
     vectorEffect: 'non-scaling-stroke'
   }
-  const size = props.size || 256
 
   const electrons = props.static
     ? (
       <g>
-        <ElectronStatic1 {...electronProps} />
-        <ElectronStatic2 {...electronProps} />
+        <ElectronStatic1
+          {...electronProps}
+          style={{
+            transformOrigin: '50% 50%',
+            transform: 'rotate3d(0, 1, 1, 90deg)'
+          }}
+        />
+        <ElectronStatic2
+          {...electronProps}
+          style={{
+            transformOrigin: '50% 50%',
+            transform: 'rotate3d(1, 0, 1, 90deg)'
+          }}
+        />
       </g>
     )
     : (
@@ -77,24 +85,31 @@ const Logo = props => {
 
   return (
     <Svg viewBox='0 0 64 64'
-      size={props.size}
-      width={size}
-      height={size}>
+      style={{
+        width: props.static ? 384 : null,
+        height: props.static ? 384 : null,
+        display: 'block',
+        maxWidth: '100%',
+        margin: 0,
+        fill: 'none',
+        stroke: 'magenta'
+      }}
+      width={props.size}
+      height={props.size}>
       <circle
         cx={32}
         cy={32}
-        r={24}
+        r={30}
         strokeWidth={4}
         vectorEffect='non-scaling-stroke'
       />
       {electrons}
-      <path
-        d='M0 32 H64'
-        strokeWidth={1}
-        vectorEffect='non-scaling-stroke'
-      />
     </Svg>
   )
+}
+
+Logo.defaultProps = {
+  size: 256
 }
 
 export default Logo

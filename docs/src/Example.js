@@ -1,6 +1,7 @@
 import React from 'react'
-import { connect } from 'refunk'
-import Rebass, {
+import connect from 'refunk'
+import * as Rebass from 'rebass'
+import {
   Flex,
   Box,
   Heading,
@@ -19,7 +20,7 @@ const Example = props => {
     <div>
       <Live code={code} />
       <NavLink
-        f={0}
+        fontSize={0}
         onClick={e => props.update(toggleXray)}
         children='X-Ray'
       />
@@ -27,4 +28,4 @@ const Example = props => {
   )
 }
 
-export default connect()(Example)
+export default connect(Example)

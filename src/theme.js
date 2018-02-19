@@ -1,11 +1,11 @@
-import palx from 'palx'
+import colors from './colors'
 
 export const breakpoints = [
   32,
   48,
   64,
   80
-]
+].map(n => n + 'em')
 
 export const space = [
   0,
@@ -30,45 +30,34 @@ export const fontSizes = [
   96
 ]
 
-export const weights = [
-  400,
-  700
+export const fontWeights = {
+  normal: 400,
+  bold: 700
+}
+
+export { default as colors } from './colors'
+
+export const radii = [ 0, 2, 4 ]
+
+export const fonts = {
+  0: 'system-ui, sans-serif',
+  sans: 'system-ui, sans-serif',
+  mono: '"SF Mono", "Roboto Mono", Menlo, monospace'
+}
+
+export const shadows = [
+  'none',
+  `inset 0 0 0 1px ${colors.gray}`,
+  `inset 0 0 0 1px ${colors.gray}, 0 0 4px ${colors.gray}`,
 ]
-
-const palette = palx('#07c')
-
-const flattened = Object.keys(palette)
-  .reduce((a, key) => {
-    const value = palette[key]
-    if (Array.isArray(value)) {
-      a[key] = value[5]
-      value.forEach((val, i) => {
-        a[key + i] = val
-      })
-    } else {
-      a[key] = value
-    }
-    return a
-  }, {})
-
-// todo: flatten
-
-export const colors = Object.assign({}, flattened, {
-  black: '#000',
-  white: '#fff'
-})
-
-export const radius = 4
-export const font = `-apple-system, BlinkMacSystemFont, sans-serif`
-export const monospace = '"SF Mono", "Roboto Mono", Menlo, monospace'
 
 export default {
   breakpoints,
   space,
   fontSizes,
-  weights,
-  font,
-  monospace,
+  fontWeights,
+  fonts,
   colors,
-  radius,
+  radii,
+  shadows,
 }

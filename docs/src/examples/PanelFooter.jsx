@@ -1,3 +1,3 @@
-<PanelFooter>
+<Panel.Footer>
   Hello
-</PanelFooter>
+</Panel.Footer>

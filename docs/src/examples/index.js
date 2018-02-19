@@ -35,7 +35,6 @@ import BackgroundImage from './BackgroundImage.jsx'
 import Container from './Container.jsx'
 import Divider from './Divider.jsx'
 import Border from './Border.jsx'
-import Media from './Media.jsx'
 import Card from './Card.jsx'
 
 import Banner from './Banner.jsx'
@@ -51,13 +50,12 @@ import Badge from './Badge.jsx'
 import Circle from './Circle.jsx'
 
 import Tabs from './Tabs.jsx'
-import TabItem from './TabItem.jsx'
+import Tab from './Tab.jsx'
 import Donut from './Donut.jsx'
-import DotButton from './DotButton.jsx'
+import Dot from './Dot.jsx'
 import Close from './Close.jsx'
 
 import Arrow from './Arrow.jsx'
-import Star from './Star.jsx'
 import Tooltip from './Tooltip.jsx'
 
 import Relative from './Relative.jsx'
@@ -66,11 +64,9 @@ import Fixed from './Fixed.jsx'
 import Sticky from './Sticky.jsx'
 
 import Embed from './Embed.jsx'
-import Overlay from './Overlay.jsx'
+import Modal from './Modal.jsx'
 import Drawer from './Drawer.jsx'
 import Carousel from './Carousel.jsx'
-import ScrollCarousel from './ScrollCarousel.jsx'
-import CarouselSlide from './CarouselSlide.jsx'
 
 import Row from './Row.jsx'
 import Column from './Column.jsx'
@@ -112,7 +108,6 @@ export const examples = {
   Container,
   Divider,
   Border,
-  Media,
   Card,
 
   Banner,
@@ -128,13 +123,12 @@ export const examples = {
   Circle,
 
   Tabs,
-  TabItem,
+  Tab,
   Donut,
-  DotButton,
+  Dot,
   Close,
 
   Arrow,
-  Star,
   Tooltip,
 
   Relative,
@@ -143,11 +137,9 @@ export const examples = {
   Sticky,
 
   Embed,
-  Overlay,
+  Modal,
   Drawer,
   Carousel,
-  ScrollCarousel,
-  CarouselSlide,
 
   Row,
   Column,

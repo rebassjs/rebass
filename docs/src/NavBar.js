@@ -1,64 +1,42 @@
 import React from 'react'
-import { Link } from 'rrx'
+import connect from 'refunk'
+import { Link } from 'react-router-dom'
 import {
   Absolute,
   Toolbar,
   Box,
   NavLink,
-  BlockLink,
-  Image,
 } from 'rebass'
-import Hide from 'hidden-styled'
-import Tweet from './Tweet'
+
+const toggle = key => state => ({ [key]: !state[key] })
 
 const NavBar = props => (
-  <Absolute
-    z={2}
-    top
-    left
-    right>
-    <Toolbar bg='transparent' {...props}>
-      <NavLink
-        is={Link}
-        href='/'
-        children='Rebass'
-      />
-      <Hide xs>
-        <NavLink
-          href='https://github.com/jxnblk/rebass'
-          children='GitHub'
-        />
-      </Hide>
-      <Hide xs>
-        <NavLink
-          is={Link}
-          href='/getting-started'
-          children='Docs'
-        />
-      </Hide>
-      <Box mx='auto' />
-      <Tweet />
-      <Hide xs>
-        <BlockLink
-          ml={3}
-          mr={2}
-          py={2}
-          href='https://travis-ci.org/jxnblk/rebass'>
-          <Image
-            src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
-          />
-        </BlockLink>
-      </Hide>
-      <BlockLink
-        mx={2}
-        py={2}
-        href='https://github.com/jxnblk/rebass'>
-        <Image
-          src='https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star'
-        />
-      </BlockLink>
-    </Toolbar>
-  </Absolute>
+  <Toolbar
+    px={[ 0, 3 ]}
+    bg='black'
+    onClick={e => {
+      props.update(toggle('menu'))
+    }}>
+    <NavLink
+      is={Link}
+      to='/'
+      children='Rebass'
+      onClick={e => {
+        e.stopPropagation()
+        props.update({ menu: false })
+      }}
+    />
+    <Box mx='auto' />
+    <NavLink
+      href='https://github.com/jxnblk/rebass'
+      children='GitHub'
+    />
+    <NavLink
+      is={Link}
+      to='/getting-started'
+      children='Docs'
+    />
+  </Toolbar>
 )
 
-export default NavBar
+export default connect(NavBar)

@@ -12,14 +12,16 @@ Please **be nice** and read the following before contributing.
 Folders:
 - `/src` source code
 - `/tests` tests, including snapshots
-- `/stories` stories for React Storybook
 - `/docs` source for the documentation/demo site
 
 ### Source Code
 
 All exports are handled in `src/index.js`.
-The component styles and configuration is in `src/components.js`, which is passed to `src/create-library.js` to export the components.
-The `src/create-component.js` function tags a component configuration object and returns a React styled component, adding two higher order components in the process.
+Each component is its own module in the `src/` folder.
+Be sure to familiarize yourself with
+[styled-system](https://github.com/jxnblk/styled-system)
+before making changes.
+
 
 ### Tests
 

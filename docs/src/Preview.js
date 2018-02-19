@@ -4,7 +4,8 @@ import {
   LiveProvider,
   LivePreview
 } from 'react-live'
-import Rebass, { Flex } from 'rebass'
+import * as Rebass from 'rebass'
+import { Flex } from 'rebass'
 import { photo } from './constants'
 
 const update = () => {}
@@ -26,8 +27,8 @@ const Preview = props => {
       mountStylesheet={false}>
       <Flex
         style={{ height: 192 }}
-        align='center'
-        justify='center'>
+        alignItems='center'
+        justifyContent='center'>
         <LivePreview />
       </Flex>
     </LiveProvider>

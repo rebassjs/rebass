@@ -2,7 +2,7 @@
 # Getting Started
 
 ```sh
-npm i rebass
+npm i rebass@next
 ```
 
 ## Provider
@@ -10,11 +10,9 @@ npm i rebass
 To ensure Rebass's theme is properly configured, use the `<Provider />` component at the root of your application.
 
 ```.jsx
-const App = props => (
-  <Provider>
-    <Heading>Hello</Heading>
-  </Provider>
-)
+<Provider>
+  <Heading>Hello</Heading>
+</Provider>
 ```
 
 You might also want to set some global styles in your application.
@@ -41,11 +39,13 @@ import {
 ```
 
 ```.jsx
-<Card width={256}>
-  <BackgroundImage src={photo} />
-  <Box p={2}>
-    <Subhead>Card</Subhead>
-    <Small>Small meta text</Small>
-  </Box>
-</Card>
+<Box width={256}>
+  <Card>
+    <BackgroundImage src={photo} />
+    <Box p={2}>
+      <Subhead>Card</Subhead>
+      <Small>Small meta text</Small>
+    </Box>
+  </Card>
+</Box>
 ```

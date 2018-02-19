@@ -1,5 +1,4 @@
 import React from 'react'
-import { createView } from 'rrx'
 import Markdown from './Markdown'
 import src from 'raw-loader!../GETTING_STARTED.md'
 import Pagination from './Pagination'
@@ -16,4 +15,4 @@ const GettingStarted = props => (
   </div>
 )
 
-export default createView(GettingStarted)
+export default GettingStarted

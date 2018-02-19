@@ -1,5 +1,5 @@
 <Relative>
-  <Absolute bottom right>
+  <Absolute bottom={0} right={0}>
     Hello
   </Absolute>
 </Relative>

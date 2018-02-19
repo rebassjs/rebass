@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { createProvider } from 'refunk'
-import { createRouter, Link } from 'rrx'
+import connect from 'refunk'
+import {
+  BrowserRouter,
+  StaticRouter,
+  Route
+} from 'react-router-dom'
+import Loadable from 'react-loadable'
+import pkg from '../../package.json'
+
 import {
   Provider,
   Sticky,
@@ -9,86 +16,93 @@ import {
   Flex,
   Box,
   Border,
+  theme,
 } from 'rebass'
+
+import Head from './Head'
+import Menu from './Menu'
+import ScrollTop from './ScrollTop'
 import NavBar from './NavBar'
-import Home from './Home'
-import GettingStarted from './GettingStarted'
-import PropsView from './PropsView'
-import GridSystem from './GridSystem'
-import Theming from './Theming'
-import Extending from './Extending'
-import ServerSide from './ServerSide'
-import ComponentList from './ComponentList'
-import Component from './Component'
-import SideNav from './SideNav'
+import Scripts from './Scripts'
 
-const StickySide = styled(Box)`
-  // display: none;
+const isServer = typeof document === undefined
+const Router = isServer ? StaticRouter : BrowserRouter
+const loading = () => false
 
-  @media screen and (min-width: 32em) {
-    flex: none;
-    order: 0;
-    display: block;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    overflow: auto;
+const Home = Loadable({ loading, loader: () => import('./Home') })
+const GettingStarted = Loadable({ loading, loader: () => import('./GettingStarted') })
+const PropsView = Loadable({ loading, loader: () => import('./PropsView') })
+const GridSystem = Loadable({ loading, loader: () => import('./GridSystem') })
+const Theming = Loadable({ loading, loader: () => import('./Theming') })
+const Extending = Loadable({ loading, loader: () => import('./Extending') })
+const ServerSide = Loadable({ loading, loader: () => import('./ServerSide') })
+const ComponentList = Loadable({ loading, loader: () => import('./ComponentList') })
+const Component = Loadable({ loading, loader: () => import('./Component') })
+
+const App = connect(class extends React.Component {
+  render () {
+    const {
+      update,
+      basename,
+      pathname,
+      pkg,
+      theme,
+      menu,
+    } = this.props
+
+    return (
+      <React.Fragment>
+        <Head pkg={pkg} />
+        <Provider theme={theme}>
+          <Router
+            context={{}}
+            basename={basename}
+            location={pathname}>
+            <ScrollTop>
+              <Menu menu={menu} />
+              <NavBar />
+              <div onClick={e => update({ menu: false })}>
+                <Route
+                  exact
+                  path='/'
+                  render={p => <Home {...p} />}
+                />
+                <Box
+                  px={[ 3, 3, 5 ]}
+                  py={[ 5, 5, ]}>
+                  <Route component={GettingStarted} path='/getting-started' />
+                  <Route component={PropsView} path='/props' />
+                  <Route component={GridSystem} path='/grid-system' />
+                  <Route component={Theming} path='/theming' />
+                  <Route component={Extending} path='/extending' />
+                  <Route component={ServerSide} path='/server-side-rendering' />
+                  <Route component={Component} path='/components/:name' />
+                  <Route component={ComponentList} exact path='/components' />
+                </Box>
+              </div>
+            </ScrollTop>
+          </Router>
+        </Provider>
+        <Scripts />
+      </React.Fragment>
+    )
   }
-`
+})
 
-const App = props => {
-  const { pathname } = props.location
-
-  return (
-    <Provider theme={theme}>
-      <NavBar
-        bg={pathname === '/' ? 'transparent' : 'black'}
-      />
-      <Home pattern='/' />
-      <Flex wrap>
-        <Box
-          flex='0 1 auto'
-          order={[ null, 2 ]}
-          w={[ 1, 'calc(100% - 192px)' ]}>
-          <Container
-            mt={6}
-            px={[ 3, 3, 4 ]}
-            pb={3}
-            maxWidth={1024}>
-            <GettingStarted pattern='/getting-started' />
-            <PropsView pattern='/props' />
-            <GridSystem pattern='/grid-system' />
-            <Theming pattern='/theming' />
-            <Extending pattern='/extending' />
-            <ServerSide pattern='/server-side-rendering' />
-            <ComponentList pattern='/components' />
-            <Component pattern='/components/:name' />
-          </Container>
-        </Box>
-        {pathname !== '/' && (
-          <StickySide w={[ 1, 192 ]}>
-            <Border right>
-              <SideNav {...props} />
-            </Border>
-          </StickySide>
-        )}
-      </Flex>
-    </Provider>
-  )
-}
-
-const theme = {
-  maxWidth: 1280
-}
-
-const state = {
+App.defaultProps = {
+  pkg,
+  menu: false,
   xray: false,
-  overlay: false,
+  modal: false,
   drawer: false,
   checked: false,
   fixed: false,
+  theme: {
+    ...theme,
+    maxWidths: [
+      1280
+    ]
+  },
 }
 
-export default createProvider(state)(createRouter(App))
+export default App

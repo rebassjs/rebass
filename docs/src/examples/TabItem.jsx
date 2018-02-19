@@ -1,3 +1,0 @@
-<TabItem active>
-  Hello
-</TabItem>
