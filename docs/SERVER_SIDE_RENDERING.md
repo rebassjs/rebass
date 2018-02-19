@@ -1,7 +1,10 @@
 
 # Server Side Rendering
 
-Rebass uses styled-components for styling.
+Rebass uses styled-components for styling, which works with server-side rendering.
+See the styled-components
+[documentation](https://www.styled-components.com/docs/advanced#server-side-rendering)
+for more on how to use Rebass for server-side rendering.
 
 ```jsx
 import { renderToString } from 'react-dom/server'
@@ -13,6 +16,3 @@ const html = renderToString(sheet.collectStyles(<App />))
 const css = sheet.getStyleTags()
 ```
 
-See the styled-components
-[documentation](https://www.styled-components.com/docs/advanced#server-side-rendering)
-for more.

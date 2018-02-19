@@ -1,8 +1,8 @@
 
 # Theming
 
-Rebass's core design system includes breakpoints, a spacing scale,
-a typographic scale, fonts, font weights, border radius, and a color palette, all of which can be configured with the `<Provider />` component.
+Rebass's core theme includes breakpoints, a spacing scale,
+a typographic scale, fonts, font weights, border radii, and colors, all of which can be configured with the `<Provider />` component.
 
 To customize the underlying theme, pass a `theme` object to the `<Provider />` component.
 

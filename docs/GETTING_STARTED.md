@@ -2,7 +2,7 @@
 # Getting Started
 
 ```sh
-npm i rebass
+npm i rebass@next
 ```
 
 ## Provider
@@ -39,11 +39,13 @@ import {
 ```
 
 ```.jsx
-<Card width={256}>
-  <BackgroundImage src={photo} />
-  <Box p={2}>
-    <Subhead>Card</Subhead>
-    <Small>Small meta text</Small>
-  </Box>
-</Card>
+<Box width={256}>
+  <Card>
+    <BackgroundImage src={photo} />
+    <Box p={2}>
+      <Subhead>Card</Subhead>
+      <Small>Small meta text</Small>
+    </Box>
+  </Card>
+</Box>
 ```

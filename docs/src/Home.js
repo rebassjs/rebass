@@ -105,9 +105,9 @@ const Home = ({
     <Section id='Props'>
       <SectionHeading>Props</SectionHeading>
       <Measure mb={3}>
-        Every Rebass component includes several responsive style props for handling
-        margin, padding, width, font size, and color.
-        Based on an underlying design system with spacing and typographic scales and colors, Rebass encourages consistency in design and helps increase development velocity.
+        Each Rebass component includes responsive style props for handling margin, padding, color, and typographic styles.
+        Based on an underlying design system with spacing, typographic scales, and colors,
+        Rebass encourages consistency in design and helps increase development velocity.
       </Measure>
       <Live code={propsCode} />
       <Box my={3}>
@@ -133,7 +133,7 @@ const Home = ({
     <Section id='Responsive Styles'>
       <SectionHeading>Responsive Styles</SectionHeading>
       <Measure mb={3}>
-        All of the core props above accept arrays as values to set mobile-first responsive styles.
+        Style props for layout and typography accept arrays as values to set mobile-first responsive styles.
         The first value is not scoped to a media query and applies to all breakpoints.
         Each value after the first corresponds to a media query derived from <Code>theme.breakpoints</Code>.
       </Measure>
@@ -143,7 +143,7 @@ const Home = ({
     <Section id='Colors'>
       <SectionHeading>Colors</SectionHeading>
       <Text mb={3}>
-        Plug in your own colors to customize the default color palette.
+        Add your own colors to customize the default color palette.
       </Text>
       <Flex>
         {colorKeys.map(key => (
@@ -159,18 +159,22 @@ const Home = ({
     <Section id='Typographic Scale'>
       <SectionHeading>Typographic Scale</SectionHeading>
       <Measure mb={3}>
-        The default typographic scale is based on a 16px base and common sizes, well suited for responsive typography that helps maintain a natural feeling visual rhythm.
+        The default typographic scale is based on a 16px base font size and is well-suited for typography that helps maintain a natural visual rhythm.
       </Measure>
-      {typescale.map(f => (
-        <Truncate
-          key={f}
-          fontSize={f}
-          fontWeight='bold'
-          lineHeight={1}
-          mb={2}
-          children={`Aa ${f}px`}
-        />
-      ))}
+      <Truncate>
+        {typescale.map(f => (
+          <Text
+            is='span'
+            key={f}
+            fontSize={f}
+            fontWeight='bold'
+            lineHeight={1}
+            mb={2}
+            mr='auto'
+            children={`Aa `}
+          />
+        ))}
+      </Truncate>
     </Section>
 
     <Section id='Grid Styled'>
@@ -184,7 +188,8 @@ const Home = ({
     <Section id='Configuration'>
       <SectionHeading>Configuration</SectionHeading>
       <Text mb={3}>
-        {`The core design system in Rebass can be configured using the `}
+        The core design system in Rebass can be configured using the
+        {' '}
         <Code children='<Provider />' /> component.
       </Text>
       <Live code={config} />
@@ -193,7 +198,7 @@ const Home = ({
     <Section id='Customizing'>
       <SectionHeading>Customizing</SectionHeading>
       <Text mb={3}>
-        Any component can be customized by passing it to the <Code>styled</Code> function from styled-components.
+        Any component can be customized by using styled-components' <Code>.extend</Code> method.
       </Text>
       <Live
         noInline
@@ -203,9 +208,6 @@ const Home = ({
 
     <Section id='Components'>
       <SectionHeading>Components</SectionHeading>
-      <Text mb={3}>
-        Rebass includes {components.length} stateless functional components.
-      </Text>
       <Flex flexWrap='wrap' mx={-2}>
         {components.map(name => (
           <Box key={name}
@@ -227,7 +229,7 @@ const Home = ({
         <Box width={[ 1, 1/2 ]}>
           <SectionHeading>Getting Started</SectionHeading>
           <Text mb={3}>
-            Read the docs to get started
+            Install Rebass now and read the docs to get started
           </Text>
         </Box>
         <Flex
@@ -296,7 +298,7 @@ Home.defaultProps = {
   */
   ],
 demo: `<div>
-  <Flex align='center'>
+  <Flex alignItems='center'>
     <Heading mr='auto'>Hello</Heading>
     <Group>
       <ButtonOutline>
@@ -360,7 +362,6 @@ demo: `<div>
   config: `<Provider
   theme={{
     fonts: {
-      0: '"Avenir Next", Helvetica, sans-serif',
       sans: '"Avenir Next", Helvetica, sans-serif',
     },
     fontSizes: [
@@ -371,7 +372,7 @@ demo: `<div>
     Hello
   </Heading>
 </Provider>`,
-  customizing: `const CustomButton = styled(Button)\`
+  customizing: `const CustomButton = Button.extend\`
   border: 1px solid rgba(0, 0, 0, .25);
   background-image: linear-gradient(transparent, rgba(0, 0, 0, .125));
   box-shadow: 0 0 4px rgba(0, 0, 0, .25)

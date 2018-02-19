@@ -1,10 +1,11 @@
 
 # Props
 
-All Rebass components are wrapped in a higher order component that handles
-design-system-based responsive style props using [styled-system](https://github.com/jxnblk/styled-system).
+Rebass components use [styled-system](https://github.com/jxnblk/styled-system) for responsive, theme-based style props.
 
 ### Width
+
+The Flex and Box components accept a `width` prop.
 
 ```.jsx
 <Box width={1/2} bg='blue'>
@@ -35,8 +36,8 @@ design-system-based responsive style props using [styled-system](https://github.
 
 ### Font Size
 
-The `fontSize` prop makes referencing steps on the typographic scale
-simple and helps promote consistent design.
+The Text component and other typographic components accept a `fontSize` prop
+that makes referencing steps on the typographic scale simple and helps promote consistent design.
 
 ```.jsx
 <Text fontSize={5}>
@@ -62,10 +63,10 @@ simple and helps promote consistent design.
 
 ### Margin and Padding
 
-The margin and padding props make referencing steps on the spacing scale
-(i.e. the `theme.space` array) simple and help promote consistency in
-layout design without the need to add custom margin and padding declarations throughout an application.
-The margin and padding props use a shorthand syntax.
+All Rebass component use the [space](https://github.com/jxnblk/styled-system#space-responsive) utility from [styled-system](https://github.com/jxnblk/styled-system) to handle responsive margin and padding props based on a global spacing scale (`theme.space`).
+The margin and padding props help promote consistency in layout
+without the need to add custom margin and padding declarations throughout an application.
+The margin and padding props use a shorthand syntax, similar to other OOCSS approaches and many CSS libraries.
 
 ```.jsx
 <Box
@@ -141,8 +142,10 @@ All of the core props above accept arrays as values to set mobile-first responsi
 The first value is not scoped to a media query and applies to all breakpoints.
 Each value after the first corresponds to a media query derived from `theme.breakpoints`.
 
+See the [styled-system](https://github.com/jxnblk/styled-system#responsive-styles) docs for more info.
+
 ```.jsx
-<Flex wrap>
+<Flex flexWrap='wrap'>
   <Box
     width={[ 1, 1/2 ]}
     p={2}
@@ -154,7 +157,7 @@ Each value after the first corresponds to a media query derived from `theme.brea
     width={[ 1, 1/2 ]}
     p={2}
     color='white'
-    bg='blue'>
+    bg='dark'>
     Hello
   </Box>
 </Flex>
