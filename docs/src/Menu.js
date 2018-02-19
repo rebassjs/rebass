@@ -2,6 +2,7 @@ import React from 'react'
 import connect from 'refunk'
 import { Link } from 'react-router-dom'
 import Measure from 'react-measure'
+import styled from 'styled-components'
 import {
   Box,
   Flex,
@@ -11,16 +12,25 @@ import {
 import Container from './Container'
 import { components } from './examples'
 
-const A = props =>
+const A = styled(props =>
   <NavLink
     {...props}
     is={Link}
     width={1}
     py={0}
-    style={{
-      display: 'block',
-    }}
-  />
+  />)`
+  display: block;
+  transition: color .1s ease-out;
+  &:hover {
+    color: magenta;
+  }
+`
+
+Box.x = Box.extend`
+  @media screen and (max-width: 48em) {
+    display: none;
+  }
+`
 
 const quarter = Math.ceil(components.length / 4)
 const comps = {}
@@ -70,8 +80,8 @@ class Menu extends React.Component {
             }}
             color='white'
             bg='black'>
-            <Flex flexWrap='wrap'>
-              <Box width={[ 160 ]} p={3}>
+            <Flex flexWrap='wrap' py={4}>
+              <Box width={[ 144 ]} p={3}>
                 <A
                   to='/getting-started'
                   children='Getting Started'
@@ -101,7 +111,7 @@ class Menu extends React.Component {
                   children={components.length + ' Components'}
                 />
               </Box>
-              <Box width={[ 160 ]} p={3}>
+              <Box.x width={[ 144 ]} p={3}>
                 {comps.a.map(name => (
                   <A
                     key={name}
@@ -109,8 +119,8 @@ class Menu extends React.Component {
                     children={name}
                   />
                 ))}
-              </Box>
-              <Box width={[ 160 ]} p={3}>
+              </Box.x>
+              <Box.x width={[ 144 ]} p={3}>
                 {comps.b.map(name => (
                   <A
                     key={name}
@@ -118,8 +128,8 @@ class Menu extends React.Component {
                     children={name}
                   />
                 ))}
-              </Box>
-              <Box width={[ 160 ]} p={3}>
+              </Box.x>
+              <Box.x width={[ 144 ]} p={3}>
                 {comps.c.map(name => (
                   <A
                     key={name}
@@ -127,8 +137,8 @@ class Menu extends React.Component {
                     children={name}
                   />
                 ))}
-              </Box>
-              <Box width={[ 160 ]} p={3}>
+              </Box.x>
+              <Box.x width={[ 144 ]} p={3}>
                 {comps.d.map(name => (
                   <A
                     key={name}
@@ -136,7 +146,7 @@ class Menu extends React.Component {
                     children={name}
                   />
                 ))}
-              </Box>
+              </Box.x>
             </Flex>
             <Divider my={0} borderColor='magenta' />
           </Box>

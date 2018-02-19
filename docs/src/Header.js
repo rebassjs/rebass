@@ -51,15 +51,15 @@ const Header = connect(props => (
     }}
     color='white'
     bg='black'>
-    <Box width={1}>
-      <Logo size={[ 256, 320, 384 ]} />
-    </Box>
     <Flex
       flexWrap='wrap'
       width={1}
       mx={-3}
       mb={3}
       alignItems='center'>
+      <Box width={[ 1, null, 512 ]} px={3}>
+        <Logo size={[ 256, 320, 384 ]} />
+      </Box>
       <Box width={[ 1, null, 512 ]} px={3}>
         <Title
           is='h1'
@@ -69,42 +69,44 @@ const Header = connect(props => (
         <Lead fontWeight='bold'>
           {props.pkg.description}
         </Lead>
+        <Flex
+          mx={-3}
+          mb={3}
+          width={1}
+          flexWrap='wrap'
+          alignItems='center'>
+          <PrimaryButton
+            is={Link}
+            to='/getting-started'
+            fontSize={2}
+            color='black'
+            bg='white'
+            children='Documentation'
+            py={3}
+            mx={3}
+            my={3}
+          />
+          <SecondaryButton
+            is='a'
+            href='https://github.com/jxnblk/rebass'
+            fontSize={2}
+            color='white'
+            children='GitHub'
+            py={3}
+            mx={3}
+            my={3}
+          />
+          <Pre mx={3}>npm i rebass</Pre>
+        </Flex>
       </Box>
     </Flex>
     <Flex
-      mx={-3}
-      mb={3}
-      width={1}
-      flexWrap='wrap'
-      alignItems='center'>
-      <PrimaryButton
-        is={Link}
-        to='/getting-started'
-        fontSize={2}
-        color='black'
-        bg='white'
-        children='Documentation'
-        py={3}
-        mx={3}
-        my={3}
-      />
-      <SecondaryButton
-        is='a'
-        href='https://github.com/jxnblk/rebass'
-        fontSize={2}
-        color='white'
-        children='GitHub'
-        py={3}
-        mx={3}
-        my={3}
-      />
-      <Pre mx={3}>npm i rebass</Pre>
-    </Flex>
-    <Flex
+      mt='auto'
       px={3}
       alignItems='center'
       width={1}>
       <BlockLink
+        ml='auto'
         mr={2}
         py={2}
         href='https://travis-ci.org/jxnblk/rebass'>

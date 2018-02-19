@@ -23,6 +23,7 @@ const NavBar = props => (
       children='Rebass'
       onClick={e => {
         e.stopPropagation()
+        props.update({ menu: false })
       }}
     />
     <Box mx='auto' />
