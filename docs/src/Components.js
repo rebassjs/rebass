@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -23,7 +23,7 @@ const ComponentsSection = props => (
             is={Link}
             fontSize={0}
             py={1}
-            href={'/components/' + name}
+            to={'/components/' + name}
             children={name}
           />
         </Box>

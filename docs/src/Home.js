@@ -1,5 +1,4 @@
 import React from 'react'
-import { createView } from 'rrx'
 import Header from './Header'
 import About from './About'
 import Features from './Features'
@@ -36,4 +35,4 @@ const Home = props => (
   </div>
 )
 
-export default createView(Home)
+export default Home

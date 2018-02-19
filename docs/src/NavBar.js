@@ -1,6 +1,6 @@
 import React from 'react'
 import connect from 'refunk'
-import { Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import {
   Absolute,
   Toolbar,
@@ -19,7 +19,7 @@ const NavBar = props => (
     }}>
     <NavLink
       is={Link}
-      href='/'
+      to='/'
       children='Rebass'
     />
     <Box mx='auto' />
@@ -29,7 +29,7 @@ const NavBar = props => (
     />
     <NavLink
       is={Link}
-      href='/getting-started'
+      to='/getting-started'
       children='Docs'
     />
   </Toolbar>

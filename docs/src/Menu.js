@@ -1,6 +1,6 @@
 import React from 'react'
 import connect from 'refunk'
-import { Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -47,37 +47,37 @@ const Menu = ({
     <Flex flexWrap='wrap'>
       <Box width={[ 160 ]} p={3}>
         <A
-          href='/getting-started'
+          to='/getting-started'
           children='Getting Started'
           active={pathname === '/getting-started'}
         />
         <A
-          href='/props'
+          to='/props'
           children='Props'
           active={pathname === '/props'}
         />
         <A
-          href='/grid-system'
+          to='/grid-system'
           children='Grid System'
           active={pathname === '/grid-system'}
         />
         <A
-          href='/theming'
+          to='/theming'
           children='Theming'
           active={pathname === '/theming'}
         />
         <A
-          href='/extending'
+          to='/extending'
           children='Extending'
           active={pathname === '/extending'}
         />
         <A
-          href='/server-side-rendering'
+          to='/server-side-rendering'
           children='Server Side'
           active={pathname === '/server-side-rendering'}
         />
         <A
-          href='/components'
+          to='/components'
           children={components.length + ' Components'}
           active={pathname === '/components'}
         />
@@ -86,7 +86,7 @@ const Menu = ({
         {comps.a.map(name => (
           <A
             key={name}
-            href={`/components/${name}`}
+            to={`/components/${name}`}
             children={name}
             active={pathname === '/components/' + name}
           />
@@ -96,7 +96,7 @@ const Menu = ({
         {comps.b.map(name => (
           <A
             key={name}
-            href={`/components/${name}`}
+            to={`/components/${name}`}
             children={name}
             active={pathname === '/components/' + name}
           />
@@ -106,7 +106,7 @@ const Menu = ({
         {comps.c.map(name => (
           <A
             key={name}
-            href={`/components/${name}`}
+            to={`/components/${name}`}
             children={name}
             active={pathname === '/components/' + name}
           />
@@ -116,7 +116,7 @@ const Menu = ({
         {comps.d.map(name => (
           <A
             key={name}
-            href={`/components/${name}`}
+            to={`/components/${name}`}
             children={name}
             active={pathname === '/components/' + name}
           />
@@ -130,32 +130,3 @@ const Menu = ({
 const toggle = key => state => ({ [key]: !state[key] })
 
 export default connect(Menu)
-
-/*
-  <Box width={[ 1/2, 192]}>
-    <NavLink
-      is='a'
-      width={1}
-      py={0}
-      fontSize={0}
-      href='http://jxnblk.com/rebass/demo'
-      children='Demo'
-    />
-    <NavLink
-      is='a'
-      width={1}
-      py={0}
-      fontSize={0}
-      href='https://github.com/jxnblk/rebass'
-      children='GitHub'
-    />
-    <NavLink
-      is='a'
-      fontSize={0}
-      width={1}
-      py={0}
-      href='http://jxnblk.com'
-      children='Made by Jxnblk'
-    />
-  </Box>
-*/

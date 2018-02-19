@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import connect from 'refunk'
-import { createRouter } from 'rrx'
+import {
+  BrowserRouter,
+  StaticRouter,
+  Route
+} from 'react-router-dom'
 import Loadable from 'react-loadable'
 import pkg from '../../package.json'
 
@@ -15,15 +19,16 @@ import {
   theme,
 } from 'rebass'
 
-const loading = () => false
-
 import Head from './Head'
 import Menu from './Menu'
 import NavBar from './NavBar'
 import Scripts from './Scripts'
-import Home from './Home'
 
-// const Home = Loadable({ loading, loader: () => import('./Home') })
+const isServer = typeof document === undefined
+const Router = isServer ? StaticRouter : BrowserRouter
+const loading = () => false
+
+const Home = Loadable({ loading, loader: () => import('./Home') })
 const GettingStarted = Loadable({ loading, loader: () => import('./GettingStarted') })
 const PropsView = Loadable({ loading, loader: () => import('./PropsView') })
 const GridSystem = Loadable({ loading, loader: () => import('./GridSystem') })
@@ -32,22 +37,6 @@ const Extending = Loadable({ loading, loader: () => import('./Extending') })
 const ServerSide = Loadable({ loading, loader: () => import('./ServerSide') })
 const ComponentList = Loadable({ loading, loader: () => import('./ComponentList') })
 const Component = Loadable({ loading, loader: () => import('./Component') })
-
-const StickySide = styled(Box)`
-  display: none;
-
-  @media screen and (min-width: 32em) {
-    flex: none;
-    order: 0;
-    display: block;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    overflow: auto;
-  }
-`
 
 const App = connect(class extends React.Component {
   constructor () {
@@ -61,16 +50,18 @@ const App = connect(class extends React.Component {
   }
 
   componentDidMount () {
-    requestAnimationFrame(() => {
+    console.log('didMount')
       this.didMount = true
+    requestAnimationFrame(() => {
     })
   }
 
   render () {
     const { props } = this
-    const { pathname } = props.location
+    const { basename, pathname } = this.props
     const offset = this.getOffset()
 
+    console.log(offset, this.didMount)
     const rootStyle = {
       transform: `translateY(-${offset}px)`,
       transition: this.didMount ? 'transform .1s ease-out' : null
@@ -80,27 +71,36 @@ const App = connect(class extends React.Component {
       <React.Fragment>
         <Head {...props} />
         <Provider theme={props.theme}>
-          <div style={rootStyle}>
-            <div ref={r => this.menu = r}>
-              <Menu />
+          <Router
+            context={{}}
+            basename={basename}
+            location={pathname}>
+            <div style={rootStyle}>
+              <div ref={r => this.menu = r}>
+                <Menu offset={offset} />
+              </div>
+              <NavBar />
+              <div onClick={e => props.update({ menu: false })}>
+                <Route
+                  exact
+                  path='/'
+                  render={p => <Home {...p} />}
+                />
+                <Box
+                  px={[ 3, 3, 5 ]}
+                  py={[ 5, 5, ]}>
+                  <Route component={GettingStarted} path='/getting-started' />
+                  <Route component={PropsView} path='/props' />
+                  <Route component={GridSystem} path='/grid-system' />
+                  <Route component={Theming} path='/theming' />
+                  <Route component={Extending} path='/extending' />
+                  <Route component={ServerSide} path='/server-side-rendering' />
+                  <Route component={Component} path='/components/:name' />
+                  <Route component={ComponentList} exact path='/components' />
+                </Box>
+              </div>
             </div>
-            <NavBar />
-            <div onClick={e => props.update({ menu: false })}>
-              <Home pattern='/' />
-              <Box
-                px={[ 3, 3, 5 ]}
-                py={[ 5, 5, ]}>
-                <GettingStarted pattern='/getting-started' />
-                <PropsView pattern='/props' />
-                <GridSystem pattern='/grid-system' />
-                <Theming pattern='/theming' />
-                <Extending pattern='/extending' />
-                <ServerSide pattern='/server-side-rendering' />
-                <ComponentList pattern='/components' />
-                <Component pattern='/components/:name' />
-              </Box>
-            </div>
-          </div>
+          </Router>
         </Provider>
         <Scripts />
       </React.Fragment>
@@ -124,12 +124,4 @@ App.defaultProps = {
   },
 }
 
-const Router = createRouter(App)
-
-Router.defaultProps = {
-  options: {
-    basename: '/'
-  }
-}
-
-export default Router
+export default App

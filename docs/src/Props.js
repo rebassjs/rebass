@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as RLink } from 'rrx'
+import { Link as RLink } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -31,7 +31,7 @@ const Props = props => (
         {' '}
         <Link
           is={RLink}
-          href='/rebass/props'>
+          to='/rebass/props'>
           props documentation
         </Link>
         {' '}

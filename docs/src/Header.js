@@ -1,7 +1,7 @@
 import React from 'react'
 import connect from 'refunk'
 import styled from 'styled-components'
-import { Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -83,7 +83,7 @@ const Header = connect(props => (
       alignItems='center'>
       <PrimaryButton
         is={Link}
-        href='/getting-started'
+        to='/getting-started'
         fontSize={2}
         color='black'
         bg='white'

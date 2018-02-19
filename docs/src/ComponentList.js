@@ -1,5 +1,5 @@
 import React from 'react'
-import { createView, Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -39,7 +39,7 @@ const ComponentList = props => (
       {components.map(name => (
         <BlockLink
           is={Link}
-          href={'/components/' + name}
+          to={'/components/' + name}
           key={name}
           width={[ 1/2, 1/2, 1/3, 1/4 ]}>
           <CompCard
@@ -52,4 +52,4 @@ const ComponentList = props => (
   </div>
 )
 
-export default createView(ComponentList)
+export default ComponentList

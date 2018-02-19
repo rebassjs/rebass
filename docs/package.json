@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@compositor/markdown": "0.0.25",
-    "@compositor/x0": "^3.2.0",
+    "@compositor/x0": "^3.2.1-0",
     "ok-webfont": "^1.0.0-1",
     "raw-loader": "^0.5.1",
     "react-loadable": "^5.3.1",
@@ -17,7 +17,6 @@
     "refunk": "^2.2.4",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
-    "rrx": "^1.0.0-3",
     "styled-components": "^3.1.6"
   },
   "x0": {
@@ -27,5 +26,9 @@
     "routes": [
       "/"
     ]
+  },
+  "dependencies": {
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'rrx'
+import { Link } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -27,7 +27,7 @@ const CTA = props => (
         is={Link}
         f={2}
         py={[ 2, 3 ]}
-        href='/getting-started'
+        to='/getting-started'
         children='Getting Started'
       />
     </Flex>

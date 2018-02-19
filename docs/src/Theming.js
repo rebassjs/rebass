@@ -1,5 +1,4 @@
 import React from 'react'
-import { createView } from 'rrx'
 import src from 'raw-loader!../THEMING.md'
 import Markdown from './Markdown'
 import Pagination from './Pagination'
@@ -20,4 +19,4 @@ const Theming = props => (
   </div>
 )
 
-export default createView(Theming)
+export default Theming
