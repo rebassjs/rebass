@@ -3,7 +3,11 @@ import styled, { keyframes } from 'styled-components'
 import { size, width, height } from 'styled-system'
 import { theme } from '../../src'
 
-const Svg = styled.svg`
+const Svg = styled(({
+  width,
+  height,
+  ...props
+}) => <svg {...props} />)`
   display: block;
   max-width: 100%;
   margin: 0;

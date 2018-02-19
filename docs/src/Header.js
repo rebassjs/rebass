@@ -41,8 +41,6 @@ const SecondaryButton = styled(ButtonOutline)`
 `
 
 const Title = Heading.extend`
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
 `
 
 const Header = connect(props => (
@@ -62,14 +60,12 @@ const Header = connect(props => (
       mx={-3}
       mb={3}
       alignItems='center'>
-      <Box width={[ 1, null, 384 ]} px={3}>
+      <Box width={[ 1, null, 512 ]} px={3}>
         <Title
           is='h1'
           fontSize={[ 6, 7, 8 ]}>
           Rebass
         </Title>
-      </Box>
-      <Box px={3} width={[ 1, 1, 512 ]}>
         <Lead fontWeight='bold'>
           {props.pkg.description}
         </Lead>

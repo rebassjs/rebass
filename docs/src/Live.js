@@ -50,11 +50,16 @@ const toggle = key => state => ({
 })
 
 const Live = props => {
+  const {
+    code,
+    noInline
+  } = props
   const scope = Object.assign({ toggle }, _scope, props)
 
   return (
     <LiveProvider
-      {...props}
+      code={code}
+      noInline={noInline}
       scope={scope}
       mountStylesheet={false}>
       <Flex flexWrap='wrap'>

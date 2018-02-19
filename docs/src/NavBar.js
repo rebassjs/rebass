@@ -21,6 +21,9 @@ const NavBar = props => (
       is={Link}
       to='/'
       children='Rebass'
+      onClick={e => {
+        e.stopPropagation()
+      }}
     />
     <Box mx='auto' />
     <NavLink

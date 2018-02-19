@@ -21,6 +21,7 @@ import {
 
 import Head from './Head'
 import Menu from './Menu'
+import ScrollTop from './ScrollTop'
 import NavBar from './NavBar'
 import Scripts from './Scripts'
 
@@ -39,48 +40,28 @@ const ComponentList = Loadable({ loading, loader: () => import('./ComponentList'
 const Component = Loadable({ loading, loader: () => import('./Component') })
 
 const App = connect(class extends React.Component {
-  constructor () {
-    super()
-
-    this.getOffset = () => {
-      if (this.props.menu) return 0
-      if (!this.menu) return 0
-      return this.menu.getBoundingClientRect().height
-    }
-  }
-
-  componentDidMount () {
-    console.log('didMount')
-      this.didMount = true
-    requestAnimationFrame(() => {
-    })
-  }
-
   render () {
-    const { props } = this
-    const { basename, pathname } = this.props
-    const offset = this.getOffset()
-
-    console.log(offset, this.didMount)
-    const rootStyle = {
-      transform: `translateY(-${offset}px)`,
-      transition: this.didMount ? 'transform .1s ease-out' : null
-    }
+    const {
+      update,
+      basename,
+      pathname,
+      pkg,
+      theme,
+      menu,
+    } = this.props
 
     return (
       <React.Fragment>
-        <Head {...props} />
-        <Provider theme={props.theme}>
+        <Head pkg={pkg} />
+        <Provider theme={theme}>
           <Router
             context={{}}
             basename={basename}
             location={pathname}>
-            <div style={rootStyle}>
-              <div ref={r => this.menu = r}>
-                <Menu offset={offset} />
-              </div>
+            <ScrollTop>
+              <Menu menu={menu} />
               <NavBar />
-              <div onClick={e => props.update({ menu: false })}>
+              <div onClick={e => update({ menu: false })}>
                 <Route
                   exact
                   path='/'
@@ -99,7 +80,7 @@ const App = connect(class extends React.Component {
                   <Route component={ComponentList} exact path='/components' />
                 </Box>
               </div>
-            </div>
+            </ScrollTop>
           </Router>
         </Provider>
         <Scripts />

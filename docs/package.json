@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "react-measure": "^2.0.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
   }
