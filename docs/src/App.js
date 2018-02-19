@@ -24,12 +24,12 @@ import Menu from './Menu'
 import ScrollTop from './ScrollTop'
 import NavBar from './NavBar'
 import Scripts from './Scripts'
+import Home from './Home'
 
-const isServer = typeof document === undefined
-const Router = isServer ? StaticRouter : BrowserRouter
+const isClient = typeof document !== 'undefined'
+const Router = isClient ? BrowserRouter : StaticRouter
 const loading = () => false
 
-const Home = Loadable({ loading, loader: () => import('./Home') })
 const GettingStarted = Loadable({ loading, loader: () => import('./GettingStarted') })
 const PropsView = Loadable({ loading, loader: () => import('./PropsView') })
 const GridSystem = Loadable({ loading, loader: () => import('./GridSystem') })

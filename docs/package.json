@@ -18,6 +18,7 @@
     "react-measure": "^2.0.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-x-ray": "^1.0.0-4",
     "refunk": "^2.2.4",
     "reline": "^1.0.0-beta.3",
     "repng": "^2.0.0-alpha.1",
