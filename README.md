@@ -48,13 +48,13 @@ const App = props => (
 
 
 > "One of the best React component libs out there"
-> - [Max Stoiber](https://twitter.com/mxstbr/status/882657561111080960)
+> – [Max Stoiber](https://twitter.com/mxstbr/status/882657561111080960)
 
 > "Rebass is the Bootstrap of React."
-> - [Jori Lallo](https://twitter.com/jorilallo/status/882990343225868289)
+> – [Jori Lallo](https://twitter.com/jorilallo/status/882990343225868289)
 
 > "A whopper component library built on styled-components. Responsive, systematic, scalable...the business!"
-> - [Colm Tuite](https://twitter.com/colmtuite/status/882715087936606210)
+> – [Colm Tuite](https://twitter.com/colmtuite/status/882715087936606210)
 
 
 ## Documentation
