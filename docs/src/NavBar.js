@@ -1,4 +1,5 @@
 import React from 'react'
+import connect from 'refunk'
 import { Link } from 'rrx'
 import {
   Absolute,
@@ -7,30 +8,31 @@ import {
   NavLink,
 } from 'rebass'
 
+const toggle = key => state => ({ [key]: !state[key] })
+
 const NavBar = props => (
-  <Absolute
-    zIndex={2}
-    top={0}
-    left={0}
-    right={0}>
-    <Toolbar bg='transparent' {...props}>
-      <NavLink
-        is={Link}
-        href='/'
-        children='Rebass'
-      />
-      <Box mx='auto' />
-      <NavLink
-        href='https://github.com/jxnblk/rebass'
-        children='GitHub'
-      />
-      <NavLink
-        is={Link}
-        href='/getting-started'
-        children='Docs'
-      />
-    </Toolbar>
-  </Absolute>
+  <Toolbar
+    px={[ 0, 3 ]}
+    bg='black'
+    onClick={e => {
+      props.update(toggle('menu'))
+    }}>
+    <NavLink
+      is={Link}
+      href='/'
+      children='Rebass'
+    />
+    <Box mx='auto' />
+    <NavLink
+      href='https://github.com/jxnblk/rebass'
+      children='GitHub'
+    />
+    <NavLink
+      is={Link}
+      href='/getting-started'
+      children='Docs'
+    />
+  </Toolbar>
 )
 
-export default NavBar
+export default connect(NavBar)

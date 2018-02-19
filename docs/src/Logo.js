@@ -9,6 +9,7 @@ const Svg = styled.svg`
   margin: 0;
   fill: none;
   stroke: magenta;
+  mix-blend-mode: screen;
 
   ${width}
   ${height}
@@ -53,7 +54,7 @@ const Logo = props => {
   const electronProps = {
     cx: 32,
     cy: 32,
-    r: 20,
+    r: 24,
     strokeWidth: 2,
     vectorEffect: 'non-scaling-stroke'
   }
@@ -79,16 +80,11 @@ const Logo = props => {
       <circle
         cx={32}
         cy={32}
-        r={24}
+        r={30}
         strokeWidth={4}
         vectorEffect='non-scaling-stroke'
       />
       {electrons}
-      <path
-        d='M0 32 H64'
-        strokeWidth={1}
-        vectorEffect='non-scaling-stroke'
-      />
     </Svg>
   )
 }

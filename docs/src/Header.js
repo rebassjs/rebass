@@ -36,17 +36,19 @@ const Title = Heading.extend`
 const Header = connect(props => (
   <Banner
     py={[ 4, 5 ]}
+    style={{
+      WebkitFontSmoothing: 'antialiased'
+    }}
     color='white'
     bg='black'>
     <Box width={1}>
-      <Logo
-        size={[ 256, 320, 512 ]}
-      />
+      <Logo size={[ 256, 320, 384 ]} />
     </Box>
     <Flex
       flexWrap='wrap'
       width={1}
       mx={-3}
+      mb={3}
       alignItems='center'>
       <Box width={[ 1, null, 384 ]} px={3}>
         <Title
@@ -63,6 +65,7 @@ const Header = connect(props => (
     </Flex>
     <Flex
       mx={-3}
+      mb={3}
       width={1}
       flexWrap='wrap'
       alignItems='center'>
@@ -75,7 +78,7 @@ const Header = connect(props => (
         children='Documentation'
         py={3}
         mx={3}
-        my={4}
+        my={3}
       />
       <ButtonOutline
         is='a'
@@ -85,7 +88,7 @@ const Header = connect(props => (
         children='GitHub'
         py={3}
         mx={3}
-        my={4}
+        my={3}
       />
       <Pre mx={3}>npm i rebass</Pre>
     </Flex>

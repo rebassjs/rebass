@@ -12,13 +12,13 @@ import Section from './Section'
 const { colors } = theme
 
 const keys = Object.keys(colors)
-  .filter(key => !/black|white|base|[0-9]$/.test(key))
+  .filter(key => !/black|white|dark|gray/.test(key))
 const ten = Array.from({ length: 10 }).map((n, i) => i)
 
 const Card = props => (
   <Box flex='1 1 auto'>
     <Box
-      px={3}
+      px={0}
       py={[ 4, 4, 5 ]}
       bg={props.value}
     />

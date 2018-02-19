@@ -1,7 +1,7 @@
 import sys from 'system-components'
 
 export const Container = sys({
-  px: 2,
+  px: 3,
   mx: 'auto',
   maxWidth: 1024
 },

@@ -14,6 +14,7 @@ import {
   theme,
 } from 'rebass'
 import Head from './Head'
+import Menu from './Menu'
 import NavBar from './NavBar'
 import Home from './Home'
 import GettingStarted from './GettingStarted'
@@ -43,38 +44,68 @@ const StickySide = styled(Box)`
   }
 `
 
-const App = connect(props => {
-  const { pathname } = props.location
-  console.log(props)
+const App = connect(class extends React.Component {
+  constructor () {
+    super()
 
-  return (
-    <React.Fragment>
-      <Head {...props} />
-      <Provider theme={props.theme}>
-        <NavBar
-          bg={pathname === '/' ? 'transparent' : 'black'}
-        />
-        <Home pattern='/' />
-        <Box
-          px={[ 3, 3, 5 ]}
-          py={[ 5, 5, 6 ]}>
-            <GettingStarted pattern='/getting-started' />
-            <PropsView pattern='/props' />
-            <GridSystem pattern='/grid-system' />
-            <Theming pattern='/theming' />
-            <Extending pattern='/extending' />
-            <ServerSide pattern='/server-side-rendering' />
-            <ComponentList pattern='/components' />
-            <Component pattern='/components/:name' />
-        </Box>
-      </Provider>
-      <Scripts />
-    </React.Fragment>
-  )
+    this.getOffset = () => {
+      if (this.props.menu) return 0
+      if (!this.menu) return 0
+      return this.menu.getBoundingClientRect().height
+    }
+  }
+
+  componentDidMount () {
+    requestAnimationFrame(() => {
+      this.didMount = true
+    })
+  }
+
+  render () {
+    const { props } = this
+    const { pathname } = props.location
+    const offset = this.getOffset()
+
+    const rootStyle = {
+      transform: `translateY(-${offset}px)`,
+      transition: this.didMount ? 'transform .1s ease-out' : null
+    }
+
+    return (
+      <React.Fragment>
+        <Head {...props} />
+        <Provider theme={props.theme}>
+          <div style={rootStyle}>
+            <div ref={r => this.menu = r}>
+              <Menu />
+            </div>
+            <NavBar />
+            <div onClick={e => props.update({ menu: false })}>
+              <Home pattern='/' />
+              <Box
+                px={[ 3, 3, 5 ]}
+                py={[ 5, 5, 6 ]}>
+                <GettingStarted pattern='/getting-started' />
+                <PropsView pattern='/props' />
+                <GridSystem pattern='/grid-system' />
+                <Theming pattern='/theming' />
+                <Extending pattern='/extending' />
+                <ServerSide pattern='/server-side-rendering' />
+                <ComponentList pattern='/components' />
+                <Component pattern='/components/:name' />
+              </Box>
+            </div>
+          </div>
+        </Provider>
+        <Scripts />
+      </React.Fragment>
+    )
+  }
 })
 
 App.defaultProps = {
   pkg,
+  menu: false,
   xray: false,
   modal: false,
   drawer: false,
