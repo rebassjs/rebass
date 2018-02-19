@@ -30,8 +30,6 @@
     "system-components": ">=2.0.1"
   },
   "devDependencies": {
-    "@compositor/kit": "^1.0.0-1",
-    "@compositor/x0": "^3.1.1",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -43,9 +41,7 @@
     "nyc": "^11.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-test-renderer": "^16.2.0",
-    "react-x-ray": "^1.0.0-4",
-    "refunk": "^2.2.4"
+    "react-test-renderer": "^16.2.0"
   },
   "repository": {
     "type": "git",

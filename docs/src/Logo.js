@@ -8,13 +8,7 @@ const Svg = styled(({
   height,
   ...props
 }) => <svg {...props} />)`
-  display: block;
-  max-width: 100%;
-  margin: 0;
-  fill: none;
-  stroke: magenta;
   mix-blend-mode: screen;
-
   ${width}
   ${height}
 `
@@ -66,8 +60,20 @@ const Logo = props => {
   const electrons = props.static
     ? (
       <g>
-        <ElectronStatic1 {...electronProps} />
-        <ElectronStatic2 {...electronProps} />
+        <ElectronStatic1
+          {...electronProps}
+          style={{
+            transformOrigin: '50% 50%',
+            transform: 'rotate3d(0, 1, 1, 90deg)'
+          }}
+        />
+        <ElectronStatic2
+          {...electronProps}
+          style={{
+            transformOrigin: '50% 50%',
+            transform: 'rotate3d(1, 0, 1, 90deg)'
+          }}
+        />
       </g>
     )
     : (
@@ -79,6 +85,15 @@ const Logo = props => {
 
   return (
     <Svg viewBox='0 0 64 64'
+      style={{
+        width: props.static ? 384 : null,
+        height: props.static ? 384 : null,
+        display: 'block',
+        maxWidth: '100%',
+        margin: 0,
+        fill: 'none',
+        stroke: 'magenta'
+      }}
       width={props.size}
       height={props.size}>
       <circle

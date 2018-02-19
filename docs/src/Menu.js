@@ -108,7 +108,7 @@ class Menu extends React.Component {
                 />
                 <A
                   to='/components'
-                  children={components.length + ' Components'}
+                  children='Components'
                 />
               </Box>
               <Box.x width={[ 144 ]} p={3}>
