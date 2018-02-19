@@ -6,7 +6,7 @@ const Scripts = props => (
   </React.Fragment>
 )
 
-const Script = ({ value }) =>
+const Script = ({ value }) => false &&
   <script
     dangerouslySetInnerHTML={{
       __html: value

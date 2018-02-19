@@ -16,7 +16,7 @@ import {
   Image,
 } from 'rebass'
 import Logo from './Logo'
-import Tweet from './Tweet'
+// import Tweet from './Tweet'
 
 const Root = styled(Banner)`
   background-attachment: fixed;
@@ -122,7 +122,7 @@ const Header = connect(props => (
           src='https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star'
         />
       </BlockLink>
-      <Tweet />
+      {false && <Tweet />}
     </Flex>
   </Banner>
 ))
