@@ -24,8 +24,20 @@ const Root = styled(Banner)`
   background-attachment: fixed;
 `
 
-const Btn = styled(Button)`
-  mix-blend-mode: overlay;
+const PrimaryButton = styled(Button)`
+  transition: background-color .2s ease-out;
+  &:hover {
+    background-color: magenta;
+  }
+`
+const SecondaryButton = styled(ButtonOutline)`
+  transition: .2s ease-out;
+  transition-property: color, box-shadow;
+  &:hover {
+    color: magenta;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px magenta;
+  }
 `
 
 const Title = Heading.extend`
@@ -69,7 +81,7 @@ const Header = connect(props => (
       width={1}
       flexWrap='wrap'
       alignItems='center'>
-      <Button
+      <PrimaryButton
         is={Link}
         href='/getting-started'
         fontSize={2}
@@ -80,7 +92,7 @@ const Header = connect(props => (
         mx={3}
         my={3}
       />
-      <ButtonOutline
+      <SecondaryButton
         is='a'
         href='https://github.com/jxnblk/rebass'
         fontSize={2}

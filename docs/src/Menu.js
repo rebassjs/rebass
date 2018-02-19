@@ -15,7 +15,6 @@ const A = props =>
     {...props}
     is={Link}
     width={1}
-    fontSize={0}
     py={0}
     style={{
       display: 'block',
@@ -46,7 +45,7 @@ const Menu = ({
     color='white'
     bg='black'>
     <Flex flexWrap='wrap'>
-      <Box width={[ 128 ]} p={3}>
+      <Box width={[ 160 ]} p={3}>
         <A
           href='/getting-started'
           children='Getting Started'
@@ -83,7 +82,7 @@ const Menu = ({
           active={pathname === '/components'}
         />
       </Box>
-      <Box width={[ 128 ]} p={3}>
+      <Box width={[ 160 ]} p={3}>
         {comps.a.map(name => (
           <A
             key={name}
@@ -93,7 +92,7 @@ const Menu = ({
           />
         ))}
       </Box>
-      <Box width={[ 128 ]} p={3}>
+      <Box width={[ 160 ]} p={3}>
         {comps.b.map(name => (
           <A
             key={name}
@@ -103,7 +102,7 @@ const Menu = ({
           />
         ))}
       </Box>
-      <Box width={[ 128 ]} p={3}>
+      <Box width={[ 160 ]} p={3}>
         {comps.c.map(name => (
           <A
             key={name}
@@ -113,7 +112,7 @@ const Menu = ({
           />
         ))}
       </Box>
-      <Box width={[ 128 ]} p={3}>
+      <Box width={[ 160 ]} p={3}>
         {comps.d.map(name => (
           <A
             key={name}

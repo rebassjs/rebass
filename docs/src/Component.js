@@ -9,6 +9,8 @@ import Example from './Example'
 import Pagination from './Pagination'
 import { components } from './examples'
 
+console.log('Component')
+
 const Component = props => {
   const { name } = props.params
   const index = components.indexOf(name)

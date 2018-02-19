@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import connect from 'refunk'
-import { createRouter, Link } from 'rrx'
+import { createRouter } from 'rrx'
+import Loadable from 'react-loadable'
 import pkg from '../../package.json'
 
 import {
@@ -13,20 +14,24 @@ import {
   Border,
   theme,
 } from 'rebass'
+
+const loading = () => false
+
 import Head from './Head'
 import Menu from './Menu'
 import NavBar from './NavBar'
-import Home from './Home'
-import GettingStarted from './GettingStarted'
-import PropsView from './PropsView'
-import GridSystem from './GridSystem'
-import Theming from './Theming'
-import Extending from './Extending'
-import ServerSide from './ServerSide'
-import ComponentList from './ComponentList'
-import Component from './Component'
-import SideNav from './SideNav'
 import Scripts from './Scripts'
+import Home from './Home'
+
+// const Home = Loadable({ loading, loader: () => import('./Home') })
+const GettingStarted = Loadable({ loading, loader: () => import('./GettingStarted') })
+const PropsView = Loadable({ loading, loader: () => import('./PropsView') })
+const GridSystem = Loadable({ loading, loader: () => import('./GridSystem') })
+const Theming = Loadable({ loading, loader: () => import('./Theming') })
+const Extending = Loadable({ loading, loader: () => import('./Extending') })
+const ServerSide = Loadable({ loading, loader: () => import('./ServerSide') })
+const ComponentList = Loadable({ loading, loader: () => import('./ComponentList') })
+const Component = Loadable({ loading, loader: () => import('./Component') })
 
 const StickySide = styled(Box)`
   display: none;
@@ -84,7 +89,7 @@ const App = connect(class extends React.Component {
               <Home pattern='/' />
               <Box
                 px={[ 3, 3, 5 ]}
-                py={[ 5, 5, 6 ]}>
+                py={[ 5, 5, ]}>
                 <GettingStarted pattern='/getting-started' />
                 <PropsView pattern='/props' />
                 <GridSystem pattern='/grid-system' />
