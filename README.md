@@ -89,6 +89,10 @@ for more on some of the thought behind Rebass.
 [gs]: https://github.com/jxnblk/grid-styled
 [sc]: https://github.com/styled-components/styled-components
 
+#### v1.0.7
+
+For the previous version of Rebass see the [v1.0.7](https://github.com/jxnblk/rebass/tree/v1.0.7) branch.
+
 ---
 
 [Contributing](.github/CONTRIBUTING.md)
