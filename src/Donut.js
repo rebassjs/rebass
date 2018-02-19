@@ -39,7 +39,7 @@ export const Donut = sys({
   color: 'blue',
   strokeWidth: 2,
   value: 1
-}, 'space')
+}, 'space', 'color')
 
 Donut.displayName = 'Donut'
 

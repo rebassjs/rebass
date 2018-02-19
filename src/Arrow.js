@@ -13,7 +13,7 @@ export const Arrow = sys({
     borderRight: '.3125em solid transparent',
     borderLeft: '.3125em solid transparent',
   }, borderTop, borderBottom)
-})
+}, 'space', 'color')
 
 Arrow.displayName = 'Arrow'
 

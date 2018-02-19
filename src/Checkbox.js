@@ -5,7 +5,7 @@ export const Checkbox = sys({
   type: 'checkbox',
   m: 0,
   mr: 2,
-})
+}, 'space', 'color')
 
 Checkbox.displayName = 'Checkbox'
 

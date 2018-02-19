@@ -7,6 +7,8 @@ export const Avatar = sys({
 }, {
   display: 'inline-block'
 },
+  'space',
+  'color',
   'size',
 )
 

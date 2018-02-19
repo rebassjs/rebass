@@ -9,6 +9,7 @@ export const Pre = sys({
   overflow: 'auto'
 },
   'fontFamily',
+  'space',
   'color'
 )
 

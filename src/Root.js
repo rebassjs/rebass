@@ -6,7 +6,7 @@ export const Root = sys({
   '& *': {
     boxSizing: 'border-box'
   }
-})
+}, 'space', 'color')
 
 Root.displayName = 'Root'
 

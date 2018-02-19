@@ -23,6 +23,8 @@ export const Dot = sys({
   backgroundClip: 'padding-box'
 },
   'size',
+  'space',
+  'color'
 )
 
 Dot.displayName = 'Dot'

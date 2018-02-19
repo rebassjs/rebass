@@ -7,7 +7,7 @@ export const Divider = sys({
   border: 0,
   borderBottom: 1,
   borderColor: 'gray'
-})
+}, 'space', 'color')
 
 Divider.displayName = 'Divider'
 

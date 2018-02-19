@@ -5,7 +5,10 @@ export const Switch = sys({
   role: 'checkbox',
   color: 'blue',
   borderRadius: '99999px'
-}, props => ({
+},
+  'space',
+  'color',
+  props => ({
   display: 'inline-flex',
   width: '40px',
   height: '24px',

@@ -7,7 +7,7 @@ export const Label = sys({
   align: 'center'
 }, {
   display: 'flex'
-}, 'alignItems')
+}, 'alignItems', 'space', 'color')
 
 Label.displayName = 'Label'
 

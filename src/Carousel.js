@@ -20,7 +20,7 @@ export const Carousel = sys({
     flex: 'none',
     width: '100%'
   }
-}, carouselIndex)
+}, carouselIndex, 'space', 'color')
 
 Carousel.displayName = 'Carousel'
 
