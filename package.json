@@ -23,11 +23,11 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "grid-styled": "^3.2.0",
+    "grid-styled": ">=3.2.0",
     "prop-types": "^15.6.0",
     "styled-components": ">=2.0 || >=3.0",
-    "styled-system": "^2.1.0",
-    "system-components": "^2.0.1"
+    "styled-system": ">=2.1.0",
+    "system-components": ">=2.0.1"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.0-1",
