@@ -8,6 +8,8 @@ import {
   Blockquote,
   Small,
   Link,
+  BlockLink,
+  Heading,
   NavLink,
   Button,
   Code,
@@ -18,7 +20,6 @@ import {
 } from 'rebass'
 import { components } from './examples'
 import Container from './Container'
-import Section from './Section'
 import Live from './Live'
 import Hero from './Hero'
 import Footer from './Footer'
@@ -52,7 +53,8 @@ const Home = ({
       </Box>
     </Container>
 
-    <Section name='Features'>
+    <Section id='Features'>
+      <SectionHeading>Features</SectionHeading>
       <Flex
         flexWrap='wrap'
         mx={-3}
@@ -93,13 +95,15 @@ const Home = ({
       </Flex>
     </Container>
 
-    <Section name='Demo'>
+    <Section id='Demo'>
+      <SectionHeading>Demo</SectionHeading>
       <Box my={3}>
         <Live code={demo} />
       </Box>
     </Section>
 
-    <Section name='Props'>
+    <Section id='Props'>
+      <SectionHeading>Props</SectionHeading>
       <Measure mb={3}>
         Every Rebass component includes several responsive style props for handling
         margin, padding, width, font size, and color.
@@ -117,7 +121,7 @@ const Home = ({
           {' '}
           <Link
             is={RouterLink}
-            to='/rebass/props'>
+            to='/props'>
             props documentation
           </Link>
           {' '}
@@ -126,7 +130,8 @@ const Home = ({
       </Box>
     </Section>
 
-    <Section name='Responsive Styles'>
+    <Section id='Responsive Styles'>
+      <SectionHeading>Responsive Styles</SectionHeading>
       <Measure mb={3}>
         All of the core props above accept arrays as values to set mobile-first responsive styles.
         The first value is not scoped to a media query and applies to all breakpoints.
@@ -135,7 +140,8 @@ const Home = ({
       <Live code={responsive} />
     </Section>
 
-    <Section name='Colors'>
+    <Section id='Colors'>
+      <SectionHeading>Colors</SectionHeading>
       <Text mb={3}>
         Plug in your own colors to customize the default color palette.
       </Text>
@@ -150,7 +156,8 @@ const Home = ({
       </Flex>
     </Section>
 
-    <Section name='Typographic Scale'>
+    <Section id='Typographic Scale'>
+      <SectionHeading>Typographic Scale</SectionHeading>
       <Measure mb={3}>
         The default typographic scale is based on a 16px base and common sizes, well suited for responsive typography that helps maintain a natural feeling visual rhythm.
       </Measure>
@@ -166,14 +173,16 @@ const Home = ({
       ))}
     </Section>
 
-    <Section name='Grid Styled'>
+    <Section id='Grid Styled'>
+      <SectionHeading>Grid Styled</SectionHeading>
       <Text mb={3}>
         Rebass includes the <Code>{'<Flex />'}</Code> and <Code>{'<Box />'}</Code> components from <Link href='http://jxnblk.com/grid-styled'>Grid Styled</Link> for handling responsive layouts.
       </Text>
       <Live code={grid} />
     </Section>
 
-    <Section name='Configuration'>
+    <Section id='Configuration'>
+      <SectionHeading>Configuration</SectionHeading>
       <Text mb={3}>
         {`The core design system in Rebass can be configured using the `}
         <Code children='<Provider />' /> component.
@@ -181,7 +190,8 @@ const Home = ({
       <Live code={config} />
     </Section>
 
-    <Section name='Customizing'>
+    <Section id='Customizing'>
+      <SectionHeading>Customizing</SectionHeading>
       <Text mb={3}>
         Any component can be customized by passing it to the <Code>styled</Code> function from styled-components.
       </Text>
@@ -191,7 +201,8 @@ const Home = ({
       />
     </Section>
 
-    <Section name='Components'>
+    <Section id='Components'>
+      <SectionHeading>Components</SectionHeading>
       <Text mb={3}>
         Rebass includes {components.length} stateless functional components.
       </Text>
@@ -211,26 +222,32 @@ const Home = ({
       </Flex>
     </Section>
 
-    <Section name='Get Started'>
-      <Text mb={3}>
-        Read the docs to get started
-      </Text>
-      <Flex
-        py={3}
-        alignItems='center'>
-        <Pre
+    <Section id='Get Started' py={5}>
+      <Flex flexWrap='wrap' alignItems='center'>
+        <Box width={[ 1, 1/2 ]}>
+          <SectionHeading>Getting Started</SectionHeading>
+          <Text mb={3}>
+            Read the docs to get started
+          </Text>
+        </Box>
+        <Flex
           ml='auto'
-          mr={3}
-          color='blue'>
-          npm i rebass@next
-        </Pre>
-        <Button
-          is={RouterLink}
-          f={2}
-          py={[ 2, 3 ]}
-          to='/getting-started'
-          children='Getting Started'
-        />
+          py={3}
+          alignItems='center'>
+          <Pre
+            ml='auto'
+            mr={3}
+            color='blue'>
+            npm i rebass@next
+          </Pre>
+          <Button
+            is={RouterLink}
+            f={2}
+            py={3}
+            to='/getting-started'
+            children='Getting Started'
+          />
+        </Flex>
       </Flex>
     </Section>
 
@@ -378,6 +395,23 @@ const ColorCard = props => (
       bg={props.value}
     />
   </Box>
+)
+
+const SectionHeading = props => (
+  <Heading mb={2}>
+    <BlockLink
+      {...props}
+      href={'#' + props.children}
+    />
+  </Heading>
+)
+
+const Section = props => (
+  <Container
+    py={4}
+    {...props}
+    is='section'
+  />
 )
 
 export default Home
