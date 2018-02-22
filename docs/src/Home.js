@@ -23,6 +23,7 @@ import Container from './Container'
 import Live from './Live'
 import Hero from './Hero'
 import Footer from './Footer'
+import Tweet from './Tweet'
 
 const { colors, fontSizes } = theme
 
@@ -226,7 +227,7 @@ const Home = ({
 
     <Section id='Get Started' py={5}>
       <Flex flexWrap='wrap' alignItems='center'>
-        <Box width={[ 1, 1/2 ]}>
+        <Box fle={[ 1, 'auto']}>
           <SectionHeading>Getting Started</SectionHeading>
           <Text mb={3}>
             Install Rebass now and read the docs to get started
@@ -247,7 +248,7 @@ const Home = ({
             f={2}
             py={3}
             to='/getting-started'
-            children='Getting Started'
+            children='Documentation'
           />
         </Flex>
       </Flex>

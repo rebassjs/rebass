@@ -97,32 +97,30 @@ const Header = connect(props => (
           />
           <Pre mx={3}>npm i rebass@next</Pre>
         </Flex>
+        <Flex
+          mt={3}
+          alignItems='center'
+          width={1}>
+          <BlockLink
+            mr={2}
+            py={2}
+            href='https://travis-ci.org/jxnblk/rebass'>
+            <Image
+              src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
+            />
+          </BlockLink>
+          <BlockLink
+            ml={2}
+            mr={3}
+            py={2}
+            href='https://github.com/jxnblk/rebass'>
+            <Image
+              src='https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star'
+            />
+          </BlockLink>
+          {false && <Tweet />}
+        </Flex>
       </Box>
-    </Flex>
-    <Flex
-      mt='auto'
-      px={3}
-      alignItems='center'
-      width={1}>
-      <BlockLink
-        ml='auto'
-        mr={2}
-        py={2}
-        href='https://travis-ci.org/jxnblk/rebass'>
-        <Image
-          src='https://img.shields.io/travis/jxnblk/rebass/master.svg'
-        />
-      </BlockLink>
-      <BlockLink
-        ml={2}
-        mr={3}
-        py={2}
-        href='https://github.com/jxnblk/rebass'>
-        <Image
-          src='https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star'
-        />
-      </BlockLink>
-      {false && <Tweet />}
     </Flex>
   </Banner>
 ))

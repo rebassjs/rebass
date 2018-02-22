@@ -1,26 +1,24 @@
 import React from 'react'
 import connect from 'refunk'
 import { Link } from 'react-router-dom'
-import Measure from 'react-measure'
 import styled from 'styled-components'
+import { width, order, themeGet } from 'styled-system'
 import {
   Box,
-  Sticky,
-  Fixed,
   Flex,
+  Sticky,
   NavLink,
   Divider
 } from 'rebass'
 import { components } from './examples'
 
 const Root = styled(Sticky)`
-  height: 100vh;
+  flex: none;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
-  @media screen and (max-width: 32em) {
-    display: none;
-  }
+  max-height: 100vh;
+  ${width}
+  ${order}
 `
 
 const A = styled(props =>
@@ -34,18 +32,17 @@ const A = styled(props =>
   display: block;
   transition: color .1s ease-out;
   &:hover {
-    color: magenta;
+    color: ${themeGet('colors.blue')};
   }
 `
 
-const quarter = Math.ceil(components.length / 4)
-const comps = {}
-comps.a = components.slice(0, quarter)
-comps.b = components.slice(quarter, quarter * 2)
-comps.c = components.slice(quarter * 2, quarter * 3)
-comps.d = components.slice(quarter * 3)
+Box.hide = Box.extend`
+  @media screen and (max-width: ${themeGet('breakpoints.0')}) {
+    display: none;
+  }
+`
 
-class Menu extends React.Component {
+class Sidebar extends React.Component {
   render () {
     const {
       update,
@@ -56,54 +53,61 @@ class Menu extends React.Component {
     } = this.props
 
     return (
-      <Root top={0}>
-        <Box
-          width={160}
+      <Root
+        width={[ 1, 160 ]}
+        order={[ 2, 0 ]}
+        top={0}>
+        <Flex
+          flexWrap='wrap'
           px={2}
           pt={3}
           pb={5}>
-          <A
-            to='/'
-            children='Rebass'
-          />
-          <A
-            to='/getting-started'
-            children='Getting Started'
-          />
-          <A
-            to='/props'
-            children='Props'
-          />
-          <A
-            to='/grid-system'
-            children='Grid System'
-          />
-          <A
-            to='/theming'
-            children='Theming'
-          />
-          <A
-            to='/extending'
-            children='Extending'
-          />
-          <A
-            to='/server-side-rendering'
-            children='Server Side'
-          />
+          <A to='/' children='Rebass' />
           <Box my={3} />
-          <A
-            to='/components'
-            children='Components'
-          />
-          {components.map(name => (
+          <Box width={[ 1/2, 1 ]}>
             <A
-              key={name}
-              to={`/components/${name}`}
-              children={name}
+              to='/getting-started'
+              children='Getting Started'
             />
-          ))}
+            <A
+              to='/props'
+              children='Props'
+            />
+            <A
+              to='/grid-system'
+              children='Grid System'
+            />
+          </Box>
+          <Box width={[ 1/2, 1 ]}>
+            <A
+              to='/theming'
+              children='Theming'
+            />
+            <A
+              to='/extending'
+              children='Extending'
+            />
+            <A
+              to='/server-side-rendering'
+              children='Server Side'
+            />
+            <Box my={[ 0, 3 ]} />
+            <A
+              to='/components'
+              children='Components'
+            />
+          </Box>
+          <Box.hide>
+            {components.map(name => (
+              <A
+                key={name}
+                to={`/components/${name}`}
+                children={name}
+              />
+            ))}
+          </Box.hide>
           <Box my={3} />
-        </Box>
+        </Flex>
       </Root>
     )
   }
@@ -111,4 +115,4 @@ class Menu extends React.Component {
 
 const toggle = key => state => ({ [key]: !state[key] })
 
-export default connect(Menu)
+export default connect(Sidebar)

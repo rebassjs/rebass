@@ -12,8 +12,9 @@ const toggle = key => state => ({ [key]: !state[key] })
 
 const NavBar = props => (
   <Toolbar
-    px={[ 0, 3 ]}
-    bg='black'
+    px={[ 2 ]}
+    color='black'
+    bg='transparent'
     onClick={e => {
       props.update(toggle('menu'))
     }}>
@@ -27,10 +28,6 @@ const NavBar = props => (
       }}
     />
     <Box mx='auto' />
-    <NavLink
-      href='https://github.com/jxnblk/rebass'
-      children='GitHub'
-    />
     <NavLink
       is={Link}
       to='/getting-started'
