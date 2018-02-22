@@ -20,9 +20,10 @@ import {
 } from 'rebass'
 
 import Head from './Head'
-import Menu from './Menu'
+// import Menu from './Menu'
+// import NavBar from './NavBar'
+import Sidebar from './Sidebar'
 import ScrollTop from './ScrollTop'
-import NavBar from './NavBar'
 import Scripts from './Scripts'
 import Home from './Home'
 
@@ -59,15 +60,19 @@ const App = connect(class extends React.Component {
             basename={basename}
             location={pathname}>
             <ScrollTop>
-              <Menu menu={menu} />
-              <NavBar />
-              <div onClick={e => update({ menu: false })}>
+              <Route
+                exact
+                path='/'
+                render={p => <Home {...p} />}
+              />
+              <Flex>
                 <Route
-                  exact
-                  path='/'
-                  render={p => <Home {...p} />}
+                  render={({ location }) => location.pathname === '/' ? false : (
+                    <Sidebar />
+                  )}
                 />
                 <Box
+                  flex='1 1 auto'
                   px={[ 3, 3, 5 ]}
                   py={[ 5, 5, ]}>
                   <Route component={GettingStarted} path='/getting-started' />
@@ -79,7 +84,7 @@ const App = connect(class extends React.Component {
                   <Route component={Component} path='/components/:name' />
                   <Route component={ComponentList} exact path='/components' />
                 </Box>
-              </div>
+              </Flex>
             </ScrollTop>
           </Router>
         </Provider>
