@@ -10,7 +10,7 @@
   "devDependencies": {
     "@compositor/kit": "^1.0.0-1",
     "@compositor/markdown": "0.0.25",
-    "@compositor/x0": "^3.2.1",
+    "@compositor/x0": "^4.0.0-0",
     "ok-webfont": "^1.0.0-1",
     "raw-loader": "^0.5.1",
     "react-loadable": "^5.3.1",
