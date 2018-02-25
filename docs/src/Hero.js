@@ -28,7 +28,7 @@ const PrimaryButton = styled(Button)`
     background-color: magenta;
   }
 `
-const SecondaryButton = styled(ButtonOutline)`
+const SecondaryButton = ButtonOutline.extend`
   transition: .2s ease-out;
   transition-property: color, box-shadow;
   &:hover {
