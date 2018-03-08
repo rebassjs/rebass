@@ -9,6 +9,7 @@ before_deploy:
   - npm run build
   - npm run card
   - cd ..
+  - cp .site/index.html .site/404.html
 deploy:
   edge:
     branch: v1.8.47
