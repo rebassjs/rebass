@@ -1,10 +1,10 @@
 {
   "scripts": {
     "start": "x0 dev src/App.js -op 9000",
-    "build": "x0 build src/App.js --basename='/rebass' -d .",
+    "build": "x0 build src/App.js --basename='/rebass' -d ../.site",
     "demo-build": "x0 build src/Kit.js -d demo",
     "demo": "x0 dev src/Kit.js -p 9009",
-    "card": "repng src/Card.js -d 1 -w 1024 -h 512 -o . -f card",
+    "card": "repng src/Card.js -d 1 -w 1024 -h 512 -o ../.site -f card",
     "card-dev": "repng src/Card.js --dev -P 8081"
   },
   "devDependencies": {
