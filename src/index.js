@@ -67,6 +67,7 @@ export { Circle } from './Circle'
 export { Dot } from './Dot'
 export { Arrow } from './Arrow'
 export { Donut } from './Donut'
+export { Hide } from './Hide';
 
 export {
   Position,

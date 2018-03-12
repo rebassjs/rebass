@@ -263,3 +263,12 @@ test('renders BackgroundImage src', t => {
   const json = render(<Rebass.BackgroundImage src='hello.png' />).toJSON()
   t.snapshot(json)
 })
+
+test('renders a span', t => {
+  const json = render(<Provider>
+    <Rebass.Hide xs sm md lg is="span">
+      <div> Content </div>
+    </Rebass.Hide>
+  </Provider>).toJSON()
+  t.snapshot(json)
+})
