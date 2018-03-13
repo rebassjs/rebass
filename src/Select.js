@@ -2,7 +2,7 @@ import React from 'react'
 import sys from 'system-components'
 import { themeGet } from 'styled-system'
 
-const arrow = encodeURI(`data:image/svg+xml,<svg xmlns='http://www.w3c.org/2000/svg' width='32' height='32' viewbox='0 0 32 32' fill='tomato'> <path d='M0 6 L32 6 L16 28 z' /> </svg>`)
+const arrow = encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><polygon points='0,0 100,0 50,50'/></svg>`)
 
 export const Select = sys({
   is: 'select',
@@ -23,10 +23,10 @@ export const Select = sys({
   appearance: 'none',
   width: '100%',
   border: 0,
-  backgroundImage: `url("${arrow}")`,
+  background: `url("data:image/svg+xml;utf8,${arrow}")`,
+  backgroundPosition: 'calc(100% - 8px) center',
+  backgroundRepeat: 'no-repeat',
   backgroundSize: '8px 8px',
-  // backgroundRepeat: 'no-repeat',
-  // backgroundPosition: 'center right',
   '&:disabled': {
     opacity: 1/4
   }
