@@ -11,13 +11,13 @@ import { photo } from './constants'
 const update = () => {}
 const toggle = () => {}
 const checked = true
-const scope = Object.assign({}, Rebass, {
+const scope = { ...Rebass, ...{
   checked,
   update,
   toggle,
   styled,
   photo
-})
+}}
 
 const Preview = props => {
   return (

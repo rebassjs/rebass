@@ -22,7 +22,7 @@ import { photo } from './constants'
 
 const { colors } = theme
 
-const _scope = Object.assign({}, Rebass, { styled, photo })
+const _scope = { ...Rebass, ...{ styled, photo } }
 
 const Editor = styled(LiveEditor)`
   font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
@@ -54,7 +54,7 @@ const Live = props => {
     code,
     noInline
   } = props
-  const scope = Object.assign({ toggle }, _scope, props)
+  const scope = { ...{ toggle }, ..._scope, ...props }
 
   return (
     <LiveProvider
