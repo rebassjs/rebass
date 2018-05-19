@@ -1,6 +1,7 @@
 {
   "main": "src/index.js",
   "scripts": {
+    "prepare": "babel src -d dist",
     "start": "kit examples --mode library",
     "test": "jest"
   },
@@ -10,14 +11,9 @@
     "styled-system": "^2.2.5"
   },
   "devDependencies": {
-    "styled-components": "^3.2.6"
-  },
-  "peerDependencies": {
-    "styled-components": ">=3.0.0"
-  },
-  "devDependencies": {
     "@compositor/kit-cli": "^1.0.13",
     "@compositor/kit-snapshot": "^1.0.11",
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -26,5 +22,8 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-test-renderer": "^16.3.2"
+  },
+  "peerDependencies": {
+    "styled-components": ">=3.0.0"
   }
 }
