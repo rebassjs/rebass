@@ -4,12 +4,10 @@ const init = require('initit')
 const chalk = require('chalk')
 
 const [ name ] = process.argv.slice(2)
-const template = path.join(__dirname, 'template')
+const template = 'jxnblk/rebass/examples/basic'
 
 console.log('Creating Rebass project ', chalk.green(name))
 console.log()
-console.log('__dirname', __dirname)
-console.log('Template', template)
 
 init({
   name,

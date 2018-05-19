@@ -1,6 +1,6 @@
 {
   "name": "create-rebass",
-  "version": "1.0.0-3",
+  "version": "1.0.0-4",
   "description": "",
   "main": "init.js",
   "bin": {
@@ -14,6 +14,6 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
-    "initit": "^1.0.0-1"
+    "initit": "^1.0.0-2"
   }
 }
