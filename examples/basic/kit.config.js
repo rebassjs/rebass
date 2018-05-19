@@ -1,5 +1,11 @@
-const { Provider } = require('./dist')
+import React from 'react'
+import { theme, Provider, Box } from './src'
 
-module.exports = {
-  Provider
+export default {
+  theme,
+  Provider: props => (
+    <Provider {...props}>
+      {props.children}
+    </Provider>
+  )
 }
