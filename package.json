@@ -67,8 +67,5 @@
       "docs",
       "stories"
     ]
-  },
-  "x0": {
-    "cssLibrary": "styled-components"
   }
 }

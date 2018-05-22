@@ -10,7 +10,7 @@
   "devDependencies": {
     "@compositor/kit": "^1.0.0-1",
     "@compositor/markdown": "0.0.25",
-    "@compositor/x0": "^4.0.0",
+    "@compositor/x0": "^5.0.0-3",
     "ok-webfont": "^1.0.0-1",
     "raw-loader": "^0.5.1",
     "react-loadable": "^5.3.1",
@@ -24,11 +24,5 @@
     "repng": "^2.0.0-alpha.1",
     "styled-components": "^3.1.6"
   },
-  "x0": {
-    "cssLibrary": "styled-components",
-    "config": "webpack.config.js",
-    "routes": [
-      "/"
-    ]
-  }
+  "x0": {}
 }

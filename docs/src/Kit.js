@@ -390,7 +390,10 @@ const Demo = connect(props => (
             )}
           </Example>
           <Example name='Donut'>
-            <Donut value={props.value} strokeWidth={4} />
+            <Donut
+              value={props.value}
+              strokeWidth={4}
+            />
           </Example>
         </Library>
       </KitProvider>
