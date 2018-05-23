@@ -4,6 +4,7 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
+    "start": "x0 examples --open",
     "prepublish": "babel src -d dist",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava"
@@ -30,6 +31,7 @@
     "system-components": "^2.0.2"
   },
   "devDependencies": {
+    "@compositor/x0": "^5.0.0-11",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
