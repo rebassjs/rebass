@@ -71,6 +71,8 @@ import Carousel from './Carousel.jsx'
 import Row from './Row.jsx'
 import Column from './Column.jsx'
 
+import Hide from './Hide.jsx';
+
 export const examples = {
   Button,
   ButtonOutline,
@@ -143,6 +145,8 @@ export const examples = {
 
   Row,
   Column,
+
+  Hide,
 }
 
 export const components = Object.keys(examples).sort()
