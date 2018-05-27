@@ -59,7 +59,15 @@ const App = props => (
 
 ## Documentation
 
-http://jxnblk.com/rebass
+- [Docs](docs)
+- [Getting Started](docs/getting-started.md)
+- [Props](docs/props.md)
+- [Grid System](docs/grid-system.md)
+- [Theming](docs/theming.md)
+- [Extending](docs/extending.md)
+- [Components](docs/components.md)
+- [Server-Side Rendering](server-side-rendering.md)
+
 
 ### Architectural Approach
 
