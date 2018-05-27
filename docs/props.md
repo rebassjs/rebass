@@ -1,69 +1,11 @@
 
 # Props
 
-Rebass components use [styled-system](https://github.com/jxnblk/styled-system) for responsive, theme-based style props.
-
-### Width
-
-The Flex and Box components accept a `width` prop.
-
-```.jsx
-<Box width={1/2} bg='blue'>
-  Hello
-</Box>
-```
-
-```jsx
-// Numbers from 0–1 are converted to percentage widths
-// e.g. width 50%
-<Text width={1/2} />
-
-// Numbers greater than 1 are converted to pixels
-<Text width={256} />
-
-// Strings can be used for other values
-<Text width='32em' />
-
-// Arrays can be used for mobile-first responsive styles
-<Text
-  width={[
-    1,    // 100% width at the smallest breakpoint
-    1/2,  // 50% width at the next breakpoint
-    1/4   // 25% width at the next
-  ]}
-/>
-```
-
-### Font Size
-
-The Text component and other typographic components accept a `fontSize` prop
-that makes referencing steps on the typographic scale simple and helps promote consistent design.
-
-```.jsx
-<Text fontSize={5}>
-  Hello
-</Text>
-```
-
-```jsx
-// Numbers are used to reference steps on the typographic scale
-// i.e. the `theme.fontSizes` array
-<Text fontSize={3} />
-
-// Numbers greater than the length of the typographic scale
-// are converted to pixels
-<Text fontSize={18} />
-
-// Strings can be used for other values
-<Text fontSize='3em' />
-
-// Arrays can be used for mobile-first responsive styles
-<Text fontSize={[ 3, 4, 5 ]} />
-```
+Rebass components use [styled-system][system] for responsive, theme-based style props.
 
 ### Margin and Padding
 
-All Rebass component use the [space](https://github.com/jxnblk/styled-system#space-responsive) utility from [styled-system](https://github.com/jxnblk/styled-system) to handle responsive margin and padding props based on a global spacing scale (`theme.space`).
+All Rebass component use the [space][space] utility from [styled-system][system] to handle responsive margin and padding props based on a global spacing scale (`theme.space`).
 The margin and padding props help promote consistency in layout
 without the need to add custom margin and padding declarations throughout an application.
 The margin and padding props use a shorthand syntax, similar to other OOCSS approaches and many CSS libraries.
@@ -114,7 +56,10 @@ The margin and padding props use a shorthand syntax, similar to other OOCSS appr
 
 ### Colors
 
+All Rebass components use [styled-system's][system] [color][color] function to add the `color` and `bg` props.
 The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
+
+The color values can be defined in the `theme.colors` object.
 
 ```.jsx
 <Box color='white' bg='fuschia' p={3}>
@@ -138,11 +83,11 @@ The `color` and `bg` props make using colors from the color palette simple to he
 
 ### Responsive Styles
 
-All of the core props above accept arrays as values to set mobile-first responsive styles.
+Many Rebass props accept arrays as values to set mobile-first responsive styles.
 The first value is not scoped to a media query and applies to all breakpoints.
 Each value after the first corresponds to a media query derived from `theme.breakpoints`.
 
-See the [styled-system](https://github.com/jxnblk/styled-system#responsive-styles) docs for more info.
+See the [styled-system][responsive] docs for more info.
 
 ```.jsx
 <Flex flexWrap='wrap'>
@@ -194,3 +139,11 @@ This is useful for ensuring semantic markup, while keeping styles decoupled.
 />
 ```
 
+## Component-Specific Props
+
+Refer to the [component documentation](components/) for information on component-specific props.
+
+[system]: https://github.com/jxnblk/styled-system
+[space]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#space-responsive
+[color]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#color-responsive
+[responsive]: https://github.com/jxnblk/styled-system/blob/master/docs/responsive-styles.md

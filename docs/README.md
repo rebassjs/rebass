@@ -1,7 +1,7 @@
 
-- [Getting Started](GETTING_STARTED.md)
-- [Props](PROPS.md)
-- [Grid System](GRID_SYSTEM.md)
-- [Theming](THEMING.md)
-- [Extending](EXTENDING.md)
-- [Server Side Rendering](SERVER_SIDE_RENDERING.md)
+- [Getting Started](getting-started.md)
+- [Props](props.md)
+- [Grid System](grid-system.md)
+- [Theming](theming.md)
+- [Extending](extending.md)
+- [Server Side Rendering](server-side-rendering.md)

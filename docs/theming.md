@@ -71,4 +71,6 @@ const theme = {
 }
 ```
 
-See the [styled-system](https://github.com/jxnblk/styled-system) docs for more about how Rebass style props integrate with the theme.
+See the [styled-system][system] docs for more about how Rebass style props integrate with the theme.
+
+[system]: https://github.com/jxnblk/styled-system

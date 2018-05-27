@@ -1,8 +1,7 @@
 
 # Grid System
 
-Rebass includes the incredibly flexible, responsive flexbox grid system
-[Grid Styled](http://jxnblk.com/grid-styled).
+Rebass includes the incredibly flexible, responsive flexbox grid system [Grid Styled][grid-styled].
 Use the `<Flex />` and `<Box />` components to fine tune spacing and alignment in a variety of combination.
 
 ```.jsx
@@ -87,4 +86,6 @@ Use the `<Flex />` and `<Box />` components to fine tune spacing and alignment i
 </Flex>
 ```
 
-See the [Grid Styled documentation](https://github.com/jxnblk/grid-styled) for more.
+See the [Grid Styled documentation][grid-styled] for more.
+
+[grid-styled]: https://github.com/jxnblk/grid-styled
