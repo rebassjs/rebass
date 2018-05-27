@@ -141,7 +141,7 @@ This is useful for ensuring semantic markup, while keeping styles decoupled.
 
 ## Component-Specific Props
 
-Refer to the [component documentation](components/) for information on component-specific props.
+Refer to the [component documentation](components.md) for information on component-specific props.
 
 [system]: https://github.com/jxnblk/styled-system
 [space]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#space-responsive
