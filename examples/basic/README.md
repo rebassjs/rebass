@@ -22,9 +22,9 @@ rebass-project/
   README.md
   package.json
   src/
-    __tests__/
-      snapshots.js
   examples/
+  tests/
+    snapshots.js
 ```
 
 ---

@@ -1,8 +1,8 @@
 {
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist",
-    "start": "kit examples --mode library",
+    "start": "kit examples",
     "test": "jest"
   },
   "dependencies": {
@@ -11,8 +11,8 @@
     "styled-system": "^2.2.5"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.22",
-    "@compositor/kit-snapshot": "^1.0.18",
+    "@compositor/kit-cli": "^1.0.35",
+    "@compositor/kit-snapshot": "^1.0.24",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",

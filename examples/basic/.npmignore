@@ -1,2 +1,3 @@
 examples
-__tests__
+tests
+src
