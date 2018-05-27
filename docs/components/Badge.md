@@ -10,10 +10,9 @@
 </Heading>
 ```
 
-Props:
+## Props:
 
-- [`fontSize`][table#typography]
+- `fontSize`
 - `fontWeight`
 - `borderRadius`
 
-[table]: https://github.com/jxnblk/styled-system/blob/master/docs/table.md

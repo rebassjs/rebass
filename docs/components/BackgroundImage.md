@@ -8,7 +8,9 @@
 />
 ```
 
+## Props
+
 - `src` (string): URL for background-image
-- [`ratio`](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#layout)
-- [`backgroundSize`](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#background)
-- [`backgroundPosition`](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#background)
+- `ratio`
+- `backgroundSize`
+- `backgroundPosition`
