@@ -7,7 +7,7 @@
     "start": "x0 examples --open",
     "prepublish": "babel src -d dist",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
-    "test": "nyc ava"
+    "test": "nyc ava test"
   },
   "keywords": [
     "components",

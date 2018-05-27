@@ -1,0 +1,37 @@
+{
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "start": "kit examples",
+    "test": "jest"
+  },
+  "dependencies": {
+    "rebass": "^1.0.7",
+    "styled-components": "^3.2.6",
+    "styled-system": "^2.2.5"
+  },
+  "devDependencies": {
+    "@compositor/kit-cli": "^1.0.35",
+    "@compositor/kit-snapshot": "^1.0.24",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^22.4.3",
+    "jest-styled-components": "^5.0.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2"
+  },
+  "peerDependencies": {
+    "styled-components": ">=3.0.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ],
+    "collectCoverageFrom": [
+      "**/src/**/*.js"
+    ]
+  }
+}

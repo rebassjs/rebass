@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.c0 {
+  color: white;
+  background-color: blue;
+}
+
+<div
+  bg="blue"
+  className="c0 c1"
+  color="white"
+  is={null}
+>
+  Hello
+</div>
+`;
+
+exports[`Button renders 1`] = `
+.c2 {
+  margin: 0px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  font-size: 14px;
+  color: white;
+}
+
+.c1 {
+  font-family: inherit;
+  line-height: 1.1428571428571428;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: blue;
+}
+
+.c1:hover {
+  box-shadow: inset 0 0 0 999px rgba(0,0,0,0.125);
+}
+
+.c1:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c1:active {
+  background-color: blue;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
+}
+
+.c1:disabled {
+  opacity: 0.25;
+}
+
+.c0 {
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
+}
+
+<button
+  borderRadius={4}
+  className="c0 c1 c2"
+  is={null}
+>
+  Hello
+</button>
+`;
+
+exports[`Heading renders 1`] = `
+.c2 {
+  margin: 0px;
+  font-size: 48px;
+}
+
+.c1 {
+  margin: 0px;
+  font-size: 48px;
+}
+
+.c0 {
+  line-height: 1.25;
+}
+
+<h2
+  className="c0 c1 c2"
+  is={null}
+  lineHeight={1.125}
+>
+  Hello
+</h2>
+`;
+
+exports[`Text renders 1`] = `
+.c2 {
+  margin: 0px;
+  font-size: 48px;
+}
+
+.c1 {
+  margin: 0px;
+  font-size: 48px;
+}
+
+.c0 {
+  line-height: 1.25;
+}
+
+<h2
+  className="c0 c1 c2"
+  is={null}
+  lineHeight={1.125}
+>
+  Hello
+</h2>
+`;
