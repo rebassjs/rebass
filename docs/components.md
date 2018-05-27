@@ -123,7 +123,7 @@
 
 ## Close
 
-Extends [ButtonTransparent](#ButtonTransparent)
+Extends [ButtonTransparent](#buttontransparent)
 
 ```jsx
 <Close />
@@ -196,7 +196,7 @@ Extends [ButtonTransparent](#ButtonTransparent)
 
 ## Truncate
 
-Extends [Text](#Text)
+Extends [Text](#text)
 
 ```jsx
 <Truncate>
@@ -268,7 +268,7 @@ Extends [Text](#Text)
 
 ## Measure
 
-Extends [Text](#Text)
+Extends [Text](#text)
 
 ```jsx
 <Measure>
@@ -477,7 +477,7 @@ Extends [Text](#Text)
 
 ## Container
 
-Extends [Box](#Box)
+Extends [Box](#box)
 
 ```jsx
 <Container>
@@ -491,7 +491,7 @@ Extends [Box](#Box)
 
 ## Group
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Group>
@@ -503,7 +503,7 @@ Extends [Flex](#Flex)
 
 ## Row
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Row>
@@ -514,7 +514,7 @@ Extends [Flex](#Flex)
 
 ## Column
 
-Extends [Box](#Box)
+Extends [Box](#box)
 
 ```jsx
 <Row>
@@ -613,7 +613,7 @@ Extends [Box](#Box)
 
 ## Banner
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Banner
@@ -644,7 +644,7 @@ Extends [Flex](#Flex)
 
 ## Message
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Message>
@@ -661,7 +661,7 @@ Extends [Flex](#Flex)
 
 ## Toolbar
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Toolbar>
@@ -685,7 +685,7 @@ Extends [Flex](#Flex)
 
 ## Tabs
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Tabs>
@@ -749,7 +749,7 @@ Extends [Flex](#Flex)
 
 ## Circle
 
-Extends [Badge](#Badge)
+Extends [Badge](#badge)
 
 ```jsx
 <Circle>
@@ -818,7 +818,7 @@ Extends [Badge](#Badge)
 
 ## Relative
 
-Extends [Position](#Position)
+Extends [Position](#position)
 
 ```jsx
 <Relative>
@@ -830,7 +830,7 @@ Extends [Position](#Position)
 
 ## Absolute
 
-Extends [Position](#Position)
+Extends [Position](#position)
 
 ```jsx
 <Relative>
@@ -842,7 +842,7 @@ Extends [Position](#Position)
 
 ## Fixed
 
-Extends [Position](#Position)
+Extends [Position](#position)
 
 ```jsx
 <div>
@@ -866,7 +866,7 @@ Extends [Position](#Position)
 
 ## Sticky
 
-Extends [Position](#Position)
+Extends [Position](#position)
 
 ```jsx
 <Sticky m={2} top={0} right={0} bottom={0}>
@@ -876,7 +876,7 @@ Extends [Position](#Position)
 
 ## Modal
 
-Extends [Fixed](#Fixed)
+Extends [Fixed](#fixed)
 
 ```jsx
 <div>
@@ -940,7 +940,7 @@ Extends [Fixed](#Fixed)
 
 ## Carousel
 
-Extends [Flex](#Flex)
+Extends [Flex](#flex)
 
 ```jsx
 <Carousel
@@ -980,7 +980,7 @@ Extends [Flex](#Flex)
 
 ## Overlay
 
-Extends [Fixed](#Fixed)
+Extends [Fixed](#fixed)
 
 ### Props
 

@@ -15,8 +15,6 @@ const examples = fs.readdirSync(
     [path.basename(b, path.extname(b))]: path.join(__dirname, '../site/examples', b)
   }), {})
 
-console.log(examples)
-
 const template = ({
   components = []
 }) => `
@@ -25,7 +23,7 @@ const template = ({
 ${components.map(({ name, props, example, extension }) => (
 `## ${name}
 
-${extension ? `Extends [${extension}](#${extension})\n` : ''}
+${extension ? `Extends [${extension}](#${extension.toLowerCase()})\n` : ''}
 ${example ? '```jsx\n' + example + '```\n' : ''}
 ${props.length ? '### Props\n' : ''}
 ${props.map(prop => (
@@ -94,3 +92,5 @@ const components = keys
 const content = template({ components })
 
 fs.writeFileSync(filename, content)
+
+console.log('Generated docs/components.md')
