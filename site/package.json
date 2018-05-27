@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "x0 dev pages -op 9000",
+    "build": "x0 build pages",
+    "card": "repng src/Card.js -w 1024 -h 512 -d dist -f card.png"
+  },
+  "devDependencies": {
+    "@compositor/kit": "^1.0.35",
+    "@compositor/x0": "^5.0.1",
+    "rebass": "^2.0.0-2",
+    "refunk": "^3.0.1",
+    "repng": "^3.0.0",
+    "styled-components": "^3.3.0"
+  },
+  "x0": {
+    "title": "Rebass",
+    "basename": "/rebass",
+    "meta": [
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@jxnblk"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Rebass"
+      },
+      {
+        "name": "twitter:description",
+        "content": "React UI component library & design system, built with styled-components and styled-system"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://jxnblk.com/rebass/card.png"
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "https://fonts.googleapis.com/css?family=Roboto+Mono"
+      }
+    ]
+  }
+}

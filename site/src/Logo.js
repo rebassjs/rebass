@@ -22,18 +22,25 @@ const spin2 = keyframes`
   100% { transform: rotate3d(1, 0, 1, 360deg) }
 `
 
+const fade1 = keyframes`
+  0% { stroke: magenta }
+  33% { stroke: cyan }
+  66% { stroke: yellow }
+  100% { stroke: magenta }
+`
+
 const Electron1 = styled.circle`
   transform-origin: 50% 50%;
-  animation-name: ${spin1};
-  animation-duration: 3s;
+  animation-name: ${spin1}, ${fade1};
+  animation-duration: 3s, 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 `
 
 const Electron2 = styled.circle`
   transform-origin: 50% 50%;
-  animation-name: ${spin2};
-  animation-duration: 3s;
+  animation-name: ${spin2}, ${fade1};
+  animation-duration: 3s, 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 `
@@ -100,8 +107,9 @@ const Logo = props => {
         cx={32}
         cy={32}
         r={30}
-        strokeWidth={4}
+        strokeWidth={1}
         vectorEffect='non-scaling-stroke'
+        opacity={1/2}
       />
       {electrons}
     </Svg>

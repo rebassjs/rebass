@@ -1,5 +1,5 @@
 import React from 'react'
-import connect from 'refunk'
+import { connect } from 'refunk'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import {
@@ -18,28 +18,24 @@ import {
 import Logo from './Logo'
 // import Tweet from './Tweet'
 
-const Root = styled(Banner)`
-  background-attachment: fixed;
-`
-
-const PrimaryButton = styled(Button)`
-  transition: background-color .2s ease-out;
-  &:hover {
-    background-color: magenta;
+const PrimaryButton = styled(Button)({
+  transition: 'background-color .2s ease-out',
+  '&:hover': {
+    backgroundColor: 'magenta'
   }
-`
-const SecondaryButton = ButtonOutline.extend`
-  transition: .2s ease-out;
-  transition-property: color, box-shadow;
-  &:hover {
-    color: magenta;
-    background-color: transparent;
-    box-shadow: inset 0 0 0 2px magenta;
-  }
-`
+})
 
-const Title = Heading.extend`
-`
+const SecondaryButton = styled(ButtonOutline)({
+  transition: '.2s ease-out',
+  transitionProperty: 'color, box-shadow',
+  '&:hover': {
+    color: 'magenta',
+    backgroundColor: 'transparent',
+    boxShadow: 'inset 0 0 0 2px magenta'
+  }
+})
+
+const Title = styled(Heading)([])
 
 const Header = connect(props => (
   <Banner
@@ -65,12 +61,12 @@ const Header = connect(props => (
           Rebass
         </Title>
         <Pre mb={2}>v{props.pkg.version}</Pre>
-        <Lead fontWeight='bold'>
+        <Lead mb={3} fontWeight='bold'>
           {props.pkg.description}
         </Lead>
         <Flex
           mx={-3}
-          mb={3}
+          mb={4}
           width={1}
           flexWrap='wrap'
           alignItems='center'>
@@ -95,7 +91,7 @@ const Header = connect(props => (
             mx={3}
             my={3}
           />
-          <Pre mx={3}>npm i rebass@next</Pre>
+          <Pre color='magenta' mx={3} my={3}>npm i rebass@next</Pre>
         </Flex>
         <Flex
           mt={3}

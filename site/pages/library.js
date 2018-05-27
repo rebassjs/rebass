@@ -1,5 +1,5 @@
 import React from 'react'
-import connect from 'refunk'
+import { connect } from 'refunk'
 import {
   Provider as KitProvider,
   Library,
