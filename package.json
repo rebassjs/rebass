@@ -4,9 +4,10 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
+    "start": "x0 examples --open",
     "prepublish": "babel src -d dist",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
-    "test": "nyc ava"
+    "test": "nyc ava test"
   },
   "keywords": [
     "components",
@@ -24,12 +25,13 @@
   "license": "MIT",
   "dependencies": {
     "chroma-js": "^1.3.6",
-    "grid-styled": "^3.2.1",
+    "grid-styled": "^4.1.0",
     "prop-types": "^15.6.0",
     "styled-system": "^2.2.5",
     "system-components": "^2.0.2"
   },
   "devDependencies": {
+    "@compositor/x0": "^5.0.0-11",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

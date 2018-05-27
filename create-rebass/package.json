@@ -1,0 +1,19 @@
+{
+  "name": "create-rebass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init.js",
+  "bin": {
+    "create-rebass": "./init.js"
+  },
+  "scripts": {
+    "test": "./init.js example"
+  },
+  "keywords": [],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "initit": "^1.0.0-2"
+  }
+}
