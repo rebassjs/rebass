@@ -1,6 +1,6 @@
 {
   "name": "create-rebass",
-  "version": "1.0.0-4",
+  "version": "1.0.0",
   "description": "",
   "main": "init.js",
   "bin": {
