@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "x0 examples --open",
-    "prepublish": "babel src -d dist",
+    "prepare": "babel src -d dist && ./docs/build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test"
   },
@@ -31,7 +31,7 @@
     "system-components": "^2.0.2"
   },
   "devDependencies": {
-    "@compositor/x0": "^5.0.0-11",
+    "@compositor/x0": "^5.0.0",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -69,8 +69,5 @@
       "docs",
       "stories"
     ]
-  },
-  "x0": {
-    "cssLibrary": "styled-components"
   }
 }

@@ -1,21 +1,19 @@
 language: node_js
 node_js:
-  - 8
+  - 10
 after_success:
   - npm run cover
 before_deploy:
-  - cd docs
+  - cd site
   - npm install
   - npm run build
   - npm run card
-  - cd ..
-  - cp .site/index.html .site/404.html
+  - npm run svg
+  - cp dist/index.html dist/404.html
 deploy:
-  edge:
-    branch: v1.8.47
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
-  local_dir: .site
+  local_dir: site/dist
   on:
     branch: master

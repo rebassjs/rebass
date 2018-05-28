@@ -1,6 +1,6 @@
 docs
+site
 test
-stories
 coverage
 .nyc_output
 .site
