@@ -8,6 +8,7 @@ const Svg = styled(({
   height,
   ...props
 }) => <svg xmlns='http://www.w3.org/2000/svg' {...props} />)`
+  transform: rotate3d(1, 1, 1, 0deg);
   ${width}
   ${height}
 `
