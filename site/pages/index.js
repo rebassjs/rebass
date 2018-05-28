@@ -13,6 +13,13 @@ export default () =>
     <Container maxWidth={1280}>
       <Intro />
       <Demo />
+      {/* Props/Responsive */}
+      {/* Colors */}
+      {/* Typography */}
+      {/* Grid */}
+      {/* Configuration/Theming */}
+      {/* Customizing/Extending*/}
+      {/* Components */}
       <CTA />
       <Footer />
     </Container>
