@@ -1,8 +1,6 @@
 
 <img src='site/logo.svg' width='128' height='128' />
 
-<img src='site/test01.svg' width='128' height='128' />
-
 # Rebass
 
 React UI component library & design system,
