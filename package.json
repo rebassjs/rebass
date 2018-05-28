@@ -4,7 +4,7 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
-    "start": "x0 examples --open",
+    "start": "kit demo --open --mode library",
     "prepare": "babel src -d dist && ./docs/build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test"
@@ -31,6 +31,9 @@
     "system-components": "^2.0.2"
   },
   "devDependencies": {
+    "@compositor/kit": "^1.0.35",
+    "@compositor/kit-cli": "^1.0.35",
+    "@compositor/kit-snapshot": "^1.0.24",
     "@compositor/x0": "^5.0.0",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
@@ -69,5 +72,8 @@
       "docs",
       "stories"
     ]
+  },
+  "kit": {
+    "title": "Rebass"
   }
 }
