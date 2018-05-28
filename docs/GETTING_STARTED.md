@@ -21,7 +21,12 @@ You might also want to set some global styles in your application.
 import { injectGlobal } from 'styled-components'
 
 injectGlobal`
-  * { box-sizing: border-box; }
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
   body { margin: 0; }
 `
 ```
