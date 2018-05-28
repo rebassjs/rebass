@@ -8,12 +8,12 @@ style="display:block;max-width:100%;margin:0;fill:none;stroke:magenta">
 <style>
 /* <![CDATA[ */
 -webkit-keyframes spin {
-  50% { transform: rotate3d(0, 1, 1, 180deg) }
-  100% { transform: rotate3d(0, 1, 1, 360deg) }
+  50% { -webkit-transform: rotate3d(0, 1, 1, 180deg); }
+  100% { -webkit-transform: rotate3d(0, 1, 1, 360deg); }
 }
 keyframes spin {
-  50% { transform: rotate3d(0, 1, 1, 180deg) }
-  100% { transform: rotate3d(0, 1, 1, 360deg) }
+  50% { transform: rotate3d(0, 1, 1, 180deg); }
+  100% { transform: rotate3d(0, 1, 1, 360deg); }
 }
 circle, .circle {
   transform-origin: 50% 50%;
