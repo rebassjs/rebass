@@ -7,11 +7,11 @@ const Svg = styled(({
   width,
   height,
   ...props
-}) => <svg {...props} />)`
-  mix-blend-mode: screen;
+}) => <svg xmlns='http://www.w3.org/2000/svg' {...props} />)`
   ${width}
   ${height}
 `
+// mix-blend-mode: screen;
 
 const spin1 = keyframes`
   50% { transform: rotate3d(0, 1, 1, 180deg) }
@@ -103,6 +103,7 @@ const Logo = props => {
       }}
       width={props.size}
       height={props.size}>
+      {props.styles}
       <circle
         cx={32}
         cy={32}

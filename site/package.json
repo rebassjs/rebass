@@ -3,6 +3,7 @@
   "scripts": {
     "start": "x0 dev pages -op 9000",
     "build": "x0 build pages",
+    "svg": "scrs src/Logo.js --svg > logo.svg",
     "card": "repng src/Card.js -w 1024 -h 512 -d dist -f card.png"
   },
   "devDependencies": {
@@ -11,6 +12,7 @@
     "rebass": "^2.0.0-2",
     "refunk": "^3.0.1",
     "repng": "^3.0.0",
+    "scrs": "^1.1.0-1",
     "styled-components": "^3.3.0"
   },
   "x0": {

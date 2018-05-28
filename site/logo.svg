@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" class="sc-bdVaJa hjqzae" viewBox="0 0 64 64" style="display:block;max-width:100%;margin:0;fill:none;stroke:magenta"><style data-styled-components="gxfrXr dmqjKR ipaUyp hjqzae hooaFf kGaidW">/*  <![CDATA[ */ 
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {} .hjqzae{width:256px;height:256px;}
+/* sc-component-id: sc-keyframes-gxfrXr */
+@-webkit-keyframes gxfrXr{50%{-webkit-transform:rotate3d(0,1,1,180deg);-ms-transform:rotate3d(0,1,1,180deg);transform:rotate3d(0,1,1,180deg);}100%{-webkit-transform:rotate3d(0,1,1,360deg);-ms-transform:rotate3d(0,1,1,360deg);transform:rotate3d(0,1,1,360deg);}} @keyframes gxfrXr{50%{-webkit-transform:rotate3d(0,1,1,180deg);-ms-transform:rotate3d(0,1,1,180deg);transform:rotate3d(0,1,1,180deg);}100%{-webkit-transform:rotate3d(0,1,1,360deg);-ms-transform:rotate3d(0,1,1,360deg);transform:rotate3d(0,1,1,360deg);}}
+/* sc-component-id: sc-keyframes-dmqjKR */
+@-webkit-keyframes dmqjKR{50%{-webkit-transform:rotate3d(1,0,1,180deg);-ms-transform:rotate3d(1,0,1,180deg);transform:rotate3d(1,0,1,180deg);}100%{-webkit-transform:rotate3d(1,0,1,360deg);-ms-transform:rotate3d(1,0,1,360deg);transform:rotate3d(1,0,1,360deg);}} @keyframes dmqjKR{50%{-webkit-transform:rotate3d(1,0,1,180deg);-ms-transform:rotate3d(1,0,1,180deg);transform:rotate3d(1,0,1,180deg);}100%{-webkit-transform:rotate3d(1,0,1,360deg);-ms-transform:rotate3d(1,0,1,360deg);transform:rotate3d(1,0,1,360deg);}}
+/* sc-component-id: sc-keyframes-ipaUyp */
+@-webkit-keyframes ipaUyp{0%{stroke:magenta;}33%{stroke:cyan;}66%{stroke:yellow;}100%{stroke:magenta;}} @keyframes ipaUyp{0%{stroke:magenta;}33%{stroke:cyan;}66%{stroke:yellow;}100%{stroke:magenta;}}
+/* sc-component-id: sc-bwzfXH */
+.sc-bwzfXH {} .hooaFf{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-animation-name:gxfrXr,ipaUyp;animation-name:gxfrXr,ipaUyp;-webkit-animation-duration:3s,5s;animation-duration:3s,5s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;}
+/* sc-component-id: sc-htpNat */
+.sc-htpNat {} .kGaidW{-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-animation-name:dmqjKR,ipaUyp;animation-name:dmqjKR,ipaUyp;-webkit-animation-duration:3s,6s;animation-duration:3s,6s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;} /* ]]> */</style><circle cx="32" cy="32" r="30" stroke-width="1" vector-effect="non-scaling-stroke" opacity="0.5"></circle><g><circle class="sc-bwzfXH hooaFf" cx="32" cy="32" r="24" stroke-width="2" vector-effect="non-scaling-stroke"></circle><circle class="sc-htpNat kGaidW" cx="32" cy="32" r="24" stroke-width="2" vector-effect="non-scaling-stroke"></circle></g></svg>
