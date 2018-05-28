@@ -3,7 +3,6 @@
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg
 xmlns="http://www.w3.org/2000/svg"
-class="sc-bdVaJa hjqzae"
 viewBox="0 0 64 64"
 style="display:block;max-width:100%;margin:0;fill:none;stroke:magenta">
 <style>
@@ -16,9 +15,13 @@ keyframes spin {
   50% { transform: rotate3d(0, 1, 1, 180deg) }
   100% { transform: rotate3d(0, 1, 1, 360deg) }
 }
-circle {
+circle, .circle {
   transform-origin: 50% 50%;
   fill: cyan;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
   animation-name: spin;
   animation-duration: 5s;
   animation-timing-function: linear;
@@ -27,6 +30,7 @@ circle {
 /* ]]> */
 </style>
 <circle
+  class='circle'
   cx="32"
   cy="32"
   r="30"
