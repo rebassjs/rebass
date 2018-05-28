@@ -5,6 +5,9 @@ import { create as render } from 'react-test-renderer'
 import * as Rebass from '../src'
 import { Provider, theme } from '../src'
 
+// import snapshot from '@compositor/kit-snapshot'
+// import * as examples from '../demo'
+
 import {
   __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
 } from 'styled-components'

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button } from '../src'
 
-export default () => (
+export default () =>
   <Button>Button</Button>
-)

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Heading } from '../src'
 
-export default () => (
+export default () =>
   <Heading>Heading</Heading>
-)
