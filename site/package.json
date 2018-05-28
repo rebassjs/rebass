@@ -4,7 +4,7 @@
     "start": "x0 dev pages -op 9000",
     "build": "x0 build pages",
     "svg": "scrs src/Logo.js --svg > logo.svg",
-    "card": "repng src/Card.js -w 1024 -h 512 -f card.png"
+    "card": "repng src/Card.js -w 1024 -h 512 -d -f card.png"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.35",

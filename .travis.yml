@@ -7,8 +7,8 @@ before_deploy:
   - cd site
   - npm install
   - npm run build
-  - npm run card
   - npm run svg
+  - cp card.png dist
   - cp dist/index.html dist/404.html
 deploy:
   provider: pages
