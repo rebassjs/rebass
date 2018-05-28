@@ -8,7 +8,6 @@ import {
   LiveError,
   LiveEditor,
 } from 'react-live'
-import XRay from 'react-x-ray'
 import * as Rebass from 'rebass'
 import {
   Flex,
@@ -68,16 +67,11 @@ const Live = props => {
       <Flex flexWrap='wrap'>
         <Border width={[ 1, null, 3/5 ]}>
           <Relative>
-            <XRay
-              color={theme.colors.blue2}
-              backgroundColor={theme.colors.gray9}
-              disabled={!props.xray}>
-              <Box
-                p={3}
-                style={{ minHeight: 128 }}>
-                <LivePreview />
-              </Box>
-            </XRay>
+            <Box
+              p={3}
+              style={{ minHeight: 128 }}>
+              <LivePreview />
+            </Box>
             <Absolute top={0} left={0} right={0}>
               <Err />
             </Absolute>
