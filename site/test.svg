@@ -7,7 +7,7 @@ class="sc-bdVaJa hjqzae"
 viewBox="0 0 64 64"
 style="display:block;max-width:100%;margin:0;fill:none;stroke:magenta">
 <style>
-.circle {
+circle {
   fill: cyan;
 }
 </style>
