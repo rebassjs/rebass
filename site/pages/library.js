@@ -88,7 +88,9 @@ const colors = (
 const Demo = connect(props => (
   <RebassProvider>
       <CSS />
-      <Library title='Rebass'>
+      <Library
+        title='Rebass'
+        basename='/rebass/library'>
         <Example name='Box'>
           <Box p={3} bg='gray'> Box </Box>
         </Example>
