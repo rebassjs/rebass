@@ -7,8 +7,17 @@ class="sc-bdVaJa hjqzae"
 viewBox="0 0 64 64"
 style="display:block;max-width:100%;margin:0;fill:none;stroke:magenta">
 <style>
+keyframes spin {
+  50% { transform: rotate3d(0, 1, 1, 180deg) }
+  100% { transform: rotate3d(0, 1, 1, 360deg) }
+}
 circle {
+  transform-origin: 50% 50%;
   fill: cyan;
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 </style>
 <circle
