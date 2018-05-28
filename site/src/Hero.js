@@ -16,7 +16,8 @@ import {
   Image,
 } from 'rebass'
 import Logo from './Logo'
-// import Tweet from './Tweet'
+import { docs, install } from './constants'
+import Tweet from './Tweet'
 
 const PrimaryButton = styled(Button)({
   transition: 'background-color .2s ease-out',
@@ -71,8 +72,8 @@ const Header = connect(props => (
           flexWrap='wrap'
           alignItems='center'>
           <PrimaryButton
-            is={Link}
-            to='/getting-started'
+            is='a'
+            href={docs}
             fontSize={2}
             color='black'
             bg='white'
@@ -91,7 +92,7 @@ const Header = connect(props => (
             mx={3}
             my={3}
           />
-          <Pre color='magenta' mx={3} my={3}>npm i rebass@next</Pre>
+          <Pre color='magenta' mx={3} my={3}>{install}</Pre>
         </Flex>
         <Flex
           mt={3}
@@ -114,7 +115,7 @@ const Header = connect(props => (
               src='https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star'
             />
           </BlockLink>
-          {false && <Tweet />}
+          <Tweet />
         </Flex>
       </Box>
     </Flex>

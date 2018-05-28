@@ -99,7 +99,7 @@ const Logo = props => {
         maxWidth: '100%',
         margin: 0,
         fill: 'none',
-        stroke: 'magenta'
+        stroke: 'cyan'
       }}
       width={props.size}
       height={props.size}>

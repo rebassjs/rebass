@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { width } from 'styled-system'
-import connect from 'refunk'
+import { connect } from 'refunk'
 import {
   LiveProvider,
   LivePreview,
@@ -49,6 +49,8 @@ const toggle = key => state => ({
   [key]: !state[key]
 })
 
+const transform = src => `<React.Fragment>${src}</React.Fragment>`
+
 const Live = props => {
   const {
     code,
@@ -61,6 +63,7 @@ const Live = props => {
       code={code}
       noInline={noInline}
       scope={scope}
+      transformCode={transform}
       mountStylesheet={false}>
       <Flex flexWrap='wrap'>
         <Border width={[ 1, null, 3/5 ]}>

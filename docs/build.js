@@ -9,10 +9,10 @@ const filename = path.join(__dirname, 'components.md')
 const keys = Object.keys(Rebass)
 
 const examples = fs.readdirSync(
-  path.join(__dirname, '../site/examples')
+  path.join(__dirname, './examples')
 )
   .reduce((a, b) => Object.assign({}, a, {
-    [path.basename(b, path.extname(b))]: path.join(__dirname, '../site/examples', b)
+    [path.basename(b, path.extname(b))]: path.join(__dirname, './examples', b)
   }), {})
 
 const template = ({
