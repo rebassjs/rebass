@@ -71,6 +71,11 @@ const App = props => (
 - [Components](docs/components.md)
 - [Server-Side Rendering](server-side-rendering.md)
 
+## CodeSandbox
+
+Try it out:
+
+https://codesandbox.io/s/github/jxnblk/rebass/tree/master/examples/sandbox
 
 ### Architectural Approach
 
