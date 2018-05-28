@@ -69,6 +69,7 @@ const Logo = props => {
       <g>
         <ElectronStatic1
           {...electronProps}
+          stroke='magenta'
           style={{
             transformOrigin: '50% 50%',
             transform: 'rotate3d(0, 1, 1, 90deg)'
@@ -76,6 +77,7 @@ const Logo = props => {
         />
         <ElectronStatic2
           {...electronProps}
+          stroke='magenta'
           style={{
             transformOrigin: '50% 50%',
             transform: 'rotate3d(1, 0, 1, 90deg)'
@@ -101,6 +103,7 @@ const Logo = props => {
         fill: 'none',
         stroke: 'cyan'
       }}
+      vectorEffect='non-scaling-stroke'
       width={props.size}
       height={props.size}>
       {props.styles}

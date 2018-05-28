@@ -29,6 +29,7 @@ const PrimaryButton = styled(Button)({
 const SecondaryButton = styled(ButtonOutline)({
   transition: '.2s ease-out',
   transitionProperty: 'color, box-shadow',
+  backgroundColor: 'transparent',
   '&:hover': {
     color: 'magenta',
     backgroundColor: 'transparent',
