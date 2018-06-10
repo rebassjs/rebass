@@ -23,10 +23,10 @@ export const Select = sys({
   appearance: 'none',
   width: '100%',
   border: 0,
-  backgroundImage: `url("${arrow}")`,
+  background: `url("data:image/svg+xml;utf8,${arrow}")`,
+  backgroundPosition: 'calc(100% - 8px) center',
+  backgroundRepeat: 'no-repeat',
   backgroundSize: '8px 8px',
-  // backgroundRepeat: 'no-repeat',
-  // backgroundPosition: 'center right',
   '&:disabled': {
     opacity: 1/4
   }
