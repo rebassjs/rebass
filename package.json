@@ -4,7 +4,7 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
-    "start": "kit demo --open --mode library",
+    "start": "x0 demo --open",
     "prepare": "babel src -d dist && ./docs/build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test"
@@ -31,10 +31,9 @@
     "system-components": "^2.0.2"
   },
   "devDependencies": {
-    "@compositor/kit": "^1.0.35",
-    "@compositor/kit-cli": "^1.0.35",
+    "@compositor/kit": "^1.0.39",
     "@compositor/kit-snapshot": "^1.0.24",
-    "@compositor/x0": "^5.0.0",
+    "@compositor/x0": "^5.0.5",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -43,11 +42,11 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "codecov": "^3.0.0",
-    "nyc": "^11.4.1",
+    "nyc": "^11.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.2.0"
+    "styled-components": "^3.3.2"
   },
   "peerDependencies": {
     "styled-components": ">=2.0 || >= 3.0"
