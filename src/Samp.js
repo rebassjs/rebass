@@ -1,11 +1,16 @@
 import React from 'react'
+import sys from 'system-components'
 import Code from './Code'
 
-export const Samp = props =>
+const Base = props =>
   <Code
     is='samp'
     {...props}
   />
+
+export const Samp = sys({
+  is: Base
+})
 
 Samp.displayName = 'Samp'
 

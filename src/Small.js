@@ -1,12 +1,14 @@
 import React from 'react'
+import sys from 'system-components'
 import Text from './Text'
 
-export const Small = props =>
-  <Text
-    is='small'
-    fontSize={0}
-    {...props}
-  />
+const Base = props =>
+  <Text {...props} is='small' />
+
+export const Small = sys({
+  is: Base,
+  fontSize: 0
+})
 
 Small.displayName = 'Small'
 

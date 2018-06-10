@@ -1,12 +1,17 @@
 import React from 'react'
+import sys from 'system-components'
 import Heading from './Heading'
 
-export const Subhead = props =>
+const Base = props =>
   <Heading
     is='h3'
-    fontSize={4}
     {...props}
   />
+
+export const Subhead = sys({
+  is: Base,
+  fontSize: 4
+})
 
 Subhead.displayName = 'Subhead'
 
