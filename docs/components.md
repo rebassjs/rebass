@@ -176,6 +176,10 @@ Extends [ButtonTransparent](#buttontransparent)
 />
 ```
 
+### Props
+
+- `fontSize`
+
 ## Caps
 
 ## Small
@@ -186,13 +190,24 @@ Extends [ButtonTransparent](#buttontransparent)
 />
 ```
 
+### Props
+
+- `fontSize`
+
 ## Lead
+
+Extends [Text](#text)
 
 ```jsx
 <Lead>
   Hello Lead
 </Lead>
 ```
+
+### Props
+
+- `fontSize`
+- `lineHeight`
 
 ## Truncate
 
@@ -211,6 +226,10 @@ Extends [Text](#text)
   “The simplest scale is a single note, and sticking with a single note draws more attention to other parameters, such as rhythm and inflection.”
 </Blockquote>
 ```
+
+### Props
+
+- `fontSize`
 
 ## Divider
 
