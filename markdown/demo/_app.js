@@ -7,7 +7,7 @@ import md from '..'
 export default ({ render }) => (
   <MDXProvider components={md()}>
     <Provider>
-      <Container>
+      <Container width={800}>
         {render()}
       </Container>
     </Provider>

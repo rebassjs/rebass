@@ -1,31 +1,58 @@
+const React = require('react')
 const Rebass = require('rebass')
 
 const defaultProps = {
   h1: {
     is: 'h1',
-    fontSize: 7
+    mt: 5,
+    mb: 3,
+    f: 7
   },
   h2: {
     is: 'h2',
-    fontSize: 6
+    mt: 4,
+    mb: 3,
+    f: 6
   },
   h3: {
     is: 'h3',
-    fontSize: 5
+    mt: 4,
+    mb: 3,
+    f: 5
   },
   h4: {
     is: 'h4',
-    fontSize: 4
+    mt: 4,
+    mb: 3,
+    f: 4
   },
   h5: {
     is: 'h5',
-    fontSize: 2
+    mt: 4,
+    mb: 3,
+    f: 2
   },
   h6: {
     is: 'h6',
-    fontSize: 1,
+    mt: 4,
+    mb: 3,
+    f: 1
+  },
+
+  p: {
+    is: 'p',
+    f: 3,
+    mb: 4
+  },
+
+  a: {
+    is: 'a',
+    color: 'blue'
+  },
+
+  img: {
     css: `
-      text-transform: uppercase;
+      max-width: 100%;
     `
   }
 }
@@ -33,8 +60,17 @@ const defaultProps = {
 const ext = (Component, props = {}) => {
   const css = props.css
   delete props.css
-  const C = Component.extend`${css || ''}`
+
+  let C = null
+
+  if (css) {
+    C = Component.extend`${css || ''}`
+  } else {
+    C = props => React.createElement(Component, props)
+  }
+
   C.defaultProps = props
+
   return C
 }
 
@@ -48,5 +84,7 @@ module.exports = userProps => {
     h4: ext(Rebass.Heading, props.h4),
     h5: ext(Rebass.Heading, props.h5),
     h6: ext(Rebass.Heading, props.h6),
+    p: ext(Rebass.Text, props.p),
+    img: ext(Rebass.Image, props.img)
   }
 }
