@@ -8,7 +8,7 @@ built with [styled-components][sc] and [styled-system][system].
 
 [![Build Status][badge]][travis]
 
-[badge]: https://img.shields.io/travis/jxnblk/rebass/master.svg?style=flat-square
+[badge]: https://img.shields.io/travis/jxnblk/rebass.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/rebass
 
 http://jxnblk.com/rebass
