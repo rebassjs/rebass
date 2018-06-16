@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "x0 demo --open",
-    "prepare": "babel src -d dist && ./docs/build.js",
+    "prepare": "babel src -d dist && ./docs/_build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test"
   },
