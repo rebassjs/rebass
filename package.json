@@ -30,7 +30,7 @@
     "grid-styled": "^4.1.0",
     "prop-types": "^15.6.0",
     "styled-system": "^2.2.5",
-    "system-components": "^2.1.0-0"
+    "system-components": "^2.1.0"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.39",
