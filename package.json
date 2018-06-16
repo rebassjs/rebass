@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "x0 demo --open",
-    "prepare": "babel src -d dist && ./docs/_build.js",
+    "prepare": "babel src -d dist && npm run emotion && ./docs/_build.js",
+    "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
+    "docs": "./docs/_build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test"
   },
@@ -28,7 +30,7 @@
     "grid-styled": "^4.1.0",
     "prop-types": "^15.6.0",
     "styled-system": "^2.2.5",
-    "system-components": "^2.0.2"
+    "system-components": "^2.1.0-0"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.39",
@@ -37,14 +39,17 @@
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "codecov": "^3.0.0",
+    "emotion": "^9.2.3",
     "nyc": "^11.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-emotion": "^9.2.3",
     "react-test-renderer": "^16.2.0",
     "styled-components": "^3.3.2"
   },

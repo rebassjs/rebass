@@ -3,5 +3,18 @@
     "env",
     "stage-0",
     "react"
-  ]
+  ],
+  "env": {
+    "emotion": {
+      "plugins": [
+        [
+          "transform-rename-import",
+          {
+            "original": "^system-components$",
+            "replacement": "system-components/emotion"
+          }
+        ]
+      ]
+    }
+  }
 }
