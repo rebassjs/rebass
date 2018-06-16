@@ -7,9 +7,12 @@ React UI component library & design system,
 built with [styled-components][sc] and [styled-system][system].
 
 [![Build Status][badge]][travis]
+[![Coverage][coverage-badge]][coverage]
 
 [badge]: https://img.shields.io/travis/jxnblk/rebass/master.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/rebass
+[coverage-badge]: https://img.shields.io/codecov/c/github/jxnblk/rebass.svg?style=flat-square
+[coverage]: https://codecov.io/github/jxnblk/rebass
 
 http://jxnblk.com/rebass
 

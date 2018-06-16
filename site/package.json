@@ -7,8 +7,8 @@
     "card": "repng src/Card.js -w 1024 -h 512 -d -f card.png"
   },
   "devDependencies": {
-    "@compositor/kit": "^1.0.35",
-    "@compositor/x0": "^5.0.1",
+    "@compositor/kit": "1.0.35",
+    "@compositor/x0": "^5.0.8",
     "rebass": "^2.0.0-2",
     "refunk": "^3.0.1",
     "repng": "^3.0.0",
