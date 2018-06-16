@@ -4,7 +4,9 @@
 # Rebass
 
 React UI component library & design system,
-built with [styled-components][sc] and [styled-system][system].
+built with [styled-system][system],
+with support for
+[styled-components][sc] & [emotion][emotion].
 
 [![Build Status][badge]][travis]
 [![Coverage][coverage-badge]][coverage]
@@ -40,12 +42,18 @@ const App = props => (
 )
 ```
 
+To use Rebass with [emotion][emotion], import from `rebass/emotion`:
+
+```js
+import * as Rebass from 'rebass/emotion'
+```
+
 ## Features
 
 - Kickstart your own React component library
 - Responsive style props from [styled-system][system]
 - Flexbox grid with [grid-styled][gs]
-- Style encapsulation with [styled-components][sc]
+- Support for [styled-components][sc] & [emotion][emotion]
 - Functional stateless UI components
 - Configurable theming
 - Extensible base components
@@ -103,10 +111,12 @@ for more on some of the thought behind Rebass.
 - [styled-system][system]
 - [grid-styled][gs]
 - [styled-components][sc]
+- [emotion][emotion]
 
 [system]: https://github.com/jxnblk/styled-system
 [gs]: https://github.com/jxnblk/grid-styled
 [sc]: https://github.com/styled-components/styled-components
+[emotion]: https://github.com/emotion-js/emotion
 
 #### v1.0.7
 
