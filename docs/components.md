@@ -62,13 +62,21 @@
 
 ## ButtonOutline
 
+Extends [Button](#button)
+
 ```jsx
 <ButtonOutline
   children='Hello'
 />
 ```
 
+### Props
+
+- `hover`
+
 ## ButtonCircle
+
+Extends [Button](#button)
 
 ```jsx
 <ButtonCircle
@@ -76,13 +84,23 @@
 />
 ```
 
+### Props
+
+- `borderRadius`
+
 ## ButtonTransparent
+
+Extends [Button](#button)
 
 ```jsx
 <ButtonTransparent>
   Hello
 </ButtonTransparent>
 ```
+
+### Props
+
+- `focus`
 
 ## Link
 

@@ -1,13 +1,12 @@
-import styled from 'styled-components'
+import sys from 'system-components'
 import Button from './Button'
 
-export const ButtonCircle = styled(Button)([])
+export const ButtonCircle = sys({
+  is: Button,
+  px: 3,
+  borderRadius: 9999
+})
 
 ButtonCircle.displayName = 'ButtonCircle'
-
-ButtonCircle.defaultProps = {
-  px: 3,
-  borderRadius: 99999
-}
 
 export default ButtonCircle

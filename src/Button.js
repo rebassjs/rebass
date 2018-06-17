@@ -12,7 +12,7 @@ export const Button = sys({
   color: 'white',
   bg: 'blue',
   borderRadius: 2,
-  border: 0,
+  border: 0
 },
   props => ({
     fontFamily: 'inherit',
@@ -25,6 +25,12 @@ export const Button = sys({
     '&:disabled': {
       opacity: 1/4
     },
+  }),
+  props => ({
+    '&:focus': {
+      outline: 'none',
+      boxShadow: `0 0 0 2px ${themeGet('colors.' + props.bg, props.bg)(props)}`
+    }
   })
 )
 
