@@ -1,6 +1,9 @@
 const React = require('react')
 const Rebass = require('rebass')
-const merge = require('deepmerge').default
+const deepMerge = require('deepmerge') //.default
+
+// hack for webpack
+const merge = deepMerge.default || deepMerge
 
 const {
   Base,
@@ -181,7 +184,7 @@ const tags = Object.keys(components)
 module.exports = (customProps = {}) => {
   const scope = {}
   tags.forEach(tag => {
-    const Component = components[tag] || Box
+    const Component = components[tag]
     const props = merge(defaultProps[tag], customProps[tag] || {})
     scope[tag] = createComponent(Component, props)
   })

@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "start": "x0 demo -o",
-    "test": "ava"
+    "test": "nyc ava"
   },
   "keywords": [
     "rebass",
@@ -23,6 +23,8 @@
     "@compositor/x0": "^5.0.8",
     "@mdx-js/tag": "^0.11.0-0",
     "ava": "^0.25.0",
+    "nyc": "^12.0.2",
+    "react-test-renderer": "^16.4.1",
     "rebass": "^2.0.0-6",
     "remark-autolink-headings": "^5.0.0",
     "remark-slug": "^5.0.0",
