@@ -22,17 +22,6 @@ export const Button = sys({
     textAlign: 'center',
     textDecoration: 'none',
     appearance: 'none',
-    '&:hover': {
-      boxShadow: `inset 0 0 0 999px ${themeGet('colors.darken.0')(props)}`
-    },
-    '&:focus': {
-      outline: 0,
-      boxShadow: `0 0 0 2px ${themeGet('colors.blue')(props)}`
-    },
-    '&:active': {
-      backgroundColor: themeGet('colors.blue.6')(props),
-      boxShadow: `inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
-    },
     '&:disabled': {
       opacity: 1/4
     },
