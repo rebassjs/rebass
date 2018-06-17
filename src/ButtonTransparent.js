@@ -1,26 +1,17 @@
-import styled from 'styled-components'
-import { themeGet } from 'styled-system'
+import sys from 'system-components'
 import Button from './Button'
 
-export const ButtonTransparent = styled(Button)([], props => ({
-  '&:hover': {
-    color: themeGet('colors.' + props.color)(props),
-    backgroundColor: 'transparent'
-  },
-  '&:focus': {
-    boxShadow: `inset 0 0 0 2px, 0 0 0 2px`
-  },
-  '&:active': {
-    backgroundColor: 'transparent',
-    boxShadow: `inset 0 0 0 2px, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
+export const ButtonTransparent = sys({
+  is: Button,
+  bg: 'transparent',
+  color: 'inherit',
+  focus: {
+    outline: 'none',
+    boxShadow: 'none',
+    color: 'blue',
   }
-}))
+})
 
 ButtonTransparent.displayName = 'ButtonTransparent'
-
-ButtonTransparent.defaultProps = {
-  color: 'inherit',
-  bg: 'transparent'
-}
 
 export default ButtonTransparent
