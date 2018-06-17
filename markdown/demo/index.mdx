@@ -1,14 +1,55 @@
-# Heading 1
+# Rebass Markdown
+
+Rebass to HTML component mappings with smart defaults for use in markdown
+
+```sh
+npm i @rebass/markdown
+```
+
+# Heading1
+
 ## Heading 2
+
 ### Heading 3
+
 #### Heading 4
+
 ##### Heading 5
+
 ###### Heading 6
 
-This is a paragraph with an _emphasis_, `code`, and *bold* items.
+## Paragraphs
+
+Rebass is a library of highly-composable, primitive UI components for React, built with styled-components to keep styles isolated and reduce the need to write custom CSS in your application. Based upon a configurable design system, Rebass’s props API makes building consistent, responsive web apps simpler and faster.
+
+This is a paragraph with an _emphasis_, `code`, and **bold** items.
 
 This is another paragraph with a [link](..).
 
 ![](https://compositor.io/images/iso-hero.jpg)
 
 > This is a quote
+
+
+```jsx
+<Text>
+  This is a code fence
+</Text>
+```
+
+## Lists
+
+- This is a list
+- With list items
+  - And some nested items
+  - Another nested item
+- Rebass doesn't currently have a List component
+
+## Tables
+
+Prop | Type | Description
+---|---|---
+`width` | Number or Array | Sets width responsively
+`color` | String | Sets color based on theme key
+`bg` | String | Sets background-color based on theme key
+

@@ -1,6 +1,6 @@
 {
-  "name": "rebass-markdown",
-  "version": "1.0.0",
+  "name": "@rebass/markdown",
+  "version": "1.0.0-0",
   "description": "Rebass markdown component mapping",
   "author": "John Otander",
   "license": "MIT",
@@ -16,18 +16,20 @@
     "mdx"
   ],
   "peerDependencies": {
-    "rebass": "2.x"
+    "rebass": "2.x",
+    "styled-components": "3.x"
   },
   "devDependencies": {
     "@compositor/x0": "^5.0.8",
     "@mdx-js/tag": "^0.11.0-0",
     "ava": "^0.25.0",
-    "rebass": "^1.0.7"
-  },
-  "x0": {
-    "cssLibrary": "styled-components"
+    "rebass": "^2.0.0-6",
+    "remark-autolink-headings": "^5.0.0",
+    "remark-slug": "^5.0.0",
+    "styled-components": "^3.3.2"
   },
   "dependencies": {
-    "styled-components": "^3.3.2"
+    "deepmerge": "^2.1.1",
+    "object-assign": "^4.1.1"
   }
 }
