@@ -1,4 +1,0 @@
-<Link
-  href='#!'
-  children='Hello'
-/>

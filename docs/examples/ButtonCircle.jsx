@@ -1,3 +1,0 @@
-<ButtonCircle
-  children='Hello'
-/>

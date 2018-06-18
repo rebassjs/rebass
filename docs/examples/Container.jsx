@@ -1,3 +1,0 @@
-<Container>
-  Hello
-</Container>

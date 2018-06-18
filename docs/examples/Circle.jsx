@@ -1,3 +1,0 @@
-<Circle>
-  A
-</Circle>

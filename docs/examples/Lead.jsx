@@ -1,3 +1,0 @@
-<Lead>
-  Hello Lead
-</Lead>

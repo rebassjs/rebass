@@ -16,8 +16,8 @@ import {
   Relative,
   Absolute,
   theme
-} from 'rebass'
-import { photo } from './constants'
+} from '../src'
+import { photo } from './_constants'
 
 const { colors } = theme
 
@@ -50,7 +50,7 @@ const toggle = key => state => ({
 
 const transform = src => `<React.Fragment>${src}</React.Fragment>`
 
-const Live = props => {
+const Live = connect(props => {
   const {
     code,
     noInline
@@ -83,6 +83,10 @@ const Live = props => {
       </Flex>
     </LiveProvider>
   )
+})
+
+Live.defaultProps = {
+  ignore: true
 }
 
-export default connect(Live)
+export default Live

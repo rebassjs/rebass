@@ -1,3 +1,0 @@
-<Label>
-  Hello Label
-</Label>

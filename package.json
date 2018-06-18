@@ -4,7 +4,7 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
-    "start": "x0 demo --open",
+    "start": "ok docs",
     "prepare": "babel src -d dist && npm run emotion && ./docs/_build.js",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "docs": "./docs/_build.js",
@@ -47,10 +47,12 @@
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
     "nyc": "^12.0.2",
+    "ok-docs": "^1.0.0-11",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
     "react-test-renderer": "^16.2.0",
+    "refunk": "^3.0.1",
     "styled-components": "^3.3.2"
   },
   "peerDependencies": {
@@ -77,7 +79,7 @@
       "stories"
     ]
   },
-  "kit": {
+  "ok": {
     "title": "Rebass"
   }
 }
