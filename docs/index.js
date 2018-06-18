@@ -271,7 +271,7 @@ export default class extends React.Component {
     return (
       <React.Fragment>
         <Hero />
-        <Container maxWidth={1280}>
+        <Container maxWidth={1280} pb={6}>
           <Intro />
           <Demo />
           <CTA />

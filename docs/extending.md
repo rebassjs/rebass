@@ -3,7 +3,7 @@
 
 Rebass components can be completely customized using styled-components' `.extend` method.
 
-```..jsx
+```jsx
 const CustomButton = Button.extend`
   border: 1px solid rgba(0, 0, 0, .25);
   background-image: linear-gradient(transparent, rgba(0, 0, 0, .125));
