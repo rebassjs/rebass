@@ -15,7 +15,6 @@ import {
   Text,
   Lead,
   Button,
-  ButtonOutline,
   Pre,
   BlockLink,
   Image,
@@ -35,10 +34,11 @@ const PrimaryButton = styled(Button)({
   }
 })
 
-const SecondaryButton = styled(ButtonOutline)({
+const SecondaryButton = styled(Button)({
   transition: '.2s ease-out',
   transitionProperty: 'color, box-shadow',
   backgroundColor: 'transparent',
+  boxShadow: 'inset 0 0 0 2px',
   '&:hover': {
     color: 'magenta',
     backgroundColor: 'transparent',
