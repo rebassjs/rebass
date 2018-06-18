@@ -29,6 +29,19 @@ export default class extends React.Component {
       <React.Fragment>
         <Head>
           <title>Rebass</title>
+          <meta
+            name='description'
+            content='React UI component library & design system, built with styled-components and styled-system'
+          />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:site' content='@jxnblk' />
+          <meta name='twitter:title' content='Rebass' />
+          <meta
+            name='twitter:description'
+            content='React UI component library & design system, built with styled-components and styled-system'
+          />
+          <meta name='twitter:image' content='https://jxnblk.com/rebass/card.png' />
+          <link rel='stylesheet' href='https://fonts.google.com/css?family=Roboto+Mono' />
         </Head>
         <ScopeProvider scope={scope}>
           <RefunkProvider pkg={pkg}>
