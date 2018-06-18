@@ -21,7 +21,7 @@ import { photo } from './_constants'
 
 const { colors } = theme
 
-const _scope = { ...Rebass, ...styled, ...photo }
+const _scope = { ...Rebass, photo }
 
 const Editor = styled(LiveEditor)`
   font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
