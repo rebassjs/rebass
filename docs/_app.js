@@ -57,7 +57,10 @@ export default class extends React.Component {
         <ScopeProvider scope={scope}>
           <RefunkProvider pkg={pkg}>
             <Rebass.Provider>
-              <Component {...this.props} />
+              <Component
+                {...this.props}
+                nav={nav}
+              />
               <Scripts />
             </Rebass.Provider>
           </RefunkProvider>
