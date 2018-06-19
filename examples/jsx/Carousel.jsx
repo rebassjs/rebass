@@ -1,5 +1,5 @@
 <Carousel
-  index={checked ? 1 : 0}>
+  index={false ? 1 : 0}>
   <Box bg='blue'>
     <Flex
       p={6}

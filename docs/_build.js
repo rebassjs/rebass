@@ -20,11 +20,23 @@ const template = ({
 }) => `
 # Components
 
-${components.map(({ name, props, example, extension }) => (
+<details>
+  <summary>Table of Contents</summary>
+  <ul>
+    ${components.map(({ name }) => `<li><a href='#${name.toLowerCase()}'>${name}</a></li>`).join('\n')}
+  </ul>
+</details>
+
+${components
+  .map(comp => {
+    if (!comp.example) console.log(`no example for:`, comp.name)
+    return comp
+  })
+  .map(({ name, props, example, extension }) => (
 `## ${name}
 
 ${extension ? `Extends [${extension}](#${extension.toLowerCase()})\n` : ''}
-${example ? '```jsx\n' + example + '```\n' : ''}
+${example ? '```.jsx\n' + example + '```\n' : ''}
 ${props.length ? '### Props\n' : ''}
 ${props.map(prop => (
   `- \`${prop.name}\``

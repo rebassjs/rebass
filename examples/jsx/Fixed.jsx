@@ -1,9 +1,5 @@
 <div>
-  <Button
-    onClick={e => update(toggle('fixed'))}
-    children='Toggle Fixed'
-  />
-  {fixed && (
+  {false && (
     <Fixed
       m={2}
       p={3}

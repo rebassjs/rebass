@@ -23,6 +23,7 @@ export default class extends React.Component {
       'server-side-rendering',
     ]
   }
+
   render () {
     const { Component, nav } = this.props
     nav.push({
