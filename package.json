@@ -9,7 +9,9 @@
     "docs": "./docs/_build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test",
-    "start": "ok docs",
+    "_start": "ok docs",
+    "version": "x0 --version",
+    "start": "x0 docs -p 9999",
     "build": "ok build docs -d site --basename '/rebass'",
     "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
     "card": "repng docs/Card.js -w 1024 -h 512 -d docs -f card.png"
@@ -37,7 +39,7 @@
   },
   "devDependencies": {
     "@compositor/kit-snapshot": "^1.0.24",
-    "@compositor/x0": "^5.0.5",
+    "@compositor/x0": "^5.1.0-0",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

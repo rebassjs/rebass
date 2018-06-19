@@ -1,9 +1,13 @@
 import React from 'react'
 import { Provider as RefunkProvider } from 'refunk'
-import { Head, ScopeProvider } from 'ok-docs'
+// import { Head, ScopeProvider } from 'ok-docs'
+import { Helmet as Head } from 'react-helmet'
+import { ScopeProvider } from '@compositor/x0/components'
 import pkg from '../package.json'
 import * as Rebass from '../src'
 import { photo } from './_constants'
+
+import Layout from '!!babel-loader!ok-docs/src/Layout'
 
 const scope = {
   ...Rebass,
@@ -24,8 +28,14 @@ export default class extends React.Component {
     ]
   }
 
+  state = {
+    menu: false,
+    update: fn => this.setState(fn)
+  }
+
   render () {
-    const { Component, nav } = this.props
+    // const { Component, nav } = this.props
+    /*
     nav.push({
       key: 'github',
       name: 'GitHub',
@@ -36,6 +46,16 @@ export default class extends React.Component {
       name: 'Made by Jxnblk',
       path: 'https://jxnblk.com',
     })
+    */
+
+    // x0 app
+    const {
+      routes,
+      route,
+      render
+    } = this.props
+
+    const nav = [...routes]
 
     return (
       <React.Fragment>
@@ -58,10 +78,19 @@ export default class extends React.Component {
         <ScopeProvider scope={scope}>
           <RefunkProvider pkg={pkg}>
             <Rebass.Provider>
+              <Layout
+                {...this.state}
+                routes={routes}
+                nav={nav}
+                content={render()}
+              />
+              {/*
+              {render()}
               <Component
                 {...this.props}
                 nav={nav}
               />
+              */}
               <Scripts />
             </Rebass.Provider>
           </RefunkProvider>
