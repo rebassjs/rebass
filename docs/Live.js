@@ -8,7 +8,7 @@ import {
   LiveError,
   LiveEditor,
 } from 'react-live'
-import * as Rebass from 'rebass'
+import * as Rebass from '../src'
 import {
   Flex,
   Box,
