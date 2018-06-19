@@ -24,7 +24,18 @@ export default class extends React.Component {
     ]
   }
   render () {
-    const { children } = this.props
+    const { Component, nav } = this.props
+    nav.push({
+      key: 'github',
+      name: 'GitHub',
+      path: 'https://github.com/jxnblk/rebass',
+    })
+    nav.push({
+      key: 'jxnblk',
+      name: 'Mad by Jxnblk',
+      path: 'https://jxnblk.com',
+    })
+
     return (
       <React.Fragment>
         <Head>
@@ -46,7 +57,7 @@ export default class extends React.Component {
         <ScopeProvider scope={scope}>
           <RefunkProvider pkg={pkg}>
             <Rebass.Provider>
-              {children}
+              <Component {...this.props} />
               <Scripts />
             </Rebass.Provider>
           </RefunkProvider>
