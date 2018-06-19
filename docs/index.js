@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'refunk'
 import styled from 'styled-components'
+import { Link as RouterLink } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -77,8 +78,8 @@ const Hero = connect(props => (
           flexWrap='wrap'
           alignItems='center'>
           <PrimaryButton
-            is='a'
-            href={docs}
+            is={RouterLink}
+            to={docs}
             fontSize={2}
             color='black'
             bg='white'
@@ -253,10 +254,10 @@ const CTA = props =>
       <Box mx='auto' />
       <Box>
         <Button
-          is='a'
+          is={RouterLink}
           fontSize={2}
           py={3}
-          href={docs}>
+          to={docs}>
           Documentation
         </Button>
       </Box>
@@ -265,7 +266,7 @@ const CTA = props =>
   </Box>
 
 const Footer = props =>
-  <Flex>
+  <Flex mx={-2}>
     <NavLink href='https://github.com/jxnblk/rebass'>
       GitHub
     </NavLink>
