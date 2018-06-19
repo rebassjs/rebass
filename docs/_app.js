@@ -32,7 +32,7 @@ export default class extends React.Component {
     })
     nav.push({
       key: 'jxnblk',
-      name: 'Mad by Jxnblk',
+      name: 'Made by Jxnblk',
       path: 'https://jxnblk.com',
     })
 
