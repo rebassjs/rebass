@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import sys from 'system-components'
 import { space, color, zIndex } from 'styled-system'
 import { Fixed } from './index'
 
@@ -43,6 +44,20 @@ export const Drawer = styled(Fixed)([],
     transitionProperty: 'transform',
     transitionDuration: '.2s',
     transitionTimingFunction: 'ease-out'
+})
+
+export const xDrawer = sys({
+  is: Fixed,
+  color: 'white',
+  bg: 'dark',
+  open: false,
+}, drawerOpen, {
+  position: 'fixed',
+  overflowX: 'hidden',
+  overflowY: 'auto',
+  transitionProperty: 'transform',
+  transitionDuration: '.2s',
+  transitionTimingFunction: 'ease-out'
 })
 
 Drawer.defaultProps = {
