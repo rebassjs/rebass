@@ -8,7 +8,7 @@ import {
   LiveError,
   LiveEditor,
 } from 'react-live'
-import * as Rebass from 'rebass'
+import * as Rebass from '../src'
 import {
   Flex,
   Box,
@@ -16,12 +16,12 @@ import {
   Relative,
   Absolute,
   theme
-} from 'rebass'
-import { photo } from './constants'
+} from '../src'
+import { photo } from './_constants'
 
 const { colors } = theme
 
-const _scope = { ...Rebass, ...styled, ...photo }
+const _scope = { ...Rebass, photo }
 
 const Editor = styled(LiveEditor)`
   font-family: 'SF Mono', 'Roboto Mono', Menlo, monospace;
@@ -50,7 +50,7 @@ const toggle = key => state => ({
 
 const transform = src => `<React.Fragment>${src}</React.Fragment>`
 
-const Live = props => {
+const Live = connect(props => {
   const {
     code,
     noInline
@@ -83,6 +83,10 @@ const Live = props => {
       </Flex>
     </LiveProvider>
   )
+})
+
+Live.defaultProps = {
+  ignore: true
 }
 
-export default connect(Live)
+export default Live

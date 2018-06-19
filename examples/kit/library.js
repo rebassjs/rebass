@@ -70,7 +70,7 @@ import {
   Embed,
   // Star,
   Donut,
-} from '../../src'
+} from '../src'
 
 const colors = (
   <Example name='Colors'>
@@ -396,6 +396,8 @@ const Demo = connect(props => (
 ))
 
 Demo.defaultProps = {
+  ignore: true,
+
   avatar: 'http://jxnblk.com/avatar/avatar-640.png',
   image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20',
   value: 1/3,

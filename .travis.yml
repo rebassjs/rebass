@@ -4,16 +4,16 @@ node_js:
 after_success:
   - npm run cover
 before_deploy:
-  - cd site
   - npm install
   - npm run build
   - npm run svg
-  - cp card.png dist
-  - cp dist/index.html dist/404.html
+  - npm run card
+  - cp docs/card.png site
+  - cp site/index.html site/404.html
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
-  local_dir: site/dist
+  local_dir: site
   on:
     branch: master

@@ -4,12 +4,15 @@
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
   "scripts": {
-    "start": "x0 demo --open",
     "prepare": "babel src -d dist && npm run emotion && ./docs/_build.js",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "docs": "./docs/_build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
-    "test": "nyc ava test"
+    "test": "nyc ava test",
+    "start": "ok docs",
+    "build": "ok build docs -d site",
+    "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
+    "card": "repng docs/Card.js -w 1024 -h 512 -d docs -f card.png"
   },
   "keywords": [
     "components",
@@ -30,10 +33,9 @@
     "grid-styled": "^4.1.0",
     "prop-types": "^15.6.0",
     "styled-system": "^2.3.1",
-    "system-components": "^2.2.0"
+    "system-components": "^2.2.1"
   },
   "devDependencies": {
-    "@compositor/kit": "^1.0.39",
     "@compositor/kit-snapshot": "^1.0.24",
     "@compositor/x0": "^5.0.5",
     "ava": "^0.25.0",
@@ -47,10 +49,14 @@
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
     "nyc": "^12.0.2",
+    "ok-docs": "^1.0.0-15",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
     "react-test-renderer": "^16.2.0",
+    "refunk": "^3.0.1",
+    "repng": "^3.0.0",
+    "scrs": "^1.1.0",
     "styled-components": "^3.3.2"
   },
   "peerDependencies": {
@@ -77,7 +83,8 @@
       "stories"
     ]
   },
-  "kit": {
-    "title": "Rebass"
+  "ok": {
+    "title": "Rebass",
+    "basename": "/rebass"
   }
 }

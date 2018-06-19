@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { size, width, height } from 'styled-system'
-import { theme } from '../../src'
+import { theme } from '../src'
 
 const Svg = styled(({
   width,

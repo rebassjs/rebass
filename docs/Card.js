@@ -19,4 +19,8 @@ const Card = props => (
   </div>
 )
 
+Card.defaultProps = {
+  ignore: true
+}
+
 export default Card
