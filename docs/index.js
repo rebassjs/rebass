@@ -148,21 +148,31 @@ const Intro = props =>
     <Heading>
       Features
     </Heading>
-    <Text fontWeight='bold'>
-      <Flex
-        mx={-3}
-        mb={5}
-        flexWrap='wrap'>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Functional stateless UI components</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Style encapsulation with CSS-in-JS and styled-components</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>No external CSS dependencies</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Configurable theming</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Extensible base components</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Design-system based consistency</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Built for responsive web design</Box>
-        <Box width={[ 1/2, null, 1/4 ]} p={3}>Write less custom CSS</Box>
-      </Flex>
-    </Text>
+    <Flex
+      mx={-3}
+      mb={5}
+      flexWrap='wrap'>
+      {[
+        'Functional stateless UI components',
+        'Style encapsulation with CSS-in-JS and styled-components',
+        'No external CSS dependencies',
+        'Configurable theming',
+        'Extensible base components',
+        'Design-system based consistency',
+        'Built for responsive web design',
+        'Write less custom CSS',
+      ].map(feat => (
+        <Box
+          key={feat}
+          width={[ 1/2, null, 1/4 ]}
+          p={3}>
+          <Text fontWeight='bold'>
+            {feat}
+          </Text>
+        </Box>
+      ))}
+    </Flex>
+
     <Flex flexWrap='wrap' mx={-3} mb={5}>
       {quotes.map(({ text, name, href }) => (
         <Box key={name} width={[ 1, null, 1/2 ]} px={3} py={4}>
@@ -259,7 +269,15 @@ const CTA = props =>
     </Flex>
   </Box>
 
-
+const Footer = props =>
+  <Flex>
+    <NavLink href='https://github.com/jxnblk/rebass'>
+      GitHub
+    </NavLink>
+    <NavLink href='https://jxnblk.com'>
+      Made by Jxnblk
+    </NavLink>
+  </Flex>
 
 
 export default class extends React.Component {
@@ -275,6 +293,7 @@ export default class extends React.Component {
           <Intro />
           <Demo />
           <CTA />
+          <Footer />
         </Container>
       </React.Fragment>
     )
