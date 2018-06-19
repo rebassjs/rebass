@@ -1,11 +1,6 @@
 import React from 'react'
-// import CTA from '../src/CTA'
-// import Scripts from '../src/Scripts'
-
 import { connect } from 'refunk'
 import styled from 'styled-components'
-// import { Link } from 'react-router-dom'
-
 import {
   Flex,
   Box,
