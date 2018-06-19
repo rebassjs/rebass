@@ -8,7 +8,6 @@ before_deploy:
   - npm run build
   - npm run svg
   - npm run card
-  - cp docs/card.png site
   - cp site/index.html site/404.html
 deploy:
   provider: pages

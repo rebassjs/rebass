@@ -12,7 +12,7 @@
     "start": "ok docs",
     "build": "ok build docs -d site",
     "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
-    "card": "repng docs/Card.js -w 1024 -h 512 -d docs -f card.png"
+    "card": "mkdir -p site && repng docs/Card.js -w 1024 -h 512 -d site -f card.png"
   },
   "keywords": [
     "components",

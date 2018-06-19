@@ -10,11 +10,17 @@ with support for
 
 [![Build Status][badge]][travis]
 [![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][npm]
+[![Version][version-badge]][npm]
 
 [badge]: https://img.shields.io/travis/jxnblk/rebass.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/rebass
 [coverage-badge]: https://img.shields.io/codecov/c/github/jxnblk/rebass.svg?style=flat-square
 [coverage]: https://codecov.io/github/jxnblk/rebass
+
+[downloads-badge]: https://img.shields.io/npm/dw/rebass.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/rebass.svg?style=flat-square
+[npm]: https://npmjs.com/package/rebass
 
 http://jxnblk.com/rebass
 
