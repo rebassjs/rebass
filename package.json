@@ -86,8 +86,9 @@
       "stories"
     ]
   },
-  "ok": {
+  "x0": {
     "title": "Rebass",
+    "template": "./docs/_template.js",
     "basename": "/rebass"
   }
 }
