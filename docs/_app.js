@@ -16,7 +16,7 @@ const scope = {
 }
 
 const navOrder = [
-  'Index',
+  'Rebass',
   'getting-started',
   'props',
   'grid-system',
@@ -28,12 +28,20 @@ const navOrder = [
 ]
 
 const createNav = routes => [
-  ...[...routes].sort((a, b) => {
-    const ai = navOrder.indexOf(a.name)
-    const bi = navOrder.indexOf(b.name)
-    if (ai < 0) return 1
-    return ai - bi
-  }),
+  ...[...routes]
+    .map(route => {
+      if (route.name !== 'index') return route
+      return {
+        ...route,
+        name: 'Rebass'
+      }
+    })
+    .sort((a, b) => {
+      const ai = navOrder.indexOf(a.name)
+      const bi = navOrder.indexOf(b.name)
+      if (ai < 0) return 1
+      return ai - bi
+    }),
   {
     key: 'github',
     name: 'GitHub',
