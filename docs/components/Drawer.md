@@ -1,0 +1,17 @@
+# Drawer
+
+```.jsx
+<div>
+  <Drawer
+    open={false}
+    position='right'
+    p={3}
+    color='white'
+    bg='dark'>
+    <Heading>Hello</Heading>
+  </Drawer>
+</div>
+```
+
+prop | default | theme key | style type
+---|---|---|---

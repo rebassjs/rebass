@@ -2,9 +2,10 @@
 
 const fs = require('fs')
 const path = require('path')
+const systemDocs = require('system-docs')
 const Rebass = require('../dist')
 
-const filename = path.join(__dirname, 'components.md')
+const filename = path.join(__dirname, 'components/list.md')
 
 const keys = Object.keys(Rebass)
 
@@ -105,4 +106,45 @@ const content = template({ components })
 
 fs.writeFileSync(filename, content)
 
-console.log('Generated docs/components.md')
+const createPropsTable = docs => {
+  const { propTypes = {}, defaultProps = {} } = docs
+  const cols = [
+    'prop',
+    // 'type',
+    'default',
+    'theme key',
+    'style type',
+  ]
+  const head = [
+    cols.join(' | '),
+    cols.map(n => '---').join('|')
+  ].join('\n')
+  const rows = Object.keys(propTypes).map(key => {
+    const prop = propTypes[key] || {}
+    return [
+      key,
+      defaultProps[key] || '',
+      prop.themeKey || 'N/A',
+      prop.styleType || 'N/A',
+    ].join(' | ')
+  })
+
+  return [ head, ...rows ].join('\n')
+}
+
+// build individual component files
+Object.keys(examples).forEach(name => {
+  if (name === 'index') return
+  const example = fs.readFileSync(examples[name], 'utf8')
+  const docs = systemDocs(Rebass[name])
+  const table = createPropsTable(docs)
+  const content = [
+    '# ' + name,
+    '```.jsx\n' + example + '```',
+    table
+  ].join('\n\n')
+  const file = path.join(__dirname, 'components', name + '.md')
+  fs.writeFileSync(file, content)
+})
+
+console.log('Generated docs/components/list.md')
