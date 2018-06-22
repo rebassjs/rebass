@@ -4,6 +4,8 @@
 <Close />
 ```
 
+Extends: [ButtonTransparent](/components/ButtonTransparent) > [Button](/components/Button)
+
 prop | default | theme key | style type
 ---|---|---|---
 m |  | space | responsive

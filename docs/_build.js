@@ -133,17 +133,33 @@ const createPropsTable = docs => {
   return [ head, ...rows ].join('\n')
 }
 
+const getName = component => component.displayName
+  || component.name
+  || component
+
+const getExtensions = ({ extensions = [] }) => {
+  if (!extensions.length) return ''
+  const names = extensions.map(getName)
+  console.log(names)
+  const links = names.map(name => `[${name}](/components/${name})`)
+  return 'Extends: ' + links.join(' > ')
+}
+
 // build individual component files
 Object.keys(examples).forEach(name => {
   if (name === 'index') return
   const example = fs.readFileSync(examples[name], 'utf8')
   const docs = systemDocs(Rebass[name])
   const table = createPropsTable(docs)
+  const extensions = getExtensions(docs)
   const content = [
     '# ' + name,
     '```.jsx\n' + example + '```',
-    table
-  ].join('\n\n')
+    extensions,
+    table,
+  ]
+    .filter(Boolean)
+    .join('\n\n')
   const file = path.join(__dirname, 'components', name + '.md')
   fs.writeFileSync(file, content)
 })

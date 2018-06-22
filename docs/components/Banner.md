@@ -12,6 +12,8 @@
 </Banner>
 ```
 
+Extends: [Flex](/components/Flex)
+
 prop | default | theme key | style type
 ---|---|---|---
 m |  | space | responsive

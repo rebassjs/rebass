@@ -6,6 +6,8 @@
 />
 ```
 
+Extends: [Button](/components/Button)
+
 prop | default | theme key | style type
 ---|---|---|---
 color | blue | colors | responsive

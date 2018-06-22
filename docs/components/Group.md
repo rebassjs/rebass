@@ -8,3 +8,4 @@
 </Group>
 ```
 
+Extends: [Flex](/components/Flex)

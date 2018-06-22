@@ -8,3 +8,4 @@
 </Relative>
 ```
 
+Extends: [Position](/components/Position)

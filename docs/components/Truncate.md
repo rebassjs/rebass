@@ -6,3 +6,4 @@
 </Truncate>
 ```
 
+Extends: [Text](/components/Text)

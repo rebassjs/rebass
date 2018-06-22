@@ -6,3 +6,4 @@
 </Sticky>
 ```
 
+Extends: [Position](/components/Position)

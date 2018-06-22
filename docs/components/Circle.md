@@ -6,6 +6,8 @@
 </Circle>
 ```
 
+Extends: [Badge](/components/Badge)
+
 prop | default | theme key | style type
 ---|---|---|---
 size | 24 | N/A | responsive

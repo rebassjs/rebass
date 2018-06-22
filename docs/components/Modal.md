@@ -18,6 +18,8 @@
 </div>
 ```
 
+Extends: [Fixed](/components/Fixed) > [Position](/components/Position)
+
 prop | default | theme key | style type
 ---|---|---|---
 top | 50% | N/A | responsive

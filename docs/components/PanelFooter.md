@@ -5,4 +5,3 @@
   Hello
 </Panel.Footer>
 ```
-

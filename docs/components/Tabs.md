@@ -14,6 +14,8 @@
 </Tabs>
 ```
 
+Extends: [Flex](/components/Flex)
+
 prop | default | theme key | style type
 ---|---|---|---
 border |  | borders | responsive

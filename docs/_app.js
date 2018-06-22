@@ -51,8 +51,7 @@ export default class extends React.Component {
     const {
       routes,
       route,
-      children,
-      Component
+      children
     } = this.props
     const nav = createNav(routes)
 
@@ -82,7 +81,7 @@ export default class extends React.Component {
           <RefunkProvider pkg={pkg}>
             <Rebass.Provider>
               {disableLayout ? (
-                <Component />
+                children
               ) : (
                 <SidebarLayout
                   {...this.props}

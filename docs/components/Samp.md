@@ -6,3 +6,4 @@
 </Samp>
 ```
 
+Extends: [Base](/components/Base)

@@ -6,6 +6,8 @@
 </Container>
 ```
 
+Extends: [Box](/components/Box)
+
 prop | default | theme key | style type
 ---|---|---|---
 m |  | space | responsive

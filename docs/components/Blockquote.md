@@ -6,6 +6,8 @@
 </Blockquote>
 ```
 
+Extends: [Base](/components/Base)
+
 prop | default | theme key | style type
 ---|---|---|---
 fontSize | 3 | fontSizes | responsive

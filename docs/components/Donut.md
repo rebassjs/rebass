@@ -9,6 +9,8 @@
 />
 ```
 
+Extends: [DonutBase](/components/DonutBase)
+
 prop | default | theme key | style type
 ---|---|---|---
 color | blue | colors | responsive

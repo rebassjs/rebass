@@ -22,6 +22,8 @@
 </Carousel>
 ```
 
+Extends: [Flex](/components/Flex)
+
 prop | default | theme key | style type
 ---|---|---|---
 width | 1 | N/A | responsive
