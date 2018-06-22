@@ -1,6 +1,3 @@
----
-layout: fullwidth
----
 
 # Getting Started
 
