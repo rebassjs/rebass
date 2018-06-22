@@ -4,6 +4,7 @@ import {
   SidebarLayout,
   ScopeProvider
 } from '@compositor/x0/components'
+import sortBy from 'lodash.sortby'
 import pkg from '../package.json'
 import * as Rebass from '../src'
 import { photo } from './_constants'
@@ -27,19 +28,16 @@ const navOrder = [
 ]
 
 const createNav = routes => [
-  ...[...routes]
+  ...sortBy([...routes]
     .map(route => {
       if (route.name !== 'index') return route
       return {
         ...route,
         name: 'Rebass'
       }
-    })
-    .sort((a, b) => {
-      const ai = navOrder.indexOf(a.name)
-      const bi = navOrder.indexOf(b.name)
-      if (ai < 0) return 1
-      return ai - bi
+    }), a => {
+      const index = navOrder.indexOf(a.name)
+      return index < 0 ? Infinity : index
     }),
   {
     key: 'github',
