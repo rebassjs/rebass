@@ -6,5 +6,3 @@
 </Sticky>
 ```
 
-prop | default | theme key | style type
----|---|---|---

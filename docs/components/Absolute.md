@@ -8,5 +8,3 @@
 </Relative>
 ```
 
-prop | default | theme key | style type
----|---|---|---

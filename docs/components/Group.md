@@ -8,5 +8,3 @@
 </Group>
 ```
 
-prop | default | theme key | style type
----|---|---|---

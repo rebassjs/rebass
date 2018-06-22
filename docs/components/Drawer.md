@@ -13,5 +13,3 @@
 </div>
 ```
 
-prop | default | theme key | style type
----|---|---|---

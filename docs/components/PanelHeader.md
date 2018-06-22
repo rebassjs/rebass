@@ -6,5 +6,3 @@
 </Panel.Header>
 ```
 
-prop | default | theme key | style type
----|---|---|---

@@ -6,5 +6,3 @@
 </Samp>
 ```
 
-prop | default | theme key | style type
----|---|---|---

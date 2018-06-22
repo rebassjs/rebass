@@ -1,64 +1,63 @@
 import React from 'react'
 import { Provider as RefunkProvider } from 'refunk'
-// import { Head, ScopeProvider } from 'ok-docs'
 import { Helmet as Head } from 'react-helmet'
-import { ScopeProvider } from '@compositor/x0/components'
+import {
+  SidebarLayout,
+  ScopeProvider
+} from '@compositor/x0/components'
 import pkg from '../package.json'
 import * as Rebass from '../src'
 import { photo } from './_constants'
-
-import Layout from '!!babel-loader!ok-docs/src/Layout'
+import Logo from './Logo'
 
 const scope = {
   ...Rebass,
   photo
 }
 
+const navOrder = [
+  'Index',
+  'getting-started',
+  'props',
+  'grid-system',
+  'theming',
+  'extending',
+  'server-side-rendering',
+  'Logo',
+  'components',
+]
+
+const createNav = routes => [
+  ...[...routes].sort((a, b) => {
+    const ai = navOrder.indexOf(a.name)
+    const bi = navOrder.indexOf(b.name)
+    if (ai < 0) return 1
+    return ai - bi
+  }),
+  {
+    key: 'github',
+    name: 'GitHub',
+    path: 'https://github.com/jxnblk/rebass',
+  },
+  {
+    key: 'jxnblk',
+    name: 'Made by Jxnblk',
+    path: 'https://jxnblk.com',
+  },
+]
+
 export default class extends React.Component {
-  static defaultProps = {
-    navOrder: [
-      'Home',
-      'getting-started',
-      'props',
-      'grid-system',
-      'theming',
-      'extending',
-      'components',
-      'server-side-rendering',
-    ]
-  }
-
-  state = {
-    menu: false,
-    update: fn => this.setState(fn)
-  }
-
   render () {
-    // const { Component, nav } = this.props
-    /*
-    nav.push({
-      key: 'github',
-      name: 'GitHub',
-      path: 'https://github.com/jxnblk/rebass',
-    })
-    nav.push({
-      key: 'jxnblk',
-      name: 'Made by Jxnblk',
-      path: 'https://jxnblk.com',
-    })
-    */
-
-    // x0 app
     const {
       routes,
       route,
-      render
+      children
     } = this.props
-
-    const nav = [...routes]
+    const nav = createNav(routes)
 
     return (
       <React.Fragment>
+        {/* doesn't work with static render */}
         <Head>
           <title>Rebass</title>
           <meta
@@ -75,22 +74,16 @@ export default class extends React.Component {
           <meta name='twitter:image' content='https://jxnblk.com/rebass/card.png' />
           <link rel='stylesheet' href='https://fonts.google.com/css?family=Roboto+Mono' />
         </Head>
+
         <ScopeProvider scope={scope}>
           <RefunkProvider pkg={pkg}>
             <Rebass.Provider>
-              <Layout
-                {...this.state}
-                routes={routes}
-                nav={nav}
-                content={render()}
-              />
-              {/*
-              {render()}
-              <Component
+              <SidebarLayout
                 {...this.props}
-                nav={nav}
+                title='Rebass'
+                routes={nav}
+                logo={<Logo size={32} />}
               />
-              */}
               <Scripts />
             </Rebass.Provider>
           </RefunkProvider>

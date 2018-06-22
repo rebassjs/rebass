@@ -108,9 +108,10 @@ fs.writeFileSync(filename, content)
 
 const createPropsTable = docs => {
   const { propTypes = {}, defaultProps = {} } = docs
+  const keys = Object.keys(propTypes)
+  if (!keys.length) return ''
   const cols = [
     'prop',
-    // 'type',
     'default',
     'theme key',
     'style type',
@@ -119,7 +120,7 @@ const createPropsTable = docs => {
     cols.join(' | '),
     cols.map(n => '---').join('|')
   ].join('\n')
-  const rows = Object.keys(propTypes).map(key => {
+  const rows = keys.map(key => {
     const prop = propTypes[key] || {}
     return [
       key,

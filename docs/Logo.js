@@ -122,6 +122,7 @@ const Logo = props => {
 }
 
 Logo.defaultProps = {
+  ignore: true,
   size: 256
 }
 

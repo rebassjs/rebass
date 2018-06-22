@@ -6,5 +6,3 @@
 </Truncate>
 ```
 
-prop | default | theme key | style type
----|---|---|---

@@ -6,5 +6,3 @@
 </Panel.Footer>
 ```
 
-prop | default | theme key | style type
----|---|---|---
