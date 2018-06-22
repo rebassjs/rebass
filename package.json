@@ -9,8 +9,8 @@
     "docs": "./docs/_build.js",
     "cover": "nyc report --reporter=html --reporter=lcov && codecov",
     "test": "nyc ava test",
-    "start": "ok docs",
-    "build": "ok build docs -d site --basename '/rebass'",
+    "start": "x0 docs -p 9999",
+    "build": "x0 build docs -d site",
     "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
     "card": "repng docs/Card.js -w 1024 -h 512 -d docs -f card.png"
   },
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@compositor/kit-snapshot": "^1.0.24",
-    "@compositor/x0": "^5.0.5",
+    "@compositor/x0": "^5.1.0-6",
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -49,7 +49,6 @@
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
     "nyc": "^12.0.2",
-    "ok-docs": "^1.0.0-15",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
@@ -57,7 +56,8 @@
     "refunk": "^3.0.1",
     "repng": "^3.0.0",
     "scrs": "^1.1.0",
-    "styled-components": "^3.3.2"
+    "styled-components": "^3.3.2",
+    "system-docs": "^1.0.0-1"
   },
   "peerDependencies": {
     "styled-components": ">=2.0 || >= 3.0"
@@ -83,8 +83,9 @@
       "stories"
     ]
   },
-  "ok": {
+  "x0": {
     "title": "Rebass",
+    "template": "./docs/_template.js",
     "basename": "/rebass"
   }
 }
