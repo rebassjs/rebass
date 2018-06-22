@@ -140,7 +140,6 @@ const getName = component => component.displayName
 const getExtensions = ({ extensions = [] }) => {
   if (!extensions.length) return ''
   const names = extensions.map(getName)
-  console.log(names)
   const links = names.map(name => `[${name}](/components/${name})`)
   return 'Extends: ' + links.join(' > ')
 }

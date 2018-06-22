@@ -75,7 +75,7 @@ export default class extends React.Component {
                 {...this.props}
                 title='Rebass'
                 routes={nav}
-                logo={<Logo size={32} />}
+                logo={<Logo size={32} static />}
               />
             )}
           </Rebass.Provider>
