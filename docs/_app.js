@@ -51,9 +51,12 @@ export default class extends React.Component {
     const {
       routes,
       route,
-      children
+      children,
+      Component
     } = this.props
     const nav = createNav(routes)
+
+    const disableLayout = route && route.props && route.props.layout === false
 
     return (
       <React.Fragment>
@@ -78,12 +81,16 @@ export default class extends React.Component {
         <ScopeProvider scope={scope}>
           <RefunkProvider pkg={pkg}>
             <Rebass.Provider>
-              <SidebarLayout
-                {...this.props}
-                title='Rebass'
-                routes={nav}
-                logo={<Logo size={32} />}
-              />
+              {disableLayout ? (
+                <Component />
+              ) : (
+                <SidebarLayout
+                  {...this.props}
+                  title='Rebass'
+                  routes={nav}
+                  logo={<Logo size={32} />}
+                />
+              )}
               <Scripts />
             </Rebass.Provider>
           </RefunkProvider>
