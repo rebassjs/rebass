@@ -273,6 +273,10 @@ Extends [ButtonTransparent](#buttontransparent)
 
 ## Caps
 
+```.jsx
+<Caps>Hello</Caps>
+```
+
 ## Small
 
 ```.jsx
