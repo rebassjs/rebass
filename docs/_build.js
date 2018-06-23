@@ -45,7 +45,7 @@ ${props.map(prop => (
 `)).join('\n')}
 `.replace(/\n\n+/g, '\n\n')
 
-const blacklist = {
+const propBlacklist = {
   m: true,
   mt: true,
   mr: true,
@@ -66,7 +66,13 @@ const blacklist = {
   f: true,
 }
 
+const moduleBlacklist = {
+  createColors: true,
+  invertTheme: true,
+}
+
 const components = keys
+  .filter(key => !moduleBlacklist[key])
   .map(key => {
     const Component = Rebass[key]
     const {
@@ -87,7 +93,7 @@ const components = keys
     }
 
     const props = Object.keys(propTypes)
-      .filter(key => !blacklist[key])
+      .filter(key => !propBlacklist[key])
       .map(key => ({
         name: key
       }))

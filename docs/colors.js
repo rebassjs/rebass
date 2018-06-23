@@ -28,20 +28,20 @@ export default props =>
       Theming can be completely customized using the <Link href='theming'>Provider</Link> component.
     </P>
     <Flex
-      mx={-3}
+      mx={-2}
       justifyContent='space-between'
       flexWrap='wrap'>
       {keys.map(key => (
-        <Box key={key} p={3}>
+        <Box key={key} p={2}>
           <Box
-            p={[ 4, 5 ]}
+            width={128}
+            p={5}
             bg={colors[key]}
           />
           <Text fontSize={1}>
             {key}
-            {' '}
-            <Code fontSize={10}>{colors[key]}</Code>
           </Text>
+          <Pre fontSize={10}>{colors[key]}</Pre>
         </Box>
       ))}
     </Flex>

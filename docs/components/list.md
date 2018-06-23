@@ -6,7 +6,6 @@
   <ul>
     <li><a href='#flex'>Flex</a></li>
 <li><a href='#box'>Box</a></li>
-<li><a href='#createcolors'>createColors</a></li>
 <li><a href='#base'>Base</a></li>
 <li><a href='#css'>CSS</a></li>
 <li><a href='#root'>Root</a></li>
@@ -121,8 +120,6 @@
 - `flex`
 - `order`
 - `alignSelf`
-
-## createColors
 
 ## Base
 
