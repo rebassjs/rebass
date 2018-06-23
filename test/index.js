@@ -1,4 +1,4 @@
-import test from 'ava'
+import 'jest-styled-components'
 import React from 'react'
 import { isCompositeComponent, isElement } from 'react-dom/test-utils'
 import { create as render } from 'react-test-renderer'
@@ -14,32 +14,35 @@ import {
 
 const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
 
-test.afterEach(() => {
+const examples = [
+]
+
+afterEach(() => {
   StyleSheet.reset()
 })
 
-test('exports an object', t => {
-  t.is(typeof Rebass, 'object')
+test('exports an object', () => {
+  expect(typeof Rebass).toBe('object')
 })
 
 Object.keys(Rebass)
   .filter(key => typeof Rebass[key] === 'function')
   .forEach(key => {
-  test(`exports a ${key} component`, t => {
+  test(`exports a ${key} component`, () => {
     const Comp = Rebass[key]
     const json = render(<Comp />).toJSON()
-    t.snapshot(json)
-    t.is(typeof Comp, 'function')
-    t.true(isElement(<Comp />))
+    expect(json).toMatchSnapshot()
+    expect(typeof Comp).toBe('function')
+    expect(isElement(<Comp />)).toBe(true)
   })
 })
 
-test('Provider renders', t => {
+test('Provider renders', () => {
   const json = render(<Provider />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('Provider renders with custom theme', t => {
+test('Provider renders with custom theme', () => {
   const json = render(<Provider
     theme={{
       fonts: [],
@@ -51,218 +54,156 @@ test('Provider renders with custom theme', t => {
       ]
     }}
   />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('theme is an object', t => {
-  t.is(typeof theme, 'object')
-  t.true(Array.isArray(theme.breakpoints))
-  t.true(Array.isArray(theme.space))
-  t.true(Array.isArray(theme.fontSizes))
-  t.is(typeof theme.fontWeights, 'object')
-  t.is(typeof theme.colors, 'object')
-  t.is(typeof theme.radii, 'object')
-  t.is(typeof theme.fonts, 'object')
+test('theme is an object', () => {
+  expect(typeof theme).toBe('object')
+  expect(Array.isArray(theme.breakpoints)).toBe(true)
+  expect(Array.isArray(theme.space)).toBe(true)
+  expect(Array.isArray(theme.fontSizes)).toBe(true)
+  expect(typeof theme.fontWeights).toBe('object')
+  expect(typeof theme.colors).toBe('object')
+  expect(typeof theme.radii).toBe('object')
+  expect(typeof theme.fonts).toBe('object')
 })
 
-test.skip('renders NavLink active', t => {
+test.skip('renders NavLink active', () => {
   const json = render(<Rebass.NavLink active />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Text bold', t => {
+test('renders Text bold', () => {
   const json = render(<Rebass.Text fontWeight='bold' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Border top', t => {
+test('renders Border top', () => {
   const json = render(<Rebass.Border borderTop={1} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Border right', t => {
+test('renders Border right', () => {
   const json = render(<Rebass.Border borderRight={1} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Border bottom', t => {
+test('renders Border bottom', () => {
   const json = render(<Rebass.Border borderBottom={1} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Border left', t => {
+test('renders Border left', () => {
   const json = render(<Rebass.Border borderLeft={1} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Border border 2', t => {
+test('renders Border border 2', () => {
   const json = render(<Rebass.Border border={2} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Border none', t => {
+test('renders Border none', () => {
   const json = render(<Rebass.Border border='none' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Banner backgroundImage', t => {
+test('renders Banner backgroundImage', () => {
   const json = render(<Rebass.Banner src='hello.png' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test.skip('renders TabItem active', t => {
+test.skip('renders TabItem active', () => {
   const json = render(<Rebass.TabItem active />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test.skip('renders DotButton active', t => {
+test.skip('renders DotButton active', () => {
   const json = render(<Rebass.DotButton active />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-/*
-  test('renders Absolute top', t => {
-    const json = render(<Rebass.Absolute top={0} />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Absolute right', t => {
-    const json = render(<Rebass.Absolute right={0} />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Absolute bottom', t => {
-    const json = render(<Rebass.Absolute bottom={0} />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Absolute left', t => {
-    const json = render(<Rebass.Absolute left={0} />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Fixed top', t => {
-    const json = render(<Rebass.Fixed top />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Fixed right', t => {
-    const json = render(<Rebass.Fixed right />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Fixed bottom', t => {
-    const json = render(<Rebass.Fixed bottom />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Fixed left', t => {
-    const json = render(<Rebass.Fixed left />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Sticky top', t => {
-    const json = render(<Rebass.Sticky top />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Sticky right', t => {
-    const json = render(<Rebass.Sticky right />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Sticky bottom', t => {
-    const json = render(<Rebass.Sticky bottom />).toJSON()
-    t.snapshot(json)
-  })
-
-  test('renders Sticky left', t => {
-    const json = render(<Rebass.Sticky left />).toJSON()
-    t.snapshot(json)
-  })
-*/
-
-test('renders Drawer open', t => {
+test('renders Drawer open', () => {
   const json = render(<Rebass.Drawer open />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer side top', t => {
+test('renders Drawer side top', () => {
   const json = render(<Rebass.Drawer side='top' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer side right', t => {
+test('renders Drawer side right', () => {
   const json = render(<Rebass.Drawer side='right' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer side bottom', t => {
+test('renders Drawer side bottom', () => {
   const json = render(<Rebass.Drawer side='bottom' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer side left', t => {
+test('renders Drawer side left', () => {
   const json = render(<Rebass.Drawer side='left' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer open side top', t => {
+test('renders Drawer open side top', () => {
   const json = render(<Rebass.Drawer open side='top' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer open side right', t => {
+test('renders Drawer open side right', () => {
   const json = render(<Rebass.Drawer open side='right' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer open side bottom', t => {
+test('renders Drawer open side bottom', () => {
   const json = render(<Rebass.Drawer open side='bottom' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer open side left', t => {
+test('renders Drawer open side left', () => {
   const json = render(<Rebass.Drawer open side='left' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Drawer size', t => {
+test('renders Drawer size', () => {
   const json = render(<Rebass.Drawer size={128} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Carousel index', t => {
+test('renders Carousel index', () => {
   const json = render(<Rebass.Carousel index={2} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test.skip('renders Star checked', t => {
+test.skip('renders Star checked', () => {
   const json = render(<Rebass.Star checked />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test.skip('renders Star half', t => {
+test.skip('renders Star half', () => {
   const json = render(<Rebass.Star half />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Arrow up', t => {
+test('renders Arrow up', () => {
   const json = render(<Rebass.Arrow direction='up' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Embed ratio', t => {
+test('renders Embed ratio', () => {
   const json = render(<Rebass.Embed ratio={1/2} />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders Switch checked', t => {
+test('renders Switch checked', () => {
   const json = render(<Rebass.Switch checked />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })
 
-test('renders BackgroundImage src', t => {
+test('renders BackgroundImage src', () => {
   const json = render(<Rebass.BackgroundImage src='hello.png' />).toJSON()
-  t.snapshot(json)
+  expect(json).toMatchSnapshot()
 })

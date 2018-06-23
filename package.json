@@ -8,8 +8,8 @@
     "prepare": "babel src -d dist && npm run emotion && ./docs/_build.js",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "docs": "./docs/_build.js",
-    "cover": "nyc report --reporter=html --reporter=lcov && codecov",
-    "test": "nyc ava test",
+    "cover": "jest --coverage --coverageReporters html lcov && codecov",
+    "test": "jest",
     "start": "x0 docs -p 9999",
     "build": "x0 build docs -d site",
     "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
@@ -40,18 +40,17 @@
     "@compositor/kit": "^1.0.43",
     "@compositor/kit-snapshot": "^1.0.24",
     "@compositor/x0": "^5.1.0-6",
-    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
+    "jest": "^23.1.0",
+    "jest-styled-components": "^5.0.1",
     "lodash.sortby": "^4.7.0",
-    "nyc": "^12.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
@@ -73,17 +72,12 @@
     "url": "https://github.com/jxnblk/rebass/issues"
   },
   "homepage": "https://github.com/jxnblk/rebass",
-  "ava": {
-    "require": [
-      "babel-register"
+  "jest": {
+    "roots": [
+      "<rootDir>/test/"
     ],
-    "babel": "inherit"
-  },
-  "nyc": {
-    "exclude": [
-      "test",
-      "docs",
-      "stories"
+    "testMatch": [
+      "**/test/**/*.js"
     ]
   },
   "x0": {
