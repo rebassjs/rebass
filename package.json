@@ -3,6 +3,7 @@
   "version": "2.0.0-9",
   "description": "React UI component library & design system, built with styled-components and styled-system",
   "main": "dist/index.js",
+  "sideEffects": false,
   "scripts": {
     "prepare": "babel src -d dist && npm run emotion && ./docs/_build.js",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
