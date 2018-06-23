@@ -33,6 +33,10 @@ export const drawerTransform = ({
 
 export const Drawer = sys({
   is: Box,
+  blacklist: [
+    'side',
+    'open',
+  ],
   position: 'fixed',
   color: 'white',
   bg: 'dark',

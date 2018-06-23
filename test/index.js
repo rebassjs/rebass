@@ -187,43 +187,43 @@ test('renders Drawer open', t => {
   t.snapshot(json)
 })
 
-test('renders Drawer position top', t => {
-  const json = render(<Rebass.Drawer position='top' />).toJSON()
+test('renders Drawer side top', t => {
+  const json = render(<Rebass.Drawer side='top' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer position right', t => {
-  const json = render(<Rebass.Drawer position='right' />).toJSON()
+test('renders Drawer side right', t => {
+  const json = render(<Rebass.Drawer side='right' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer position bottom', t => {
-  const json = render(<Rebass.Drawer position='bottom' />).toJSON()
+test('renders Drawer side bottom', t => {
+  const json = render(<Rebass.Drawer side='bottom' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer position left', t => {
-  const json = render(<Rebass.Drawer position='left' />).toJSON()
+test('renders Drawer side left', t => {
+  const json = render(<Rebass.Drawer side='left' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer open position top', t => {
-  const json = render(<Rebass.Drawer open position='top' />).toJSON()
+test('renders Drawer open side top', t => {
+  const json = render(<Rebass.Drawer open side='top' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer open position right', t => {
-  const json = render(<Rebass.Drawer open position='right' />).toJSON()
+test('renders Drawer open side right', t => {
+  const json = render(<Rebass.Drawer open side='right' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer open position bottom', t => {
-  const json = render(<Rebass.Drawer open position='bottom' />).toJSON()
+test('renders Drawer open side bottom', t => {
+  const json = render(<Rebass.Drawer open side='bottom' />).toJSON()
   t.snapshot(json)
 })
 
-test('renders Drawer open position left', t => {
-  const json = render(<Rebass.Drawer open position='left' />).toJSON()
+test('renders Drawer open side left', t => {
+  const json = render(<Rebass.Drawer open side='left' />).toJSON()
   t.snapshot(json)
 })
 
