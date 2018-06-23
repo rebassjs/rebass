@@ -195,7 +195,7 @@ exports[`exports a Banner component 1`] = `
   background-position: center;
   min-height: 80vh;
   color: white;
-  background-color: dark;
+  background-color: black;
 }
 
 @media screen and (min-width:40em) {
@@ -1273,7 +1273,7 @@ exports[`exports a Dot component 1`] = `
   padding: 0px;
   height: 16px;
   width: 16px;
-  background-color: darken.1;
+  background-color: darken;
   border-radius: 99999px;
   border: 4px solid;
   border-color: transparent;
@@ -1348,7 +1348,7 @@ exports[`exports a Drawer component 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -2443,7 +2443,7 @@ exports[`exports a Toolbar component 1`] = `
   padding-left: 8px;
   padding-right: 8px;
   color: white;
-  background-color: dark;
+  background-color: black;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2460,7 +2460,7 @@ exports[`exports a Toolbar component 1`] = `
 exports[`exports a Tooltip component 1`] = `
 .c0 {
   color: white;
-  background-color: dark;
+  background-color: black;
   display: inline-block;
   position: relative;
   color: inherit;
@@ -2707,7 +2707,7 @@ exports[`renders Banner backgroundImage 1`] = `
   background-position: center;
   min-height: 80vh;
   color: white;
-  background-color: dark;
+  background-color: black;
 }
 
 .c0 {
@@ -2727,7 +2727,7 @@ exports[`renders Banner backgroundImage 1`] = `
   background-position: center;
   min-height: 80vh;
   color: white;
-  background-color: dark;
+  background-color: black;
 }
 
 @media screen and (min-width:40em) {
@@ -3074,7 +3074,7 @@ exports[`renders Drawer open 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -3183,7 +3183,7 @@ exports[`renders Drawer open side bottom 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -3202,7 +3202,7 @@ exports[`renders Drawer open side bottom 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -3315,7 +3315,7 @@ exports[`renders Drawer open side left 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   top: 0;
   bottom: 0;
@@ -3420,7 +3420,7 @@ exports[`renders Drawer open side right 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   top: 0;
   bottom: 0;
@@ -3521,7 +3521,7 @@ exports[`renders Drawer open side top 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   top: 0;
   left: 0;
@@ -3614,7 +3614,7 @@ exports[`renders Drawer side bottom 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -3636,7 +3636,7 @@ exports[`renders Drawer side bottom 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -3736,7 +3736,7 @@ exports[`renders Drawer side left 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   top: 0;
   bottom: 0;
@@ -3828,7 +3828,7 @@ exports[`renders Drawer side right 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   top: 0;
   bottom: 0;
@@ -3916,7 +3916,7 @@ exports[`renders Drawer side top 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   top: 0;
   left: 0;
@@ -4036,7 +4036,7 @@ exports[`renders Drawer size 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -4058,7 +4058,7 @@ exports[`renders Drawer size 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;
@@ -4080,7 +4080,7 @@ exports[`renders Drawer size 1`] = `
 .c0 {
   position: fixed;
   color: white;
-  background-color: dark;
+  background-color: black;
   width: 320px;
   bottom: 0;
   left: 0;

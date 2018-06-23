@@ -9,6 +9,11 @@ const transforms = {
   bottom: 'translateY(100%)',
 }
 export const side = ({ side }) => {
+  if (!transforms[side]) return {
+    top: 0,
+    left: 0,
+    bottom: 0
+  }
   const h = /^(left|right)$/.test(side) ? 1 : 0
   const top = /^(top|left|right)$/.test(side) ? 0 : null
   const bottom = /^(bottom|left|right)$/.test(side) ? 0 : null
@@ -27,7 +32,7 @@ export const transform = ({
   open,
   side
 }) => ({
-  transform: open ? null : transforms[side]
+  transform: open ? null : transforms[side] || transforms.left
 })
 
 export const Drawer = sys({
@@ -38,7 +43,7 @@ export const Drawer = sys({
   ],
   position: 'fixed',
   color: 'white',
-  bg: 'dark',
+  bg: 'black',
   open: false,
   side: 'bottom',
   width: 320,

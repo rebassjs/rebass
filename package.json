@@ -39,7 +39,7 @@
   "devDependencies": {
     "@compositor/kit": "^1.0.43",
     "@compositor/kit-snapshot": "^1.0.24",
-    "@compositor/x0": "^5.1.0-6",
+    "@compositor/x0": "^6.0.0-3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",

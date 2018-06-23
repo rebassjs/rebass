@@ -1,4 +1,4 @@
 <Divider
   w={1}
-  color='blue'
+  borderColor='blue'
 />
