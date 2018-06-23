@@ -3,7 +3,7 @@
 
 Rebass components use [styled-system][system] for responsive, theme-based style props.
 
-### Margin and Padding
+## Margin and Padding
 
 All Rebass component use the [space][space] utility from [styled-system][system] to handle responsive margin and padding props based on a global spacing scale (`theme.space`).
 The margin and padding props help promote consistency in layout
@@ -54,7 +54,7 @@ The margin and padding props use a shorthand syntax, similar to other OOCSS appr
 <Text m={[ 0, 1, 2 ]} />
 ```
 
-### Colors
+## Colors
 
 All Rebass components use [styled-system's][system] [color][color] function to add the `color` and `bg` props.
 The `color` and `bg` props make using colors from the color palette simple to help promote design consistency.
@@ -81,7 +81,7 @@ The color values can be defined in the `theme.colors` object.
 <Text color={[ 'blue', 'green' ]} />
 ```
 
-### Responsive Styles
+## Responsive Styles
 
 Many Rebass props accept arrays as values to set mobile-first responsive styles.
 The first value is not scoped to a media query and applies to all breakpoints.

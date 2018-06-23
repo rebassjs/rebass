@@ -4,3 +4,4 @@ dist
 coverage
 .nyc_output
 .site
+site

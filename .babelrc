@@ -10,8 +10,20 @@
         [
           "transform-rename-import",
           {
-            "original": "^system-components$",
-            "replacement": "system-components/emotion"
+            "replacements": [
+              {
+                "original": "^system-components$",
+                "replacement": "system-components/emotion"
+              },
+              {
+                "original": "^styled-components$",
+                "replacement": "emotion-theming"
+              },
+              {
+                "original": "^grid-styled$",
+                "replacement": "grid-styled/emotion"
+              }
+            ]
           }
         ]
       ]

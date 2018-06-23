@@ -1,5 +1,5 @@
 
-<img src='site/logo.svg' width='128' height='128' />
+<img src='docs/logo.svg' width='128' height='128' />
 
 # Rebass
 
@@ -10,11 +10,17 @@ with support for
 
 [![Build Status][badge]][travis]
 [![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][npm]
+[![Version][version-badge]][npm]
 
 [badge]: https://img.shields.io/travis/jxnblk/rebass.svg?style=flat-square
 [travis]: https://travis-ci.org/jxnblk/rebass
 [coverage-badge]: https://img.shields.io/codecov/c/github/jxnblk/rebass.svg?style=flat-square
 [coverage]: https://codecov.io/github/jxnblk/rebass
+
+[downloads-badge]: https://img.shields.io/npm/dw/rebass.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/rebass.svg?style=flat-square
+[npm]: https://npmjs.com/package/rebass
 
 http://jxnblk.com/rebass
 
@@ -73,14 +79,14 @@ import * as Rebass from 'rebass/emotion'
 
 ## Documentation
 
-- [Docs](docs)
-- [Getting Started](docs/getting-started.md)
-- [Props](docs/props.md)
-- [Grid System](docs/grid-system.md)
-- [Theming](docs/theming.md)
-- [Extending](docs/extending.md)
-- [Components](docs/components.md)
-- [Server-Side Rendering](server-side-rendering.md)
+- [Docs](https://jxnblk.com/rebass)
+- [Getting Started](https://jxnblk.com/rebass/getting-started)
+- [Props](https://jxnblk.com/rebass/props)
+- [Grid System](https://jxnblk.com/rebass/grid-system)
+- [Theming](https://jxnblk.com/rebass/theming)
+- [Extending](https://jxnblk.com/rebass/extending)
+- [Components](https://jxnblk.com/rebass/components)
+- [Server-Side Rendering](https://jxnblk.com/rebass/server-side-rendering)
 
 ## CodeSandbox
 
