@@ -5,9 +5,6 @@ import { create as render } from 'react-test-renderer'
 import * as Rebass from '../src'
 import { Provider, theme } from '../src'
 
-// import snapshot from '@compositor/kit-snapshot'
-// import * as examples from '../demo'
-
 import {
   __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
 } from 'styled-components'
@@ -29,6 +26,7 @@ const blacklist = [
   'theme',
   'colors',
   'createColors',
+  'invertTheme',
 ]
 
 Object.keys(Rebass)
@@ -213,4 +211,10 @@ test('renders Switch checked', () => {
 test('renders BackgroundImage src', () => {
   const json = render(<Rebass.BackgroundImage src='hello.png' />).toJSON()
   expect(json).toMatchSnapshot()
+})
+
+test('invertTheme adjusts colors', () => {
+  const next = Rebass.invertTheme(Rebass.theme)
+  expect(next.space).toEqual(Rebass.theme.space)
+  expect(next.colors).not.toEqual(Rebass.theme.colors)
 })
