@@ -5,7 +5,7 @@ import { letterSpacing } from 'styled-system'
 export const Caps = sys({
   is: Text,
   fontSize: 0,
-  letterSpacing: '0.2dm'
+  letterSpacing: '0.2em'
 }, {
   textTransform: 'uppercase'
 })
