@@ -5,7 +5,7 @@ export const Toolbar = sys({
   is: Flex,
   px: 2,
   color: 'white',
-  bg: 'dark',
+  bg: 'black',
   align: 'center',
   minHeight: '48px'
 }, 'minHeight', {

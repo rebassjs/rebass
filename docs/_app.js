@@ -23,6 +23,7 @@ const navOrder = [
   'theming',
   'extending',
   'server-side-rendering',
+  'colors',
   'Logo',
   'components',
 ]

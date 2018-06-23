@@ -3,7 +3,7 @@ import { themeGet } from 'styled-system'
 
 export const Tooltip = sys({
   color: 'white',
-  bg: 'dark'
+  bg: 'black'
 }, props => ({
   display: 'inline-block',
   position: 'relative',

@@ -12,7 +12,7 @@ export const Modal = sys({
   maxWidth: '100vw',
   maxHeight: '100vh',
 }, props => ({
-  boxShadow: `0 0 0 60vmax ${themeGet('colors.darken.2')(props)}, 0 0 32px ${themeGet('colors.darken.1')(props)}`,
+  boxShadow: `0 0 0 60vmax ${themeGet('colors.darken')(props)}, 0 0 32px ${themeGet('colors.darken')(props)}`,
   overflow: 'auto',
   transform: 'translate(-50%, -50%)'
 }),

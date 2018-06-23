@@ -1,6 +1,7 @@
 export { Flex, Box } from 'grid-styled'
 
 export { default as theme } from './theme'
+export { colors, createColors } from './colors'
 
 export { Base } from './Base'
 export { CSS } from './CSS'
