@@ -11,7 +11,7 @@ const names = [
   'blue',     // 210
   'indigo',   // 240
   'violet',   // 270
-  'fuschia',  // 300
+  'fuchsia',  // 300
   'pink',     // 330
   'red',      // 360
 ]
@@ -50,6 +50,14 @@ export const createColors = base => {
   })
 
   return colors
+}
+
+export const invertLuminance = base => {
+  const color = chroma(base)
+  const luminance = color.luminance()
+  const [ h, s ] = color.hsl()
+  const next = chroma.hsl(h, s, 1 - luminance)
+  return next.hex()
 }
 
 const colors = createColors('#06e')

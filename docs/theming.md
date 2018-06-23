@@ -71,6 +71,25 @@ const theme = {
 }
 ```
 
+## DarkMode
+
+Rebass includes a `<DarkMode />` component for inverting the luminance of colors in a theme.
+
+```.jsx
+<Box>
+  <Heading mb={3}>Normal Theme</Heading>
+  <DarkMode p={3}>
+    <Heading>Dark Mode</Heading>
+    <Box mb={3}>
+      <Label htmlFor='hi'>Hi</Label>
+      <Input id='hi' defaultValue='Hello' />
+    </Box>
+    <Button mr={3}>Beep</Button>
+    <ButtonOutline>Boop</ButtonOutline>
+  </DarkMode>
+</Box>
+```
+
 See the [styled-system][system] docs for more about how Rebass style props integrate with the theme.
 
 [system]: https://github.com/jxnblk/styled-system

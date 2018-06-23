@@ -62,7 +62,7 @@ The `color` and `bg` props make using colors from the color palette simple to he
 The color values can be defined in the `theme.colors` object.
 
 ```.jsx
-<Box color='white' bg='fuschia' p={3}>
+<Box color='white' bg='fuchsia' p={3}>
   Hello
 </Box>
 ```
