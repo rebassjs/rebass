@@ -11,7 +11,7 @@ export const Banner = sys({
   backgroundPosition: 'center',
   minHeight: '80vh',
   color: 'white',
-  bg: 'dark'
+  bg: 'black'
 },
   'minHeight',
   'backgroundSize',
