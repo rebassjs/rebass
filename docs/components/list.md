@@ -273,9 +273,16 @@ Extends [ButtonTransparent](#buttontransparent)
 
 ## Caps
 
+Extends [Text](#text)
+
 ```.jsx
 <Caps>Hello</Caps>
 ```
+
+### Props
+
+- `fontSize`
+- `letterSpacing`
 
 ## Small
 
@@ -1015,6 +1022,8 @@ Extends [Fixed](#fixed)
 
 ## Drawer
 
+Extends [Box](#box)
+
 ```.jsx
 <div>
   <Drawer
@@ -1027,6 +1036,13 @@ Extends [Fixed](#fixed)
   </Drawer>
 </div>
 ```
+
+### Props
+
+- `position`
+- `width`
+- `zIndex`
+- `height`
 
 ## Carousel
 
