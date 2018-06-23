@@ -17,7 +17,7 @@ import {
   Measure,
   Blockquote,
   Link,
-  NavLink
+  NavLink,
 } from '../src'
 import Logo from './Logo'
 import { docs, install } from './_constants'

@@ -36,6 +36,7 @@
     "system-components": "^2.2.1"
   },
   "devDependencies": {
+    "@compositor/kit": "^1.0.43",
     "@compositor/kit-snapshot": "^1.0.24",
     "@compositor/x0": "^5.1.0-6",
     "ava": "^0.25.0",

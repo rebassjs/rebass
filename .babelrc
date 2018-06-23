@@ -16,6 +16,10 @@
                 "replacement": "system-components/emotion"
               },
               {
+                "original": "^styled-components$",
+                "replacement": "emotion-theming"
+              },
+              {
                 "original": "^grid-styled$",
                 "replacement": "grid-styled/emotion"
               }

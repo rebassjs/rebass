@@ -1,57 +1,58 @@
-import styled from 'styled-components'
+import sys from 'system-components'
 import { space, color, zIndex } from 'styled-system'
-import { Fixed } from './index'
+import { Box } from 'grid-styled'
 
-export const drawerOpen = ({
-  open,
-  position,
-  size
-}) => {
-  const h = /^(left|right)$/.test(position) ? 1 : 0
-  const width = h ? size + 'px' : null
-  const height = h ? null : size + 'px'
-  const transforms = {
-    left: 'translateX(-100%)',
-    right: 'translateX(100%)',
-    top: 'translateY(-100%)',
-    bottom: 'translateY(100%)',
-  }
-  const top = /^(top|left|right)$/.test(position) ? 0 : null
-  const bottom = /^(bottom|left|right)$/.test(position) ? 0 : null
-  const left = /^(left|top|bottom)$/.test(position) ? 0 : null
-  const right = /^(right|top|bottom)$/.test(position) ? 0 : null
+const transforms = {
+  left: 'translateX(-100%)',
+  right: 'translateX(100%)',
+  top: 'translateY(-100%)',
+  bottom: 'translateY(100%)',
+}
+export const side = ({ side }) => {
+  const h = /^(left|right)$/.test(side) ? 1 : 0
+  const top = /^(top|left|right)$/.test(side) ? 0 : null
+  const bottom = /^(bottom|left|right)$/.test(side) ? 0 : null
+  const left = /^(left|top|bottom)$/.test(side) ? 0 : null
+  const right = /^(right|top|bottom)$/.test(side) ? 0 : null
 
   return {
-    width,
-    height,
     top,
     bottom,
     left,
     right,
-    transform: open ? null : transforms[position]
   }
 }
 
-export const Drawer = styled(Fixed)([],
-  space,
-  color,
-  zIndex,
-  drawerOpen, {
-    position: 'fixed',
-    overflowX: 'hidden',
-    overflowY: 'auto',
-    transitionProperty: 'transform',
-    transitionDuration: '.2s',
-    transitionTimingFunction: 'ease-out'
+export const transform = ({
+  open,
+  side
+}) => ({
+  transform: open ? null : transforms[side]
 })
 
-Drawer.defaultProps = {
+export const Drawer = sys({
+  is: Box,
+  blacklist: [
+    'side',
+    'open',
+  ],
+  position: 'fixed',
   color: 'white',
   bg: 'dark',
   open: false,
-  size: 320,
-  position: 'left',
-}
+  side: 'bottom',
+  width: 320,
+}, side,
+  transform,
+  'zIndex',
+  'height',
+  {
+  overflowX: 'hidden',
+  overflowY: 'auto',
+  transitionProperty: 'transform',
+  transitionDuration: '.2s',
+  transitionTimingFunction: 'ease-out'
+})
 
 Drawer.displayName = 'Drawer'
 

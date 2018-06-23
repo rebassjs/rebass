@@ -3,7 +3,7 @@ import { connect } from 'refunk'
 import {
   Provider as KitProvider,
   Library,
-  Example
+  Example,
 } from '@compositor/kit'
 import {
   theme,
@@ -70,7 +70,7 @@ import {
   Embed,
   // Star,
   Donut,
-} from '../src'
+} from '../../src'
 
 const colors = (
   <Example name='Colors'>
@@ -86,11 +86,11 @@ const colors = (
 )
 
 const Demo = connect(props => (
-  <RebassProvider>
+    <RebassProvider>
       <CSS />
       <Library
         title='Rebass'
-        basename='/rebass/library'>
+        basename='/library'>
         <Example name='Box'>
           <Box p={3} bg='gray'> Box </Box>
         </Example>
