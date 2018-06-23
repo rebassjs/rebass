@@ -23,7 +23,7 @@ export const side = ({ side }) => {
   }
 }
 
-export const drawerTransform = ({
+export const transform = ({
   open,
   side
 }) => ({
@@ -43,7 +43,7 @@ export const Drawer = sys({
   side: 'bottom',
   width: 320,
 }, side,
-  drawerTransform,
+  transform,
   'zIndex',
   'height',
   {
