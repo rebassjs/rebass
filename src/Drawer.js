@@ -1,4 +1,3 @@
-// import styled from 'styled-components'
 import sys from 'system-components'
 import { space, color, zIndex } from 'styled-system'
 import { Box } from 'grid-styled'
