@@ -8,7 +8,8 @@
     "emotion": {
       "plugins": [
         [
-          "transform-rename-import", {
+          "transform-rename-import",
+          {
             "replacements": [
               {
                 "original": "^system-components$",
