@@ -7,6 +7,7 @@ export { Base } from './Base'
 export { CSS } from './CSS'
 export { Root } from './Root'
 export { Provider } from './Provider'
+export { DarkMode } from './DarkMode'
 
 export { Button } from './Button'
 export { ButtonOutline } from './ButtonOutline'
