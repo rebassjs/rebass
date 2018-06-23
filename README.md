@@ -79,14 +79,14 @@ import * as Rebass from 'rebass/emotion'
 
 ## Documentation
 
-- [Docs](docs)
-- [Getting Started](docs/getting-started.md)
-- [Props](docs/props.md)
-- [Grid System](docs/grid-system.md)
-- [Theming](docs/theming.md)
-- [Extending](docs/extending.md)
-- [Components](docs/components.md)
-- [Server-Side Rendering](server-side-rendering.md)
+- [Docs](https://jxnblk.com/rebass)
+- [Getting Started](https://jxnblk.com/rebass/getting-started)
+- [Props](https://jxnblk.com/rebass/props)
+- [Grid System](https://jxnblk.com/rebass/grid-system)
+- [Theming](https://jxnblk.com/rebass/theming)
+- [Extending](https://jxnblk.com/rebass/extending)
+- [Components](https://jxnblk.com/rebass/components)
+- [Server-Side Rendering](https://jxnblk.com/rebass/server-side-rendering)
 
 ## CodeSandbox
 
