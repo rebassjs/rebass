@@ -30,13 +30,7 @@ export const createColors = base => {
   const colors = {
     black: '#000',
     white: '#fff',
-    darken: [
-      'rgba(0, 0, 0, 0.125)',
-      'rgba(0, 0, 0, 0.25)',
-      'rgba(0, 0, 0, 0.5)',
-      'rgba(0, 0, 0, 0.75)',
-    ],
-    dark: 'rgba(0, 0, 0, 0.75)',
+    darken: 'rgba(0, 0, 0, 0.25)',
     gray: '#eee'
   }
 
@@ -60,6 +54,6 @@ export const invertLuminance = base => {
   return next.hex()
 }
 
-const colors = createColors('#06e')
+export const colors = createColors('#06e')
 
 export default colors

@@ -76,6 +76,19 @@
 
 ## Flex
 
+```.jsx
+<Flex
+  mx={-3}
+  flexWrap='wrap'>
+  <Box width={[ 1, 1/2 ]} p={3} color='white' bg='blue'>
+    Flex
+  </Box>
+  <Box width={[ 1, 1/2 ]} p={3} color='white' bg='violet'>
+    Box
+  </Box>
+</Flex>
+```
+
 ### Props
 
 - `flexWrap`
@@ -87,6 +100,17 @@
 - `justify`
 
 ## Box
+
+```.jsx
+<Box
+  px={3}
+  py={4}
+  color='white'
+  bg='blue'>
+  Hello
+</Box>
+
+```
 
 ### Props
 
@@ -338,7 +362,7 @@ Extends [Text](#text)
 ```.jsx
 <Divider
   w={1}
-  color='blue'
+  borderColor='blue'
 />
 ```
 
@@ -737,7 +761,7 @@ Extends [Flex](#flex)
 ```.jsx
 <Banner
   color='white'
-  bg='gray8'
+  bg='darken'
   backgroundImage='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'>
   <Heading
     f={[ 4, 5, 6, 7 ]}>
@@ -927,6 +951,15 @@ Extends [Badge](#badge)
 
 ## Position
 
+```.jsx
+<Position
+  p={3}
+  bg='green'
+  position='relative'>
+  Hello
+</Position>
+```
+
 ### Props
 
 - `zIndex`
@@ -969,7 +1002,7 @@ Extends [Position](#position)
     <Fixed
       m={2}
       p={3}
-      bg='green3'
+      bg='green'
       zIndex={1}
       right={0}
       bottom={0}>
@@ -1028,10 +1061,10 @@ Extends [Box](#box)
 <div>
   <Drawer
     open={false}
-    position='right'
+    side='right'
     p={3}
     color='white'
-    bg='dark'>
+    bg='black'>
     <Heading>Hello</Heading>
   </Drawer>
 </div>

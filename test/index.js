@@ -22,7 +22,14 @@ test('exports an object', t => {
   t.is(typeof Rebass, 'object')
 })
 
+const blacklist = [
+  'theme',
+  'colors',
+  'createColors',
+]
+
 Object.keys(Rebass)
+  .filter(key => !blacklist.includes(key))
   .filter(key => typeof Rebass[key] === 'function')
   .forEach(key => {
   test(`exports a ${key} component`, t => {
