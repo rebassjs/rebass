@@ -14,7 +14,6 @@ const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
 const renderJSON = el => render(el).toJSON()
 
 const fixtures = {
-  // 'NavLink active': <Rebass.NavLink active />,
   'Text bold': <Rebass.Text fontWeight='bold' />,
   'Border top': <Rebass.Border borderTop={1} />,
   'Border right': <Rebass.Border borderRight={1} />,
