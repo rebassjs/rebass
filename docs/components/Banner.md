@@ -37,5 +37,5 @@ backgroundSize | cover | N/A | default
 backgroundPosition | center | N/A | default
 minHeight | 80vh | minHeights | responsive
 color | white | colors | responsive
-bg | dark | colors | responsive
+bg | black | colors | responsive
 backgroundImage |  | N/A | default

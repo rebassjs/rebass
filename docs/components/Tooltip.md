@@ -11,4 +11,4 @@
 prop | default | theme key | style type
 ---|---|---|---
 color | white | colors | responsive
-bg | dark | colors | responsive
+bg | black | colors | responsive

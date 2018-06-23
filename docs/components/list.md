@@ -6,10 +6,12 @@
   <ul>
     <li><a href='#flex'>Flex</a></li>
 <li><a href='#box'>Box</a></li>
+<li><a href='#createcolors'>createColors</a></li>
 <li><a href='#base'>Base</a></li>
 <li><a href='#css'>CSS</a></li>
 <li><a href='#root'>Root</a></li>
 <li><a href='#provider'>Provider</a></li>
+<li><a href='#darkmode'>DarkMode</a></li>
 <li><a href='#button'>Button</a></li>
 <li><a href='#buttonoutline'>ButtonOutline</a></li>
 <li><a href='#buttoncircle'>ButtonCircle</a></li>
@@ -120,6 +122,8 @@
 - `order`
 - `alignSelf`
 
+## createColors
+
 ## Base
 
 ### Props
@@ -136,6 +140,8 @@
 - `font`
 
 ## Provider
+
+## DarkMode
 
 ## Button
 

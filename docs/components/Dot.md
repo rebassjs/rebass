@@ -26,7 +26,7 @@ px |  | space | responsive
 py |  | space | responsive
 size | 16 | N/A | responsive
 color |  | colors | responsive
-bg | darken.1 | colors | responsive
+bg | darken | colors | responsive
 borderRadius | 99999 | radii | default
 border | 4 | borders | responsive
 borderTop |  | borders | responsive

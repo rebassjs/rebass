@@ -1215,6 +1215,18 @@ exports[`exports a Container component 1`] = `
 />
 `;
 
+exports[`exports a DarkMode component 1`] = `
+.c0 {
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`exports a Divider component 1`] = `
 .c0 {
   margin-left: 0px;
