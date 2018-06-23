@@ -8,10 +8,17 @@
     "emotion": {
       "plugins": [
         [
-          "transform-rename-import",
-          {
-            "original": "^system-components$",
-            "replacement": "system-components/emotion"
+          "transform-rename-import", {
+            "replacements": [
+              {
+                "original": "^system-components$",
+                "replacement": "system-components/emotion"
+              },
+              {
+                "original": "^grid-styled$",
+                "replacement": "grid-styled/emotion"
+              }
+            ]
           }
         ]
       ]
