@@ -48,6 +48,8 @@ Refactored code base, using the latest styled-system
   - Border now uses [styled-system border props](https://github.com/jxnblk/styled-system#borders)
   - Banner `image` is now `backgroundImage`
   - Absolute, Fixed, Relative, and Sticky now require values for `top`, `right`, `bottom`, and `left` props
+  - Drawer `position` prop has been renamed to `side`
+  - Drawer `size` prop has been replaced with `width` and `height` props
 
 
 [emotion]: https://github.com/emotion-js/emotion
