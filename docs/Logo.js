@@ -96,8 +96,6 @@ const Logo = props => {
   return (
     <Svg viewBox='0 0 64 64'
       style={{
-        width: props.static ? 384 : null,
-        height: props.static ? 384 : null,
         display: 'block',
         maxWidth: '100%',
         margin: 0,
@@ -122,6 +120,7 @@ const Logo = props => {
 }
 
 Logo.defaultProps = {
+  ignore: true,
   size: 256
 }
 

@@ -18,6 +18,10 @@
               {
                 "original": "^styled-components$",
                 "replacement": "emotion-theming"
+              },
+              {
+                "original": "^grid-styled$",
+                "replacement": "grid-styled/emotion"
               }
             ]
           }

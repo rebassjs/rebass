@@ -278,7 +278,7 @@ const Footer = props =>
 
 export default class extends React.Component {
   static defaultProps = {
-    layout: './_fullwidth.js'
+    layout: false
   }
 
   render () {
