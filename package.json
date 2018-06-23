@@ -10,6 +10,7 @@
     "docs": "./docs/_build.js",
     "cover": "jest --coverage --coverageReporters html lcov && codecov",
     "test": "jest",
+    "size": "bundlesize",
     "start": "x0 docs -p 9999",
     "build": "x0 build docs -d site",
     "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
@@ -46,6 +47,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "bundlesize": "^0.17.0",
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
     "jest": "^23.1.0",
@@ -80,6 +82,12 @@
       "**/test/**/*.js"
     ]
   },
+  "bundlesize": [
+    {
+      "path": "./dist/*.js",
+      "maxSize": "2 kB"
+    }
+  ],
   "x0": {
     "title": "Rebass",
     "template": "./docs/_template.js",
