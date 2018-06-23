@@ -11,8 +11,41 @@ import {
 
 const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
 
-const examples = [
-]
+const renderJSON = el => render(el).toJSON()
+
+const fixtures = {
+  // 'NavLink active': <Rebass.NavLink active />,
+  'Text bold': <Rebass.Text fontWeight='bold' />,
+  'Border top': <Rebass.Border borderTop={1} />,
+  'Border right': <Rebass.Border borderRight={1} />,
+  'Border bottom': <Rebass.Border borderBottom={1} />,
+  'Border left': <Rebass.Border borderLeft={1} />,
+  'Border 2': <Rebass.Border border={2} />,
+  'Border none': <Rebass.Border border='none' />,
+  'Banner src': <Rebass.Banner src='hello.png' />,
+  'Banner src': <Rebass.Banner src='hello.png' />,
+  'Drawer open': <Rebass.Drawer open />,
+  'Drawer side top': <Rebass.Drawer side='top' />,
+  'Drawer side right': <Rebass.Drawer side='right' />,
+  'Drawer side bottom': <Rebass.Drawer side='bottom' />,
+  'Drawer side left': <Rebass.Drawer side='left' />,
+  'Drawer open side top': <Rebass.Drawer open side='top' />,
+  'Drawer open side right': <Rebass.Drawer open side='right' />,
+  'Drawer open side bottom': <Rebass.Drawer open side='bottom' />,
+  'Drawer open side left': <Rebass.Drawer open side='left' />,
+  'Drawer width': <Rebass.Drawer width={128} />,
+  'Drawer height': <Rebass.Drawer height={128} />,
+  'Carousel index 2': <Rebass.Carousel index={2} />,
+  'Arrow up': <Rebass.Arrow direction='up' />,
+  'Embed ratio': <Rebass.Embed ratio={1/2} />,
+  'Switch checked': <Rebass.Switch checked />,
+  'BackgroundImage src': <Rebass.BackgroundImage src='hello.png' />,
+}
+
+const examples = Object.keys(fixtures).map(name => ({
+  name,
+  element: fixtures[name]
+}))
 
 afterEach(() => {
   StyleSheet.reset()
@@ -73,148 +106,21 @@ test('theme is an object', () => {
   expect(typeof theme.fonts).toBe('object')
 })
 
-test.skip('renders NavLink active', () => {
-  const json = render(<Rebass.NavLink active />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Text bold', () => {
-  const json = render(<Rebass.Text fontWeight='bold' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Border top', () => {
-  const json = render(<Rebass.Border borderTop={1} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Border right', () => {
-  const json = render(<Rebass.Border borderRight={1} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Border bottom', () => {
-  const json = render(<Rebass.Border borderBottom={1} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Border left', () => {
-  const json = render(<Rebass.Border borderLeft={1} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Border border 2', () => {
-  const json = render(<Rebass.Border border={2} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Border none', () => {
-  const json = render(<Rebass.Border border='none' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Banner backgroundImage', () => {
-  const json = render(<Rebass.Banner src='hello.png' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test.skip('renders TabItem active', () => {
-  const json = render(<Rebass.TabItem active />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test.skip('renders DotButton active', () => {
-  const json = render(<Rebass.DotButton active />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer open', () => {
-  const json = render(<Rebass.Drawer open />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer side top', () => {
-  const json = render(<Rebass.Drawer side='top' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer side right', () => {
-  const json = render(<Rebass.Drawer side='right' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer side bottom', () => {
-  const json = render(<Rebass.Drawer side='bottom' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer side left', () => {
-  const json = render(<Rebass.Drawer side='left' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer open side top', () => {
-  const json = render(<Rebass.Drawer open side='top' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer open side right', () => {
-  const json = render(<Rebass.Drawer open side='right' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer open side bottom', () => {
-  const json = render(<Rebass.Drawer open side='bottom' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer open side left', () => {
-  const json = render(<Rebass.Drawer open side='left' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Drawer size', () => {
-  const json = render(<Rebass.Drawer size={128} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Carousel index', () => {
-  const json = render(<Rebass.Carousel index={2} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test.skip('renders Star checked', () => {
-  const json = render(<Rebass.Star checked />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test.skip('renders Star half', () => {
-  const json = render(<Rebass.Star half />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Arrow up', () => {
-  const json = render(<Rebass.Arrow direction='up' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Embed ratio', () => {
-  const json = render(<Rebass.Embed ratio={1/2} />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders Switch checked', () => {
-  const json = render(<Rebass.Switch checked />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('renders BackgroundImage src', () => {
-  const json = render(<Rebass.BackgroundImage src='hello.png' />).toJSON()
-  expect(json).toMatchSnapshot()
-})
+examples.forEach(({ name, element }) => (
+  test(`${name} renders`, () => {
+    const json = renderJSON(element)
+    expect(json).toMatchSnapshot()
+  })
+))
 
 test('invertTheme adjusts colors', () => {
   const next = Rebass.invertTheme(Rebass.theme)
   expect(next.space).toEqual(Rebass.theme.space)
   expect(next.colors).not.toEqual(Rebass.theme.colors)
+})
+
+test('invertTheme handles themes without colors', () => {
+  const next = Rebass.invertTheme({ space: [ 4, 8, 16 ] })
+  expect(next.space).toEqual([ 4, 8, 16 ])
+  expect(next.colors).toEqual({})
 })

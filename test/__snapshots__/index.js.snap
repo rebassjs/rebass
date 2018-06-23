@@ -1,5 +1,1676 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Arrow up renders 1`] = `
+.c0 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-right: .3125em solid transparent;
+  border-left: .3125em solid transparent;
+  border-bottom: .4375em solid;
+}
+
+<div
+  className="c0"
+  direction="up"
+/>
+`;
+
+exports[`BackgroundImage src renders 1`] = `
+.c0 {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(hello.png);
+}
+
+<div
+  className="c0"
+  src="hello.png"
+/>
+`;
+
+exports[`Banner src renders 1`] = `
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  padding: 16px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  color: white;
+  background-color: black;
+}
+
+.c0 {
+  padding: 16px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  color: white;
+  background-color: black;
+}
+
+@media screen and (min-width:40em) {
+  .c0 {
+    padding: 32px;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c0 {
+    padding: 32px;
+  }
+}
+
+<div
+  className="c0 c1 c2"
+  src="hello.png"
+/>
+`;
+
+exports[`Border 2 renders 1`] = `
+.c0 {
+  border: 2px solid;
+  border-color: gray;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Border bottom renders 1`] = `
+.c0 {
+  border: 1px solid;
+  border-bottom: 1px solid;
+  border-color: gray;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Border left renders 1`] = `
+.c0 {
+  border: 1px solid;
+  border-left: 1px solid;
+  border-color: gray;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Border none renders 1`] = `
+.c0 {
+  border: none;
+  border-color: gray;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Border right renders 1`] = `
+.c0 {
+  border: 1px solid;
+  border-right: 1px solid;
+  border-color: gray;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Border top renders 1`] = `
+.c0 {
+  border: 1px solid;
+  border-top: 1px solid;
+  border-color: gray;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Carousel index 2 renders 1`] = `
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c0 > div {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  width: 100%;
+}
+
+.c0 > div:first-child {
+  margin-left: -200%;
+  -webkit-transition-property: margin;
+  transition-property: margin;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1 c2"
+  index={2}
+/>
+`;
+
+exports[`Drawer height renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  height: 128px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer open renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer open side bottom renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer open side left renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer open side right renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer open side top renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer side bottom renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer side left renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer side right renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer side top renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 320px;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Drawer width renders 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 128px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+<div
+  className="c0 c1"
+/>
+`;
+
+exports[`Embed ratio renders 1`] = `
+.c0 {
+  height: 0;
+  padding-bottom: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.c0 > iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`Provider renders 1`] = `
 .c0 {
   font-family: system-ui,sans-serif;
@@ -37,6 +1708,65 @@ exports[`Provider renders with custom theme 1`] = `
 
 .c0 * {
   box-sizing: border-box;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Switch checked renders 1`] = `
+.c0 {
+  color: blue;
+  border-radius: 99999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 40px;
+  height: 24px;
+  box-shadow: inset 0 0 0 2px;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::after {
+  content: " ";
+  width: 16px;
+  height: 16px;
+  margin: 4px;
+  border-radius: 99999px;
+  -webkit-transition-property: -webkit-transform,color;
+  -webkit-transition-property: transform,color;
+  transition-property: transform,color;
+  -webkit-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+<div
+  checked={true}
+  className="c0"
+  role="checkbox"
+/>
+`;
+
+exports[`Text bold renders 1`] = `
+.c0 {
+  margin: 0px;
+  font-weight: bold;
 }
 
 <div
@@ -2550,1650 +4280,5 @@ exports[`exports a Truncate component 1`] = `
 
 <div
   className="c0 c1"
-/>
-`;
-
-exports[`renders Arrow up 1`] = `
-.c0 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  vertical-align: middle;
-  border-right: .3125em solid transparent;
-  border-left: .3125em solid transparent;
-  border-bottom: .4375em solid;
-}
-
-<div
-  className="c0"
-  direction="up"
-/>
-`;
-
-exports[`renders BackgroundImage src 1`] = `
-.c0 {
-  width: 100%;
-  height: 0;
-  padding-bottom: 75%;
-  background-size: cover;
-  background-position: center;
-  background-image: url(hello.png);
-}
-
-<div
-  className="c0"
-  src="hello.png"
-/>
-`;
-
-exports[`renders Banner backgroundImage 1`] = `
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0 {
-  padding: 16px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  min-height: 80vh;
-  color: white;
-  background-color: black;
-}
-
-.c0 {
-  padding: 16px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  min-height: 80vh;
-  color: white;
-  background-color: black;
-}
-
-@media screen and (min-width:40em) {
-  .c0 {
-    padding: 32px;
-  }
-}
-
-@media screen and (min-width:40em) {
-  .c0 {
-    padding: 32px;
-  }
-}
-
-<div
-  className="c0 c1 c2"
-  src="hello.png"
-/>
-`;
-
-exports[`renders Border border 2 1`] = `
-.c0 {
-  border: 2px solid;
-  border-color: gray;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Border bottom 1`] = `
-.c0 {
-  border: 1px solid;
-  border-bottom: 1px solid;
-  border-color: gray;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Border left 1`] = `
-.c0 {
-  border: 1px solid;
-  border-left: 1px solid;
-  border-color: gray;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Border none 1`] = `
-.c0 {
-  border: none;
-  border-color: gray;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Border right 1`] = `
-.c0 {
-  border: 1px solid;
-  border-right: 1px solid;
-  border-color: gray;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Border top 1`] = `
-.c0 {
-  border: 1px solid;
-  border-top: 1px solid;
-  border-color: gray;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Carousel index 1`] = `
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0 {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.c0 > div {
-  -webkit-flex: none;
-  -ms-flex: none;
-  flex: none;
-  width: 100%;
-}
-
-.c0 > div:first-child {
-  margin-left: -200%;
-  -webkit-transition-property: margin;
-  transition-property: margin;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1 c2"
-  index={2}
-/>
-`;
-
-exports[`renders Drawer open 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer open side bottom 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer open side left 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer open side right 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer open side top 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  top: 0;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer side bottom 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer side left 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer side right 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer side top 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  top: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Drawer size 1`] = `
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.c0 {
-  position: fixed;
-  color: white;
-  background-color: black;
-  width: 320px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-<div
-  className="c0 c1"
-/>
-`;
-
-exports[`renders Embed ratio 1`] = `
-.c0 {
-  height: 0;
-  padding-bottom: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.c0 > iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  border: 0;
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders Switch checked 1`] = `
-.c0 {
-  color: blue;
-  border-radius: 99999px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 40px;
-  height: 24px;
-  box-shadow: inset 0 0 0 2px;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0::after {
-  content: " ";
-  width: 16px;
-  height: 16px;
-  margin: 4px;
-  border-radius: 99999px;
-  -webkit-transition-property: -webkit-transform,color;
-  -webkit-transition-property: transform,color;
-  transition-property: transform,color;
-  -webkit-transition-duration: .1s;
-  transition-duration: .1s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transform: translateX(16px);
-  -ms-transform: translateX(16px);
-  transform: translateX(16px);
-}
-
-<div
-  checked={true}
-  className="c0"
-  role="checkbox"
-/>
-`;
-
-exports[`renders Text bold 1`] = `
-.c0 {
-  margin: 0px;
-  font-weight: bold;
-}
-
-<div
-  className="c0"
 />
 `;
