@@ -1,42 +1,35 @@
 
-## v2
+# Changelog
 
-Refactored code base, using the latest styled-system
+## [2.0.0] 2018-06-24
+
+### Added
+
+- Support for [emotion][emotion]
+
+### Changed
 
 - [styled-system](https://github.com/jxnblk/styled-system) v2
 - [grid-styled](https://github.com/jxnblk/grid-styled) v4
-- Removes custom HOC
-- Removes createLibrary function
 - Moves components to separate modules
 - Uses [system-components](https://github.com/jxnblk/styled-system/tree/master/system-components)
-- Removes Palx dependency
 - Updates docs site
-- Adds support for [emotion][emotion]
 
-### Breaking Changes
+#### Breaking
 
-- Some components have been renamed:
+- Renamed components
   - TabItem -> Tab
   - DotButton -> Dot
   - PanelHeader -> Panel.Header
   - PanelFooter -> Panel.Footer
-- Some components have been removed:
-  - ScrollCarousel
-  - CarouselSlide
-  - Star
-- Some utilities have been removed:
-  - `util`
-  - `hoc`
-  - `createComponent`
-  - `createLibrary`
-- The default theme has changed to match styled-system
+- Default theme (changed to match styled-system)
   - The `colors` object no longer uses Palx
   - Array color values have been removed
   - `radius` has been replaced with `radii`
   - `font` has been replaced with `fonts`
   - `monospace` has been removed
   - Theme fields are no longer exposed as exports
-- Some props have changed
+- Props
   - `width` is only available on Flex and Box
   - `fontSize` is only available on typographic components
   - `direction` is now `flexDirection`
@@ -50,6 +43,17 @@ Refactored code base, using the latest styled-system
   - Absolute, Fixed, Relative, and Sticky now require values for `top`, `right`, `bottom`, and `left` props
   - Drawer `position` prop has been renamed to `side`
   - Drawer `size` prop has been replaced with `width` and `height` props
+
+### Removed
+
+- Custom HOC `hoc`
+- `createLibrary` function
+- `util`
+- `createComponent`
+- Palx dependency
+- ScrollCarousel component
+- CarouselSlide component
+- Star comonent
 
 
 [emotion]: https://github.com/emotion-js/emotion
