@@ -53,22 +53,25 @@ const Hero = connect(props => (
     color='white'
     bg='black'>
     <Flex
-      flexWrap='wrap'
+      flexWrap={[ 'wrap', 'wrap', 'nowrap' ]}
       width={1}
       mx={-3}
       mb={3}
-      alignItems='center'>
-      <Box width={[ 1, null, 512 ]} px={3}>
-        <Logo size={[ 256, 320, 384 ]} />
-      </Box>
-      <Box width={[ 1, null, 512 ]} px={3}>
+      alignItems='flex-start'>
+      <Flex
+        justifyContent='center'
+        width={[ 1, null, 256, 320, 512 ]}
+        px={0}>
+        <Logo size={[ 256, null, null, 320 ]} />
+      </Flex>
+      <Box width={[ 1, null, 384 ]} px={3}>
         <Title
           is='h1'
           fontSize={[ 6, 7, 8 ]}>
           Rebass
         </Title>
-        <Pre mb={2}>v{props.pkg.version}</Pre>
-        <Lead mb={3} fontWeight='bold'>
+        <Pre mb={2} color=''>v{props.pkg.version}</Pre>
+        <Lead mb={3} fontWeight='bold' color=''>
           {props.pkg.description}
         </Lead>
         <Flex
@@ -82,7 +85,7 @@ const Hero = connect(props => (
             to={docs}
             fontSize={2}
             color='black'
-            bg='white'
+            bg='cyan'
             children='Documentation'
             py={3}
             mx={3}
@@ -138,7 +141,13 @@ const Intro = props =>
       my={5}
     >
       <Measure>
-        Rebass is a library of highly-composable, primitive UI components for React, built with styled-components to keep styles isolated and reduce the need to write custom CSS in your application. Based upon a configurable design system, Rebass’s props API makes building consistent, responsive web apps simpler and faster.
+        Rebass is a library of highly-composable, primitive UI components for React,
+        built with styled-system to make building consistent, responsive web apps simpler and faster.
+        {/*
+        Based upon a configurable design system,
+        Rebass’s props API makes building consistent,
+        responsive web apps simpler and faster.
+        */}
       </Measure>
     </Text>
     <Heading>

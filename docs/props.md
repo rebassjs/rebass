@@ -1,6 +1,8 @@
 
 # Props
 
+## Styled System
+
 Rebass components use [styled-system][system] for responsive, theme-based style props.
 
 ## Margin and Padding

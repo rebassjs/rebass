@@ -8,7 +8,6 @@ import sortBy from 'lodash.sortby'
 import pkg from '../package.json'
 import * as Rebass from '../src'
 import { photo } from './_constants'
-import Logo from './Logo'
 
 const scope = {
   ...Rebass,
@@ -24,7 +23,6 @@ const navOrder = [
   'extending',
   'server-side-rendering',
   'colors',
-  'Logo',
   'components',
 ]
 
@@ -74,7 +72,6 @@ export default class extends React.Component {
                 {...this.props}
                 title='Rebass'
                 routes={nav}
-                logo={<Logo size={32} static />}
               />
             )}
           </Rebass.Provider>
