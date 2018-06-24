@@ -4,7 +4,7 @@
 Refactored code base, using the latest styled-system
 
 - [styled-system](https://github.com/jxnblk/styled-system) v2
-- [grid-styled](https://github.com/jxnblk/grid-styled) v2
+- [grid-styled](https://github.com/jxnblk/grid-styled) v4
 - Removes custom HOC
 - Removes createLibrary function
 - Moves components to separate modules
