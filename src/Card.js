@@ -7,7 +7,7 @@ export const Card = sys({
   boxShadow: 2
 }, {
   overflow: 'hidden'
-}, 'space', 'color')
+}, 'space', 'width', 'color')
 
 Card.displayName = 'Card'
 
