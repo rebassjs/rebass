@@ -34,19 +34,20 @@ const code = ({
   }
 }
 
-// todo: link
-
 export default class RebassMDXProvider extends React.Component {
   state = {
-    components: {
-      ...createScope(this.props.props),
-      code,
-      pre,
-      ...this.props.components
-    }
+    components: {}
   }
-  // static getDerivedStateFromProps (props, state) => {
-  // }
+  static getDerivedStateFromProps = (props, state) => {
+    const components = {
+        ...createScope(props.props),
+        code,
+        pre,
+        ...props.components
+    }
+    if (state.components === components) return null
+    return { components }
+  }
 
   render () {
     const { theme, children } = this.props
