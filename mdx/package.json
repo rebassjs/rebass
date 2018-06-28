@@ -1,6 +1,6 @@
 {
   "name": "@rebass/mdx",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "MDX Provider for Rebass components",
   "main": "dist/index.js",
   "scripts": {

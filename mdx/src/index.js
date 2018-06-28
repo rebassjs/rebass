@@ -8,7 +8,7 @@ import LivePreview from './LivePreview'
 const pre = props => props.children
 const code = ({
   children,
-  className,
+  className = '',
   scope,
   ...props
 }) => {
