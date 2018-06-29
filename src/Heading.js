@@ -8,6 +8,7 @@ export const Heading = sys({
   lineHeight: 1.25,
   m: 0
 },
+  'fontFamily',
   'color',
   'textAlign'
 )
