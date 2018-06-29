@@ -2,17 +2,17 @@
   "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist",
-    "start": "kit examples",
+    "start": "x0 examples",
     "test": "jest"
   },
   "dependencies": {
-    "rebass": "^1.0.7",
+    "rebass": "^2.0.0",
     "styled-components": "^3.2.6",
     "styled-system": "^2.2.5"
   },
   "devDependencies": {
-    "@compositor/kit-cli": "^1.0.35",
     "@compositor/kit-snapshot": "^1.0.24",
+    "@compositor/x0": "^6.0.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",

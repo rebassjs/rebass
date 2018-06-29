@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from '../src'
 
-export default ({ render }) =>
+export default ({ children }) =>
   <Provider>
-    {render()}
+    {children}
   </Provider>
