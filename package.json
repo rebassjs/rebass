@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Flexible & functional React design system, built with styled-system",
   "main": "dist/index.js",
   "sideEffects": false,
