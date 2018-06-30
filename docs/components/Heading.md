@@ -25,6 +25,7 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
+fontFamily |  | fonts | default
 color |  | colors | responsive
 bg |  | colors | responsive
 textAlign |  | N/A | responsive

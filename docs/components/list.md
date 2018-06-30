@@ -264,6 +264,8 @@ Extends [ButtonTransparent](#buttontransparent)
 
 ### Props
 
+- `fontFamily`
+- `font`
 - `fontSize`
 - `fontWeight`
 - `textAlign`
@@ -283,6 +285,8 @@ Extends [ButtonTransparent](#buttontransparent)
 - `fontSize`
 - `fontWeight`
 - `lineHeight`
+- `fontFamily`
+- `font`
 - `textAlign`
 - `align`
 
