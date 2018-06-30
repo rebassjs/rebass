@@ -3,6 +3,6 @@ import { Heading } from '../src'
 
 export default () => (
   <Heading>
-    Hello
+    Hello Heading
   </Heading>
 )

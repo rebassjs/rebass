@@ -3,6 +3,6 @@ import { Text } from '../src'
 
 export default () => (
   <Text>
-    Hello
+    Hello Text
   </Text>
 )

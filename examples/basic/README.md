@@ -1,7 +1,7 @@
 
 # Rebass Project
 
-This project was created with [create-rebass][cr]
+This project was created with [create-rebass][]
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ rebass-project/
 
 ---
 
-Built with [Rebass][rebass]
+Built with [Rebass][]
 
-[rebass]: https://github.com/jxnblk/rebass
-[cr]: https://github.com/jxnblk/rebass/tree/master/create-rebass
+[Rebass]: https://github.com/jxnblk/rebass
+[create-rebass]: https://github.com/jxnblk/rebass/tree/master/create-rebass
