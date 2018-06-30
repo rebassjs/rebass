@@ -5,6 +5,7 @@ export const Text = sys({
 },
   'space',
   'color',
+  'fontFamily',
   'fontSize',
   'fontWeight',
   'textAlign',
