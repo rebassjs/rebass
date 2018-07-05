@@ -58,7 +58,7 @@ const theme = {
     72,
     96
   ],
-  weights: {
+  fontWeights: {
     normal: 400,
     bold: 700
   },
