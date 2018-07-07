@@ -8,4 +8,4 @@
 </Group>
 ```
 
-Extends: [Flex](/components/Flex)
+Extends: [Flex](/components/Flex) > [Box](/components/Box)

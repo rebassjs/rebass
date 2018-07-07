@@ -34,59 +34,87 @@ exports[`BackgroundImage src renders 1`] = `
 `;
 
 exports[`Banner src renders 1`] = `
-.c2 {
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  padding: 16px;
+  color: white;
+  background-color: black;
 }
 
-.c2 {
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  padding: 16px;
+  color: white;
+  background-color: black;
 }
 
-.c2 {
+.c4 {
   box-sizing: border-box;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -98,9 +126,48 @@ exports[`Banner src renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c1 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,37 +179,20 @@ exports[`Banner src renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -187,6 +237,18 @@ exports[`Banner src renders 1`] = `
   min-height: 80vh;
   color: white;
   background-color: black;
+}
+
+@media screen and (min-width:40em) {
+  .c2 {
+    padding: 32px;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c2 {
+    padding: 32px;
+  }
 }
 
 @media screen and (min-width:40em) {
@@ -202,7 +264,7 @@ exports[`Banner src renders 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c3 sc-bdVaJa c4 sc-bdVaJa c4"
   src="hello.png"
 />
 `;
@@ -278,103 +340,113 @@ exports[`Border top renders 1`] = `
 `;
 
 exports[`Carousel index 2 renders 1`] = `
-.c2 {
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  width: 100%;
 }
 
-.c2 {
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  width: 100%;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
+.c3 {
   box-sizing: border-box;
 }
 
@@ -472,105 +544,182 @@ exports[`Carousel index 2 renders 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c3 sc-bdVaJa c3"
   index={2}
 />
 `;
 
 exports[`Drawer height renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -598,64 +747,78 @@ exports[`Drawer height renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer open renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -679,92 +842,155 @@ exports[`Drawer open renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer open side bottom renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -807,96 +1033,166 @@ exports[`Drawer open side bottom renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer open side left renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -920,88 +1216,144 @@ exports[`Drawer open side left renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer open side right renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1025,84 +1377,133 @@ exports[`Drawer open side right renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer open side top renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1126,76 +1527,111 @@ exports[`Drawer open side top renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer side bottom renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1244,80 +1680,122 @@ exports[`Drawer side bottom renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer side left renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1344,72 +1822,100 @@ exports[`Drawer side left renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer side right renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1436,68 +1942,89 @@ exports[`Drawer side right renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer side top renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1524,100 +2051,107 @@ exports[`Drawer side top renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`Drawer width renders 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 128px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -1644,7 +2178,7 @@ exports[`Drawer width renders 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
@@ -1780,7 +2314,7 @@ exports[`exports a Absolute component 1`] = `
 }
 
 <div
-  className="c0 "
+  className="c0 sc-TOsTZ kjYrri"
 />
 `;
 
@@ -1852,35 +2386,56 @@ exports[`exports a Badge component 1`] = `
 `;
 
 exports[`exports a Banner component 1`] = `
-.c2 {
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  padding: 16px;
+  color: white;
+  background-color: black;
 }
 
-.c2 {
+.c4 {
   box-sizing: border-box;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1892,16 +2447,20 @@ exports[`exports a Banner component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1929,13 +2488,19 @@ exports[`exports a Banner component 1`] = `
 }
 
 @media screen and (min-width:40em) {
+  .c2 {
+    padding: 32px;
+  }
+}
+
+@media screen and (min-width:40em) {
   .c0 {
     padding: 32px;
   }
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c3 sc-bdVaJa c4 sc-bdVaJa c4"
 />
 `;
 
@@ -1961,26 +2526,7 @@ exports[`exports a BlockLink component 1`] = `
 exports[`exports a Blockquote component 1`] = `
 .c1 {
   margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
+  font-size: 20px;
 }
 
 .c0 {
@@ -2059,7 +2605,7 @@ exports[`exports a Button component 1`] = `
 `;
 
 exports[`exports a ButtonCircle component 1`] = `
-.c1 {
+.c2 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2071,6 +2617,74 @@ exports[`exports a ButtonCircle component 1`] = `
   color: white;
   background-color: blue;
   border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c2:disabled {
+  opacity: 0.25;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c2:disabled {
+  opacity: 0.25;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c1 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 9999px;
   border: 0;
   font-family: inherit;
   -webkit-font-smoothing: antialiased;
@@ -2093,7 +2707,7 @@ exports[`exports a ButtonCircle component 1`] = `
   box-shadow: 0 0 0 2px blue;
 }
 
-.c1 {
+.c2 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2118,45 +2732,11 @@ exports[`exports a ButtonCircle component 1`] = `
   appearance: none;
 }
 
-.c1:disabled {
+.c2:disabled {
   opacity: 0.25;
 }
 
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px blue;
-}
-
-.c1 {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1428571428571428;
-  margin: 0px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
-  background-color: blue;
-  border-radius: 2px;
-  border: 0;
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c1:disabled {
-  opacity: 0.25;
-}
-
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px blue;
 }
@@ -2171,12 +2751,12 @@ exports[`exports a ButtonCircle component 1`] = `
 }
 
 <button
-  className="c0 c1"
+  className="c0 c1 sc-ifAKCX c2"
 />
 `;
 
 exports[`exports a ButtonOutline component 1`] = `
-.c1 {
+.c2 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2187,6 +2767,40 @@ exports[`exports a ButtonOutline component 1`] = `
   padding-bottom: 8px;
   color: white;
   background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c2:disabled {
+  opacity: 0.25;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c1 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: blue;
+  background-color: transparent;
   border-radius: 2px;
   border: 0;
   font-family: inherit;
@@ -2207,10 +2821,10 @@ exports[`exports a ButtonOutline component 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px blue;
+  box-shadow: 0 0 0 2px transparent;
 }
 
-.c1 {
+.c2 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2235,11 +2849,11 @@ exports[`exports a ButtonOutline component 1`] = `
   appearance: none;
 }
 
-.c1:disabled {
+.c2:disabled {
   opacity: 0.25;
 }
 
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px blue;
 }
@@ -2256,12 +2870,12 @@ exports[`exports a ButtonOutline component 1`] = `
 }
 
 <button
-  className="c0 c1"
+  className="c0 c1 sc-ifAKCX c2"
 />
 `;
 
 exports[`exports a ButtonTransparent component 1`] = `
-.c1 {
+.c2 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2272,6 +2886,108 @@ exports[`exports a ButtonTransparent component 1`] = `
   padding-bottom: 8px;
   color: white;
   background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c2:disabled {
+  opacity: 0.25;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c2:disabled {
+  opacity: 0.25;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c2:disabled {
+  opacity: 0.25;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c1 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: inherit;
+  background-color: transparent;
   border-radius: 2px;
   border: 0;
   font-family: inherit;
@@ -2292,10 +3008,10 @@ exports[`exports a ButtonTransparent component 1`] = `
 
 .c1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px blue;
+  box-shadow: 0 0 0 2px transparent;
 }
 
-.c1 {
+.c2 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2320,79 +3036,11 @@ exports[`exports a ButtonTransparent component 1`] = `
   appearance: none;
 }
 
-.c1:disabled {
+.c2:disabled {
   opacity: 0.25;
 }
 
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px blue;
-}
-
-.c1 {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1428571428571428;
-  margin: 0px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
-  background-color: blue;
-  border-radius: 2px;
-  border: 0;
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c1:disabled {
-  opacity: 0.25;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px blue;
-}
-
-.c1 {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1428571428571428;
-  margin: 0px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
-  background-color: blue;
-  border-radius: 2px;
-  border: 0;
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c1:disabled {
-  opacity: 0.25;
-}
-
-.c1:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 0 2px blue;
 }
@@ -2409,7 +3057,7 @@ exports[`exports a ButtonTransparent component 1`] = `
 }
 
 <button
-  className="c0 c1"
+  className="c0 c1 sc-ifAKCX c2"
 />
 `;
 
@@ -2424,11 +3072,16 @@ exports[`exports a CSS component 1`] = `
 `;
 
 exports[`exports a Caps component 1`] = `
-.c1 {
+.c2 {
   margin: 0px;
 }
 
 .c1 {
+  margin: 0px;
+  font-size: 12px;
+}
+
+.c2 {
   margin: 0px;
 }
 
@@ -2442,7 +3095,7 @@ exports[`exports a Caps component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-gqjmRU c2"
 />
 `;
 
@@ -2461,51 +3114,56 @@ exports[`exports a Card component 1`] = `
 `;
 
 exports[`exports a Carousel component 1`] = `
-.c2 {
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  width: 100%;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
+.c3 {
   box-sizing: border-box;
 }
 
@@ -2589,7 +3247,7 @@ exports[`exports a Carousel component 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c3 sc-bdVaJa c3"
 />
 `;
 
@@ -2606,7 +3264,7 @@ exports[`exports a Checkbox component 1`] = `
 `;
 
 exports[`exports a Circle component 1`] = `
-.c1 {
+.c2 {
   font-size: 12px;
   margin-left: 4px;
   margin-right: 4px;
@@ -2624,6 +3282,23 @@ exports[`exports a Circle component 1`] = `
 }
 
 .c1 {
+  font-size: 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: white;
+  background-color: blue;
+  font-weight: bold;
+  border-radius: 99999px;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c2 {
   font-size: 12px;
   margin-left: 4px;
   margin-right: 4px;
@@ -2652,12 +3327,12 @@ exports[`exports a Circle component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-fAjcbJ c2"
 />
 `;
 
 exports[`exports a Close component 1`] = `
-.c2 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2668,6 +3343,177 @@ exports[`exports a Close component 1`] = `
   padding-bottom: 8px;
   color: white;
   background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c4:disabled {
+  opacity: 0.25;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c4 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c4:disabled {
+  opacity: 0.25;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c4 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c4:disabled {
+  opacity: 0.25;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c3:disabled {
+  opacity: 0.25;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.c4 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1428571428571428;
+  margin: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c4:disabled {
+  opacity: 0.25;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
+
+.c2 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: inherit;
+  background-color: transparent;
   border-radius: 2px;
   border: 0;
   font-family: inherit;
@@ -2688,10 +3534,10 @@ exports[`exports a Close component 1`] = `
 
 .c2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px blue;
+  box-shadow: 0 0 0 2px transparent;
 }
 
-.c2 {
+.c3 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2700,8 +3546,8 @@ exports[`exports a Close component 1`] = `
   padding-right: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
-  color: white;
-  background-color: blue;
+  color: inherit;
+  background-color: transparent;
   border-radius: 2px;
   border: 0;
   font-family: inherit;
@@ -2716,16 +3562,16 @@ exports[`exports a Close component 1`] = `
   appearance: none;
 }
 
-.c2:disabled {
+.c3:disabled {
   opacity: 0.25;
 }
 
-.c2:focus {
+.c3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px blue;
+  box-shadow: 0 0 0 2px transparent;
 }
 
-.c2 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.1428571428571428;
@@ -2750,79 +3596,11 @@ exports[`exports a Close component 1`] = `
   appearance: none;
 }
 
-.c2:disabled {
+.c4:disabled {
   opacity: 0.25;
 }
 
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px blue;
-}
-
-.c2 {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1428571428571428;
-  margin: 0px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
-  background-color: blue;
-  border-radius: 2px;
-  border: 0;
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c2:disabled {
-  opacity: 0.25;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px blue;
-}
-
-.c2 {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1428571428571428;
-  margin: 0px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: white;
-  background-color: blue;
-  border-radius: 2px;
-  border: 0;
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.c2:disabled {
-  opacity: 0.25;
-}
-
-.c2:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 0 2px blue;
 }
@@ -2863,7 +3641,7 @@ exports[`exports a Close component 1`] = `
 }
 
 <button
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-gzVnrw c1 sc-ifAKCX c3 sc-ifAKCX c4"
 >
   ×
 </button>
@@ -2881,27 +3659,37 @@ exports[`exports a Code component 1`] = `
 `;
 
 exports[`exports a Column component 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  margin-bottom: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -2915,20 +3703,28 @@ exports[`exports a Column component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
 exports[`exports a Container component 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -2941,7 +3737,7 @@ exports[`exports a Container component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
@@ -2979,8 +3775,31 @@ exports[`exports a Donut component 1`] = `
 }
 
 <svg
+  blacklist={
+    Array [
+      "color",
+      "bg",
+      "m",
+      "mt",
+      "mr",
+      "mb",
+      "ml",
+      "mx",
+      "my",
+      "p",
+      "pt",
+      "pr",
+      "pb",
+      "pl",
+      "px",
+      "py",
+      "css",
+    ]
+  }
   className="c0"
+  color="blue"
   height={128}
+  is={[Function]}
   strokeWidth={2}
   value={1}
   viewBox="0 0 32 32"
@@ -3043,47 +3862,54 @@ exports[`exports a Dot component 1`] = `
 `;
 
 exports[`exports a Drawer component 1`] = `
-.c1 {
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
+  box-sizing: border-box;
+}
+
+.c2 {
   box-sizing: border-box;
 }
 
 .c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
 }
 
@@ -3110,7 +3936,7 @@ exports[`exports a Drawer component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c2"
 />
 `;
 
@@ -3143,7 +3969,7 @@ exports[`exports a Fixed component 1`] = `
 }
 
 <div
-  className="c0 "
+  className="c0 sc-TOsTZ kjYrri"
 />
 `;
 
@@ -3160,7 +3986,7 @@ exports[`exports a Flex component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;
 
@@ -3208,7 +4034,7 @@ exports[`exports a Group component 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c2 sc-bdVaJa c2"
 />
 `;
 
@@ -3297,19 +4123,21 @@ exports[`exports a Label component 1`] = `
 `;
 
 exports[`exports a Lead component 1`] = `
-.c1 {
+.c2 {
+  margin: 0px;
+}
+
+.c2 {
   margin: 0px;
 }
 
 .c1 {
   margin: 0px;
+  font-size: 20px;
+  line-height: 1.25;
 }
 
-.c1 {
-  margin: 0px;
-}
-
-.c1 {
+.c2 {
   margin: 0px;
 }
 
@@ -3319,7 +4147,7 @@ exports[`exports a Lead component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-gqjmRU c2"
 />
 `;
 
@@ -3354,57 +4182,80 @@ exports[`exports a Measure component 1`] = `
   margin: 0px;
 }
 
-.c1 {
-  margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
-}
-
 .c0 {
   max-width: 32em;
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-gqjmRU c1"
 />
 `;
 
 exports[`exports a Message component 1`] = `
-.c2 {
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
 }
 
-.c2 {
+.c4 {
   box-sizing: border-box;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3416,23 +4267,13 @@ exports[`exports a Message component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3456,11 +4297,18 @@ exports[`exports a Message component 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c3 sc-bdVaJa c4 sc-bdVaJa c4"
 />
 `;
 
 exports[`exports a Modal component 1`] = `
+.c2 {
+  padding: 16px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+}
+
 .c1 {
   position: fixed;
 }
@@ -3485,7 +4333,7 @@ exports[`exports a Modal component 1`] = `
 }
 
 <div
-  className="c0 c1 "
+  className="c0 c1 c2 sc-ksYbfQ c1 sc-TOsTZ sc-TOsTZ kjYrri"
 />
 `;
 
@@ -3523,6 +4371,20 @@ exports[`exports a NavLink component 1`] = `
 `;
 
 exports[`exports a Overlay component 1`] = `
+.c2 {
+  padding: 16px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+}
+
+.c2 {
+  padding: 16px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+}
+
 .c1 {
   position: fixed;
 }
@@ -3566,7 +4428,7 @@ exports[`exports a Overlay component 1`] = `
 }
 
 <div
-  className="c0 c1 "
+  className="c0 c1 c2 sc-ksYbfQ c1 sc-TOsTZ sc-TOsTZ kjYrri"
 />
 `;
 
@@ -3666,7 +4528,7 @@ exports[`exports a Relative component 1`] = `
 }
 
 <div
-  className="c0 "
+  className="c0 sc-TOsTZ kjYrri"
 />
 `;
 
@@ -3685,23 +4547,29 @@ exports[`exports a Root component 1`] = `
 `;
 
 exports[`exports a Row component 1`] = `
-.c2 {
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c3 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
+.c3 {
   box-sizing: border-box;
 }
 
@@ -3732,7 +4600,7 @@ exports[`exports a Row component 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c3 sc-bdVaJa c3"
 />
 `;
 
@@ -3748,7 +4616,7 @@ exports[`exports a Samp component 1`] = `
 }
 
 <samp
-  className="c0"
+  className="c0 sc-kpOJdX c0"
 />
 `;
 
@@ -3832,14 +4700,12 @@ exports[`exports a Slider component 1`] = `
 exports[`exports a Small component 1`] = `
 .c1 {
   margin: 0px;
+  font-size: 12px;
 }
 
 .c1 {
   margin: 0px;
-}
-
-.c1 {
-  margin: 0px;
+  font-size: 12px;
 }
 
 .c0 {
@@ -3848,6 +4714,7 @@ exports[`exports a Small component 1`] = `
 
 <small
   className="c0 c1"
+  m={0}
 />
 `;
 
@@ -3858,12 +4725,12 @@ exports[`exports a Sticky component 1`] = `
 }
 
 <div
-  className="c0 "
+  className="c0 sc-TOsTZ kjYrri"
 />
 `;
 
 exports[`exports a Subhead component 1`] = `
-.c1 {
+.c2 {
   font-size: 32px;
   font-weight: bold;
   line-height: 1.25;
@@ -3871,6 +4738,13 @@ exports[`exports a Subhead component 1`] = `
 }
 
 .c1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin: 0px;
+}
+
+.c2 {
   font-size: 32px;
   font-weight: bold;
   line-height: 1.25;
@@ -3882,7 +4756,7 @@ exports[`exports a Subhead component 1`] = `
 }
 
 <h3
-  className="c0 c1"
+  className="c0 c1 sc-VigVT c2"
 />
 `;
 
@@ -4053,7 +4927,7 @@ exports[`exports a Tabs component 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c2 sc-bdVaJa c2"
 />
 `;
 
@@ -4103,43 +4977,72 @@ exports[`exports a Textarea component 1`] = `
 `;
 
 exports[`exports a Toolbar component 1`] = `
-.c2 {
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
+  box-sizing: border-box;
+}
+
+.c4 {
   box-sizing: border-box;
 }
 
 .c2 {
   box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  background-color: black;
 }
 
-.c2 {
+.c4 {
   box-sizing: border-box;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4151,9 +5054,13 @@ exports[`exports a Toolbar component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4165,16 +5072,13 @@ exports[`exports a Toolbar component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4195,7 +5099,7 @@ exports[`exports a Toolbar component 1`] = `
 }
 
 <div
-  className="c0 c1 c2"
+  className="c0 c1 c2 sc-bwzfXH c3 sc-bdVaJa c4 sc-bdVaJa c4"
 />
 `;
 
@@ -4268,10 +5172,6 @@ exports[`exports a Truncate component 1`] = `
   margin: 0px;
 }
 
-.c1 {
-  margin: 0px;
-}
-
 .c0 {
   overflow: hidden;
   white-space: nowrap;
@@ -4279,6 +5179,6 @@ exports[`exports a Truncate component 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0 c1 sc-gqjmRU c1"
 />
 `;

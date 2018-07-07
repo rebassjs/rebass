@@ -77,6 +77,8 @@
 
 ## Flex
 
+Extends [Box](#box)
+
 ```.jsx
 <Flex
   mx={-3}
