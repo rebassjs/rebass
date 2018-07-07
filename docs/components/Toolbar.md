@@ -14,7 +14,7 @@
 </Toolbar>
 ```
 
-Extends: [Flex](/components/Flex)
+Extends: [Flex](/components/Flex) > [Box](/components/Box)
 
 prop | default | theme key | style type
 ---|---|---|---
