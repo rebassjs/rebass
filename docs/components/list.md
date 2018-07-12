@@ -71,6 +71,7 @@
 <li><a href='#drawer'>Drawer</a></li>
 <li><a href='#carousel'>Carousel</a></li>
 <li><a href='#tooltip'>Tooltip</a></li>
+<li><a href='#hide'>Hide</a></li>
 <li><a href='#overlay'>Overlay</a></li>
   </ul>
 </details>
@@ -1124,6 +1125,16 @@ Extends [Flex](#flex)
     Hover Me
   </Text>
 </Tooltip>
+```
+
+## Hide
+
+```.jsx
+<Hide p={2} bg='blue' xsmall>Hide xsmall</Hide>
+<Hide p={2} bg='green' small>Hide small</Hide>
+<Hide p={2} bg='yellow' medium>Hide medium</Hide>
+<Hide p={2} bg='orange' large>Hide large</Hide>
+<Hide p={2} bg='red' xlarge>Hide xlarge</Hide>
 ```
 
 ## Overlay
