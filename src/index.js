@@ -83,5 +83,7 @@ export { Drawer } from './Drawer'
 export { Carousel } from './Carousel'
 export { Tooltip } from './Tooltip'
 
+export { Hide } from './Hide'
+
 // backwards compat
 export { Modal as Overlay } from './Modal'

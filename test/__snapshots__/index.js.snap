@@ -89,6 +89,10 @@ exports[`Banner src renders 1`] = `
   box-sizing: border-box;
 }
 
+.c4 {
+  box-sizing: border-box;
+}
+
 .c2 {
   box-sizing: border-box;
   padding: 16px;
@@ -441,6 +445,10 @@ exports[`Carousel index 2 renders 1`] = `
   box-sizing: border-box;
 }
 
+.c3 {
+  box-sizing: border-box;
+}
+
 .c2 {
   box-sizing: border-box;
   width: 100%;
@@ -595,6 +603,10 @@ exports[`Drawer height renders 1`] = `
   width: 320px;
   color: white;
   background-color: black;
+}
+
+.c2 {
+  box-sizing: border-box;
 }
 
 .c2 {
@@ -811,6 +823,10 @@ exports[`Drawer open renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -892,6 +908,10 @@ exports[`Drawer open side bottom renders 1`] = `
   width: 320px;
   color: white;
   background-color: black;
+}
+
+.c2 {
+  box-sizing: border-box;
 }
 
 .c2 {
@@ -1097,6 +1117,10 @@ exports[`Drawer open side left renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1280,6 +1304,10 @@ exports[`Drawer open side right renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1441,6 +1469,10 @@ exports[`Drawer open side top renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1577,6 +1609,10 @@ exports[`Drawer side bottom renders 1`] = `
   width: 320px;
   color: white;
   background-color: black;
+}
+
+.c2 {
+  box-sizing: border-box;
 }
 
 .c2 {
@@ -1744,6 +1780,10 @@ exports[`Drawer side left renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1886,6 +1926,10 @@ exports[`Drawer side right renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -2006,6 +2050,10 @@ exports[`Drawer side top renders 1`] = `
   box-sizing: border-box;
 }
 
+.c2 {
+  box-sizing: border-box;
+}
+
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -2056,6 +2104,10 @@ exports[`Drawer side top renders 1`] = `
 `;
 
 exports[`Drawer width renders 1`] = `
+.c2 {
+  box-sizing: border-box;
+}
+
 .c2 {
   box-sizing: border-box;
 }
@@ -4048,6 +4100,86 @@ exports[`exports a Heading component 1`] = `
 
 <h2
   className="c0"
+/>
+`;
+
+exports[`exports a Hide component 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  display: block;
+}
+
+@media screen and (min-width:40em) {
+  .c0 {
+    display: block;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .c0 {
+    display: block;
+  }
+}
+
+@media screen and (min-width:64em) {
+  .c0 {
+    display: block;
+  }
+}
+
+<div
+  className="c0 c1 sc-bdVaJa c1"
 />
 `;
 
