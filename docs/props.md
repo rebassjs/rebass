@@ -123,7 +123,7 @@ See the [styled-system][responsive] docs for more info.
 
 ## `css` prop
 
-All Rebass components include [system-components][]' `css` prop,
+All Rebass components include [system-components][]’ `css` prop,
 which gives you low-level access to apply any CSS to a component.
 This works well as an escape hatch for one-off styles or as another way to extend Rebass components.
 
