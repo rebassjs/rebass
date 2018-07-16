@@ -121,6 +121,26 @@ See the [styled-system][responsive] docs for more info.
 />
 ```
 
+## `css` prop
+
+All Rebass components include [system-components][]' `css` prop,
+which gives you low-level access to apply any CSS to a component.
+This works well as an escape hatch for one-off styles or as another way to extend Rebass components.
+
+```jsx
+// example of using the `css` prop
+const GrowingButton = props =>
+  <Button
+    {...props}
+    css={{
+      transition: 'transform .1s ease-out',
+      '&:hover': {
+        transform: 'scale(1.1)'
+      }
+    }}
+  />
+```
+
 ## HTML Element Prop
 
 Each component accepts an `is` prop to change the underlying HTML element on a per-instance basis.
@@ -149,3 +169,4 @@ Refer to the [component documentation](components.md) for information on compone
 [space]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#space-responsive
 [color]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#color-responsive
 [responsive]: https://github.com/jxnblk/styled-system/blob/master/docs/responsive-styles.md
+[system-components]: https://github.com/jxnblk/styled-system/tree/master/system-components
