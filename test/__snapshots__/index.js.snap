@@ -24,7 +24,14 @@ exports[`BackgroundImage src renders 1`] = `
   padding-bottom: 75%;
   background-size: cover;
   background-position: center;
-  background-image: url(hello.png);
+}
+
+.c0 {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  background-size: cover;
+  background-position: center;
 }
 
 <div
@@ -63,10 +70,6 @@ exports[`Banner src renders 1`] = `
   padding: 16px;
   color: white;
   background-color: black;
-}
-
-.c4 {
-  box-sizing: border-box;
 }
 
 .c4 {
@@ -384,57 +387,9 @@ exports[`Carousel index 2 renders 1`] = `
   box-sizing: border-box;
 }
 
-.c3 {
-  box-sizing: border-box;
-}
-
 .c2 {
   box-sizing: border-box;
   width: 100%;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
-}
-
-.c3 {
-  box-sizing: border-box;
 }
 
 .c3 {
@@ -558,44 +513,11 @@ exports[`Carousel index 2 renders 1`] = `
 `;
 
 exports[`Drawer height renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -605,20 +527,11 @@ exports[`Drawer height renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -628,8 +541,11 @@ exports[`Drawer height renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -639,8 +555,11 @@ exports[`Drawer height renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -650,8 +569,11 @@ exports[`Drawer height renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -661,78 +583,11 @@ exports[`Drawer height renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -759,51 +614,13 @@ exports[`Drawer height renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  height={128}
+  position="fixed"
 />
 `;
 
 exports[`Drawer open renders 1`] = `
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -811,31 +628,11 @@ exports[`Drawer open renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -858,49 +655,17 @@ exports[`Drawer open renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer open side bottom renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -910,20 +675,11 @@ exports[`Drawer open side bottom renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -933,8 +689,11 @@ exports[`Drawer open side bottom renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -944,8 +703,11 @@ exports[`Drawer open side bottom renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -955,63 +717,11 @@ exports[`Drawer open side bottom renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1053,49 +763,17 @@ exports[`Drawer open side bottom renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer open side left renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1105,20 +783,11 @@ exports[`Drawer open side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1128,8 +797,11 @@ exports[`Drawer open side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1139,8 +811,11 @@ exports[`Drawer open side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1150,10 +825,6 @@ exports[`Drawer open side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1161,63 +832,11 @@ exports[`Drawer open side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1240,49 +859,17 @@ exports[`Drawer open side left renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer open side right renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1292,20 +879,11 @@ exports[`Drawer open side right renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1315,8 +893,11 @@ exports[`Drawer open side right renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1326,10 +907,6 @@ exports[`Drawer open side right renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1337,52 +914,11 @@ exports[`Drawer open side right renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1405,49 +941,17 @@ exports[`Drawer open side right renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer open side top renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1457,20 +961,11 @@ exports[`Drawer open side top renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1480,8 +975,11 @@ exports[`Drawer open side top renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1491,52 +989,11 @@ exports[`Drawer open side top renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1559,49 +1016,17 @@ exports[`Drawer open side top renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer side bottom renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1611,20 +1036,11 @@ exports[`Drawer side bottom renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1634,41 +1050,11 @@ exports[`Drawer side bottom renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1716,49 +1102,17 @@ exports[`Drawer side bottom renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer side left renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1768,20 +1122,11 @@ exports[`Drawer side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1791,10 +1136,6 @@ exports[`Drawer side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1802,41 +1143,11 @@ exports[`Drawer side left renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1862,49 +1173,17 @@ exports[`Drawer side left renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer side right renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -1914,22 +1193,6 @@ exports[`Drawer side right renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
@@ -1937,30 +1200,11 @@ exports[`Drawer side right renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -1986,49 +1230,17 @@ exports[`Drawer side right renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer side top renders 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
+  width: 320px;
+  color: white;
+  background-color: black;
 }
 
 .c1 {
@@ -2038,42 +1250,11 @@ exports[`Drawer side top renders 1`] = `
   background-color: black;
 }
 
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c1 {
-  box-sizing: border-box;
-  width: 320px;
-  color: white;
-  background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -2099,112 +1280,17 @@ exports[`Drawer side top renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
 exports[`Drawer width renders 1`] = `
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 128px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -2230,7 +1316,8 @@ exports[`Drawer width renders 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
@@ -2916,13 +2003,14 @@ exports[`exports a ButtonOutline component 1`] = `
   box-shadow: inset 0 0 0 2px blue;
 }
 
-.c0:hover {
-  color: white;
-  background-color: blue;
-}
-
 <button
   className="c0 c1 sc-ifAKCX c2"
+  hover={
+    Object {
+      "backgroundColor": "blue",
+      "color": "white",
+    }
+  }
 />
 `;
 
@@ -3102,14 +2190,15 @@ exports[`exports a ButtonTransparent component 1`] = `
   background-color: transparent;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: none;
-  color: blue;
-}
-
 <button
   className="c0 c1 sc-ifAKCX c2"
+  focus={
+    Object {
+      "boxShadow": "none",
+      "color": "blue",
+      "outline": "none",
+    }
+  }
 />
 `;
 
@@ -3166,10 +2255,6 @@ exports[`exports a Card component 1`] = `
 `;
 
 exports[`exports a Carousel component 1`] = `
-.c3 {
-  box-sizing: border-box;
-}
-
 .c3 {
   box-sizing: border-box;
 }
@@ -3370,15 +2455,11 @@ exports[`exports a Circle component 1`] = `
 .c0 {
   height: 24px;
   width: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   border-radius: 99999px;
-  text-align: center;
 }
 
 <div
+  align="center"
   className="c0 c1 sc-fAjcbJ c2"
 />
 `;
@@ -3662,21 +2743,9 @@ exports[`exports a Close component 1`] = `
   background-color: transparent;
 }
 
-.c1:focus {
-  outline: none;
-  box-shadow: none;
-  color: blue;
-}
-
 .c1 {
   color: inherit;
   background-color: transparent;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: none;
-  color: blue;
 }
 
 .c0 {
@@ -3694,6 +2763,13 @@ exports[`exports a Close component 1`] = `
 
 <button
   className="c0 c1 c2 sc-gzVnrw c1 sc-ifAKCX c3 sc-ifAKCX c4"
+  focus={
+    Object {
+      "boxShadow": "none",
+      "color": "blue",
+      "outline": "none",
+    }
+  }
 >
   ×
 </button>
@@ -3829,6 +2905,7 @@ exports[`exports a Donut component 1`] = `
 <svg
   blacklist={
     Array [
+      "css",
       "color",
       "bg",
       "m",
@@ -3845,7 +2922,6 @@ exports[`exports a Donut component 1`] = `
       "pl",
       "px",
       "py",
-      "css",
     ]
   }
   className="c0"
@@ -3896,73 +2972,32 @@ exports[`exports a Dot component 1`] = `
   background-clip: padding-box;
 }
 
-.c0:focus {
-  background-color: blue;
-}
-
-.c0:hover {
-  background-color: blue;
-}
-
-.c0:disabled {
-  opacity: 0.25;
-}
-
 <button
   className="c0"
+  disabledStyle={
+    Object {
+      "opacity": 0.25,
+    }
+  }
+  focus={
+    Object {
+      "backgroundColor": "blue",
+    }
+  }
+  hover={
+    Object {
+      "backgroundColor": "blue",
+    }
+  }
 />
 `;
 
 exports[`exports a Drawer component 1`] = `
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
-.c2 {
-  box-sizing: border-box;
-}
-
 .c1 {
   box-sizing: border-box;
   width: 320px;
   color: white;
   background-color: black;
-}
-
-.c2 {
-  box-sizing: border-box;
 }
 
 .c0 {
@@ -3988,7 +3023,8 @@ exports[`exports a Drawer component 1`] = `
 }
 
 <div
-  className="c0 c1 sc-bdVaJa c2"
+  className="c0 c1 sc-bdVaJa c1"
+  position="fixed"
 />
 `;
 
@@ -4152,30 +3188,8 @@ exports[`exports a Hide component 1`] = `
   box-sizing: border-box;
 }
 
-.c1 {
-  box-sizing: border-box;
-}
-
 .c0 {
   display: block;
-}
-
-@media screen and (min-width:40em) {
-  .c0 {
-    display: block;
-  }
-}
-
-@media screen and (min-width:52em) {
-  .c0 {
-    display: block;
-  }
-}
-
-@media screen and (min-width:64em) {
-  .c0 {
-    display: block;
-  }
 }
 
 <div
@@ -4239,10 +3253,6 @@ exports[`exports a Label component 1`] = `
 .c0 {
   font-size: 14px;
   margin-bottom: 4px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4250,6 +3260,7 @@ exports[`exports a Label component 1`] = `
 }
 
 <label
+  align="center"
   className="c0"
 />
 `;
@@ -4324,31 +3335,31 @@ exports[`exports a Measure component 1`] = `
 `;
 
 exports[`exports a Message component 1`] = `
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
@@ -4362,32 +3373,11 @@ exports[`exports a Message component 1`] = `
   background-color: blue;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4399,13 +3389,23 @@ exports[`exports a Message component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4420,16 +3420,13 @@ exports[`exports a Message component 1`] = `
   font-weight: bold;
   color: white;
   background-color: blue;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   min-height: 48px;
   -webkit-font-smoothing: antialiased;
 }
 
 <div
-  className="c0 c1 c2 sc-bwzfXH c3 sc-bdVaJa c4 sc-bdVaJa c4"
+  align="center"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c3 sc-bdVaJa c3"
 />
 `;
 
@@ -4954,12 +3951,13 @@ exports[`exports a Tab component 1`] = `
   text-decoration: none;
 }
 
-.c0:hover {
-  color: blue;
-}
-
 <a
   className="c0"
+  hover={
+    Object {
+      "color": "blue",
+    }
+  }
 />
 `;
 
@@ -5109,35 +4107,35 @@ exports[`exports a Textarea component 1`] = `
 `;
 
 exports[`exports a Toolbar component 1`] = `
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
@@ -5149,32 +4147,11 @@ exports[`exports a Toolbar component 1`] = `
   background-color: black;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5186,13 +4163,9 @@ exports[`exports a Toolbar component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
-.c3 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5204,13 +4177,16 @@ exports[`exports a Toolbar component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5222,16 +4198,13 @@ exports[`exports a Toolbar component 1`] = `
   padding-right: 8px;
   color: white;
   background-color: black;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   min-height: 48px;
   -webkit-font-smoothing: antialiased;
 }
 
 <div
-  className="c0 c1 c2 sc-bwzfXH c3 sc-bdVaJa c4 sc-bdVaJa c4"
+  align="center"
+  className="c0 c1 c2 sc-bwzfXH c1 sc-bdVaJa c3 sc-bdVaJa c3"
 />
 `;
 

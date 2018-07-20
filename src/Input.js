@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 
 export const Input = sys({
   is: 'input',
@@ -24,7 +24,7 @@ export const Input = sys({
   appearance: 'none',
   '&:focus': {
     outline: 'none',
-    boxShadow: `inset 0 0 0 1px ${theme('colors.blue')(props)}`,
+    boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue')(props)}`,
   },
   '&:disabled': {
     opacity: 1/4
