@@ -69,7 +69,6 @@ export class ControlledForm extends React.Component {
 
   setFieldValue = (name, value, shouldValidate) => {
     const next = {
-      ...this.props.values,
       [name]: value
     }
     this.props.onChange(next)
