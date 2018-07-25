@@ -29,8 +29,11 @@ export class ControlledForm extends React.Component {
   }
 
   handleChange = e => {
-    const { name, value } = e.target
-    this.setFieldValue(name, value, this.props.validateOnChange)
+    const { type, name, value, checked } = e.target
+    const val = /^(number|range)$/.test(type)
+      ? ((parsed = parseFloat(value)), isNaN(parsed) ? '' : parsed)
+      : /^checkbox$/.test(type) ? checked : value
+    this.setFieldValue(name, val, this.props.validateOnChange)
   }
 
   handleBlur = e => {
