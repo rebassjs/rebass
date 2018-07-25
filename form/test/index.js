@@ -119,6 +119,29 @@ describe('Form', () => {
       expect(onChange).toHaveBeenCalledWith({ hello: 'hi' })
     })
 
+    test('onChange only passes changed fields as argument', () => {
+      const onChange = jest.fn()
+      const form = create(
+        <Form
+          values={{
+            hello: '',
+            beep: 'boop'
+          }}
+          onChange={onChange}
+          render={props => <Render {...props} />}
+        />
+      ).root
+      const render = form.findByType(Render)
+      render.props.onChange({
+        target: {
+          name: 'hello',
+          value: 'hi'
+        }
+      })
+      expect(onChange).toHaveBeenCalled()
+      expect(onChange).toHaveBeenCalledWith({ hello: 'hi' })
+    })
+
     test('onChange validates', () => {
       const validate = jest.fn()
       const onChange = jest.fn()
