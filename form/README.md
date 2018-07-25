@@ -79,6 +79,11 @@ class SignUpForm extends React.Component {
 }
 ```
 
+## Motivations
+
+For *most* use-cases, I'd recommend using [Formik][], which has a richer API and more options than this component will ever have.
+For situations where a Formik-like API is helpful, and when you want to hoist some of the form state up to a higher level in your application, this might be worth considering.
+
 MIT License
 
 [Formik]: https://github.com/jaredpalmer/formik
