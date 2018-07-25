@@ -264,6 +264,36 @@ describe('Form', () => {
     })
   })
 
+  describe('nested objects', () => {
+    test('handles changes in nested objects', () => {
+      const onChange = jest.fn()
+      const form = create(
+        <Form
+          values={{
+            things: {}
+          }}
+          onChange={onChange}
+          render={props => <Render {...props} />}
+        />
+      ).root
+      const render = form.findByType(Render)
+      render.props.onChange({
+        target: {
+          name: 'things.hello',
+          value: 'hi'
+        }
+      })
+      expect(onChange).toHaveBeenCalled()
+      expect(onChange).toHaveBeenCalledWith({
+        things: {
+          hello: 'hi'
+        }
+      })
+    })
+
+    test.skip('handles changes in array values', () => {})
+  })
+
   describe('exports', () => {
     test('exports ControlledForm', () => {
       expect(typeof ControlledForm).toBe('function')
