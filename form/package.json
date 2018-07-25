@@ -1,0 +1,34 @@
+{
+  "name": "@rebass/form",
+  "version": "1.0.0-0",
+  "description": "Semi-controlled React form component with render props, inspired by Formik",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^23.4.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "html"
+    ],
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
+  }
+}
