@@ -1,6 +1,6 @@
 {
   "name": "@rebass/form",
-  "version": "1.0.0-0",
+  "version": "1.0.0-1",
   "description": "Semi-controlled React form component with render props, inspired by Formik",
   "main": "dist/index.js",
   "scripts": {

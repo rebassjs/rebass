@@ -49,6 +49,7 @@ export class ControlledForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     const { values } = this.props
+    this.setAllTouched()
     if (this.props.validateOnSubmit) {
       this.validate(values, () => {
         this.props.onSubmit(values, this.state)
@@ -72,6 +73,15 @@ export class ControlledForm extends React.Component {
     if (shouldValidate) this.validate(next)
   }
 
+  setAllTouched = () => {
+    const { values } = this.props
+    const touched = {}
+    for (const key in values) {
+      touched[key] = true
+    }
+    this.setState({ touched })
+  }
+
   render () {
     const { render, values } = this.props
     const { touched, errors } = this.state
@@ -83,6 +93,9 @@ export class ControlledForm extends React.Component {
       onBlur: this.handleBlur,
       onChange: this.handleChange,
       onSubmit: this.handleSubmit,
+      handleBlur: this.handleBlur,
+      handleChange: this.handleChange,
+      handleSubmit: this.handleSubmit,
       setFieldValue: this.setFieldValue
     })
   }

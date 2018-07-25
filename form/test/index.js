@@ -172,14 +172,16 @@ describe('Form', () => {
         />
       ).root
       const render = form.findByType(Render)
-      render.props.onSubmit({
+      const event = {
         preventDefault: jest.fn()
-      })
+      }
+      render.props.onSubmit(event)
       expect(onSubmit).toHaveBeenCalled()
       expect(onSubmit).toHaveBeenCalledWith({ hello: 'hi' }, {
-        touched: {},
+        touched: { hello: true },
         errors: {}
       })
+      expect(event.preventDefault).toHaveBeenCalled()
     })
 
     test('onSubmit calls validate', () => {
