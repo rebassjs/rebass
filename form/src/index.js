@@ -18,6 +18,7 @@ export class ControlledForm extends React.Component {
   static defaultProps = {
     values: {},
     validate: noop,
+    onSubmit: noop,
     validateOnChange: true,
     validateOnBlur: true,
     validateOnSubmit: true,
