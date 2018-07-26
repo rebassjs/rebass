@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import set from 'lodash.set'
 
 const noop = () => ({})
 
@@ -69,9 +70,7 @@ export class ControlledForm extends React.Component {
   }
 
   setFieldValue = (name, value, shouldValidate) => {
-    const next = {
-      [name]: value
-    }
+    const next = set(this.props.values, name, value)
     this.props.onChange(next)
     if (shouldValidate) this.validate(next)
   }

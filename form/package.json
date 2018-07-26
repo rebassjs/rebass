@@ -29,6 +29,7 @@
     ]
   },
   "dependencies": {
+    "lodash.set": "^4.3.2",
     "prop-types": "^15.6.2"
   }
 }
