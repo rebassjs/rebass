@@ -3796,8 +3796,8 @@ exports[`exports a Container component 1`] = `
 exports[`exports a DarkMode component 1`] = `
 .c0 {
   box-sizing: border-box;
-  color: #ffffff;
-  background-color: #000000;
+  color: #fff;
+  background-color: #000;
 }
 
 <div
