@@ -1,10 +1,7 @@
 # Border
 
 ```.jsx
-<Border
-  py={2}
-  top
-  bottom>
+<Border py={2}>
   Hello
 </Border>
 ```
