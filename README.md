@@ -25,7 +25,7 @@ with support for
 http://jxnblk.com/rebass
 
 ```sh
-npm i rebass@next
+npm i rebass
 ```
 
 Rebass is a library of highly-composable, primitive UI components for React,
