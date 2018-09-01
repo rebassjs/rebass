@@ -6,9 +6,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "rebass": "^2.0.0",
-    "styled-components": "^3.2.6",
-    "styled-system": "^2.2.5"
+    "rebass": "^2.1.0",
+    "styled-components": "^3.4.5",
+    "styled-system": "^3.0.2"
   },
   "devDependencies": {
     "@compositor/kit-snapshot": "^1.0.24",
@@ -18,10 +18,10 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "jest": "^22.4.3",
-    "jest-styled-components": "^5.0.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-test-renderer": "^16.3.2"
+    "jest-styled-components": "^6.1.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-test-renderer": "^16.4.2"
   },
   "peerDependencies": {
     "styled-components": ">=3.0.0"
