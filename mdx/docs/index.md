@@ -1,7 +1,17 @@
----
-title: rebass/mdx
----
-import { Button } from 'rebass'
+import { Head } from 'mdx-go'
+import { Container, Button } from 'rebass'
+import RebassMDX from '../src'
+
+export const Root = props =>
+  <RebassMDX>
+    <Container>
+      {props.children}
+    </Container>
+  </RebassMDX>
+
+<Head>
+  <title>@rebass/mdx</title>
+</Head>
 
 # RebassMDX
 
