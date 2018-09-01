@@ -11,18 +11,18 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@mdx-js/tag": "^0.11.0",
+    "@mdx-js/tag": "^0.15.0",
     "@rebass/markdown": "^1.0.0-1",
-    "react-live": "^1.10.1",
-    "rebass": "^2.0.0",
-    "styled-components": "^3.3.3",
-    "styled-system": "^2.3.2"
+    "react-live": "^1.11.0",
+    "rebass": "^2.1.0",
+    "styled-components": "^3.4.5",
+    "styled-system": "^3.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "ok-cli": "^2.0.0-64"
+    "ok-cli": "^2.0.9"
   }
 }
