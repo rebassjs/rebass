@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 
 export const Switch = sys({
   role: 'checkbox',
@@ -13,7 +13,7 @@ export const Switch = sys({
   width: '40px',
   height: '24px',
   backgroundColor: props.checked
-    ? theme('colors.' + props.color)(props)
+    ? themeGet('colors.' + props.color)(props)
     : 'transparent',
   boxShadow: 'inset 0 0 0 2px',
   transitionProperty: 'background-color',
@@ -31,8 +31,8 @@ export const Switch = sys({
     transitionTimingFunction: 'ease-out',
     transform: props.checked ? `translateX(16px)` : `translateX(0)`,
     backgroundColor: props.checked
-      ? theme('colors.white')(props)
-      : theme('colors.' + props.color)(props)
+      ? themeGet('colors.white')(props)
+      : themeGet('colors.' + props.color)(props)
   }
 }))
 

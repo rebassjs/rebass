@@ -21,8 +21,8 @@ const fixtures = {
   'Border left': <Rebass.Border borderLeft={1} />,
   'Border 2': <Rebass.Border border={2} />,
   'Border none': <Rebass.Border border='none' />,
-  'Banner src': <Rebass.Banner src='hello.png' />,
-  'Banner src': <Rebass.Banner src='hello.png' />,
+  'Banner src': <Rebass.Banner backgroundImage='url(hello.png)' />,
+  'Banner src': <Rebass.Banner backgroundImage='url(hello.png)' />,
   'Drawer open': <Rebass.Drawer open />,
   'Drawer side top': <Rebass.Drawer side='top' />,
   'Drawer side right': <Rebass.Drawer side='right' />,
@@ -38,7 +38,7 @@ const fixtures = {
   'Arrow up': <Rebass.Arrow direction='up' />,
   'Embed ratio': <Rebass.Embed ratio={1/2} />,
   'Switch checked': <Rebass.Switch checked />,
-  'BackgroundImage src': <Rebass.BackgroundImage src='hello.png' />,
+  'BackgroundImage': <Rebass.BackgroundImage backgroundImage='url(hello.png)' />,
 }
 
 const examples = Object.keys(fixtures).map(name => ({

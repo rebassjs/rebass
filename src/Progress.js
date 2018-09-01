@@ -1,5 +1,5 @@
 import sys from 'system-components'
-import { theme } from 'styled-system'
+import { themeGet } from 'styled-system'
 
 export const Progress = sys({
   is: 'progress',
@@ -16,7 +16,7 @@ export const Progress = sys({
   overflow: 'hidden',
   appearance: 'none',
   '&::-webkit-progress-bar': {
-    backgroundColor: theme('colors.gray')(props)
+    backgroundColor: themeGet('colors.gray')(props)
   },
   '&::-webkit-progress-value': {
     backgroundColor: 'currentcolor'
