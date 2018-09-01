@@ -16,7 +16,7 @@
     "mdx"
   ],
   "peerDependencies": {
-    "rebass": "2.x",
+    "rebass": ">=2.1",
     "styled-components": "3.x"
   },
   "devDependencies": {
@@ -25,7 +25,7 @@
     "ava": "^0.25.0",
     "nyc": "^12.0.2",
     "react-test-renderer": "^16.4.1",
-    "rebass": "^2.0.0-6",
+    "rebass": "^2.1.0",
     "remark-autolink-headings": "^5.0.0",
     "remark-slug": "^5.0.0",
     "styled-components": "^3.3.2"
