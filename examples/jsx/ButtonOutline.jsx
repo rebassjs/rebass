@@ -1,3 +1,0 @@
-<ButtonOutline
-  children='Hello'
-/>

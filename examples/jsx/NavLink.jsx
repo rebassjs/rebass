@@ -1,4 +1,0 @@
-<NavLink
-  href='#!'
-  children='Hello'
-/>

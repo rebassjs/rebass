@@ -1,3 +1,0 @@
-<Subhead
-  children='Hello'
-/>
