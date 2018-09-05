@@ -4,6 +4,7 @@ import {
   space,
   color,
   width,
+  height,
   flex,
   flexWrap,
   flexDirection,
@@ -25,6 +26,7 @@ import {
   backgroundPosition,
   backgroundRepeat,
   opacity,
+  variant,
 } from 'styled-system'
 import tag from 'clean-tag'
 
@@ -183,7 +185,7 @@ Button.defaultProps = {
   color: 'white',
   bg: 'blue',
   border: 0,
-  borderRadius: 2,
+  borderRadius: 4,
 }
 
 export const Image = styled(tag.img)({
@@ -191,6 +193,8 @@ export const Image = styled(tag.img)({
   height: 'auto'
 },
   space,
+  width,
+  height,
   color,
   borderRadius,
   themed('Image'),
@@ -199,6 +203,8 @@ export const Image = styled(tag.img)({
 
 Image.propTypes = {
   ...space.propTypes,
+  ...width.propTypes,
+  ...height.propTypes,
   ...color.propTypes,
   ...borderRadius.propTypes,
 }
@@ -207,11 +213,9 @@ Image.defaultProps = {
   m: 0
 }
 
-export const Card = styled(tag)(
-  space,
-  fontSize,
-  width,
-  color,
+const cards = variant({ key: 'cards' })
+
+export const Card = styled(Box)(
   borders,
   borderRadius,
   boxShadow,
@@ -221,6 +225,7 @@ export const Card = styled(tag)(
   backgroundRepeat,
   opacity,
   themed('Card'),
+  cards,
   css
 )
 

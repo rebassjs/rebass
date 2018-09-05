@@ -1,4 +1,9 @@
-import { StyleProvider, ScrollTop } from 'mdx-go'
+import {
+  StyleProvider,
+  Layout,
+  NavLinks,
+  ScrollTop
+} from 'mdx-go'
 import {
   Box,
   Flex,
@@ -9,19 +14,45 @@ import {
   Image,
   Card
 } from '../src'
+import * as components from '../src'
 
 export const Root = props =>
-  <StyleProvider>
-    <Box
-      mx='auto'
-      px={4}
-      py={4}
-      css={{
-        maxWidth: '768px'
-      }}>
-      {props.children}
-    </Box>
-    <ScrollTop />
+  <StyleProvider
+    components={components}
+    theme={{
+      colors: {
+        lightgray: '#f6f6ff',
+        blue: '#07c'
+      },
+      buttons: {
+        pill: {
+          borderRadius: 99999
+        },
+        outline: {
+          backgroundColor: 'transparent',
+          color: 'blue',
+          boxShadow: 'inset 0 0 0 2px'
+        }
+      },
+      cards: {
+        pop: {
+          padding: '32px',
+          borderRadius: '8px',
+          backgroundColor: 'magenta',
+          boxShadow: '0 0 48px rgba(0, 0, 0, .25)'
+        }
+      }
+    }}>
+    <Layout>
+      <Layout.MenuToggle m={3} />
+      <Layout.Sidebar>
+        <NavLinks {...props} />
+      </Layout.Sidebar>
+      <Layout.Main>
+        {props.children}
+        <ScrollTop />
+      </Layout.Main>
+    </Layout>
   </StyleProvider>
 
 
@@ -29,25 +60,42 @@ export const Root = props =>
 
 8 primitive UI components built with styled-system.
 
-- [Box](#box)
-- [Flex](#flex)
-- [Text](#text)
-- [Heading](#heading)
-- [Link](#link)
-- [Button](#button)
-- [Image](#image)
-- [Card](#card)
+[Box](#box)
+| [Flex](#flex)
+| [Text](#text)
+| [Heading](#heading)
+| [Link](#link)
+| [Button](#button)
+| [Image](#image)
+| [Card](#card)
 
 ## Box
 
+```sh
+import { Box } from 'rebass'
+```
+
 <Box
-  p={3}
+  p={5}
+  fontSize={4}
+  width={1/2}
   color='white'
   bg='magenta'>
   Box
 </Box>
 
+- space
+- `width`
+- `fontSize`
+- `flex`
+- `color`
+- `bg`
+
 ## Flex
+
+```sh
+import { Flex } from 'rebass'
+```
 
 <Flex>
   <Box
@@ -66,47 +114,94 @@ export const Root = props =>
   </Box>
 </Flex>
 
+- extends: Box
+- `alignItems`
+- `justifyContent`
+- `flexWrap`
+- `flexDirection`
+
 ## Text
+
+```sh
+import { Text } from 'rebass'
+```
 
 <Text>Text</Text>
 <Text fontSize={[ 3, 4, 5 ]}>Large Text</Text>
 <Text fontSize={0}>Small Text</Text>
 <Text fontWeight='bold'>Bold Text</Text>
+<Text is='h1'>Text is h1</Text>
+
+- space
+- `color`
+- `bg`
+- `fontSize`
+- `fontFamily`
+- `fontWeight`
+- `textAlign`
+- `lineHeight`
+- `letterSpacing`
 
 ## Heading
 
+```sh
+import { Heading } from 'rebass'
+```
+
 <Heading>Hello</Heading>
 
-<Text is='h1'>Text is h1</Text>
 <Heading is='h1'>Heading is h1</Heading>
-
-<Box bg='tomato'>
-  <Heading.h1>Hello h1</Heading.h1>
-  <Heading.h2>Hello h2</Heading.h2>
-  <Heading.h3>Hello h3</Heading.h3>
-  <Heading.h4>Hello h4</Heading.h4>
-</Box>
+<Heading.h1>Hello h1</Heading.h1>
+<Heading.h2>Hello h2</Heading.h2>
+<Heading.h3>Hello h3</Heading.h3>
+<Heading.h4>Hello h4</Heading.h4>
 
 ## Link
 
+```sh
+import { Link } from 'rebass'
+```
+
 <Link href='https://rebassjs.org'>Link</Link>
+
+- space
+- `fontSize`
+- `color`
+- `bg`
 
 ## Button
 
-<Button>Button</Button>
+```sh
+import { Button } from 'rebass'
+```
+
+<Button mr={2}>Button</Button>
+<Button mr={2} bg='red'>Button</Button>
+<Button mr={2} variant='outline'>Button</Button>
+<Button variant='pill'>Button</Button>
 
 ## Image
 
+```sh
+import { Image } from 'rebass'
+```
+
 <Image
+  width={1/2}
   src='https://source.unsplash.com/random/1280x720'
   borderRadius={8}
 />
 
 ## Card
 
+```sh
+import { Card } from 'rebass'
+```
+
 <Card
   fontSize={6}
   fontWeight='bold'
+  width={1/2}
   p={5}
   my={5}
   bg='#f6f6ff'
@@ -115,3 +210,20 @@ export const Root = props =>
 >
   Card
 </Card>
+
+<Card variant='pop'>Pop!</Card>
+
+## Props
+
+All components include the following props:
+
+- space
+- `color`
+- `bg`
+- `css`
+
+---
+
+## Docs
+
+- [Extending](/extending)
