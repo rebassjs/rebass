@@ -121,12 +121,14 @@ Heading.defaultProps = {
   fontWeight: 'bold',
 }
 
+// ditch these
 Heading.h1 = props => <Heading is='h1' {...props} />
 Heading.h2 = props => <Heading is='h2' {...props} />
 Heading.h3 = props => <Heading is='h3' {...props} />
 Heading.h4 = props => <Heading is='h4' {...props} />
 Heading.h5 = props => <Heading is='h5' {...props} />
 Heading.h6 = props => <Heading is='h6' {...props} />
+//
 
 export const Link = styled(tag.a)(
   space,
