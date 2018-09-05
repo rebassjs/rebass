@@ -30,9 +30,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@rebass/grid": "^6.0.0-0",
     "clean-tag": "^2.0.0",
-    "prop-types": "^15.6.0",
     "styled-system": "^3.0.2"
   },
   "devDependencies": {
@@ -77,7 +75,7 @@
   "bundlesize": [
     {
       "path": "./dist/*.js",
-      "maxSize": "2 kB"
+      "maxSize": "1.125 kB"
     }
   ]
 }

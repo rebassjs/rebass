@@ -4,6 +4,11 @@ import {
   space,
   color,
   width,
+  flex,
+  flexWrap,
+  flexDirection,
+  alignItems,
+  justifyContent,
   fontSize,
   fontFamily,
   fontWeight,
@@ -14,7 +19,6 @@ import {
   borderColor,
   borderRadius,
   buttonStyle,
-
   boxShadow,
   backgroundImage,
   backgroundSize,
@@ -24,13 +28,42 @@ import {
 } from 'styled-system'
 import tag from 'clean-tag'
 
-export { Box, Flex } from '@rebass/grid/emotion'
-
 export const css = props => props.css
 export const themed = key => props => props.theme[key]
 
-// theme
+export const Box = styled(tag)(
+  space,
+  width,
+  fontSize,
+  flex,
+  color,
+  themed('Box'),
+  css
+)
 
+Box.propTypes = {
+  ...space.propTypes,
+  ...width.propTypes,
+  ...fontSize.propTypes,
+  ...flex.propTypes,
+  ...color.propTypes,
+}
+
+export const Flex = styled(Box)({
+  display: 'flex'
+},
+  flexWrap,
+  flexDirection,
+  alignItems,
+  justifyContent
+)
+
+Flex.propTypes = {
+  ...flexWrap.propTypes,
+  ...flexDirection.propTypes,
+  ...alignItems.propTypes,
+  ...justifyContent.propTypes
+}
 
 export const Text = styled(tag)(
   space,
@@ -55,9 +88,6 @@ Text.propTypes = {
   ...lineHeight.propTypes,
   ...letterSpacing.propTypes,
 }
-
-// export const Heading = Text.withComponent('h2')
-// export const Heading = styled(Text)().withComponent('h2')
 
 export const Heading = styled(tag.h2)(
   space,
