@@ -9,6 +9,7 @@ import * as components from '../src'
 
 export const nav = [
   'Rebass',
+  'Getting Started',
   'principles',
   'props',
 
