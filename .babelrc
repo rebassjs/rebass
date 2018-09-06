@@ -4,6 +4,11 @@
     'react'
   ],
   env: {
+    test: {
+      presets: [
+        'env'
+      ]
+    },
     cjs: {
       presets: [
         [ 'env', {
@@ -21,7 +26,7 @@
         } ]
       ]
     },
-    'styled-components': {
+    emotion: {
       presets: [
         [ 'env', {} ]
       ],
@@ -29,8 +34,8 @@
         [ 'transform-rename-import', {
           replacements: [
             {
-              original: '^react-emotion$',
-              replacement: 'styled-components'
+              original: '^styled-components$',
+              replacement: 'react-emotion'
             }
           ]
         } ]

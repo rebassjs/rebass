@@ -6,10 +6,10 @@
   "module": "dist/index.es.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "npm run emotion && npm run emotion-es && npm run styled-components",
-    "emotion": "NOE_ENV=cjs babel src -d dist",
-    "emotion-es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
-    "styled-components": "NODE_ENV=styled-components babel src -d dist/styled-components",
+    "prepare": "npm run build && npm run build:es && npm run build:emotion",
+    "build": "NODE_ENV=cjs babel src -d dist",
+    "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
+    "build:emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "start": "mdx-go docs",
     "cover": "jest --coverage && codecov",
     "test": "jest",
@@ -69,12 +69,20 @@
     "coverageReporters": [
       "html",
       "lcov"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "bundlesize": [
     {
       "path": "./dist/*.js",
-      "maxSize": "1.125 kB"
+      "maxSize": "1.5 kB"
     }
   ]
 }

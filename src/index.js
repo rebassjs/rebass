@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  styles,
   space,
   color,
   width,
@@ -31,7 +32,26 @@ import {
 export const css = props => props.css
 export const themed = key => props => props.theme[key]
 
-export const Box = styled('div')(
+const blacklist = Object.keys(styles)
+  .filter(key => typeof styles[key] === 'function')
+  .reduce((a, key) => [
+    ...a,
+    ...Object.keys(styles[key].propTypes)
+  ], [ 'css' ])
+
+const omit = (obj, keys) => {
+  const next = {}
+  for (let key in obj) {
+    if (keys.indexOf(key) > -1) continue
+    next[key] = obj[key]
+  }
+  return next
+}
+
+const div = ({ as: Tag = 'div', ...props }) =>
+  <Tag {...omit(props, blacklist)} />
+
+export const Box = styled(div)(
   space,
   width,
   fontSize,
@@ -105,6 +125,8 @@ export const Button = styled(Box)({
   appearance: 'none',
   display: 'inline-block',
   textAlign: 'center',
+  lineHeight: 'inherit',
+  textDecoration: 'none',
 },
   fontWeight,
   borders,
