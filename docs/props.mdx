@@ -4,11 +4,66 @@
 Rebass style props are built with [styled-system][].
 Each style prop accepts [arrays as responsive styles](#responsive) and pick up values defined in a [theme](#theming).
 
+Each Rebass component extends the base `Box` component,
+which includes several style props
+
+- styled-components API
+  - `as`
+
+## Space: Margin & Padding
+
+- styled-system space
+
+Prop | Description
+-----|-------------
+`m`  | margin
+`mt` | margin-top
+`mr` | margin-right
+`mb` | margin-bottom
+`ml` | margin-left
+`mx` | margin-left & margin-right
+`my` | margin-top & margin-bottom
+`p`  | padding
+`pt` | padding-top
+`pr` | padding-right
+`pb` | padding-bottom
+`pl` | padding-left
+`px` | padding-left & padding-right
+`py` | padding-top & padding-bottom
+
+- responsive
+
+## Color
+
+- `color`
+- `bg`
+
+## Width
+
+- `width`
+- responsive
+
+## Font Size
+
+- `fontSize`
+- responsive
+
 ## Responsive
+
+- arrays
+- null
+- theme.breakpoints
 
 ## Theming
 
-## `css`
+- `color`
+- `space`
+- `fontSizes`
+- `breakpoints`
+- other theme keys
 
+## CSS
+
+- escape hatch
 
 [styled-system]: https://jxnblk.com/styled-system

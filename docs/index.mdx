@@ -1,10 +1,4 @@
 import {
-  StyleProvider,
-  Layout,
-  NavLinks,
-  ScrollTop
-} from 'mdx-go/styled-components'
-import {
   Box,
   Flex,
   Text,
@@ -14,47 +8,9 @@ import {
   Image,
   Card
 } from '../src'
-import * as components from '../src'
 
-export const Root = props =>
-  <StyleProvider
-    components={components}
-    theme={{
-      colors: {
-        lightgray: '#f6f6ff',
-        blue: '#07c'
-      },
-      buttons: {
-        pill: {
-          borderRadius: 99999
-        },
-        outline: {
-          backgroundColor: 'transparent',
-          color: 'blue',
-          boxShadow: 'inset 0 0 0 2px'
-        }
-      },
-      cards: {
-        pop: {
-          padding: '32px',
-          borderRadius: '8px',
-          backgroundColor: 'magenta',
-          boxShadow: '0 0 48px rgba(0, 0, 0, .25)'
-        }
-      }
-    }}>
-    <Layout>
-      <Layout.MenuToggle m={3} />
-      <Layout.Sidebar>
-        <NavLinks {...props} />
-      </Layout.Sidebar>
-      <Layout.Main>
-        {props.children}
-        <ScrollTop />
-      </Layout.Main>
-    </Layout>
-  </StyleProvider>
-
+export { Root } from './components'
+export const name = 'Rebass'
 
 # Rebass v3
 
@@ -69,16 +25,6 @@ export const Root = props =>
 | [Image](#image)
 | [Card](#card)
 
-## Principles
-
-- Minimal
-- Useful
-- Unopinionated
-- Flexible
-- Consistent
-- Extensible
-- Themeable
-- Do one thing well
 
 ## Box
 
@@ -233,8 +179,4 @@ All components include the following props:
 - `bg`
 - `css`
 
----
 
-## Docs
-
-- [Extending](/extending)

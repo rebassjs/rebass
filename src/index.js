@@ -5,7 +5,6 @@ import {
   color,
   width,
   height,
-  flex,
   flexWrap,
   flexDirection,
   alignItems,
@@ -36,7 +35,6 @@ export const Box = styled('div')(
   space,
   width,
   fontSize,
-  flex,
   color,
   themed('Box'),
   css
@@ -46,7 +44,6 @@ Box.propTypes = {
   ...space.propTypes,
   ...width.propTypes,
   ...fontSize.propTypes,
-  ...flex.propTypes,
   ...color.propTypes,
 }
 
@@ -77,9 +74,6 @@ export const Text = styled(Box)(
 )
 
 Text.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...fontSize.propTypes,
   ...fontFamily.propTypes,
   ...fontWeight.propTypes,
   ...textAlign.propTypes,
@@ -88,27 +82,8 @@ Text.propTypes = {
 }
 
 export const Heading = styled(Text)(
-  space,
-  color,
-  fontSize,
-  fontFamily,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  letterSpacing,
   themed('Heading')
 )
-
-Heading.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...fontSize.propTypes,
-  ...fontFamily.propTypes,
-  ...fontWeight.propTypes,
-  ...textAlign.propTypes,
-  ...lineHeight.propTypes,
-  ...letterSpacing.propTypes,
-}
 
 Heading.defaultProps = {
   as: 'h2',
@@ -164,19 +139,13 @@ export const Image = styled(Box)({
   maxWidth: '100%',
   height: 'auto'
 },
-  space,
-  width,
   height,
-  color,
   borderRadius,
   themed('Image')
 )
 
 Image.propTypes = {
-  ...space.propTypes,
-  ...width.propTypes,
   ...height.propTypes,
-  ...color.propTypes,
   ...borderRadius.propTypes,
 }
 
