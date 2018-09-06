@@ -11,6 +11,7 @@
     "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
     "build:emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "start": "mdx-go docs",
+    "docs": "mdx-go build docs -d site",
     "cover": "jest --coverage && codecov",
     "test": "jest",
     "size": "bundlesize"
@@ -33,12 +34,11 @@
     "styled-system": "^3.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "bundlesize": "^0.17.0",
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",

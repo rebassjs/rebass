@@ -1,17 +1,16 @@
 {
   presets: [
-    'stage-0',
-    'react'
+    '@babel/react'
   ],
   env: {
     test: {
       presets: [
-        'env'
+        '@babel/env'
       ]
     },
     cjs: {
       presets: [
-        [ 'env', {
+        [ '@babel/env', {
           targets: {
             node: true
           }
@@ -20,7 +19,7 @@
     },
     es: {
       presets: [
-        [ 'env', {
+        [ '@babel/env', {
           loose: true,
           modules: false
         } ]
@@ -28,7 +27,7 @@
     },
     emotion: {
       presets: [
-        [ 'env', {} ]
+        [ '@babel/env', {} ]
       ],
       plugins: [
         [ 'transform-rename-import', {
