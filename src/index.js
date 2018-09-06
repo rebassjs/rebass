@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-  styles,
   space,
   color,
   width,
@@ -33,33 +32,7 @@ import {
 export const css = props => props.css
 export const themed = key => props => props.theme[key]
 
-// style props blacklist
-const styleProps = Object.keys(styles)
-  .filter(key => typeof styles[key] === 'function')
-  .reduce((a, key) => [
-    ...a,
-    ...Object.keys(styles[key].propTypes)
-  ], [])
-const blacklist = [ ...styleProps, 'css' ]
-
-export const omit = (obj, keys) => {
-  const next = {}
-  for (let key in obj) {
-    if (keys.indexOf(key) > -1) continue
-    next[key] = obj[key]
-  }
-  return next
-}
-
-// doesn't work with `as` prop
-export const clean = Tag => props =>
-  <Tag {...omit(props, blacklist)} />
-const div = clean('div')
-const h2 = clean('h2')
-const img = clean('img')
-const a = clean('a')
-
-export const Box = styled(div)(
+export const Box = styled('div')(
   space,
   width,
   fontSize,
@@ -123,8 +96,7 @@ export const Heading = styled(Text)(
   textAlign,
   lineHeight,
   letterSpacing,
-  themed('Heading'),
-  css
+  themed('Heading')
 )
 
 Heading.propTypes = {
@@ -146,8 +118,7 @@ Heading.defaultProps = {
 }
 
 export const Link = styled(Box)(
-  themed('Link'),
-  css
+  themed('Link')
 )
 
 Link.defaultProps = {
@@ -165,7 +136,7 @@ export const Button = styled(Box)({
   borderColor,
   borderRadius,
   buttonStyle,
-  themed('Button'),
+  themed('Button')
 )
 
 Button.propTypes = {
@@ -198,8 +169,7 @@ export const Image = styled(Box)({
   height,
   color,
   borderRadius,
-  themed('Image'),
-  css
+  themed('Image')
 )
 
 Image.propTypes = {
@@ -227,8 +197,7 @@ export const Card = styled(Box)(
   backgroundRepeat,
   opacity,
   themed('Card'),
-  cards,
-  css
+  cards
 )
 
 Card.propTypes = {
