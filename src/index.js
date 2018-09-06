@@ -1,6 +1,7 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from 'styled-components'
 import {
+  styles,
   space,
   color,
   width,
@@ -28,12 +29,37 @@ import {
   opacity,
   variant,
 } from 'styled-system'
-import tag from 'clean-tag'
 
 export const css = props => props.css
 export const themed = key => props => props.theme[key]
 
-export const Box = styled(tag)(
+// style props blacklist
+const styleProps = Object.keys(styles)
+  .filter(key => typeof styles[key] === 'function')
+  .reduce((a, key) => [
+    ...a,
+    ...Object.keys(styles[key].propTypes)
+  ], [])
+const blacklist = [ ...styleProps, 'css' ]
+
+export const omit = (obj, keys) => {
+  const next = {}
+  for (let key in obj) {
+    if (keys.indexOf(key) > -1) continue
+    next[key] = obj[key]
+  }
+  return next
+}
+
+// doesn't work with `as` prop
+export const clean = Tag => props =>
+  <Tag {...omit(props, blacklist)} />
+const div = clean('div')
+const h2 = clean('h2')
+const img = clean('img')
+const a = clean('a')
+
+export const Box = styled(div)(
   space,
   width,
   fontSize,
@@ -57,7 +83,8 @@ export const Flex = styled(Box)({
   flexWrap,
   flexDirection,
   alignItems,
-  justifyContent
+  justifyContent,
+  themed('Flex')
 )
 
 Flex.propTypes = {
@@ -67,17 +94,13 @@ Flex.propTypes = {
   ...justifyContent.propTypes
 }
 
-export const Text = styled(tag)(
-  space,
-  color,
-  fontSize,
+export const Text = styled(Box)(
   fontFamily,
   fontWeight,
   textAlign,
   lineHeight,
   letterSpacing,
-  themed('Text'),
-  css
+  themed('Text')
 )
 
 Text.propTypes = {
@@ -91,7 +114,7 @@ Text.propTypes = {
   ...letterSpacing.propTypes,
 }
 
-export const Heading = styled(tag.h2)(
+export const Heading = styled(Text)(
   space,
   color,
   fontSize,
@@ -116,62 +139,37 @@ Heading.propTypes = {
 }
 
 Heading.defaultProps = {
+  as: 'h2',
   m: 0,
   fontSize: 4,
   fontWeight: 'bold',
 }
 
-// ditch these
-Heading.h1 = props => <Heading is='h1' {...props} />
-Heading.h2 = props => <Heading is='h2' {...props} />
-Heading.h3 = props => <Heading is='h3' {...props} />
-Heading.h4 = props => <Heading is='h4' {...props} />
-Heading.h5 = props => <Heading is='h5' {...props} />
-Heading.h6 = props => <Heading is='h6' {...props} />
-//
-
-export const Link = styled(tag.a)(
-  space,
-  fontSize,
-  color,
-  themed('Heading'),
+export const Link = styled(Box)(
+  themed('Link'),
   css
 )
 
-Link.propTypes = {
-  ...space.propTypes,
-  ...fontSize.propTypes,
-  ...color.propTypes,
-}
-
 Link.defaultProps = {
+  as: 'a',
   color: 'blue'
 }
 
-export const Button = styled(tag.button)({
+export const Button = styled(Box)({
   appearance: 'none',
   display: 'inline-block',
   textAlign: 'center',
 },
-  space,
-  fontSize,
   fontWeight,
-  width,
-  color,
   borders,
   borderColor,
   borderRadius,
   buttonStyle,
   themed('Button'),
-  css
 )
 
 Button.propTypes = {
-  ...space.propTypes,
-  ...fontSize.propTypes,
   ...fontWeight.propTypes,
-  ...width.propTypes,
-  ...color.propTypes,
   ...borders.propTypes,
   ...borderColor.propTypes,
   ...borderRadius.propTypes,
@@ -179,6 +177,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
+  as: 'button',
   fontSize: 'inherit',
   fontWeight: 'bold',
   m: 0,
@@ -190,7 +189,7 @@ Button.defaultProps = {
   borderRadius: 4,
 }
 
-export const Image = styled(tag.img)({
+export const Image = styled(Box)({
   maxWidth: '100%',
   height: 'auto'
 },
@@ -212,6 +211,7 @@ Image.propTypes = {
 }
 
 Image.defaultProps = {
+  as: 'img',
   m: 0
 }
 
@@ -232,5 +232,14 @@ export const Card = styled(Box)(
 )
 
 Card.propTypes = {
+  ...borders.propTypes,
+  ...borderRadius.propTypes,
+  ...boxShadow.propTypes,
+  ...backgroundImage.propTypes,
+  ...backgroundSize.propTypes,
+  ...backgroundPosition.propTypes,
+  ...backgroundRepeat.propTypes,
+  ...opacity.propTypes,
+  ...cards.propTypes,
 }
 

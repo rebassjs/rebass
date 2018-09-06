@@ -30,7 +30,6 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "clean-tag": "^2.0.0",
     "styled-system": "^3.0.2"
   },
   "devDependencies": {
@@ -45,12 +44,12 @@
     "emotion": "^9.2.3",
     "jest": "^23.1.0",
     "jest-styled-components": "^6.1.1",
-    "mdx-go": "^1.1.5",
+    "mdx-go": "^1.1.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
     "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.3.2"
+    "styled-components": "^4.0.0-beta.0"
   },
   "repository": {
     "type": "git",
