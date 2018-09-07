@@ -38,6 +38,7 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
     "bundlesize": "^0.17.0",
     "codecov": "^3.0.0",
