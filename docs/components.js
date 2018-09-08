@@ -1,11 +1,12 @@
 import React from 'react'
 import {
   StyleProvider,
-  Layout,
+  // Layout,
   NavLinks,
   ScrollTop
 } from 'mdx-go/styled-components'
 import * as components from '../src'
+import { Box } from '../src'
 
 export const nav = [
   'Rebass',
@@ -30,6 +31,23 @@ export const nav = [
 ]
 
 const filter = route => nav.includes(route.name)
+
+  /*
+    <Layout>
+      <Layout.MenuToggle m={3} />
+      <Layout.Sidebar>
+        <NavLinks
+          {...props}
+          order={nav}
+          filter={filter}
+        />
+      </Layout.Sidebar>
+      <Layout.Main>
+        {props.children}
+        <ScrollTop />
+      </Layout.Main>
+    </Layout>
+  */
 
 export const Root = props =>
   <StyleProvider
@@ -58,19 +76,17 @@ export const Root = props =>
         }
       }
     }}>
-    <Layout>
-      <Layout.MenuToggle m={3} />
-      <Layout.Sidebar>
-        <NavLinks
-          {...props}
-          order={nav}
-          filter={filter}
-        />
-      </Layout.Sidebar>
-      <Layout.Main>
-        {props.children}
-        <ScrollTop />
-      </Layout.Main>
-    </Layout>
+    <Box
+      mx='auto'
+      px={4}
+      pt={4}
+      pb={6}
+      css={{
+        maxWidth: '1024px'
+      }}
+    >
+      {props.children}
+    </Box>
+    <ScrollTop />
   </StyleProvider>
 

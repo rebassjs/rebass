@@ -9,7 +9,7 @@
     "prepare": "npm run build && npm run build:es && npm run build:emotion",
     "build": "NODE_ENV=cjs babel src -d dist",
     "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
-    "build:emotion": "NODE_ENV=emotion babel src -d dist/emotion",
+    "build:emotion": "NODE_ENV=emotion babel src -o dist/emotion.js",
     "start": "mdx-go docs",
     "docs": "mdx-go build docs -d site",
     "cover": "jest --coverage && codecov",

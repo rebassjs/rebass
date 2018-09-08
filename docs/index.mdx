@@ -14,37 +14,76 @@ export const name = 'Rebass'
 
 # Rebass v3
 
-8 primitive UI components built with styled-system.
+8 primitive UI components built with styled-system and styled-components.
 
-[Box](#box)
-| [Flex](#flex)
-| [Text](#text)
-| [Heading](#heading)
-| [Button](#button)
-| [Link](#link)
-| [Image](#image)
-| [Card](#card)
+https://github.com/rebassjs/rebass
 
+```sh
+npm i rebass@next
+```
+
+## Principles
+
+- **Minimal**
+- **Useful**
+- **Unopinionated**
+- **Flexible**
+- **Consistent**
+- **Extensible**
+- **Themeable**
+- **Do one thing well**
+
+## What's New
+
+Rebass v3 is a complete rewrite with the intent of making this UI component library useful to an even wider audience.
+Instead of trying to provide an off-the-shelf solution to styling UI (there are other libraries out there for that),
+it tries to provide a solid base for extending these components into a highly customized UI component library.
+Rebass is intended to be useful in *any* React application and is so small it shouldn't make a huge impact on your overall bundle size.
+
+- Much smaller (~1KB)
+- 8 components: Box, Flex, Text, Heading, Button, Link, Image, and Card
+- Built with styled-components v4
+- Intended to be extended
+- Only one dependency: styled-system
+- No default theme
+- No Provider component required
+- Variant theme support for Button and Card
+
+## Changes
+
+- Removes 61 components <a href='#1'>*</a>
+- Removes system-components, grid-styled, and chroma-js dependencies
+- Removes the `is` prop in favor of styled-components' `as` prop
+- All components extend the base `Box` component
+
+---
 
 ## Box
 
+Responsive box-model layout component
+
+```.jsx
 <Box
   p={5}
   fontSize={4}
-  width={1/2}
+  width={[ 1, 1, 1/2 ]}
   color='white'
   bg='magenta'>
   Box
 </Box>
+```
 
 ## Flex
 
+Responsive flexbox layout component
+
+```.jsx
 <Flex>
   <Box
     p={3}
     width={1/2}
     color='magenta'
-    bg='cyan'>
+    bg='black'>
     Flex
   </Box>
   <Box
@@ -55,51 +94,66 @@ export const name = 'Rebass'
     Box
   </Box>
 </Flex>
+```
 
 ## Text
 
-<Text>Text</Text>
-<Text fontSize={[ 3, 4, 5 ]}>Large Text</Text>
-<Text fontSize={0}>Small Text</Text>
-<Text fontWeight='bold'>Bold Text</Text>
-<Text as='h1'>Text as h1</Text>
-<Text css={{ textDecoration: 'underline' }}>Text css</Text>
+Responsive typographic component
+
+```.jsx
+<Text
+  fontSize={[ 3, 4, 5 ]}
+  fontWeight='bold'
+  color='magenta'>
+  Text
+</Text>
+```
 
 ## Heading
 
-<Heading>Hello</Heading>
+Extension of the Text component for headings
 
-<Heading as='h1'>Heading as h1</Heading>
-<Heading as='h2'>Hello h2</Heading>
-<Heading as='h3'>Hello h3</Heading>
-<Heading as='h4'>Hello h4</Heading>
+```.jsx
+<Heading color='magenta'>Hello</Heading>
+```
 
 ## Button
 
-<Button mr={2}>Button</Button>
-<Button mr={2} bg='red'>Button</Button>
-<Button mr={2} variant='outline'>Button</Button>
-<Button variant='pill' mr={2}>Button</Button>
-<Button as='a' href='https://rebassjs.org'>Link Button</Button>
+Basic styled button
+
+```.jsx
+<Button bg='magenta'>Button</Button>
+```
 
 ## Link
 
+Basic styled link
+
+```.jsx
 <Link href='https://rebassjs.org'>Link</Link>
+```
 
 ## Image
 
+Image with max-width and style props
+
+```.jsx
 <Image
-  width={[ 1, 1/2 ]}
+  width={[ 1, 1, 1/2 ]}
   src='https://source.unsplash.com/random/1280x720'
   borderRadius={8}
 />
+```
 
 ## Card
 
+Extension of the Box component with more style props for common variations
+
+```.jsx
 <Card
   fontSize={6}
   fontWeight='bold'
-  width={[ 1, 1/2 ]}
+  width={[ 1, 1, 1/2 ]}
   p={5}
   my={5}
   bg='#f6f6ff'
@@ -108,6 +162,68 @@ export const name = 'Rebass'
 >
   Card
 </Card>
+```
 
-<Card variant='pop'>Pop!</Card>
+---
 
+## Extending
+
+Rebass components can be extended to build out highly customized UI component libraries that look exactly the way you want.
+
+There are two primary ways to extend components:
+
+```jsx
+// React-based extension
+const Badge = props =>
+  <Box
+    color='white'
+    bg='blue'
+    px={3}
+    py={1}
+    {...props}
+    css={{
+      display: 'inline-block',
+      borderRadius: '9999px'
+    }}
+  />
+```
+
+```jsx
+// styled-components extension
+const Badge = styled(Box)({
+  display: 'inline-block',
+  borderRadius: '9999px'
+})
+
+Badge.defaultProps = {
+  color: 'white',
+  bg: 'blue',
+  px: 3,
+  py: 1
+}
+```
+
+---
+
+<div id='1' />
+
+## FAQs
+
+###  Where'd all the components go?
+
+They're still here in spirit :ghost:
+They might come back to haunt you in separate, more modular packages.
+
+### Why has system-components been removed?
+
+It adds a lot of overhead and complexity to the codebase, and most end-users don't benefit from it being used in Rebass.
+
+### Why are style props showing in the HTML
+
+This is a [long standing issue with styled-components][sc-issue] and is due to the way the `styled` higher-order component is implemented.
+I was hopeful that styled-components v4 would have addressed this issue
+to avoid some of the less-than-ideal solutions used in the previous version of Rebass, but that will have to wait.
+And, due to the introduction of the `as` prop in styled-components, attempting to work around this issue while keeping up with the changing landscape of CSS-in-JS libraries doesn't seem worth it for a simple library like Rebass.
+That said, there *might* be a Babel plugin introduced in the future to help with this issue.
+
+[sc-issue]: https://github.com/styled-components/styled-components/issues/439
