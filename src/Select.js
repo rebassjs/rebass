@@ -29,7 +29,6 @@ export const Select = sys({
   fontSize: 'inherit',
   lineHeight: 'inherit',
   appearance: 'none',
-  width: '100%',
   border: 0,
   backgroundImage: `url("${arrow}")`,
   backgroundPosition: 'calc(100% - 8px) center',
