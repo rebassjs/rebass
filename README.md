@@ -68,7 +68,7 @@ import { Box } from 'rebass/emotion'
 
 ## Principles
 
-Rebass is built with the intent of being:
+Rebass is built with the following principles in mind.
 
 - **Minimal**
 - **Useful**
@@ -89,7 +89,6 @@ for more on some of the thought behind Rebass.
 ## CodeSandbox
 
 Try it out:
-
 https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
 
 
