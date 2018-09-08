@@ -11,7 +11,6 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-fontSize |  | fontSizes | responsive
 m |  | space | responsive
 mt |  | space | responsive
 mr |  | space | responsive
@@ -28,5 +27,6 @@ px | 2 | space | responsive
 py | 1 | space | responsive
 color | white | colors | responsive
 bg | blue | colors | responsive
-fontWeight | bold | fontWeights | default
-borderRadius | 2 | radii | default
+fontSize |  | fontSizes | responsive
+fontWeight | bold | fontWeights | responsive
+borderRadius | 2 | radii | responsive

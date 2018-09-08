@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Avatar = sys({
   is: 'img',
@@ -7,9 +7,10 @@ export const Avatar = sys({
 }, {
   display: 'inline-block'
 },
+  'borderRadius',
   'space',
   'color',
-  'size',
+  'size'
 )
 
 Avatar.displayName = 'Avatar'

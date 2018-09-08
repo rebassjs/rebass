@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Tab = sys({
   is: 'a',
@@ -9,12 +9,16 @@ export const Tab = sys({
   color: 'inherit',
   borderBottom: 2,
   borderColor: 'transparent',
-  hover: {
-    color: 'blue'
-  }
 }, {
-  textDecoration: 'none'
-})
+  textDecoration: 'none',
+},
+  'space',
+  'color',
+  'fontSize',
+  'fontWeight',
+  'borders',
+  'borderColor'
+)
 
 Tab.displayName = 'Tab'
 

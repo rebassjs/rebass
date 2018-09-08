@@ -1,6 +1,6 @@
 import React from 'react'
-import sys from 'system-components'
-import { Box } from 'grid-styled'
+import sys from '@rebass/components'
+import { Box } from '@rebass/grid'
 
 const withHidden = Component => ({
   xs,
@@ -32,7 +32,7 @@ const withHidden = Component => ({
 }
 
 export const Hide = withHidden(sys({
-  is: Box
+  extend: Box
 }, 'display'))
 
 Hide.displayName = 'Hide'

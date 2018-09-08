@@ -5,5 +5,3 @@
   1024
 </Samp>
 ```
-
-Extends: [Base](/components/Base)

@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Checkbox = sys({
   is: 'input',

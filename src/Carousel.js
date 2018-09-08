@@ -1,5 +1,5 @@
-import sys from 'system-components'
-import { Flex } from 'grid-styled'
+import sys from '@rebass/components'
+import { Flex } from '@rebass/grid'
 
 export const carouselIndex = ({ index }) => ({
   '& > div:first-child': {
@@ -11,7 +11,7 @@ export const carouselIndex = ({ index }) => ({
 })
 
 export const Carousel = sys({
-  is: Flex,
+  extend: Flex,
   width: 1,
 }, {
   overflow: 'hidden',

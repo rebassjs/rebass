@@ -13,8 +13,6 @@
 </Flex>
 ```
 
-Extends: [Box](/components/Box)
-
 prop | default | theme key | style type
 ---|---|---|---
 flexWrap |  | N/A | responsive

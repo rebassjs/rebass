@@ -1,12 +1,10 @@
 import React from 'react'
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Text from './Text'
 
-const Base = props =>
-  <Text {...props} is='small' />
-
 export const Small = sys({
-  is: Base,
+  is: 'small',
+  extend: Text,
   fontSize: 0
 })
 

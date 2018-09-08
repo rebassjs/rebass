@@ -1,9 +1,15 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Border = sys({
   border: 1,
   borderColor: 'gray'
-}, 'space', 'width', 'color')
+},
+  'space',
+  'width',
+  'color',
+  'borders',
+  'borderColor'
+)
 
 Border.displayName = 'Border'
 

@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { themeGet } from 'styled-system'
 
 export const Tooltip = sys({
@@ -43,7 +43,10 @@ export const Tooltip = sys({
       display: 'block'
     },
   }
-}))
+}),
+  'space',
+  'color'
+)
 
 Tooltip.displayName = 'Tooltip'
 

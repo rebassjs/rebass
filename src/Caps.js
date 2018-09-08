@@ -1,14 +1,13 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Text from './Text'
-import { letterSpacing } from 'styled-system'
 
 export const Caps = sys({
-  is: Text,
+  extend: Text,
   fontSize: 0,
   letterSpacing: '0.2em'
 }, {
   textTransform: 'uppercase'
-})
+}, 'letterSpacing')
 
 Caps.displayName = 'Caps'
 

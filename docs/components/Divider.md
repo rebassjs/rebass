@@ -9,6 +9,12 @@
 
 prop | default | theme key | style type
 ---|---|---|---
+border |  | borders | responsive
+borderTop |  | borders | responsive
+borderRight |  | borders | responsive
+borderBottom | 1 | borders | responsive
+borderLeft |  | borders | responsive
+borderColor | gray | colors | responsive
 m |  | space | responsive
 mt |  | space | responsive
 mr |  | space | responsive
@@ -23,11 +29,5 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
-border |  | borders | responsive
-borderTop |  | borders | responsive
-borderRight |  | borders | responsive
-borderBottom | 1 | borders | responsive
-borderLeft |  | borders | responsive
-borderColor | gray | colors | default
 color |  | colors | responsive
 bg |  | colors | responsive

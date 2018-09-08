@@ -1,8 +1,8 @@
-import sys from 'system-components'
-import { Flex } from 'grid-styled'
+import sys from '@rebass/components'
+import { Flex } from '@rebass/grid'
 
 export const Banner = sys({
-  is: Flex,
+  extend: Flex,
   p: [ 3, 4 ],
   flexDirection: 'column',
   alignItems: 'center',

@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Slider = sys({
   is: 'input',
@@ -9,7 +9,12 @@ export const Slider = sys({
   color: 'inherit',
   bg: 'gray',
   borderRadius: 99999,
-}, props => ({
+},
+  'width',
+  'space',
+  'color',
+  'borderRadius',
+  props => ({
   display: 'block',
   height: '4px',
   cursor: 'pointer',

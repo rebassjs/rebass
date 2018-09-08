@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Divider = sys({
   is: 'hr',
@@ -7,7 +7,12 @@ export const Divider = sys({
   border: 0,
   borderBottom: 1,
   borderColor: 'gray'
-}, 'space', 'color')
+},
+  'borders',
+  'borderColor',
+  'space',
+  'color'
+)
 
 Divider.displayName = 'Divider'
 

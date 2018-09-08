@@ -1,13 +1,14 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Badge from './Badge'
 
 export const Circle = sys({
-  is: Badge,
+  extend: Badge,
   size: 24,
   align: 'center',
   borderRadius: '99999px'
 },
   'textAlign',
+  'borderRadius',
   'size'
 )
 

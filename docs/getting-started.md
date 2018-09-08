@@ -17,7 +17,7 @@ The `Provider` component accepts a `theme` props for setting a [custom theme][th
 ```
 
 You might also want to set some global styles in your application.
-The [grid-styled][grid-styled] `Box` and `Flex` components depend on setting `box-sizing: border-box` to work as expected.
+The [@rebass/grid][@rebass/grid] `Box` and `Flex` components depend on setting `box-sizing: border-box` to work as expected.
 
 ```jsx
 import { injectGlobal } from 'styled-components'
@@ -68,4 +68,4 @@ export default Button
 ```
 
 [theming]: theming.md
-[grid-styled]: https://github.com/jxnblk/grid-styled
+[@rebass/grid]: https://github.com/rebassjs/grid

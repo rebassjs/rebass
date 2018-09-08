@@ -1,6 +1,24 @@
 
 # Changelog
 
+## [2.2.0] 2018-09-08
+
+- Use `polished` for color manipulation instead of `chroma-js`
+
+## [2.1.1] 2018-09-08
+
+- Support `width` prop on Card
+- Update docs
+
+## [2.1.0] 2018-08-14
+
+- Add Hide component
+
+## [2.0.1] 2018-06-30
+
+- Add `fontFamily` to Heading and Text components
+- Update docs
+
 ## [2.0.0] 2018-06-24
 
 ### Added

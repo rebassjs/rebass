@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Code = sys({
   is: 'code',
@@ -6,6 +6,7 @@ export const Code = sys({
   fontFamily: 'mono'
 },
   'fontFamily',
+  'fontSize',
   'space',
   'color'
 )

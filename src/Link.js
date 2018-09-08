@@ -1,9 +1,9 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Link = sys({
   is: 'a',
   color: 'blue'
-}, 'space')
+}, 'space', 'color')
 
 Link.displayName = 'Link'
 

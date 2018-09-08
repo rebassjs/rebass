@@ -1,8 +1,8 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Button from './Button'
 
 export const ButtonCircle = sys({
-  is: Button,
+  extend: Button,
   px: 3,
   borderRadius: 9999
 })

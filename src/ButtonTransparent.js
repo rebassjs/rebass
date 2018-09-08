@@ -1,15 +1,10 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Button from './Button'
 
 export const ButtonTransparent = sys({
-  is: Button,
+  extend: Button,
   bg: 'transparent',
   color: 'inherit',
-  focus: {
-    outline: 'none',
-    boxShadow: 'none',
-    color: 'blue',
-  }
 })
 
 ButtonTransparent.displayName = 'ButtonTransparent'

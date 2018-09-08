@@ -26,8 +26,8 @@ px |  | space | responsive
 py |  | space | responsive
 color |  | colors | responsive
 bg |  | colors | responsive
-fontFamily |  | fonts | default
+fontFamily |  | fonts | responsive
 fontSize |  | fontSizes | responsive
-fontWeight |  | fontWeights | default
+fontWeight |  | fontWeights | responsive
 textAlign |  | N/A | responsive
 lineHeight |  | lineHeights | responsive

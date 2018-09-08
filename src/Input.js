@@ -1,5 +1,5 @@
-import sys from 'system-components'
-import { theme } from 'styled-system'
+import sys from '@rebass/components'
+import { themeGet } from 'styled-system'
 
 export const Input = sys({
   is: 'input',
@@ -16,7 +16,17 @@ export const Input = sys({
   borderRadius: 2,
   color: 'inherit',
   bg: 'transparent'
-}, props => ({
+},
+  'fontSize',
+  'lineHeight',
+  'width',
+  'borders',
+  'borderColor',
+  'boxShadow',
+  'borderRadius',
+  'space',
+  'color',
+props => ({
   fontFamily: 'inherit',
   display: 'inline-block',
   verticalAlign: 'middle',
@@ -24,7 +34,7 @@ export const Input = sys({
   appearance: 'none',
   '&:focus': {
     outline: 'none',
-    boxShadow: `inset 0 0 0 1px ${theme('colors.blue')(props)}`,
+    boxShadow: `inset 0 0 0 1px ${themeGet('colors.blue')(props)}`,
   },
   '&:disabled': {
     opacity: 1/4

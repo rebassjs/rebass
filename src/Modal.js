@@ -1,9 +1,9 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { themeGet } from 'styled-system'
 import { Fixed } from './index'
 
 export const Modal = sys({
-  is: Fixed,
+  extend: Fixed,
   top: '50%',
   left: '50%',
   p: 3,
@@ -16,6 +16,7 @@ export const Modal = sys({
   overflow: 'auto',
   transform: 'translate(-50%, -50%)'
 }),
+  'borderRadius',
   'width',
   'maxWidth',
   'maxHeight',

@@ -9,7 +9,7 @@
 prop | default | theme key | style type
 ---|---|---|---
 fontSize | 1 | fontSizes | responsive
-fontWeight | bold | fontWeights | default
+fontWeight | bold | fontWeights | responsive
 lineHeight | 1.1428571428571428 | lineHeights | responsive
 m |  | space | responsive
 mt |  | space | responsive
@@ -27,7 +27,7 @@ px | 3 | space | responsive
 py | 2 | space | responsive
 color | white | colors | responsive
 bg | blue | colors | responsive
-borderRadius | 2 | radii | default
+borderRadius | 2 | radii | responsive
 border |  | borders | responsive
 borderTop |  | borders | responsive
 borderRight |  | borders | responsive

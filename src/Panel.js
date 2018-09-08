@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Panel = sys({
   bg: 'white',
@@ -7,7 +7,13 @@ export const Panel = sys({
   borderColor: 'gray'
 }, {
   overflow: 'hidden'
-}, 'space')
+},
+  'space',
+  'color',
+  'borders',
+  'borderColor',
+  'borderRadius'
+)
 
 Panel.displayName = 'Panel'
 
@@ -18,7 +24,13 @@ Panel.Header = sys({
   bg: 'white',
   borderBottom: 1,
   borderColor: 'gray'
-})
+},
+  'space',
+  'color',
+  'fontSize',
+  'borders',
+  'borderColor'
+)
 
 Panel.Header.displayName = 'Panel.Header'
 
@@ -29,7 +41,13 @@ Panel.Footer = sys({
   bg: 'white',
   borderTop: 1,
   borderColor: 'gray'
-})
+},
+  'space',
+  'colors',
+  'fontSize',
+  'borders',
+  'borderColor'
+)
 
 Panel.Footer.displayName = 'Panel.Footer'
 

@@ -23,4 +23,4 @@ px |  | space | responsive
 py |  | space | responsive
 color | inherit | colors | responsive
 bg | gray | colors | responsive
-borderRadius | 99999 | radii | default
+borderRadius | 99999 | radii | responsive

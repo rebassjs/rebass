@@ -1,15 +1,9 @@
-import React from 'react'
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Code from './Code'
 
-const Base = props =>
-  <Code
-    is='samp'
-    {...props}
-  />
-
 export const Samp = sys({
-  is: Base
+  is: 'samp',
+  extend: Code
 })
 
 Samp.displayName = 'Samp'

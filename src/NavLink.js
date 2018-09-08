@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { themeGet } from 'styled-system'
 
 export const NavLink = sys({
@@ -18,7 +18,13 @@ export const NavLink = sys({
   '&:disabled': {
     opacity: 1/4
   },
-}), 'width')
+}),
+  'width',
+  'fontSize',
+  'fontWeight',
+  'space',
+  'color'
+)
 
 NavLink.displayName = 'NavLink'
 

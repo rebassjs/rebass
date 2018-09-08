@@ -15,5 +15,3 @@
   )}
 </div>
 ```
-
-Extends: [Position](/components/Position)

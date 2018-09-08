@@ -1,15 +1,9 @@
-import React from 'react'
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Heading from './Heading'
 
-const Base = props =>
-  <Heading
-    is='h3'
-    {...props}
-  />
-
 export const Subhead = sys({
-  is: Base,
+  is: 'h3',
+  extend: Heading,
   fontSize: 4
 })
 

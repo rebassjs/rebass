@@ -6,8 +6,6 @@
 </Measure>
 ```
 
-Extends: [Text](/components/Text)
-
 prop | default | theme key | style type
 ---|---|---|---
 maxWidth | 32em | maxWidths | responsive

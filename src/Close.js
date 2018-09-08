@@ -1,8 +1,8 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import ButtonTransparent from './ButtonTransparent'
 
 export const Close = sys({
-  is: ButtonTransparent,
+  extend: ButtonTransparent,
   p: 0,
   fontSize: 3,
   lineHeight: 1,
@@ -10,7 +10,7 @@ export const Close = sys({
 }, {
   width: '24px',
   height: '24px'
-})
+}, 'lineHeight')
 
 Close.displayName = 'Close'
 

@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { style } from 'styled-system'
 
 const bgImage = style({
@@ -15,6 +15,7 @@ export const BackgroundImage = sys({
   backgroundPosition: 'center'
 },
   bgImage,
+  'width',
   'ratio',
   'backgroundSize',
   'backgroundPosition',

@@ -1,12 +1,9 @@
-import React from 'react'
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Text from './Text'
 
-export const Base = props =>
-  <Text {...props} is='blockquote' />
-
 export const Blockquote = sys({
-  is: Base,
+  is: 'blockquote',
+  extend: Text,
   fontSize: 3,
   m: 0
 })

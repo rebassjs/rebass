@@ -1,16 +1,16 @@
-import sys from 'system-components'
-import { Flex } from 'grid-styled'
+import sys from '@rebass/components'
+import { Flex } from '@rebass/grid'
 
 export const Message = sys({
-  is: Flex,
+  extend: Flex,
   px: 3,
   py: 2,
   fontWeight: 'bold',
   color: 'white',
   bg: 'blue',
-  align: 'center',
+  alignItems: 'center',
   minHeight: '48px',
-}, 'minHeight', {
+}, 'minHeight', 'fontWeight', {
   WebkitFontSmoothing: 'antialiased',
 })
 

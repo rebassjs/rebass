@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const BlockLink = sys({
   is: 'a',
@@ -6,7 +6,7 @@ export const BlockLink = sys({
 }, {
   display: 'block',
   textDecoration: 'none'
-}, 'space', 'width')
+}, 'space', 'color', 'width')
 
 BlockLink.displayName = 'BlockLink'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 const DonutBase = props => {
   const R = 16 - props.strokeWidth
@@ -35,7 +35,7 @@ const DonutBase = props => {
 }
 
 export const Donut = sys({
-  is: DonutBase,
+  extend: DonutBase,
   color: 'blue',
   strokeWidth: 2,
   value: 1
