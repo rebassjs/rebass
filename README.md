@@ -1,6 +1,4 @@
 
-<img src='docs/logo.svg' width='128' height='128' />
-
 # Rebass
 
 React UI component library & design system,
@@ -23,6 +21,8 @@ with support for
 [npm]: https://npmjs.com/package/rebass
 
 https://rebassjs.org
+
+**Docs for v2:**: https://rebass-v2.now.sh
 
 ```sh
 npm i rebass
