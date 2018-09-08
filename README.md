@@ -22,7 +22,7 @@ with support for
 [version-badge]: https://img.shields.io/npm/v/rebass.svg?style=flat-square
 [npm]: https://npmjs.com/package/rebass
 
-http://jxnblk.com/rebass
+https://rebassjs.org
 
 ```sh
 npm i rebass
