@@ -31,5 +31,5 @@ rebass-project/
 
 Built with [Rebass][]
 
-[Rebass]: https://github.com/jxnblk/rebass
-[create-rebass]: https://github.com/jxnblk/rebass/tree/master/create-rebass
+[Rebass]: https://github.com/rebassjs/rebass
+[create-rebass]: https://github.com/rebassjs/create-rebass

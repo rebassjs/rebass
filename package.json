@@ -1,20 +1,15 @@
 {
   "name": "rebass",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Flexible & functional React design system, built with styled-system",
   "main": "dist/index.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "rm -rf dist && babel src -d dist && npm run emotion && ./docs/_build.js",
+    "prepare": "rm -rf dist && babel src -d dist && npm run emotion",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
-    "docs": "./docs/_build.js",
     "cover": "jest --coverage --coverageReporters html lcov && codecov",
     "test": "jest",
-    "size": "bundlesize",
-    "start": "x0 docs -p 9999",
-    "build": "x0 build docs -d site",
-    "svg": "scrs docs/Logo.js --svg > docs/logo.svg",
-    "card": "repng docs/Card.js -w 1024 -h 512 -d docs -f card.png"
+    "size": "bundlesize"
   },
   "keywords": [
     "components",
@@ -38,9 +33,6 @@
     "styled-system": "^3.0.3"
   },
   "devDependencies": {
-    "@compositor/kit": "^1.0.43",
-    "@compositor/kit-snapshot": "^1.0.24",
-    "@compositor/x0": "^6.0.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
@@ -52,25 +44,20 @@
     "emotion": "^9.2.3",
     "jest": "^23.1.0",
     "jest-styled-components": "^5.0.1",
-    "lodash.sortby": "^4.7.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
     "react-test-renderer": "^16.2.0",
-    "refunk": "^3.0.1",
-    "repng": "^3.0.0",
-    "scrs": "^1.1.0",
-    "styled-components": "^3.3.2",
-    "system-docs": "^1.0.0-1"
+    "styled-components": "^3.3.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jxnblk/rebass.git"
+    "url": "https://github.com/rebassjs/rebass.git"
   },
   "bugs": {
-    "url": "https://github.com/jxnblk/rebass/issues"
+    "url": "https://github.com/rebassjs/rebass/issues"
   },
-  "homepage": "https://github.com/jxnblk/rebass",
+  "homepage": "https://github.com/rebassjs/rebass",
   "jest": {
     "roots": [
       "<rootDir>/test/"
@@ -84,10 +71,5 @@
       "path": "./dist/*.js",
       "maxSize": "2 kB"
     }
-  ],
-  "x0": {
-    "title": "Rebass",
-    "template": "./docs/_template.js",
-    "basename": "/rebass"
-  }
+  ]
 }

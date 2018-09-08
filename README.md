@@ -11,10 +11,10 @@ with support for
 [![Downloads][downloads-badge]][npm]
 [![Version][version-badge]][npm]
 
-[badge]: https://img.shields.io/travis/jxnblk/rebass.svg?style=flat-square
-[travis]: https://travis-ci.org/jxnblk/rebass
-[coverage-badge]: https://img.shields.io/codecov/c/github/jxnblk/rebass.svg?style=flat-square
-[coverage]: https://codecov.io/github/jxnblk/rebass
+[badge]: https://img.shields.io/travis/rebassjs/rebass.svg?style=flat-square
+[travis]: https://travis-ci.org/rebassjs/rebass
+[coverage-badge]: https://img.shields.io/codecov/c/github/rebassjs/rebass.svg?style=flat-square
+[coverage]: https://codecov.io/github/rebassjs/rebass
 
 [downloads-badge]: https://img.shields.io/npm/dw/rebass.svg?style=flat-square
 [version-badge]: https://img.shields.io/npm/v/rebass.svg?style=flat-square
@@ -79,20 +79,20 @@ import * as Rebass from 'rebass/emotion'
 
 ## Documentation
 
-- [Docs](https://jxnblk.com/rebass)
-- [Getting Started](https://jxnblk.com/rebass/getting-started)
-- [Props](https://jxnblk.com/rebass/props)
-- [Grid System](https://jxnblk.com/rebass/grid-system)
-- [Theming](https://jxnblk.com/rebass/theming)
-- [Extending](https://jxnblk.com/rebass/extending)
-- [Components](https://jxnblk.com/rebass/components)
-- [Server-Side Rendering](https://jxnblk.com/rebass/server-side-rendering)
+- [Docs](https://rebassjs.org)
+- [Getting Started](https://rebassjs.org/getting-started)
+- [Props](https://rebassjs.org/props)
+- [Grid System](https://rebassjs.org/grid-system)
+- [Theming](https://rebassjs.org/theming)
+- [Extending](https://rebassjs.org/extending)
+- [Components](https://rebassjs.org/components)
+- [Server-Side Rendering](https://rebassjs.org/server-side-rendering)
 
 ## CodeSandbox
 
 Try it out:
 
-https://codesandbox.io/s/github/jxnblk/rebass/tree/master/examples/sandbox
+https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
 
 ### Architectural Approach
 
@@ -126,7 +126,7 @@ for more on some of the thought behind Rebass.
 
 #### v1.0.7
 
-For the previous version of Rebass see the [v1.0.7](https://github.com/jxnblk/rebass/tree/v1.0.7) branch.
+For the previous version of Rebass see the [v1.0.7](https://github.com/rebassjs/rebass/tree/v1.0.7) branch.
 
 ---
 
