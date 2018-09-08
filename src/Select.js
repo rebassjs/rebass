@@ -31,7 +31,7 @@ export const Select = sys({
   appearance: 'none',
   width: '100%',
   border: 0,
-  background: `url("${arrow}")`,
+  backgroundImage: `url("${arrow}")`,
   backgroundPosition: 'calc(100% - 8px) center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '8px 8px',
