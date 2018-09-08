@@ -6,7 +6,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4",
-    "rebass": "^2.1.0",
+    "rebass": "^2.3.0",
     "styled-components": "^3.4.5"
   },
   "scripts": {

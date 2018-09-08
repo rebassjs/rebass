@@ -182,4 +182,3 @@ Card.propTypes = {
   ...opacity.propTypes,
   ...cards.propTypes,
 }
-
