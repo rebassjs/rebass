@@ -1,6 +1,10 @@
 
 # Changelog
 
+## [2.3.0] 2018-09-08
+
+- Upgrade to @rebass/components, @rebass/grid, and styled-system v3
+
 ## [2.2.0] 2018-09-08
 
 - Use `polished` for color manipulation instead of `chroma-js`
