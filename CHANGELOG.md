@@ -1,6 +1,15 @@
 
 # Changelog
 
+## [2.3.2] 2018-09-08
+
+- Update repo in package.json
+- Update readme
+
+## [2.3.1] 2018-09-08
+
+- Fix bad prepublish build
+
 ## [2.3.0] 2018-09-08
 
 - Upgrade to @rebass/components, @rebass/grid, and styled-system v3

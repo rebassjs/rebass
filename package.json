@@ -1,18 +1,18 @@
 {
   "name": "rebass",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "description": "Flexible & functional React design system, built with styled-system",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "npm run build && npm run build:es && npm run build:emotion",
+    "prepare": "rm -rf dist && npm run build && npm run build:es && npm run build:emotion",
     "build": "NODE_ENV=cjs babel src -d dist",
     "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
     "build:emotion": "NODE_ENV=emotion babel src -o dist/emotion.js",
     "start": "mdx-go docs",
     "docs": "mdx-go build docs -d site",
-    "cover": "jest --coverage && codecov",
+    "cover": "jest --coverage --coverageReporters html lcov && codecov",
     "test": "jest",
     "size": "bundlesize"
   },
@@ -54,12 +54,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jxnblk/rebass.git"
+    "url": "https://github.com/rebassjs/rebass.git"
   },
   "bugs": {
-    "url": "https://github.com/jxnblk/rebass/issues"
+    "url": "https://github.com/rebassjs/rebass/issues"
   },
-  "homepage": "https://github.com/jxnblk/rebass",
+  "homepage": "https://github.com/rebassjs/rebass",
   "jest": {
     "roots": [
       "<rootDir>/test/"
