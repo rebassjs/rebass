@@ -2547,9 +2547,8 @@ exports[`exports a Select component 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 100%;
   border: 0;
-  background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewbox='0%200%2032%2032'%20fill='currentcolor'%3E%20%3Cpath%20d='M0%206%20L32%206%20L16%2028%20z'%20/%3E%20%3C/svg%3E");
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewbox='0%200%2032%2032'%20fill='currentcolor'%3E%20%3Cpath%20d='M0%206%20L32%206%20L16%2028%20z'%20/%3E%20%3C/svg%3E");
   background-position: calc(100% - 8px) center;
   background-repeat: no-repeat;
   background-size: 8px 8px;
