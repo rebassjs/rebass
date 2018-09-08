@@ -1,7 +1,4 @@
 node_modules
-package-lock.json
 dist
 coverage
 .nyc_output
-.site
-site
