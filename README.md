@@ -23,43 +23,35 @@ with support for
 https://rebassjs.org
 
 ```sh
-npm i rebass
+npm i rebass@next
 ```
-
-Rebass is a library of highly-composable, primitive UI components for React,
-built with styled-components to keep styles isolated and reduce the need to write custom CSS in your application.
-Based upon a configurable design system,
-Rebass‘s props API makes building consistent, responsive web apps simpler and faster.
-
 
 ## Getting Started
 
 ```jsx
 import React from 'react'
-import { Provider, Heading, Button } from 'rebass'
+import { Heading, Button } from 'rebass'
 
-const App = props => (
-  <Provider>
+export default props =>
+  <div>
     <Heading>Hello</Heading>
     <Button>Rebass</Button>
-  </Provider>
-)
+  </div>
 ```
 
 To use Rebass with [emotion][emotion], import from `rebass/emotion`:
 
 ```js
-import * as Rebass from 'rebass/emotion'
+import { Box } from 'rebass/emotion'
 ```
 
 ## Features
 
-- Kickstart your own React component library
-- Responsive style props from [styled-system][system]
-- Flexbox grid with [Rebass Grid][]
+- 8 core UI components to serve as the basis for design systems
+- Super small (~1KB)
+- Responsive, themeable style props from [styled-system][system]
+- Flexbox grid with the Box and Flex components
 - Support for [styled-components][sc] & [emotion][emotion]
-- Functional stateless UI components
-- Configurable theming
 - Extensible base components
 - Design-system based consistency
 - Built for responsive web design
@@ -74,40 +66,31 @@ import * as Rebass from 'rebass/emotion'
 > "A whopper component library built on styled-components. Responsive, systematic, scalable...the business!"
 > – [Colm Tuite](https://twitter.com/colmtuite/status/882715087936606210)
 
+## Principles
+
+Rebass is built with the intent of being:
+
+- **Minimal**
+- **Useful**
+- **Unopinionated**
+- **Flexible**
+- **Consistent**
+- **Extensible**
+- **Themeable**
+- **Do one thing well**
+
+See [Patterns for Style Composition in React](http://jxnblk.com/writing/posts/patterns-for-style-composition-in-react/)
+for more on some of the thought behind Rebass.
 
 ## Documentation
 
 - [Docs](https://rebassjs.org)
-- [Getting Started](https://rebassjs.org/getting-started)
-- [Props](https://rebassjs.org/props)
-- [Grid System](https://rebassjs.org/grid-system)
-- [Theming](https://rebassjs.org/theming)
-- [Extending](https://rebassjs.org/extending)
-- [Components](https://rebassjs.org/components)
-- [Server-Side Rendering](https://rebassjs.org/server-side-rendering)
 
 ## CodeSandbox
 
 Try it out:
 
 https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
-
-### Architectural Approach
-
-Rebass is built around a component architectural approach inspired by Dan Abramov’s
-[Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.ah4312963),
-where presentational components are the only ones that encapsulate styles and contain no application logic,
-and container components do not contain any styles or DOM markup and handle all the application logic.
-
-Rebass only contains presentational components,
-which means controlling things like progressive disclosure mechanisms
-or dropdown menus should be handled at a higher level in container components.
-Therefore, Rebass itself does not require any client-side JavaScript,
-is well suited to server-side rendering,
-and can fit into virtually any higher level application architecture.
-
-See [Patterns for Style Composition in React](http://jxnblk.com/writing/posts/patterns-for-style-composition-in-react/)
-for more on some of the thought behind Rebass.
 
 
 ### Related
@@ -122,9 +105,10 @@ for more on some of the thought behind Rebass.
 [sc]: https://github.com/styled-components/styled-components
 [emotion]: https://github.com/emotion-js/emotion
 
-#### v1.0.7
+#### Previous Versions
 
-For the previous version of Rebass see the [v1.0.7](https://github.com/rebassjs/rebass/tree/v1.0.7) branch.
+- [v2.3.2](https://github.com/rebassjs/rebass/tree/v2) – [Docs for Rebass v2](https://rebass-v2.now.sh)
+- [v1.0.7](https://github.com/rebassjs/rebass/tree/v1.0.7)
 
 ---
 
