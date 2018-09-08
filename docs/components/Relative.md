@@ -7,5 +7,3 @@
   </Absolute>
 </Relative>
 ```
-
-Extends: [Position](/components/Position)

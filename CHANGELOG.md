@@ -1,6 +1,14 @@
 
 # Changelog
 
+## [2.2.0] 2018-09-8
+
+- Use `polished` for color manipulation instead of `chroma-js`
+
+## [2.1.1]
+## [2.1.0]
+## [2.0.1]
+
 ## [2.0.0] 2018-06-24
 
 ### Added

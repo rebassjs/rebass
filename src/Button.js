@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { themeGet } from 'styled-system'
 
 export const Button = sys({
@@ -31,7 +31,14 @@ export const Button = sys({
       outline: 'none',
       boxShadow: `0 0 0 2px ${themeGet('colors.' + props.bg, props.bg)(props)}`
     }
-  })
+  }),
+  'fontSize',
+  'fontWeight',
+  'lineHeight',
+  'space',
+  'color',
+  'borderRadius',
+  'borders'
 )
 
 Button.displayName = 'Button'

@@ -1,5 +1,5 @@
-import sys from 'system-components'
-import { theme } from 'styled-system'
+import sys from '@rebass/components'
+import { themeGet } from 'styled-system'
 
 export const Progress = sys({
   is: 'progress',
@@ -9,14 +9,19 @@ export const Progress = sys({
   color: 'blue',
   bg: 'gray',
   borderRadius: 2
-}, props => ({
+},
+  'width',
+  'borderRadius',
+  'space',
+  'color',
+props => ({
   boxSizing: 'border-box',
   diplay: 'block',
   height: '4px',
   overflow: 'hidden',
   appearance: 'none',
   '&::-webkit-progress-bar': {
-    backgroundColor: theme('colors.gray')(props)
+    backgroundColor: themeGet('colors.gray')(props)
   },
   '&::-webkit-progress-value': {
     backgroundColor: 'currentcolor'

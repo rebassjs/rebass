@@ -5,5 +5,3 @@
   Hello
 </Sticky>
 ```
-
-Extends: [Position](/components/Position)

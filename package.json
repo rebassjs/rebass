@@ -31,11 +31,11 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "grid-styled": "^4.2.0",
+    "@rebass/components": "^4.0.0-1",
+    "@rebass/grid": "^6.0.0-0",
     "polished": "^1.9.3",
     "prop-types": "^15.6.0",
-    "styled-system": "^2.3.1",
-    "system-components": "^2.2.1"
+    "styled-system": "^3.0.3"
   },
   "devDependencies": {
     "@compositor/kit": "^1.0.43",
@@ -64,7 +64,7 @@
     "system-docs": "^1.0.0-1"
   },
   "peerDependencies": {
-    "styled-components": ">=2.0 || >= 3.0"
+    "styled-components": ">=2.0"
   },
   "repository": {
     "type": "git",

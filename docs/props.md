@@ -123,7 +123,7 @@ See the [styled-system][responsive] docs for more info.
 
 ## `css` prop
 
-All Rebass components include [system-components][]’ `css` prop,
+All Rebass components include [@rebass/components][]’ `css` prop,
 which gives you low-level access to apply any CSS to a component.
 This works well as an escape hatch for one-off styles or as another way to extend Rebass components.
 
@@ -169,4 +169,4 @@ Refer to the [component documentation](components.md) for information on compone
 [space]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#space-responsive
 [color]: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#color-responsive
 [responsive]: https://github.com/jxnblk/styled-system/blob/master/docs/responsive-styles.md
-[system-components]: https://github.com/jxnblk/styled-system/tree/master/system-components
+[@rebass/components]: https://github.com/rebassjs/components

@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Pre = sys({
   is: 'pre',
@@ -9,6 +9,7 @@ export const Pre = sys({
   overflow: 'auto'
 },
   'fontFamily',
+  'fontSize',
   'space',
   'color'
 )

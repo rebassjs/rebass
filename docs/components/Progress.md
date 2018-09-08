@@ -9,6 +9,7 @@
 prop | default | theme key | style type
 ---|---|---|---
 width | 1 | N/A | responsive
+borderRadius | 2 | radii | responsive
 m |  | space | responsive
 mt |  | space | responsive
 mr |  | space | responsive
@@ -25,4 +26,3 @@ px |  | space | responsive
 py |  | space | responsive
 color | blue | colors | responsive
 bg | gray | colors | responsive
-borderRadius | 2 | radii | default

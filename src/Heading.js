@@ -1,5 +1,5 @@
 import React from 'react'
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Heading = sys({
   is: 'h2',
@@ -9,6 +9,10 @@ export const Heading = sys({
   m: 0
 },
   'fontFamily',
+  'fontSize',
+  'fontWeight',
+  'lineHeight',
+  'space',
   'color',
   'textAlign'
 )

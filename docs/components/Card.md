@@ -28,8 +28,8 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
+width |  | N/A | responsive
 color |  | colors | responsive
 bg | white | colors | responsive
-borderRadius | 2 | radii | default
-boxShadow | 2 | shadows | default
-width |  | N/A | responsive
+borderRadius | 2 | radii | responsive
+boxShadow | 2 | shadows | responsive

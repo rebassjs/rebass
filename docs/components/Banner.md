@@ -12,30 +12,9 @@
 </Banner>
 ```
 
-Extends: [Flex](/components/Flex) > [Box](/components/Box)
-
 prop | default | theme key | style type
 ---|---|---|---
-m |  | space | responsive
-mt |  | space | responsive
-mr |  | space | responsive
-mb |  | space | responsive
-ml |  | space | responsive
-mx |  | space | responsive
-my |  | space | responsive
-p | 3,4 | space | responsive
-pt |  | space | responsive
-pr |  | space | responsive
-pb |  | space | responsive
-pl |  | space | responsive
-px |  | space | responsive
-py |  | space | responsive
-flexDirection | column | N/A | responsive
-alignItems | center | N/A | responsive
-justifyContent | center | N/A | responsive
-backgroundSize | cover | N/A | default
-backgroundPosition | center | N/A | default
 minHeight | 80vh | minHeights | responsive
-color | white | colors | responsive
-bg | black | colors | responsive
-backgroundImage |  | N/A | default
+backgroundSize | cover | N/A | responsive
+backgroundPosition | center | N/A | responsive
+backgroundImage |  | N/A | responsive

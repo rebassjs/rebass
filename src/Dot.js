@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Dot = sys({
   is: 'button',
@@ -9,20 +9,14 @@ export const Dot = sys({
   borderRadius: 99999,
   border: 4,
   borderColor: 'transparent',
-  focus: {
-    backgroundColor: 'blue'
-  },
-  hover: {
-    backgroundColor: 'blue'
-  },
-  disabledStyle: {
-    opacity: 1/4
-  }
 }, {
   appearance: 'none',
   backgroundClip: 'padding-box'
 },
   'size',
+  'borderRadius',
+  'borders',
+  'borderColor',
   'space',
   'color'
 )

@@ -8,8 +8,9 @@
 
 prop | default | theme key | style type
 ---|---|---|---
+fontFamily |  | fonts | responsive
 fontSize | 5 | fontSizes | responsive
-fontWeight | bold | fontWeights | default
+fontWeight | bold | fontWeights | responsive
 lineHeight | 1.25 | lineHeights | responsive
 m |  | space | responsive
 mt |  | space | responsive
@@ -25,7 +26,6 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
-fontFamily |  | fonts | default
 color |  | colors | responsive
 bg |  | colors | responsive
 textAlign |  | N/A | responsive

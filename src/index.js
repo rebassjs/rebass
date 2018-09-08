@@ -1,4 +1,4 @@
-export { Flex, Box } from 'grid-styled'
+export { Flex, Box } from '@rebass/grid'
 
 export { default as theme } from './theme'
 export { colors, createColors } from './colors'

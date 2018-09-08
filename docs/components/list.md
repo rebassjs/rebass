@@ -78,8 +78,6 @@
 
 ## Flex
 
-Extends [Box](#box)
-
 ```.jsx
 <Flex
   mx={-3}
@@ -96,12 +94,9 @@ Extends [Box](#box)
 ### Props
 
 - `flexWrap`
-- `wrap`
 - `flexDirection`
 - `alignItems`
-- `align`
 - `justifyContent`
-- `justify`
 
 ## Box
 
@@ -137,7 +132,6 @@ Extends [Box](#box)
 ### Props
 
 - `fontFamily`
-- `font`
 
 ## Provider
 
@@ -165,21 +159,13 @@ Extends [Box](#box)
 
 ## ButtonOutline
 
-Extends [Button](#button)
-
 ```.jsx
 <ButtonOutline
   children='Hello'
 />
 ```
 
-### Props
-
-- `hover`
-
 ## ButtonCircle
-
-Extends [Button](#button)
 
 ```.jsx
 <ButtonCircle
@@ -187,23 +173,13 @@ Extends [Button](#button)
 />
 ```
 
-### Props
-
-- `borderRadius`
-
 ## ButtonTransparent
-
-Extends [Button](#button)
 
 ```.jsx
 <ButtonTransparent>
   Hello
 </ButtonTransparent>
 ```
-
-### Props
-
-- `focus`
 
 ## Link
 
@@ -225,9 +201,9 @@ Extends [Button](#button)
 
 ### Props
 
+- `width`
 - `fontSize`
 - `fontWeight`
-- `width`
 
 ## BlockLink
 
@@ -244,15 +220,12 @@ Extends [Button](#button)
 
 ## Close
 
-Extends [ButtonTransparent](#buttontransparent)
-
 ```.jsx
 <Close />
 ```
 
 ### Props
 
-- `fontSize`
 - `lineHeight`
 
 ## Text
@@ -268,11 +241,9 @@ Extends [ButtonTransparent](#buttontransparent)
 ### Props
 
 - `fontFamily`
-- `font`
 - `fontSize`
 - `fontWeight`
 - `textAlign`
-- `align`
 - `lineHeight`
 
 ## Heading
@@ -285,13 +256,11 @@ Extends [ButtonTransparent](#buttontransparent)
 
 ### Props
 
+- `fontFamily`
 - `fontSize`
 - `fontWeight`
 - `lineHeight`
-- `fontFamily`
-- `font`
 - `textAlign`
-- `align`
 
 ## Subhead
 
@@ -301,13 +270,7 @@ Extends [ButtonTransparent](#buttontransparent)
 />
 ```
 
-### Props
-
-- `fontSize`
-
 ## Caps
-
-Extends [Text](#text)
 
 ```.jsx
 <Caps>Hello</Caps>
@@ -315,7 +278,6 @@ Extends [Text](#text)
 
 ### Props
 
-- `fontSize`
 - `letterSpacing`
 
 ## Small
@@ -326,13 +288,7 @@ Extends [Text](#text)
 />
 ```
 
-### Props
-
-- `fontSize`
-
 ## Lead
-
-Extends [Text](#text)
 
 ```.jsx
 <Lead>
@@ -340,14 +296,7 @@ Extends [Text](#text)
 </Lead>
 ```
 
-### Props
-
-- `fontSize`
-- `lineHeight`
-
 ## Truncate
-
-Extends [Text](#text)
 
 ```.jsx
 <Truncate>
@@ -362,10 +311,6 @@ Extends [Text](#text)
   “The simplest scale is a single note, and sticking with a single note draws more attention to other parameters, such as rhythm and inflection.”
 </Blockquote>
 ```
-
-### Props
-
-- `fontSize`
 
 ## Divider
 
@@ -395,9 +340,8 @@ Extends [Text](#text)
 
 ### Props
 
-- `fontSize`
 - `fontFamily`
-- `font`
+- `fontSize`
 
 ## Code
 
@@ -409,9 +353,8 @@ Extends [Text](#text)
 
 ### Props
 
-- `fontSize`
 - `fontFamily`
-- `font`
+- `fontSize`
 
 ## Samp
 
@@ -422,8 +365,6 @@ Extends [Text](#text)
 ```
 
 ## Measure
-
-Extends [Text](#text)
 
 ```.jsx
 <Measure>
@@ -445,9 +386,8 @@ Extends [Text](#text)
 
 ### Props
 
-- `fontSize`
 - `alignItems`
-- `align`
+- `fontSize`
 
 ## Input
 
@@ -589,12 +529,11 @@ Extends [Text](#text)
 
 ### Props
 
+- `image`
 - `width`
 - `ratio`
 - `backgroundSize`
-- `bgSize`
 - `backgroundPosition`
-- `bgPosition`
 
 ## Avatar
 
@@ -607,8 +546,8 @@ Extends [Text](#text)
 
 ### Props
 
-- `size`
 - `borderRadius`
+- `size`
 
 ## Embed
 
@@ -630,8 +569,6 @@ Extends [Text](#text)
 
 ## Container
 
-Extends [Box](#box)
-
 ```.jsx
 <Container>
   Hello
@@ -644,8 +581,6 @@ Extends [Box](#box)
 
 ## Group
 
-Extends [Flex](#flex)
-
 ```.jsx
 <Group>
   <Button children='Beep' />
@@ -656,8 +591,6 @@ Extends [Flex](#flex)
 
 ## Row
 
-Extends [Flex](#flex)
-
 ```.jsx
 <Row>
   <Column>Column</Column>
@@ -666,8 +599,6 @@ Extends [Flex](#flex)
 ```
 
 ## Column
-
-Extends [Box](#box)
 
 ```.jsx
 <Row>
@@ -694,13 +625,13 @@ Extends [Box](#box)
 
 ### Props
 
+- `width`
 - `border`
 - `borderTop`
 - `borderRight`
 - `borderBottom`
 - `borderLeft`
 - `borderColor`
-- `width`
 
 ## Card
 
@@ -718,9 +649,9 @@ Extends [Box](#box)
 
 ### Props
 
+- `width`
 - `borderRadius`
 - `boxShadow`
-- `width`
 
 ## Panel
 
@@ -744,13 +675,13 @@ Extends [Box](#box)
 
 ### Props
 
-- `borderRadius`
 - `border`
 - `borderTop`
 - `borderRight`
 - `borderBottom`
 - `borderLeft`
 - `borderColor`
+- `borderRadius`
 
 ## Progress
 
@@ -767,8 +698,6 @@ Extends [Box](#box)
 
 ## Banner
 
-Extends [Flex](#flex)
-
 ```.jsx
 <Banner
   color='white'
@@ -783,22 +712,12 @@ Extends [Flex](#flex)
 
 ### Props
 
-- `flexDirection`
-- `alignItems`
-- `align`
-- `justifyContent`
-- `justify`
-- `backgroundSize`
-- `bgSize`
-- `backgroundPosition`
-- `bgPosition`
 - `minHeight`
+- `backgroundSize`
+- `backgroundPosition`
 - `backgroundImage`
-- `bgImage`
 
 ## Message
-
-Extends [Flex](#flex)
 
 ```.jsx
 <Message>
@@ -808,14 +727,10 @@ Extends [Flex](#flex)
 
 ### Props
 
-- `fontWeight`
-- `alignItems`
-- `align`
 - `minHeight`
+- `fontWeight`
 
 ## Toolbar
-
-Extends [Flex](#flex)
 
 ```.jsx
 <Toolbar>
@@ -833,13 +748,9 @@ Extends [Flex](#flex)
 
 ### Props
 
-- `alignItems`
-- `align`
 - `minHeight`
 
 ## Tabs
-
-Extends [Flex](#flex)
 
 ```.jsx
 <Tabs>
@@ -882,7 +793,6 @@ Extends [Flex](#flex)
 - `borderBottom`
 - `borderLeft`
 - `borderColor`
-- `hover`
 
 ## Badge
 
@@ -903,8 +813,6 @@ Extends [Flex](#flex)
 
 ## Circle
 
-Extends [Badge](#badge)
-
 ```.jsx
 <Circle>
   A
@@ -913,11 +821,9 @@ Extends [Badge](#badge)
 
 ### Props
 
-- `size`
-- `alignItems`
-- `align`
-- `borderRadius`
 - `textAlign`
+- `borderRadius`
+- `size`
 
 ## Dot
 
@@ -939,9 +845,6 @@ Extends [Badge](#badge)
 - `borderBottom`
 - `borderLeft`
 - `borderColor`
-- `focus`
-- `hover`
-- `disabledStyle`
 
 ## Arrow
 
@@ -981,8 +884,6 @@ Extends [Badge](#badge)
 
 ## Relative
 
-Extends [Position](#position)
-
 ```.jsx
 <Relative>
   <Absolute bottom={0} right={0}>
@@ -993,8 +894,6 @@ Extends [Position](#position)
 
 ## Absolute
 
-Extends [Position](#position)
-
 ```.jsx
 <Relative>
   <Absolute bottom={0} right={0}>
@@ -1004,8 +903,6 @@ Extends [Position](#position)
 ```
 
 ## Fixed
-
-Extends [Position](#position)
 
 ```.jsx
 <div>
@@ -1025,8 +922,6 @@ Extends [Position](#position)
 
 ## Sticky
 
-Extends [Position](#position)
-
 ```.jsx
 <Sticky m={2} top={0} right={0} bottom={0}>
   Hello
@@ -1034,8 +929,6 @@ Extends [Position](#position)
 ```
 
 ## Modal
-
-Extends [Fixed](#fixed)
 
 ```.jsx
 <div>
@@ -1057,16 +950,12 @@ Extends [Fixed](#fixed)
 
 ### Props
 
-- `top`
-- `left`
 - `borderRadius`
+- `width`
 - `maxWidth`
 - `maxHeight`
-- `width`
 
 ## Drawer
-
-Extends [Box](#box)
 
 ```.jsx
 <div>
@@ -1084,13 +973,10 @@ Extends [Box](#box)
 ### Props
 
 - `position`
-- `width`
 - `zIndex`
 - `height`
 
 ## Carousel
-
-Extends [Flex](#flex)
 
 ```.jsx
 <Carousel
@@ -1114,10 +1000,6 @@ Extends [Flex](#flex)
 </Carousel>
 ```
 
-### Props
-
-- `width`
-
 ## Tooltip
 
 ```.jsx
@@ -1140,14 +1022,10 @@ Extends [Flex](#flex)
 
 ## Overlay
 
-Extends [Fixed](#fixed)
-
 ### Props
 
-- `top`
-- `left`
 - `borderRadius`
+- `width`
 - `maxWidth`
 - `maxHeight`
-- `width`
 

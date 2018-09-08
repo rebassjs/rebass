@@ -1,13 +1,18 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Label = sys({
   is: 'label',
   fontSize: 1,
   mb: 1,
-  align: 'center'
+  alignItems: 'center'
 }, {
   display: 'flex'
-}, 'alignItems', 'space', 'color')
+},
+  'alignItems',
+  'fontSize',
+  'space',
+  'color'
+)
 
 Label.displayName = 'Label'
 

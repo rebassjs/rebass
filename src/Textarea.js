@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { themeGet } from 'styled-system'
 
 export const Textarea = sys({
@@ -24,7 +24,16 @@ export const Textarea = sys({
   '&:disabled': {
     opacity: 1/4
   },
-}))
+}),
+  'space',
+  'color',
+  'width',
+  'fontSize',
+  'borders',
+  'borderColor',
+  'boxShadow',
+  'borderRadius'
+)
 
 Textarea.displayName = 'Textarea'
 

@@ -8,6 +8,7 @@
 
 prop | default | theme key | style type
 ---|---|---|---
+alignItems | center | N/A | responsive
 fontSize | 1 | fontSizes | responsive
 m |  | space | responsive
 mt |  | space | responsive
@@ -23,6 +24,5 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
-alignItems |  | N/A | responsive
 color |  | colors | responsive
 bg |  | colors | responsive

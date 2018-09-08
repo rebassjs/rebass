@@ -1,8 +1,8 @@
-import sys from 'system-components'
-import { Box } from 'grid-styled'
+import sys from '@rebass/components'
+import { Box } from '@rebass/grid'
 
 export const Container = sys({
-  is: Box,
+  extend: Box,
   px: 3,
   mx: 'auto',
   maxWidth: 1024

@@ -24,14 +24,14 @@ pb |  | space | responsive
 pl |  | space | responsive
 px | 1 | space | responsive
 py | 2 | space | responsive
+color | inherit | colors | responsive
+bg | transparent | colors | responsive
 width | 1 | N/A | responsive
 border |  | borders | responsive
 borderTop |  | borders | responsive
 borderRight |  | borders | responsive
 borderBottom |  | borders | responsive
 borderLeft |  | borders | responsive
-borderColor | gray | colors | default
-boxShadow | 1 | shadows | default
-borderRadius | 2 | radii | default
-color | inherit | colors | responsive
-bg | transparent | colors | responsive
+borderColor | gray | colors | responsive
+boxShadow | 1 | shadows | responsive
+borderRadius | 2 | radii | responsive

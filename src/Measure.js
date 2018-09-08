@@ -1,8 +1,8 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Text from './Text'
 
 export const Measure = sys({
-  is: Text,
+  extend: Text,
   maxWidth: '32em'
 }, 'maxWidth')
 

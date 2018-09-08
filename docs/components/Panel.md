@@ -20,15 +20,6 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-color |  | colors | responsive
-bg | white | colors | responsive
-borderRadius | 2 | radii | default
-border | 1 | borders | responsive
-borderTop |  | borders | responsive
-borderRight |  | borders | responsive
-borderBottom |  | borders | responsive
-borderLeft |  | borders | responsive
-borderColor | gray | colors | default
 m |  | space | responsive
 mt |  | space | responsive
 mr |  | space | responsive
@@ -43,3 +34,12 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
+color |  | colors | responsive
+bg | white | colors | responsive
+border | 1 | borders | responsive
+borderTop |  | borders | responsive
+borderRight |  | borders | responsive
+borderBottom |  | borders | responsive
+borderLeft |  | borders | responsive
+borderColor | gray | colors | responsive
+borderRadius | 2 | radii | responsive

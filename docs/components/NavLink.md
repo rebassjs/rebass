@@ -9,10 +9,9 @@
 
 prop | default | theme key | style type
 ---|---|---|---
-color | inherit | colors | responsive
-bg | transparent | colors | responsive
+width |  | N/A | responsive
 fontSize | 1 | fontSizes | responsive
-fontWeight | bold | fontWeights | default
+fontWeight | bold | fontWeights | responsive
 m |  | space | responsive
 mt |  | space | responsive
 mr |  | space | responsive
@@ -27,4 +26,5 @@ pb |  | space | responsive
 pl |  | space | responsive
 px |  | space | responsive
 py |  | space | responsive
-width |  | N/A | responsive
+color | inherit | colors | responsive
+bg | transparent | colors | responsive

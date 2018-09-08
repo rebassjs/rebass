@@ -1,12 +1,12 @@
-import sys from 'system-components'
-import { Flex } from 'grid-styled'
+import sys from '@rebass/components'
+import { Flex } from '@rebass/grid'
 
 export const Toolbar = sys({
-  is: Flex,
+  extend: Flex,
   px: 2,
   color: 'white',
   bg: 'black',
-  align: 'center',
+  alignItems: 'center',
   minHeight: '48px'
 }, 'minHeight', {
   WebkitFontSmoothing: 'antialiased',

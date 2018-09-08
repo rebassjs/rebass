@@ -1,11 +1,11 @@
-import sys from 'system-components'
-import { Flex } from 'grid-styled'
-import { theme } from 'styled-system'
+import sys from '@rebass/components'
+import { Flex } from '@rebass/grid'
+import { themeGet } from 'styled-system'
 
 export const Group = sys({
-  is: Flex
+  extend: Flex
 }, props => {
-  const radius = theme('radii.2', 4)(props) + 'px'
+  const radius = themeGet('radii.2', 4)(props) + 'px'
   return {
     '& > *': {
       borderRadius: 0

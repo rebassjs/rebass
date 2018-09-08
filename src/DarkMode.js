@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Box } from 'grid-styled'
+import { Box } from '@rebass/grid'
 
 import { invertLuminance } from './colors'
 import defaultTheme from './theme'

@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Card = sys({
   p: 2,
@@ -7,7 +7,13 @@ export const Card = sys({
   boxShadow: 2
 }, {
   overflow: 'hidden'
-}, 'space', 'width', 'color')
+},
+  'space',
+  'width',
+  'color',
+  'borderRadius',
+  'boxShadow'
+)
 
 Card.displayName = 'Card'
 

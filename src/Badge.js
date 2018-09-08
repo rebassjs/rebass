@@ -1,4 +1,4 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 
 export const Badge = sys({
   fontSize: 0,
@@ -13,7 +13,13 @@ export const Badge = sys({
   WebkitFontSmoothing: 'antialiased',
   display: 'inline-block',
   verticalAlign: 'middle'
-})
+},
+  'space',
+  'color',
+  'fontSize',
+  'fontWeight',
+  'borderRadius'
+)
 
 Badge.displayName = 'Badge'
 

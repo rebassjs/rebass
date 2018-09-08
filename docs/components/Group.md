@@ -7,5 +7,3 @@
   <ButtonOutline children='Bop' />
 </Group>
 ```
-
-Extends: [Flex](/components/Flex) > [Box](/components/Box)

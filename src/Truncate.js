@@ -1,8 +1,8 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import Text from './Text'
 
 export const Truncate = sys({
-  is: Text
+  extend: Text
 }, {
   overflow: 'hidden',
   whiteSpace: 'nowrap',

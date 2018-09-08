@@ -1,6 +1,6 @@
-import sys from 'system-components'
+import sys from '@rebass/components'
 import { space, color, zIndex } from 'styled-system'
-import { Box } from 'grid-styled'
+import { Box } from '@rebass/grid'
 
 const transforms = {
   left: 'translateX(-100%)',
@@ -36,7 +36,7 @@ export const transform = ({
 })
 
 export const Drawer = sys({
-  is: Box,
+  extend: Box,
   blacklist: [
     'side',
     'open',
@@ -49,6 +49,7 @@ export const Drawer = sys({
   width: 320,
 }, side,
   transform,
+  'position',
   'zIndex',
   'height',
   {
