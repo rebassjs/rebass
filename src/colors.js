@@ -1,4 +1,4 @@
-import chroma from 'chroma-js'
+import { parseToHsl, hsl, getLuminance } from 'polished'
 
 const names = [
   'red',      // 0
@@ -34,24 +34,20 @@ export const createColors = base => {
     gray: '#eee'
   }
 
-  const color = chroma(base)
-  const [ hue, sat, lite ] = color.hsl()
+  const { hue, saturation, lightness } = parseToHsl(base)
   const hues = createHues(hue)
   hues.forEach(h => {
     const name = hueName(h)
-    const val = chroma.hsl(h, sat, lite)
-    colors[name] = val.hex()
+    colors[name] = hsl(h, saturation, lightness)
   })
 
   return colors
 }
 
 export const invertLuminance = base => {
-  const color = chroma(base)
-  const luminance = color.luminance()
-  const [ h, s ] = color.hsl()
-  const next = chroma.hsl(h, s, 1 - luminance)
-  return next.hex()
+  const luminance = getLuminance(base)
+  const { hue, saturation } = parseToHsl(base)
+  return hsl(hue, saturation, 1 - luminance)
 }
 
 export const colors = createColors('#06e')
