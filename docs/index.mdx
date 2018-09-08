@@ -14,9 +14,7 @@ export const name = 'Rebass'
 
 # Rebass v3
 
-8 primitive UI components built with styled-system and styled-components.
-
-https://github.com/rebassjs/rebass
+8 primitive UI components built with styled-system and styled-components. https://github.com/rebassjs/rebass
 
 ```sh
 npm i rebass@next
@@ -45,7 +43,7 @@ Rebass is intended to be useful in *any* React application and is so small it sh
 - Built with styled-components v4
 - Intended to be extended
 - Only one dependency: styled-system
-- No default theme
+- No default theme or colors
 - No Provider component required
 - Variant theme support for Button and Card
 
@@ -214,6 +212,8 @@ Badge.defaultProps = {
 They're still here in spirit :ghost:
 They might come back to haunt you in separate, more modular packages.
 
+The overall reduction in size of this codebase and splitting Rebass up into more modular packages will give users much more control over the size of their application bundles and allow a lot more flexibility in terms of building out custom libraries.
+
 ### Why has system-components been removed?
 
 It adds a lot of overhead and complexity to the codebase, and most end-users don't benefit from it being used in Rebass.
@@ -225,5 +225,15 @@ I was hopeful that styled-components v4 would have addressed this issue
 to avoid some of the less-than-ideal solutions used in the previous version of Rebass, but that will have to wait.
 And, due to the introduction of the `as` prop in styled-components, attempting to work around this issue while keeping up with the changing landscape of CSS-in-JS libraries doesn't seem worth it for a simple library like Rebass.
 That said, there *might* be a Babel plugin introduced in the future to help with this issue.
+
+### What's happening with @rebass/grid (formerly grid-styled)?
+
+The `@rebass/grid` package will be updated to match the APIs of the Box and Flex component here (which is virtually the same) and will be available as an even smaller alternative to this library.
+
+### Why has the Provider and theme been removed?
+
+In order to remain as unopinionated as possible, themes are now optional,
+giving you complete control over what your application looks like.
+Separate theme packages might be introduced to provide some smart defaults.
 
 [sc-issue]: https://github.com/styled-components/styled-components/issues/439
