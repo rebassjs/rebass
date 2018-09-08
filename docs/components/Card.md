@@ -32,3 +32,4 @@ color |  | colors | responsive
 bg | white | colors | responsive
 borderRadius | 2 | radii | default
 boxShadow | 2 | shadows | default
+width |  | N/A | responsive

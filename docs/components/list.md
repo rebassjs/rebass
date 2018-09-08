@@ -720,6 +720,7 @@ Extends [Box](#box)
 
 - `borderRadius`
 - `boxShadow`
+- `width`
 
 ## Panel
 
