@@ -1,53 +1,11 @@
 import React from 'react'
 import {
   StyleProvider,
-  // Layout,
   NavLinks,
   ScrollTop
 } from 'mdx-go/styled-components'
 import * as components from '../src'
 import { Box } from '../src'
-
-export const nav = [
-  'Rebass',
-  'Getting Started',
-  'principles',
-  'props',
-
-  'Box',
-  'Flex',
-  'Text',
-  'Heading',
-  'Button',
-  'Link',
-  'Image',
-  'Card',
-
-  'theming',
-  'extending',
-  'advanced',
-
-  'notes',
-]
-
-const filter = route => nav.includes(route.name)
-
-  /*
-    <Layout>
-      <Layout.MenuToggle m={3} />
-      <Layout.Sidebar>
-        <NavLinks
-          {...props}
-          order={nav}
-          filter={filter}
-        />
-      </Layout.Sidebar>
-      <Layout.Main>
-        {props.children}
-        <ScrollTop />
-      </Layout.Main>
-    </Layout>
-  */
 
 export const Root = props =>
   <StyleProvider
