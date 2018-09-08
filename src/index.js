@@ -28,8 +28,8 @@ import {
   variant,
 } from 'styled-system'
 
-export const css = props => props.css
-export const themed = key => props => props.theme[key]
+const css = props => props.css
+const themed = key => props => props.theme[key]
 
 export const Box = styled('div')(
   space,
