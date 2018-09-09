@@ -10,7 +10,7 @@ with support for
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][npm]
 [![Version][version-badge]][npm]
-[![MIT License][license-badge]][LICENSE.md]
+[![MIT License][license-badge]](LICENSE.md)
 
 [badge]: https://flat.badgen.net/travis/rebassjs/rebass
 [travis]: https://travis-ci.org/rebassjs/rebass
