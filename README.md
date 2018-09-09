@@ -123,7 +123,7 @@ https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox-v3
 
 ---
 
-[Contributing](.github/CONTRIBUTING.md)
+[Contributing](CONTRIBUTING.md)
 |
-[MIT License](.github/LICENSE.md)
+[MIT License](LICENSE.md)
 
