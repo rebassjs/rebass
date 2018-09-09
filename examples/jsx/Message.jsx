@@ -1,3 +1,0 @@
-<Message>
-  Hello
-</Message>

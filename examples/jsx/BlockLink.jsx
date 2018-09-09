@@ -1,4 +1,0 @@
-<BlockLink
-  href='#!'
-  children='Hello'
-/>

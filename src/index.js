@@ -1,89 +1,186 @@
-export { Flex, Box } from '@rebass/grid'
+import React from 'react'
+import styled from 'styled-components'
+import {
+  space,
+  color,
+  width,
+  height,
+  flexWrap,
+  flexDirection,
+  alignItems,
+  justifyContent,
+  fontSize,
+  fontFamily,
+  fontWeight,
+  textAlign,
+  lineHeight,
+  letterSpacing,
+  borders,
+  borderColor,
+  borderRadius,
+  buttonStyle,
+  boxShadow,
+  backgroundImage,
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat,
+  opacity,
+  variant,
+} from 'styled-system'
 
-export { default as theme } from './theme'
-export { colors, createColors } from './colors'
+const css = props => props.css
+const themed = key => props => props.theme[key]
 
-export { Base } from './Base'
-export { CSS } from './CSS'
-export { Root } from './Root'
-export { Provider } from './Provider'
-export { DarkMode, invertTheme } from './DarkMode'
+export const Box = styled('div')(
+  space,
+  width,
+  fontSize,
+  color,
+  themed('Box'),
+  css
+)
 
-export { Button } from './Button'
-export { ButtonOutline } from './ButtonOutline'
-export { ButtonCircle } from './ButtonCircle'
-export { ButtonTransparent } from './ButtonTransparent'
+Box.propTypes = {
+  ...space.propTypes,
+  ...width.propTypes,
+  ...fontSize.propTypes,
+  ...color.propTypes,
+}
 
-export { Link } from './Link'
-export { NavLink } from './NavLink'
-export { BlockLink } from './BlockLink'
-export { Close } from './Close'
+export const Flex = styled(Box)({
+  display: 'flex'
+},
+  flexWrap,
+  flexDirection,
+  alignItems,
+  justifyContent,
+  themed('Flex')
+)
 
-export { Text } from './Text'
-export { Heading } from './Heading'
-export { Subhead } from './Subhead'
-export { Caps } from './Caps'
-export { Small } from './Small'
-export { Lead } from './Lead'
-export { Truncate } from './Truncate'
+Flex.propTypes = {
+  ...flexWrap.propTypes,
+  ...flexDirection.propTypes,
+  ...alignItems.propTypes,
+  ...justifyContent.propTypes
+}
 
-export { Blockquote } from './Blockquote'
-export { Divider } from './Divider'
-export { Pre } from './Pre'
-export { Code } from './Code'
-export { Samp } from './Samp'
-export { Measure } from './Measure'
+export const Text = styled(Box)(
+  fontFamily,
+  fontWeight,
+  textAlign,
+  lineHeight,
+  letterSpacing,
+  themed('Text')
+)
 
-export { Label } from './Label'
-export { Input } from './Input'
-export { Select } from './Select'
-export { Textarea } from './Textarea'
-export { Radio } from './Radio'
-export { Checkbox } from './Checkbox'
-export { Slider } from './Slider'
-export { Switch } from './Switch'
+Text.propTypes = {
+  ...fontFamily.propTypes,
+  ...fontWeight.propTypes,
+  ...textAlign.propTypes,
+  ...lineHeight.propTypes,
+  ...letterSpacing.propTypes,
+}
 
-export { Image } from './Image'
-export { BackgroundImage } from './BackgroundImage'
-export { Avatar } from './Avatar'
-export { Embed } from './Embed'
+export const Heading = styled(Text)(
+  themed('Heading')
+)
 
-export { Container } from './Container'
-export { Group } from './Group'
-export { Row } from './Row'
-export { Column } from './Column'
+Heading.defaultProps = {
+  as: 'h2',
+  m: 0,
+  fontSize: 4,
+  fontWeight: 'bold',
+}
 
-export { Border } from './Border'
-export { Card } from './Card'
-export { Panel } from './Panel'
-export { Progress } from './Progress'
+export const Link = styled(Box)(
+  themed('Link')
+)
 
-export { Banner } from './Banner'
-export { Message } from './Message'
-export { Toolbar } from './Toolbar'
-export { Tabs } from './Tabs'
-export { Tab } from './Tab'
+Link.defaultProps = {
+  as: 'a',
+  color: 'blue'
+}
 
-export { Badge } from './Badge'
-export { Circle } from './Circle'
-export { Dot } from './Dot'
-export { Arrow } from './Arrow'
-export { Donut } from './Donut'
+export const Button = styled(Box)({
+  appearance: 'none',
+  display: 'inline-block',
+  textAlign: 'center',
+  lineHeight: 'inherit',
+  textDecoration: 'none',
+},
+  fontWeight,
+  borders,
+  borderColor,
+  borderRadius,
+  buttonStyle,
+  themed('Button')
+)
 
-export {
-  Position,
-  Relative,
-  Absolute,
-  Fixed,
-  Sticky,
-} from './Position'
+Button.propTypes = {
+  ...fontWeight.propTypes,
+  ...borders.propTypes,
+  ...borderColor.propTypes,
+  ...borderRadius.propTypes,
+  ...buttonStyle.propTypes,
+}
 
-export { Modal } from './Modal'
-export { Drawer } from './Drawer'
-export { Carousel } from './Carousel'
-export { Tooltip } from './Tooltip'
+Button.defaultProps = {
+  as: 'button',
+  fontSize: 'inherit',
+  fontWeight: 'bold',
+  m: 0,
+  px: 3,
+  py: 2,
+  color: 'white',
+  bg: 'blue',
+  border: 0,
+  borderRadius: 4,
+}
 
-export { Hide } from './Hide'
+export const Image = styled(Box)({
+  maxWidth: '100%',
+  height: 'auto'
+},
+  height,
+  borderRadius,
+  themed('Image')
+)
 
-// backwards compat
-export { Modal as Overlay } from './Modal'
+Image.propTypes = {
+  ...height.propTypes,
+  ...borderRadius.propTypes,
+}
+
+Image.defaultProps = {
+  as: 'img',
+  m: 0
+}
+
+const cards = variant({ key: 'cards' })
+
+export const Card = styled(Box)(
+  borders,
+  borderColor,
+  borderRadius,
+  boxShadow,
+  backgroundImage,
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat,
+  opacity,
+  themed('Card'),
+  cards
+)
+
+Card.propTypes = {
+  ...borders.propTypes,
+  ...borderColor.propTypes,
+  ...borderRadius.propTypes,
+  ...boxShadow.propTypes,
+  ...backgroundImage.propTypes,
+  ...backgroundSize.propTypes,
+  ...backgroundPosition.propTypes,
+  ...backgroundRepeat.propTypes,
+  ...opacity.propTypes,
+  ...cards.propTypes,
+}

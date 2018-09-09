@@ -1,0 +1,43 @@
+{
+  "name": "@rebass/position",
+  "version": "1.0.0-0",
+  "description": "React UI components for CSS position",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "npm run clean && npm run build && npm run build:es",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "NODE_ENV=node babel src/index.js -o dist/index.js",
+    "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "jest": "^23.5.0",
+    "jest-styled-components": "^6.1.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-emotion": "^9.2.8",
+    "react-test-renderer": "^16.5.0",
+    "styled-components": "^3.4.5"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^3.0.1",
+    "styled-system": "^3.0.3"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ],
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ]
+  }
+}

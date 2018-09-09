@@ -1,0 +1,30 @@
+{
+  presets: [
+    '@babel/env',
+    '@babel/react'
+  ],
+  env: {
+    test: {
+      presets: [
+        '@babel/env'
+      ]
+    },
+    node: {
+      presets: [
+        [ '@babel/env', {
+          targets: {
+            node: true
+          }
+        } ]
+      ]
+    },
+    es: {
+      presets: [
+        [ '@babel/env', {
+          modules: false,
+          loose: true
+        } ]
+      ]
+    }
+  }
+}

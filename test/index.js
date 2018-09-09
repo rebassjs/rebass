@@ -1,125 +1,166 @@
 import 'jest-styled-components'
 import React from 'react'
-import { isCompositeComponent, isElement } from 'react-dom/test-utils'
-import { create as render } from 'react-test-renderer'
-import * as Rebass from '../src'
-import { Provider, theme } from '../src'
-
+import TestRenderer from 'react-test-renderer'
 import {
-  __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
-} from 'styled-components'
+  Box,
+  Flex,
+  Text,
+  Heading,
+  Button,
+  Link,
+  Image,
+  Card,
+} from '../src'
 
-const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS
+const renderJSON = el => TestRenderer.create(el).toJSON()
 
-const renderJSON = el => render(el).toJSON()
+describe('Box', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Box />
+    )
+    expect(json.type).toBe('div')
+  })
 
-const fixtures = {
-  'Text bold': <Rebass.Text fontWeight='bold' />,
-  'Border top': <Rebass.Border borderTop={1} />,
-  'Border right': <Rebass.Border borderRight={1} />,
-  'Border bottom': <Rebass.Border borderBottom={1} />,
-  'Border left': <Rebass.Border borderLeft={1} />,
-  'Border 2': <Rebass.Border border={2} />,
-  'Border none': <Rebass.Border border='none' />,
-  'Banner src': <Rebass.Banner src='hello.png' />,
-  'Banner src': <Rebass.Banner src='hello.png' />,
-  'Drawer open': <Rebass.Drawer open />,
-  'Drawer side top': <Rebass.Drawer side='top' />,
-  'Drawer side right': <Rebass.Drawer side='right' />,
-  'Drawer side bottom': <Rebass.Drawer side='bottom' />,
-  'Drawer side left': <Rebass.Drawer side='left' />,
-  'Drawer open side top': <Rebass.Drawer open side='top' />,
-  'Drawer open side right': <Rebass.Drawer open side='right' />,
-  'Drawer open side bottom': <Rebass.Drawer open side='bottom' />,
-  'Drawer open side left': <Rebass.Drawer open side='left' />,
-  'Drawer width': <Rebass.Drawer width={128} />,
-  'Drawer height': <Rebass.Drawer height={128} />,
-  'Carousel index 2': <Rebass.Carousel index={2} />,
-  'Arrow up': <Rebass.Arrow direction='up' />,
-  'Embed ratio': <Rebass.Embed ratio={1/2} />,
-  'Switch checked': <Rebass.Switch checked />,
-  'BackgroundImage src': <Rebass.BackgroundImage src='hello.png' />,
-}
+  test('renders with as prop', () => {
+    const json = renderJSON(
+      <Box as='header' />
+    )
+    expect(json.type).toBe('header')
+  })
 
-const examples = Object.keys(fixtures).map(name => ({
-  name,
-  element: fixtures[name]
-}))
+  test('renders with style props', () => {
+    const json = renderJSON(
+      <Box width={1} />
+    )
+    expect(json).toHaveStyleRule('width', '100%')
+  })
 
-afterEach(() => {
-  StyleSheet.reset()
-})
-
-test('exports an object', () => {
-  expect(typeof Rebass).toBe('object')
-})
-
-const blacklist = [
-  'theme',
-  'colors',
-  'createColors',
-  'invertTheme',
-]
-
-Object.keys(Rebass)
-  .filter(key => !blacklist.includes(key))
-  .filter(key => typeof Rebass[key] === 'function')
-  .forEach(key => {
-  test(`exports a ${key} component`, () => {
-    const Comp = Rebass[key]
-    const json = render(<Comp />).toJSON()
-    expect(json).toMatchSnapshot()
-    expect(typeof Comp).toBe('function')
-    expect(isElement(<Comp />)).toBe(true)
+  // sorry, clean-tag implementations don't work well with SC `as` prop
+  test.skip('removes style props from html', () => {
+    const json = renderJSON(
+      <Box
+        width={1}
+        fontSize={3}
+        color='blue'
+        bg='tomato'
+        css={{}}
+      />
+    )
+    expect(json.props.width).toBeUndefined()
+    expect(json.props.fontSize).toBeUndefined()
+    expect(json.props.color).toBeUndefined()
+    expect(json.props.bg).toBeUndefined()
+    expect(json.props.css).toBeUndefined()
   })
 })
 
-test('Provider renders', () => {
-  const json = render(<Provider />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('Provider renders with custom theme', () => {
-  const json = render(<Provider
-    theme={{
-      fonts: [],
-      fontSizes: [
-        12, 16, 18, 24, 36, 48, 72
-      ],
-      space: [
-        0, 6, 12, 18, 24, 30, 36
-      ]
-    }}
-  />).toJSON()
-  expect(json).toMatchSnapshot()
-})
-
-test('theme is an object', () => {
-  expect(typeof theme).toBe('object')
-  expect(Array.isArray(theme.breakpoints)).toBe(true)
-  expect(Array.isArray(theme.space)).toBe(true)
-  expect(Array.isArray(theme.fontSizes)).toBe(true)
-  expect(typeof theme.fontWeights).toBe('object')
-  expect(typeof theme.colors).toBe('object')
-  expect(typeof theme.radii).toBe('object')
-  expect(typeof theme.fonts).toBe('object')
-})
-
-examples.forEach(({ name, element }) => (
-  test(`${name} renders`, () => {
-    const json = renderJSON(element)
-    expect(json).toMatchSnapshot()
+describe('Flex', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Flex />
+    )
+    expect(json.type).toBe('div')
   })
-))
 
-test('invertTheme adjusts colors', () => {
-  const next = Rebass.invertTheme(Rebass.theme)
-  expect(next.space).toEqual(Rebass.theme.space)
-  expect(next.colors).not.toEqual(Rebass.theme.colors)
+  test('renders with flex props', () => {
+    const json = renderJSON(
+      <Flex alignItems='center' />
+    )
+    expect(json).toHaveStyleRule('display', 'flex')
+    expect(json).toHaveStyleRule('align-items', 'center')
+  })
+
+  test('renders with Box props', () => {
+    const json = renderJSON(
+      <Flex color='tomato' />
+    )
+    expect(json).toHaveStyleRule('color', 'tomato')
+  })
+
+  test('renders with as and Box props', () => {
+    const json = renderJSON(
+      <Flex as='footer' color='tomato' />
+    )
+    expect(json.type).toBe('footer')
+    expect(json).toHaveStyleRule('color', 'tomato')
+  })
 })
 
-test('invertTheme handles themes without colors', () => {
-  const next = Rebass.invertTheme({ space: [ 4, 8, 16 ] })
-  expect(next.space).toEqual([ 4, 8, 16 ])
-  expect(next.colors).toEqual({})
+describe('Text', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Text textAlign='center' fontWeight='bold' />
+    )
+    expect(json.type).toBe('div')
+    expect(json).toHaveStyleRule('text-align', 'center')
+    expect(json).toHaveStyleRule('font-weight', 'bold')
+  })
+})
+
+describe('Heading', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Heading />
+    )
+    expect(json.type).toBe('h2')
+    expect(json).toHaveStyleRule('font-size', '24px')
+    expect(json).toHaveStyleRule('font-weight', 'bold')
+  })
+})
+
+describe('Button', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Button />
+    )
+    expect(json.type).toBe('button')
+    expect(json).toHaveStyleRule('color', 'white')
+    expect(json).toHaveStyleRule('background-color', 'blue')
+  })
+
+  test('renders as <a>', () => {
+    const json = renderJSON(
+      <Button as='a' />
+    )
+    expect(json.type).toBe('a')
+  })
+})
+
+describe('Link', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Link />
+    )
+    expect(json.type).toBe('a')
+    expect(json).toHaveStyleRule('color', 'blue')
+  })
+})
+
+describe('Image', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Image />
+    )
+    expect(json.type).toBe('img')
+    expect(json).toHaveStyleRule('max-width', '100%')
+  })
+})
+
+describe('Card', () => {
+  test('renders', () => {
+    const json = renderJSON(
+      <Card
+        p={3}
+        bg='tomato'
+        borderRadius={8}
+        boxShadow='0 0 48px tomato'
+      />
+    )
+    expect(json.type).toBe('div')
+    expect(json).toHaveStyleRule('padding', '16px')
+    expect(json).toHaveStyleRule('background-color', 'tomato')
+    expect(json).toHaveStyleRule('border-radius', '8px')
+    expect(json).toHaveStyleRule('box-shadow', '0 0 48px tomato')
+  })
 })

@@ -1,12 +1,17 @@
 {
   "name": "rebass",
-  "version": "2.3.2",
-  "description": "Flexible & functional React design system, built with styled-system",
+  "version": "3.0.0-0",
+  "description": "React primitive UI components built with styled-system",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "rm -rf dist && babel src -d dist && npm run emotion",
-    "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
+    "prepare": "rm -rf dist && npm run build && npm run build:es && npm run build:emotion",
+    "build": "NODE_ENV=cjs babel src -d dist",
+    "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
+    "build:emotion": "NODE_ENV=emotion babel src -o dist/emotion.js",
+    "start": "mdx-go docs",
+    "docs": "mdx-go build docs -d site",
     "cover": "jest --coverage --coverageReporters html lcov && codecov",
     "test": "jest",
     "size": "bundlesize"
@@ -26,29 +31,26 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@rebass/components": "^4.0.0-1",
-    "@rebass/grid": "^6.0.0-0",
-    "polished": "^1.9.3",
-    "prop-types": "^15.6.0",
-    "styled-system": "^3.0.3"
+    "styled-system": "^3.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "bundlesize": "^0.17.0",
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
     "jest": "^23.1.0",
-    "jest-styled-components": "^5.0.1",
+    "jest-styled-components": "^6.1.1",
+    "mdx-go": "^1.1.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.3",
     "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.3.2"
+    "styled-components": "^4.0.0-beta.1"
   },
   "repository": {
     "type": "git",
@@ -64,12 +66,24 @@
     ],
     "testMatch": [
       "**/test/**/*.js"
-    ]
+    ],
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "bundlesize": [
     {
       "path": "./dist/*.js",
-      "maxSize": "2 kB"
+      "maxSize": "1.5 kB"
     }
   ]
 }
