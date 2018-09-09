@@ -160,6 +160,7 @@ const cards = variant({ key: 'cards' })
 
 export const Card = styled(Box)(
   borders,
+  borderColor,
   borderRadius,
   boxShadow,
   backgroundImage,
@@ -173,6 +174,7 @@ export const Card = styled(Box)(
 
 Card.propTypes = {
   ...borders.propTypes,
+  ...borderColor.propTypes,
   ...borderRadius.propTypes,
   ...boxShadow.propTypes,
   ...backgroundImage.propTypes,
