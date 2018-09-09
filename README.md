@@ -1,10 +1,10 @@
 
+<img src='https://rebassjs.org/logo.svg' width='128' height='128' />
+
 # Rebass
 
-React UI component library & design system,
-built with [styled-system][system],
-with support for
-[styled-components][sc] & [emotion][emotion].
+React primitive UI components built with [styled-system][].
+https://rebassjs.org
 
 [![Build Status][badge]][travis]
 [![Coverage][coverage-badge]][coverage]
@@ -22,8 +22,6 @@ with support for
 [license-badge]: https://flat.badgen.net/badge/license/MIT/blue
 [npm]: https://npmjs.com/package/rebass
 
-https://rebassjs.org
-
 ```sh
 npm i rebass@next
 ```
@@ -32,13 +30,13 @@ npm i rebass@next
 
 ```jsx
 import React from 'react'
-import { Heading, Button } from 'rebass'
+import { Box, Heading, Button } from 'rebass'
 
 export default props =>
-  <div>
+  <Box>
     <Heading>Hello</Heading>
     <Button>Rebass</Button>
-  </div>
+  </Box>
 ```
 
 To use Rebass with [emotion][emotion], import from `rebass/emotion`:
@@ -87,6 +85,18 @@ for more on some of the thought behind Rebass.
 ## Documentation
 
 - [Docs](https://rebassjs.org)
+- [Getting Started](https://rebassjs.org/getting-started)
+- [Props](https://rebassjs.org/props)
+- [Extending](https://rebassjs.org/extending)
+- [Theming](https://rebassjs.org/theming)
+- [Box](https://rebassjs.org/Box)
+- [Flex](https://rebassjs.org/Flex)
+- [Text](https://rebassjs.org/Text)
+- [Heading](https://rebassjs.org/Heading)
+- [Button](https://rebassjs.org/Button)
+- [Link](https://rebassjs.org/Link)
+- [Image](https://rebassjs.org/Image)
+- [Card](https://rebassjs.org/Card)
 
 ## CodeSandbox
 
