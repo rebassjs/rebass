@@ -10,14 +10,16 @@ with support for
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][npm]
 [![Version][version-badge]][npm]
+[![MIT License][license-badge]][LICENSE.md]
 
-[badge]: https://img.shields.io/travis/rebassjs/rebass.svg?style=flat-square
+[badge]: https://flat.badgen.net/travis/rebassjs/rebass
 [travis]: https://travis-ci.org/rebassjs/rebass
-[coverage-badge]: https://img.shields.io/codecov/c/github/rebassjs/rebass.svg?style=flat-square
+[coverage-badge]: https://badgen.net/codecov/c/github/rebassjs/rebass
 [coverage]: https://codecov.io/github/rebassjs/rebass
 
-[downloads-badge]: https://img.shields.io/npm/dw/rebass.svg?style=flat-square
-[version-badge]: https://img.shields.io/npm/v/rebass.svg?style=flat-square
+[downloads-badge]: https://flat.badgen.net/npm/dw/rebass
+[version-badge]: https://flat.badgen.net/npm/v/rebass/next
+[license-badge]: https://flat.badgen.net/badge/license/MIT/blue
 [npm]: https://npmjs.com/package/rebass
 
 https://rebassjs.org
