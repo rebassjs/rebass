@@ -39,7 +39,7 @@ export default props =>
   </Box>
 ```
 
-To use Rebass with [emotion][emotion], import from `rebass/emotion`:
+To use Rebass with [emotion][], import from `rebass/emotion`:
 
 ```js
 import { Box } from 'rebass/emotion'
@@ -49,9 +49,9 @@ import { Box } from 'rebass/emotion'
 
 - 8 core UI components to serve as the basis for design systems
 - Super small (~1KB)
-- Responsive, themeable style props from [styled-system][system]
+- Responsive, themeable style props from [styled-system][]
 - Flexbox grid with the Box and Flex components
-- Support for [styled-components][sc] & [emotion][emotion]
+- Support for [styled-components][] & [emotion][]
 - Extensible base components
 - Design-system based consistency
 - Built for responsive web design
@@ -106,14 +106,14 @@ https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
 
 ### Related
 
-- [styled-system][system]
+- [styled-system][]
 - [Rebass Grid][]
-- [styled-components][sc]
+- [styled-components][]
 - [emotion][emotion]
 
-[system]: https://github.com/jxnblk/styled-system
+[styled-system]: https://github.com/jxnblk/styled-system
 [Rebass Grid]: https://github.com/rebassjs/grid
-[sc]: https://github.com/styled-components/styled-components
+[styled-components]: https://github.com/styled-components/styled-components
 [emotion]: https://github.com/emotion-js/emotion
 
 #### Previous Versions
