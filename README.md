@@ -1,5 +1,5 @@
 
-<img src='docs/logo.svg' width='128' height='128' />
+<img src='https://rebassjs.org/logo.svg' width='128' height='128' />
 
 # Rebass
 
