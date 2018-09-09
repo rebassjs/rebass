@@ -101,7 +101,7 @@ for more on some of the thought behind Rebass.
 ## CodeSandbox
 
 Try it out:
-https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
+https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox-v3
 
 
 ### Related
