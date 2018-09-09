@@ -14,7 +14,7 @@ with support for
 
 [badge]: https://flat.badgen.net/travis/rebassjs/rebass
 [travis]: https://travis-ci.org/rebassjs/rebass
-[coverage-badge]: https://badgen.net/codecov/c/github/rebassjs/rebass
+[coverage-badge]: https://flat.badgen.net/codecov/c/github/rebassjs/rebass
 [coverage]: https://codecov.io/github/rebassjs/rebass
 
 [downloads-badge]: https://flat.badgen.net/npm/dw/rebass
