@@ -1,13 +1,12 @@
 {
-  "name": "@rebass/position",
+  "name": "@rebass/hide",
   "version": "1.0.0-0",
-  "description": "React UI components for CSS position",
+  "description": "React UI component for responsively hiding elements",
   "main": "index.js",
   "scripts": {
-    "prepare": "npm run clean && npm run build && npm run build:es",
+    "prepare": "npm run clean && npm run build",
     "clean": "rm -rf dist && mkdir dist",
-    "build": "NODE_ENV=node babel src/index.js -o dist/index.js",
-    "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
+    "build": "babel src/index.js -o dist/index.js",
     "test": "jest"
   },
   "keywords": [],
@@ -29,9 +28,18 @@
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1",
+    "rebass": "^3.0.0-0",
     "styled-system": "^3.0.3"
   },
-  "jest": {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rebassjs/rebass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rebassjs/rebass/issues"
+  },
+  "homepage": "https://github.com/rebassjs/rebass",
+  "_jest": {
     "testMatch": [
       "**/test/**/*.js"
     ],

@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { display } from 'styled-system'
 import hoistStatics from 'hoist-non-react-statics'
-// import { Box } from 'rebass'
-
-// temp
-const Box = 'div'
+import { Box } from 'rebass'
 
 const mapProps = map => Component =>
   hoistStatics(props => <Component {...map(props)} />, Component)

@@ -1,14 +1,11 @@
 module.exports = {
   presets: [
+    '@babel/env',
     '@babel/react'
   ],
   env: {
-    test: {
-      presets: [
-        '@babel/env'
-      ]
-    },
-    cjs: {
+    // test: { presets: [ '@babel/env' ] },
+    node: {
       presets: [
         [ '@babel/env', {
           targets: {
@@ -27,7 +24,10 @@ module.exports = {
     },
     emotion: {
       presets: [
-        [ '@babel/env', {} ]
+        [ '@babel/env', {
+          loose: true,
+          modules: false
+        } ]
       ],
       plugins: [
         [ 'transform-rename-import', {
