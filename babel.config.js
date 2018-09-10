@@ -23,6 +23,9 @@ module.exports = {
     esm: {
       presets: [
         [ '@babel/env', { loose: true, modules: false } ]
+      ],
+      plugins: [
+        [ '@babel/transform-runtime', { useESModules: true } ]
       ]
     },
     'emotion:cjs': {
@@ -35,7 +38,10 @@ module.exports = {
       presets: [
         [ '@babel/env', { loose: true, modules: false } ]
       ],
-      plugins: [ emotionImport ]
+      plugins: [
+        emotionImport,
+        [ '@babel/transform-runtime', { useESModules: true } ]
+      ]
     }
   }
 }
