@@ -1,6 +1,6 @@
 import sys from '@rebass/components'
 
-export const Position = sys(
+export const Position = sys({},
   'space',
   'color',
   'zIndex',
