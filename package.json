@@ -2,7 +2,7 @@
   "name": "rebass",
   "version": "3.0.0-2",
   "description": "React primitive UI components built with styled-system",
-  "main": "dist/index",
+  "main": "dist/index.js",
   "sideEffects": false,
   "scripts": {
     "prepare": "npm run build && npm run build:emotion",
