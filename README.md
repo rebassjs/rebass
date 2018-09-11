@@ -12,7 +12,7 @@ https://rebassjs.org
 [![Version][version-badge]][npm]
 [![MIT License][license-badge]](LICENSE.md)
 
-[badge]: https://flat.badgen.net/travis/rebassjs/rebass
+[badge]: https://flat.badgen.net/travis/rebassjs/rebass/master
 [travis]: https://travis-ci.org/rebassjs/rebass
 [coverage-badge]: https://flat.badgen.net/codecov/c/github/rebassjs/rebass
 [coverage]: https://codecov.io/github/rebassjs/rebass
