@@ -1222,11 +1222,6 @@ exports[`exports a Absolute component 1`] = `
 }
 
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className="c0 "
 />
 `;
@@ -1343,11 +1338,6 @@ exports[`exports a Banner component 1`] = `
 
 exports[`exports a Base component 1`] = `
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className=""
 />
 `;
@@ -1967,11 +1957,6 @@ exports[`exports a Fixed component 1`] = `
 }
 
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className="c0 "
 />
 `;
@@ -2230,6 +2215,7 @@ exports[`exports a Message component 1`] = `
 
 exports[`exports a Modal component 1`] = `
 .c2 {
+  padding: 16px;
   background-color: white;
   top: 50%;
   left: 50%;
@@ -2255,11 +2241,6 @@ exports[`exports a Modal component 1`] = `
 }
 
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className="c0 c1 c2"
 />
 `;
@@ -2299,12 +2280,14 @@ exports[`exports a NavLink component 1`] = `
 
 exports[`exports a Overlay component 1`] = `
 .c2 {
+  padding: 16px;
   background-color: white;
   top: 50%;
   left: 50%;
 }
 
 .c2 {
+  padding: 16px;
   background-color: white;
   top: 50%;
   left: 50%;
@@ -2345,11 +2328,6 @@ exports[`exports a Overlay component 1`] = `
 }
 
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className="c0 c1 c2"
 />
 `;
@@ -2370,11 +2348,6 @@ exports[`exports a Panel component 1`] = `
 
 exports[`exports a Position component 1`] = `
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className=""
 />
 `;
@@ -2455,11 +2428,6 @@ exports[`exports a Relative component 1`] = `
 }
 
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className="c0 "
 />
 `;
@@ -2626,11 +2594,6 @@ exports[`exports a Sticky component 1`] = `
 }
 
 <div
-  0="s"
-  1="p"
-  2="a"
-  3="c"
-  4="e"
   className="c0 "
 />
 `;
