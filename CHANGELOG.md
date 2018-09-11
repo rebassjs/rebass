@@ -1,6 +1,10 @@
 
 # Changelog
 
+## [2.3.3] 2018-09-10
+
+- Fix bug with Position space props
+
 ## [2.3.2] 2018-09-08
 
 - Update repo in package.json
