@@ -2,7 +2,7 @@
   "name": "@rebass/hide",
   "version": "1.0.0-1",
   "description": "React UI component for responsively hiding elements",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "npm run clean && npm run build",
     "clean": "rm -rf dist && mkdir dist",

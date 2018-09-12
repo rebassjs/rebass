@@ -2,7 +2,7 @@
   "name": "@rebass/position",
   "version": "1.0.0-2",
   "description": "React UI components for CSS position",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "npm run clean && npm run build",
     "clean": "rm -rf dist && mkdir dist",

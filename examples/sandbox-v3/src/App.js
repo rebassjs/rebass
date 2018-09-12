@@ -13,7 +13,7 @@ export default class App extends React.Component {
       <Text
         fontFamily='system-ui,sans-serif'>
         <Box px={3} py={5} color='white' bg='blue'>
-          <Heading is='h1' fontSize={[ 4, 5, 6 ]}>
+          <Heading as='h1' fontSize={[ 4, 5, 6 ]}>
             Hello, Rebass
           </Heading>
         </Box>
