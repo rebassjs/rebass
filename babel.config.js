@@ -11,10 +11,14 @@ module.exports = {
   presets: [ '@babel/react' ],
   env: {
     test: {
-      presets: [ '@babel/env' ]
+      presets: [
+        [ '@babel/env', { loose: true } ]
+      ]
     },
     cjs: {
-      presets: [ '@babel/env' ]
+      presets: [
+        [ '@babel/env', { loose: true } ]
+      ]
     },
     esm: {
       presets: [
@@ -22,7 +26,9 @@ module.exports = {
       ]
     },
     'emotion:cjs': {
-      presets: [ '@babel/env' ],
+      presets: [
+        [ '@babel/env', { loose: true } ]
+      ],
       plugins: [ emotionImport ]
     },
     'emotion:esm': {
