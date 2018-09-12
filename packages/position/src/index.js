@@ -7,10 +7,7 @@ import {
   bottom,
   left,
 } from 'styled-system'
-// import { Box } from 'rebass'
-
-// temp
-const Box = 'div'
+import { Box } from 'rebass'
 
 export const Position = styled(Box)(
   position,
@@ -44,4 +41,3 @@ export const Sticky = styled(Position)([])
 Sticky.defaultProps = {
   position: 'sticky'
 }
-

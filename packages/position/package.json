@@ -1,14 +1,12 @@
 {
   "name": "@rebass/position",
-  "version": "1.0.0-0",
+  "version": "1.0.0-3",
   "description": "React UI components for CSS position",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "npm run clean && npm run build && npm run build:es",
+    "prepare": "npm run clean && npm run build",
     "clean": "rm -rf dist && mkdir dist",
-    "build": "NODE_ENV=node babel src/index.js -o dist/index.js",
-    "build:es": "NODE_ENV=es babel src/index.js -o dist/index.es.js",
-    "test": "jest"
+    "build": "babel src/index.js -o dist/index.js"
   },
   "keywords": [],
   "author": "Brent Jackson",
@@ -16,11 +14,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
-    "jest": "^23.5.0",
-    "jest-styled-components": "^6.1.1",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-emotion": "^9.2.8",
@@ -28,15 +22,15 @@
     "styled-components": "^4.0.0-beta.1"
   },
   "dependencies": {
+    "rebass": "^3.0.0-0",
     "styled-system": "^3.0.3"
   },
-  "jest": {
-    "testMatch": [
-      "**/test/**/*.js"
-    ],
-    "coverageReporters": [
-      "html",
-      "lcov"
-    ]
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rebassjs/rebass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rebassjs/rebass/issues"
+  },
+  "homepage": "https://github.com/rebassjs/rebass"
 }
