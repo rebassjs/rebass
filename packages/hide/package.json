@@ -1,6 +1,6 @@
 {
   "name": "@rebass/position",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "description": "React UI components for CSS position",
   "main": "dist/index.js",
   "scripts": {
