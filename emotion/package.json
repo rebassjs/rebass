@@ -1,0 +1,5 @@
+{
+  "name": "rebass/emotion",
+  "main": "../dist/emotion.js",
+  "module": "../dist/emotion.esm.js"
+}
