@@ -1,41 +1,20 @@
-const emotionImport = [ 'transform-rename-import', {
-  replacements: [
-    {
-      original: '^styled-components$',
-      replacement: 'react-emotion'
-    }
-  ]
-} ]
-
 module.exports = {
-  presets: [ '@babel/react' ],
+  presets: [
+    [ '@babel/env', { loose: true } ],
+    '@babel/react'
+  ],
   env: {
-    test: {
-      presets: [
-        [ '@babel/env', { loose: true } ]
+    emotion: {
+      plugins: [
+        [ 'transform-rename-import', {
+          replacements: [
+            {
+              original: '^styled-components$',
+              replacement: 'react-emotion'
+            }
+          ]
+        } ]
       ]
-    },
-    cjs: {
-      presets: [
-        [ '@babel/env', { loose: true } ]
-      ]
-    },
-    esm: {
-      presets: [
-        [ '@babel/env', { loose: true, modules: false } ]
-      ]
-    },
-    'emotion:cjs': {
-      presets: [
-        [ '@babel/env', { loose: true } ]
-      ],
-      plugins: [ emotionImport ]
-    },
-    'emotion:esm': {
-      presets: [
-        [ '@babel/env', { loose: true, modules: false } ]
-      ],
-      plugins: [ emotionImport ]
     }
   }
 }
