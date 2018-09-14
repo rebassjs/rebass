@@ -26,11 +26,11 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@rebass/components": "^4.0.0-1",
-    "@rebass/grid": "^6.0.0-0",
-    "polished": "^1.9.3",
+    "@rebass/components": "4.0.0-1",
+    "@rebass/grid": "6.0.0-0",
+    "polished": "1.9.3",
     "prop-types": "^15.6.0",
-    "styled-system": "^3.0.3"
+    "styled-system": "3.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -42,13 +42,13 @@
     "bundlesize": "^0.17.0",
     "codecov": "^3.0.0",
     "emotion": "^9.2.3",
-    "jest": "^23.1.0",
-    "jest-styled-components": "^5.0.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "jest": "23.1.0",
+    "jest-styled-components": "5.0.1",
+    "react": "16.3.0",
+    "react-dom": "16.3.0",
     "react-emotion": "^9.2.3",
-    "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.3.2"
+    "react-test-renderer": "16.3.0",
+    "styled-components": "3.3.2"
   },
   "repository": {
     "type": "git",
