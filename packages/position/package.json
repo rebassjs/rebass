@@ -2,19 +2,14 @@
   "name": "@rebass/position",
   "version": "1.0.0-3",
   "description": "React UI components for CSS position",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "prepare": "npm run clean && npm run build",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "babel src/index.js -o dist/index.js"
+    "prepare": "node ../../build.js"
   },
   "keywords": [],
   "author": "Brent Jackson",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0"
-  },
   "dependencies": {
     "rebass": "^3.0.0-0",
     "styled-system": "^3.0.3"

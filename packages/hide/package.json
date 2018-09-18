@@ -2,21 +2,14 @@
   "name": "@rebass/hide",
   "version": "1.0.0-2",
   "description": "React UI component for responsively hiding elements",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "prepare": "npm run clean && npm run build",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "babel src/index.js -o dist/index.js"
+    "prepare": "node ../../build.js"
   },
   "keywords": [],
   "author": "Brent Jackson",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0"
-  },
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1",
     "rebass": "^3.0.0-0",
