@@ -5,6 +5,9 @@ import {
   color,
   width,
   height,
+  flex,
+  order,
+  alignSelf,
   flexWrap,
   flexDirection,
   alignItems,
@@ -36,6 +39,9 @@ export const Box = styled('div')(
   width,
   fontSize,
   color,
+  flex,
+  order,
+  alignSelf,
   themed('Box'),
   css
 )
