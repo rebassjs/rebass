@@ -35,24 +35,6 @@ describe('Box', () => {
     )
     expect(json).toHaveStyleRule('width', '100%')
   })
-
-  // sorry, clean-tag implementations don't work well with SC `as` prop
-  test.skip('removes style props from html', () => {
-    const json = renderJSON(
-      <Box
-        width={1}
-        fontSize={3}
-        color='blue'
-        bg='tomato'
-        css={{}}
-      />
-    )
-    expect(json.props.width).toBeUndefined()
-    expect(json.props.fontSize).toBeUndefined()
-    expect(json.props.color).toBeUndefined()
-    expect(json.props.bg).toBeUndefined()
-    expect(json.props.css).toBeUndefined()
-  })
 })
 
 describe('Flex', () => {
