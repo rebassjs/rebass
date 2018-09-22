@@ -4,17 +4,19 @@ import Hide from '../src'
 
 const renderJSON = el => TestRenderer.create(el).toJSON()
 
-test('Hide renders', () => {
-  const json = renderJSON(
-    <Hide
-      xsmall
-      small
-      medium
-      large
-      xlarge
-    />
-  )
+describe('@rebass/hide', () => {
+  test('Hide renders', () => {
+    const json = renderJSON(
+      <Hide
+        xsmall
+        small
+        medium
+        large
+        xlarge
+      />
+    )
 
-  expect(json).toMatchSnapshot()
-  expect(json).toHaveStyleRule('display', 'none')
+    expect(json).toMatchSnapshot()
+    expect(json).toHaveStyleRule('display', 'none')
+  })
 })
