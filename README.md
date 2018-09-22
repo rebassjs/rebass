@@ -26,6 +26,8 @@ https://rebassjs.org
 npm i rebass@next
 ```
 
+**Note:** Rebass v3 is intended for use with styled-components v4. Some features may not work with previous versions.
+
 ## Getting Started
 
 ```jsx
