@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "3.0.0-8",
+  "version": "3.0.0-9",
   "description": "React primitive UI components built with styled-system",
   "main": "dist/index.js",
   "sideEffects": false,
