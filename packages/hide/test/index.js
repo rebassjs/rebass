@@ -17,6 +17,8 @@ describe('@rebass/hide', () => {
     )
 
     expect(json).toMatchSnapshot()
-    expect(json).toHaveStyleRule('display', 'none')
+    expect(json).toHaveStyleRule('display', 'none', {
+      // media: 'screen and (min-width:40em)'
+    })
   })
 })
