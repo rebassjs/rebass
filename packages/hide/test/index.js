@@ -5,6 +5,22 @@ import Hide from '../src'
 const renderJSON = el => TestRenderer.create(el).toJSON()
 
 describe('@rebass/hide', () => {
+  test.skip('Mapped renders', () => {
+    const json = renderJSON(
+      <Mapped
+        xsmall
+        small
+      />
+    )
+    expect(json.props.display).toEqual([
+      'none',
+      'none',
+      'block',
+      'block',
+      'block',
+    ])
+  })
+
   test('Hide renders', () => {
     const json = renderJSON(
       <Hide
