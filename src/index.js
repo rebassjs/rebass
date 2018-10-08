@@ -4,6 +4,8 @@ import {
   space,
   color,
   width,
+  minWidth,
+  maxWidth,
   height,
   flex,
   order,
@@ -37,6 +39,8 @@ const themed = key => props => props.theme[key]
 export const Box = styled('div')(
   space,
   width,
+  minWidth,
+  maxWidth,
   fontSize,
   color,
   flex,
@@ -49,6 +53,8 @@ export const Box = styled('div')(
 Box.propTypes = {
   ...space.propTypes,
   ...width.propTypes,
+  ...minWidth.propTypes,
+  ...maxWidth.propTypes,
   ...fontSize.propTypes,
   ...color.propTypes,
 }
