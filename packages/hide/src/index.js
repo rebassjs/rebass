@@ -9,7 +9,7 @@ const mapProps = map => Component =>
 
 export const Base = styled(Box)(display)
 
-export const Hide = mapProps(({
+export const map = ({
   xsmall,
   small,
   medium,
@@ -25,7 +25,9 @@ export const Hide = mapProps(({
     large,
     xlarge
   ].map(n => n ? 'none' : 'block'),
-  ...props,
-}))(Base)
+  ...props
+})
+
+export const Hide = mapProps(map)(Base)
 
 export default Hide
