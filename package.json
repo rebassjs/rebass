@@ -29,22 +29,24 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^3.1.4"
+    "styled-system": "^3.1.11"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-transform-rename-import": "^2.2.0",
+    "buble": "0.19.4",
     "jest": "^23.6.0",
-    "jest-styled-components": "^6.2.0",
-    "mdx-go": "^1.1.10",
+    "jest-styled-components": "^6.2.1",
+    "mdx-go": "^2.0.0-29",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-live": "^1.12.0",
     "react-test-renderer": "^16.5.2",
-    "styled-components": "^4.0.0-beta.8"
+    "styled-components": "^4.0.2"
   },
   "repository": {
     "type": "git",
