@@ -59,12 +59,10 @@
   },
   "homepage": "https://github.com/rebassjs/rebass",
   "jest": {
-    "roots": [
-      "<rootDir>/test/"
-    ],
     "testMatch": [
       "**/test/**/*.js"
     ],
+    "setupTestFrameworkScriptFile": "jest-styled-components",
     "coverageReporters": [
       "html",
       "lcov"
@@ -76,10 +74,7 @@
         "lines": 100,
         "statements": 100
       }
-    },
-    "projects": [
-      "<rootDir>"
-    ]
+    }
   },
   "bundlesize": [
     {

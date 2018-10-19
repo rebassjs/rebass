@@ -1,13 +1,6 @@
-import 'jest-styled-components'
 import React from 'react'
 import TestRenderer from 'react-test-renderer'
-import {
-  Position,
-  Relative,
-  Absolute,
-  Fixed,
-  Sticky
-} from '../src'
+import { Position, Relative, Absolute, Fixed, Sticky } from '../src'
 
 const renderJSON = el => TestRenderer.create(el).toJSON()
 

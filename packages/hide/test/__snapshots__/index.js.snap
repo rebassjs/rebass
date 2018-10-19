@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@rebass/hide Hide renders 1`] = `
+.c0 {
+  display: none;
+}
+
+<div
+  className="c0"
+  display={
+    Array [
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+    ]
+  }
+/>
+`;
