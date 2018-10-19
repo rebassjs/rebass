@@ -2,6 +2,7 @@
 
 exports[`@rebass/hide Hide renders 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: none;
 }
 
