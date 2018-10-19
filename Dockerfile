@@ -4,7 +4,7 @@ WORKDIR /usr/src
 
 COPY package.json .
 COPY package-lock.json .
-RUN npm i
+RUN npm ci
 
 COPY . .
 RUN npm t -- --coverage && mv coverage /public
