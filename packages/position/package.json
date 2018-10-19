@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "prepare": "npm run clean && npm run build",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "babel src/index.js -o dist/index.js"
+    "clean": "rm -rf dist",
+    "build": "babel src -d dist"
   },
   "keywords": [],
   "author": "Brent Jackson",
