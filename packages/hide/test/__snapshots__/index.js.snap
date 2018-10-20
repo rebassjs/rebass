@@ -1,43 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@rebass/hide Hide renders with display prop 1`] = `
+exports[`@rebass/hide Hide renders 1`] = `
 .c0 {
-  box-sizing: border-box;
-  display: block;
-}
-
-@media screen and (min-width:40em) {
-  .c0 {
-    display: none;
-  }
+  display: none;
 }
 
 <div
   className="c0"
   display={
     Array [
-      "block",
       "none",
-    ]
-  }
-/>
-`;
-
-exports[`@rebass/hide Hide renders with shorthand props 1`] = `
-.c0 {
-  box-sizing: border-box;
-  display: block;
-}
-
-<div
-  className="c0"
-  display={
-    Array [
-      "block",
       "none",
-      "block",
-      "block",
-      "block",
+      "none",
+      "none",
+      "none",
     ]
   }
 />

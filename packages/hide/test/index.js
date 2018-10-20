@@ -1,39 +1,40 @@
 import React from 'react'
 import TestRenderer from 'react-test-renderer'
-import Hide, { map } from '../src'
+import Hide from '../src'
 
 const renderJSON = el => TestRenderer.create(el).toJSON()
 
 describe('@rebass/hide', () => {
-  test('Hide renders with display prop', () => {
+  test.skip('Mapped renders', () => {
     const json = renderJSON(
-      <Hide
-        display={[
-          'block', 'none',
-        ]}
+      <Mapped
+        xsmall
+        small
       />
     )
-    expect(json).toMatchSnapshot()
-    expect(json).toHaveStyleRule('display', 'block')
-    expect(json).toHaveStyleRule('display', 'none', {
-      media: 'screen and (min-width:40em)'
-    })
+    expect(json.props.display).toEqual([
+      'none',
+      'none',
+      'block',
+      'block',
+      'block',
+    ])
   })
 
-  test('Hide renders with shorthand props', () => {
+  test('Hide renders', () => {
     const json = renderJSON(
-      <Hide small />
+      <Hide
+        xsmall
+        small
+        medium
+        large
+        xlarge
+      />
     )
-    expect(json).toHaveStyleRule('display', 'block')
+
     expect(json).toMatchSnapshot()
-  })
-
-  test('map converts shorthand props to display', () => {
-    const props = map({
-      small: true
+    expect(json).toHaveStyleRule('display', 'none', {
+      // media: 'screen and (min-width:40em)'
     })
-    expect(props.display[0]).toBe('block')
-    expect(props.display[1]).toBe('none')
-
   })
 })
