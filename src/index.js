@@ -34,7 +34,9 @@ import {
 const css = props => props.css
 const themed = key => props => props.theme[key]
 
-export const Box = styled('div')(
+export const Box = styled('div')({
+  boxSizing: 'border-box'
+},
   space,
   width,
   fontSize,

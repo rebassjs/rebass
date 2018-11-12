@@ -1,16 +1,15 @@
 {
   "name": "rebass",
-  "version": "3.0.0-9",
+  "version": "3.0.0-10",
   "description": "React primitive UI components built with styled-system",
   "main": "dist/index.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "npm run clean && babel src -d dist && npm run emotion",
+    "prepare": "npm run clean && babel src -d dist",
     "clean": "rm -rf dist",
-    "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
     "start": "mdx-go docs",
     "docs": "mdx-go build docs -d site",
-    "cover": "jest --coverage --coverageReporters html lcov && codecov",
+    "cover": "jest --coverage && npx codecov",
     "test": "jest",
     "size": "bundlesize"
   },
@@ -37,14 +36,17 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-plugin-transform-rename-import": "^2.2.0",
+    "buble": "0.19.4",
     "jest": "^23.6.0",
     "jest-styled-components": "^6.2.2",
-    "mdx-go": "^1.1.11",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-test-renderer": "^16.6.0",
-    "styled-components": "^4.0.3"
+    "styled-components": "^4.0.3",
+    "mdx-go": "^2.0.0-29"
+  },
+  "peerDependencies": {
+    "styled-components": ">=4.0.0"
   },
   "repository": {
     "type": "git",
@@ -70,7 +72,11 @@
         "lines": 100,
         "statements": 100
       }
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
   },
   "bundlesize": [
     {
