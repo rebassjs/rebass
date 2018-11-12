@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - 10
 script:
-  npm t -- --coverage
+  - npm t -- --coverage
 after_success:
   - npm run cover

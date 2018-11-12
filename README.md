@@ -41,11 +41,10 @@ export default props =>
   </Box>
 ```
 
-To use Rebass with [emotion][], import from `rebass/emotion`:
+Support for emotion in v3 is pending the addition of the `as` prop.
+See [this issue][as-issue] for details.
 
-```js
-import { Box } from 'rebass/emotion'
-```
+[as-issue]: https://github.com/emotion-js/emotion/issues/837
 
 ## Features
 
@@ -53,7 +52,6 @@ import { Box } from 'rebass/emotion'
 - Super small (~1KB)
 - Responsive, themeable style props from [styled-system][]
 - Flexbox grid with the Box and Flex components
-- Support for [styled-components][] & [emotion][]
 - Extensible base components
 - Design-system based consistency
 - Built for responsive web design
@@ -111,7 +109,7 @@ https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox-v3
 - [styled-system][]
 - [Rebass Grid][]
 - [styled-components][]
-- [emotion][emotion]
+- [emotion][]
 
 [styled-system]: https://github.com/jxnblk/styled-system
 [Rebass Grid]: https://github.com/rebassjs/grid

@@ -1,0 +1,8 @@
+{
+  "name": "Rebass",
+  "public": true,
+  "type": "static",
+  "alias": [
+    "rebass.now.sh"
+  ]
+}
