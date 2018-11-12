@@ -2,7 +2,5 @@ src
 docs
 test
 coverage
-.nyc_output
 examples
 babel.config.js
-packages

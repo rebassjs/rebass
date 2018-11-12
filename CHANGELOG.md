@@ -1,6 +1,40 @@
 
 # Changelog
 
+## Unreleased
+
+- Removes monorepo setup and optional packages
+- Removes support for emotion
+
+## [3.0.0-9] 2018-09-22
+
+- Adds flexbox props back to Box component
+
+## [3.0.0-6] 2018-09-13
+
+- Adds emotion package
+
+## [3.0.0-2] 2018-09-11
+
+- Update styled-system
+- Update docs
+
+## [3.0.0-1] 2018-09-10
+
+- Update docs for v3
+
+## [3.0.0-0] 2018-09-08
+
+- Smaller package
+- Reduced number of components to 8
+- Upgraded for styled-components v4
+- Reduced dependencies to one
+- Removed default theme and colors
+- Removed Rebass Provider component
+- Added variant theme support to Button and Card
+- Removed `is` prop in favor of styled-components `as` prop
+- Uses Box component as the base for all other components
+
 ## [2.3.2] 2018-09-08
 
 - Update repo in package.json
