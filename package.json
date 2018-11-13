@@ -31,19 +31,19 @@
     "styled-system": "^3.1.11"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "buble": "0.19.4",
     "jest": "^23.6.0",
     "jest-styled-components": "^6.2.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-test-renderer": "^16.6.0",
-    "styled-components": "^4.0.3",
-    "mdx-go": "^2.0.0-29"
+    "mdx-go": "^2.0.0-31",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-test-renderer": "^16.6.3",
+    "styled-components": "^4.1.1"
   },
   "peerDependencies": {
     "styled-components": ">=4.0.0"
