@@ -31,7 +31,6 @@ import {
   variant,
 } from 'styled-system'
 
-const css = props => props.css
 const themed = key => props => props.theme[key]
 
 export const Box = styled('div')({
@@ -44,8 +43,7 @@ export const Box = styled('div')({
   flex,
   order,
   alignSelf,
-  themed('Box'),
-  css
+  themed('Box')
 )
 
 Box.propTypes = {
@@ -53,6 +51,9 @@ Box.propTypes = {
   ...width.propTypes,
   ...fontSize.propTypes,
   ...color.propTypes,
+  ...flex.propTypes,
+  ...order.propTypes,
+  ...alignSelf.propTypes,
 }
 
 export const Flex = styled(Box)({
@@ -176,8 +177,8 @@ export const Card = styled(Box)(
   backgroundPosition,
   backgroundRepeat,
   opacity,
-  themed('Card'),
-  cards
+  cards,
+  themed('Card')
 )
 
 Card.propTypes = {
