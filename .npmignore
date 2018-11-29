@@ -4,3 +4,8 @@ test
 coverage
 examples
 babel.config.js
+emotion
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+Dockerfile
+now.json
