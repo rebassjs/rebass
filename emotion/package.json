@@ -1,0 +1,17 @@
+{
+  "name": "@rebass/emotion",
+  "version": "3.0.0-11",
+  "description": "React primitive UI components built with styled-system",
+  "main": "index.js",
+  "dependencies": {
+    "styled-system": "^3.1.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rebassjs/rebass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rebassjs/rebass/issues"
+  },
+  "homepage": "https://github.com/rebassjs/rebass"
+}

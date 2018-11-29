@@ -41,10 +41,13 @@ export default props =>
   </Box>
 ```
 
-Support for emotion in v3 is pending the addition of the `as` prop.
-See [this issue][as-issue] for details.
+### Emotion
 
-[as-issue]: https://github.com/emotion-js/emotion/issues/837
+To use Rebass with [emotion][], install and use the `@rebass/emotion`
+
+```sh
+npm i @rebass/emotion @emotion/core @emotion/styled
+```
 
 ## Features
 
