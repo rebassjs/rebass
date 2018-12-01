@@ -3,8 +3,18 @@
 
 ## Unreleased
 
-- Removes monorepo setup and optional packages
-- Removes support for emotion
+## [3.0.0-12] 2018-11-29
+
+- Removes `css` prop in favor of babel-plugin-styled-components
+- Adds build setup for Emotion 10
+
+## [3.0.0-11] 2018-11-13
+
+- Update dependencies
+
+## [3.0.0-10] 2018-11-12
+
+- Sets `box-sizing: border-box` on base Box component
 
 ## [3.0.0-9] 2018-09-22
 
