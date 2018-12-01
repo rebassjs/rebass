@@ -3,6 +3,19 @@
 
 ## Unreleased
 
+## [3.0.0] 2018-12-01
+
+- Reduced package size
+- Reduced number of components to 8
+- Updated for Styled Components v4 and Emotion v10
+- Reduced dependencies
+- Removed default theme and colors
+- Removed Provider component
+- Added variant theme support for Button and Card components
+- Removed `is` prop in favor of Styled Components' and Emotion's `as` prop
+- Uses Box component as base for all other components
+- Removed `css` prop in favor of Styled Components' and Emotion's implementations
+
 ## [3.0.0-12] 2018-11-29
 
 - Removes `css` prop in favor of babel-plugin-styled-components

@@ -18,12 +18,12 @@ https://rebassjs.org
 [coverage]: https://codecov.io/github/rebassjs/rebass
 
 [downloads-badge]: https://flat.badgen.net/npm/dw/rebass
-[version-badge]: https://flat.badgen.net/npm/v/rebass/next
+[version-badge]: https://flat.badgen.net/npm/v/rebass
 [license-badge]: https://flat.badgen.net/badge/license/MIT/blue
 [npm]: https://npmjs.com/package/rebass
 
 ```sh
-npm i rebass@next
+npm i rebass
 ```
 
 **Note:** Rebass v3 is intended for use with styled-components v4. Some features may not work with previous versions.

@@ -12,7 +12,7 @@
     "docs": "mdx-go build docs -d site",
     "cover": "jest --coverage && npx codecov",
     "test": "jest",
-    "size": "bundlesize"
+    "size": "npx bundlesize"
   },
   "keywords": [
     "components",
