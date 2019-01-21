@@ -15,6 +15,7 @@ import {
   fontSize,
   fontFamily,
   fontWeight,
+  fontStyle,
   textAlign,
   lineHeight,
   letterSpacing,
@@ -76,6 +77,7 @@ Flex.propTypes = {
 export const Text = styled(Box)(
   fontFamily,
   fontWeight,
+  fontStyle,
   textAlign,
   lineHeight,
   letterSpacing,
@@ -85,6 +87,7 @@ export const Text = styled(Box)(
 Text.propTypes = {
   ...fontFamily.propTypes,
   ...fontWeight.propTypes,
+  ...fontStyle.propTypes,
   ...textAlign.propTypes,
   ...lineHeight.propTypes,
   ...letterSpacing.propTypes,
@@ -118,6 +121,7 @@ export const Button = styled(Box)({
   textDecoration: 'none',
 },
   fontWeight,
+  fontStyle,
   borders,
   borderColor,
   borderRadius,
@@ -127,6 +131,7 @@ export const Button = styled(Box)({
 
 Button.propTypes = {
   ...fontWeight.propTypes,
+  ...fontStyle.propTypes,
   ...borders.propTypes,
   ...borderColor.propTypes,
   ...borderRadius.propTypes,
