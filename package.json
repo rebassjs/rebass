@@ -8,8 +8,8 @@
     "prepare": "npm run clean && babel src -d dist && npm run emotion",
     "emotion": "NODE_ENV=emotion babel src -d emotion",
     "clean": "rm -rf dist",
-    "start": "mdx-go docs",
-    "docs": "mdx-go build docs -d site",
+    "start": "gx docs",
+    "docs": "gx build docs",
     "cover": "jest --coverage && npx codecov",
     "test": "jest",
     "size": "npx bundlesize"
@@ -32,22 +32,20 @@
     "styled-system": "^3.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.0",
-    "@emotion/styled": "^10.0.0",
-    "babel-core": "^7.0.0-bridge.0",
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
     "babel-plugin-transform-rename-import": "^2.3.0",
-    "buble": "0.19.4",
-    "jest": "^23.6.0",
+    "gx": "^2.0.0-19",
+    "jest": "^24.5.0",
     "jest-styled-components": "^6.2.2",
-    "mdx-go": "^2.0.0-31",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-test-renderer": "^16.6.3",
-    "styled-components": "^4.1.1"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-test-renderer": "^16.8.5",
+    "styled-components": "^4.2.0"
   },
   "peerDependencies": {
     "styled-components": ">=4.0.0"
@@ -64,7 +62,9 @@
     "testMatch": [
       "**/test/**/*.js"
     ],
-    "setupTestFrameworkScriptFile": "jest-styled-components",
+    "setupFilesAfterEnv": [
+      "jest-styled-components"
+    ],
     "coverageReporters": [
       "html",
       "lcov"
