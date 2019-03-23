@@ -38,10 +38,10 @@
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",
-    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.0.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "buble": "0.19.4",
-    "jest": "^23.6.0",
+    "jest": "^24.0.0",
     "jest-styled-components": "^6.2.2",
     "mdx-go": "^2.0.0-31",
     "react": "^16.6.3",
@@ -64,7 +64,9 @@
     "testMatch": [
       "**/test/**/*.js"
     ],
-    "setupTestFrameworkScriptFile": "jest-styled-components",
+    "setupFilesAfterEnv": [
+      "jest-styled-components"
+    ],
     "coverageReporters": [
       "html",
       "lcov"
