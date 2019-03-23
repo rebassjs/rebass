@@ -38,6 +38,7 @@
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.9",
+    "babel-jest": "^24.0.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "gx": "^2.0.0-19",
     "jest": "^24.5.0",
