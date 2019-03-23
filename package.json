@@ -29,7 +29,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^3.2.1"
+    "styled-system": "^4.0.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
