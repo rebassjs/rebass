@@ -1,10 +1,10 @@
 {
   "name": "@rebass/emotion",
-  "version": "3.0.0-11",
+  "version": "3.1.0",
   "description": "React primitive UI components built with styled-system",
   "main": "index.js",
   "dependencies": {
-    "styled-system": "^3.1.11"
+    "styled-system": "^4.0.8"
   },
   "repository": {
     "type": "git",
