@@ -3,6 +3,10 @@
 
 ## Unreleased
 
+## [3.0.1] 2019-01-18
+
+- Update styled-system #555
+
 ## [3.0.0] 2018-12-01
 
 - Reduced package size

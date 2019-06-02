@@ -114,7 +114,7 @@ https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox-v3
 - [styled-components][]
 - [emotion][]
 
-[styled-system]: https://github.com/jxnblk/styled-system
+[styled-system]: https://styled-system.com
 [Rebass Grid]: https://github.com/rebassjs/grid
 [styled-components]: https://github.com/styled-components/styled-components
 [emotion]: https://github.com/emotion-js/emotion
