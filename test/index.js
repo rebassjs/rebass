@@ -97,7 +97,7 @@ describe('Button', () => {
     )
     expect(json.type).toBe('button')
     expect(json).toHaveStyleRule('color', 'white')
-    expect(json).toHaveStyleRule('background-color', 'blue')
+    expect(json).toHaveStyleRule('background-color', 'primary')
   })
 
   test('renders as <a>', () => {
@@ -114,7 +114,7 @@ describe('Link', () => {
       <Link />
     )
     expect(json.type).toBe('a')
-    expect(json).toHaveStyleRule('color', 'blue')
+    expect(json).toHaveStyleRule('color', 'primary')
   })
 })
 
