@@ -107,7 +107,7 @@ export const Link = styled(Box)(
 
 Link.defaultProps = {
   as: 'a',
-  color: 'blue'
+  color: 'primary'
 }
 
 export const Button = styled(Box)({
@@ -141,7 +141,7 @@ Button.defaultProps = {
   px: 3,
   py: 2,
   color: 'white',
-  bg: 'blue',
+  bg: 'primary',
   border: 0,
   borderRadius: 4,
 }
