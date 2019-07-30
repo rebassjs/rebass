@@ -29,6 +29,7 @@ import {
   backgroundRepeat,
   opacity,
   variant,
+  compose
 } from 'styled-system'
 
 const themed = key => props => props.theme[key]
@@ -36,13 +37,15 @@ const themed = key => props => props.theme[key]
 export const Box = styled('div')({
   boxSizing: 'border-box'
 },
-  space,
-  width,
-  fontSize,
-  color,
-  flex,
-  order,
-  alignSelf,
+  compose(
+    space,
+    width,
+    fontSize,
+    color,
+    flex,
+    order,
+    alignSelf,
+  ),
   themed('Box')
 )
 
@@ -59,10 +62,12 @@ Box.propTypes = {
 export const Flex = styled(Box)({
   display: 'flex'
 },
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent,
+  compose(
+    flexWrap,
+    flexDirection,
+    alignItems,
+    justifyContent,
+  ),
   themed('Flex')
 )
 
@@ -74,11 +79,13 @@ Flex.propTypes = {
 }
 
 export const Text = styled(Box)(
-  fontFamily,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  letterSpacing,
+  compose( 
+    fontFamily,
+    fontWeight,
+    textAlign,
+    lineHeight,
+    letterSpacing,
+  ),
   themed('Text')
 )
 
@@ -117,11 +124,13 @@ export const Button = styled(Box)({
   lineHeight: 'inherit',
   textDecoration: 'none',
 },
-  fontWeight,
-  borders,
-  borderColor,
-  borderRadius,
-  buttonStyle,
+  compose(
+    fontWeight,
+    borders,
+    borderColor,
+    borderRadius,
+    buttonStyle,
+  ),
   themed('Button')
 )
 
@@ -150,8 +159,10 @@ export const Image = styled(Box)({
   maxWidth: '100%',
   height: 'auto'
 },
-  height,
-  borderRadius,
+  compose(
+    height,
+    borderRadius,
+  ),
   themed('Image')
 )
 
@@ -168,16 +179,18 @@ Image.defaultProps = {
 const cards = variant({ key: 'cards' })
 
 export const Card = styled(Box)(
-  borders,
-  borderColor,
-  borderRadius,
-  boxShadow,
-  backgroundImage,
-  backgroundSize,
-  backgroundPosition,
-  backgroundRepeat,
-  opacity,
-  cards,
+  compose(
+    borders,
+    borderColor,
+    borderRadius,
+    boxShadow,
+    backgroundImage,
+    backgroundSize,
+    backgroundPosition,
+    backgroundRepeat,
+    opacity,
+    cards,
+  ),
   themed('Card')
 )
 
