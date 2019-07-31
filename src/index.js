@@ -104,7 +104,7 @@ Heading.defaultProps = {
   fontWeight: 'bold',
 }
 
-export const Link = styled(Box)(
+export const Link = styled(Text)(
   themed('Link')
 )
 
