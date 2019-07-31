@@ -1,33 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  compose,
   space,
   color,
-  width,
-  height,
-  flex,
-  order,
-  alignSelf,
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent,
-  fontSize,
-  fontFamily,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  letterSpacing,
-  borders,
-  borderColor,
-  borderRadius,
+  layout,
+  flexbox,
+  typography,
+  border,
   buttonStyle,
-  boxShadow,
-  backgroundImage,
-  backgroundSize,
-  backgroundPosition,
-  backgroundRepeat,
-  opacity,
+  shadow,
+  background,
   variant,
   compose
 } from 'styled-system'
@@ -39,63 +22,23 @@ export const Box = styled('div')({
 },
   compose(
     space,
-    width,
-    fontSize,
+    layout,
+    typography,
     color,
-    flex,
-    order,
-    alignSelf,
+    flexbox,
   ),
   themed('Box')
 )
 
-Box.propTypes = {
-  ...space.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
-  ...color.propTypes,
-  ...flex.propTypes,
-  ...order.propTypes,
-  ...alignSelf.propTypes,
-}
-
 export const Flex = styled(Box)({
   display: 'flex'
 },
-  compose(
-    flexWrap,
-    flexDirection,
-    alignItems,
-    justifyContent,
-  ),
   themed('Flex')
 )
 
-Flex.propTypes = {
-  ...flexWrap.propTypes,
-  ...flexDirection.propTypes,
-  ...alignItems.propTypes,
-  ...justifyContent.propTypes
-}
-
 export const Text = styled(Box)(
-  compose( 
-    fontFamily,
-    fontWeight,
-    textAlign,
-    lineHeight,
-    letterSpacing,
-  ),
   themed('Text')
 )
-
-Text.propTypes = {
-  ...fontFamily.propTypes,
-  ...fontWeight.propTypes,
-  ...textAlign.propTypes,
-  ...lineHeight.propTypes,
-  ...letterSpacing.propTypes,
-}
 
 export const Heading = styled(Text)(
   themed('Heading')
@@ -125,22 +68,11 @@ export const Button = styled(Box)({
   textDecoration: 'none',
 },
   compose(
-    fontWeight,
-    borders,
-    borderColor,
-    borderRadius,
+    border,
     buttonStyle,
   ),
   themed('Button')
 )
-
-Button.propTypes = {
-  ...fontWeight.propTypes,
-  ...borders.propTypes,
-  ...borderColor.propTypes,
-  ...borderRadius.propTypes,
-  ...buttonStyle.propTypes,
-}
 
 Button.defaultProps = {
   as: 'button',
@@ -159,17 +91,9 @@ export const Image = styled(Box)({
   maxWidth: '100%',
   height: 'auto'
 },
-  compose(
-    height,
-    borderRadius,
-  ),
+  border,
   themed('Image')
 )
-
-Image.propTypes = {
-  ...height.propTypes,
-  ...borderRadius.propTypes,
-}
 
 Image.defaultProps = {
   as: 'img',
@@ -180,29 +104,10 @@ const cards = variant({ key: 'cards' })
 
 export const Card = styled(Box)(
   compose(
-    borders,
-    borderColor,
-    borderRadius,
-    boxShadow,
-    backgroundImage,
-    backgroundSize,
-    backgroundPosition,
-    backgroundRepeat,
-    opacity,
+    border,
+    shadow,
+    background,
     cards,
   ),
   themed('Card')
 )
-
-Card.propTypes = {
-  ...borders.propTypes,
-  ...borderColor.propTypes,
-  ...borderRadius.propTypes,
-  ...boxShadow.propTypes,
-  ...backgroundImage.propTypes,
-  ...backgroundSize.propTypes,
-  ...backgroundPosition.propTypes,
-  ...backgroundRepeat.propTypes,
-  ...opacity.propTypes,
-  ...cards.propTypes,
-}
