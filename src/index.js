@@ -12,6 +12,7 @@ import {
   shadow,
   background,
   variant,
+  compose
 } from 'styled-system'
 
 const themed = key => props => props.theme[key]
