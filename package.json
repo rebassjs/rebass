@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.11",
+    "@emotion/styled": "^10.0.14",
     "babel-jest": "^24.8.0",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "gx": "^2.0.0-25",

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  compose,
   space,
   color,
   layout,
@@ -18,11 +19,13 @@ const themed = key => props => props.theme[key]
 export const Box = styled('div')({
   boxSizing: 'border-box'
 },
-  space,
-  layout,
-  typography,
-  color,
-  flexbox,
+  compose(
+    space,
+    layout,
+    typography,
+    color,
+    flexbox,
+  ),
   themed('Box')
 )
 
@@ -63,8 +66,10 @@ export const Button = styled(Box)({
   lineHeight: 'inherit',
   textDecoration: 'none',
 },
-  border,
-  buttonStyle,
+  compose(
+    border,
+    buttonStyle,
+  ),
   themed('Button')
 )
 
@@ -97,9 +102,11 @@ Image.defaultProps = {
 const cards = variant({ key: 'cards' })
 
 export const Card = styled(Box)(
-  border,
-  shadow,
-  background,
-  cards,
+  compose(
+    border,
+    shadow,
+    background,
+    cards,
+  ),
   themed('Card')
 )
