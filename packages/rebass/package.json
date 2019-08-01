@@ -5,14 +5,7 @@
   "main": "dist/index.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "npm run clean && babel src -d dist && npm run emotion",
-    "emotion": "NODE_ENV=emotion babel src -d emotion",
-    "clean": "rm -rf dist",
-    "start": "gx docs",
-    "docs": "gx build docs",
-    "cover": "jest --coverage && npx codecov",
-    "test": "jest",
-    "size": "npx bundlesize"
+    "prepare": "babel src -d dist"
   },
   "keywords": [
     "components",
@@ -22,6 +15,8 @@
     "design-system",
     "styled-system",
     "styled-components",
+    "emotion",
+    "theming",
     "presentational",
     "stateless",
     "functional"
@@ -32,61 +27,10 @@
     "styled-system": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.14",
-    "babel-jest": "^24.8.0",
-    "babel-plugin-transform-rename-import": "^2.3.0",
-    "gx": "^2.0.0-25",
-    "jest": "^24.8.0",
-    "jest-styled-components": "^6.2.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
     "styled-components": "^4.2.1"
   },
-  "peerDependencies": {
-    "styled-components": ">=4.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rebassjs/rebass.git"
-  },
+  "repository": "rebassjs/rebass",
   "bugs": {
     "url": "https://github.com/rebassjs/rebass/issues"
-  },
-  "homepage": "https://github.com/rebassjs/rebass",
-  "jest": {
-    "testMatch": [
-      "**/test/**/*.js"
-    ],
-    "setupFilesAfterEnv": [
-      "jest-styled-components"
-    ],
-    "coverageReporters": [
-      "html",
-      "lcov"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
-    ]
-  },
-  "bundlesize": [
-    {
-      "path": "./dist/*.js",
-      "maxSize": "1.5 kB"
-    }
-  ]
+  }
 }

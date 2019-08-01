@@ -1,5 +1,5 @@
 import React from 'react'
-import TestRenderer from 'react-test-renderer'
+import renderer from 'react-test-renderer'
 import {
   Box,
   Flex,
@@ -11,25 +11,25 @@ import {
   Card,
 } from '../src'
 
-const renderJSON = el => TestRenderer.create(el).toJSON()
+const render = el => renderer.create(el).toJSON()
 
 describe('Box', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Box />
     )
     expect(json.type).toBe('div')
   })
 
   test('renders with as prop', () => {
-    const json = renderJSON(
+    const json = render(
       <Box as='header' />
     )
     expect(json.type).toBe('header')
   })
 
   test('renders with style props', () => {
-    const json = renderJSON(
+    const json = render(
       <Box width={1} />
     )
     expect(json).toHaveStyleRule('width', '100%')
@@ -38,14 +38,14 @@ describe('Box', () => {
 
 describe('Flex', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Flex />
     )
     expect(json.type).toBe('div')
   })
 
   test('renders with flex props', () => {
-    const json = renderJSON(
+    const json = render(
       <Flex alignItems='center' />
     )
     expect(json).toHaveStyleRule('display', 'flex')
@@ -53,14 +53,14 @@ describe('Flex', () => {
   })
 
   test('renders with Box props', () => {
-    const json = renderJSON(
+    const json = render(
       <Flex color='tomato' />
     )
     expect(json).toHaveStyleRule('color', 'tomato')
   })
 
   test('renders with as and Box props', () => {
-    const json = renderJSON(
+    const json = render(
       <Flex as='footer' color='tomato' />
     )
     expect(json.type).toBe('footer')
@@ -70,7 +70,7 @@ describe('Flex', () => {
 
 describe('Text', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Text textAlign='center' fontWeight='bold' fontStyle='italic' />
     )
     expect(json.type).toBe('div')
@@ -82,7 +82,7 @@ describe('Text', () => {
 
 describe('Heading', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Heading />
     )
     expect(json.type).toBe('h2')
@@ -93,7 +93,7 @@ describe('Heading', () => {
 
 describe('Button', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Button />
     )
     expect(json.type).toBe('button')
@@ -102,7 +102,7 @@ describe('Button', () => {
   })
 
   test('renders as <a>', () => {
-    const json = renderJSON(
+    const json = render(
       <Button as='a' />
     )
     expect(json.type).toBe('a')
@@ -111,7 +111,7 @@ describe('Button', () => {
 
 describe('Link', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Link />
     )
     expect(json.type).toBe('a')
@@ -121,7 +121,7 @@ describe('Link', () => {
 
 describe('Image', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Image />
     )
     expect(json.type).toBe('img')
@@ -131,7 +131,7 @@ describe('Image', () => {
 
 describe('Card', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Card
         p={3}
         bg='tomato'
