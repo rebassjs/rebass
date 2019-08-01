@@ -3,7 +3,7 @@
 
 # Rebass
 
-React primitive UI components built with [styled-system][].
+React primitive UI components built with [Styled System][].
 https://rebassjs.org
 
 [![Build Status][badge]][travis]
@@ -23,10 +23,10 @@ https://rebassjs.org
 [npm]: https://npmjs.com/package/rebass
 
 ```sh
-npm i rebass
+npm i rebass styled-components
 ```
 
-**Note:** Rebass v3 is intended for use with styled-components v4. Some features may not work with previous versions.
+**Note:** Rebass v3 is intended for use with Styled Components v4. Some features may not work with previous versions.
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ npm i @rebass/emotion @emotion/core @emotion/styled
 
 - 8 core UI components to serve as the basis for design systems
 - Super small (~1KB)
-- Responsive, themeable style props from [styled-system][]
+- Responsive, themeable style props from [Styled System][]
 - Flexbox grid with the Box and Flex components
 - Extensible base components
 - Design-system based consistency
@@ -109,14 +109,14 @@ https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox-v3
 
 ### Related
 
-- [styled-system][]
+- [Styled System][]
 - [Rebass Grid][]
-- [styled-components][]
-- [emotion][]
+- [Styled Components][]
+- [Emotion][]
 
-[styled-system]: https://styled-system.com
+[styled system]: https://styled-system.com
 [Rebass Grid]: https://github.com/rebassjs/grid
-[styled-components]: https://github.com/styled-components/styled-components
+[styled components]: https://github.com/styled-components/styled-components
 [emotion]: https://github.com/emotion-js/emotion
 
 #### Previous Versions
