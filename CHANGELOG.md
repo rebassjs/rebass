@@ -3,6 +3,10 @@
 
 ## Unreleased
 
+## [3.1.0] 2019-03-23
+
+- Update to Styled System v4
+
 ## [3.0.1] 2019-01-18
 
 - Update styled-system #555

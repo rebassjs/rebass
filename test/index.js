@@ -71,11 +71,12 @@ describe('Flex', () => {
 describe('Text', () => {
   test('renders', () => {
     const json = renderJSON(
-      <Text textAlign='center' fontWeight='bold' />
+      <Text textAlign='center' fontWeight='bold' fontStyle='italic' />
     )
     expect(json.type).toBe('div')
     expect(json).toHaveStyleRule('text-align', 'center')
     expect(json).toHaveStyleRule('font-weight', 'bold')
+    expect(json).toHaveStyleRule('font-style', 'italic')
   })
 })
 
