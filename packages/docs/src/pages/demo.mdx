@@ -1,0 +1,89 @@
+import {
+  ThemeProvider,
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Link,
+  Button,
+  Image,
+  Card,
+} from 'rebass'
+
+export default props =>
+  <ThemeProvider theme={{
+    colors: {
+      text: '#000',
+      background: '#fff',
+      primary: '#07c',
+    },
+    buttons: {
+      primary: {
+        color: 'background',
+        bg: 'primary',
+        borderRadius: 4,
+      },
+      secondary: {
+        variant: 'buttons.primary',
+        bg: 'tomato',
+      },
+    }
+  }}>
+    <Box
+      {...props}
+      sx={{
+        fontFamily: 'system-ui, sans-serif',
+      }}
+    />
+  </ThemeProvider>
+
+# Rebass 4 Demo Page
+
+Hello
+
+<Box>
+  Box
+</Box>
+
+<Box
+  px={[4, 5]}
+  py={6}
+  fontSize={6}
+  fontFamily='system-ui, sans-serif'
+  fontWeight='bold'
+  color='white'
+  bg='tomato'>
+  Box
+</Box>
+
+<Button
+  variant='primary'>
+  Beep
+</Button>
+<Button
+  variant='secondary'>
+  Boop
+</Button>
+
+<Heading as='h1'
+  sx={{
+    color: 'tomato',
+  }}>
+  Heading
+</Heading>
+
+<Image
+  src='https://source.unsplash.com/random?new-york'
+  width={512}
+/>
+
+
+<Card
+  p={3}>
+  Card
+</Card>
+
+---
+
+- [ ] Order of sx vs style props?
+

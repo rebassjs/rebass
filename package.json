@@ -5,15 +5,19 @@
     "examples/*"
   ],
   "scripts": {
+    "prepare": "lerna run prepare",
+    "start": "yarn workspace docs start",
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "jest": "^24.8.0",
     "jest-emotion": "^10.0.14",
     "jest-styled-components": "^6.3.3",
+    "lerna": "^3.16.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6"

@@ -3,9 +3,8 @@
   "version": "4.0.0-0",
   "description": "React primitive UI components built with styled-system",
   "main": "dist/index.js",
-  "sideEffects": false,
   "scripts": {
-    "prepare": "babel src -d dist"
+    "prepare": "babel src -d dist --root-mode upward"
   },
   "keywords": [
     "components",
@@ -24,10 +23,11 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^5.0.0"
-  },
-  "devDependencies": {
-    "styled-components": "^4.2.1"
+    "@rebass/grid": "4.0.0-0",
+    "@emotion/core": "^10.0.14",
+    "@mdx-js/react": "^1.1.4",
+    "styled-system": "^5.0.0",
+    "theme-ui": "^0.2.25"
   },
   "repository": "rebassjs/rebass",
   "bugs": {

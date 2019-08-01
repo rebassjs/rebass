@@ -3,14 +3,18 @@
   "version": "4.0.0-0",
   "description": "Responsive React grid system built with Styled System, with support for Emotion and Styled Components – the successor to Reflexbox",
   "main": "dist/index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@emotion/core": "^10.0.14",
-    "@emotion/styled": "^10.0.14"
+  "scripts": {
+    "prepare": "babel src -d dist --root-mode upward"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "@styled-system/css": "^5.0.17",
     "@styled-system/should-forward-prop": "^5.0.18",
+    "react": "^16.8.6",
     "styled-system": "^5.0.18"
-  }
+  },
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "repository": "rebassjs/rebass"
 }

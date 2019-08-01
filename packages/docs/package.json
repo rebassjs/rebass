@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "docs",
+  "version": "4.0.0-0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop",
+    "clean": "gatsby clean",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.1.4",
+    "@mdx-js/react": "^1.1.4",
+    "gatsby": "^2.13.48",
+    "gatsby-plugin-mdx": "^1.0.22",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rebass": "4.0.0-0"
+  }
+}
