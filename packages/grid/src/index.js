@@ -8,16 +8,23 @@ import {
   color,
   flexbox,
 } from 'styled-system'
-import css from '@styled-system/css'
+import css, { get } from '@styled-system/css'
 import shouldForwardProp from '@styled-system/should-forward-prop'
 
 const sx = props => css(props.sx)(props.theme)
+const variant = props =>
+  css(get(props.theme, props.variant))(props.theme)
 
 export const Box = styled('div', {
   shouldForwardProp
 })({
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  margin: 0,
+  minWidth: 0,
 },
+  sx,
+  props => props.css,
+  variant,
   compose(
     space,
     layout,
@@ -25,7 +32,6 @@ export const Box = styled('div', {
     color,
     flexbox,
   ),
-  sx
 )
 
 export const Flex = styled(Box)({

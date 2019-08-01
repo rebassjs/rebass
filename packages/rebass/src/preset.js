@@ -1,23 +1,13 @@
 // default theme preset
 import base from '@theme-ui/preset-base'
+import merge from 'deepmerge'
 
-export const preset = {
-  ...base,
+export const preset = merge(base, {
+  // add to theme-ui preset
   colors: {
-    ...base.colors,
-    black: [
-      'rgba(0, 0, 0, 0)',
-      'rgba(0, 0, 0, 0.0625)',
-      'rgba(0, 0, 0, 0.125)',
-      'rgba(0, 0, 0, 0.25)',
-      'rgba(0, 0, 0, 0.375)',
-      'rgba(0, 0, 0, 0.5)',
-      'rgba(0, 0, 0, 0.625)',
-      'rgba(0, 0, 0, 0.75)',
-      'rgba(0, 0, 0, 0.875)',
-      'rgba(0, 0, 0, 1)',
-    ],
+    gray: '#dddddf',
   },
+
   sizes: {
     avatar: 48,
   },
@@ -26,8 +16,10 @@ export const preset = {
     circle: 99999,
   },
   shadows: {
-    card: t => `0 0 4px ${t.colors.black[1]}`,
+    card: '0 0 4px rgba(0, 0, 0, .125)',
+    handle: '0 0 2px rgba(0, 0, 0, .125)',
   },
+  // rebass variants
   text: {
     display: {
       fontFamily: 'heading',
@@ -79,11 +71,41 @@ export const preset = {
   },
   cards: {
     default: {
-      p: 3,
+      p: 2,
       bg: 'background',
       boxShadow: 'card',
     },
   },
-}
+  forms: {
+    field: {
+      borderColor: 'gray',
+      color: 'text',
+      bg: 'background',
+      mb: 3,
+      ':focus': {
+        borderColor: 'primary',
+        outline: 'none',
+        boxShadow: t => `0 0 2px ${t.colors.primary}`,
+      },
+    },
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    input: {
+      variant: 'forms.field',
+    },
+    select: {
+      variant: 'forms.field',
+    },
+    textarea: {
+      variant: 'forms.field',
+    },
+    radio: {},
+    checkbox: {},
+  },
+  styles: {
+  }
+})
 
 export default preset

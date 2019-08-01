@@ -1,45 +1,88 @@
 import {
-  Provider,
+  RebassProvider,
+  Root,
+  Box,
+  Heading,
+  Button,
+  Image,
+  Card,
+  Label,
+  Input,
+  Select,
+  Textarea,
+  Radio,
+  Checkbox,
+  Switch,
 } from 'rebass'
 
 export default props =>
-  <Provider
-    theme={{
-      colors: {
-        text: '#000',
-        background: '#fff',
-        primary: '#07c',
-      },
-      fonts: {
-        body: 'system-ui, sans-serif',
-        heading: 'system-ui, sans-serif',
-        monospace: 'Menlo, monospace',
-      },
-      fontWeights: {
-        body: 400,
-        heading: 800,
-        bold: 700,
-      },
-      lineHeights: {
-        body: 1.625,
-        heading: 1.25,
-      },
-      text: {
-        heading: {
-          fontFamily: 'heading',
-          fontWeight: 'heading',
-          lineHeight: 'heading',
-        }
-      },
-      styles: {
-        h1: {
-          variant: 'text.heading',
-          color: 'tomato',
-        }
-      }
-    }}>
-    {props.children}
-  </Provider>
+  <RebassProvider>
+    <Root>
+      {props.children}
+    </Root>
+  </RebassProvider>
 
 # Rebass 4 Demo Page
+
+<Box
+  p={4}
+  bg='muted'>
+  <Image
+    src='https://jxnblk.com/avatar.png'
+    variant='avatar'
+  />
+  <Heading as='h1' variant='display'>
+    Rebass v4
+  </Heading>
+  <Heading mb={3} variant='caps'>All Caps</Heading>
+  <Button mr={3}>
+    Beep
+  </Button>
+  <Button variant='secondary'>
+    Boop
+  </Button>
+</Box>
+
+<Card m={4}>
+  <Heading>Forms</Heading>
+  <Label htmlFor='name'>Name</Label>
+  <Input
+    id='name'
+    name='name'
+  />
+  <Label htmlFor='location'>
+    Location
+  </Label>
+  <Select>
+    <option>NYC</option>
+    <option>DC</option>
+    <option>SF</option>
+    <option>LA</option>
+    <option>CHI</option>
+    <option>LDN</option>
+    <option>ATX</option>
+  </Select>
+  <Label>
+    <Radio name='active' value='true' defaultChecked={true} />
+    On
+  </Label>
+  <Label>
+    <Radio name='active' value='false' defaultChecked={true} />
+    Off
+  </Label>
+  <Label htmlFor='comment'>Comment</Label>
+  <Textarea
+    rows={4}
+  />
+  <Label>
+    <Checkbox name='newsletter' defaultChecked={true} />
+    Sign up for our newsletter
+  </Label>
+  <Switch />
+</Card>
+
+<Card m={4}>
+  <Image src='https://source.unsplash.com/random?new-york' />
+  <Text>Image Card</Text>
+</Card>
 

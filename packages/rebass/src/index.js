@@ -1,118 +1,216 @@
-/** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
-import { useMemo, forwardRef } from 'react'
+import { ThemeProvider } from 'theme-ui'
+import {
+  createElement as jsx,
+  forwardRef
+} from 'react'
+import merge from 'deepmerge'
+import { Box, Flex } from '@rebass/grid'
+import preset from './preset'
 
-export { preset } from './preset'
-export { Provider } from './provider'
-export { ThemeProvider }
+export { Box, Flex }
 
-export const Box = forwardRef(({
-  as = 'div',
-  sx,
-  variant,
+export const RebassProvider = ({
+  theme = {},
   ...props
-}, ref) => jsx(as, {
+}) => {
+  const merged = merge(preset, theme)
+  return (
+    jsx(ThemeProvider, {
+      ...props,
+      theme: merged,
+    })
+  )
+}
+
+const getVariant = (key, name) => [key, name].filter(Boolean).join('.')
+
+export const rx = ({
+  tag = 'div',
+  theme,
+  defaultVariant,
+  defaultProps,
+  css,
+} = {}) => forwardRef(({
+  as = tag,
+  sx,
+  variant = defaultVariant,
+  ...props
+}, ref) => jsx(Box, {
   ref,
+  ...defaultProps,
   ...props,
+  as,
+  variant: getVariant(theme, variant),
   sx: {
-    variant,
-    ...sx
+    ...css,
+    ...sx,
   }
 }))
 
-// <R.Button />
+export const Root = rx({
+  defaultVariant: 'styles.root',
+})
 
-const aliases = {
-  inlineCode: 'code',
-  thematicBreak: 'hr',
-}
-const alias = n => aliases[n] || n
+export const Text = rx({
+  theme: 'text',
+})
 
-export const themed = (tag, variant) => forwardRef((props, ref) => jsx(Box, {
-  ref,
-  as: alias(tag),
-  variant: variant || `styles.${tag}`,
-  ...props
-}))
+export const Heading = rx({
+  tag: 'h2',
+  theme: 'text',
+  css: {
+    fontWeight: 'heading',
+    fontSize: 4,
+  }
+})
 
-// Base MDX Components
-export const h1 = themed('h1')
-export const h2 = themed('h2')
-export const h3 = themed('h3')
-export const h4 = themed('h4')
-export const h5 = themed('h5')
-export const h6 = themed('h6')
-export const p = themed('p')
-export const a = themed('a')
-export const ol = themed('ol')
-export const ul = themed('ul')
-export const li = themed('li')
-export const img = themed('img')
-export const blockquote = themed('blockquote')
-export const hr = themed('hr')
-export const em = themed('em')
-export const strong = themed('strong')
-export const i = themed('i')
-export const b = themed('b')
-export const table = themed('table')
-export const thead = themed('thead')
-export const tbody = themed('tbody')
-export const th = themed('th')
-export const td = themed('td')
-// export const delete = themed('delete')
-export const pre = themed('pre')
-export const code = themed('code')
-export const inlineCode = themed('inlineCode')
+export const Link = rx({
+  tag: 'a',
+  theme: 'text',
+  css: {
+    color: 'primary',
+  }
+})
 
-export const components = {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  a,
-  ol,
-  ul,
-  li,
-  img,
-  blockquote,
-  hr,
-  em,
-  strong,
-  i,
-  b,
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  // delete,
-  pre,
-  code,
-  inlineCode,
-}
+export const Button = rx({
+  tag: 'button',
+  theme: 'buttons',
+  defaultVariant: 'primary',
+  css: {
+    appearance: 'none',
+    display: 'inline-block',
+    textAlign: 'center',
+    lineHeight: 'inherit',
+    textDecoration: 'none',
+    fontSize: 'inherit',
+    fontWeight: 'bold',
+    m: 0,
+    px: 3,
+    py: 2,
+    color: 'background',
+    bg: 'primary',
+    border: 0,
+    borderRadius: 'default',
+  }
+})
 
-// Rebass primitives
-export const Root = themed('div', 'styles.root')
-export const Button = themed('button', 'styles.button')
-export const Text = themed('div', 'styles.text')
-export const Heading = themed('h2', 'styles.heading')
-export const Image = themed('img', 'styles.img')
-export const Card = themed('div', 'styles.card')
+export const Image = rx({
+  tag: 'img',
+  theme: 'images',
+  css: {
+    display: 'block',
+    maxWidth: '100%',
+    height: 'auto',
+  }
+})
 
-// Form elements
-export const Form = themed('form')
-export const Fieldset = themed('fieldset')
-export const Label = themed('label')
-export const Input = themed('input')
-export const Select = themed('select')
-export const Textarea = themed('textarea')
+export const Card = rx({
+  theme: 'cards',
+  defaultVariant: 'default',
+})
 
-export const Progress = themed('progess')
+export const Label = rx({
+  tag: 'label',
+  defaultVariant: 'forms.label',
+  css: {
+    display: 'block',
+    width: '100%',
+  }
+})
 
-// Radio
-// Checkbox
-// Slider
+export const Input = rx({
+  tag: 'input',
+  defaultVariant: 'forms.input',
+  css: {
+    display: 'block',
+    width: '100%',
+    p: 2,
+    appearance: 'none',
+    fontSize: 'inherit',
+    lineHeight: 'inherit',
+    border: '1px solid',
+    borderRadius: 'default',
+  }
+})
 
+export const Select = rx({
+  tag: 'select',
+  defaultVariant: 'forms.select',
+  css: {
+    display: 'block',
+    width: '100%',
+    p: 2,
+    appearance: 'none',
+    fontSize: 'inherit',
+    lineHeight: 'inherit',
+    border: '1px solid',
+    borderRadius: 'default',
+  }
+})
+
+export const Textarea = rx({
+  tag: 'textarea',
+  defaultVariant: 'forms.textarea',
+  css: {
+    display: 'block',
+    width: '100%',
+    p: 2,
+    appearance: 'none',
+    fontSize: 'inherit',
+    lineHeight: 'inherit',
+    border: '1px solid',
+    borderRadius: 'default',
+  }
+})
+
+export const Radio = rx({
+  tag: 'input',
+  defaultVariant: 'forms.radio',
+  defaultProps: {
+    type: 'radio',
+  }
+})
+
+export const Checkbox = rx({
+  tag: 'input',
+  defaultVariant: 'forms.checkbox',
+  defaultProps: {
+    type: 'checkbox',
+  }
+})
+
+export const Switch = rx({
+  tag: 'button',
+  defaultVariant: 'forms.switch',
+  defaultProps: {
+    type: 'button',
+    role: 'switch',
+    children: (
+      jsx('span', { 'aria-hidden': true })
+    )
+  },
+  css: {
+    appearance: 'none',
+    display: 'inline-flex',
+    color: 'primary',
+    bg: 'gray',
+    borderRadius: 'circle',
+    width: 48,
+    height: 24,
+    p: 0,
+    border: 0,
+    boxShadow: 'inset 0 0 0 2px',
+    userSelect: 'none',
+    '& > span': {
+      display: 'block',
+      width: 24,
+      height: 24,
+      borderRadius: 'circle',
+      bg: 'currentcolor',
+      // boxShadow: 'handle'
+    }
+  }
+})
+
+// export const Slider = rx({})
+// export const Progress = rx({})
