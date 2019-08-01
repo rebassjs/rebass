@@ -2,6 +2,34 @@
 import { jsx } from 'theme-ui'
 import { forwardRef } from 'react'
 
+
+const theme = {
+  colors: {},
+  styles: {
+    root: {
+    },
+    h1: {},
+    button: {},
+  },
+}
+
+const components = {
+  h1: Styles,
+}
+
+// <Styled as='h1' tx='styles.h2' />
+// <Styled as='button' tx='styles.h2' />
+//
+// <UI as='h2' sx={{ }} />
+// <UI as='button' variant='buttons.primary' />
+// const Button = props => <UI as='button' {...props} tx='buttons.primary' />
+//
+// <Button variant='buttons.secondary' />
+
+components.h1.defaultProps = { theme: 'styles.h1' }
+components.h2.defaultProps = { theme: 'styles.h2' }
+
+/*
 const themed = (Tag, defaultProps = {}) => forwardRef((props, ref) => (
   <Tag
     ref={ref}
@@ -90,3 +118,4 @@ export const Switch = themed('button', {
     borderRadius: 99999,
   },
 })
+*/

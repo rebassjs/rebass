@@ -28,6 +28,7 @@
     "@mdx-js/react": "^1.1.4",
     "@rebass/grid": "4.0.0-0",
     "@theme-ui/preset-base": "^0.2.25",
+    "html-tags": "^3.0.0",
     "styled-system": "^5.0.0",
     "theme-ui": "^0.2.25"
   },
