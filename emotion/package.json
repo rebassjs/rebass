@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^4.0.8"
+    "styled-system": "^5.0.0"
   },
   "repository": {
     "type": "git",

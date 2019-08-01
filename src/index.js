@@ -110,3 +110,5 @@ export const Card = styled(Box)(
   ),
   themed('Card')
 )
+
+export * from 'styled-system'
