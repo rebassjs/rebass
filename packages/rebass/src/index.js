@@ -1,3 +1,4 @@
+export { preset } from './preset'
 export {
   Text,
   Heading,
@@ -6,15 +7,16 @@ export {
   Image,
   Card,
 } from './core'
-
-/**
- * - Label
- * - Input
- * - Select
- * - Textarea
- * - Form
- * - Fieldset
- */
+export {
+  Form,
+  Fieldset,
+  Label,
+  Input,
+  Select,
+  Textarea,
+  Slider,
+  Switch,
+} from './components'
 
 export { ThemeProvider } from 'theme-ui'
 export { Box, Flex } from '@rebass/grid'

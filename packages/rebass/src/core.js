@@ -48,7 +48,7 @@ export const Link = ({
   />
 
 export const Button = ({
-  variant,
+  variant = 'primary',
   sx,
   ...props
 }) =>
@@ -90,7 +90,7 @@ export const Image = ({
   />
 
 export const Card = ({
-  variant,
+  variant = 'default',
   ...props
 }) =>
   <Box

@@ -1,0 +1,35 @@
+
+# What's New
+
+- Built with Theme UI & Emotion
+- Rebass Grid is still available as Styled Components package
+- New `sx` prop available on Rebass components without JSX pragma
+- Each component supports themeable variants
+- Support for styling MDX with Theme UI
+- (TK) Form elements
+
+## Variants
+
+Variants are available for text, buttons, images, and cards.
+Variants are completely customizable via the theme object.
+
+```jsx
+// examples
+<Button variant='primary'>Primary</Button>
+<Button variant='secondary'>Secondary</Button>
+<Text variant='caps'>All caps</Text>
+<Link variant='nav'>Navigation Link</Link>
+<Image variant='avatar' src='avatar.png' />
+<Card variant='highlight'>Card</Link>
+```
+
+Each component uses the following keys for variant definitions.
+
+Component | Theme Key
+---|---
+`Text` | `text`
+`Heading` | `text`
+`Link` | `text`
+`Button` | `buttons`
+`Image` | `images`
+`Card` | `cards`

@@ -4,7 +4,8 @@
   "description": "React primitive UI components built with styled-system",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "babel src -d dist --root-mode upward"
+    "prepare": "babel src -d dist --root-mode upward",
+    "watch": "babel src -d dist --watch --root-mode upward"
   },
   "keywords": [
     "components",
@@ -23,9 +24,10 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@rebass/grid": "4.0.0-0",
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.1.4",
+    "@rebass/grid": "4.0.0-0",
+    "@theme-ui/preset-base": "^0.2.25",
     "styled-system": "^5.0.0",
     "theme-ui": "^0.2.25"
   },

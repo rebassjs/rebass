@@ -8,36 +8,30 @@ import {
   Button,
   Image,
   Card,
+  Label,
+  Input,
+  Select,
 } from 'rebass'
+import Provider from '../provider'
 
 export default props =>
-  <ThemeProvider theme={{
-    colors: {
-      text: '#000',
-      background: '#fff',
-      primary: '#07c',
-    },
-    buttons: {
-      primary: {
-        color: 'background',
-        bg: 'primary',
-        borderRadius: 4,
-      },
-      secondary: {
-        variant: 'buttons.primary',
-        bg: 'tomato',
-      },
-    }
-  }}>
+  <Provider>
     <Box
       {...props}
       sx={{
         fontFamily: 'system-ui, sans-serif',
       }}
     />
-  </ThemeProvider>
+  </Provider>
 
 # Rebass 4 Demo Page
+
+<Link href='/' variant='nav'>
+  Home
+</Link>
+<Link href='/demo' variant='nav'>
+  Demo
+</Link>
 
 Hello
 
@@ -51,9 +45,28 @@ Hello
   fontSize={6}
   fontFamily='system-ui, sans-serif'
   fontWeight='bold'
-  color='white'
-  bg='tomato'>
+  color='background'
+  bg='primary'>
   Box
+</Box>
+
+<Box py={4}>
+  <Label htmlFor='name'>Name</Label>
+  <Input
+    type='text'
+    id='name'
+    name='name'
+    defaultValue='hello'
+  />
+  <Label htmlFor='location'>Location</Label>
+  <Select
+    id='location'
+    name='location'>
+    <option>NYC</option>
+    <option>London</option>
+    <option>Toronto</option>
+    <option>SF</option>
+  </Select>
 </Box>
 
 <Button
@@ -67,16 +80,15 @@ Hello
 
 <Heading as='h1'
   sx={{
-    color: 'tomato',
+    color: 'secondary',
   }}>
   Heading
 </Heading>
 
 <Image
-  src='https://source.unsplash.com/random?new-york'
-  width={512}
+  src='https://jxnblk.com/avatar.png'
+  variant='avatar'
 />
-
 
 <Card
   p={3}>
