@@ -1,26 +1,19 @@
 import {
-  RebassProvider,
   Root,
   Box,
   Heading,
   Button,
   Image,
   Card,
-  Label,
-  Input,
-  Select,
-  Textarea,
-  Radio,
-  Checkbox,
-  Switch,
 } from 'rebass'
+import Provider from '../provider'
 
 export default props =>
-  <RebassProvider>
+  <Provider>
     <Root>
       {props.children}
     </Root>
-  </RebassProvider>
+  </Provider>
 
 # Rebass 4 Demo Page
 
@@ -43,6 +36,15 @@ export default props =>
   </Button>
 </Box>
 
+<Card m={4}>
+  <Image src='https://source.unsplash.com/random?new-york' />
+  <Text>Image Card</Text>
+</Card>
+
+
+---
+
+```jsx
 <Card m={4}>
   <Heading>Forms</Heading>
   <Label htmlFor='name'>Name</Label>
@@ -80,9 +82,5 @@ export default props =>
   </Label>
   <Switch />
 </Card>
-
-<Card m={4}>
-  <Image src='https://source.unsplash.com/random?new-york' />
-  <Text>Image Card</Text>
-</Card>
+```
 

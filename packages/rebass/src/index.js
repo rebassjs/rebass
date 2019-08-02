@@ -1,82 +1,84 @@
-import { ThemeProvider } from 'theme-ui'
-import {
-  createElement as jsx,
-  forwardRef
-} from 'react'
-import merge from 'deepmerge'
-import { Box, Flex } from '@rebass/grid'
+import { jsx, ThemeProvider } from 'theme-ui'
 import preset from './preset'
 
-export { Box, Flex }
-
-export const RebassProvider = ({
-  theme = {},
-  ...props
-}) => {
-  const merged = merge(preset, theme)
-  return (
-    jsx(ThemeProvider, {
-      ...props,
-      theme: merged,
-    })
-  )
-}
-
-const getVariant = (key, name) => [key, name].filter(Boolean).join('.')
-
-export const rx = ({
-  tag = 'div',
-  theme,
-  defaultVariant,
-  defaultProps,
-  css,
-} = {}) => forwardRef(({
-  as = tag,
+export const Box = ({
+  as = 'div',
   sx,
-  variant = defaultVariant,
+  m, mt, mr, mb, ml, mx, my,
+  p, pt, pr, pb, pl, px, py,
+  color, bg,
   ...props
-}, ref) => jsx(Box, {
-  ref,
-  ...defaultProps,
+}) =>
+  jsx(as, {
+    ...props,
+    sx: {
+      ...sx,
+      m, mt, mr, mb, ml, mx, my,
+      p, pt, pr, pb, pl, px, py,
+      color, bg,
+    }
+  })
+
+export const Root = ({
+  sx,
+  ...props
+}) => jsx(Box, {
+  ...props,
+  sx: {
+    variant: 'styles.root',
+    ...sx
+  }
+})
+
+export const Text = ({
+  variant,
+  sx,
+  ...props
+}) => jsx(Box, {
+  ...props,
+  sx: {
+    variant: `text.${variant}`,
+    ...sx
+  }
+})
+
+export const Heading = ({
+  as = 'h2',
+  sx,
+  variant = 'heading',
+  ...props
+}) => jsx(Box, {
   ...props,
   as,
-  variant: getVariant(theme, variant),
   sx: {
-    ...css,
-    ...sx,
-  }
-}))
-
-export const Root = rx({
-  defaultVariant: 'styles.root',
-})
-
-export const Text = rx({
-  theme: 'text',
-})
-
-export const Heading = rx({
-  tag: 'h2',
-  theme: 'text',
-  css: {
-    fontWeight: 'heading',
-    fontSize: 4,
+    variant: `text.${variant}`,
+    ...sx
   }
 })
 
-export const Link = rx({
-  tag: 'a',
-  theme: 'text',
-  css: {
-    color: 'primary',
+export const Link = ({
+  as = 'a',
+  sx,
+  variant = 'link',
+  ...props
+}) => jsx(Box, {
+  ...props,
+  as,
+  sx: {
+    variant: `text.${variant}`,
+    ...sx
   }
 })
 
-export const Button = rx({
-  tag: 'button',
-  theme: 'buttons',
-  defaultVariant: 'primary',
-  css: {
+export const Button = ({
+  as = 'button',
+  sx,
+  variant = 'primary',
+  ...props
+}) => jsx(Box, {
+  ...props,
+  as,
+  sx: {
     appearance: 'none',
     display: 'inline-block',
     textAlign: 'center',
@@ -91,126 +93,42 @@ export const Button = rx({
     bg: 'primary',
     border: 0,
     borderRadius: 'default',
+    variant: `buttons.${variant}`,
+    ...sx
   }
 })
 
-export const Image = rx({
-  tag: 'img',
-  theme: 'images',
-  css: {
+export const Image = ({
+  as = 'img',
+  variant,
+  sx,
+  ...props
+}) => jsx(Box, {
+  ...props,
+  as,
+  sx: {
     display: 'block',
     maxWidth: '100%',
     height: 'auto',
+    variant: `images.${variant}`,
+    ...sx
   }
 })
 
-export const Card = rx({
-  theme: 'cards',
-  defaultVariant: 'default',
-})
-
-export const Label = rx({
-  tag: 'label',
-  defaultVariant: 'forms.label',
-  css: {
-    display: 'block',
-    width: '100%',
+export const Card = ({
+  sx,
+  variant = 'default',
+  ...props,
+}) => jsx(Box, {
+  ...props,
+  sx: {
+    variant: `cards.${variant}`,
+    ...sx,
   }
 })
 
-export const Input = rx({
-  tag: 'input',
-  defaultVariant: 'forms.input',
-  css: {
-    display: 'block',
-    width: '100%',
-    p: 2,
-    appearance: 'none',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    border: '1px solid',
-    borderRadius: 'default',
-  }
-})
 
-export const Select = rx({
-  tag: 'select',
-  defaultVariant: 'forms.select',
-  css: {
-    display: 'block',
-    width: '100%',
-    p: 2,
-    appearance: 'none',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    border: '1px solid',
-    borderRadius: 'default',
-  }
-})
-
-export const Textarea = rx({
-  tag: 'textarea',
-  defaultVariant: 'forms.textarea',
-  css: {
-    display: 'block',
-    width: '100%',
-    p: 2,
-    appearance: 'none',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    border: '1px solid',
-    borderRadius: 'default',
-  }
-})
-
-export const Radio = rx({
-  tag: 'input',
-  defaultVariant: 'forms.radio',
-  defaultProps: {
-    type: 'radio',
-  }
-})
-
-export const Checkbox = rx({
-  tag: 'input',
-  defaultVariant: 'forms.checkbox',
-  defaultProps: {
-    type: 'checkbox',
-  }
-})
-
-export const Switch = rx({
-  tag: 'button',
-  defaultVariant: 'forms.switch',
-  defaultProps: {
-    type: 'button',
-    role: 'switch',
-    children: (
-      jsx('span', { 'aria-hidden': true })
-    )
-  },
-  css: {
-    appearance: 'none',
-    display: 'inline-flex',
-    color: 'primary',
-    bg: 'gray',
-    borderRadius: 'circle',
-    width: 48,
-    height: 24,
-    p: 0,
-    border: 0,
-    boxShadow: 'inset 0 0 0 2px',
-    userSelect: 'none',
-    '& > span': {
-      display: 'block',
-      width: 24,
-      height: 24,
-      borderRadius: 'circle',
-      bg: 'currentcolor',
-      // boxShadow: 'handle'
-    }
-  }
-})
-
-// export const Slider = rx({})
-// export const Progress = rx({})
+export {
+  ThemeProvider,
+  preset,
+}

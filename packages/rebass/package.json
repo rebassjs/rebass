@@ -26,7 +26,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.1.4",
-    "@rebass/grid": "4.0.0-0",
     "@theme-ui/preset-base": "^0.2.25",
     "deepmerge": "^4.0.0",
     "html-tags": "^3.0.0",
