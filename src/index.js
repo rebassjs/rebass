@@ -44,9 +44,7 @@ export const Text = styled(Box)(
   themed('Text')
 )
 
-export const Heading = styled(Text)({
-  margin: 0,
-},
+export const Heading = styled(Text)(
   themed('Heading')
 )
 
@@ -102,7 +100,6 @@ export const Image = styled(Box)({
 
 Image.defaultProps = {
   as: 'img',
-  m: 0
 }
 
 const cards = variant({ key: 'cards' })

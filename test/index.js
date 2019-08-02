@@ -112,8 +112,8 @@ describe('Button', () => {
     const json = renderJSON(
       <Button mr={3} />
     )
-    console.log(json)
     expect(json).toHaveStyleRule('margin-right', '16px')
+    expect(json).toMatchSnapshot()
   })
 })
 
