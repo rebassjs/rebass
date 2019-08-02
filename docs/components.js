@@ -8,6 +8,7 @@ export const Root = props =>
     pt={4}
     pb={6}
     css={{
+      fontFamily: 'system-ui, sans-serif',
       maxWidth: '1024px'
     }}>
     {props.children}

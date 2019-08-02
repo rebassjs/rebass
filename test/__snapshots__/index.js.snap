@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders with margin right 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  margin-right: 16px;
+  font-size: inherit;
+  font-weight: bold;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: 0;
+  border-radius: 4px;
+}
+
+<button
+  className="c0"
+  color="white"
+  fontSize="inherit"
+  fontWeight="bold"
+/>
+`;

@@ -107,6 +107,14 @@ describe('Button', () => {
     )
     expect(json.type).toBe('a')
   })
+
+  test('renders with margin right', () => {
+    const json = renderJSON(
+      <Button mr={3} />
+    )
+    expect(json).toHaveStyleRule('margin-right', '16px')
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Link', () => {
