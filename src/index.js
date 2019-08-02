@@ -16,8 +16,12 @@ import {
 
 const themed = key => props => props.theme[key]
 
+// shim for missing babel configs
+const css = props => props.css
+
 export const Box = styled('div')({
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  margin: 0,
 },
   compose(
     space,
@@ -26,6 +30,7 @@ export const Box = styled('div')({
     color,
     flexbox,
   ),
+  css,
   themed('Box')
 )
 
@@ -39,13 +44,14 @@ export const Text = styled(Box)(
   themed('Text')
 )
 
-export const Heading = styled(Text)(
+export const Heading = styled(Text)({
+  margin: 0,
+},
   themed('Heading')
 )
 
 Heading.defaultProps = {
   as: 'h2',
-  m: 0,
   fontSize: 4,
   fontWeight: 'bold',
 }
@@ -59,13 +65,14 @@ Link.defaultProps = {
   color: 'blue'
 }
 
-export const Button = styled(Box)({
-  appearance: 'none',
-  display: 'inline-block',
-  textAlign: 'center',
-  lineHeight: 'inherit',
-  textDecoration: 'none',
-},
+export const Button = styled(Box)(
+  {
+    appearance: 'none',
+    display: 'inline-block',
+    textAlign: 'center',
+    lineHeight: 'inherit',
+    textDecoration: 'none',
+  },
   compose(
     border,
     buttonStyle,
@@ -77,7 +84,6 @@ Button.defaultProps = {
   as: 'button',
   fontSize: 'inherit',
   fontWeight: 'bold',
-  m: 0,
   px: 3,
   py: 2,
   color: 'white',
