@@ -23,10 +23,8 @@ https://rebassjs.org
 [npm]: https://npmjs.com/package/rebass
 
 ```sh
-npm i rebass styled-components
+npm i rebass
 ```
-
-**Note:** Rebass v3 is intended for use with Styled Components v4. Some features may not work with previous versions.
 
 ## Getting Started
 
@@ -40,25 +38,19 @@ export default props =>
     <Button>Rebass</Button>
   </Box>
 ```
-
-### Emotion
-
-To use Rebass with [emotion][], install and use the `@rebass/emotion`
-
-```sh
-npm i @rebass/emotion @emotion/core @emotion/styled
-```
-
 ## Features
 
-- 8 core UI components to serve as the basis for design systems
-- Super small (~1KB)
-- Responsive, themeable style props from [Styled System][]
-- Flexbox grid with the Box and Flex components
-- Extensible base components
-- Design-system based consistency
+- Foundation for building design systems
+- First-class support for theming
+- Tiny footprint (~1KB) **TK**
+- Best-in-class developer ergonomics with style props from [Styled System][]
+- Fast, mobile-first responsive styles
+- [Reflexbox][]: flexbox layout with the Box and Flex components
+- Easy to extend and customize
+- Consistency through design constraints and user-defined scales
 - Built for responsive web design
 
+[reflexbox]: https://rebassjs.org/reflexbox
 
 > "One of the best React component libs out there"
 > – [Max Stoiber](https://twitter.com/mxstbr/status/882657561111080960)
@@ -71,7 +63,7 @@ npm i @rebass/emotion @emotion/core @emotion/styled
 
 ## Principles
 
-Rebass is built with the following principles in mind.
+Rebass is intended to be:
 
 - **Minimal**
 - **Useful**
@@ -80,7 +72,9 @@ Rebass is built with the following principles in mind.
 - **Consistent**
 - **Extensible**
 - **Themeable**
-- **Do one thing well**
+
+> Do one thing, and do it well
+> – [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well)
 
 See [Patterns for Style Composition in React](http://jxnblk.com/writing/posts/patterns-for-style-composition-in-react/)
 for more on some of the thought behind Rebass.
@@ -92,8 +86,7 @@ for more on some of the thought behind Rebass.
 - [Props](https://rebassjs.org/props)
 - [Extending](https://rebassjs.org/extending)
 - [Theming](https://rebassjs.org/theming)
-- [Box](https://rebassjs.org/Box)
-- [Flex](https://rebassjs.org/Flex)
+- [Reflexbox](https://rebassjs.org/reflexbox)
 - [Text](https://rebassjs.org/Text)
 - [Heading](https://rebassjs.org/Heading)
 - [Button](https://rebassjs.org/Button)
@@ -103,30 +96,31 @@ for more on some of the thought behind Rebass.
 
 ## CodeSandbox
 
+**TK**
+
 Try it out:
-https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox-v3
+https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
 
 
 ### Related
 
 - [Styled System][]
-- [Rebass Grid][]
-- [Styled Components][]
+- [Theme UI][]
 - [Emotion][]
+- [Styled Components][]
 
 [styled system]: https://styled-system.com
-[Rebass Grid]: https://github.com/rebassjs/grid
 [styled components]: https://github.com/styled-components/styled-components
 [emotion]: https://github.com/emotion-js/emotion
+[theme ui]: https://theme-ui.com
 
 #### Previous Versions
 
+- **TK** v3.2.1
 - [v2.3.2](https://github.com/rebassjs/rebass/tree/v2) – [Docs for Rebass v2](https://rebass-v2.now.sh)
 - [v1.0.7](https://github.com/rebassjs/rebass/tree/v1.0.7)
 
 ---
 
-[Contributing](CONTRIBUTING.md)
-|
-[MIT License](LICENSE.md)
+[Contributing](CONTRIBUTING.md) | [MIT License](LICENSE.md)
 
