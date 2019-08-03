@@ -86,6 +86,12 @@ export const preset = {
       bg: 'primary',
       borderRadius: 'default',
     },
+    outline: {
+      variant: 'buttons.primary',
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 2px',
+    },
     secondary: {
       variant: 'buttons.primary',
       color: 'background',

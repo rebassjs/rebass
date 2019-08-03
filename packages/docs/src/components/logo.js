@@ -1,7 +1,7 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import { width, height } from 'styled-system'
-import { theme } from 'rebass'
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
+import { layout } from 'styled-system'
 
 const Svg = styled(({
   width,
@@ -9,8 +9,7 @@ const Svg = styled(({
   ...props
 }) => <svg xmlns='http://www.w3.org/2000/svg' {...props} />)`
   transform: rotate3d(1, 1, 1, 0deg);
-  ${width}
-  ${height}
+  ${layout}
 `
 
 const spin1 = keyframes`

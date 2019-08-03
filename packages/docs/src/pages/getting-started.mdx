@@ -1,0 +1,111 @@
+import { Layout } from '..'
+
+export default Layout
+export const title = 'Getting Started'
+
+# Getting Started
+
+```sh
+npm i rebass
+```
+
+Use Rebass components to build larger, composite components.
+
+```jsx
+import React from 'react'
+import {
+  Box,
+  Card,
+  Image,
+  Heading,
+  Text
+} from 'rebass'
+
+export default ({
+  image,
+  title,
+  description
+}) =>
+  <Box width={256}>
+    <Card
+      sx={{
+        p: 1,
+        borderRadius: 2,
+        boxShadow: '0 0 16px rgba(0, 0, 0, .25)',
+      }}>
+      <Image src={image} />
+      <Box px={2}>
+        <Heading as='h3'>
+          {title}
+        </Heading>
+        <Text fontSize={0}>
+          {description}
+        </Text>
+      </Box>
+    </Card>
+  </Box>
+```
+
+## Props
+
+All components in Rebass are extensions of the base [Box](/box) component, which includes an `sx` prop for theme-based styling as well as a standard set of [Styled System][] style props.
+
+## Extending
+
+Use Rebass components as basic building blocks and extend them to create custom UI components.
+
+```jsx
+// custom button example
+import React from 'react'
+import { Button } from 'rebass'
+
+export default props =>
+  <Button
+    {...props}
+    sx={{
+      fontSize: 1,
+      textTransform: 'uppercase',
+      borderRadius: 99999,
+    }}
+  />
+```
+
+## Theming
+
+Use the default Rebass theme or completely customize the look and feel with a custom theme.
+Since Rebass follows the [Theme Specification][], any theme built for use with [Theme UI][] or [Styled System][] will work out-of-the-box.
+
+```jsx
+import React from 'react'
+import { ThemeProvider } from '@emotion/theming'
+
+const theme = {
+  fontSizes: [
+    12, 14, 16, 24, 32, 48, 64
+  ],
+  colors: {
+    primary: '#07c',
+    gray: '#f6f6ff',
+  },
+  buttons: {
+    primary: {
+      color: 'white',
+      bg: 'primary',
+    },
+    outline: {
+      color: 'blue',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 2px'
+    },
+  },
+}
+
+export default props =>
+  <ThemeProvider theme={theme}>
+    {props.children}
+  </ThemeProvider>
+```
+
+[styled system]: https://styled-system.com
+[theme specification]: https://github.com/system-ui/theme-specification
+[theme ui]: https://theme-ui.com

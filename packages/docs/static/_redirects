@@ -1,6 +1,5 @@
-
-/Box        /reflexbox
-/Flex       /reflexbox
+/Box        /box
+/Flex       /flex
 /Text       /text
 /Heading    /heading
 /Button     /button

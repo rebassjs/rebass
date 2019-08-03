@@ -48,7 +48,6 @@ export default props =>
 - [Reflexbox][]: flexbox layout with the Box and Flex components
 - Easy to extend and customize
 - Consistency through design constraints and user-defined scales
-- Built for responsive web design
 
 [reflexbox]: https://rebassjs.org/reflexbox
 
