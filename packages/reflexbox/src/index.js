@@ -12,6 +12,7 @@ import css, { get } from '@styled-system/css'
 import shouldForwardProp from '@styled-system/should-forward-prop'
 
 const sx = props => css(props.sx)(props.theme)
+const base = props => css(props.__css)(props.theme)
 const variant = ({
   theme,
   variant,
@@ -30,6 +31,7 @@ export const Box = styled('div', {
   margin: 0,
   minWidth: 0,
 },
+  base,
   variant,
   sx,
   props => props.css,

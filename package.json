@@ -46,7 +46,6 @@
       }
     },
     "setupFilesAfterEnv": [
-      "jest-styled-components"
     ],
     "snapshotSerializers": [
       "jest-emotion"

@@ -179,6 +179,13 @@ describe('Flex', () => {
     expect(json).toHaveStyleRule('display', 'flex')
   })
 
+  test('renders with Box props', () => {
+    const json = render(
+      <Flex color='tomato' />
+    )
+    expect(json).toHaveStyleRule('color', 'tomato')
+  })
+
   test('as prop does not break Box props', () => {
     const json = render(
       <Flex

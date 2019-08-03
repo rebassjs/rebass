@@ -4,11 +4,11 @@
 :package: Ergonomic, responsive React layout and grid system.
 The original *Box* component™ since 2015
 
-[![standard/theme](https://flat.badgen.net/badge/standard/theme/black)](https://system-ui.com/theme)
 [![Build Status][badge]][travis]
 [![Downloads][downloads-badge]][npm]
 [![Version][version-badge]][npm]
 [![MIT License][license-badge]](LICENSE.md)
+[![system-ui/theme](https://flat.badgen.net/badge/system-ui/theme/black)](https://system-ui.com/theme)
 
 [badge]: https://flat.badgen.net/travis/rebassjs/rebass/master
 [travis]: https://travis-ci.org/rebassjs/rebass

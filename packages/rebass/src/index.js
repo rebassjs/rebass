@@ -1,134 +1,80 @@
-import { jsx, ThemeProvider } from 'theme-ui'
-import preset from './preset'
+import React, { forwardRef } from 'react'
+import { Box, Flex } from 'reflexbox'
 
-export const Box = ({
-  as = 'div',
-  sx,
-  m, mt, mr, mb, ml, mx, my,
-  p, pt, pr, pb, pl, px, py,
-  color, bg,
-  ...props
-}) =>
-  jsx(as, {
-    ...props,
-    sx: {
-      ...sx,
-      m, mt, mr, mb, ml, mx, my,
-      p, pt, pr, pb, pl, px, py,
-      color, bg,
-    }
-  })
+export { Box, Flex }
 
-export const Root = ({
-  sx,
-  ...props
-}) => jsx(Box, {
-  ...props,
-  sx: {
-    variant: 'styles.root',
-    ...sx
-  }
-})
+export const Text = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    tx='text'
+    {...props}
+  />
+)
 
-export const Text = ({
-  variant,
-  sx,
-  ...props
-}) => jsx(Box, {
-  ...props,
-  sx: {
-    variant: `text.${variant}`,
-    ...sx
-  }
-})
+export const Heading = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    as='h2'
+    tx='text'
+    {...props}
+    __css={{
+      fontSize: 4,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    }}
+  />
+)
 
-export const Heading = ({
-  as = 'h2',
-  sx,
-  variant = 'heading',
-  ...props
-}) => jsx(Box, {
-  ...props,
-  as,
-  sx: {
-    variant: `text.${variant}`,
-    ...sx
-  }
-})
+export const Link = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    as='a'
+    variant='styles.a'
+    {...props}
+  />
+)
 
-export const Link = ({
-  as = 'a',
-  sx,
-  variant = 'link',
-  ...props
-}) => jsx(Box, {
-  ...props,
-  as,
-  sx: {
-    variant: `text.${variant}`,
-    ...sx
-  }
-})
+export const Button = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    as='button'
+    tx='buttons'
+    variant='primary'
+    {...props}
+    __css={{
+      appearance: 'none',
+      display: 'inline-block',
+      textAlign: 'center',
+      lineHeight: 'inherit',
+      textDecoration: 'none',
+      fontSize: 'inherit',
+      px: 3,
+      py: 2,
+      color: 'white',
+      bg: 'primary',
+      border: 0,
+      borderRadius: 4,
+    }}
+  />
+)
 
-export const Button = ({
-  as = 'button',
-  sx,
-  variant = 'primary',
-  ...props
-}) => jsx(Box, {
-  ...props,
-  as,
-  sx: {
-    appearance: 'none',
-    display: 'inline-block',
-    textAlign: 'center',
-    lineHeight: 'inherit',
-    textDecoration: 'none',
-    fontSize: 'inherit',
-    fontWeight: 'bold',
-    m: 0,
-    px: 3,
-    py: 2,
-    color: 'background',
-    bg: 'primary',
-    border: 0,
-    borderRadius: 'default',
-    variant: `buttons.${variant}`,
-    ...sx
-  }
-})
+export const Image = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    as='img'
+    {...props}
+    __css={{
+      maxWidth: '100%',
+      height: 'auto',
+    }}
+  />
+)
 
-export const Image = ({
-  as = 'img',
-  variant,
-  sx,
-  ...props
-}) => jsx(Box, {
-  ...props,
-  as,
-  sx: {
-    display: 'block',
-    maxWidth: '100%',
-    height: 'auto',
-    variant: `images.${variant}`,
-    ...sx
-  }
-})
-
-export const Card = ({
-  sx,
-  variant = 'default',
-  ...props,
-}) => jsx(Box, {
-  ...props,
-  sx: {
-    variant: `cards.${variant}`,
-    ...sx,
-  }
-})
-
-
-export {
-  ThemeProvider,
-  preset,
-}
+export const Card = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    variant='card'
+    {...props}
+  />
+)

@@ -1,8 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
+import { matchers } from 'jest-emotion'
 import {
-  Box,
-  Flex,
   Text,
   Heading,
   Button,
@@ -11,62 +10,9 @@ import {
   Card,
 } from '../src'
 
+expect.extend(matchers)
+
 const render = el => renderer.create(el).toJSON()
-
-describe('Box', () => {
-  test('renders', () => {
-    const json = render(
-      <Box />
-    )
-    expect(json.type).toBe('div')
-  })
-
-  test('renders with as prop', () => {
-    const json = render(
-      <Box as='header' />
-    )
-    expect(json.type).toBe('header')
-  })
-
-  test('renders with style props', () => {
-    const json = render(
-      <Box width={1} />
-    )
-    expect(json).toHaveStyleRule('width', '100%')
-  })
-})
-
-describe('Flex', () => {
-  test('renders', () => {
-    const json = render(
-      <Flex />
-    )
-    expect(json.type).toBe('div')
-  })
-
-  test('renders with flex props', () => {
-    const json = render(
-      <Flex alignItems='center' />
-    )
-    expect(json).toHaveStyleRule('display', 'flex')
-    expect(json).toHaveStyleRule('align-items', 'center')
-  })
-
-  test('renders with Box props', () => {
-    const json = render(
-      <Flex color='tomato' />
-    )
-    expect(json).toHaveStyleRule('color', 'tomato')
-  })
-
-  test('renders with as and Box props', () => {
-    const json = render(
-      <Flex as='footer' color='tomato' />
-    )
-    expect(json.type).toBe('footer')
-    expect(json).toHaveStyleRule('color', 'tomato')
-  })
-})
 
 describe('Text', () => {
   test('renders', () => {
@@ -78,6 +24,24 @@ describe('Text', () => {
     expect(json).toHaveStyleRule('font-weight', 'bold')
     expect(json).toHaveStyleRule('font-style', 'italic')
   })
+
+  test('renders with text variants', () => {
+    const json = render(
+      <Text
+        theme={{
+          text: {
+            caps: {
+              textTransform: 'uppercase',
+              letterSpacing: '0.2em',
+            }
+          }
+        }}
+        variant='caps'
+      />
+    )
+    expect(json).toHaveStyleRule('text-transform', 'uppercase')
+    expect(json).toHaveStyleRule('letter-spacing', '0.2em')
+  })
 })
 
 describe('Heading', () => {
@@ -87,7 +51,25 @@ describe('Heading', () => {
     )
     expect(json.type).toBe('h2')
     expect(json).toHaveStyleRule('font-size', '24px')
-    expect(json).toHaveStyleRule('font-weight', 'bold')
+    expect(json).toHaveStyleRule('font-weight', 'heading')
+  })
+
+  test('renders with text variants', () => {
+    const json = render(
+      <Heading
+        theme={{
+          text: {
+            display: {
+              fontSize: 64,
+              fontWeight: 900,
+            }
+          }
+        }}
+        variant='display'
+      />
+    )
+    expect(json).toHaveStyleRule('font-size', '64px')
+    expect(json).toHaveStyleRule('font-weight', '900')
   })
 })
 
@@ -98,7 +80,7 @@ describe('Button', () => {
     )
     expect(json.type).toBe('button')
     expect(json).toHaveStyleRule('color', 'white')
-    expect(json).toHaveStyleRule('background-color', 'blue')
+    expect(json).toHaveStyleRule('background-color', 'primary')
   })
 
   test('renders as <a>', () => {
@@ -115,7 +97,21 @@ describe('Link', () => {
       <Link />
     )
     expect(json.type).toBe('a')
-    expect(json).toHaveStyleRule('color', 'blue')
+  })
+
+  test('renders with theme', () => {
+    const json = render(
+      <Link
+        theme={{
+          styles: {
+            a: {
+              color: 'primary',
+            }
+          }
+        }}
+      />
+    )
+    expect(json).toHaveStyleRule('color', 'primary')
   })
 })
 
@@ -135,8 +131,10 @@ describe('Card', () => {
       <Card
         p={3}
         bg='tomato'
-        borderRadius={8}
-        boxShadow='0 0 48px tomato'
+        sx={{
+          borderRadius: 8,
+          boxShadow: '0 0 48px tomato',
+        }}
       />
     )
     expect(json.type).toBe('div')
@@ -144,5 +142,24 @@ describe('Card', () => {
     expect(json).toHaveStyleRule('background-color', 'tomato')
     expect(json).toHaveStyleRule('border-radius', '8px')
     expect(json).toHaveStyleRule('box-shadow', '0 0 48px tomato')
+  })
+
+  test('renders with default variant', () => {
+    const json = render(
+      <Card
+        theme={{
+          variants: {
+            card: {
+              p: 3,
+              bg: 'tomato',
+              borderRadius: 4,
+            }
+          }
+        }}
+      />
+    )
+    expect(json).toHaveStyleRule('padding', '16px')
+    expect(json).toHaveStyleRule('background-color', 'tomato')
+    expect(json).toHaveStyleRule('border-radius', '4px')
   })
 })
