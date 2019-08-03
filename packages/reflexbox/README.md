@@ -1,8 +1,21 @@
 
 # Reflexbox
 
-Ergonomic, responsive React layout and grid system.
+:package: Ergonomic, responsive React layout and grid system.
 The original *Box* component™ since 2015
+
+[![standard/theme](https://flat.badgen.net/badge/standard/theme/black)](https://system-ui.com/theme)
+[![Build Status][badge]][travis]
+[![Downloads][downloads-badge]][npm]
+[![Version][version-badge]][npm]
+[![MIT License][license-badge]](LICENSE.md)
+
+[badge]: https://flat.badgen.net/travis/rebassjs/rebass/master
+[travis]: https://travis-ci.org/rebassjs/rebass
+[downloads-badge]: https://flat.badgen.net/npm/dw/reflexbox
+[version-badge]: https://flat.badgen.net/npm/v/reflexbox
+[license-badge]: https://flat.badgen.net/badge/license/MIT/blue
+[npm]: https://npmjs.com/package/reflexbox
 
 - Primitive styled components for all your layout needs
 - Customize styles inline with the `sx` prop
