@@ -1,0 +1,36 @@
+{
+  "name": "reflexbox",
+  "version": "4.0.0-0",
+  "description": "Responsive React grid system built with Styled System, with support for Emotion and Styled Components",
+  "main": "dist/index.js",
+  "keywords": [
+    "reflexbox",
+    "flexbox",
+    "grid-styled",
+    "rebass",
+    "rebass-grid",
+    "layout",
+    "emotion",
+    "css",
+    "style"
+  ],
+  "scripts": {
+    "prepare": "babel src -d dist && yarn styled-components",
+    "styled-components": "NODE_ENV=styled babel src -d styled-components",
+    "watch": "babel src -d dist --watch --root-mode upward"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
+    "@styled-system/css": "^5.0.0",
+    "@styled-system/should-forward-prop": "^5.0.0",
+    "react": "^16.8.6",
+    "styled-system": "^5.0.0"
+  },
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "repository": "rebassjs/rebass",
+  "devDependencies": {
+    "babel-plugin-transform-rename-import": "^2.3.0"
+  }
+}

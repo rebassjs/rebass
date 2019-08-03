@@ -13,7 +13,11 @@ import shouldForwardProp from '@styled-system/should-forward-prop'
 
 const sx = props => css(props.sx)(props.theme)
 const variant = props =>
-  css(get(props.theme, props.variant))(props.theme)
+  css(
+    get(props.theme, 'variants.' + props.variant,
+      get(props.theme, props.variant)
+    )
+  )(props.theme)
 
 export const Box = styled('div', {
   shouldForwardProp
