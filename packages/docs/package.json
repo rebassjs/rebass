@@ -13,11 +13,14 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.1.4",
     "@mdx-js/react": "^1.1.4",
+    "@rebass/preset": "4.0.0-0",
     "gatsby": "^2.13.48",
     "gatsby-plugin-catch-links": "^2.1.2",
     "gatsby-plugin-mdx": "^1.0.22",
+    "gatsby-plugin-theme-ui": "^0.2.26",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rebass": "4.0.0-0"
+    "rebass": "4.0.0-0",
+    "theme-ui": "^0.2.26"
   }
 }

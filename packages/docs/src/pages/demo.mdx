@@ -1,19 +1,13 @@
 import {
-  Root,
   Box,
   Heading,
   Button,
   Image,
   Card,
 } from 'rebass'
-import Provider from '../provider'
+import Layout from '../layout'
 
-export default props =>
-  <Provider>
-    <Root>
-      {props.children}
-    </Root>
-  </Provider>
+export default Layout
 
 # Rebass 4 Demo Page
 
@@ -44,43 +38,4 @@ export default props =>
 
 ---
 
-```jsx
-<Card m={4}>
-  <Heading>Forms</Heading>
-  <Label htmlFor='name'>Name</Label>
-  <Input
-    id='name'
-    name='name'
-  />
-  <Label htmlFor='location'>
-    Location
-  </Label>
-  <Select>
-    <option>NYC</option>
-    <option>DC</option>
-    <option>SF</option>
-    <option>LA</option>
-    <option>CHI</option>
-    <option>LDN</option>
-    <option>ATX</option>
-  </Select>
-  <Label>
-    <Radio name='active' value='true' defaultChecked={true} />
-    On
-  </Label>
-  <Label>
-    <Radio name='active' value='false' defaultChecked={true} />
-    Off
-  </Label>
-  <Label htmlFor='comment'>Comment</Label>
-  <Textarea
-    rows={4}
-  />
-  <Label>
-    <Checkbox name='newsletter' defaultChecked={true} />
-    Sign up for our newsletter
-  </Label>
-  <Switch />
-</Card>
-```
 

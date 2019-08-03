@@ -93,6 +93,11 @@ export const preset = {
     },
   },
   styles: {
+    root: {
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+    },
     a: {
       color: 'primary',
     }
