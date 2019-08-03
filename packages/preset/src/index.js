@@ -1,13 +1,32 @@
 // default theme preset
 
 export const preset = {
-  // add to theme-ui preset
   colors: {
     text: '#000',
     background: '#fff',
-    background: '#fff',
+    primary: '#07c',
+    secondary: '#30c',
+    muted: '#f6f6f9',
     gray: '#dddddf',
   },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monospace',
+  },
+  fontSizes: [
+    12, 14, 16, 20, 24, 32, 48, 64, 96
+  ],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.25,
+  },
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     avatar: 48,
   },
@@ -19,6 +38,23 @@ export const preset = {
     card: '0 0 4px rgba(0, 0, 0, .125)',
   },
   // rebass variants
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+    },
+    display: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      fontSize: [ 5, 6, 7 ],
+    },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.1em',
+    },
+  },
   variants: {
     avatar: {
       width: 'avatar',
@@ -42,18 +78,6 @@ export const preset = {
       }
     },
   },
-  text: {
-    display: {
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontSize: [ 5, 6, 7 ],
-    },
-    caps: {
-      textTransform: 'uppercase',
-      letterSpacing: '0.1em',
-    },
-  },
   buttons: {
     primary: {
       fontSize: 1,
@@ -63,40 +87,15 @@ export const preset = {
       borderRadius: 'default',
     },
     secondary: {
-      fontSize: 1,
-      fontWeight: 'bold',
+      variant: 'buttons.primary',
       color: 'background',
       bg: 'secondary',
-      borderRadius: 'default',
     },
   },
-  forms: {
-    field: {
-      borderColor: 'gray',
-      color: 'text',
-      bg: 'background',
-      mb: 3,
-      ':focus': {
-        borderColor: 'primary',
-        outline: 'none',
-        boxShadow: t => `0 0 2px ${t.colors.primary}`,
-      },
-    },
-    label: {
-      fontSize: 1,
-      fontWeight: 'bold',
-    },
-    input: {
-      variant: 'forms.field',
-    },
-    select: {
-      variant: 'forms.field',
-    },
-    textarea: {
-      variant: 'forms.field',
-    },
-    radio: {},
-    checkbox: {},
+  styles: {
+    a: {
+      color: 'primary',
+    }
   },
 }
 
