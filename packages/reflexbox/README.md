@@ -1,10 +1,11 @@
 
 # Reflexbox
 
-Ergonomic, responsive React layout and grid system, since 2015
+Ergonomic, responsive React layout and grid system.
+The original *Box* component™ since 2015
 
 - Primitive styled components for all your layout needs
-- Custom styles inline with the `sx` prop
+- Customize styles inline with the `sx` prop
 - Ergonomic responsive array-based values
 - Support for component variants
 - [Styled System][] props
@@ -94,6 +95,12 @@ export default props =>
   </ThemeProvider>
 ```
 
+For use with [Theme UI][], use `gatsby-plugin-theme-ui` or import the Theme UI `ThemeProvider` instead.
+
+```js
+import { ThemeProvider } from 'theme-ui'
+```
+
 ## Variants
 
 Reflexbox components also accept a `variant` prop, which allows you to define commonly used styles,
@@ -141,8 +148,9 @@ To apply a variant to your component, pass the name to the `variant` prop.
 
 ## Responsive Styles
 
-Just as in [Styled System][], you can use array values to quickly and ergonomically add mobile-first responsive styles to specific properties.
+Use array values to quickly and ergonomically add mobile-first responsive styles to specific properties.
 This works on all style props and the `sx` prop.
+See the [Styled System][] docs for more.
 
 ```jsx
 // 100% width at the smallest viewport width
@@ -239,8 +247,11 @@ import { Flex, Box } from 'reflexbox/styled-components'
 This library is the result of consolidating APIs and ergonomics from the original Reflexbox library, Grid Styled, and Rebass Grid.
 Reflexbox originally appeared with the original version of Rebass in 2015.
 
+[MIT License](LICENSE.md)
+
 [theme specification]: https://github.com/system-ui/theme-specification
 [styled system]: https://styled-system.com
 [theme ui]: https://theme-ui.com
 [emotion]: https://emotion.sh
 [styled components]: https://styled-components.com
+

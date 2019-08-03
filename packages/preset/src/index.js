@@ -1,13 +1,13 @@
 // default theme preset
-import base from '@theme-ui/preset-base'
-import merge from 'deepmerge'
 
-export const preset = merge(base, {
+export const preset = {
   // add to theme-ui preset
   colors: {
+    text: '#000',
+    background: '#fff',
+    background: '#fff',
     gray: '#dddddf',
   },
-
   sizes: {
     avatar: 48,
   },
@@ -17,19 +17,18 @@ export const preset = merge(base, {
   },
   shadows: {
     card: '0 0 4px rgba(0, 0, 0, .125)',
-    handle: '0 0 2px rgba(0, 0, 0, .125)',
   },
   // rebass variants
-  text: {
-    display: {
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontSize: [ 5, 6, 7 ],
+  variants: {
+    avatar: {
+      width: 'avatar',
+      height: 'avatar',
+      borderRadius: 'circle',
     },
-    caps: {
-      textTransform: 'uppercase',
-      letterSpacing: '0.1em',
+    card: {
+      p: 2,
+      bg: 'background',
+      boxShadow: 'card',
     },
     nav: {
       fontSize: 1,
@@ -42,9 +41,18 @@ export const preset = merge(base, {
         color: 'primary',
       }
     },
-    mono: {
-      fontFamily: 'monospace',
-    }
+  },
+  text: {
+    display: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      fontSize: [ 5, 6, 7 ],
+    },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.1em',
+    },
   },
   buttons: {
     primary: {
@@ -60,20 +68,6 @@ export const preset = merge(base, {
       color: 'background',
       bg: 'secondary',
       borderRadius: 'default',
-    },
-  },
-  images: {
-    avatar: {
-      width: 'avatar',
-      height: 'avatar',
-      borderRadius: 'circle',
-    },
-  },
-  cards: {
-    default: {
-      p: 2,
-      bg: 'background',
-      boxShadow: 'card',
     },
   },
   forms: {
@@ -104,8 +98,6 @@ export const preset = merge(base, {
     radio: {},
     checkbox: {},
   },
-  styles: {
-  }
-})
+}
 
 export default preset

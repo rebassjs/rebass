@@ -1,14 +1,13 @@
 {
-  "name": "rebass",
+  "name": "@rebass/preset",
   "version": "4.0.0-0",
-  "description": "React primitive UI components built with Styled System",
+  "description": "Base theme preset for use with Rebass",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist --root-mode upward",
     "watch": "babel src -d dist --watch --root-mode upward"
   },
   "keywords": [
-    "components",
     "react",
     "react-component",
     "ui",
@@ -17,19 +16,9 @@
     "styled-components",
     "emotion",
     "theming",
-    "presentational",
-    "stateless",
-    "functional"
+    "theme-ui"
   ],
   "author": "Brent Jackson",
-  "license": "MIT",
-  "dependencies": {
-    "@theme-ui/preset-base": "^0.2.25",
-    "deepmerge": "^4.0.0",
-    "reflexbox": "4.0.0-0"
-  },
   "repository": "rebassjs/rebass",
-  "bugs": {
-    "url": "https://github.com/rebassjs/rebass/issues"
-  }
+  "license": "MIT"
 }

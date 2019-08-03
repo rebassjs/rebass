@@ -102,6 +102,21 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('border', '1px solid cyan')
   })
 
+  test('renders with css prop', () => {
+    const json = render(
+      <Box
+        css={{
+          margin: 4,
+          padding: 16,
+          color: 'tomato',
+        }}
+      />
+    )
+    expect(json).toHaveStyleRule('margin', '4px')
+    expect(json).toHaveStyleRule('padding', '16px')
+    expect(json).toHaveStyleRule('color', 'tomato')
+  })
+
   test('removes style props', () => {
     const json = render(
       <Box
@@ -113,6 +128,45 @@ describe('Box', () => {
     expect(Object.keys(json.props)).toEqual([
       'className'
     ])
+  })
+
+  test('renders with variants', () => {
+    const json = render(
+      <Box
+        theme={{
+          variants: {
+            card: {
+              p: 4,
+              border: '1px solid tomato',
+              borderRadius: 2,
+            }
+          }
+        }}
+        variant='card'
+      />
+    )
+    expect(json).toHaveStyleRule('padding', '32px')
+    expect(json).toHaveStyleRule('border', '1px solid tomato')
+    expect(json).toHaveStyleRule('border-radius', '2px')
+  })
+
+  test('renders with keyed variants', () => {
+    const json = render(
+      <Box
+        theme={{
+          buttons: {
+            primary: {
+              color: 'white',
+              bg: 'tomato',
+            }
+          }
+        }}
+        tx='buttons'
+        variant='primary'
+      />
+    )
+    expect(json).toHaveStyleRule('color', 'white')
+    expect(json).toHaveStyleRule('background-color', 'tomato')
   })
 
 })
