@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+Object {
+  "buttons": Object {
+    "outline": Object {
+      "bg": "transparent",
+      "boxShadow": "inset 0 0 2px",
+      "color": "primary",
+      "variant": "buttons.primary",
+    },
+    "primary": Object {
+      "bg": "primary",
+      "borderRadius": "default",
+      "color": "background",
+      "fontSize": 2,
+      "fontWeight": "bold",
+    },
+    "secondary": Object {
+      "bg": "secondary",
+      "color": "background",
+      "variant": "buttons.primary",
+    },
+  },
+  "colors": Object {
+    "background": "#fff",
+    "gray": "#dddddf",
+    "muted": "#f6f6f9",
+    "primary": "#07c",
+    "secondary": "#30c",
+    "text": "#000",
+  },
+  "fontSizes": Array [
+    12,
+    14,
+    16,
+    20,
+    24,
+    32,
+    48,
+    64,
+    96,
+  ],
+  "fontWeights": Object {
+    "body": 400,
+    "bold": 700,
+    "heading": 700,
+  },
+  "fonts": Object {
+    "body": "system-ui, sans-serif",
+    "heading": "inherit",
+    "monospace": "Menlo, monospace",
+  },
+  "lineHeights": Object {
+    "body": 1.5,
+    "heading": 1.25,
+  },
+  "radii": Object {
+    "circle": 99999,
+    "default": 4,
+  },
+  "shadows": Object {
+    "card": "0 0 4px rgba(0, 0, 0, .125)",
+  },
+  "sizes": Object {
+    "avatar": 48,
+  },
+  "space": Array [
+    0,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+  ],
+  "styles": Object {
+    "root": Object {
+      "fontFamily": "body",
+      "fontWeight": "body",
+      "lineHeight": "body",
+    },
+  },
+  "text": Object {
+    "caps": Object {
+      "letterSpacing": "0.1em",
+      "textTransform": "uppercase",
+    },
+    "display": Object {
+      "fontFamily": "heading",
+      "fontSize": Array [
+        5,
+        6,
+        7,
+      ],
+      "fontWeight": "heading",
+      "lineHeight": "heading",
+    },
+    "heading": Object {
+      "fontFamily": "heading",
+      "fontWeight": "heading",
+      "lineHeight": "heading",
+    },
+  },
+  "variants": Object {
+    "avatar": Object {
+      "borderRadius": "circle",
+      "height": "avatar",
+      "width": "avatar",
+    },
+    "card": Object {
+      "bg": "background",
+      "boxShadow": "card",
+      "p": 2,
+    },
+    "link": Object {
+      "color": "primary",
+    },
+    "nav": Object {
+      ":hover,:focus,.active": Object {
+        "color": "primary",
+      },
+      "color": "inherit",
+      "display": "inline-block",
+      "fontSize": 1,
+      "fontWeight": "bold",
+      "p": 2,
+      "textDecoration": "none",
+    },
+  },
+}
+`;

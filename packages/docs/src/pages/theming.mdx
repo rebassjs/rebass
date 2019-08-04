@@ -1,0 +1,129 @@
+import { Layout } from '..'
+
+export default Layout
+export const title = 'Theming'
+
+# Theming
+
+Rebass components are built with themeability in mind.
+All colors, typographic styles, layout styles, and component variants can be completely customized with theming.
+
+## ThemeProvider
+
+To apply themes to Rebass components, add a [ThemeProvider][] component to the root of your application and pass a `theme` object as a prop.
+
+If you're using Emotion by itself, install the `@emotion/theming` package.
+If you're using Rebass with [Theme UI][], use its `ThemeProvider` or the `gatsby-plugin-theme-ui` package.
+
+```jsx
+import React from 'react'
+import theme from './theme'
+import { ThemeProvider } from '@emotion/theming'
+// or for use with Theme UI:
+// import { ThemeProvider } from 'theme-ui'
+
+export default props =>
+  <ThemeProvider theme={theme}>
+    {props.children}
+  </ThemeProvider>
+```
+
+Rebass follows the [Theme Specification][],
+which allows you to define thematic values in a more portable format.
+Themes created for [Styled System][] or [Theme UI][] will work with Rebas with no additional configuration required.
+This also means that themes created for use with Rebass will work in other applications that follow the same specification.
+
+## Example
+
+The following is an example theme, showing *some* of the design constraints that can be defined as scales,
+including colors, typography, layouts, and variants.
+
+```js
+// example theme.js
+export default {
+  breakpoints: ['40em', '52em', '64em'],
+  fontSizes: [
+    12, 14, 16, 20, 24, 32, 48, 64
+  ],
+  colors: {
+    blue: '#07c',
+    lightgray: '#f6f6ff'
+  },
+  space: [
+    0, 4, 8, 16, 32, 64, 128, 256
+  ],
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.25,
+  },
+  shadows: {
+    small: '0 0 4px rgba(0, 0, 0, .125)',
+    large: '0 0 24px rgba(0, 0, 0, .125)'
+  },
+  variants: {
+  },
+  text: {
+  },
+  buttons: {
+    primary: {
+      color: 'white',
+      bg: 'primary',
+    }
+  }
+}
+```
+
+## Preset
+
+To quickly get started without creating a custom theme, install the Rebass Preset package and use it in place of a custom theme.
+
+```sh
+npm i @rebass/preset
+```
+
+```jsx
+import React from 'react'
+import { ThemeProvider } from '@emotion/theming'
+import preset from '@rebass/preset'
+
+export default props =>
+  <ThemeProvider theme={preset}>
+    {props.children}
+  </ThemeProvider>
+```
+
+## Demo
+
+Edit the theme in the demo below to see how colors, space, and typographic scales affect the Button component.
+
+```jsx live=true
+<ThemeProvider
+  theme={{
+    colors: {
+      background: 'black',
+      primary: 'tomato',
+    },
+    space: [ 0, 6, 12, 24, 48 ],
+    fontSizes: [ 14, 16, 18, 20, 24 ],
+    radii: {
+      default: 12,
+    }
+  }}>
+  <Button>Beep</Button>
+</ThemeProvider>
+```
+
+[theme specification]: https://github.com/system-ui/theme-specification
+[ThemeProvider]: https://www.styled-components.com/docs/advanced#theming
+[styled system]: https://github.com/jxnblk/styled-system
+[theme ui]: https://theme-ui.com

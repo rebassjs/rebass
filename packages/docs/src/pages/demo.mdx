@@ -1,0 +1,41 @@
+import {
+  Box,
+  Heading,
+  Text,
+  Button,
+  Image,
+  Card,
+} from 'rebass'
+import { Layout, DemoProvider } from '..'
+
+export default Layout
+export const title = 'Demo'
+
+# Demo
+
+<DemoProvider>
+
+```jsx live=true
+<Box
+  sx={{
+    p: 4,
+    color: 'text',
+    bg: 'background',
+    fontFamily: 'body',
+    fontWeight: 'body',
+    lineHeight: 'body',
+  }}>
+  <Heading variant='display'>Hello</Heading>
+  <Text mb={4}>This is a demo using presets from Theme UI</Text>
+  <Button mr={3}>
+    Beep
+  </Button>
+  <Button variant='secondary'>
+    Boop
+  </Button>
+</Box>
+```
+
+</DemoProvider>
+
+

@@ -1,0 +1,21 @@
+import { Layout, Note } from '../..'
+export default Layout
+export const title = 'Using Styled Components'
+
+# Using Styled Components
+
+If you'd prefer to use the Styled Components library instead of Emotion, you can import components from `rebass/styled-components`.
+
+```jsx
+import React from 'react'
+import { Box } from 'rebass/styled-components'
+
+export default props =>
+  <Box>
+    Hello
+  </Box>
+```
+
+<Note>
+The package will still install Emotion as a dependency, but it will not be included in the module or your application bundle.
+</Note>

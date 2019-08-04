@@ -1,0 +1,208 @@
+import { Layout } from '..'
+
+export default Layout
+export const title = 'Extending'
+
+# Extending
+
+Rebass components are designed to be used as foundational primitives
+for building a custom design system.
+By extending these base components, you can quickly start a component library
+with a consistent API and styles that are driven by design constraints
+that you define in your theme.
+
+To extend a component, pass props through and define custom styles in the `sx` prop.
+
+```jsx
+import React from 'react'
+import { Box } from 'rebass'
+
+const Container = props =>
+  <Box
+    {...props}
+    sx={{
+      maxWidth: '1024px',
+      mx: 'auto',
+      px: 3,
+    }}
+  />
+```
+
+If you prefer, you can also use `@emotion/styled` to extend components.
+
+## Example Extensions
+
+### Container
+
+```jsx
+const Container = props =>
+  <Box
+    {...props}
+    sx={{
+      maxWidth: '1024px'
+      mx: 'auto',
+      px: 3,
+    }}
+  />
+```
+
+### Badge
+
+```jsx
+const Badge = props =>
+  <Box
+    {...props}
+    sx={{
+      display: 'inline-block',
+      color: 'white',
+      bg: 'primary',
+      px: 2,
+      py: 1,
+      borderRadius: 9999,
+    }}
+  />
+```
+
+### Avatar
+
+```jsx
+const Avatar = props =>
+  <Image
+    {...props}
+    sx={{
+      width: 48,
+      height: 48,
+      borderRadius: 9999,
+    }}
+  />
+```
+
+### BlockLink
+
+```jsx
+const BlockLink = props =>
+  <Link
+    {...props}
+    sx={{
+      color: 'inherit',
+      display: 'block',
+      textDecoration: 'none'
+    }}
+  />
+```
+
+### NavLink
+
+```jsx
+const NavLink = props =>
+  <Link
+    {...props}
+    sx={{
+      display: 'inline-block',
+      fontWeight: 'bold',
+      px: 2,
+      py: 1,
+      colorr: 'inherit',
+    }}
+  />
+```
+
+### Embed
+
+```jsx
+const Embed = props =>
+  <Box
+    {...props}
+    sx={{
+      width: '100%',
+      height: 0,
+      paddingBottom: (9 / 16) + '%',
+      position: 'relative',
+      overflow: 'hidden',
+      '& > iframe': {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        border: 0
+      }
+    }}
+  />
+```
+
+### Pre
+
+```jsx
+const Pre = props =>
+  <Text
+    {...props}
+    as='pre'
+    sx={{
+      fontFamily: 'monospace',
+      p: 2,
+      color: 'secondary',
+      bg: 'muted',
+      overflowX: 'auto',
+    }}
+  />
+```
+
+### Fixed
+
+```jsx
+const Fixed = props =>
+  <Box
+    {...props}
+    sx={{
+      position: 'fixed'
+    }}
+  />
+```
+
+### Divider
+
+
+```jsx
+const Divider = props =>
+  <Box
+    {...props}
+    as='hr'
+    sx={{
+      bg: 'gray',
+      border: 0,
+      height: 1
+    }}
+  />
+```
+
+### Caps
+
+```jsx
+const Caps = props =>
+  <Text
+    {...props}
+    sx={{
+      fontSize: 1,
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em'
+    }}
+  />
+```
+
+### Toolbar
+
+```jsx
+const Toolbar = props =>
+  <Flex
+    {...props}
+    sx={{
+      px: 2,
+      color: 'white',
+      bg: 'black',
+      alignItems: 'center',
+    }}
+  />
+```
+

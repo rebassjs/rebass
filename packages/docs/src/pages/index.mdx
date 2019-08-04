@@ -1,0 +1,110 @@
+import { Box, Flex, Button } from 'rebass'
+import {
+  Layout,
+  Banner,
+  NavGrid,
+  Container,
+  Grid,
+  LogoGrid,
+} from '..'
+import Nav from '../components/nav.mdx'
+import Logo from '../components/logo'
+
+export default Layout
+
+<Banner>
+<Box mt={5} />
+<LogoGrid>
+<Logo text='' size={192} />
+<div>
+
+# Rebass <br /> React primitive UI components<br />built with Styled System
+
+```sh
+npm i rebass
+```
+
+</div>
+</LogoGrid>
+<Box my='auto' />
+<NavGrid>
+  <Nav />
+</NavGrid>
+</Banner>
+
+<Container py={5}>
+
+[![stars][]][github]
+[![build status][]][travis]
+[![downloads][]][npm]
+[![coverage][]][codecov]
+
+[stars]: https://flat.badgen.net/github/stars/rebassjs/rebass?color=33e
+[github]: https://github.com/rebassjs/rebass
+[build status]: https://flat.badgen.net/travis/rebassjs/rebass/master?color=33e
+[travis]: https://travis-ci.org/rebassjs/rebass
+[downloads]: https://flat.badgen.net/npm/dm/rebass?color=33e
+[npm]: https://npmjs.com/package/rebass
+[coverage]: https://flat.badgen.net/codecov/c/github/rebassjs/rebass?color=33e
+[codecov]: https://codecov.io/github/rebassjs/rebass
+
+<Grid py={5}>
+
+- Start your design system without boiling the ocean
+- Build consistent UI with design constraints and user-defined scales
+- Best-in-class developer ergonomics with [Styled System][] props
+- First-class support for theming &
+  fully compatible with [Theme UI][]
+- Quick, mobile-first responsive styles with array-based syntax
+- Flexbox layout with the Box and Flex components
+- Flexibility built in for high design & development velocity
+- Minimal footprint at about 4KB **TK**
+
+</Grid>
+
+```jsx live=true
+<Flex
+  alignItems='center'
+  px={3}
+  py={4}
+  bg='muted'>
+  <Heading>Hello</Heading>
+  <Box mx='auto' />
+  <Button>Beep</Button>
+  <Button ml={2} variant='secondary'>Boop</Button>
+</Flex>
+```
+
+<Grid width={448} py={5}>
+
+- > “One of the best React component libs out there”
+
+  - [Max Stoiber](https://twitter.com/mxstbr/status/882657561111080960)
+
+- > “Rebass is the Bootstrap of React.”
+
+  - [Jori Lallo](https://twitter.com/jorilallo/status/882990343225868289)
+
+- > “A whopper component library built on styled-components. Responsive, systematic, scalable...the business!”
+
+  - [Colm Tuite](https://twitter.com/colmtuite/status/882715087936606210)
+
+- > “Why the hell are we now putting CSS in Javascript? I’m losing my mind with web developers trying to control everything in the world with client-side javascript. What a mess.”
+
+  - [alttab](https://news.ycombinator.com/item?id=14705579)
+
+</Grid>
+
+## Get Started
+
+<Button as='a'
+  variant='big'
+  href='/getting-started'>
+  Read the docs
+</Button>
+
+</Container>
+
+
+[styled system]: https://styled-system.com
+[theme ui]: https://theme-ui.com

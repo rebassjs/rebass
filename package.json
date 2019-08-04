@@ -1,93 +1,55 @@
 {
-  "name": "rebass",
-  "version": "3.2.2",
-  "description": "React primitive UI components built with styled-system",
-  "main": "dist/index.js",
-  "sideEffects": false,
-  "scripts": {
-    "prepare": "npm run clean && babel src -d dist && npm run emotion",
-    "emotion": "NODE_ENV=emotion babel src -d emotion",
-    "clean": "rm -rf dist",
-    "start": "gx docs",
-    "cover": "jest --coverage && npx codecov",
-    "test": "jest",
-    "size": "npx bundlesize"
-  },
-  "keywords": [
-    "components",
-    "react",
-    "react-component",
-    "ui",
-    "design-system",
-    "styled-system",
-    "styled-components",
-    "presentational",
-    "stateless",
-    "functional"
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
   ],
-  "author": "Brent Jackson",
-  "license": "MIT",
-  "dependencies": {
-    "styled-system": "^5.0.0"
+  "scripts": {
+    "prepare": "lerna run prepare",
+    "start": "yarn workspace docs start",
+    "test": "jest",
+    "cover": "npx codecov"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.14",
-    "@mdx-js/mdx": "^1.1.4",
-    "@mdx-js/react": "^1.1.4",
-    "babel-jest": "^24.8.0",
-    "babel-plugin-transform-rename-import": "^2.3.0",
-    "gx": "^2.0.0-37",
     "jest": "^24.8.0",
-    "jest-styled-components": "^6.2.2",
+    "jest-emotion": "^10.0.14",
+    "jest-styled-components": "^6.3.3",
+    "lerna": "^3.16.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
-    "styled-components": "^4.2.1"
+    "react-test-renderer": "^16.8.6"
   },
-  "peerDependencies": {
-    "styled-components": ">=4.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rebassjs/rebass.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rebassjs/rebass/issues"
-  },
-  "homepage": "https://github.com/rebassjs/rebass",
   "jest": {
     "testMatch": [
-      "**/test/**/*.js"
+      "**/packages/**/test/*.js"
     ],
-    "setupFilesAfterEnv": [
-      "jest-styled-components"
+    "testPathIgnorePatterns": [
+      "/node_modules/"
     ],
     "coverageReporters": [
-      "html",
-      "lcov"
+      "lcov",
+      "text",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "packages/**/src/*.js"
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
       }
     },
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
+    "setupFilesAfterEnv": [
+    ],
+    "snapshotSerializers": [
+      "jest-emotion"
     ]
-  },
-  "bundlesize": [
-    {
-      "path": "./dist/*.js",
-      "maxSize": "1.5 kB"
-    }
-  ]
+  }
 }

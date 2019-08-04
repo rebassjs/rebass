@@ -1,0 +1,32 @@
+import { Layout } from '..'
+export default Layout
+export const title = 'Migration'
+
+# Migration Guide
+
+## v4: What's New
+
+- New [`sx` prop](/props/#sx-prop) for theme-based styles
+- Use the `css` prop for un-themed, raw CSS values
+- No additional Babel configuration required for the `sx` or `css` props
+- Use the `sx` prop in MDX documents
+- Built-in support for themeable component [variants](/variants)
+- Fully compatible with [Theme UI][]
+
+[theme ui]: https://theme-ui.com
+
+## v4: Breaking Changes
+
+- The default package now uses Emotion. To use Rebass with Styled Components, import the components from `rebass/styled-components` instead.
+- The undocumented theme keys for `Box`, `Flex`, `Text`, `Heading`, `Link`, `Button`, `Image`, and `Card` are no longer supported. Use variants instead.
+- The `@rebass/grid` package has been renamed (back to) `reflexbox`
+- Heading: default `fontWeight` is now set to `heading`. Add styles to `theme.fontWeights` to customize the `heading` font weight.
+- Button no longer supports the following props. Use the `sx` prop instead.
+  `border`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `borderTop`, `borderRight`, `borderBottom`, `borderLeft`, `borderX`, `borderY`
+- Image no longer supports the following props. Use the `sx` prop instead.
+  `border`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `borderTop`, `borderRight`, `borderBottom`, `borderLeft`, `borderX`, `borderY`
+- Link no longer includes default styles. Add styles to `theme.variants.link` to customize link styles.
+- Card no longer supports the following props. Use the `sx` prop instead.
+  `border`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `borderTop`, `borderRight`, `borderBottom`, `borderLeft`, `borderX`, `borderY`, `boxShadow`, `textShadow`, `background`, `backgroundImage`, `backgroundSize`, `backgroundPosition`, `backgroundRepeat`,
+
+
