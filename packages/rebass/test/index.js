@@ -103,8 +103,8 @@ describe('Link', () => {
     const json = render(
       <Link
         theme={{
-          styles: {
-            a: {
+          variants: {
+            link: {
               color: 'primary',
             }
           }
