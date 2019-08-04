@@ -89,6 +89,21 @@ export default merge(preset, {
       variant: 'text.heading',
       mt: 0,
       fontSize: [ 5, 6, 7 ],
-    }
+    },
+    table: {
+      width: '100%',
+      borderCollapse: 'separate',
+      borderSpacing: 0,
+    },
+    th: {
+      py: 2,
+      textAlign: 'left',
+      borderBottom: t => `4px solid ${t.colors.muted}`,
+    },
+    td: {
+      py: 2,
+      textAlign: 'left',
+      borderBottom: t => `1px solid ${t.colors.muted}`,
+    },
   }
 })

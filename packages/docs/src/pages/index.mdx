@@ -5,6 +5,7 @@ import {
   NavGrid,
   Container,
   Grid,
+  LogoGrid,
 } from '..'
 import Nav from '../components/nav.mdx'
 import Logo from '../components/logo'
@@ -16,23 +17,23 @@ export const title = 'Rebass'
 export const fullwidth = true
 
 <Banner>
+<Box mt={5} />
+<LogoGrid>
+<Logo text='' size={192} />
+<div>
 
-<Flex justifyContent='center'>
-  <Logo text='' size={192} />
-</Flex>
-
-# Rebass <br /> React primitive UI components built with Styled System
+# Rebass <br /> React primitive UI components<br />built with Styled System
 
 ```sh
 npm i rebass
 ```
 
-<Box my={6} />
-
+</div>
+</LogoGrid>
+<Box my='auto' />
 <NavGrid>
   <Nav />
 </NavGrid>
-
 </Banner>
 
 <Container py={5}>

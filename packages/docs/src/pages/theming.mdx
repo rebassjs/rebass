@@ -83,26 +83,24 @@ Rebass, [Theme UI][], and [Styled System][]
 all use the same [Theme Specification][], allowing you to define
 colors, typography, layouts, and component variants in a common, portable format.
 
-<!--
-The following keys are used in the theme object.
+## Preset
 
-Key | Description
----|---
-`breakpoints` | Array of strings representing viewport widths to use for min-width media queries.
-`colors` | Color names that can be used in `color`, `bg`, and `borderColor` props
-`space` | Array of numbers for use as margin and pixel values
-`fontSizes` | Array of numbers to use as a typographic scale
-`fonts` | Values for the `fontFamily` prop
-`fontWeights` | Values for `fontWeight` prop
-`lineHeights` | Values for `lineHeight` prop
-`letterSpacings` | Values for `letterSpacing` prop
-`shadows` | Values for `boxShadow` prop
-`borders` | Values for `border` props
-`radii` | Values for `borderRadius` props
-`opacity` | Values for `opacity` props
--->
+To get started without creating a custom theme, install the Rebass Preset package and use it in place of a custom theme.
 
+```sh
+npm i @rebass/preset
+```
 
+```jsx
+import React from 'react'
+import { ThemeProvider } from '@emotion/theming'
+import preset from '@rebass/preset'
+
+export default props =>
+  <ThemeProvider theme={preset}>
+    {props.children}
+  </ThemeProvider>
+```
 
 [theme specification]: https://github.com/system-ui/theme-specification
 [ThemeProvider]: https://www.styled-components.com/docs/advanced#theming

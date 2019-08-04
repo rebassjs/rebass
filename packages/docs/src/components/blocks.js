@@ -20,7 +20,10 @@ export const Banner = props =>
     }}>
     <Box
       sx={{
+        display: 'flex',
+        flexDirection: 'column',
         maxWidth: 'wide',
+        minHeight: 'calc(100vh - 64px)',
         mx: 'auto',
         px: 4,
         py: [4, 5],
@@ -29,14 +32,29 @@ export const Banner = props =>
           fontSize: 3,
         },
         pre: {
-          my: 4,
           p: 0,
+          mb: 0,
           bg: 'transparent',
         }
       }}>
       {props.children}
     </Box>
   </Box>
+
+export const LogoGrid = props =>
+  <Box
+    {...props}
+    sx={{
+      display: 'grid',
+      gridGap: 16,
+      gridTemplateColumns: [
+        'auto',
+        'auto',
+        'repeat(2, 1fr)',
+      ],
+      alignItems: 'center',
+    }}
+  />
 
 export const Grid = ({
   width = 256,
@@ -72,6 +90,10 @@ export const NavGrid = props =>
         gridTemplateRows: [
           `repeat(8, 1fr)`,
           `repeat(4, 1fr)`,
+        ],
+        gridTemplateColumns: [
+          'repeat(2, 1fr)',
+          'repeat(4, 1fr)',
         ],
         gridAutoFlow: 'column',
         counterReset: 'nav-grid',
