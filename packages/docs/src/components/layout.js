@@ -53,9 +53,10 @@ const Sidebar = props =>
   </Flex>
 
 export default ({
-  fullwidth,
+  // fullwidth,
   ...props
 }) => {
+  const fullwidth = props.location.pathname === '/'
   const [ menu, setMenu ] = useState(false)
   const nav = useRef(null)
 
