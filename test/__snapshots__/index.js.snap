@@ -32,3 +32,37 @@ exports[`Button renders with margin right 1`] = `
   fontWeight="bold"
 />
 `;
+
+exports[`Button renders with variants 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+  background-color: blue;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  border: 0;
+  border-radius: 4px;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  background-color: tomato;
+  border: 2px solid red;
+  border-radius: 9999px;
+}
+
+<button
+  className="c0"
+  color="white"
+/>
+`;
