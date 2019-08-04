@@ -119,7 +119,7 @@ const Logo = props => {
           fontWeight='bold'
           fontSize='24'
           stroke='none'
-          fill='white'>
+          fill={props.color}>
           R
         </text>
       )}
@@ -132,12 +132,12 @@ const Logo = props => {
           fontWeight='bold'
           fontSize='4'
           stroke='none'
-          fill='white'
+          fill={props.color}
           style={{
             textTransform: 'uppercase',
             letterSpacing: '0.5em'
           }}>
-          Rebass
+          {props.text}
         </text>
       )}
     </Svg>
@@ -146,6 +146,7 @@ const Logo = props => {
 
 Logo.defaultProps = {
   initial: false,
+  color: '#fff',
   bg: '#000',
   strokeWidth: 2,
   size: 256

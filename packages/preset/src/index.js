@@ -83,7 +83,7 @@ export const preset = {
   },
   buttons: {
     primary: {
-      // fontSize: 1,
+      fontSize: 2,
       fontWeight: 'bold',
       color: 'background',
       bg: 'primary',

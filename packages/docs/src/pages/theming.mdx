@@ -102,6 +102,27 @@ export default props =>
   </ThemeProvider>
 ```
 
+## Demo
+
+Edit the theme in the demo below to see how colors, space, and typographic scales affect the Button component.
+
+```jsx live=true
+<ThemeProvider
+  theme={{
+    colors: {
+      background: 'black',
+      primary: 'tomato',
+    },
+    space: [ 0, 6, 12, 24, 48 ],
+    fontSizes: [ 14, 16, 18, 20, 24 ],
+    radii: {
+      default: 12,
+    }
+  }}>
+  <Button>Beep</Button>
+</ThemeProvider>
+```
+
 [theme specification]: https://github.com/system-ui/theme-specification
 [ThemeProvider]: https://www.styled-components.com/docs/advanced#theming
 [styled system]: https://github.com/jxnblk/styled-system

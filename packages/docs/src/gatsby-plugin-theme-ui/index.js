@@ -34,6 +34,11 @@ export default merge(preset, {
       }
     }
   },
+  fontWeights: {
+    body: 400,
+    heading: 800,
+    bold: 700,
+  },
   sizes: {
     wide: 1280,
   },
@@ -78,9 +83,16 @@ export default merge(preset, {
       color: 'background',
       bg: 'primary',
       borderRadius: 'circle',
-    }
+    },
   },
   styles: {
+    a: {
+      color: 'primary',
+      transition: 'color .2s ease-out',
+      ':hover,:focus': {
+        color: 'secondary',
+      }
+    },
     inlineCode: {
       fontFamily: 'monospace',
       color: 'secondary',
@@ -109,8 +121,14 @@ export default merge(preset, {
       mt: 0,
       fontSize: [5, 6],
     },
-    h2: { variant: 'text.heading', },
-    h3: { variant: 'text.heading', },
+    h2: {
+      variant: 'text.heading',
+      fontSize: [4, 5],
+    },
+    h3: {
+      variant: 'text.heading',
+      fontSize: 3,
+    },
     h4: { variant: 'text.heading', },
     h5: { variant: 'text.heading', },
     h6: { variant: 'text.heading', },

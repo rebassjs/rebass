@@ -1,6 +1,7 @@
 import {
   Box,
   Heading,
+  Text,
   Button,
   Image,
   Card,
@@ -14,10 +15,15 @@ export const title = 'Demo'
 
 <DemoProvider>
   <Box
-    p={4}
-    color='text'
-    bg='background'>
-    <Heading>Hello</Heading>
+    sx={{
+      p: 4,
+      color: 'text',
+      bg: 'background',
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+    }}>
+    <Heading variant='display'>Hello</Heading>
     <Text mb={4}>This is a demo using presets from Theme UI</Text>
     <Button mr={3}>
       Beep

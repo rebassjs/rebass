@@ -9,7 +9,8 @@ export default props =>
   <Box
     as='footer'
     py={5}
-    bg='muted'
+    color='background'
+    bg='text'
   >
     <Box
       sx={{
