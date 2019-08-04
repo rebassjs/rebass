@@ -7,7 +7,8 @@
   "scripts": {
     "prepare": "lerna run prepare",
     "start": "yarn workspace docs start",
-    "test": "jest"
+    "test": "jest",
+    "cover": "npx codecov"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
