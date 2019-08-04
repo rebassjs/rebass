@@ -5,11 +5,19 @@ export const title = 'Theming'
 
 # Theming
 
+Rebass components are built with themeability in mind.
+All colors, typographic styles, layout styles, and component variants can be completely customized with theming.
+
+## ThemeProvider
+
 To apply themes to Rebass components, add a [ThemeProvider][] component to the root of your application and pass a `theme` object as a prop.
+
+If you're using Emotion by itself, install the `@emotion/theming` package.
+If you're using Rebass with [Theme UI][], use its `ThemeProvider` or the `gatsby-plugin-theme-ui` package.
 
 ```jsx
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from '@emotion/theming'
 import theme from './theme'
 
 export default props =>
@@ -18,13 +26,14 @@ export default props =>
   </ThemeProvider>
 ```
 
-If you do not apply your own theme, or you don't include all the keys the theme object expects, Rebass will revert to the default values, which are inherited from [styled-system][].
+Rebass follows the [Theme Specification][], which means that themes created for [Styled System][] or [Theme UI][] will work with no additional configuration rerquired.
 
-An example theme could look like the following:
+## Example
+
+The following is an example theme, showing *some* of the design constraints that can be defined as scales.
 
 ```js
 // example theme.js
-
 export default {
   breakpoints: ['40em', '52em', '64em'],
   fontSizes: [
@@ -38,69 +47,64 @@ export default {
     0, 4, 8, 16, 32, 64, 128, 256
   ],
   fonts: {
-    sans: 'system-ui, sans-serif',
-    mono: 'Menlo, monospace',
+    body: 'system-ui, sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.25,
   },
   shadows: {
     small: '0 0 4px rgba(0, 0, 0, .125)',
     large: '0 0 24px rgba(0, 0, 0, .125)'
+  },
+  variants: {
+  },
+  text: {
+  },
+  buttons: {
+    primary: {
+      color: 'white',
+      bg: 'primary',
+    }
   }
 }
 ```
 
 ## Theme Object
 
-Rebass and [styled-system][] allow global font sizes, colors, spacing, button variants, and other values to be set with a theme object.
+Rebass, [Theme UI][], and [Styled System][]
+all use the same [Theme Specification][], allowing you to define
+colors, typography, layouts, and component variants in a common, portable format.
 
-The following keys will be picked up by styled-system props:
+<!--
+The following keys are used in the theme object.
 
-Key | Type | Description
----|---|---
-`breakpoints` | Array | Array of strings representing viewport widths to use for min-width media queries.
-`fontSizes` | Array | Array of numbers to use as a typographic scale
-`colors` | Object | Color names that can be used in `color`, `bg`, and `borderColor` props
-`space` | Array | Array of numbers for use as margin and pixel values
-`fonts` | Array or Object | Values for the `fontFamily` prop
-`fontWeights` | Array or Object | Values for `fontWeight` prop
-`lineHeights` | Array or Object | Values for `lineHeight` prop
-`letterSpacings` | Array or Object | Values for `letterSpacing` prop
-`shadows` | Array or Object | Values for `boxShadow` prop
-`borders` | Array or Object | Values for `border` props
-`radii` | Array or Object | Values for `borderRadius` props
-`opacity` | Array or Object | Values for `opacity` props
-
-By default arrays of numbers are interpreted as `px`, other unit of measurements can be specified by using an array of strings instead, e.x. `['768px', '992px', '1200px']`.
-
-## Button & Card Variants
-
-The Button and Card components accept a `variant` prop to pick up predefined styles in the theme.
-
-```js
-// example theme.js
-const blue = '#07c'
-
-export default {
-  buttons: {
-    primary: {
-      color: '#fff',
-      backgroundColor: blue,
-    },
-    outline: {
-      color: blue,
-      backgroundColor: 'transparent',
-      boxShadow: 'inset 0 0 0 2px'
-    }
-  }
-}
-```
-
-With the above `buttons` object, the Button component can apply styles based on the `variant` prop.
-
-```jsx
-<Button variant='primary' />
-<Button variant='outline' />
-```
+Key | Description
+---|---
+`breakpoints` | Array of strings representing viewport widths to use for min-width media queries.
+`colors` | Color names that can be used in `color`, `bg`, and `borderColor` props
+`space` | Array of numbers for use as margin and pixel values
+`fontSizes` | Array of numbers to use as a typographic scale
+`fonts` | Values for the `fontFamily` prop
+`fontWeights` | Values for `fontWeight` prop
+`lineHeights` | Values for `lineHeight` prop
+`letterSpacings` | Values for `letterSpacing` prop
+`shadows` | Values for `boxShadow` prop
+`borders` | Values for `border` props
+`radii` | Values for `borderRadius` props
+`opacity` | Values for `opacity` props
+-->
 
 
+
+[theme specification]: https://github.com/system-ui/theme-specification
 [ThemeProvider]: https://www.styled-components.com/docs/advanced#theming
-[styled-system]: https://github.com/jxnblk/styled-system
+[styled system]: https://github.com/jxnblk/styled-system
+[theme ui]: https://theme-ui.com

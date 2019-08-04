@@ -9,6 +9,23 @@ export const title = 'Getting Started'
 npm i rebass
 ```
 
+By default Rebass components have no default theme. To use the Rebass default theme, install it as well, and wrap your application with a `ThemeProvider`.
+
+```sh
+npm i @rebass/preset @emotion/theming
+```
+
+```jsx
+import React from 'react'
+import { ThemeProvider } from '@emotion/theming'
+import preset from '@rebass/preset'
+
+export default props =>
+  <ThemeProvider theme={preset}>
+    {props.children}
+  </ThemeProvider>
+```
+
 Use Rebass components to build larger, composite components.
 
 ```jsx
@@ -45,8 +62,6 @@ export default ({
     </Card>
   </Box>
 ```
-
-## Props
 
 All components in Rebass are extensions of the base [Box](/box) component, which includes an `sx` prop for theme-based styling as well as a standard set of [Styled System][] style props.
 
@@ -109,6 +124,7 @@ export default props =>
 ## Variants
 
 Each component accepts a `variant` prop, giving you multiple styles for buttons, cards, text styles, and more.
+Define custom variants in your own theme or use the defaults in the Rebass preset theme.
 
 ```jsx
 <Button variant='primary'>Beep</Button>
