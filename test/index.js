@@ -115,6 +115,28 @@ describe('Button', () => {
     expect(json).toHaveStyleRule('margin-right', '16px')
     expect(json).toMatchSnapshot()
   })
+
+  test.only('renders with variants', () => {
+    const json = renderJSON(
+      <Button
+        theme={{
+          buttons: {
+            primary: {
+              color: 'black',
+              backgroundColor: 'tomato',
+              border: '2px solid red',
+              borderRadius: 9999,
+            }
+          }
+        }}
+        variant='primary'
+      />
+    )
+    expect(json).toHaveStyleRule('border-radius', '9999px')
+    expect(json).toHaveStyleRule('border', '2px solid red')
+    expect(json).toHaveStyleRule('background-color', 'tomato')
+    expect(json).toMatchSnapshot()
+  })
 })
 
 describe('Link', () => {

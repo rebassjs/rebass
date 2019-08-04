@@ -67,6 +67,10 @@ export const Button = styled(Box)(
   {
     appearance: 'none',
     display: 'inline-block',
+    fontSize: 'inherit',
+    fontWeight: 'bold',
+    border: 0,
+    borderRadius: 4,
     textAlign: 'center',
     lineHeight: 'inherit',
     textDecoration: 'none',
@@ -80,14 +84,10 @@ export const Button = styled(Box)(
 
 Button.defaultProps = {
   as: 'button',
-  fontSize: 'inherit',
-  fontWeight: 'bold',
   px: 3,
   py: 2,
   color: 'white',
   bg: 'blue',
-  border: 0,
-  borderRadius: 4,
 }
 
 export const Image = styled(Box)({
