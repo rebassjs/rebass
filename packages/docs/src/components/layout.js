@@ -35,6 +35,7 @@ const Sidebar = props =>
     <Box
       sx={{
         width: '100%',
+        minWidth: 0,
         maxWidth: 768,
         minHeight: 'calc(100vh - 64px)',
         mx: 'auto',

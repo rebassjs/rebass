@@ -7,7 +7,8 @@ export default props =>
     sx={{
       fontSize: 1,
       fontStyle: 'italic',
-      p: 3,
+      px: 3,
+      py: 2,
       my: 4,
       bg: 'muted',
       borderRadius: 4,

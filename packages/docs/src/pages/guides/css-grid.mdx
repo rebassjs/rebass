@@ -1,4 +1,4 @@
-import { Layout } from '../..'
+import { Layout, Note } from '../..'
 export default Layout
 export const title = 'CSS Grid'
 
@@ -7,11 +7,19 @@ export const title = 'CSS Grid'
 Rebass components can be used to create one-off or reusable CSS Grid layout components.
 While the entirety of what's possible with CSS Grid is outside the scope of this guide, the following should demonstrate how to apply any CSS Grid layout using Rebass.
 
+<Note>
+
+This guide is a work-in-progress.
+If you'd like to help make this better,
+please open an issue or pull request on [GitHub](https://github.com/rebassjs/rebass).
+
+</Note>
+
 CSS Grid is great for arranging direct child elements without the need for additional styles applied to the children.
 Create an extension of the Box component that can wrap other elements to apply a grid layout.
 
 ```jsx
-// example layout component
+// example grid layout component
 import React from 'react'
 import { Box } from 'rebass'
 
@@ -28,7 +36,29 @@ export default props =>
 By using the `sx` prop, CSS properties such as `gridGap` will use values from you theme object.
 This can help ensure consistent whitespace throughout your layout.
 
+## Auto Columns
+
+Using the `grid-auto-columns` property, you can quickly lay out child elements in a tile-based grid.
+
+```jsx
+// example grid layout component
+import React from 'react'
+import { Box } from 'rebass'
+
+export default props =>
+  <Box
+    {...props}
+    sx={{
+      display: 'grid',
+      gridGap: 3,     // theme.space[3]
+      gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))',
+    }}
+  />
+```
+
 ## Demo
+
+Use the live demo below to explore different layouts using CSS Grid.
 
 ```jsx live=true
 <Box
@@ -37,8 +67,8 @@ This can help ensure consistent whitespace throughout your layout.
     gridGap: 4,
     gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))',
   }}>
-  <Heading bg='muted'>Hello</Heading>
-  <Box color='background' bg='primary'>CSS Grid</Box>
+  <Heading p={3} bg='muted'>Hello</Heading>
+  <Box p={3} color='background' bg='primary'>CSS Grid</Box>
 </Box>
 ```
 

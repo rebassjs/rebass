@@ -1,7 +1,81 @@
-import { Layout } from '../..'
+import { Layout, Note } from '../..'
+import { Box } from 'rebass'
 export default Layout
 export const title = 'MDX'
 
 # MDX
 
+[MDX][] is a format that allows you to write content in markdown and import and use React components inline.
+It's an excellent format for documentation, blogs, or other forms of structured content.
+
+<Note>
+
+This guide is a work-in-progress.
+If you'd like to help make this better,
+please open an issue or pull request on [GitHub](https://github.com/rebassjs/rebass).
+
+</Note>
+
+Rebass components can be imported and used directly in MDX documents,
+which lets you apply styles inline to sections of your page.
+Since the `sx` prop is built into the components, this can be a quick way to apply one off styles or create custom components like callouts and note boxes.
+
+In the following example, the Box component is used to add a callout style box around its contents.
+
+```md
+import { Box } from 'rebass'
+
+# MDX Example
+
+<Box
+  color='primary'
+  bg='muted'
+  p={3}
+  my={5}
+>
+
+> ”This is an important quote.”
+
+</Box>
+```
+
+You can also use the `sx` prop with child selectors to dramatically change the layout of MDX content.
+
+```md
+import { Box } from 'rebass'
+
+# MDX Example
+
+<Box
+  sx={{
+    ul: {
+      listStyle: 'none',
+      display: 'grid',
+      padding: 0,
+      gridGap: 3,
+      gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))',
+    },
+    li: {
+      fontWeight: 'bold',
+    }
+  }}>
+
+- This is a list
+- Displayed in a grid layout
+- With custom styles
+- Pretty cool, huh?
+
+</Box>
+```
+
+If you make repeated use of a particular layout block, consider moving it to its own component that can be imported in multiple MDX documents.
+
+<Note>
+
+If you'd like to style the markdown elements with the same theme object and a similar API to Rebass,
+use the [Theme UI][] library, which includes first-class support for styling MDX content.
+
+</Note>
+
 [mdx]: https://mdxjs.com
+[theme ui]: https://theme-ui.com

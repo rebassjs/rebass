@@ -20,6 +20,7 @@ export const Banner = props =>
     }}>
     <Box
       sx={{
+        // '*': { outline: '1px solid rgba(0, 255, 255, 0.5)', },
         display: 'flex',
         flexDirection: 'column',
         maxWidth: 'wide',
@@ -46,11 +47,11 @@ export const LogoGrid = props =>
     {...props}
     sx={{
       display: 'grid',
-      gridGap: 16,
+      gridGap: 3,
       gridTemplateColumns: [
         'auto',
         'auto',
-        'repeat(2, 1fr)',
+        '1fr 2fr 1fr',
       ],
       alignItems: 'center',
     }}
@@ -67,8 +68,11 @@ export const Grid = ({
         listStyle: 'none',
         p: 0,
         display: 'grid',
-        gridGap: 32,
-        gridTemplateColumns: `repeat(auto-fit, minmax(${width}px, 1fr))`,
+        gridGap: 3,
+        gridTemplateColumns: [
+          'auto',
+          `repeat(auto-fit, minmax(${width}px, 1fr))`,
+        ]
       },
       li: {
         fontWeight: 'bold',
@@ -86,7 +90,7 @@ export const NavGrid = props =>
         listStyle: 'none',
         p: 0,
         display: 'grid',
-        gridGap: 16,
+        gridGap: 3,
         gridTemplateRows: [
           `repeat(8, 1fr)`,
           `repeat(4, 1fr)`,
