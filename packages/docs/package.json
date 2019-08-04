@@ -8,7 +8,9 @@
     "start": "gatsby develop",
     "clean": "gatsby clean",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "icon": "npx repng src/components/icon.js -d static -f icon.png -w 512 -h 512",
+    "card": "npx repng src/components/twitter-card.js -d static -f card.png -w 1024 -h 512"
   },
   "dependencies": {
     "@jxnblk/react-live": "^2.1.2-1",

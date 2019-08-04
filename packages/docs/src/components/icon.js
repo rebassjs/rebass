@@ -15,6 +15,7 @@ export default props => (
     }}>
     <Logo
       initial
+      static
       size={512}
       strokeWidth={6}
       bg='#000'

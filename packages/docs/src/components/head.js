@@ -11,6 +11,10 @@ export default props => {
         lang: 'en-us',
       }}>
       <title>{title}</title>
+      <link
+        rel='icon'
+        href='/icon.png'
+      />
       <meta
         name='description'
         content={pkg.description}

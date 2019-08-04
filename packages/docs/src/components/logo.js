@@ -147,7 +147,7 @@ const Logo = props => {
 
 Logo.defaultProps = {
   initial: false,
-  color: 'inherit',
+  color: 'white',
   bg: 'transparent',
   strokeWidth: 2,
   size: 256
