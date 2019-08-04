@@ -66,6 +66,9 @@ export const preset = {
       bg: 'background',
       boxShadow: 'card',
     },
+    link: {
+      color: 'primary',
+    },
     nav: {
       fontSize: 1,
       fontWeight: 'bold',
@@ -104,9 +107,6 @@ export const preset = {
       fontWeight: 'body',
       lineHeight: 'body',
     },
-    a: {
-      color: 'primary',
-    }
   },
 }
 

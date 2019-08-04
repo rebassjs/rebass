@@ -30,7 +30,7 @@ export const Link = forwardRef((props, ref) =>
   <Box
     ref={ref}
     as='a'
-    variant='styles.a'
+    variant='link'
     {...props}
   />
 )

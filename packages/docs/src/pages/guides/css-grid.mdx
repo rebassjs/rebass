@@ -1,0 +1,69 @@
+import { Layout } from '../..'
+export default Layout
+export const title = 'CSS Grid'
+
+# CSS Grid
+
+Rebass components can be used to create one-off or reusable CSS Grid layout components.
+While the entirety of what's possible with CSS Grid is outside the scope of this guide, the following should demonstrate how to apply any CSS Grid layout using Rebass.
+
+CSS Grid is great for arranging direct child elements without the need for additional styles applied to the children.
+Create an extension of the Box component that can wrap other elements to apply a grid layout.
+
+```jsx
+// example layout component
+import React from 'react'
+import { Box } from 'rebass'
+
+export default props =>
+  <Box
+    {...props}
+    sx={{
+      display: 'grid',
+      gridGap: 3,     // theme.space[3]
+    }}
+  />
+```
+
+By using the `sx` prop, CSS properties such as `gridGap` will use values from you theme object.
+This can help ensure consistent whitespace throughout your layout.
+
+## Demo
+
+```jsx live=true
+<Box
+  sx={{
+    display: 'grid',
+    gridGap: 4,
+    gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))',
+  }}>
+  <Heading bg='muted'>Hello</Heading>
+  <Box color='background' bg='primary'>CSS Grid</Box>
+</Box>
+```
+
+## Resources
+
+There are many resources for learning how to use CSS Grid layout.
+To fully understand any API in CSS, I *highly* recommend reading the specification, since it is the authoritative source for how CSS is intended to work:
+
+**[CSS Grid Layout Module Level 1][spec]**
+
+Once you have a basic grasp of the concepts in the specification, MDN is an excellent resource for learning any web technology:
+
+**[MDN: CSS Grid Layout][mdn]**
+
+Additional resources:
+
+- [Grid by Example][]
+- [Jen Simmon's Lab][simmons-lab]
+- [CSS Tricks][]
+
+[spec]: https://www.w3.org/TR/css-grid-1/
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+[css tricks]: https://css-tricks.com/snippets/css/complete-guide-grid/
+[grid by example]: https://gridbyexample.com/
+[simmons-lab]: https://labs.jensimmons.com/
+
+<!-- vet this? -->
+[learn-css-grid]: https://learncssgrid.com/
