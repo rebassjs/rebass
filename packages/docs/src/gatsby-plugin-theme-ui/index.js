@@ -44,6 +44,11 @@ export default merge(preset, {
       py: 3,
       fontSize: 3,
     },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 2px'
+    },
     transparent: {
       color: 'inherit',
       bg: 'transparent',
@@ -77,6 +82,11 @@ export default merge(preset, {
       mx: 0,
       fontWeight: 'bold',
       fontSize: 3,
+    },
+    h1: {
+      variant: 'text.heading',
+      mt: 0,
+      fontSize: [ 5, 6, 7 ],
     }
   }
 })

@@ -93,9 +93,9 @@ const theme = {
       bg: 'primary',
     },
     outline: {
-      color: 'blue',
+      color: 'primary',
       bg: 'transparent',
-      boxShadow: 'inset 0 0 2px'
+      boxShadow: 'inset 0 0 0 2px'
     },
   },
 }
@@ -104,6 +104,15 @@ export default props =>
   <ThemeProvider theme={theme}>
     {props.children}
   </ThemeProvider>
+```
+
+## Variants
+
+Each component accepts a `variant` prop, giving you multiple styles for buttons, cards, text styles, and more.
+
+```jsx
+<Button variant='primary'>Beep</Button>
+<Button variant='secondary'>Boop</Button>
 ```
 
 [styled system]: https://styled-system.com

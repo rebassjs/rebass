@@ -1,4 +1,4 @@
-import { Button } from 'rebass'
+import { Box, Flex, Button } from 'rebass'
 import {
   Layout,
   Banner,
@@ -17,13 +17,17 @@ export const fullwidth = true
 
 <Banner>
 
-<Logo text='Rebass' />
+<Flex justifyContent='center'>
+  <Logo text='' size={192} />
+</Flex>
 
 # Rebass <br /> React primitive UI components built with Styled System
 
 ```sh
 npm i rebass
 ```
+
+<Box my={6} />
 
 <NavGrid>
   <Nav />

@@ -145,7 +145,7 @@ const Logo = props => {
 }
 
 Logo.defaultProps = {
-  initial: true,
+  initial: false,
   bg: '#000',
   strokeWidth: 2,
   size: 256

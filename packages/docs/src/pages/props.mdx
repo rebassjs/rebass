@@ -177,11 +177,12 @@ Use the typography props to change text styles based on values defined in your t
 
 ```jsx live=true
 <Text
-  fontFamily='monospace',
+  fontFamily='monospace'
   fontSize={[ 4, 5 ]}
   fontWeight='bold'
-  lineHeight='body'
-/>
+  lineHeight='body'>
+  Hello
+</Text>
 ```
 
 - `fontSize`
@@ -202,6 +203,7 @@ Use layout props to change the width, height, display and other values on any el
   width={128}
   height={128}
   p={3}
+  color='white'
   bg='primary'>
   Hello
 </Box>
@@ -241,10 +243,14 @@ Use flexbox props to apply layout styles.
 
 ```jsx live=true
 <Flex>
-  <Box p={3} bg='primary'>
+  <Box
+    flex='1 1 auto'
+    p={3}
+    color='white'
+    bg='primary'>
     Beep
   </Box>
-  <Box p={3} bg='secondary'>
+  <Box p={3} color='white' bg='secondary'>
     Boop
   </Box>
 </Flex>

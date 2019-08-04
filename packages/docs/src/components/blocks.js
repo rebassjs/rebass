@@ -23,10 +23,10 @@ export const Banner = props =>
         maxWidth: 'wide',
         mx: 'auto',
         px: 4,
-        py: [4, 5, 6],
+        py: [4, 5],
         h1: {
           variant: 'text.caps',
-          fontSize: 4,
+          fontSize: 3,
         },
         pre: {
           my: 4,
@@ -91,6 +91,7 @@ export const NavGrid = props =>
       a: {
         color: 'inherit',
         textDecoration: 'none',
+        transition: 'color .2s ease-out',
         ':hover,:focus': {
           color: 'primary',
         }

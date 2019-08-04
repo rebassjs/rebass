@@ -15,9 +15,9 @@ export default props =>
       sx={{
         maxWidth: 'wide',
         mx: 'auto',
-        px: 4,
+        px: 3,
       }}>
-      <Link ml={-2} href='/' variant='nav'>Rebass</Link>
+      <Link href='/' variant='nav'>Rebass</Link>
       <Link href='/getting-started' variant='nav'>Docs</Link>
       <Link href='https://github.com/rebassjs/rebass' variant='nav'>GitHub</Link>
     </Box>

@@ -24,7 +24,8 @@ const Sidebar = props =>
         props.setMenu(true)
       }}
       sx={{
-        width: 256,
+        width: 192,
+        flex: 'none',
         px: 3,
         mt: [64, 0],
         pb: 3,
@@ -37,7 +38,7 @@ const Sidebar = props =>
         maxWidth: 768,
         minHeight: 'calc(100vh - 64px)',
         mx: 'auto',
-        px: 3,
+        px: [ 3, 4 ],
         pb: 5,
       }}>
       {props.children}

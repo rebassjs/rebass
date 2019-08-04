@@ -29,6 +29,32 @@ const Burger = ({ size = 24 }) => (
   </Box>
 )
 
+const Dot = props =>
+  <svg
+    viewBox='0 0 32 32'
+    width='24'
+    height='24'
+    fill='currentcolor'
+    style={{
+      display: 'block',
+    }}>
+    <circle
+      cx='16'
+      cy='16'
+      r='14'
+      fill='none'
+      stroke='currentcolor'
+      strokeWidth='4'
+    />
+    <path
+      d={`
+        M 16 0
+        A 16 16 0 0 0 16 32
+        z
+      `}
+    />
+  </svg>
+
 export default ({
   nav,
   menu,
@@ -76,8 +102,17 @@ export default ({
         href='https://github.com/rebassjs/rebass'>
         GitHub
       </Link>
-      <Button onClick={cycleMode}>
-        {mode}
+      <Button
+        title='Change color mode'
+        variant='transparent'
+        sx={{
+          width: 32,
+          height: 32,
+          p: 1,
+          borderRadius: 99999,
+        }}
+        onClick={cycleMode}>
+        <Dot />
       </Button>
     </Flex>
   )
