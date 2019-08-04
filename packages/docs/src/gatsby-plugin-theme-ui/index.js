@@ -76,7 +76,6 @@ export default merge(preset, {
       overflowX: 'auto',
       bg: 'muted',
       p: 3,
-      mb: 4,
       borderRadius: 4,
     },
     blockquote: {

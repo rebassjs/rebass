@@ -8,7 +8,7 @@ import {
 } from '@jxnblk/react-live'
 import Prism from '@theme-ui/prism'
 import * as Rebass from 'rebass'
-import { Box } from 'rebass'
+import { Flex, Box } from 'rebass'
 
 const scope = {
   ...Rebass,
@@ -66,6 +66,18 @@ export default ({
           border: t => `1px solid ${t.colors.muted}`,
           borderRadius: 2,
         }}>
+        <Flex mb={-26}>
+          <Box
+            ml='auto'
+            p={1}
+            fontSize={0}
+            fontWeight='bold'
+            variant='text.caps'
+            color='accent'
+          >
+            Live Demo
+          </Box>
+        </Flex>
         <LiveProvider
           {...props}
           code={code}

@@ -1,7 +1,7 @@
 
 # Reflexbox
 
-:package: Ergonomic, responsive React layout and grid system.
+📦 Ergonomic, responsive React layout and grid system.
 The original *Box* component™ since 2015
 
 [![Build Status][badge]][travis]

@@ -7,7 +7,7 @@ export const title = 'Props'
 
 All Rebass components extend the base [Box](/box) component,
 and include [Styled System][] props for ensuring your design constraints are easily accessible,
-while allowing you the flexibility to build responsive designs inline in your components.
+while allowing you the flexibility to create responsive designs inline in your components.
 
 ## `sx` Prop
 
@@ -20,28 +20,30 @@ but allows you to use values from your theme object.
 The `sx` prop is built-in and does not require any additional configuration,
 which means it will work in any React app, such as Create React App, or in [MDX][] documents.
 
-```jsx
+```jsx live=true
 <Box
   sx={{
     color: 'primary', // theme.colors.primary
     fontSize: 2,      // theme.fontSizes[2]
     margin: 3,        // theme.space[3]
-  }}
-/>
+  }}>
+  Hello
+</Box>
 ```
 
 ## Nested Selectors
 
 Use nested objects to apply pseudoclasses and other child selectors within the `sx` prop.
 
-```jsx
+```jsx live=true
 <Button
   sx={{
     ':hover': {
       backgroundColor: 'tomato',
     }
-  }}
-/>
+  }}>
+  Beep
+</Button>
 ```
 
 ## Responsive Styles

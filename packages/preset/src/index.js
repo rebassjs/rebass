@@ -80,7 +80,7 @@ export const preset = {
   },
   buttons: {
     primary: {
-      fontSize: 1,
+      // fontSize: 1,
       fontWeight: 'bold',
       color: 'background',
       bg: 'primary',

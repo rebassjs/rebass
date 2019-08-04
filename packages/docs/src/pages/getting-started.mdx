@@ -4,28 +4,41 @@ export const title = 'Getting Started'
 
 # Getting Started
 
+Install the core Rebass library.
+
 ```sh
 npm i rebass
 ```
 
-By default Rebass components have no default theme. To use the Rebass default theme, install it as well, and wrap your application with a `ThemeProvider`.
+By default, Rebass components are stylistically unopinionated and do not include a theme.
+You can add a theme to your application with a `ThemeProvider` component and by providing a theme in context.
+For this guide, use the Emotion `ThemeProvider` with the default Rebass preset theme.
 
 ```sh
 npm i @rebass/preset @emotion/theming
 ```
 
+Wrap your application with the `ThemeProvider` component.
+
 ```jsx
 import React from 'react'
 import { ThemeProvider } from '@emotion/theming'
-import preset from '@rebass/preset'
+import theme from '@rebass/preset'
 
 export default props =>
-  <ThemeProvider theme={preset}>
+  <ThemeProvider theme={theme}>
     {props.children}
   </ThemeProvider>
 ```
 
-Use Rebass components to build larger, composite components.
+Alternatively, if you'd like to use Rebass with [Theme UI][],
+you can use the `ThemeProvider` from `theme-ui`, or use [`gatsby-plugin-theme-ui`](https://theme-ui.com/gatsby-plugin).
+
+```sh
+import { ThemeProvider } from 'theme-ui'
+```
+
+You can use Rebass components out-of-the-box to build larger, composite components.
 
 ```jsx
 import React from 'react'
@@ -62,11 +75,33 @@ export default ({
   </Box>
 ```
 
+```jsx live=true
+  <Box width={256}>
+    <Card
+      sx={{
+        p: 1,
+        borderRadius: 2,
+        boxShadow: '0 0 16px rgba(0, 0, 0, .25)',
+      }}>
+      <Image src={photo} />
+      <Box px={2}>
+        <Heading as='h3'>
+          Card Demo
+        </Heading>
+        <Text fontSize={0}>
+          You can edit this code
+        </Text>
+      </Box>
+    </Card>
+  </Box>
+```
+
 All components in Rebass are extensions of the base [Box](/box) component, which includes an `sx` prop for theme-based styling as well as a standard set of [Styled System][] style props.
 
 ## Extending
 
-Use Rebass components as basic building blocks and extend them to create custom UI components.
+You can also use Rebass components as basic building blocks and extend them to create custom UI components,
+which is a great way to get started with a new design system without *boiling the ocean*.
 
 ```jsx
 // custom button example
@@ -123,10 +158,10 @@ export default props =>
 ## Variants
 
 Each component accepts a `variant` prop, giving you multiple styles for buttons, cards, text styles, and more.
-Define custom variants in your own theme or use the defaults in the Rebass preset theme.
+You can define custom variants in your own theme or use the defaults from the Rebass preset theme.
 
-```jsx
-<Button variant='primary'>Beep</Button>
+```jsx live=true
+<Button variant='primary' mr={2}>Beep</Button>
 <Button variant='secondary'>Boop</Button>
 ```
 
