@@ -4,8 +4,8 @@
   "description": "React primitive UI components built with Styled System",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "babel src -d dist --root-mode upward",
-    "watch": "babel src -d dist --watch --root-mode upward"
+    "prepare": "babel src -d dist && yarn styled-components",
+    "styled-components": "NODE_ENV=styled babel src -d styled-components"
   },
   "keywords": [
     "components",

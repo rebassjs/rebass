@@ -16,8 +16,7 @@
   ],
   "scripts": {
     "prepare": "babel src -d dist && yarn styled-components",
-    "styled-components": "NODE_ENV=styled babel src -d styled-components",
-    "watch": "babel src -d dist --watch --root-mode upward"
+    "styled-components": "NODE_ENV=styled babel src -d styled-components"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",

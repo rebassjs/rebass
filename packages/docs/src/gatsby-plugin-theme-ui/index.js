@@ -107,13 +107,13 @@ export default merge(preset, {
     h1: {
       variant: 'text.heading',
       mt: 0,
-      fontSize: [ 5, 6, 7 ],
+      fontSize: [5, 6],
     },
     h2: { variant: 'text.heading', },
     h3: { variant: 'text.heading', },
-    // h4: { variant: 'text.heading', },
-    // h5: { variant: 'text.heading', },
-    // h6: { variant: 'text.heading', },
+    h4: { variant: 'text.heading', },
+    h5: { variant: 'text.heading', },
+    h6: { variant: 'text.heading', },
     table: {
       width: '100%',
       borderCollapse: 'separate',

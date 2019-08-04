@@ -2400,6 +2400,81 @@
   resolved "https://registry.yarnpkg.com/@theme-ui/preset-base/-/preset-base-0.2.25.tgz#e1d29e883ca8608ea7025b1dbddf6158feab5fc3"
   integrity sha512-ZDd5flHmubmu+WWBrSI16RigAy2aP0IYS1gqN4o9HlNq6hZrPHvvMwD3ZKHQ5CWfRGeekP5q9dSEoT9cK8vWnQ==
 
+"@theme-ui/preset-bootstrap@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-bootstrap/-/preset-bootstrap-0.2.25.tgz#e4769c2f3a8ea410065c06acfd6cf0158026993f"
+  integrity sha512-etIXxo8GbYIrHps2Z6XBAjoDFMTAmtaX+CzJ5l5WHMR2sMfCzkGbzBfgIiyvF7TvOMuwm7jMQ1neRQUrPatIRw==
+
+"@theme-ui/preset-bulma@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-bulma/-/preset-bulma-0.2.25.tgz#9d4d74601e52dbe65467920905aa7d30a0884a11"
+  integrity sha512-BeOu64lWrdSHcKT7xaqcZRyx8ahp2pdtyDpy4EkPS9R52HJkHUuX9yxlQCwU2j7z4/2E5nOUnUjq4slt1eUfQQ==
+  dependencies:
+    "@theme-ui/preset-base" "^0.2.25"
+
+"@theme-ui/preset-dark@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-dark/-/preset-dark-0.2.25.tgz#35f4997654bfbd2ec458271e68bae0ed9bbcb1e6"
+  integrity sha512-Zee8JPDFoDjYUdUbDZctiONYuBPpAafQHFwikN+nwp1yoKi3pDvVB7EO7tRuMugA+KQywNV/uBwNeRIks+EKdw==
+
+"@theme-ui/preset-deep@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-deep/-/preset-deep-0.2.25.tgz#ec020fb4b5b1c58189ebc3b5c185c7c6d2466035"
+  integrity sha512-ND7dZ4uyWmuC/X+Wz/5yJO9vCcSUCCND1bSeQAF0EUXXiRUmHV1iuJlwRlci2nReKlLPQ2MSCwyNbNjP+0KCtQ==
+
+"@theme-ui/preset-funk@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-funk/-/preset-funk-0.2.25.tgz#0257edc5145a1aba231c5cd8b92dcbdc6194bef3"
+  integrity sha512-GGJsXWrcv6Edm1mzeTZS9HhcW3Ic2JpgJK4aXaCwpLSWuGVjG8D/MM2c5jgOZprmyvErs4vLijOL0jOsMvqJcQ==
+  dependencies:
+    "@theme-ui/preset-base" "^0.2.25"
+
+"@theme-ui/preset-future@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-future/-/preset-future-0.2.25.tgz#7b93a8ec81b3441346c296fd47fa5d094b57269d"
+  integrity sha512-5DG6TjCv21k0Nn8a2/7+dfhFB8tsrbWVQDstc8B7lT0gNonNOlJOWO5Y3xjPtlk1OUqcRQdnl17K9ayXfITCSQ==
+  dependencies:
+    "@theme-ui/preset-base" "^0.2.25"
+
+"@theme-ui/preset-roboto@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-roboto/-/preset-roboto-0.2.25.tgz#3ccc010e9f27d75a4c2d6df18309c3a896d38295"
+  integrity sha512-XUfTTXwBHDUbGZUudl2iYN6AidLSF6jnea1EzeP+Cns5O59awwRpLHch1SyptZfrPRMdDfnbJlB/m0+pbDqMrg==
+  dependencies:
+    "@theme-ui/preset-base" "^0.2.25"
+
+"@theme-ui/preset-swiss@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-swiss/-/preset-swiss-0.2.25.tgz#6d82729d5f5f749d316304c2a0bddc5135b712f0"
+  integrity sha512-4BIhWnP52Tju5J2JdLGMui+BtfHACmPRaNm+JS0akkbgv6DLuDhB2/JoLGDcrdHwK8Q8cA8g67g7nJlWYI49KA==
+
+"@theme-ui/preset-system@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-system/-/preset-system-0.2.25.tgz#c2a0437ccf1a2df97a3d5b86eda70e2cd838a639"
+  integrity sha512-EJKcgrOUSu2yyKMSVBlY/6I8oHByDQZSP2pf5OyAp5HSSso/7mzPWXcr+Sc1DwWtF7uzsGxI/lvF1EZ8e4PYcA==
+
+"@theme-ui/preset-tailwind@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.2.25.tgz#c9673846b2e0a10605fa05c36a6b27483093ab52"
+  integrity sha512-eSiGnSHQDmVCFeVVqPVS9fOC+f0SiBUoK8r67rrxCmGJOYRrk6cXMZcE3b9KufKQoogRKZVNZqZwIU6W7OlGxQ==
+
+"@theme-ui/presets@^0.2.25":
+  version "0.2.25"
+  resolved "https://registry.yarnpkg.com/@theme-ui/presets/-/presets-0.2.25.tgz#30b7d737b7084dc841d167e33a6a85fa0e9a08b7"
+  integrity sha512-a7ayQQs8Lu84PQ5uHMhFhmM4BkVhlRur0zeWEmfSt0MerYcohfI+oDToNBuRpudJykBShHK6W9kHMvgnw0DccQ==
+  dependencies:
+    "@theme-ui/preset-base" "^0.2.25"
+    "@theme-ui/preset-bootstrap" "^0.2.25"
+    "@theme-ui/preset-bulma" "^0.2.25"
+    "@theme-ui/preset-dark" "^0.2.25"
+    "@theme-ui/preset-deep" "^0.2.25"
+    "@theme-ui/preset-funk" "^0.2.25"
+    "@theme-ui/preset-future" "^0.2.25"
+    "@theme-ui/preset-roboto" "^0.2.25"
+    "@theme-ui/preset-swiss" "^0.2.25"
+    "@theme-ui/preset-system" "^0.2.25"
+    "@theme-ui/preset-tailwind" "^0.2.25"
+
 "@theme-ui/prism@^0.2.25":
   version "0.2.25"
   resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.2.25.tgz#5fa6a1a39b2826b509e0064b390bd0a8f910f9bd"

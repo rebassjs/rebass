@@ -5,26 +5,27 @@ import {
   Image,
   Card,
 } from 'rebass'
-import { Layout } from '..'
+import { Layout, DemoProvider } from '..'
+
 export default Layout
 export const title = 'Demo'
 
 # Demo
 
-<Box
-  p={4}
-  bg='muted'>
-  <Image
-    src='https://jxnblk.com/avatar.png'
-    variant='avatar'
-  />
-  <Heading mb={3} variant='caps'>All Caps</Heading>
-  <Button mr={3}>
-    Beep
-  </Button>
-  <Button variant='secondary'>
-    Boop
-  </Button>
-</Box>
+<DemoProvider>
+  <Box
+    p={4}
+    color='text'
+    bg='background'>
+    <Heading>Hello</Heading>
+    <Text mb={4}>This is a demo using presets from Theme UI</Text>
+    <Button mr={3}>
+      Beep
+    </Button>
+    <Button variant='secondary'>
+      Boop
+    </Button>
+  </Box>
+</DemoProvider>
 
 

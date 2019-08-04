@@ -1,7 +1,21 @@
 import { Layout } from '../..'
 export default Layout
-export const title = 'Using Rebass without Theming Context'
+export const title = 'Using Rebass without Context'
 
-# Using Rebass without Theming Context
+# Using Rebass without Context
 
+If you'd like to use Rebass components without adding a theme to React context,
+you can pass a `theme` object as a prop to any of the components.
+
+```jsx
+import React from 'react'
+import { Box } from 'rebass'
+import theme from './theme'
+
+export default props =>
+  <Box
+    {...props}
+    theme={theme}
+  />
+```
 
