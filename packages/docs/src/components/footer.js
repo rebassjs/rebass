@@ -19,6 +19,7 @@ export default props =>
         px: 3,
       }}>
       <Link href='/' variant='nav'>Rebass</Link>
+      <Link href='/reflexbox' variant='nav'>Reflexbox</Link>
       <Link href='/getting-started' variant='nav'>Docs</Link>
       <Link href='https://github.com/rebassjs/rebass' variant='nav'>GitHub</Link>
     </Box>
