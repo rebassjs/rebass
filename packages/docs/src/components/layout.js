@@ -7,6 +7,7 @@ import SkipLink from './skip-link'
 import Header from './header'
 import Footer from './footer'
 import Nav from './nav'
+import EditLink from './edit-link'
 
 const Sidebar = props =>
   <Flex>
@@ -43,7 +44,9 @@ const Sidebar = props =>
         pb: 5,
       }}>
       {props.children}
-      <Box my={5} />
+      <EditLink my={5}>
+        Edit this page on GitHub
+      </EditLink>
       <Nav
         pathname={props.location.pathname}
         components={{
