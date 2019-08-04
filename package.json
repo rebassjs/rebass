@@ -1,8 +1,36 @@
 {
+<<<<<<< HEAD
   "private": true,
   "workspaces": [
     "packages/*",
     "examples/*"
+=======
+  "name": "rebass",
+  "version": "3.2.2",
+  "description": "React primitive UI components built with styled-system",
+  "main": "dist/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "npm run clean && babel src -d dist && npm run emotion",
+    "emotion": "NODE_ENV=emotion babel src -d emotion",
+    "clean": "rm -rf dist",
+    "start": "gx docs",
+    "cover": "jest --coverage && npx codecov",
+    "test": "jest",
+    "size": "npx bundlesize"
+  },
+  "keywords": [
+    "components",
+    "react",
+    "react-component",
+    "ui",
+    "design-system",
+    "styled-system",
+    "styled-components",
+    "presentational",
+    "stateless",
+    "functional"
+>>>>>>> master
   ],
   "scripts": {
     "prepare": "lerna run prepare",
@@ -14,6 +42,16 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+<<<<<<< HEAD
+=======
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.14",
+    "@mdx-js/mdx": "^1.1.4",
+    "@mdx-js/react": "^1.1.4",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-transform-rename-import": "^2.3.0",
+    "gx": "^2.0.0-37",
+>>>>>>> master
     "jest": "^24.8.0",
     "jest-emotion": "^10.0.14",
     "jest-styled-components": "^6.3.3",
