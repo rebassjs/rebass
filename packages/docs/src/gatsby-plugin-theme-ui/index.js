@@ -60,6 +60,26 @@ export default merge(preset, {
       }
     },
   },
+  text: {
+    heading: {
+      a: {
+        color: 'inherit',
+        textDecoration: 'none',
+        ':hover': {
+          textDecoration: 'underline',
+        }
+      }
+    }
+  },
+  variants: {
+    badge: {
+      display: 'inline-block',
+      px: 2,
+      color: 'background',
+      bg: 'primary',
+      borderRadius: 'circle',
+    }
+  },
   styles: {
     inlineCode: {
       fontFamily: 'monospace',
@@ -89,6 +109,11 @@ export default merge(preset, {
       mt: 0,
       fontSize: [ 5, 6, 7 ],
     },
+    h2: { variant: 'text.heading', },
+    h3: { variant: 'text.heading', },
+    // h4: { variant: 'text.heading', },
+    // h5: { variant: 'text.heading', },
+    // h6: { variant: 'text.heading', },
     table: {
       width: '100%',
       borderCollapse: 'separate',

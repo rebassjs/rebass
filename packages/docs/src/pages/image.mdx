@@ -5,12 +5,21 @@ export const title = 'Image'
 
 # Image
 
+Responsive image component with variants
+
 ```jsx live=true
 <Image
-  src='https://source.unsplash.com/random/1280x720?new-york'
+  src={photo}
   sx={{
     width: [ '100%', '50%' ],
     borderRadius: 8,
   }}
+/>
+```
+
+```jsx live=true
+<Image
+  src={photo}
+  variant='avatar'
 />
 ```

@@ -40,18 +40,17 @@ export default {
 
 The `Box` component can use a variant style to render with preset card or badge styles.
 
-```jsx
-<Box variant='card'>
+```jsx live=true
+<Box variant='card' width={256}>
   Card
-</Box>
-<Box variant='badge'>
-  Badge
+  <Box variant='badge'>
+    Badge
+  </Box>
 </Box>
 ```
 
-Most components will use style objects defined in `theme.variants`,
-but the `Text` and `Heading` components use the `theme.text` object, and `Button` uses `theme.buttons`.
-Any object in your theme can be used as a variant, and the values use dot notation for deeply nested values.
+By default, Rebass components will use style objects defined in `theme.variants`.
+The `Text` and `Heading` components use a custom `theme.text` object, and `Button` uses `theme.buttons`.
 
 Component | Theme Key | Default Variant
 ---|---|---
@@ -63,3 +62,10 @@ Component | Theme Key | Default Variant
 `Button` | `buttons` | `primary`
 `Image` | `variants` | N/A
 `Card` | `variants` | `card`
+
+Any object in your theme can be used as a variant, and the values use dot notation for deeply nested values.
+
+```jsx
+// example variant with dot notation
+<Box variant='some.deeply.nested.object' />
+```

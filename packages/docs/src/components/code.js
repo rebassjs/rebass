@@ -63,20 +63,11 @@ export default ({
     return (
       <Box
         sx={{
+          mb: 4,
           border: t => `1px solid ${t.colors.muted}`,
           borderRadius: 2,
         }}>
-        <Flex mb={-26}>
-          <Box
-            ml='auto'
-            p={1}
-            fontSize={0}
-            fontWeight='bold'
-            variant='text.caps'
-            color='accent'
-          >
-            Live Demo
-          </Box>
+        <Flex>
         </Flex>
         <LiveProvider
           {...props}
@@ -84,10 +75,29 @@ export default ({
           transformCode={transformCode}
           scope={scope}>
           <Preview />
-          <Editor
-            className={className}
-          />
-          <Err />
+          <Box
+            sx={{
+              position: 'relative',
+            }}>
+            <Editor
+              className={className}
+            />
+            <Err />
+            <Box
+              sx={{
+                position: 'absolute',
+                zIndex: 1,
+                top: 0,
+                right: 0,
+                m: 1,
+                variant: 'text.caps',
+                fontSize: 0,
+                fontWeight: 'bold',
+                color: 'accent',
+              }}>
+              Live Demo
+            </Box>
+          </Box>
         </LiveProvider>
       </Box>
     )

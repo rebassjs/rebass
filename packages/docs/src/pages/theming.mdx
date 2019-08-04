@@ -17,8 +17,10 @@ If you're using Rebass with [Theme UI][], use its `ThemeProvider` or the `gatsby
 
 ```jsx
 import React from 'react'
-import { ThemeProvider } from '@emotion/theming'
 import theme from './theme'
+import { ThemeProvider } from '@emotion/theming'
+// or for use with Theme UI:
+// import { ThemeProvider } from 'theme-ui'
 
 export default props =>
   <ThemeProvider theme={theme}>
@@ -26,11 +28,15 @@ export default props =>
   </ThemeProvider>
 ```
 
-Rebass follows the [Theme Specification][], which means that themes created for [Styled System][] or [Theme UI][] will work with no additional configuration rerquired.
+Rebass follows the [Theme Specification][],
+which allows you to define thematic values in a more portable format.
+Themes created for [Styled System][] or [Theme UI][] will work with Rebas with no additional configuration required.
+This also means that themes created for use with Rebass will work in other applications that follow the same specification.
 
 ## Example
 
-The following is an example theme, showing *some* of the design constraints that can be defined as scales.
+The following is an example theme, showing *some* of the design constraints that can be defined as scales,
+including colors, typography, layouts, and variants.
 
 ```js
 // example theme.js
@@ -77,15 +83,9 @@ export default {
 }
 ```
 
-## Theme Object
-
-Rebass, [Theme UI][], and [Styled System][]
-all use the same [Theme Specification][], allowing you to define
-colors, typography, layouts, and component variants in a common, portable format.
-
 ## Preset
 
-To get started without creating a custom theme, install the Rebass Preset package and use it in place of a custom theme.
+To quickly get started without creating a custom theme, install the Rebass Preset package and use it in place of a custom theme.
 
 ```sh
 npm i @rebass/preset

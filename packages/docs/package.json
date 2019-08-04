@@ -27,6 +27,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "rebass": "4.0.0-0",
+    "remark-slug": "^5.1.2",
     "theme-ui": "^0.2.26"
   }
 }

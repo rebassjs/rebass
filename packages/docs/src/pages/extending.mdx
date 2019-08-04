@@ -8,10 +8,10 @@ export const title = 'Extending'
 Rebass components are designed to be used as foundational primitives
 for building a custom design system.
 By extending these base components, you can quickly start a component library
-with a consistent API with styles that are driven by design constraints
-Jhat you define in your theme.
+with a consistent API and styles that are driven by design constraints
+that you define in your theme.
 
-To extend a component, pass props through and define any custom styles in the `sx` prop.
+To extend a component, pass props through and define custom styles in the `sx` prop.
 
 ```jsx
 import React from 'react'
@@ -27,6 +27,8 @@ const Container = props =>
     }}
   />
 ```
+
+If you prefer, you can also use `@emotion/styled` to extend components.
 
 ## Example Extensions
 
