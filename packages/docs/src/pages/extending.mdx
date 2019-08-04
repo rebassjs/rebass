@@ -5,39 +5,27 @@ export const title = 'Extending'
 
 # Extending
 
-Rebass components are great to use as base components that can be extended for various purposes in your design system.
+Rebass components are designed to be used as foundational primitives
+for building a custom design system.
+By extending these base components, you can quickly start a component library
+with a consistent API with styles that are driven by design constraints
+Jhat you define in your theme.
 
-There are two primary ways to extend Rebass components:
+To extend a component, pass props through and define any custom styles in the `sx` prop.
 
 ```jsx
-// React-based extension
 import React from 'react'
 import { Box } from 'rebass'
 
 const Container = props =>
   <Box
     {...props}
-    mx='auto'
-    css={{
-      maxWidth: '1024px'
+    sx={{
+      maxWidth: '1024px',
+      mx: 'auto',
+      px: 3,
     }}
   />
-```
-
-Using the `css` prop requires the use of [babel-plugin-styled-components][]
-
-```js
-// styled-components based extension
-import styled from 'styled-components'
-import { Box } from 'rebass'
-
-const Container = styled(Box)({
-  maxWidth: '1024px'
-})
-
-Container.defaultProps = {
-  mx: 'auto'
-}
 ```
 
 ## Example Extensions
@@ -48,9 +36,10 @@ Container.defaultProps = {
 const Container = props =>
   <Box
     {...props}
-    mx='auto'
-    css={{
+    sx={{
       maxWidth: '1024px'
+      mx: 'auto',
+      px: 3,
     }}
   />
 ```
@@ -59,15 +48,15 @@ const Container = props =>
 
 ```jsx
 const Badge = props =>
-  <Card
-    color='white'
-    bg='blue'
+  <Box
     {...props}
-    px={3}
-    py={1}
-    borderRadius={9999}
-    css={{
-      display: 'inline-block'
+    sx={{
+      display: 'inline-block',
+      color: 'white',
+      bg: 'primary',
+      px: 2,
+      py: 1,
+      borderRadius: 9999,
     }}
   />
 ```
@@ -77,10 +66,12 @@ const Badge = props =>
 ```jsx
 const Avatar = props =>
   <Image
-    width={48}
-    height={48}
-    borderRadius={9999}
     {...props}
+    sx={{
+      width: 48,
+      height: 48,
+      borderRadius: 9999,
+    }}
   />
 ```
 
@@ -89,9 +80,9 @@ const Avatar = props =>
 ```jsx
 const BlockLink = props =>
   <Link
-    color='inherit'
     {...props}
-    css={{
+    sx={{
+      color: 'inherit',
       display: 'block',
       textDecoration: 'none'
     }}
@@ -103,13 +94,13 @@ const BlockLink = props =>
 ```jsx
 const NavLink = props =>
   <Link
-    px={2}
-    py={1}
-    color='inherit'
     {...props}
-    css={{
-      display: 'block',
+    sx={{
+      display: 'inline-block',
       fontWeight: 'bold',
+      px: 2,
+      py: 1,
+      colorr: 'inherit',
     }}
   />
 ```
@@ -120,8 +111,8 @@ const NavLink = props =>
 const Embed = props =>
   <Box
     {...props}
-    width={1}
-    css={{
+    sx={{
+      width: '100%',
       height: 0,
       paddingBottom: (9 / 16) + '%',
       position: 'relative',
@@ -146,9 +137,13 @@ const Pre = props =>
   <Text
     {...props}
     as='pre'
-    fontFamily='Menlo, monospace'
-    p={2}
-    bg='lightgray'
+    sx={{
+      fontFamily: 'monospace',
+      p: 2,
+      color: 'secondary',
+      bg: 'muted',
+      overflowX: 'auto',
+    }}
   />
 ```
 
@@ -158,7 +153,7 @@ const Pre = props =>
 const Fixed = props =>
   <Box
     {...props}
-    css={{
+    sx={{
       position: 'fixed'
     }}
   />
@@ -172,8 +167,8 @@ const Divider = props =>
   <Box
     {...props}
     as='hr'
-    bg='gray'
-    css={{
+    sx={{
+      bg: 'gray',
       border: 0,
       height: 1
     }}
@@ -185,9 +180,9 @@ const Divider = props =>
 ```jsx
 const Caps = props =>
   <Text
-    fontSize={1}
     {...props}
-    css={{
+    sx={{
+      fontSize: 1,
       textTransform: 'uppercase',
       letterSpacing: '0.2em'
     }}
@@ -199,12 +194,13 @@ const Caps = props =>
 ```jsx
 const Toolbar = props =>
   <Flex
-    px={2}
-    color='white'
-    bg='black'
-    alignItems='center'
     {...props}
+    sx={{
+      px: 2,
+      color: 'white',
+      bg: 'black',
+      alignItems: 'center',
+    }}
   />
 ```
 
-[babel-plugin-styled-components]: https://www.styled-components.com/docs/api#css-prop

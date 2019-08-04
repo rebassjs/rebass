@@ -25,7 +25,7 @@ export default merge(preset, {
       },
       gray: {
         text: '#fff',
-        background: 'hsl(270, 50%, 10%)',
+        background: 'hsl(270, 30%, 14%)',
         primary: 'hsl(180, 100%, 60%)',
         secondary: 'hsl(270, 100%, 60%)',
         accent: 'hsl(300, 100%, 60%)',
@@ -45,6 +45,7 @@ export default merge(preset, {
       fontSize: 3,
     },
     outline: {
+      variant: 'buttons.primary',
       color: 'primary',
       bg: 'transparent',
       boxShadow: 'inset 0 0 0 2px'
@@ -75,6 +76,7 @@ export default merge(preset, {
       overflowX: 'auto',
       bg: 'muted',
       p: 3,
+      mb: 4,
       borderRadius: 4,
     },
     blockquote: {

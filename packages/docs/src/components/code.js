@@ -15,6 +15,8 @@ const scope = {
   photo: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20',
 }
 
+const transformCode = code => `<>${code}</>`
+
 const Preview = props =>
   <Box
     as={LivePreview}
@@ -31,6 +33,8 @@ const Editor = props =>
     sx={{
       variant: 'styles.pre',
       outline: 'none',
+      borderTopLeftRadius: 0,
+      borderTopRightRadius: 0,
     }}
   />
 
@@ -65,6 +69,7 @@ export default ({
         <LiveProvider
           {...props}
           code={code}
+          transformCode={transformCode}
           scope={scope}>
           <Preview />
           <Editor

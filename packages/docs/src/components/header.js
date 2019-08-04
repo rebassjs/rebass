@@ -9,8 +9,8 @@ import { useColorMode } from 'theme-ui'
 
 const modes = [
   'lite',
-  'gray',
   'dark',
+  'gray',
 ]
 
 const Burger = ({ size = 24 }) => (
