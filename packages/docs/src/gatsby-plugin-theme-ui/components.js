@@ -16,7 +16,6 @@ const heading = Tag => props => {
 export default {
   pre: props => props.children,
   code,
-  h1: heading('h1'),
   h2: heading('h2'),
   h3: heading('h3'),
   h4: heading('h4'),

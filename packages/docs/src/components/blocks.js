@@ -15,8 +15,8 @@ export const Banner = props =>
   <Box
     {...props}
     sx={{
-      color: 'white',
-      bg: 'black',
+      color: 'background',
+      bg: 'text',
     }}>
     <Box
       sx={{

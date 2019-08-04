@@ -11,6 +11,8 @@ const modes = [
   'lite',
   'dark',
   'gray',
+  'hack',
+  'pink',
 ]
 
 const Burger = ({ size = 24 }) => (

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
+import { useThemeUI } from 'theme-ui'
 import { layout } from 'styled-system'
 
 const Svg = styled(({
@@ -146,8 +147,8 @@ const Logo = props => {
 
 Logo.defaultProps = {
   initial: false,
-  color: '#fff',
-  bg: '#000',
+  color: 'inherit',
+  bg: 'transparent',
   strokeWidth: 2,
   size: 256
 }
