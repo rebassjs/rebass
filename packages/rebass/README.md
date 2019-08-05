@@ -40,14 +40,16 @@ export default props =>
 ```
 ## Features
 
-- Foundation for building design systems
-- First-class support for theming
-- Tiny footprint (~1KB) **TK**
-- Best-in-class developer ergonomics with style props from [Styled System][]
-- Fast, mobile-first responsive styles
-- [Reflexbox][]: flexbox layout with the Box and Flex components
-- Easy to extend and customize
-- Consistency through design constraints and user-defined scales
+- Start your design system without boiling the ocean
+- Build consistent UI with design constraints and user-defined scales
+- Best-in-class developer ergonomics with [Styled System][] props
+- First-class support for theming &
+  fully compatible with [Theme UI][]
+- Quick, mobile-first responsive styles with array-based syntax
+- Flexbox layout with the Box and Flex components
+- Flexibility built in for high design & development velocity
+- Minimal footprint at about 4KB
+
 
 [reflexbox]: https://rebassjs.org/reflexbox
 
