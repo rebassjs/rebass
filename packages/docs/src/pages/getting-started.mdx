@@ -17,14 +17,14 @@ You can add a theme to your application with a `ThemeProvider` component and by 
 For this guide, use the Emotion `ThemeProvider` with the default Rebass preset theme.
 
 ```sh
-npm i @rebass/preset @emotion/theming
+npm i @rebass/preset emotion-theming
 ```
 
 Wrap your application with the `ThemeProvider` component.
 
 ```jsx
 import React from 'react'
-import { ThemeProvider } from '@emotion/theming'
+import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
 
 export default props =>
@@ -130,7 +130,7 @@ Since Rebass follows the [Theme Specification][], any theme built for use with [
 
 ```jsx
 import React from 'react'
-import { ThemeProvider } from '@emotion/theming'
+import { ThemeProvider } from 'emotion-theming'
 
 const theme = {
   fontSizes: [
