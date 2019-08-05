@@ -1378,9 +1378,9 @@
     "@types/yargs" "^12.0.9"
 
 "@jxnblk/react-live@^2.1.2-1":
-  version "2.1.2-1"
-  resolved "https://registry.yarnpkg.com/@jxnblk/react-live/-/react-live-2.1.2-1.tgz#d22fb18ed064ed000cd96ac52b67e03be01f6da3"
-  integrity sha512-r7GOWJKgoYN7TDCNcmXG5PdBgCBGCM6U6bppnNpv1qiVfGLsTjnTHRCABwunw5hZ4fQOx9cVh5ZL6AXj1qO8PA==
+  version "2.1.2-2"
+  resolved "https://registry.yarnpkg.com/@jxnblk/react-live/-/react-live-2.1.2-2.tgz#3adcde980bf0a17e148926568b63ff168646b580"
+  integrity sha512-jdwZsZ2u7p7Vn29qqxBbec2XFKf72ad0K6PysnOcO175Jv83v4MISgjcnzEXB+9QQvhnI2FQ47e0xAW8KEY6IQ==
   dependencies:
     buble "0.19.6"
     core-js "^2.4.1"
