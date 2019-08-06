@@ -101,3 +101,47 @@ export const Radio = forwardRef((props, ref) =>
     }}
   />
 )
+
+// export const Checkbox
+
+// experimental
+export const Switch = forwardRef((props, ref) =>
+  <Box
+    ref={ref}
+    as='button'
+    type='button'
+    role='switch'
+    variant='switch'
+    {...props}
+    __css={{
+      appearance: 'none',
+      width: 48,
+      height: 24,
+      m: 0,
+      p: 0,
+      border: 0,
+      color: 'primary',
+      boxShadow: t => `inset 0 0 0 1px`,
+      borderRadius: 9999,
+      bg: 'muted',
+      display: 'flex',
+      alignItems: 'center',
+      span: {
+        display: 'block',
+        flex: 'none',
+        width: 24,
+        height: 24,
+        borderRadius: 9999,
+        bg: 'currentcolor',
+      },
+      '&[aria-pressed="true"]': {
+        span: {
+          transform: 'translateX(100%)',
+        }
+      }
+    }}>
+    <span
+      aria-hidden='true'
+    />
+  </Box>
+)

@@ -6,6 +6,7 @@ import {
   Select,
   Textarea,
   Radio,
+  Switch,
 } from '@rebass/forms'
 export default Layout
 export const title = 'Forms'
@@ -36,4 +37,8 @@ export const title = 'Forms'
   <Label>
     <Radio name='bool' /> No
   </Label>
+  <Switch
+    title='Toggle Something'
+    aria-pressed={false}
+  />
 </Box>
