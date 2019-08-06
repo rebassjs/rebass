@@ -16,6 +16,7 @@
     "@jxnblk/react-live": "^2.1.2-1",
     "@mdx-js/mdx": "^1.1.4",
     "@mdx-js/react": "^1.1.4",
+    "@rebass/forms": "4.0.1",
     "@rebass/preset": "^4.0.0",
     "@rebass/preset-material": "^4.0.0",
     "@theme-ui/presets": "^0.2.25",

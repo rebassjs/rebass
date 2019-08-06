@@ -1,0 +1,39 @@
+import { Layout } from '..'
+import { Box } from 'rebass'
+import {
+  Label,
+  Input,
+  Select,
+  Textarea,
+  Radio,
+} from '@rebass/forms'
+export default Layout
+export const title = 'Forms'
+
+# Forms
+
+<Box p={3}>
+  <Label htmlFor='name'>Name</Label>
+  <Input
+    id='name'
+    name='name'
+    defaultValue='Jane Doe'
+  />
+  <Label htmlFor='location'>Location</Label>
+  <Select
+    id='location'
+    name='location'
+    defaultValue='NYC'>
+    <option>NYC</option>
+    <option>DC</option>
+    <option>ATX</option>
+    <option>SF</option>
+    <option>LA</option>
+  </Select>
+  <Label>
+    <Radio name='bool' defaultChecked /> Yes
+  </Label>
+  <Label>
+    <Radio name='bool' /> No
+  </Label>
+</Box>

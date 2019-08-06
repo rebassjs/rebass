@@ -24,8 +24,6 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "@theme-ui/preset-base": "^0.2.25",
-    "deepmerge": "^4.0.0",
     "reflexbox": "^4.0.1"
   },
   "repository": "rebassjs/rebass",

@@ -166,5 +166,31 @@ export default merge(preset, {
       textAlign: 'left',
       borderBottom: t => `1px solid ${t.colors.muted}`,
     },
+  },
+  forms: {
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    field: {
+      mb: 3,
+      borderColor: 'gray',
+      ':focus': {
+        borderColor: 'primary',
+        outline: 'none',
+        boxShadow: t => `0 0 2px ${t.colors.primary}`,
+      }
+    },
+    input: {
+      variant: 'forms.field',
+    },
+    select: {
+      variant: 'forms.field',
+    },
+    textarea: {
+      variant: 'forms.field',
+    },
+    radio: {
+    },
   }
 })
