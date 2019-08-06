@@ -19,8 +19,8 @@
   "license": "MIT",
   "repository": "rebassjs/rebass",
   "dependencies": {
-    "@emotion/core": "^10.0.15",
-    "@emotion/styled": "^10.0.15",
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
     "styled-system": ">=5.0.0"
   }
 }
