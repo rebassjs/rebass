@@ -1,0 +1,26 @@
+{
+  "name": "@rebass/space",
+  "version": "4.0.1",
+  "description": "React component for applying responsive margin and padding to child elements without a wrapping HTML container. Built with Styled System.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist --root-mode upward"
+  },
+  "keywords": [
+    "rebass",
+    "styled-system",
+    "style",
+    "css",
+    "layout",
+    "margin",
+    "padding"
+  ],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "repository": "rebassjs/rebass",
+  "dependencies": {
+    "@emotion/core": "^10.0.0",
+    "@emotion/styled": "^10.0.0",
+    "styled-system": ">=5.0.0"
+  }
+}
