@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "React primitive UI components built with Styled System",
   "main": "dist/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "dependencies": {
     "@theme-ui/preset-base": "^0.2.25",
     "deepmerge": "^4.0.0",
-    "reflexbox": "^4.0.1"
+    "reflexbox": "^4.0.2"
   },
   "repository": "rebassjs/rebass",
   "bugs": {

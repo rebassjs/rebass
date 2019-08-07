@@ -1,6 +1,6 @@
 {
   "name": "@rebass/space",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "React component for applying responsive margin and padding to child elements without a wrapping HTML container. Built with Styled System.",
   "main": "dist/index.js",
   "scripts": {

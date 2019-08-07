@@ -1,6 +1,6 @@
 {
   "name": "@rebass/preset-material",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Material Design theme preset for use with Rebass",
   "main": "dist/index.js",
   "scripts": {
