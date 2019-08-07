@@ -89,6 +89,15 @@ and write responsive styles using the array syntax.
 
 If you ever need to add styles that do not use values from your theme, use the `css` prop, which is available on all components, without the need for additional configuration.
 
+## `as` Prop
+
+The underlying HTML element rendered in any component can be overridden by the `as` prop.
+
+```jsx
+<Heading as='h1'>Hello</Heading>
+```
+
+
 ## Styled System Props
 
 In addition to the `sx` prop, several [Styled System][] props are provided as ergonomic shortcuts.
