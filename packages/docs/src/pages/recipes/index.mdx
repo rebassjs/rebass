@@ -1,0 +1,33 @@
+import { MDXProvider } from '@mdx-js/react'
+import { RecipeCard, Grid } from '../..'
+import FlexboxGrid from './flexbox-grid.mdx'
+import FlexboxWrap from './flexbox-wrap.mdx'
+import FlexboxAlign from './flexbox-align.mdx'
+import ImageCard from './image-card.mdx'
+import BackgroundImageCard from './background-image-card.mdx'
+import NavBar from './nav-bar.mdx'
+import VideoEmbed from './video-embed.mdx'
+
+export const title = 'Recipes'
+
+# Recipes
+
+Quick copy-and-paste code examples using Rebass.
+
+<MDXProvider
+components={{
+  wrapper: RecipeCard,
+}}>
+<Grid>
+
+- <FlexboxGrid href='/recipes/flexbox-grid' />
+- <FlexboxWrap href='/recipes/flexbox-wrap' />
+- <FlexboxAlign href='/recipes/flexbox-align' />
+- <ImageCard href='/recipes/image-card' />
+- <BackgroundImageCard href='/recipes/background-image-card' />
+- <NavBar href='/recipes/nav-bar' />
+- <VideoEmbed href='/recipes/video-embed' />
+
+</Grid>
+</MDXProvider>
+

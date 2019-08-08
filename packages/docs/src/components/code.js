@@ -59,6 +59,20 @@ export default ({
   ...props
 }) => {
   const lang = 'jsx'
+  console.log('code', { props })
+
+  if (props.preview) {
+    const code = props.children
+    return (
+      <LiveProvider
+        {...props}
+        code={code}
+        transformCode={transformCode}
+        scope={scope}>
+        <Preview />
+      </LiveProvider>
+    )
+  }
 
   if (props.live) {
     const code = props.children
@@ -69,8 +83,6 @@ export default ({
           border: t => `1px solid ${t.colors.muted}`,
           borderRadius: 2,
         }}>
-        <Flex>
-        </Flex>
         <LiveProvider
           {...props}
           code={code}

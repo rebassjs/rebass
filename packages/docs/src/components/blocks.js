@@ -74,11 +74,7 @@ export const Grid = ({
           `repeat(auto-fit, minmax(${width}px, 1fr))`,
         ]
       },
-      li: {
-        fontWeight: 'bold',
-        // fontSize: 0,
-        // variant: 'text.caps',
-      },
+      ...props.sx
     }}
   />
 
