@@ -32,6 +32,7 @@ export default props => {
         {preview}
       </Box>
       <Box
+        mt={3}
         fontWeight='bold'>
         {title.props.children}
       </Box>

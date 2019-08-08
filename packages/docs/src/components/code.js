@@ -19,12 +19,12 @@ const scope = {
 
 const transformCode = code => `<>${code}</>`
 
-const Preview = props =>
+const Preview = ({ fullwidth, ...props }) =>
   <Box
     as={LivePreview}
     {...props}
     sx={{
-      p: 3,
+      p: fullwidth ? 0 : 3,
     }}
   />
 
@@ -69,7 +69,7 @@ export default ({
         code={code}
         transformCode={transformCode}
         scope={scope}>
-        <Preview />
+        <Preview fullwidth />
       </LiveProvider>
     )
   }

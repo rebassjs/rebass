@@ -59,6 +59,7 @@ export const LogoGrid = props =>
 
 export const Grid = ({
   width = 256,
+  gap = 4,
   ...props
 }) =>
   <Box
@@ -68,7 +69,7 @@ export const Grid = ({
         listStyle: 'none',
         p: 0,
         display: 'grid',
-        gridGap: 3,
+        gridGap: gap,
         gridTemplateColumns: [
           'auto',
           `repeat(auto-fit, minmax(${width}px, 1fr))`,
