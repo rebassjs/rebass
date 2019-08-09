@@ -1,16 +1,27 @@
-import { Layout, Grid } from '../..'
-
-export default Layout
+import { Grid } from '../..'
 export const title = 'Guides'
 
 # Guides
 
-<Grid>
+<Grid
+  sx={{
+    a: {
+      display: 'block',
+      fontWeight: 'bold',
+      fontSize: 3,
+      textDecoration: 'none',
+    }
+  }}>
 
 - [CSS Grid](/guides/css-grid)
+  Use the Rebass Box component and `sx` prop to create custom CSS Grid components
 - [MDX](/guides/mdx)
+  Use Rebass components to add styles and layout to MDX documents
 - [Using Rebass without Context](/guides/using-rebass-without-context)
+  Create self-contained components that do not require theming context
 - [Server-Side Rendering](/guides/server-side-rendering)
+  Render Rebass components on the server with zero configuration
 - [Styled Components](/guides/styled-components)
+  Use Rebass with the Styled Components library
 
 </Grid>

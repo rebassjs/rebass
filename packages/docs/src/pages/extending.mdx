@@ -1,6 +1,3 @@
-import { Layout } from '..'
-
-export default Layout
 export const title = 'Extending'
 
 # Extending
@@ -109,37 +106,6 @@ const Badge = props =>
 
 ## Example Extensions
 
-### Container
-
-```jsx
-const Container = props =>
-  <Box
-    {...props}
-    sx={{
-      maxWidth: '1024px'
-      mx: 'auto',
-      px: 3,
-    }}
-  />
-```
-
-### Badge
-
-```jsx
-const Badge = props =>
-  <Box
-    {...props}
-    sx={{
-      display: 'inline-block',
-      color: 'white',
-      bg: 'primary',
-      px: 2,
-      py: 1,
-      borderRadius: 9999,
-    }}
-  />
-```
-
 ### Avatar
 
 ```jsx
@@ -150,36 +116,6 @@ const Avatar = props =>
       width: 48,
       height: 48,
       borderRadius: 9999,
-    }}
-  />
-```
-
-### BlockLink
-
-```jsx
-const BlockLink = props =>
-  <Link
-    {...props}
-    sx={{
-      color: 'inherit',
-      display: 'block',
-      textDecoration: 'none'
-    }}
-  />
-```
-
-### NavLink
-
-```jsx
-const NavLink = props =>
-  <Link
-    {...props}
-    sx={{
-      display: 'inline-block',
-      fontWeight: 'bold',
-      px: 2,
-      py: 1,
-      colorr: 'inherit',
     }}
   />
 ```
@@ -240,7 +176,6 @@ const Fixed = props =>
 
 ### Divider
 
-
 ```jsx
 const Divider = props =>
   <Box
@@ -254,19 +189,7 @@ const Divider = props =>
   />
 ```
 
-### Caps
-
-```jsx
-const Caps = props =>
-  <Text
-    {...props}
-    sx={{
-      fontSize: 1,
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em'
-    }}
-  />
-```
+<!--
 
 ### Toolbar
 
@@ -282,4 +205,6 @@ const Toolbar = props =>
     }}
   />
 ```
+-->
 
+See the [Recipes](/recipes) page for more examples.
