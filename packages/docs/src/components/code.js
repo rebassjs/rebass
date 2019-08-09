@@ -59,7 +59,6 @@ export default ({
   ...props
 }) => {
   const lang = 'jsx'
-  console.log('code', { props })
 
   if (props.preview) {
     const code = props.children
