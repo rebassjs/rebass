@@ -101,8 +101,6 @@ for more on some of the thought behind Rebass.
 
 ## CodeSandbox
 
-**TK**
-
 Try it out:
 https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
 
