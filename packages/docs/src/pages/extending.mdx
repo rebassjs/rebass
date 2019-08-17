@@ -1,6 +1,3 @@
-import { Layout } from '..'
-
-export default Layout
 export const title = 'Extending'
 
 # Extending
@@ -30,38 +27,84 @@ const Container = props =>
 
 If you prefer, you can also use `@emotion/styled` to extend components.
 
-## Example Extensions
+## Order of Styles
 
-### Container
+Because Rebass still uses CSS, you might have to contend with the cascade, depending on how you define your styles,
+especially in regards to source order and using shorthand CSS properties.
+
+Rebass components apply styles in the following order:
+
+1. Variant
+2. `sx` prop
+3. `css` prop
+4. Styled System props
+
+### Shorthand CSS Properties
+
+If you're using CSS properties that have shorthand variations, try to use the normal CSS property instead.
+
+```js
+// avoid shorthand syntax
+sx={{
+  border: '1px solid tomato',
+}}
+```
+```js
+// use regular properties instead
+sx={{
+  borderWidth: '1px',
+  borderStyle: 'solid',
+  borderColor: 'tomato',
+}}
+```
+
+### Conflicting Styles
+
+It's easy to add conflicting styles in two different places and end up with unexpected results.
+
+- If you're intending to use a style prop, don't use it in the `sx` prop or in variants.
+- If you're intending to use variants, don't include conflicting styles in the `sx` prop
+
+## Default Props
+
+Instead of using the `defaultProps` property on your component, define defaults inline in the JSX.
+The `{...props}` from the outside will override the ones you set on the component.
 
 ```jsx
 const Container = props =>
   <Box
+    maxWidth='container'
+    px={3}
+    mx='auto'
     {...props}
-    sx={{
-      maxWidth: '1024px'
-      mx: 'auto',
-      px: 3,
-    }}
   />
 ```
 
-### Badge
+## Default Variants
+
+To set a default variant, include the variant in your theme.
+
+```js
+variants: {
+  badge: {
+    color: 'white',
+    bg: 'tomato',
+    px: 2,
+  },
+}
+```
+
+Then add the default prop in your component.
 
 ```jsx
 const Badge = props =>
   <Box
+    variant='badge'
     {...props}
-    sx={{
-      display: 'inline-block',
-      color: 'white',
-      bg: 'primary',
-      px: 2,
-      py: 1,
-      borderRadius: 9999,
-    }}
   />
 ```
+
+## Example Extensions
 
 ### Avatar
 
@@ -73,36 +116,6 @@ const Avatar = props =>
       width: 48,
       height: 48,
       borderRadius: 9999,
-    }}
-  />
-```
-
-### BlockLink
-
-```jsx
-const BlockLink = props =>
-  <Link
-    {...props}
-    sx={{
-      color: 'inherit',
-      display: 'block',
-      textDecoration: 'none'
-    }}
-  />
-```
-
-### NavLink
-
-```jsx
-const NavLink = props =>
-  <Link
-    {...props}
-    sx={{
-      display: 'inline-block',
-      fontWeight: 'bold',
-      px: 2,
-      py: 1,
-      colorr: 'inherit',
     }}
   />
 ```
@@ -163,7 +176,6 @@ const Fixed = props =>
 
 ### Divider
 
-
 ```jsx
 const Divider = props =>
   <Box
@@ -177,19 +189,7 @@ const Divider = props =>
   />
 ```
 
-### Caps
-
-```jsx
-const Caps = props =>
-  <Text
-    {...props}
-    sx={{
-      fontSize: 1,
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em'
-    }}
-  />
-```
+<!--
 
 ### Toolbar
 
@@ -205,4 +205,6 @@ const Toolbar = props =>
     }}
   />
 ```
+-->
 
+See the [Recipes](/recipes) page for more examples.

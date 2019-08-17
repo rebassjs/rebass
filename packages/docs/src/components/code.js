@@ -19,12 +19,12 @@ const scope = {
 
 const transformCode = code => `<>${code}</>`
 
-const Preview = props =>
+const Preview = ({ fullwidth, ...props }) =>
   <Box
     as={LivePreview}
     {...props}
     sx={{
-      p: 3,
+      p: fullwidth ? 0 : 3,
     }}
   />
 
@@ -60,6 +60,19 @@ export default ({
 }) => {
   const lang = 'jsx'
 
+  if (props.preview) {
+    const code = props.children
+    return (
+      <LiveProvider
+        {...props}
+        code={code}
+        transformCode={transformCode}
+        scope={scope}>
+        <Preview fullwidth />
+      </LiveProvider>
+    )
+  }
+
   if (props.live) {
     const code = props.children
     return (
@@ -69,8 +82,6 @@ export default ({
           border: t => `1px solid ${t.colors.muted}`,
           borderRadius: 2,
         }}>
-        <Flex>
-        </Flex>
         <LiveProvider
           {...props}
           code={code}

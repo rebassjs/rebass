@@ -1,6 +1,5 @@
 import { Box, Flex, Button } from 'rebass'
 import {
-  Layout,
   Banner,
   NavGrid,
   Container,
@@ -9,8 +8,6 @@ import {
 } from '..'
 import Nav from '../components/nav.mdx'
 import Logo from '../components/logo'
-
-export default Layout
 
 <Banner>
 <Box mt={5} />
@@ -48,7 +45,7 @@ npm i rebass
 [coverage]: https://flat.badgen.net/codecov/c/github/rebassjs/rebass?color=33e
 [codecov]: https://codecov.io/github/rebassjs/rebass
 
-<Grid py={5}>
+<Grid py={5} sx={{ fontWeight: 'bold' }}>
 
 - Start your design system without boiling the ocean
 - Build consistent UI with design constraints and user-defined scales

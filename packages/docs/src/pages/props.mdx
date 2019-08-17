@@ -1,6 +1,3 @@
-import { Layout } from '..'
-
-export default Layout
 export const title = 'Props'
 
 # Props
@@ -88,6 +85,15 @@ The `sx` prop uses [Styled System CSS](https://styled-system.com/css) to pick up
 and write responsive styles using the array syntax.
 
 If you ever need to add styles that do not use values from your theme, use the `css` prop, which is available on all components, without the need for additional configuration.
+
+## `as` Prop
+
+The underlying HTML element rendered in any component can be overridden by the `as` prop.
+
+```jsx
+<Heading as='h1'>Hello</Heading>
+```
+
 
 ## Styled System Props
 
