@@ -178,7 +178,7 @@ export default merge(preset, {
       ':focus': {
         borderColor: 'primary',
         outline: 'none',
-        boxShadow: t => `0 0 2px ${t.colors.primary}`,
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
       }
     },
     input: {

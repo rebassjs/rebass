@@ -1,19 +1,21 @@
 import { Layout } from '..'
-import { Box } from 'rebass'
+import { Box, Button } from 'rebass'
 import {
   Label,
   Input,
   Select,
   Textarea,
   Radio,
-  Switch,
+  Checkbox,
 } from '@rebass/forms'
-export default Layout
 export const title = 'Forms'
 
 # Forms
 
-<Box p={3}>
+<Box
+  as='form'
+  onSubmit={e => e.preventDefault()}
+  py={3}>
   <Label htmlFor='name'>Name</Label>
   <Input
     id='name'
@@ -31,14 +33,18 @@ export const title = 'Forms'
     <option>SF</option>
     <option>LA</option>
   </Select>
-  <Label>
+  <Label mb={3}>
     <Radio name='bool' defaultChecked /> Yes
   </Label>
-  <Label>
+  <Label mb={3}>
     <Radio name='bool' /> No
   </Label>
-  <Switch
-    title='Toggle Something'
-    aria-pressed={false}
-  />
+  <Label mb={3}>
+    <Checkbox name='remember' /> Remember Me
+  </Label>
+  <Label htmlFor='comment'>Comment</Label>
+  <Textarea />
+  <Button>
+    Beep
+  </Button>
 </Box>
