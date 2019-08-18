@@ -25,11 +25,14 @@ const Sidebar = props =>
         props.setMenu(true)
       }}
       sx={{
-        width: 192,
+        width: [ 256, 256, 320 ],
         flex: 'none',
         px: 3,
         mt: [64, 0],
         pb: 3,
+        'li > ul > li > a': {
+          pl: '24px',
+        }
       }}>
       <Nav />
     </Box>

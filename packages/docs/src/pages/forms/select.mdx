@@ -1,0 +1,27 @@
+export const title = 'Select'
+
+# Select
+
+Accessible and themeable form select component.
+
+```js
+import { Label, Select } from '@rebass/forms'
+```
+
+```jsx live
+<Box>
+  <Label htmlFor='country'>Country</Label>
+  <Select
+    id='country'
+    name='country'
+    defaultValue='United States'>
+    {Object.entries(props.countries).map(([ key, country ]) => (
+      <option
+        key={key}>
+        {country.name}
+      </option>
+    ))}
+  </Select>
+</Box>
+```
+

@@ -23,6 +23,7 @@
     "@theme-ui/presets": "^0.2.25",
     "@theme-ui/prism": "^0.2.25",
     "@theme-ui/sidenav": "^0.2.26",
+    "countries-list": "^2.4.3",
     "deepmerge": "^4.0.0",
     "gatsby": "^2.13.48",
     "gatsby-plugin-catch-links": "^2.1.2",

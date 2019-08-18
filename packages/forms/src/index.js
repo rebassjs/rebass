@@ -217,7 +217,7 @@ export const Radio = forwardRef(({
           color: 'primary',
         },
         'input:focus ~ &': {
-          boxShadow: t => `inset 0 0 0 3px ${t.colors.primary}`,
+          bg: 'highlight',
         }
       }}
     />
@@ -294,14 +294,14 @@ export const Checkbox= forwardRef(({
         },
         'input:focus ~ &': {
           color: 'primary',
-          boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+          bg: 'highlight',
         },
       }}
     />
   </Box>
 )
 
-// experimental
+// WIP experimental
 export const Switch = forwardRef((props, ref) =>
   <Box
     ref={ref}
