@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/rebassjs/rebass/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
