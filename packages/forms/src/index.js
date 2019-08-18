@@ -67,11 +67,6 @@ export const Input = forwardRef((props, ref) =>
       borderRadius: 'default',
       color: 'inherit',
       bg: 'transparent',
-      // ':focus': {
-      //   outline: 'none',
-      //   borderColor: 'primary',
-      //   boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
-      // }
     }}
   />
 )
@@ -100,11 +95,6 @@ export const Select = forwardRef((props, ref) =>
         borderRadius: 'default',
         color: 'inherit',
         bg: 'transparent',
-        // ':focus': {
-        //   outline: 'none',
-        //   borderColor: 'primary',
-        //   boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
-        // }
       }}
     />
     <DownArrow
@@ -135,11 +125,6 @@ export const Textarea = forwardRef((props, ref) =>
       borderRadius: 'default',
       color: 'inherit',
       bg: 'transparent',
-      // ':focus': {
-      //   outline: 'none',
-      //   borderColor: 'primary',
-      //   boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
-      // }
     }}
   />
 )

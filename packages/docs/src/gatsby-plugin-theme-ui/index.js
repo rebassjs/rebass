@@ -173,7 +173,6 @@ export default merge(preset, {
       fontWeight: 'bold',
     },
     field: {
-      borderColor: 'gray',
       ':focus': {
         borderColor: 'primary',
         outline: 'none',
