@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "docs",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -16,8 +16,8 @@
     "@jxnblk/react-live": "^2.1.2-1",
     "@mdx-js/mdx": "^1.1.4",
     "@mdx-js/react": "^1.1.4",
-    "@rebass/forms": "4.0.1",
-    "@rebass/preset": "^4.0.2",
+    "@rebass/forms": "^4.0.3",
+    "@rebass/preset": "^4.0.3",
     "@rebass/preset-material": "^4.0.2",
     "@rebass/space": "^4.0.2",
     "@theme-ui/presets": "^0.2.25",
@@ -33,7 +33,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "rebass": "^4.0.2",
+    "rebass": "^4.0.3",
     "remark-slug": "^5.1.2",
     "theme-ui": "^0.2.26"
   }
