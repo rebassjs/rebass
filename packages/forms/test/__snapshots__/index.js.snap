@@ -137,7 +137,6 @@ exports[`Label renders 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  display: block;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
