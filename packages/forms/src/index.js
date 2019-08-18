@@ -42,7 +42,6 @@ export const Label = forwardRef((props, ref) =>
     variant='label'
     {...props}
     __css={{
-      display: 'block',
       width: '100%',
     }}
   />
