@@ -16,6 +16,7 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/react": "^9.1.3",
     "jest": "^24.8.0",
     "jest-emotion": "^10.0.14",
     "jest-styled-components": "^6.3.3",
@@ -37,7 +38,8 @@
       "html"
     ],
     "collectCoverageFrom": [
-      "packages/**/src/*.js"
+      "packages/**/src/*.js",
+      "!packages/docs/**/*.js"
     ],
     "coverageThreshold": {
       "global": {
@@ -47,8 +49,7 @@
         "statements": 90
       }
     },
-    "setupFilesAfterEnv": [
-    ],
+    "setupFilesAfterEnv": [],
     "snapshotSerializers": [
       "jest-emotion"
     ]

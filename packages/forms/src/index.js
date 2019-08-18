@@ -7,24 +7,21 @@ const rebassProps = [
   'sx',
   'variant',
 ]
-const PRE = new RegExp(`^(${rebassProps.join('|')})$`)
 
-const getSystemProps = props => {
+const PRE = new RegExp(`^(${rebassProps.join('|')})$`)
+const MRE = /^m[trblxy]?$/
+
+const getProps = (test) => (props) => {
   const next = {}
-  for (let key in props) {
-    if (!PRE.test(key)) continue
-    next[key] = props[key]
+  for (const key in props) {
+    if (test(key || '')) next[key] = props[key]
   }
   return next
 }
-const omitSystemProps = props => {
-  const next = {}
-  for (let key in props) {
-    if (PRE.test(key)) continue
-    next[key] = props[key]
-  }
-  return next
-}
+
+const getSystemProps = getProps(k => PRE.test(k))
+const getMarginProps = getProps(k => MRE.test(k))
+const omitMarginProps = getProps(k => !MRE.test(k))
 
 const SVG = ({ size = 24, ...props }) =>
   <Box
@@ -70,11 +67,11 @@ export const Input = forwardRef((props, ref) =>
       borderRadius: 'default',
       color: 'inherit',
       bg: 'transparent',
-      ':focus': {
-        outline: 'none',
-        borderColor: 'primary',
-        boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
-      }
+      // ':focus': {
+      //   outline: 'none',
+      //   borderColor: 'primary',
+      //   boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
+      // }
     }}
   />
 )
@@ -85,14 +82,13 @@ const DownArrow = props =>
   </SVG>
 
 export const Select = forwardRef((props, ref) =>
-  <Flex
-    tx='forms'
-    variant='select'
-    {...getSystemProps(props)}>
+  <Flex {...getMarginProps(props)}>
     <Box
       ref={ref}
       as='select'
-      {...omitSystemProps(props)}
+      tx='forms'
+      variant='select'
+      {...omitMarginProps(props)}
       __css={{
         display: 'block',
         width: '100%',
@@ -104,11 +100,11 @@ export const Select = forwardRef((props, ref) =>
         borderRadius: 'default',
         color: 'inherit',
         bg: 'transparent',
-        ':focus': {
-          outline: 'none',
-          borderColor: 'primary',
-          boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
-        }
+        // ':focus': {
+        //   outline: 'none',
+        //   borderColor: 'primary',
+        //   boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
+        // }
       }}
     />
     <DownArrow
@@ -139,11 +135,11 @@ export const Textarea = forwardRef((props, ref) =>
       borderRadius: 'default',
       color: 'inherit',
       bg: 'transparent',
-      ':focus': {
-        outline: 'none',
-        borderColor: 'primary',
-        boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
-      }
+      // ':focus': {
+      //   outline: 'none',
+      //   borderColor: 'primary',
+      //   boxShadow: t => `0 0 0 1px ${t.colors.primary}`,
+      // }
     }}
   />
 )
@@ -297,48 +293,6 @@ export const Checkbox= forwardRef(({
           bg: 'highlight',
         },
       }}
-    />
-  </Box>
-)
-
-// WIP experimental
-export const Switch = forwardRef((props, ref) =>
-  <Box
-    ref={ref}
-    as='button'
-    type='button'
-    role='switch'
-    variant='switch'
-    {...props}
-    __css={{
-      appearance: 'none',
-      width: 48,
-      height: 24,
-      m: 0,
-      p: 0,
-      border: 0,
-      color: 'primary',
-      boxShadow: t => `inset 0 0 0 1px`,
-      borderRadius: 9999,
-      bg: 'muted',
-      display: 'flex',
-      alignItems: 'center',
-      span: {
-        display: 'block',
-        flex: 'none',
-        width: 24,
-        height: 24,
-        borderRadius: 9999,
-        bg: 'currentcolor',
-      },
-      '&[aria-pressed="true"]': {
-        span: {
-          transform: 'translateX(100%)',
-        }
-      }
-    }}>
-    <span
-      aria-hidden='true'
     />
   </Box>
 )
