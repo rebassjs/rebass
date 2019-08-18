@@ -1,0 +1,20 @@
+{
+  "name": "@rebass/forms",
+  "version": "4.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist --root-mode upward",
+    "watch": "babel src -d dist --watch --root-mode upward"
+  },
+  "dependencies": {
+    "reflexbox": "^4.0.1"
+  },
+  "repository": "rebassjs/rebass",
+  "bugs": {
+    "url": "https://github.com/rebassjs/rebass/issues"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

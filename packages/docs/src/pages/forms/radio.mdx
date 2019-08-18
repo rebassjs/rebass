@@ -1,0 +1,41 @@
+export const title = 'Radio'
+
+# Radio
+
+Accessible and themeable form radio input component.
+
+```js
+import { Label, Radio } from '@rebass/forms'
+```
+
+```jsx live
+<Box>
+  <Label>
+    <Radio
+      name='color'
+      id='red'
+      value='red'
+    />
+    Red
+  </Label>
+  <Label>
+    <Radio
+      name='color'
+      id='green'
+      value='green'
+    />
+    Green
+  </Label>
+  <Label>
+    <Radio
+      name='color'
+      id='blue'
+      value='blue'
+    />
+    Blue
+  </Label>
+</Box>
+```
+
+Note that the `Label` component uses `display: flex` by default to make alignment with labels simpler.
+

@@ -8,6 +8,7 @@ export const preset = {
     secondary: '#30c',
     muted: '#f6f6f9',
     gray: '#dddddf',
+    highlight: 'hsla(205, 100%, 40%, 0.125)',
   },
   fonts: {
     body: 'system-ui, sans-serif',
