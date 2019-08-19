@@ -2330,10 +2330,10 @@
   resolved "https://registry.yarnpkg.com/@theme-ui/preset-system/-/preset-system-0.2.29.tgz#bf6a751ce76fd8255c0c2f91ff42c684d9aad839"
   integrity sha512-C+Jbr4nxveoOunni2cJROB4ATPb+jvVlxd1HxCyi5oxFl47Jlkuf1RF95wt/8aRUvE+IdVqnAqqCngDKsClpAQ==
 
-"@theme-ui/preset-tailwind@^0.2.30":
-  version "0.2.30"
-  resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.2.30.tgz#e6092a965ab23b54091c61fb868caf1289c2c970"
-  integrity sha512-/zNP/9s9gPuzpkyrLzBtkXudgtTlOI0YSCHAkhmtBGGfBk0APGt7mBc1DyLAKfbBwUKVnMLsX7qFFpb/jKRsfA==
+"@theme-ui/preset-tailwind@^0.2.34":
+  version "0.2.34"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-tailwind/-/preset-tailwind-0.2.34.tgz#7bdc54b21f3657e1bf83b4c6c026e19918b59f32"
+  integrity sha512-CQFCKYyplbEj4fg6ClF5ygs5VkIu8ON5JxLf/Rz9Ep8/O+l+26KHy5aGdKTRCYlli0zrpqf9Ok4Ljb+d6BcGdg==
 
 "@theme-ui/preset-tosh@^0.2.29":
   version "0.2.29"
@@ -2341,9 +2341,9 @@
   integrity sha512-4HSdziukKqCC0tR3VfHun8pTnLOQYXFYeP8MWjvjLaIHEd/E1p0rwunGg5LX22/Tj4ri5UUWadAxOvkDn+U+wQ==
 
 "@theme-ui/presets@^0.2.25":
-  version "0.2.30"
-  resolved "https://registry.yarnpkg.com/@theme-ui/presets/-/presets-0.2.30.tgz#4bec0548c83079bc98d7881c1908b7acf3b96f21"
-  integrity sha512-mAffgfANul5IWm87bJopdN+zJgSn1Ngf86aiaYihFr0gvgARRQZUa7e7ukQb6pUczD9mNVth0eDhVak20QpCZw==
+  version "0.2.34"
+  resolved "https://registry.yarnpkg.com/@theme-ui/presets/-/presets-0.2.34.tgz#564279dd3dbd1a8a2ae72ac9e83f92fcc6e33f12"
+  integrity sha512-rhnTL51N1GZmDfSozlhlBEBCuYq4BleHjyA8fOQl6xIyNN1xjZXgr1vuJmPlU2hG6sUXGHXOIh/q7kqMTRVdsA==
   dependencies:
     "@theme-ui/preset-base" "^0.2.29"
     "@theme-ui/preset-bootstrap" "^0.2.29"
@@ -2355,7 +2355,7 @@
     "@theme-ui/preset-roboto" "^0.2.29"
     "@theme-ui/preset-swiss" "^0.2.29"
     "@theme-ui/preset-system" "^0.2.29"
-    "@theme-ui/preset-tailwind" "^0.2.30"
+    "@theme-ui/preset-tailwind" "^0.2.34"
     "@theme-ui/preset-tosh" "^0.2.29"
 
 "@theme-ui/prism@^0.2.25":
