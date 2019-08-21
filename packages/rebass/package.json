@@ -3,9 +3,9 @@
   "version": "4.0.3",
   "description": "React primitive UI components built with Styled System",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "prepare": "babel src -d dist && yarn styled-components",
-    "styled-components": "NODE_ENV=styled babel src -d styled-components"
+    "prepare": "rebass-bundler"
   },
   "keywords": [
     "components",

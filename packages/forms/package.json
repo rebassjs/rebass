@@ -2,9 +2,9 @@
   "name": "@rebass/forms",
   "version": "4.0.3",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "prepare": "babel src -d dist --root-mode upward",
-    "watch": "babel src -d dist --watch --root-mode upward"
+    "prepare": "rebass-bundler"
   },
   "dependencies": {
     "reflexbox": "^4.0.1"
