@@ -31,5 +31,6 @@
   "repository": "rebassjs/rebass",
   "devDependencies": {
     "babel-plugin-transform-rename-import": "^2.3.0"
-  }
+  },
+  "gitHead": "f0f01843e9fb63ca69112d7e97a1451b27ee9e6c"
 }

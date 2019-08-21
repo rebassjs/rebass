@@ -11,5 +11,9 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0"
+  },
+  "gitHead": "f0f01843e9fb63ca69112d7e97a1451b27ee9e6c",
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -29,5 +29,6 @@
   "repository": "rebassjs/rebass",
   "bugs": {
     "url": "https://github.com/rebassjs/rebass/issues"
-  }
+  },
+  "gitHead": "f0f01843e9fb63ca69112d7e97a1451b27ee9e6c"
 }
