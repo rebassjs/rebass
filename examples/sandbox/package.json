@@ -1,19 +1,19 @@
 {
   "name": "rebass-sandbox",
   "private": true,
-  "version": "4.0.3",
+  "version": "4.0.4",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "react-scripts start"
   },
   "dependencies": {
-    "@rebass/preset": "^4.0.3",
+    "@rebass/preset": "^4.0.4",
     "emotion-theming": "^10.0.14",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.1.1",
-    "rebass": "^4.0.3",
+    "rebass": "^4.0.4",
     "styled-components": "^4.3.2"
   },
   "browserslist": {
