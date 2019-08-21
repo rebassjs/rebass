@@ -1,6 +1,6 @@
 {
   "name": "@rebass/preset",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "Base theme preset for use with Rebass",
   "main": "dist/index.js",
   "scripts": {
