@@ -7402,11 +7402,11 @@ gatsby-page-utils@^0.0.12:
     slash "^3.0.0"
 
 gatsby-plugin-catch-links@^2.1.2:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.3.tgz#f2c136caf5f4d3ac7be8efdd0cd6df4b7e6ad405"
-  integrity sha512-xGkthFBud8N0/wj7dziGBmVZp8yrtfqkmQ9inRCMug4Uvl4jNQ5T35BwqrKbJOXyjSIm5Z7TDx5pm/Pu4XrtQQ==
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.1.5.tgz#de84abd4a1dc60958ef9fa9e64438bbaea65b8a0"
+  integrity sha512-YL4heo4WtELBRDGejERNfDOSNZzXFnjQAbEwYk09vkTczWd0NO3BUeVpfK3bJY0Md+5ELiCxQSV0xDBle8ddeQ==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.5.5"
     escape-string-regexp "^1.0.5"
 
 gatsby-plugin-mdx@^1.0.22:
