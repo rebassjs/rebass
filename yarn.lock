@@ -2208,13 +2208,13 @@
     "@styled-system/core" "^5.1.1"
 
 "@styled-system/should-forward-prop@^5.0.0":
-  version "5.0.21"
-  resolved "https://registry.yarnpkg.com/@styled-system/should-forward-prop/-/should-forward-prop-5.0.21.tgz#40919c8e1bb10a5d58dcc057e9c927e60a5e7b1d"
-  integrity sha512-BcGgIDCZa0nuQb+CP9oW/sGXV+lRxVVMweL+n/k5lk1H/MPLskHhAW+q6r0xDly+mdKQw+ilek/WnomO8kV0Xw==
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@styled-system/should-forward-prop/-/should-forward-prop-5.1.1.tgz#e6df5594797e01bd8a67b1971af06b44c6e7cd0a"
+  integrity sha512-vWgA9qtmo+Cjg63UiLNbuIHUA+nUMvl2tAFtiYE8KKIAz+CB8D11spVXE4JL89HG77sjuuQFwI5D778CKz7q6Q==
   dependencies:
     "@emotion/is-prop-valid" "^0.8.1"
     "@emotion/memoize" "^0.7.1"
-    styled-system "^5.0.21"
+    styled-system "^5.1.1"
 
 "@styled-system/space@^5.1.1":
   version "5.1.1"
@@ -15383,7 +15383,7 @@ styled-components@^4.0.0, styled-components@^4.3.2:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
-styled-system@>=5.0.0, styled-system@^5.0.0, styled-system@^5.0.21:
+styled-system@>=5.0.0, styled-system@^5.0.0, styled-system@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-5.1.1.tgz#81f949ff318ef95303bf40f3a8cbad37a2398654"
   integrity sha512-jTFstSW5valWSkCsJhgh0fqUFLi1hL+S7Zj6Q6Dj1VTkR77l8B3/mgtSROjjiIwRG9SLW1BsJWjLn8mTNiwqgg==
