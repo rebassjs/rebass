@@ -23,8 +23,10 @@
     "@emotion/styled": "^10.0.0",
     "@styled-system/css": "^5.0.0",
     "@styled-system/should-forward-prop": "^5.0.0",
-    "react": "^16.8.6",
     "styled-system": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
   },
   "author": "Brent Jackson",
   "license": "MIT",
