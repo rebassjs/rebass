@@ -3,6 +3,52 @@
 
 ## Unreleased
 
+- Update dependencies
+
+## 4.0.5 2019-08-21
+
+- Fix publish
+
+## 4.0.4 2019-08-21
+
+- Add bundler setup & build for `@rebass/forms/styled-system`
+
+## 4.0.3 2019-08-18
+
+- Add forms package
+- Update dependencies
+
+## 4.0.2 2019-08-07
+## 4.0.1 2019-08-06
+
+- Fix ignore files
+- Adjust build
+- Update dependencies
+
+## 4.0.0 2019-08-04
+
+- New [`sx` prop](https://rebassjs.org/props/#sx-prop) for theme-based styles
+- Use the `css` prop for un-themed, raw CSS values
+- No additional Babel configuration required for the `sx` or `css` props
+- Use the `sx` prop in MDX documents
+- Built-in support for themeable component [variants](https://rebassjs.org/variants)
+- Fully compatible with [Theme UI](https://theme-ui.com)
+
+### Breaking Changes
+
+- The default package now uses Emotion. To use Rebass with Styled Components, import the components from `rebass/styled-components` instead.
+- The undocumented theme keys for `Box`, `Flex`, `Text`, `Heading`, `Link`, `Button`, `Image`, and `Card` are no longer supported. Use variants instead.
+- The `@rebass/grid` package has been renamed (back to) `reflexbox`
+- Heading: default `fontWeight` is now set to `heading`. Add styles to `theme.fontWeights` to customize the `heading` font weight.
+- Button no longer supports the following props. Use the `sx` prop instead.
+  `border`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `borderTop`, `borderRight`, `borderBottom`, `borderLeft`, `borderX`, `borderY`
+- Image no longer supports the following props. Use the `sx` prop instead.
+  `border`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `borderTop`, `borderRight`, `borderBottom`, `borderLeft`, `borderX`, `borderY`
+- Link no longer includes default styles. Add styles to `theme.variants.link` to customize link styles.
+- Card no longer supports the following props. Use the `sx` prop instead.
+  `border`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `borderTop`, `borderRight`, `borderBottom`, `borderLeft`, `borderX`, `borderY`, `boxShadow`, `textShadow`, `background`, `backgroundImage`, `backgroundSize`, `backgroundPosition`, `backgroundRepeat`,
+
+
 ## [3.1.0] 2019-03-23
 
 - Update to Styled System v4
