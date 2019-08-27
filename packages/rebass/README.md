@@ -117,6 +117,10 @@ https://codesandbox.io/s/github/rebassjs/rebass/tree/master/examples/sandbox
 [emotion]: https://github.com/emotion-js/emotion
 [theme ui]: https://theme-ui.com
 
+### Upgrading from v3
+
+See the [Migration Guide](https://rebassjs.org/migrating/).
+
 #### Previous Versions
 
 - **TK** v3.2.1
