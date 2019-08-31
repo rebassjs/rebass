@@ -280,3 +280,41 @@ export const Checkbox= forwardRef(({
     />
   </Box>
 )
+
+export const Slider = forwardRef(({
+  ...props
+}, ref) =>
+  <Box
+    ref={ref}
+    as='input'
+    type='range'
+    tx='forms'
+    variant='slider'
+    {...props}
+    __css={{
+      display: 'block',
+      width: '100%',
+      height: 4,
+      my: 2,
+      cursor: 'pointer',
+      appearance: 'none',
+      borderRadius: 9999,
+      color: 'inherit',
+      bg: 'gray',
+      ':focus': {
+      },
+      '&::-webkit-slider-thumb': {
+        appearance: 'none',
+        width: 16,
+        height: 16,
+        bg: 'currentcolor',
+        border: 0,
+        borderRadius: 9999,
+        '&:focus': {
+          bg: 'primary'
+        },
+        variant: 'forms.slider.thumb',
+      },
+    }}
+  />
+)
