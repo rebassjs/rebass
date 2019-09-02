@@ -65,6 +65,9 @@ export default merge(preset, {
   sizes: {
     wide: 1280,
   },
+  shadows: {
+    small: `0 0 0px 1px rgba(0, 0, 0, 0.25)`,
+  },
   buttons: {
     big: {
       variant: 'buttons.primary',
@@ -198,6 +201,10 @@ export default merge(preset, {
     },
     slider: {
       bg: 'lightgray',
+    },
+    switch: {
+      borderColor: 'lightgray',
+      // thumb: {}
     }
   }
 })

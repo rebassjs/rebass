@@ -335,14 +335,16 @@ export const Switch = forwardRef(({
       appearance: 'none',
       m: 0,
       p: 0,
-      width: 48,
+      width: 40,
       height: 24,
       color: 'primary',
       bg: 'transparent',
       border: '1px solid',
       borderColor: 'gray',
       borderRadius: 9999,
-      '[aria-checked=true]': {
+      '&[aria-checked=true]': {
+        bg: 'primary',
+        borderColor: 'primary',
       },
       ':focus': {
       },
@@ -350,14 +352,16 @@ export const Switch = forwardRef(({
     <Box
       aria-hidden
       style={{
-        transform: checked ? 'translateX(100%)' : 'translateX(0)',
+        transform: checked ? 'translateX(16px)' : 'translateX(0)',
       }}
       sx={{
         mt: '-1px',
         width: 24,
         height: 24,
         borderRadius: 9999,
-        bg: 'primary',
+        border: '1px solid',
+        borderColor: 'primary',
+        bg: 'background',
         transitionProperty: 'transform',
         transitionTimingFunction: 'ease-out',
         transitionDuration: '0.1s',
