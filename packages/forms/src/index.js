@@ -302,6 +302,8 @@ export const Slider = forwardRef(({
       color: 'inherit',
       bg: 'gray',
       ':focus': {
+        outline: 'none',
+        color: 'primary',
       },
       '&::-webkit-slider-thumb': {
         appearance: 'none',
@@ -310,11 +312,57 @@ export const Slider = forwardRef(({
         bg: 'currentcolor',
         border: 0,
         borderRadius: 9999,
-        '&:focus': {
-          bg: 'primary'
-        },
         variant: 'forms.slider.thumb',
       },
     }}
   />
+)
+
+export const Switch = forwardRef(({
+  checked,
+  ...props
+}, ref) =>
+  <Box
+    ref={ref}
+    as='button'
+    type='button'
+    role='switch'
+    tx='forms'
+    variant='switch'
+    aria-checked={checked}
+    {...props}
+    __css={{
+      appearance: 'none',
+      m: 0,
+      p: 0,
+      width: 48,
+      height: 24,
+      color: 'primary',
+      bg: 'transparent',
+      border: '1px solid',
+      borderColor: 'gray',
+      borderRadius: 9999,
+      '[aria-checked=true]': {
+      },
+      ':focus': {
+      },
+    }}>
+    <Box
+      aria-hidden
+      style={{
+        transform: checked ? 'translateX(100%)' : 'translateX(0)',
+      }}
+      sx={{
+        mt: '-1px',
+        width: 24,
+        height: 24,
+        borderRadius: 9999,
+        bg: 'primary',
+        transitionProperty: 'transform',
+        transitionTimingFunction: 'ease-out',
+        transitionDuration: '0.1s',
+        variant: 'forms.switch.thumb',
+      }}
+    />
+  </Box>
 )
