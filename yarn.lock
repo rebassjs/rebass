@@ -788,7 +788,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
 
-"@babel/runtime@7.5.5", "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
+"@babel/runtime@7.5.5", "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
@@ -2456,15 +2456,15 @@
     prism-react-renderer "^0.1.7"
 
 "@theme-ui/sidenav@^0.2.26":
-  version "0.2.35"
-  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.35.tgz#117c5ed471ad9eb351857fbbf9bb981645fd6359"
-  integrity sha512-lAveQVZ0lQGPTohFYFRA7bhGL9QwDPNBCjiR3Ik4jbYLyR5fSYTHtYMsnObFGxvrA3BRpJt9SHioS8MUIA5R8Q==
+  version "0.2.38"
+  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.38.tgz#84c3b3aae5e119955026211bdf2eedf59d1fe9b5"
+  integrity sha512-SGj6v+GmBdtRPbbQmEcrppv7JKGbEn66Btwxei8wMK4ahMlB2PXn1RQjGrM3d6pu2Dyt9tqPxNaP0hq6Ej+V2g==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@mdx-js/react" "^1.0.21"
     deepmerge "^4.0.0"
     react "^16.8.6"
-    theme-ui "^0.2.35"
+    theme-ui "^0.2.38"
 
 "@types/babel__core@^7.1.0":
   version "7.1.2"
@@ -15578,7 +15578,7 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theme-ui@^0.2.26, theme-ui@^0.2.35:
+theme-ui@^0.2.26, theme-ui@^0.2.38:
   version "0.2.38"
   resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.38.tgz#7d294b6bf8b5bae27e36cccb41c0eca60309f0c9"
   integrity sha512-nPjZlDyRISPu1EYlYHOUT5IKFd22cSEg3i2Kr9EH/mbtD3ezTAqAdE7SKzjUe9tFyagJ9y0UbY/tUI+SENu8wQ==
