@@ -123,7 +123,7 @@ See the [Migration Guide](https://rebassjs.org/migrating/).
 
 #### Previous Versions
 
-- **TK** v3.2.1
+- [v3.2.2](https://github.com/rebassjs/rebass/tree/v3.2.2) – [v3 Docs](https://rebass-v3.now.sh)
 - [v2.3.2](https://github.com/rebassjs/rebass/tree/v2) – [Docs for Rebass v2](https://rebass-v2.now.sh)
 - [v1.0.7](https://github.com/rebassjs/rebass/tree/v1.0.7)
 
