@@ -1,0 +1,31 @@
+import { Tiles } from '@rebass/layout'
+export const title = 'Layout'
+
+# @rebass/layout
+
+Themeable layout components built with Rebass
+
+```sh
+npm i @rebass/layout
+```
+
+## Tiles
+
+```jsx live
+<Tiles width={[96, null, 128]}>
+  <Image src={props.image} />
+  <Image src={props.image} />
+  <Image src={props.image} />
+  <Image src={props.image} />
+</Tiles>
+```
+
+```jsx live
+<Tiles columns={[2, null, 4]}>
+  <Image src={props.image} />
+  <Image src={props.image} />
+  <Image src={props.image} />
+  <Image src={props.image} />
+</Tiles>
+```
+
