@@ -340,13 +340,14 @@ export const Switch = forwardRef(({
       color: 'primary',
       bg: 'transparent',
       border: '1px solid',
-      borderColor: 'gray',
+      borderColor: 'primary',
       borderRadius: 9999,
       '&[aria-checked=true]': {
         bg: 'primary',
-        borderColor: 'primary',
       },
       ':focus': {
+        outline: 'none',
+        boxShadow: '0 0 0 2px'
       },
     }}>
     <Box
@@ -356,6 +357,7 @@ export const Switch = forwardRef(({
       }}
       sx={{
         mt: '-1px',
+        ml: '-1px',
         width: 24,
         height: 24,
         borderRadius: 9999,

@@ -203,7 +203,6 @@ export default merge(preset, {
       bg: 'lightgray',
     },
     switch: {
-      borderColor: 'lightgray',
       // thumb: {}
     }
   }

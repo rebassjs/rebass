@@ -23,6 +23,19 @@ const scope = {
   }
 }
 
+scope.Switch = props => {
+  const [active, setActive] = React.useState(true)
+  const toggle = () => setActive(!active)
+
+  return (
+    <RebassForms.Switch
+      checked={active}
+      onClick={toggle}
+      {...props}
+    />
+  )
+}
+
 const transformCode = code => `<>${code}</>`
 
 const Preview = ({ fullwidth, ...props }) =>
