@@ -2599,15 +2599,15 @@
     prism-react-renderer "^0.1.7"
 
 "@theme-ui/sidenav@^0.2.26":
-  version "0.2.38"
-  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.38.tgz#84c3b3aae5e119955026211bdf2eedf59d1fe9b5"
-  integrity sha512-SGj6v+GmBdtRPbbQmEcrppv7JKGbEn66Btwxei8wMK4ahMlB2PXn1RQjGrM3d6pu2Dyt9tqPxNaP0hq6Ej+V2g==
+  version "0.2.41"
+  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.41.tgz#224a8663abf82c1677d10d073776f3d704d84ed0"
+  integrity sha512-rCnMpCIG/BKicC7I3sJvN22uZMTBqnuAEXgUUJwa3z3mT4nVoG51wCXiIdw5G8MCvuYCsl0SfBifIEzuD02DJA==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@mdx-js/react" "^1.0.21"
     deepmerge "^4.0.0"
     react "^16.8.6"
-    theme-ui "^0.2.38"
+    theme-ui "^0.2.41"
 
 "@types/babel__core@^7.1.0":
   version "7.1.2"
@@ -15762,7 +15762,7 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theme-ui@^0.2.26, theme-ui@^0.2.38:
+theme-ui@^0.2.26, theme-ui@^0.2.41:
   version "0.2.41"
   resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.41.tgz#51ea7160eadb6873972e453c4c68e59409af0fe1"
   integrity sha512-VketIz3vjXMcmXxTX+7QO4QDx69GqNocmGwrXqYwKngKEOYxvXl0clDZLQzNIZBdo+UZcYa8gKf/jyBXXQ2/xQ==
