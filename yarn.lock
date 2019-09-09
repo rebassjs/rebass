@@ -2592,9 +2592,9 @@
     "@theme-ui/preset-tosh" "^0.2.40"
 
 "@theme-ui/prism@^0.2.25":
-  version "0.2.29"
-  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.2.29.tgz#89804f09187859e2fcf62ada35f215ca2ea8da71"
-  integrity sha512-iveu3jP8uR2SEO3YS83d8gsYaMiS/H5qYiuFqizOLYPV+cPUxvOAFCmFnRi5aqqKy6lrFwpCtmyw5/42AXbS9A==
+  version "0.2.40"
+  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.2.40.tgz#e2f4d69981ce33e916199a7a8763ac455878e4fe"
+  integrity sha512-F8gNr0r7qg5pP+QMURzCVnx7LSGgPOEwpXl0QHhV4hOM4klC6P2JnivmEeWNjSC5uFCzeomEgLl1eaFeUheiAw==
   dependencies:
     prism-react-renderer "^0.1.7"
 
