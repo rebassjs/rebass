@@ -53,8 +53,5 @@
     "snapshotSerializers": [
       "jest-emotion"
     ]
-  },
-  "dependencies": {
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1"
   }
 }

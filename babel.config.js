@@ -3,9 +3,6 @@ module.exports = {
     '@babel/preset-env',
     '@babel/preset-react'
   ],
-  plugins: [
-    // 'transform-es2015-modules-umd'
-  ],
   env: {
     esm: {
       presets: [
