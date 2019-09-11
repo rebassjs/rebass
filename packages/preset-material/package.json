@@ -4,7 +4,7 @@
   "description": "Material Design theme preset for use with Rebass",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "babel src -d dist --root-mode upward",
+    "prepare": "rebass-bundler",
     "watch": "babel src -d dist --watch --root-mode upward"
   },
   "keywords": [

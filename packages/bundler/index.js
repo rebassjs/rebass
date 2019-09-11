@@ -15,5 +15,6 @@ const babel = (env, ...args) => {
 }
 
 babel(null, 'src', '-d', 'dist')
+babel('umd', 'src', '-o', 'dist/index.umd.js', '--plugins=transform-es2015-modules-umd')
 babel('esm', 'src', '-o', 'dist/index.esm.js')
 babel('styled', 'src', '-d', 'styled-components')

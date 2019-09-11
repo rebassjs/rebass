@@ -4,7 +4,7 @@
   "description": "React component for applying responsive margin and padding to child elements without a wrapping HTML container. Built with Styled System.",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "babel src -d dist --root-mode upward"
+    "prepare": "rebass-bundler"
   },
   "keywords": [
     "rebass",
