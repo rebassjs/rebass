@@ -15,8 +15,7 @@
     "style"
   ],
   "scripts": {
-    "prepare": "babel src -d dist && yarn styled-components",
-    "styled-components": "NODE_ENV=styled babel src -d styled-components"
+    "prepare": "rebass-bundler"
   },
   "dependencies": {
     "@emotion/core": "^10.0.0",
