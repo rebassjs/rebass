@@ -11,7 +11,6 @@
     "@rebass/preset": "^4.0.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "^3.1.1",
     "rebass": "^4.0.5",
     "styled-components": "^4.3.2"
   },

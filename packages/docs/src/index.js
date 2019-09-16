@@ -1,4 +1,5 @@
 import React from 'react'
+import { EditorProvider } from 'reflexbox'
 import Layout from './components/layout'
 
 export { default as Layout } from './components/layout'
@@ -9,6 +10,8 @@ export { default as Logo } from './components/logo'
 export { default as RecipeCard } from './components/recipe-card'
 
 export const wrapPageElement = ({ element, props }) =>
-  <Layout {...props}>
-    {element}
-  </Layout>
+  <EditorProvider>
+    <Layout {...props}>
+      {element}
+    </Layout>
+  </EditorProvider>

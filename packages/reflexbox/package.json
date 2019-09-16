@@ -22,6 +22,7 @@
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",
     "@styled-system/css": "^5.0.0",
+    "@styled-system/props": "^5.1.3",
     "@styled-system/should-forward-prop": "^5.0.0",
     "styled-system": "^5.0.0"
   },
