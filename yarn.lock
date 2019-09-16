@@ -2599,15 +2599,15 @@
     prism-react-renderer "^0.1.7"
 
 "@theme-ui/sidenav@^0.2.26":
-  version "0.2.41"
-  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.41.tgz#224a8663abf82c1677d10d073776f3d704d84ed0"
-  integrity sha512-rCnMpCIG/BKicC7I3sJvN22uZMTBqnuAEXgUUJwa3z3mT4nVoG51wCXiIdw5G8MCvuYCsl0SfBifIEzuD02DJA==
+  version "0.2.42"
+  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.42.tgz#7568373a70094c82c31ef57f237141510af16bbd"
+  integrity sha512-3IWJ5dI6DUmrOsGYE70/lzTwNZDzin84+gRabxStOOzabReb0fWE/XIAEszL0CnQBxyw9/a7lPzyt0/vqE3Ohw==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@mdx-js/react" "^1.0.21"
     deepmerge "^4.0.0"
     react "^16.8.6"
-    theme-ui "^0.2.41"
+    theme-ui "^0.2.42"
 
 "@types/babel__core@^7.1.0":
   version "7.1.2"
@@ -13846,7 +13846,7 @@ react-test-renderer@^16.8.6:
     react-is "^16.9.0"
     scheduler "^0.15.0"
 
-react@^16.8.0, react@^16.8.6, react@^16.9.0:
+react@^16.8.6, react@^16.9.0:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
   integrity sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w==
@@ -15781,15 +15781,14 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theme-ui@^0.2.26, theme-ui@^0.2.41:
-  version "0.2.41"
-  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.41.tgz#51ea7160eadb6873972e453c4c68e59409af0fe1"
-  integrity sha512-VketIz3vjXMcmXxTX+7QO4QDx69GqNocmGwrXqYwKngKEOYxvXl0clDZLQzNIZBdo+UZcYa8gKf/jyBXXQ2/xQ==
+theme-ui@^0.2.26, theme-ui@^0.2.42:
+  version "0.2.42"
+  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.42.tgz#34bea9e2961a7d858820ed25f6baaeebac09dd91"
+  integrity sha512-ChW8mGj3seiQCcb5rGNUI8TFAeh3iL1bziIuwmf5LCZ3Jpu+Hage475buoQZdO7g9sVZ/6yw3gDGxBrXkVIJyg==
   dependencies:
     "@emotion/is-prop-valid" "^0.8.1"
     "@styled-system/css" "^5.0.16"
     deepmerge "^4.0.0"
-    react "^16.8.0"
 
 thenify-all@^1.0.0:
   version "1.6.0"
