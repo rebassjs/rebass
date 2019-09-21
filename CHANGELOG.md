@@ -4,6 +4,7 @@
 ## Unreleased
 
 - Update dependencies
+- Add layout package
 
 ## 4.0.5 2019-08-21
 

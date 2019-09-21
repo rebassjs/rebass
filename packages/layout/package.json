@@ -1,0 +1,17 @@
+{
+  "name": "@rebass/layout",
+  "version": "4.0.5",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "prepare": "rebass-bundler"
+  },
+  "dependencies": {
+    "reflexbox": "^4.0.5"
+  },
+  "repository": "rebassjs/rebass",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
