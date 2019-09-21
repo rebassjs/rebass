@@ -3,8 +3,11 @@
 
 ## Unreleased
 
+## 4.0.6 2019-09-21
+
 - Update dependencies
 - Add layout package
+- Add Slider and Switch to forms package
 
 ## 4.0.5 2019-08-21
 
