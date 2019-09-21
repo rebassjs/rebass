@@ -10,12 +10,14 @@ import { ThemeProvider } from 'theme-ui'
 import Prism from '@theme-ui/prism'
 import * as Rebass from 'rebass'
 import * as RebassForms from '@rebass/forms'
+import * as RebassLayout from '@rebass/layout'
 import { Flex, Box } from 'rebass'
 import { countries } from 'countries-list'
 
 const scope = {
   ...Rebass,
   ...RebassForms,
+  ...RebassLayout,
   ThemeProvider,
   props: {
     image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20',
