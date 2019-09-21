@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "React primitive UI components built with Styled System",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -24,7 +24,7 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "reflexbox": "^4.0.5"
+    "reflexbox": "^4.0.6"
   },
   "repository": "rebassjs/rebass",
   "bugs": {

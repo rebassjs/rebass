@@ -1,7 +1,7 @@
 {
   "name": "rebass-sandbox",
   "private": true,
-  "version": "4.0.5",
+  "version": "4.0.6",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,7 @@
     "emotion-theming": "^10.0.14",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "rebass": "^4.0.5",
+    "rebass": "^4.0.6",
     "styled-components": "^4.3.2"
   },
   "browserslist": {
