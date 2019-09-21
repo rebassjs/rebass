@@ -280,3 +280,95 @@ export const Checkbox= forwardRef(({
     />
   </Box>
 )
+
+export const Slider = forwardRef(({
+  ...props
+}, ref) =>
+  <Box
+    ref={ref}
+    as='input'
+    type='range'
+    tx='forms'
+    variant='slider'
+    {...props}
+    __css={{
+      display: 'block',
+      width: '100%',
+      height: 4,
+      my: 2,
+      cursor: 'pointer',
+      appearance: 'none',
+      borderRadius: 9999,
+      color: 'inherit',
+      bg: 'gray',
+      ':focus': {
+        outline: 'none',
+        color: 'primary',
+      },
+      '&::-webkit-slider-thumb': {
+        appearance: 'none',
+        width: 16,
+        height: 16,
+        bg: 'currentcolor',
+        border: 0,
+        borderRadius: 9999,
+        variant: 'forms.slider.thumb',
+      },
+    }}
+  />
+)
+
+export const Switch = forwardRef(({
+  checked,
+  ...props
+}, ref) =>
+  <Box
+    ref={ref}
+    as='button'
+    type='button'
+    role='switch'
+    tx='forms'
+    variant='switch'
+    aria-checked={checked}
+    {...props}
+    __css={{
+      appearance: 'none',
+      m: 0,
+      p: 0,
+      width: 40,
+      height: 24,
+      color: 'primary',
+      bg: 'transparent',
+      border: '1px solid',
+      borderColor: 'primary',
+      borderRadius: 9999,
+      '&[aria-checked=true]': {
+        bg: 'primary',
+      },
+      ':focus': {
+        outline: 'none',
+        boxShadow: '0 0 0 2px'
+      },
+    }}>
+    <Box
+      aria-hidden
+      style={{
+        transform: checked ? 'translateX(16px)' : 'translateX(0)',
+      }}
+      sx={{
+        mt: '-1px',
+        ml: '-1px',
+        width: 24,
+        height: 24,
+        borderRadius: 9999,
+        border: '1px solid',
+        borderColor: 'primary',
+        bg: 'background',
+        transitionProperty: 'transform',
+        transitionTimingFunction: 'ease-out',
+        transitionDuration: '0.1s',
+        variant: 'forms.switch.thumb',
+      }}
+    />
+  </Box>
+)

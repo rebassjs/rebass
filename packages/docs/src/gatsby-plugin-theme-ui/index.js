@@ -13,6 +13,7 @@ export default merge(preset, {
     accent: '#f0a',
     muted: '#f6f6ff',
     gray: '#444',
+    lightgray: '#cfcfd3',
     modes: {
       dark: {
         text: '#fff',
@@ -22,6 +23,7 @@ export default merge(preset, {
         accent: '#f0b',
         muted: '#111',
         gray: '#999',
+        lightgray: '#444',
       },
       gray: {
         text: '#fff',
@@ -31,6 +33,7 @@ export default merge(preset, {
         accent: 'hsl(300, 100%, 60%)',
         muted: 'hsl(270, 50%, 8%)',
         gray: 'hsl(270, 50%, 70%)',
+        lightgray: 'hsl(270, 50%, 30%)',
       },
       hack: {
         text: 'hsl(120, 100%, 75%)',
@@ -40,6 +43,7 @@ export default merge(preset, {
         accent: 'hsl(120, 100%, 90%)',
         muted: 'hsl(120, 20%, 7%)',
         gray: 'hsl(120, 20%, 40%)',
+        lightgray: 'hsl(120, 20%, 20%)',
       },
       pink: {
         text: 'hsl(350, 80%, 10%)',
@@ -49,6 +53,7 @@ export default merge(preset, {
         accent: 'hsl(280, 100%, 20%)',
         muted: 'hsl(350, 100%, 88%)',
         gray: 'hsl(350, 40%, 50%)',
+        lightgray: 'hsl(350, 60%, 80%)',
       },
     }
   },
@@ -59,6 +64,9 @@ export default merge(preset, {
   },
   sizes: {
     wide: 1280,
+  },
+  shadows: {
+    small: `0 0 0px 1px rgba(0, 0, 0, 0.25)`,
   },
   buttons: {
     big: {
@@ -173,6 +181,7 @@ export default merge(preset, {
       fontWeight: 'bold',
     },
     field: {
+      borderColor: 'lightgray',
       ':focus': {
         borderColor: 'primary',
         outline: 'none',
@@ -190,5 +199,11 @@ export default merge(preset, {
     },
     radio: {
     },
+    slider: {
+      bg: 'lightgray',
+    },
+    switch: {
+      // thumb: {}
+    }
   }
 })
