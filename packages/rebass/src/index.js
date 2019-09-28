@@ -16,13 +16,8 @@ export const Heading = forwardRef((props, ref) =>
     ref={ref}
     as='h2'
     tx='text'
+    variant='heading'
     {...props}
-    __css={{
-      fontSize: 4,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-    }}
   />
 )
 
