@@ -13,7 +13,7 @@ import shouldForwardProp from '@styled-system/should-forward-prop'
 
 const sx = props => css(props.sx)(props.theme)
 const base = props => css(props.__css)(props.theme)
-const variant = ({
+export const variant = ({
   theme,
   variant,
   tx = 'variants',
