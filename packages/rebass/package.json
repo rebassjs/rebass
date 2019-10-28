@@ -1,6 +1,6 @@
 {
   "name": "rebass",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "description": "React primitive UI components built with Styled System",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
