@@ -5354,9 +5354,9 @@ cosmiconfig@^5.0.0, cosmiconfig@^5.1.0, cosmiconfig@^5.2.0, cosmiconfig@^5.2.1:
     parse-json "^4.0.0"
 
 countries-list@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.4.3.tgz#bc4190ba6dc18bca32b89c2d2615294613c10ebe"
-  integrity sha512-3iIRoU2j6II5OCULdzvR+QS1DKMb776+r0e2oD98V0sX2a0SfTz/bnpwUPhOCM7jmzoEF5PgTMuPw9M7eeJrJA==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.5.0.tgz#2a71c7f169ef477673a72fd30945dedc96986b1a"
+  integrity sha512-3WkdGv0Yd0UPNdndgW+gCkj+5oMRY5dcgrjNETPuEE0nmClFbFlllWwHw+sSR0CJrPtSQ3BvF8+0/6qIdf31iw==
 
 create-ecdh@^4.0.0:
   version "4.0.3"
@@ -14762,14 +14762,6 @@ scheduler@^0.15.0:
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.15.0.tgz#6bfcf80ff850b280fed4aeecc6513bc0b4f17f8e"
   integrity sha512-xAefmSfN6jqAa7Kuq7LIJY0bwAPG3xlCj0HMEBQk1lxYiDKZscY2xJ5U/61ZTrYbmNQbXa+gc7czPkVo11tnCg==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
-scheduler@^0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.16.2.tgz#f74cd9d33eff6fc554edfb79864868e4819132c1"
-  integrity sha512-BqYVWqwz6s1wZMhjFvLfVR5WXP7ZY32M/wYPo04CcuPM7XZEbV2TBNW7Z0UkguPTl0dWMA59VbNXxK6q+pHItg==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
