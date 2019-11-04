@@ -5358,9 +5358,9 @@ cosmiconfig@^5.0.0, cosmiconfig@^5.1.0, cosmiconfig@^5.2.0, cosmiconfig@^5.2.1:
     parse-json "^4.0.0"
 
 countries-list@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.4.3.tgz#bc4190ba6dc18bca32b89c2d2615294613c10ebe"
-  integrity sha512-3iIRoU2j6II5OCULdzvR+QS1DKMb776+r0e2oD98V0sX2a0SfTz/bnpwUPhOCM7jmzoEF5PgTMuPw9M7eeJrJA==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.5.0.tgz#2a71c7f169ef477673a72fd30945dedc96986b1a"
+  integrity sha512-3WkdGv0Yd0UPNdndgW+gCkj+5oMRY5dcgrjNETPuEE0nmClFbFlllWwHw+sSR0CJrPtSQ3BvF8+0/6qIdf31iw==
 
 create-ecdh@^4.0.0:
   version "4.0.3"
