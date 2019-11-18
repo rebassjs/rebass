@@ -2944,15 +2944,15 @@
     prism-react-renderer "^1.0.2"
 
 "@theme-ui/sidenav@^0.2.26":
-  version "0.2.46"
-  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.46.tgz#40a6e2615b011e92f14297429eb02449e7129366"
-  integrity sha512-1VctenFgEPH0uQ9fvJAEF6ggeljDOSnTxKumClhjrZsJVuOUMmnko3pEnjJQzlt1SrQMDQnyxWG3GJw81vsKOw==
+  version "0.2.49"
+  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.49.tgz#5d98f39577a8a4abb5b5f9f8b49be3e3b6b5a42b"
+  integrity sha512-Yq8zY8wKo1S+T4YW+pHsDS7oYUZDAzqJRNCtqDvcTJs48w7UiavIW5VnU0b2TC6PycjebhDJyhGJF2rKqMbYJw==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@mdx-js/react" "^1.0.21"
     deepmerge "^4.0.0"
     react "^16.8.6"
-    theme-ui "^0.2.46"
+    theme-ui "^0.2.49"
 
 "@types/babel__core@^7.1.0":
   version "7.1.2"
@@ -15001,14 +15001,6 @@ scheduler@^0.15.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.17.0.tgz#7c9c673e4ec781fac853927916d1c426b6f3ddfe"
-  integrity sha512-7rro8Io3tnCPuY4la/NuI5F2yfESpnfZyT6TtkXnSWVkcu0BCDJ+8gk5ozUaFaxpIyNuWAPXrH0yFcSi28fnDA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
 scheduler@^0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
@@ -16193,7 +16185,7 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theme-ui@^0.2.26, theme-ui@^0.2.46:
+theme-ui@^0.2.26, theme-ui@^0.2.49:
   version "0.2.49"
   resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.49.tgz#3803952907e74e6835d40b063aed0d46c213e2d9"
   integrity sha512-hgULYonGu8iY3delv/GrMx4L/3nAJyEu55gEAAK3GDKVEVf4VNng3lM9/tgx4kUizTFVEB5MN5y+1JTHHOQLXQ==
