@@ -16194,9 +16194,9 @@ text-table@0.2.0, text-table@^0.2.0:
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
 theme-ui@^0.2.26, theme-ui@^0.2.46:
-  version "0.2.46"
-  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.46.tgz#efaf5850e7047c3abe848b5bf37a9f53d6271d5d"
-  integrity sha512-/20TAjKBFTwrzm1U+N7+ucs7knim21di0liP/QUEl0DxbEzksPOKFX6ol+zjxHjPUoArg8UqS3bBcHvF0z0UnQ==
+  version "0.2.49"
+  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.49.tgz#3803952907e74e6835d40b063aed0d46c213e2d9"
+  integrity sha512-hgULYonGu8iY3delv/GrMx4L/3nAJyEu55gEAAK3GDKVEVf4VNng3lM9/tgx4kUizTFVEB5MN5y+1JTHHOQLXQ==
   dependencies:
     "@emotion/is-prop-valid" "^0.8.1"
     "@styled-system/css" "^5.0.16"
