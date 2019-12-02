@@ -3,6 +3,8 @@
 
 ## Unreleased
 
+- Update dependencies
+
 ## 4.0.7 2019-10-28
 
 - Add missing `heading` variant to `Heading` #754
