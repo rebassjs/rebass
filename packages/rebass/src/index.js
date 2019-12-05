@@ -56,6 +56,7 @@ export const Button = forwardRef((props, ref) =>
       bg: 'primary',
       border: 0,
       borderRadius: 4,
+      cursor: 'pointer'
     }}
   />
 )
