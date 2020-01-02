@@ -1067,15 +1067,15 @@
   dependencies:
     "@emotion/memoize" "0.7.4"
 
-"@emotion/memoize@0.7.3", "@emotion/memoize@^0.7.1":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.3.tgz#5b6b1c11d6a6dddf1f2fc996f74cf3b219644d78"
-  integrity sha512-2Md9mH6mvo+ygq1trTeVp2uzAKwE2P7In0cRpD/M9Q70aH8L+rxMLbb3JCN2JoSWsV2O+DdFjfbbXoMoLBczow==
-
 "@emotion/memoize@0.7.4":
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
   integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
+
+"@emotion/memoize@^0.7.1":
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.3.tgz#5b6b1c11d6a6dddf1f2fc996f74cf3b219644d78"
+  integrity sha512-2Md9mH6mvo+ygq1trTeVp2uzAKwE2P7In0cRpD/M9Q70aH8L+rxMLbb3JCN2JoSWsV2O+DdFjfbbXoMoLBczow==
 
 "@emotion/serialize@^0.11.15":
   version "0.11.15"
@@ -2620,15 +2620,15 @@
     prism-react-renderer "^1.0.2"
 
 "@theme-ui/sidenav@^0.2.26":
-  version "0.2.49"
-  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.49.tgz#5d98f39577a8a4abb5b5f9f8b49be3e3b6b5a42b"
-  integrity sha512-Yq8zY8wKo1S+T4YW+pHsDS7oYUZDAzqJRNCtqDvcTJs48w7UiavIW5VnU0b2TC6PycjebhDJyhGJF2rKqMbYJw==
+  version "0.2.53"
+  resolved "https://registry.yarnpkg.com/@theme-ui/sidenav/-/sidenav-0.2.53.tgz#608edd009761975f1d883df9a4cbc27e765b79f5"
+  integrity sha512-HHTIoutw0GA+STFE9uCBonIljoz533rGOsZ+EldtNK7jrc8Ty+BYTC3W5OQ6r6Nls8OX7hcqsmtU6LNaMd3p7g==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@mdx-js/react" "^1.0.21"
     deepmerge "^4.0.0"
     react "^16.8.6"
-    theme-ui "^0.2.49"
+    theme-ui "^0.2.52"
 
 "@types/babel__core@^7.1.0":
   version "7.1.2"
@@ -16128,7 +16128,7 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theme-ui@^0.2.26, theme-ui@^0.2.49:
+theme-ui@^0.2.26, theme-ui@^0.2.52:
   version "0.2.52"
   resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.52.tgz#c041a32b0b257fc8ecbae273e14e92abd48c0f2d"
   integrity sha512-JFujorP5aFxIm1UyVCtefN5baXjwh5TXHKFYNWgAP+3rqVvggIr46uSMrRNvDjyhFOQiMK8YI8ctPQrrhcETpw==
