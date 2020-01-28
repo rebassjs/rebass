@@ -25,6 +25,9 @@
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6"
   },
+  "resolutions": {
+    "@mdx-js/react": "^1.5.5"
+  },
   "jest": {
     "testMatch": [
       "**/packages/**/test/*.js"
