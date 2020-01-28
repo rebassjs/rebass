@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import { Global } from '@emotion/core'
 import { Box, Flex } from 'rebass'
 import { Sidenav, Pagination } from '@theme-ui/sidenav'
 import Head from './head'
@@ -65,15 +64,8 @@ export default (props) => {
   const nav = useRef(null)
 
   return (
-    <Box sx={{
-      variant: 'styles.root'
-    }}>
+    <div>
       <SkipLink />
-      <Global
-        styles={{
-          body: { margin: 0 }
-        }}
-      />
       <Head {...props} />
       <Header
         fullwidth={fullwidth}
@@ -97,6 +89,6 @@ export default (props) => {
         </main>
       )}
       <Footer />
-    </Box>
+    </div>
   )
 }
