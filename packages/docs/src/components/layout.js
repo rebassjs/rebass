@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { Box, Flex } from 'rebass'
-import { Sidenav, Pagination } from '@theme-ui/sidenav'
+import { Pagination } from '@theme-ui/sidenav'
 import Head from './head'
 import SkipLink from './skip-link'
 import Header from './header'
@@ -11,7 +11,6 @@ import EditLink from './edit-link'
 const Sidebar = props =>
   <Flex>
     <Box
-      as={Sidenav}
       ref={props.nav}
       open={props.open}
       onClick={e => {
@@ -23,12 +22,34 @@ const Sidebar = props =>
       onFocus={e => {
         props.setMenu(true)
       }}
+      style={{
+        transform: props.open ? 'translateX(0)' : 'translateX(-100%)',
+      }}
       sx={{
+        position: [ 'fixed', 'sticky' ],
+        zIndex: 1,
+        top: 0,
+        left: 0,
+        bottom: [0, 'auto'],
         width: [ 256, 256, 320 ],
+        minWidth: 0,
+        maxHeight: ['100vh', 'none'],
+        overflowY: 'auto',
+        WebkitOverflowScrolling: 'touch',
         flex: 'none',
         px: 3,
         mt: [64, 0],
         pb: 3,
+        bg: ['background', 'transparent'],
+        transition: 'transform .2s ease-out',
+        transform: [, 'none !important'],
+        ul: {
+          listStyle: 'none',
+          padding: 0,
+        },
+        a: {
+          variant: 'links.nav',
+        },
         'li > ul > li > a': {
           pl: '24px',
         }

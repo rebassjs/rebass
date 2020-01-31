@@ -90,6 +90,17 @@ export default merge(preset, {
       }
     },
   },
+  links: {
+    nav: {
+      display: 'block',
+      px: 2,
+      py: 1,
+      color: 'inherit',
+      textDecoration: 'none',
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+  },
   text: {
     heading: {
       a: {
