@@ -5795,9 +5795,9 @@ cosmiconfig@^6.0.0:
     yaml "^1.7.2"
 
 countries-list@^2.4.3:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.5.0.tgz#2a71c7f169ef477673a72fd30945dedc96986b1a"
-  integrity sha512-3WkdGv0Yd0UPNdndgW+gCkj+5oMRY5dcgrjNETPuEE0nmClFbFlllWwHw+sSR0CJrPtSQ3BvF8+0/6qIdf31iw==
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/countries-list/-/countries-list-2.5.1.tgz#784b7fb1a9fd116f1f8d00c307726d75a6a8d7ad"
+  integrity sha512-ht9obORj0Im7BqGfqlqTd7qLNMuuhdCvFMKmWx15ZQjpGVddd+018LOegE4J1wLtiZ5TYC/KhivkOYmelqSNLg==
 
 create-ecdh@^4.0.0:
   version "4.0.3"
