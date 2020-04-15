@@ -31,7 +31,7 @@ export default props => {
         </Helmet>
       )}
       <Flex mb={4}>
-        <Box as='label'>
+        <Box>
           <Label htmlFor='theme' mb="1">
             Theme:
             {' '}
