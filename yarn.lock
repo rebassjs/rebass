@@ -8700,11 +8700,11 @@ gatsby-plugin-page-creator@^2.3.0:
     micromatch "^3.1.10"
 
 gatsby-plugin-react-helmet@^3.1.3:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.1.tgz#28a89e884e5447f7aefead2a80749e3745f5f5a9"
-  integrity sha512-5oarZdVvp3k3keG26eVFagVHLYw7wCGs/MXRYQg8MEyJewU3X4Uc0eo7qu4TM5EIuZ2ekaL14r86RB6RM5TORA==
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.0.tgz#51deed7b99da83241ae76f15eb6bae878e55c43a"
+  integrity sha512-Z0G2/+fvX+FRkvd5H5VezJKlWNz39P6SZnPliIk6tGbKP4RIry5xdZYmyd3bn+IsyNvm2GmDoTQfOSqxsYNweQ==
   dependencies:
-    "@babel/runtime" "^7.8.7"
+    "@babel/runtime" "^7.9.2"
 
 gatsby-plugin-theme-ui@^0.3.0:
   version "0.3.0"
