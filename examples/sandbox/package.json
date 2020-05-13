@@ -8,8 +8,10 @@
     "start": "react-scripts start"
   },
   "dependencies": {
+    "@rebass/forms": "4.0.6",
     "@rebass/preset": "^4.0.5",
     "emotion-theming": "^10.0.14",
+    "ramda": "0.27.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "rebass": "^4.0.7",
