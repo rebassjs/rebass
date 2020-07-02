@@ -1748,10 +1748,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
-  version "7.9.6"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
-  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
+  integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -9307,11 +9307,11 @@ gatsby-plugin-page-creator@^2.3.0:
     micromatch "^3.1.10"
 
 gatsby-plugin-react-helmet@^3.1.3:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.2.tgz#5619a1808d9607eb89c19d3f04854f497c6fb890"
-  integrity sha512-uRZlX4ejy0Txlw+9qbIVkULsuc6iniSwDgD+Ed6BOryKmF42qaqmdbcc78ZwPVN2SZJCDhcZKXoJf6QftTwwDg==
+  version "3.3.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.8.tgz#e8efbc1d9ea98d6702d01effc6d381134f37aa7d"
+  integrity sha512-K9X/LPUOw1f36jjMdNeIPPXTCTZGvF8Qfq9FIe0PuzHFfnESjxkchw6Rd9gB0/wQxSlvunIuEz0z13Vki2aRKw==
   dependencies:
-    "@babel/runtime" "^7.9.6"
+    "@babel/runtime" "^7.10.3"
 
 gatsby-plugin-theme-ui@^0.3.0:
   version "0.3.0"
