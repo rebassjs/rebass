@@ -9245,11 +9245,11 @@ gatsby-page-utils@^0.2.0:
     micromatch "^3.1.10"
 
 gatsby-plugin-catch-links@^2.1.2:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.3.tgz#95c689adbd9c48c5707c9ce822537d33722a7b34"
-  integrity sha512-iZnBwqLHQopLyZlZPh3CA8Wk5s5SjipVmShpQ5hxqrgYDoQJpFeyhcimXJmGK7BE/V36qu/ky+9blKN+2vy0rg==
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.9.tgz#c69066595ffd2f418da678db7b417021a2d555b1"
+  integrity sha512-lj9x1riL7svw76Fv3IjOALrjOqt/Btle4TJO8cPcQ16gcyXLFlQvgU8T5Y/FnG257w9vIwYUYQO99r6E7soEuA==
   dependencies:
-    "@babel/runtime" "^7.9.6"
+    "@babel/runtime" "^7.10.3"
     escape-string-regexp "^1.0.5"
 
 gatsby-plugin-mdx@^1.0.22:
