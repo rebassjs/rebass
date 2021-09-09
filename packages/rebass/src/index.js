@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react'
-import { Box, Flex } from 'reflexbox'
 
 export const Text = forwardRef((props, ref) =>
   <Box
