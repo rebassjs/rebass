@@ -1,7 +1,4 @@
 import React, { forwardRef } from 'react'
-import { Box, Flex } from 'reflexbox'
-
-export { Box, Flex }
 
 export const Text = forwardRef((props, ref) =>
   <Box
@@ -78,4 +75,25 @@ export const Card = forwardRef((props, ref) =>
     variant='card'
     {...props}
   />
+)
+export const Flex = forwardRef((props,ref) =>
+  <Box
+     ref={ref}
+     {...props}
+     __css={{
+        display:flex
+     }}
+  />
+)
+export const Box = forwardRef((props ,ref)=>
+   <Box
+    ref={ref}
+    variant='box'
+    {...props}
+    __css={{
+        boxSizing: 'border-box’',
+        margin: 0,
+        minWidth: 0,
+    }}
+   />
 )
