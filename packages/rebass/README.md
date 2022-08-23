@@ -92,12 +92,12 @@ for more on some of the thought behind Rebass.
 - [Extending](https://rebassjs.org/extending)
 - [Theming](https://rebassjs.org/theming)
 - [Reflexbox](https://rebassjs.org/reflexbox)
-- [Text](https://rebassjs.org/Text)
-- [Heading](https://rebassjs.org/Heading)
-- [Button](https://rebassjs.org/Button)
-- [Link](https://rebassjs.org/Link)
-- [Image](https://rebassjs.org/Image)
-- [Card](https://rebassjs.org/Card)
+- [Text](https://rebassjs.org/text)
+- [Heading](https://rebassjs.org/heading)
+- [Button](https://rebassjs.org/button)
+- [Link](https://rebassjs.org/link)
+- [Image](https://rebassjs.org/image)
+- [Card](https://rebassjs.org/card)
 
 ## CodeSandbox
 
