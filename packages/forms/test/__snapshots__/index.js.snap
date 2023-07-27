@@ -36,6 +36,8 @@ exports[`Checkbox renders 1`] = `
 
 input:checked ~ .emotion-1 {
   display: block;
+  min-width: 25px;
+  min-height: 25px;
 }
 
 input:checked ~ .emotion-1 {
@@ -52,6 +54,8 @@ input:focus ~ .emotion-1 {
   margin: 0;
   min-width: 0;
   display: block;
+  min-width: 25px;
+  min-height: 25px;
   width: 24px;
   height: 24px;
   box-sizing: border-box;

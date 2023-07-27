@@ -222,6 +222,8 @@ const CheckboxIcon = props =>
         display: 'none',
         'input:checked ~ &': {
           display: 'block',
+          minWidth: '25px',
+          minHeight: '25px',
         }
       }}
     />
@@ -229,6 +231,8 @@ const CheckboxIcon = props =>
       {...props}
       __css={{
         display: 'block',
+        minWidth: '25px',
+        minHeight: '25px',
         'input:checked ~ &': {
           display: 'none',
         }
