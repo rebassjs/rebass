@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ThemeProvider } from 'theme-ui'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import { Box, Flex } from 'rebass'
 import * as themeui from '@theme-ui/presets'
 import merge from 'lodash.merge'
@@ -20,7 +20,7 @@ const themes = [
 ]
 
 export default props => {
-  const [ theme, setTheme ] = useState('preset')
+  const [theme, setTheme] = useState('preset')
 
   const demoTheme = merge({}, rebass, presets[theme])
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { render as renderInDom } from '@testing-library/react'
+import { matchers } from '@emotion/jest'
 import {
   Text,
   Heading,
@@ -12,14 +12,14 @@ import {
 
 expect.extend(matchers)
 
-const render = el => renderer.create(el).toJSON()
+const render = el => renderInDom(el).container.firstChild
 
 describe('Text', () => {
   test('renders', () => {
     const json = render(
       <Text textAlign='center' fontWeight='bold' fontStyle='italic' />
     )
-    expect(json.type).toBe('div')
+    expect(json.tagName.toLowerCase()).toBe('div')
     expect(json).toHaveStyleRule('text-align', 'center')
     expect(json).toHaveStyleRule('font-weight', 'bold')
     expect(json).toHaveStyleRule('font-style', 'italic')
@@ -49,7 +49,7 @@ describe('Heading', () => {
     const json = render(
       <Heading />
     )
-    expect(json.type).toBe('h2')
+    expect(json.tagName.toLowerCase()).toBe('h2')
     expect(json).toHaveStyleRule('font-size', '24px')
     expect(json).toHaveStyleRule('font-weight', 'heading')
   })
@@ -78,7 +78,7 @@ describe('Button', () => {
     const json = render(
       <Button />
     )
-    expect(json.type).toBe('button')
+    expect(json.tagName.toLowerCase()).toBe('button')
     expect(json).toHaveStyleRule('color', 'white')
     expect(json).toHaveStyleRule('background-color', 'primary')
   })
@@ -87,7 +87,7 @@ describe('Button', () => {
     const json = render(
       <Button as='a' />
     )
-    expect(json.type).toBe('a')
+    expect(json.tagName.toLowerCase()).toBe('a')
   })
 })
 
@@ -96,7 +96,7 @@ describe('Link', () => {
     const json = render(
       <Link />
     )
-    expect(json.type).toBe('a')
+    expect(json.tagName.toLowerCase()).toBe('a')
   })
 
   test('renders with theme', () => {
@@ -120,7 +120,7 @@ describe('Image', () => {
     const json = render(
       <Image />
     )
-    expect(json.type).toBe('img')
+    expect(json.tagName.toLowerCase()).toBe('img')
     expect(json).toHaveStyleRule('max-width', '100%')
   })
 })
@@ -137,7 +137,7 @@ describe('Card', () => {
         }}
       />
     )
-    expect(json.type).toBe('div')
+    expect(json.tagName.toLowerCase()).toBe('div')
     expect(json).toHaveStyleRule('padding', '16px')
     expect(json).toHaveStyleRule('background-color', 'tomato')
     expect(json).toHaveStyleRule('border-radius', '8px')

@@ -1,6 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { matchers } from 'jest-emotion'
+import { render as renderInDom } from '@testing-library/react'
+import { matchers } from '@emotion/jest'
 import {
   Box,
   Flex,
@@ -8,21 +8,21 @@ import {
 
 expect.extend(matchers)
 
-const render = el => renderer.create(el).toJSON()
+const render = el => renderInDom(el).container.firstChild
 
 describe('Box', () => {
   test('renders', () => {
     const json = render(
       <Box />
     )
-    expect(json.type).toBe('div')
+    expect(json.tagName.toLowerCase()).toBe('div')
   })
 
   test('renders with as prop', () => {
     const json = render(
       <Box as='header' />
     )
-    expect(json.type).toBe('header')
+    expect(json.tagName.toLowerCase()).toBe('header')
   })
 
   test('renders with style props', () => {
@@ -125,8 +125,8 @@ describe('Box', () => {
         width={1}
       />
     )
-    expect(Object.keys(json.props)).toEqual([
-      'className'
+    expect(Array.from(json.attributes).map(attribute => attribute.name)).toEqual([
+      'class'
     ])
   })
 
@@ -190,12 +190,12 @@ describe('Flex', () => {
     const json = render(
       <Flex
         as='footer'
-        width={1/2}
+        width={1 / 2}
         fontSize={3}
         color='tomato'
       />
     )
-    expect(json.type).toBe('footer')
+    expect(json.tagName.toLowerCase()).toBe('footer')
     expect(json).toHaveStyleRule('width', '50%')
     expect(json).toHaveStyleRule('font-size', '20px')
     expect(json).toHaveStyleRule('color', 'tomato')

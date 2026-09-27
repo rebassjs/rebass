@@ -1,7 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { render } from '@testing-library/react'
-import { matchers } from 'jest-emotion'
+import { matchers } from '@emotion/jest'
 import {
   Label,
   Input,
@@ -13,13 +12,13 @@ import {
 
 expect.extend(matchers)
 
-const renderJSON = el => renderer.create(el).toJSON()
+const renderJSON = el => render(el).container.firstChild
 
 describe('Label', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Label />
-    )
+    ).asFragment()
     expect(json).toMatchSnapshot()
   })
   test('passes ref', () => {
@@ -33,9 +32,9 @@ describe('Label', () => {
 
 describe('Input', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Input />
-    )
+    ).asFragment()
     expect(json).toMatchSnapshot()
   })
   test('passes ref', () => {
@@ -49,9 +48,9 @@ describe('Input', () => {
 
 describe('Select', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Select />
-    )
+    ).asFragment()
     expect(json).toMatchSnapshot()
   })
   test('passes ref', () => {
@@ -73,9 +72,9 @@ describe('Select', () => {
 
 describe('Textarea', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Textarea />
-    )
+    ).asFragment()
     expect(json).toMatchSnapshot()
   })
   test('passes ref', () => {
@@ -89,9 +88,9 @@ describe('Textarea', () => {
 
 describe('Radio', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Radio />
-    )
+    ).asFragment()
     expect(json).toMatchSnapshot()
   })
   test('passes ref', () => {
@@ -106,9 +105,9 @@ describe('Radio', () => {
 
 describe('Checkbox', () => {
   test('renders', () => {
-    const json = renderJSON(
+    const json = render(
       <Checkbox />
-    )
+    ).asFragment()
     expect(json).toMatchSnapshot()
   })
   test('passes ref', () => {

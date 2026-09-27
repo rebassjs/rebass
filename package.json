@@ -12,18 +12,19 @@
     "cover": "npx codecov"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/cli": "^7.29.5",
+    "@babel/core": "^7.29.5",
+    "@babel/preset-env": "^7.29.5",
     "@babel/preset-react": "^7.0.0",
-    "@testing-library/react": "^10.0.4",
-    "jest": "^25.2.4",
-    "jest-emotion": "^10.0.14",
-    "jest-styled-components": "^6.3.3",
-    "lerna": "^3.16.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6"
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.0.0",
+    "@emotion/jest": "^11.14.2",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.5.2",
+    "jest-styled-components": "^7.4.0",
+    "lerna": "^10.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "resolutions": {
     "@mdx-js/react": "^1.5.5"
@@ -32,6 +33,7 @@
     "testMatch": [
       "**/packages/**/test/*.js"
     ],
+    "testEnvironment": "jsdom",
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
@@ -54,7 +56,7 @@
     },
     "setupFilesAfterEnv": [],
     "snapshotSerializers": [
-      "jest-emotion"
+      "@emotion/jest/serializer"
     ]
   }
 }

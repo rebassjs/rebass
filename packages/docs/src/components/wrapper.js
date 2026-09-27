@@ -1,7 +1,7 @@
 import React from 'react'
 import { Styled } from 'theme-ui'
 import { Link } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async-async'
 import { Box, Flex } from 'rebass'
 import { globalHistory } from '@reach/router'
 
@@ -15,7 +15,7 @@ export const Breadcrumbs = ({
   title,
 }) => {
   const { location } = globalHistory
-  const [ n, base, path ] = location.pathname.split('/')
+  const [n, base, path] = location.pathname.split('/')
   if (!breadcrumbRoutes.includes(base)) return false
   if (!path) return false
 
@@ -49,7 +49,7 @@ export const wrapper = ({
   const children = React.Children.toArray(props.children)
     .reduce((acc, child) => {
       const type = child.props.mdxType
-      if (type !== 'h1') return [ ...acc, child ]
+      if (type !== 'h1') return [...acc, child]
       return [
         ...acc,
         child,

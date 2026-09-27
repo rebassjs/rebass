@@ -1,28 +1,28 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`snapshot 1`] = `
-Object {
-  "buttons": Object {
-    "outline": Object {
+{
+  "buttons": {
+    "outline": {
       "bg": "transparent",
       "boxShadow": "inset 0 0 2px",
       "color": "primary",
       "variant": "buttons.primary",
     },
-    "primary": Object {
+    "primary": {
       "bg": "primary",
       "borderRadius": "default",
       "color": "background",
       "fontSize": 2,
       "fontWeight": "bold",
     },
-    "secondary": Object {
+    "secondary": {
       "bg": "secondary",
       "color": "background",
       "variant": "buttons.primary",
     },
   },
-  "colors": Object {
+  "colors": {
     "background": "#fff",
     "gray": "#dddddf",
     "highlight": "hsla(205, 100%, 40%, 0.125)",
@@ -31,7 +31,7 @@ Object {
     "secondary": "#30c",
     "text": "#000",
   },
-  "fontSizes": Array [
+  "fontSizes": [
     12,
     14,
     16,
@@ -42,31 +42,31 @@ Object {
     64,
     96,
   ],
-  "fontWeights": Object {
+  "fontWeights": {
     "body": 400,
     "bold": 700,
     "heading": 700,
   },
-  "fonts": Object {
+  "fonts": {
     "body": "system-ui, sans-serif",
     "heading": "inherit",
     "monospace": "Menlo, monospace",
   },
-  "lineHeights": Object {
+  "lineHeights": {
     "body": 1.5,
     "heading": 1.25,
   },
-  "radii": Object {
+  "radii": {
     "circle": 99999,
     "default": 4,
   },
-  "shadows": Object {
+  "shadows": {
     "card": "0 0 4px rgba(0, 0, 0, .125)",
   },
-  "sizes": Object {
+  "sizes": {
     "avatar": 48,
   },
-  "space": Array [
+  "space": [
     0,
     4,
     8,
@@ -77,21 +77,21 @@ Object {
     256,
     512,
   ],
-  "styles": Object {
-    "root": Object {
+  "styles": {
+    "root": {
       "fontFamily": "body",
       "fontWeight": "body",
       "lineHeight": "body",
     },
   },
-  "text": Object {
-    "caps": Object {
+  "text": {
+    "caps": {
       "letterSpacing": "0.1em",
       "textTransform": "uppercase",
     },
-    "display": Object {
+    "display": {
       "fontFamily": "heading",
-      "fontSize": Array [
+      "fontSize": [
         5,
         6,
         7,
@@ -99,28 +99,28 @@ Object {
       "fontWeight": "heading",
       "lineHeight": "heading",
     },
-    "heading": Object {
+    "heading": {
       "fontFamily": "heading",
       "fontWeight": "heading",
       "lineHeight": "heading",
     },
   },
-  "variants": Object {
-    "avatar": Object {
+  "variants": {
+    "avatar": {
       "borderRadius": "circle",
       "height": "avatar",
       "width": "avatar",
     },
-    "card": Object {
+    "card": {
       "bg": "background",
       "boxShadow": "card",
       "p": 2,
     },
-    "link": Object {
+    "link": {
       "color": "primary",
     },
-    "nav": Object {
-      ":hover,:focus,.active": Object {
+    "nav": {
+      ":hover,:focus,.active": {
         "color": "primary",
       },
       "color": "inherit",

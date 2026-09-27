@@ -1,13 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Checkbox renders 1`] = `
-.emotion-3 {
+<DocumentFragment>
+  .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -19,38 +20,38 @@ exports[`Checkbox renders 1`] = `
   overflow: hidden;
 }
 
-.emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: none;
-  width: 24px;
-  height: 24px;
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-right: 8px;
-  border-radius: 4px;
-  color: gray;
-}
-
-input:checked ~ .emotion-1 {
-  display: block;
-}
-
-input:checked ~ .emotion-1 {
-  color: primary;
-}
-
-input:focus ~ .emotion-1 {
-  color: primary;
-  background-color: highlight;
-}
-
 .emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  display: none;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 4px;
+  color: gray;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  color: primary;
+  background-color: highlight;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   display: block;
   width: 24px;
   height: 24px;
@@ -62,53 +63,55 @@ input:focus ~ .emotion-1 {
   color: gray;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   display: none;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   color: primary;
 }
 
-input:focus ~ .emotion-2 {
+input:focus~.emotion-3 {
   color: primary;
   background-color: highlight;
 }
 
 <div
-  className="emotion-3"
->
-  <input
-    className="emotion-0"
-    type="checkbox"
-  />
-  <svg
-    aria-hidden="true"
-    className="emotion-1"
-    fill="currentcolor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
+    class="emotion-0"
   >
-    <path
-      d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+    <input
+      class="emotion-1"
+      type="checkbox"
     />
-  </svg>
-  <svg
-    aria-hidden="true"
-    className="emotion-2"
-    fill="currentcolor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-    />
-  </svg>
-</div>
+    <svg
+      aria-hidden="true"
+      class="emotion-2"
+      fill="currentcolor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      class="emotion-3"
+      fill="currentcolor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Input renders 1`] = `
-.emotion-0 {
+<DocumentFragment>
+  .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -117,6 +120,7 @@ exports[`Input renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -127,13 +131,15 @@ exports[`Input renders 1`] = `
 }
 
 <input
-  className="emotion-0"
-  type="text"
-/>
+    class="emotion-0"
+    type="text"
+  />
+</DocumentFragment>
 `;
 
 exports[`Label renders 1`] = `
-.emotion-0 {
+<DocumentFragment>
+  .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -145,18 +151,20 @@ exports[`Label renders 1`] = `
 }
 
 <label
-  className="emotion-0"
-/>
+    class="emotion-0"
+  />
+</DocumentFragment>
 `;
 
 exports[`Radio renders 1`] = `
-.emotion-3 {
+<DocumentFragment>
+  .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
 }
 
-.emotion-0 {
+.emotion-1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -168,37 +176,37 @@ exports[`Radio renders 1`] = `
   overflow: hidden;
 }
 
-.emotion-1 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: none;
-  width: 24px;
-  height: 24px;
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-right: 8px;
-  border-radius: 9999px;
-  color: gray;
-}
-
-input:checked ~ .emotion-1 {
-  display: block;
-}
-
-input:checked ~ .emotion-1 {
-  color: primary;
-}
-
-input:focus ~ .emotion-1 {
-  background-color: highlight;
-}
-
 .emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  display: none;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-right: 8px;
+  border-radius: 9999px;
+  color: gray;
+}
+
+input:checked~.emotion-2 {
+  display: block;
+}
+
+input:checked~.emotion-2 {
+  color: primary;
+}
+
+input:focus~.emotion-2 {
+  background-color: highlight;
+}
+
+.emotion-3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   display: block;
   width: 24px;
   height: 24px;
@@ -210,70 +218,54 @@ input:focus ~ .emotion-1 {
   color: gray;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   display: none;
 }
 
-input:checked ~ .emotion-2 {
+input:checked~.emotion-3 {
   color: primary;
 }
 
-input:focus ~ .emotion-2 {
+input:focus~.emotion-3 {
   background-color: highlight;
 }
 
 <div
-  className="emotion-3"
->
-  <input
-    className="emotion-0"
-    type="radio"
-  />
-  <svg
-    aria-hidden="true"
-    className="emotion-1"
-    fill="currentcolor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
+    class="emotion-0"
   >
-    <path
-      d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+    <input
+      class="emotion-1"
+      type="radio"
     />
-  </svg>
-  <svg
-    aria-hidden="true"
-    className="emotion-2"
-    fill="currentcolor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-    />
-  </svg>
-</div>
+    <svg
+      aria-hidden="true"
+      class="emotion-2"
+      fill="currentcolor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      class="emotion-3"
+      fill="currentcolor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Select renders 1`] = `
-.emotion-0 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: block;
-  width: 100%;
-  padding: 8px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: inherit;
-  line-height: inherit;
-  border: 1px solid;
-  border-radius: default;
-  color: inherit;
-  background-color: transparent;
-}
-
-.emotion-2 {
+<DocumentFragment>
+  .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -284,6 +276,25 @@ exports[`Select renders 1`] = `
 }
 
 .emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid;
+  border-radius: default;
+  color: inherit;
+  background-color: transparent;
+}
+
+.emotion-2 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -297,26 +308,28 @@ exports[`Select renders 1`] = `
 }
 
 <div
-  className="emotion-2"
->
-  <select
-    className="emotion-0"
-  />
-  <svg
-    className="emotion-1"
-    fill="currentcolor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
+    class="emotion-0"
   >
-    <path
-      d="M7 10l5 5 5-5z"
+    <select
+      class="emotion-1"
     />
-  </svg>
-</div>
+    <svg
+      class="emotion-2"
+      fill="currentcolor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Textarea renders 1`] = `
-.emotion-0 {
+<DocumentFragment>
+  .emotion-0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -325,6 +338,7 @@ exports[`Textarea renders 1`] = `
   padding: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
   font-size: inherit;
   line-height: inherit;
@@ -335,6 +349,7 @@ exports[`Textarea renders 1`] = `
 }
 
 <textarea
-  className="emotion-0"
-/>
+    class="emotion-0"
+  />
+</DocumentFragment>
 `;
